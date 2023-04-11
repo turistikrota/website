@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --popup-background-color: #fff;
+
+  --shadow-color-start: rgba(0, 0, 0, 0.1);
+  --shadow-color-end: rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +17,10 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --popup-background-color: #000;
+
+    --shadow-color-start: rgba(255, 255, 255, 0.1);
+    --shadow-color-end: rgba(255, 255, 255, 0.6);
   }
 }
 

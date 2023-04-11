@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: complete mobile header component">
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update mobile header props">
+      <change afterPath="$PROJECT_DIR$/src/components/popup/Popup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/popup/PopupContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/headers/MobileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/headers/MobileHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +104,7 @@
       <workItem from="1681168919107" duration="38000" />
       <workItem from="1681170026709" duration="78000" />
       <workItem from="1681170745969" duration="1185000" />
-      <workItem from="1681171958235" duration="2193000" />
+      <workItem from="1681171958235" duration="7457000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -124,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681173723263</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="project: update mobile header props">
+      <created>1681174218890</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681174218890</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +144,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="project: initial setup" />
     <MESSAGE value="project: complete mobile header component" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: complete mobile header component" />
+    <MESSAGE value="project: update mobile header props" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: update mobile header props" />
   </component>
 </project>
