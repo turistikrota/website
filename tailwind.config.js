@@ -12,8 +12,12 @@ module.exports = {
                 'gradient-conic':
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
+            backdropBlur: {
+                "xs": "3px",
+            },
             backgroundColor: {
                 'popup': 'var(--popup-background-color)',
+                'header': 'var(--header-background-color)',
             },
             boxShadow: {
                 'top': '0 -1px 3px 0 var(--shadow-color-start), 0 -4px 8px 3px var(--shadow-color-end)',
@@ -30,16 +34,16 @@ module.exports = {
                 'popup-3xl': 'max(100vh - 10rem, 90vh)',
             },
             animation: {
-                'in-from-top': 'inFromTop 0.5s ease-out',
-                'in-from-bottom': 'inFromBottom 0.5s ease-out',
-                'out-to-top': 'outToTop 0.5s ease-out',
-                'out-to-bottom': 'outToBottom 0.5s ease-out',
-                'fade-in': 'fadeIn 0.5s ease-out',
-                'fade-out': 'fadeOut 0.5s ease-out',
-                'fade-in-from-top': 'fadeIn 0.5s ease-out, inFromTop 0.5s ease-out',
-                'fade-in-from-bottom': 'fadeIn 0.5s ease-out, inFromBottom 0.5s ease-out',
-                'fade-out-to-top': 'fadeOut 0.5s ease-out, outToTop 0.5s ease-out',
-                'fade-out-to-bottom': 'fadeOut 0.5s ease-out, outToBottom 0.5s ease-out',
+                'in-from-top': 'inFromTop 0.3s ease-out',
+                'in-from-bottom': 'inFromBottom 0.3s ease-out',
+                'out-to-top': 'outToTop 0.3s ease-out',
+                'out-to-bottom': 'outToBottom 0.3s ease-out',
+                'fade-in': 'fadeIn 0.3s ease-out',
+                'fade-out': 'fadeOut 0.3s ease-out',
+                'fade-in-from-top': 'fadeIn 0.3s ease-out, inFromTop 0.3s ease-out',
+                'fade-in-from-bottom': 'fadeIn 0.3s ease-out, inFromBottom 0.3s ease-out',
+                'fade-out-to-top': 'fadeOut 0.3s ease-out, outToTop 0.3s ease-out',
+                'fade-out-to-bottom': 'fadeOut 0.3s ease-out, outToBottom 0.3s ease-out',
             },
             keyframes: {
                 inFromTop: {

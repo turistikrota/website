@@ -52,10 +52,10 @@ function Popup({ children, className, onClose, open }: Props) {
     }
 
     return (
-        <div className={`flex justify-center items-end fixed top-0 left-0 w-full h-full bg-opacity-50 z-50 ${open ? 'opacity-100 backdrop-brightness-50' : 'opacity-0 pointer-events-none'} ${isClosing ? 'pointer-events-none' : ''}`} onClick={checkOutsideClick}>
+        <div className={`flex justify-center items-end fixed top-0 left-0 w-full h-full bg-opacity-50 z-50 backdrop-blur-xs transition-opacity ${isClosing ? 'pointer-events-none opacity-0' : open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`} onClick={checkOutsideClick}>
 
-            <div className={`bg-popup border-t rounded-t-3xl p-4 ${className} min-w-0 w-full h-popup relative border-gray-200 dark:border-gray-800 ${open ? 'animate-fade-in-from-bottom' : ''} ${isClosing ? 'animate-fade-out-to-bottom' : ''}`} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd}>
-                <span className={`absolute -top-2.5 w-10 h-0.5 bg-gray-300 dark:bg-gray-500 rounded-full left-1/2 transform -translate-x-1/2`} />
+            <div className={`bg-popup rounded-t-3xl p-4 ${className} min-w-0 w-full h-popup relative border-gray-200 dark:border-gray-800 ${isClosing ? 'animate-fade-out-to-bottom' : open ? 'animate-fade-in-from-bottom' : ''}`} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd}>
+                <span className={`absolute -top-2.5 w-10 h-0.5 bg-gray-600 dark:bg-gray-200 rounded-full left-1/2 transform -translate-x-1/2`} />
                 {children}
             </div>
         </div>

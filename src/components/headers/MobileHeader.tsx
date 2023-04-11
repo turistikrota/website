@@ -47,7 +47,7 @@ const Avatar = ({ children, onClick }: Props & ClickableProps) => {
 
 function MobileHeader({children} : Props) {
     return (
-        <header className="fixed top-0 left-0 z-10 w-full h-16 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+        <header className="fixed top-0 left-0 z-10 w-full h-16 bg-header border-b border-gray-200 dark:border-gray-800">
             <div className="flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
                 {children}
             </div>
