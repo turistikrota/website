@@ -39,7 +39,7 @@ function Popup({ children, className, onClose, open }: Props) {
     const onSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
         if (e.changedTouches.length === 1) {
             const diff = e.changedTouches[0].clientY - onSwipeStart.current;
-            if (diff > 50) {
+            if (diff > 150) {
                 handleClose();
             }
         }
