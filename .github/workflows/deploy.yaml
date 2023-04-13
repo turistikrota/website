@@ -23,6 +23,6 @@ jobs:
           script: |
             cd $DIR
             git pull origin main
-            docker rm -f (docker ps -f ancestor=turistikrota.com -q)
+            docker rm -f $(docker ps -f ancestor=turistikrota.com -q)
             docker build -t turistikrota.com .
             docker run -d -p 3000:3000 -t turistikrota.com
