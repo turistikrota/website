@@ -32,7 +32,7 @@ const WaitlistForm: React.FC<Params> = ({
   error: errorText,
   success: successText,
 }) => {
-  const [alertVisible, setAlertVisible] = useState<boolean>(false);
+  const [alertVisible, setAlertVisible] = useState<boolean>(true);
   const [result, setResult] = useState<BaseResponse | null>(null);
   const [loading, dispatch, error] = usePost<{ email: string }, BaseResponse>(
     "/waitlist"
@@ -57,7 +57,10 @@ const WaitlistForm: React.FC<Params> = ({
 
   return (
     <Spin loading={loading}>
-      <Alert type="primary" show={!loading && alertVisible && error === null}>
+      <Alert
+        type="primary"
+        show={!loading && alertVisible && error === null && result !== null}
+      >
         <>
           <Alert.Title>{successText.title}</Alert.Title>
           <Alert.Description>{successText.description}</Alert.Description>
@@ -71,10 +74,12 @@ const WaitlistForm: React.FC<Params> = ({
       >
         <>
           <Alert.Title>{errorText.title}</Alert.Title>
-          <Alert.Description>{errorText.description}</Alert.Description>
+          <Alert.Description>
+            {error?.message || errorText.description}
+          </Alert.Description>
         </>
       </Alert>
-      {(loading || !alertVisible || error !== null) && (
+      {(loading || !alertVisible || error !== null || result === null) && (
         <form
           method="POST"
           onSubmit={onSubmit}
