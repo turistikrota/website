@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update waitlist page">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: add deployment configuration">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <workItem from="1681389047690" duration="11993000" />
       <workItem from="1681414260001" duration="1114000" />
       <workItem from="1681418299405" duration="5000" />
-      <workItem from="1681422421660" duration="163000" />
+      <workItem from="1681422421660" duration="966000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -190,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681406840162</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="project: add deployment configuration">
+      <created>1681423440534</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681423440534</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +211,7 @@
     <MESSAGE value="project: update popup closing ux" />
     <MESSAGE value="project: develop base waitlist page" />
     <MESSAGE value="project: update waitlist page" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: update waitlist page" />
+    <MESSAGE value="project: add deployment configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: add deployment configuration" />
   </component>
 </project>
