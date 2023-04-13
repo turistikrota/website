@@ -44,9 +44,14 @@ export default async function Home({ params: { lang } }: Props) {
               <div className="mx-auto max-w-md px-4 text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0 lg:text-left">
                 <div className="lg:py-24">
                   <h1 className="mt-4 text-4xl font-bold tracking-tight sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                    <span className="block text-secondary-500">
-                      {dictionary.waitlist.title}
-                    </span>
+                    <div>
+                      <span className="text-secondary-400 dark:text-secondary-500">
+                        {dictionary.waitlist.title1}
+                      </span>
+                      <span className="text-primary-200 dark:text-primary-300">
+                        {dictionary.waitlist.title2}
+                      </span>
+                    </div>
                     <span className="block">
                       {dictionary.waitlist.subtitle}
                     </span>

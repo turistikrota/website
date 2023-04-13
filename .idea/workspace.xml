@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: develop base waitlist page">
-      <change afterPath="$PROJECT_DIR$/src/components/alert/Alert.tsx" afterDir="false" />
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update waitlist page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[lang]/components/WaitlistForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/components/WaitlistForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/[lang]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dictionaries/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/get-dictionary.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/get-dictionary.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/response/response.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/response/response.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +114,7 @@
       <workItem from="1681251825583" duration="48000" />
       <workItem from="1681253689803" duration="2435000" />
       <workItem from="1681339958258" duration="1174000" />
-      <workItem from="1681389047690" duration="11189000" />
+      <workItem from="1681389047690" duration="11978000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -177,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681398007526</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="project: update waitlist page">
+      <created>1681403899805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681403899805</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +194,7 @@
     <MESSAGE value="project: complete popup animations" />
     <MESSAGE value="project: update popup closing ux" />
     <MESSAGE value="project: develop base waitlist page" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: develop base waitlist page" />
+    <MESSAGE value="project: update waitlist page" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: update waitlist page" />
   </component>
 </project>
