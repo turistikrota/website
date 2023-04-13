@@ -1,0 +1,21 @@
+{
+  "waitlist": {
+    "title": "Turistikrota",
+    "subtitle": "Çok Yakında",
+    "description": "Web Sitemiz yakında hizmete açılacaktır. Herkese açık hale gelmeden önce betayı denemek için bekleme listesine katılın.",
+    "enter_email": "E-posta adresinizi girin",
+    "email": "E-posta",
+    "join_waitlist": "Katıl",
+    "img": "/img/tr.svg",
+    "email_invalid": "Geçersiz e-posta adresi",
+    "email_required": "E-posta adresi gereklidir",
+    "meta": {
+      "title": "Turistikrota",
+      "description": "Web Sitemiz yakında hizmete açılacaktır. Herkese açık hale gelmeden önce betayı denemek için bekleme listesine katılın.",
+      "keywords": "Turistikrota, turistik rota, turistik, rota, turizm, turistik rota nedir, turistik rota ne demek, turistik rota ne anlama gelir"
+    }
+  },
+  "copyright": {
+    "text": "Turistikrota. Tüm hakları saklıdır."
+  }
+}

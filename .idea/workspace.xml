@@ -4,11 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: add skeleton of popup component">
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update popup closing ux">
+      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prietterrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/default-logo-vertical.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/en.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/tr.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[lang]/components/WaitlistForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[lang]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/spin/Spin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dictionaries/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dictionaries/tr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/get-dictionary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/http/http-enum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/http/request.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/response/response.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/headers/MobileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/headers/MobileHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/popup/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/popup/Popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page2.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -43,27 +64,32 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Projects/turistikrota.com/site",
+    "last_opened_file_path": "D:/Projects/turistikrota.com/site/public/img",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\turistikrota.com\\site\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "D:\\Projects\\turistikrota.com\\site\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\turistikrota.com\site\public\img" />
+      <recent name="D:\Projects\turistikrota.com\site\public" />
       <recent name="D:\Projects\turistikrota.com\site\public\logo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\turistikrota.com\site\public\img" />
       <recent name="D:\Projects\turistikrota.com\site\public\logo" />
       <recent name="D:\Projects\turistikrota.com\site\public\default" />
     </key>
@@ -107,7 +133,9 @@
       <workItem from="1681249601403" duration="267000" />
       <workItem from="1681250326190" duration="110000" />
       <workItem from="1681251825583" duration="48000" />
-      <workItem from="1681253689803" duration="1979000" />
+      <workItem from="1681253689803" duration="2435000" />
+      <workItem from="1681339958258" duration="1174000" />
+      <workItem from="1681389047690" duration="7929000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -144,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681180595159</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="project: complete popup animations">
+      <created>1681255728934</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681255728934</updated>
+    </task>
+    <task id="LOCAL-00007" summary="project: update popup closing ux">
+      <created>1681256147000</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681256147000</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +198,8 @@
     <MESSAGE value="project: complete mobile header component" />
     <MESSAGE value="project: update mobile header props" />
     <MESSAGE value="project: add skeleton of popup component" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: add skeleton of popup component" />
+    <MESSAGE value="project: complete popup animations" />
+    <MESSAGE value="project: update popup closing ux" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: update popup closing ux" />
   </component>
 </project>

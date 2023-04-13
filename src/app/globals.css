@@ -3,35 +3,63 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-color-start: rgb(239, 244, 245);
-  --background-color-end: rgb(255, 255, 255);
-  --popup-background-color: #fff;
-  --header-background-color: #fff;
+    --foreground-rgb: 0, 0, 0;
+    --background-color-start: rgb(239, 244, 245);
+    --background-color-end: rgb(255, 255, 255);
+    --popup-background-color: #fff;
+    --header-background-color: #fff;
 
-  --shadow-color-start: rgba(0, 0, 0, 0.1);
-  --shadow-color-end: rgba(0, 0, 0, 0.6);
+    --shadow-color-start: rgba(0, 0, 0, 0.1);
+    --shadow-color-end: rgba(0, 0, 0, 0.6);
+
+    --primary-color: #87CEEB;
+    --primary-color-50: #f0f8ff;
+    --primary-color-100: #c7e1f7;
+    --primary-color-200: #87ceeb;
+    --primary-color-300: #5cafe7;
+    --primary-color-400: #3397e6;
+    --primary-color-500: #0077cc;
+    --primary-color-600: #006bb3;
+    --primary-color-700: #005a9c;
+    --primary-color-800: #004d80;
+    --primary-color-900: #003d66;
+    --primary-color-1000: #002e4d;
+    --primary-color-1100: #002233;
+    --secondary-color: #FFA500;
+    --secondary-color-50: #fff8f0;
+    --secondary-color-100: #fee7c3;
+    --secondary-color-200: #fcd992;
+    --secondary-color-300: #ffcc66;
+    --secondary-color-400: #ffa500;
+    --secondary-color-500: #ff9900;
+    --secondary-color-600: #e68a00;
+    --secondary-color-700: #cc7a00;
+    --secondary-color-800: #b36b00;
+    --secondary-color-900: #8f4f00;
+    --secondary-color-1000: #663300;
+    --secondary-color-1100: #4d2600;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-color-start: #141414;
-    --background-color-end: #000000;
-    --popup-background-color: #000;
-    --header-background-color: #050505;
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-color-start: #141414;
+        --background-color-end: #000000;
+        --popup-background-color: #000;
+        --header-background-color: #050505;
 
-    --shadow-color-start: rgba(255, 255, 255, 0.1);
-    --shadow-color-end: rgba(255, 255, 255, 0.6);
-  }
+        --shadow-color-start: rgba(255, 255, 255, 0.1);
+        --shadow-color-end: rgba(255, 255, 255, 0.6);
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-          to bottom,
-          transparent,
-          var(--background-color-end)
-  )
-  var(--background-color-start);
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--background-color-end)
+    ) var(--background-color-start);
+    width: 100vw;
+    height: 100vh;
 }

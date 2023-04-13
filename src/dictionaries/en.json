@@ -1,0 +1,21 @@
+{
+  "waitlist": {
+    "title": "Turistikrota",
+    "subtitle": "Coming Soon",
+    "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
+    "enter_email": "Enter your email",
+    "email": "Email Address",
+    "join_waitlist": "Join Waitlist",
+    "img": "/img/en.svg",
+    "email_invalid": "Please enter a valid email address",
+    "email_required": "Please enter your email address",
+    "meta": {
+      "title": "Turistikrota",
+      "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
+      "keywords": "Turistikrota, turistikrota, waitlist, coming soon, beta, website"
+    }
+  },
+  "copyright": {
+    "text": "Turistikrota. All Rights Reserved."
+  }
+}
