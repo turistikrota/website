@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update docker deployment">
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: re-update docker deployment">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -116,7 +116,7 @@
       <workItem from="1681389047690" duration="11993000" />
       <workItem from="1681414260001" duration="1114000" />
       <workItem from="1681418299405" duration="5000" />
-      <workItem from="1681422421660" duration="4244000" />
+      <workItem from="1681422421660" duration="4659000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -230,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681428624616</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="project: re-update docker deployment">
+      <created>1681429451219</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429451219</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +259,7 @@
     <MESSAGE value="project: add google analytics" />
     <MESSAGE value="project: update pages and validations" />
     <MESSAGE value="project: update docker deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: update docker deployment" />
+    <MESSAGE value="project: re-update docker deployment" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: re-update docker deployment" />
   </component>
 </project>
