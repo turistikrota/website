@@ -25,4 +25,4 @@ jobs:
             git pull origin main
             docker rm -f turistikrota.com
             docker build -t turistikrota.com .
-            docker run -p 3000:3000 -t turistikrota.com -d
+            docker run -d -p 3000:3000 -t turistikrota.com
