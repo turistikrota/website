@@ -61,6 +61,8 @@ export default async function Home({ params: { lang } }: Props) {
                       submit={dictionary.waitlist.join_waitlist}
                       emailInvalid={dictionary.waitlist.email_invalid}
                       emailRequired={dictionary.waitlist.email_required}
+                      error={dictionary.waitlist.messages.error}
+                      success={dictionary.waitlist.messages.success}
                     />
                   </div>
                 </div>

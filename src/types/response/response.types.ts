@@ -1,5 +1,5 @@
 export type BaseResponse = {
-  code: number;
+  status: number;
   message: string;
 };
 
