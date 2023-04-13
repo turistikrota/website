@@ -1,0 +1,28 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        env:
+          DIR: ${{ secrets.DIR }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          envs: DIR
+          script: |
+            cd $DIR
+            git pull origin main
+            docker rm -f turistikrota.com
+            docker build -t turistikrota.com .
+            docker run -p 3000:3000 -t turistikrota.com
