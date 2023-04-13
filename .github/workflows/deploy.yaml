@@ -23,6 +23,6 @@ jobs:
           script: |
             cd $DIR
             git pull origin main
-            docker rm -f turistikrota.com
+            docker rm -f turistikrota-web
             docker build -t turistikrota.com .
-            docker run -d -p 3000:3000 -t turistikrota.com --name turistikrota.com
+            docker run -d -p 3000:3000 -t turistikrota.com --name turistikrota-web
