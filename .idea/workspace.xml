@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update deployment configuration">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
+    <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: update deployment script">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +116,7 @@
       <workItem from="1681389047690" duration="11993000" />
       <workItem from="1681414260001" duration="1114000" />
       <workItem from="1681418299405" duration="5000" />
-      <workItem from="1681422421660" duration="1103000" />
+      <workItem from="1681422421660" duration="1843000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -201,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681423667179</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="project: update deployment script">
+      <created>1681423806677</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681423806677</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +227,7 @@
     <MESSAGE value="project: update waitlist page" />
     <MESSAGE value="project: add deployment configuration" />
     <MESSAGE value="project: update deployment configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="project: update deployment configuration" />
+    <MESSAGE value="project: update deployment script" />
+    <option name="LAST_COMMIT_MESSAGE" value="project: update deployment script" />
   </component>
 </project>
