@@ -11,7 +11,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@master
         env:
           DIR: ${{ secrets.DIR }}
         with:
