@@ -75,7 +75,7 @@ export default async function Home({ params: { lang } }: Props) {
               <div className="mt-12 hidden lg:block">
                 <Image
                   src={dictionary.waitlist.img}
-                  alt=""
+                  alt={dictionary.waitlist.img_alt}
                   width={500}
                   height={500}
                 />

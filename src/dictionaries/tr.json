@@ -8,6 +8,7 @@
     "email": "E-posta",
     "join_waitlist": "Katıl",
     "img": "/img/tr.svg",
+    "img_alt": "Turistikrota banner",
     "email_invalid": "Geçersiz e-posta adresi",
     "email_required": "E-posta adresi gereklidir",
     "messages": {
@@ -21,9 +22,9 @@
       }
     },
     "meta": {
-      "title": "Turistikrota",
-      "description": "Web Sitemiz yakında hizmete açılacaktır. Herkese açık hale gelmeden önce betayı denemek için bekleme listesine katılın.",
-      "keywords": "Turistikrota, turistik rota, turistik, rota, turizm, turistik rota nedir, turistik rota ne demek, turistik rota ne anlama gelir"
+      "title": "Turistik Rota | Tatil Planlama | Tur Rezervasyonu",
+      "description": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
+      "keywords": "Tatil planlama, gezi önerileri, seyahat rehberi, turistik rotalar, keşfedilmemiş yerler, Yurt içi tatil, Yurt dışı tatil, Kültür turizmi, Doğa turizmi, Şehir turizmi, Macera turizmi, Aile tatili, Romantik tatil, Deniz tatili"
     }
   },
   "copyright": {

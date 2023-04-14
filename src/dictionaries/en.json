@@ -8,6 +8,7 @@
     "email": "Email Address",
     "join_waitlist": "Join Waitlist",
     "img": "/img/en.svg",
+    "img_alt": "Turistikrota banner",
     "email_invalid": "Please enter a valid email address",
     "email_required": "Please enter your email address",
     "messages": {
@@ -21,9 +22,9 @@
       }
     },
     "meta": {
-      "title": "Turistikrota",
-      "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
-      "keywords": "Turistikrota, turistikrota, waitlist, coming soon, beta, website"
+      "title": "Touristic Route | Vacation Planning | Tour Booking",
+      "description": "Touristic Route is a website that specializes in vacation planning, travel advice, unexplored routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Follow our site for accommodation options, tour bookings and guidance on travel matters!",
+      "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
     }
   },
   "copyright": {
