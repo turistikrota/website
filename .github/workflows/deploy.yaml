@@ -24,6 +24,6 @@ jobs:
             cd $DIR
             git checkout main
             git pull origin main
-            docker rm -f $(docker ps -f ancestor=turistikrota.com -q)
-            docker build -t turistikrota.com .
-            docker run -d -p 3000:3000 -t turistikrota.com
+            docker build -t turistikrota-web .
+            docker rm -f turistikrota-web
+            docker run -d --name turistikrota-web -p 3000:3000 turistikrota-web
