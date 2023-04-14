@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d81f8219-4bc0-49e4-a005-e9600e3c6cb1" name="Changes" comment="project: complete docker deployment">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[lang]/components/WaitlistForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[lang]/components/WaitlistForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/alert/Alert.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/alert/Alert.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +117,7 @@
       <workItem from="1681389047690" duration="11993000" />
       <workItem from="1681414260001" duration="1114000" />
       <workItem from="1681418299405" duration="5000" />
-      <workItem from="1681422421660" duration="4755000" />
+      <workItem from="1681422421660" duration="5225000" />
     </task>
     <task id="LOCAL-00001" summary="project: initial setup">
       <created>1680489283713</created>
@@ -243,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681429869692</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="project: complete docker deployment">
+      <created>1681429967607</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429967608</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

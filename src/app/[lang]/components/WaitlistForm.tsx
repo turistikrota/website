@@ -80,11 +80,7 @@ const WaitlistForm: React.FC<Params> = ({
         </>
       </Alert>
       {(loading || !alertVisible || error !== null || result === null) && (
-        <form
-          method="POST"
-          onSubmit={onSubmit}
-          className="sm:mx-auto sm:max-w-xl lg:mx-0"
-        >
+        <form method="POST" onSubmit={onSubmit} className="sm:mx-auto lg:mx-0">
           <div className="sm:flex">
             <div className="min-w-0 flex-1">
               <label htmlFor="email" className="sr-only">

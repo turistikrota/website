@@ -34,11 +34,11 @@ const Styles: Record<AlertType, string> = {
 };
 
 const Title: React.FC<BaseProps> = ({ children }) => {
-  return <p className="font-bold">{children}</p>;
+  return <p className="font-bold text-left">{children}</p>;
 };
 
 const Description: React.FC<BaseProps> = ({ children }) => {
-  return <p className="text-sm">{children}</p>;
+  return <p className="text-sm text-left">{children}</p>;
 };
 
 const Alert: Alert = ({
