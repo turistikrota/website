@@ -3,6 +3,7 @@ import { Locale } from "~/i18n-config";
 import Image from "next/image";
 import { Metadata } from "next";
 import WaitlistForm from "~/app/[lang]/components/WaitlistForm";
+import Link from "next/link";
 
 type Props = {
   params: { lang: Locale };
@@ -87,20 +88,24 @@ export default async function Home({ params: { lang } }: Props) {
       <footer className="">
         <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
           <div className="mt-8 flex justify-center space-x-6">
-            <a
-              href="https://twitter.com/web3templates"
+            <Link
+              href="https://twitter.com/turistikrota"
+              title="Turistikrota Twitter"
               className="text-gray-400 hover:text-gray-500"
+              target="_blank"
             >
               <span className="sr-only">Twitter</span>
               <i className="bx bx-sm bxl-twitter"></i>
-            </a>
-            <a
-              href="https://github.com/web3templates"
+            </Link>
+            <Link
+              href="https://instagram.com/turistikrota"
+              title="Turistikrota Instagram"
               className="text-gray-400 hover:text-gray-500"
+              target="_blank"
             >
               <span className="sr-only">Instagram</span>
               <i className="bx bx-sm bxl-instagram"></i>
-            </a>
+            </Link>
           </div>
           <p className="mt-8 text-center text-base text-gray-400">
             © {new Date().getFullYear()} {dictionary.copyright.text}
