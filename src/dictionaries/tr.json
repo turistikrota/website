@@ -7,7 +7,7 @@
     "enter_email": "E-posta adresinizi girin",
     "email": "E-posta",
     "join_waitlist": "Katıl",
-    "img": "/img/tr.svg",
+    "img": "https://cdn.turistikrota.com/img/coming-soon.tr.svg",
     "img_alt": "Turistikrota banner",
     "email_invalid": "Geçersiz e-posta adresi",
     "email_required": "E-posta adresi gereklidir",
