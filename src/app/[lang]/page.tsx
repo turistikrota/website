@@ -1,9 +1,9 @@
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import WaitlistForm from "~/app/[lang]/components/WaitlistForm";
 import { getDictionary } from "~/get-dictionary";
 import { Locale } from "~/i18n-config";
-import Image from "next/image";
-import { Metadata } from "next";
-import WaitlistForm from "~/app/[lang]/components/WaitlistForm";
-import Link from "next/link";
 
 type Props = {
   params: { lang: Locale };
@@ -16,10 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dictionary.waitlist.meta.description,
     keywords: dictionary.waitlist.meta.keywords,
     applicationName: "Turistikrota",
+    generator: "Turistikrota",
+    referrer: "origin-when-cross-origin",
     icons: [
       {
         rel: "icon",
-        url: "/img/default-logo-vertical.ico",
+        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
       },
     ],
     authors: [
@@ -28,7 +30,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: "https://turistikrota.com",
       },
     ],
-    robots: "index, follow",
+    metadataBase: new URL("https://turistikrota.com"),
+    alternates: {
+      languages: {
+        en: "/en",
+        tr: "/tr",
+      }
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      }
+    },
     viewport: "width=device-width, initial-scale=1",
   };
 }

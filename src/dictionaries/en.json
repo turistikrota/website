@@ -7,7 +7,7 @@
     "enter_email": "Enter your email",
     "email": "Email Address",
     "join_waitlist": "Join Waitlist",
-    "img": "/img/en.svg",
+    "img": "https://cdn.turistikrota.com/img/coming-soon.en.svg",
     "img_alt": "Turistikrota banner",
     "email_invalid": "Please enter a valid email address",
     "email_required": "Please enter your email address",
