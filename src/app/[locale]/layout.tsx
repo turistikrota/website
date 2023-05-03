@@ -1,21 +1,38 @@
-import { i18n } from "~/i18n-config";
-import "~/app/globals.css";
 import "boxicons/css/boxicons.min.css";
+import { Metadata } from "next";
+import { useLocale } from "next-intl";
+import { getTranslations } from 'next-intl/server';
 import Script from "next/script";
+import "~/app/globals.css";
+import NotFound from "./not-found";
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'tr'}];
+}
+
+type Props = {
+  children: React.ReactNode;
+  params: {locale: string};
+}
+
+export async function generateMetadata() : Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: "test"
+  }
 }
 
 export default function Root({
   children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { lang: string };
-}) {
+  params
+}:Props) {
+  const locale = useLocale();
+
+  if (params.locale !== locale) {
+    NotFound();
+  }
   return (
-    <html lang={params.lang}>
+    <html lang={locale}>
       <body>
         {children}
         <Script
