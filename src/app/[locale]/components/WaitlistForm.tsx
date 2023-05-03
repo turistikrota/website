@@ -1,37 +1,16 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
-import { BaseResponse } from "~/types/response/response.types";
-import { usePost } from "~/hooks/http/request";
 import { useFormik } from "formik";
+import { useTranslations } from "next-intl";
+import { FormEvent, useState } from "react";
 import * as Yup from "yup";
-import Spin from "~/components/spin/Spin";
 import Alert from "~/components/alert/Alert";
+import Spin from "~/components/spin/Spin";
+import { usePost } from "~/hooks/http/request";
+import { BaseResponse } from "~/types/response/response.types";
 
-type AlertTexts = {
-  title: string;
-  description: string;
-};
-
-type Params = {
-  label: string;
-  placeholder: string;
-  submit: string;
-  emailInvalid: string;
-  emailRequired: string;
-  error: AlertTexts;
-  success: AlertTexts;
-};
-
-const WaitlistForm: React.FC<Params> = ({
-  label,
-  placeholder,
-  submit,
-  emailRequired,
-  emailInvalid,
-  error: errorText,
-  success: successText,
-}) => {
+export default function WaitlistForm () {
+  const t = useTranslations("waitlist");
   const [alertVisible, setAlertVisible] = useState<boolean>(true);
   const [result, setResult] = useState<BaseResponse | null>(null);
   const [loading, dispatch, error] = usePost<{ email: string }, BaseResponse>(
@@ -43,7 +22,7 @@ const WaitlistForm: React.FC<Params> = ({
       email: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email(emailInvalid).required(emailRequired),
+      email: Yup.string().email(t('email_invalid')).required(t('email_required')),
     }),
     onSubmit: (values) => {
       dispatch(setResult, null, values);
@@ -62,8 +41,8 @@ const WaitlistForm: React.FC<Params> = ({
         show={!loading && alertVisible && error === null && result !== null}
       >
         <>
-          <Alert.Title>{successText.title}</Alert.Title>
-          <Alert.Description>{successText.description}</Alert.Description>
+          <Alert.Title>{t('messages.success.title')}</Alert.Title>
+          <Alert.Description>{t('messages.success.description')}</Alert.Description>
         </>
       </Alert>
       <Alert
@@ -73,9 +52,9 @@ const WaitlistForm: React.FC<Params> = ({
         className="mb-2 mt-2"
       >
         <>
-          <Alert.Title>{errorText.title}</Alert.Title>
+          <Alert.Title>{t('messages.error.title')}</Alert.Title>
           <Alert.Description>
-            {error?.message || errorText.description}
+            {error?.message || t('messages.error.description')}
           </Alert.Description>
         </>
       </Alert>
@@ -84,12 +63,12 @@ const WaitlistForm: React.FC<Params> = ({
           <div className="sm:flex">
             <div className="min-w-0 flex-1">
               <label htmlFor="email" className="sr-only">
-                {label}
+                {t('email')}
               </label>
               <input
                 id="email"
                 type="email"
-                placeholder={placeholder}
+                placeholder={t('enter_email')}
                 className="block w-full rounded-md border-0 bg-gray-200 px-4 py-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 value={form.values.email}
                 onChange={form.handleChange}
@@ -105,7 +84,7 @@ const WaitlistForm: React.FC<Params> = ({
                 type="submit"
                 className="block w-full rounded-md bg-primary-400 hover:bg-primary-300 py-3 px-4 font-medium text-white shadow focus:outline-none transition duration-150 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
-                {submit}
+                {t('join_waitlist')}
               </button>
             </div>
           </div>
@@ -114,5 +93,3 @@ const WaitlistForm: React.FC<Params> = ({
     </Spin>
   );
 };
-
-export default WaitlistForm;

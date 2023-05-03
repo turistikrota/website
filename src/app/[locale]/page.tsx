@@ -1,57 +1,19 @@
 import { Metadata } from "next";
+import { NextIntlClientProvider, useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
-import WaitlistForm from "~/app/[lang]/components/WaitlistForm";
-import { getDictionary } from "~/get-dictionary";
-import { Locale } from "~/i18n-config";
+import WaitlistForm from "./components/WaitlistForm";
 
-type Props = {
-  params: { lang: Locale };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang);
-  return {
-    title: dictionary.waitlist.meta.title,
-    description: dictionary.waitlist.meta.description,
-    keywords: dictionary.waitlist.meta.keywords,
-    applicationName: "Turistikrota",
-    generator: "Turistikrota",
-    referrer: "origin-when-cross-origin",
-    icons: [
-      {
-        rel: "icon",
-        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
-      },
-    ],
-    authors: [
-      {
-        name: "Turistikrota",
-        url: "https://turistikrota.com",
-      },
-    ],
-    metadataBase: new URL("https://turistikrota.com"),
-    alternates: {
-      languages: {
-        en: "/en",
-        tr: "/tr",
-      }
-    },
-    robots: {
-      index: true,
-      follow: true,
-      nocache: true,
-      googleBot: {
-        index: true,
-        follow: true,
-      }
-    },
-    viewport: "width=device-width, initial-scale=1",
-  };
+export async function generateMetadata(): Promise<Metadata> {
+  return {};
 }
 
-export default async function Home({ params: { lang } }: Props) {
-  const dictionary = await getDictionary(lang);
+export default async function Home() {
+  const t = await getTranslations("waitlist");
+  const locale = useLocale();
+  const messages = (await import(`~/messages/${locale}.json`))
+  .default;
   // @ts-ignore
   return (
     <>
@@ -64,38 +26,32 @@ export default async function Home({ params: { lang } }: Props) {
                   <h1 className="mt-4 text-4xl font-bold tracking-tight sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <div>
                       <span className="text-secondary-400 dark:text-secondary-500">
-                        {dictionary.waitlist.title1}
+                        {t('title1')}
                       </span>
                       <span className="text-primary-200 dark:text-primary-300">
-                        {dictionary.waitlist.title2}
+                        {t('title2')}
                       </span>
                     </div>
                     <span className="block">
-                      {dictionary.waitlist.subtitle}
+                      {t('subtitle')}
                     </span>
                   </h1>
                   <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                    {dictionary.waitlist.description}
+                    {t('description')}
                   </p>
                   <div className="mt-10 sm:mt-12">
-                    <WaitlistForm
-                      label={dictionary.waitlist.email}
-                      placeholder={dictionary.waitlist.enter_email}
-                      submit={dictionary.waitlist.join_waitlist}
-                      emailInvalid={dictionary.waitlist.email_invalid}
-                      emailRequired={dictionary.waitlist.email_required}
-                      error={dictionary.waitlist.messages.error}
-                      success={dictionary.waitlist.messages.success}
-                    />
+                    <NextIntlClientProvider locale={locale} messages={messages}>
+                    <WaitlistForm />
+                    </NextIntlClientProvider>
                   </div>
                 </div>
               </div>
-              <div className="mt-12 hidden lg:block">
+              <div className="mt-12 hidden lg:flex justify-center">
                 <Image
-                  src={dictionary.waitlist.img}
-                  alt={dictionary.waitlist.img_alt}
-                  width={500}
-                  height={500}
+                  src={t('img')}
+                  alt={t('img_alt')}
+                  width={300}
+                  height={200}
                 />
               </div>
             </div>
@@ -125,7 +81,7 @@ export default async function Home({ params: { lang } }: Props) {
             </Link>
           </div>
           <p className="mt-8 text-center text-base text-gray-400">
-            © {new Date().getFullYear()} {dictionary.copyright.text}
+            © {new Date().getFullYear()} {t('copyright')}
           </p>
         </div>
       </footer>
