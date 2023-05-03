@@ -21,16 +21,23 @@
             "description": "Something went wrong. Please try again later."
           }
         },
-        "meta": {
-          "title": "Turistik Rota | Vacation Planning | Tour Booking",
-          "description": "Turistik Rota is a website that specializes in vacation planning, travel advice, unexplored routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Follow our site for accommodation options, tour bookings and guidance on travel matters!",
-          "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
-        },
         "copyright": "Turistikrota. All Rights Reserved."
     }, 
   "notfound": {
     "title": "Something's missing.",
     "subtitle": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
-    "button": "Back to Homepage"
+    "button": "Back to Homepage",
+    "meta": {
+      "title": "404 | Turistik Rota",
+      "description": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
+      "keywords": "404, Not Found, Page Not Found, Turistik Rota"
+    }
+  },
+  "base": {
+    "meta": {
+      "title": "Turistik Rota | Vacation Planning | Tour Booking",
+      "description": "Turistik Rota is a website that specializes in vacation planning, travel advice, unexplored routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Follow our site for accommodation options, tour bookings and guidance on travel matters!",
+      "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
+    }
   }
 }

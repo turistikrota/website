@@ -6,44 +6,7 @@ import Link from "next/link";
 import WaitlistForm from "./components/WaitlistForm";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("waitlist");
-  return {
-    title: t('meta.title'),
-    description: t('meta.description'),
-    keywords: t('meta.keywords'),
-    applicationName: "Turistikrota",
-    generator: "Turistikrota",
-    referrer: "origin-when-cross-origin",
-    icons: [
-      {
-        rel: "icon",
-        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
-      },
-    ],
-    authors: [
-      {
-        name: "Turistikrota",
-        url: "https://turistikrota.com",
-      },
-    ],
-    metadataBase: new URL("https://turistikrota.com"),
-    alternates: {
-      languages: {
-        en: "/en",
-        tr: "/tr",
-      }
-    },
-    robots: {
-      index: true,
-      follow: true,
-      nocache: true,
-      googleBot: {
-        index: true,
-        follow: true,
-      }
-    },
-    viewport: "width=device-width, initial-scale=1",
-  };
+  return {};
 }
 
 export default async function Home() {

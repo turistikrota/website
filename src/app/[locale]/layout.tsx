@@ -6,19 +6,49 @@ import Script from "next/script";
 import "~/app/globals.css";
 import NotFound from "./not-found";
 
-export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'tr'}];
-}
-
 type Props = {
   children: React.ReactNode;
   params: {locale: string};
 }
 
 export async function generateMetadata() : Promise<Metadata> {
-  const t = await getTranslations();
+  const t = await getTranslations("base");
   return {
-    title: "test"
+    title: t('meta.title'),
+    description: t('meta.description'),
+    keywords: t('meta.keywords'),
+    applicationName: "Turistikrota",
+    generator: "Turistikrota",
+    referrer: "origin-when-cross-origin",
+    icons: [
+      {
+        rel: "icon",
+        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
+      },
+    ],
+    authors: [
+      {
+        name: "Turistikrota",
+        url: "https://turistikrota.com",
+      },
+    ],
+    metadataBase: new URL("https://turistikrota.com"),
+    alternates: {
+      languages: {
+        en: "/en",
+        tr: "/tr",
+      }
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      }
+    },
+    viewport: "width=device-width, initial-scale=1",
   }
 }
 

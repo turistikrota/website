@@ -21,16 +21,23 @@
             "description": "E-posta adresiniz kaydedilemedi."
           }
         },
-        "meta": {
-          "title": "Turistik Rota | Tatil Planlama | Tur Rezervasyonu",
-          "description": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
-          "keywords": "Tatil planlama, gezi önerileri, seyahat rehberi, turistik rotalar, keşfedilmemiş yerler, Yurt içi tatil, Yurt dışı tatil, Kültür turizmi, Doğa turizmi, Şehir turizmi, Macera turizmi, Aile tatili, Romantik tatil, Deniz tatili"
-        },
         "copyright": "Turistikrota. Tüm hakları saklıdır."
     }, 
   "notfound": {
     "title": "Bir şey eksik.",
     "subtitle": "Üzgünüz, o sayfayı bulamıyoruz. Ana sayfada keşfedilecek çok şey bulacaksınız.",
-    "button": "Ana Sayfaya Dön"
+    "button": "Ana Sayfaya Dön",
+    "meta": {
+      "title": "404 - Sayfa Bulunamadı",
+      "description": "Üzgünüz, o sayfayı bulamıyoruz. Ana sayfada keşfedilecek çok şey bulacaksınız.",
+      "keywords": "404, Sayfa Bulunamadı, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    }
+  },
+  "base": {
+    "meta": {
+      "title": "Turistik Rota | Tatil Planlama | Tur Rezervasyonu",
+      "description": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
+      "keywords": "Tatil planlama, gezi önerileri, seyahat rehberi, turistik rotalar, keşfedilmemiş yerler, Yurt içi tatil, Yurt dışı tatil, Kültür turizmi, Doğa turizmi, Şehir turizmi, Macera turizmi, Aile tatili, Romantik tatil, Deniz tatili"
+    }
   }
 }
