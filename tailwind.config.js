@@ -77,6 +77,8 @@ module.exports = {
                 'fade-in-from-bottom': 'fadeIn 0.3s ease-out, inFromBottom 0.3s ease-out',
                 'fade-out-to-top': 'fadeOut 0.3s ease-out, outToTop 0.3s ease-out',
                 'fade-out-to-bottom': 'fadeOut 0.3s ease-out, outToBottom 0.3s ease-out',
+                'slide-down': 'inFromTop 0.3s ease-out, fadeIn 0.3s ease-out',
+                'slide-up': 'outToTop 0.3s ease-out, fadeOut 0.3s ease-out',
             },
             keyframes: {
                 inFromTop: {

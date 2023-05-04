@@ -8,6 +8,7 @@
     --background-color-end: rgb(255, 255, 255);
     --popup-background-color: #fff;
     --header-background-color: #fff;
+    --default-background: rgb(239, 244, 245);
 
     --shadow-color-start: rgba(0, 0, 0, 0.1);
     --shadow-color-end: rgba(0, 0, 0, 0.6);
@@ -44,9 +45,10 @@
     :root {
         --foreground-rgb: 255, 255, 255;
         --background-color-start: #141414;
-        --background-color-end: #000000;
-        --popup-background-color: #000;
+        --background-color-end: #121212;
+        --popup-background-color: #121212;
         --header-background-color: #050505;
+        --default-background: #0F0E0E;
 
         --shadow-color-start: rgba(255, 255, 255, 0.1);
         --shadow-color-end: rgba(255, 255, 255, 0.6);
@@ -55,11 +57,6 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            var(--background-color-end)
-    ) var(--background-color-start);
-    width: 100vw;
+    background: var(--default-background);
     height: 100vh;
 }

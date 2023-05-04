@@ -1,8 +1,9 @@
-import Link from "next/link";
+"use client";
 
-type Props = {
-    children: React.ReactNode;
-}
+import Link from "next/link";
+import { useState } from "react";
+import { useListener } from "~/hooks/dom/useListener";
+import { BaseProps } from "~/types/base";
 
 type HeaderProps = {
     className?: string;
@@ -12,7 +13,7 @@ type ClickableProps = {
     onClick?: () => void;
 }
 
-const Left = ({ children }: Props) => {
+const Left = ({ children }: BaseProps) => {
     return (
         <div className="flex items-center">
             {children}
@@ -20,19 +21,19 @@ const Left = ({ children }: Props) => {
     )
 }
 
-const Fill = ({ children, className }: Props & HeaderProps) => {
+const Fill = ({ children, className }: BaseProps & HeaderProps) => {
     return <div className={`flex items-center flex-grow ${className}`}>
         {children}
     </div>
 }
 
-const Right = ({ children }: Props) => {
+const Right = ({ children }: BaseProps) => {
     return <div className="flex items-center">
         {children}
     </div>
 }
 
-const Logo = ({ children }: Props) => {
+const Logo = ({ children }: BaseProps) => {
     return (
         <div className="flex items-center">
             <Link href={"/"} className={"flex items-center"}>
@@ -44,15 +45,21 @@ const Logo = ({ children }: Props) => {
     )
 }
 
-const Avatar = ({ children, onClick }: Props & ClickableProps) => {
+const Avatar = ({ children, onClick }: BaseProps & ClickableProps) => {
     return <button onClick={onClick} className="p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-100 rounded-full hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700">
         {children}
     </button>
 }
 
-function MobileHeader({children} : Props) {
+function MobileHeader({children} : BaseProps) {
+    const [isFixed, setIsFixed] = useState(false);
+
+    useListener("scroll", () => {
+        setIsFixed(window.scrollY >= 64);
+    });
+    
     return (
-        <header className="fixed top-0 left-0 z-10 w-full h-16 bg-header border-b border-gray-200 dark:border-gray-800">
+        <header className={`backdrop-saturate-200 backdrop-blur-sm w-full h-16 border-b border-gray-200 dark:border-gray-800 ${isFixed && 'fixed top-0 left-0 z-10 animate-slide-down'}`}>
             <div className="flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
                 {children}
             </div>
