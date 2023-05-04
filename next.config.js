@@ -8,7 +8,15 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn.turistikrota.com"]
-  }
+  },
+  rewrites() {
+    return [
+      {
+        source: '/tr/hakkimizda',
+        destination: '/tr/about-us'
+      }
+    ]
+  },
 };
 
 module.exports = withNextIntl(nextConfig)

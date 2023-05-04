@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
 }
 
 type HeaderProps = {
-    children: [React.ReactNode, React.ReactNode];
+    className?: string;
 }
 
 type ClickableProps = {
@@ -19,6 +18,12 @@ const Left = ({ children }: Props) => {
             {children}
         </div>
     )
+}
+
+const Fill = ({ children, className }: Props & HeaderProps) => {
+    return <div className={`flex items-center flex-grow ${className}`}>
+        {children}
+    </div>
 }
 
 const Right = ({ children }: Props) => {
@@ -59,5 +64,6 @@ MobileHeader.Left = Left;
 MobileHeader.Right = Right;
 MobileHeader.Logo = Logo;
 MobileHeader.Avatar = Avatar;
+MobileHeader.Fill = Fill;
 
 export default MobileHeader;
