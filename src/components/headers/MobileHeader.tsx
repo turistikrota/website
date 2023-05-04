@@ -55,7 +55,8 @@ function MobileHeader({children} : BaseProps) {
     const [isFixed, setIsFixed] = useState(false);
 
     useListener("scroll", () => {
-        setIsFixed(window.scrollY >= 64);
+        let checkPoint = isFixed ? 64 : 120;
+        setIsFixed(window.scrollY >= checkPoint);
     });
     
     return (

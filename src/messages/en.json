@@ -1,8 +1,8 @@
 {
     "waitlist": {
-        "title1": "Turistik",
-        "title2": "rota",
-        "subtitle": "Coming Soon",
+        "title1": "Coming",
+        "title2": "Soon",
+        "subtitle": "We will be ready",
         "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
         "enter_email": "Enter your email",
         "email": "Email Address",
@@ -20,8 +20,7 @@
             "title": "Oops!",
             "description": "Something went wrong. Please try again later."
           }
-        },
-        "copyright": "Turistikrota. All Rights Reserved."
+        }
     }, 
   "notfound": {
     "title": "Something's missing.",
@@ -38,6 +37,17 @@
       "title": "Turistik Rota | Vacation Planning | Tour Booking",
       "description": "Turistik Rota is a website that specializes in vacation planning, travel advice, unexplored routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Follow our site for accommodation options, tour bookings and guidance on travel matters!",
       "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
+    }
+  },
+  "footer": {
+    "copyright": "Turistikrota. All Rights Reserved."
+  },
+  "header": {
+    "left": {
+      "promotion": "Real tourism experience coming soon!"
+    },
+    "links": {
+      "aboutUs": "About Us"
     }
   }
 }

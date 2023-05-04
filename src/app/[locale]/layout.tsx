@@ -1,14 +1,12 @@
 import "boxicons/css/boxicons.min.css";
 import { Metadata } from "next";
-import { useLocale } from "next-intl";
+import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from 'next-intl/server';
 import Script from "next/script";
 import "~/app/globals.css";
-import NotFound from "./not-found";
 
 type Props = {
   children: React.ReactNode;
-  params: {locale: string};
 }
 
 export async function generateMetadata() : Promise<Metadata> {
@@ -52,19 +50,18 @@ export async function generateMetadata() : Promise<Metadata> {
   }
 }
 
-export default function Root({
-  children,
-  params
+export default async function Root({
+  children
 }:Props) {
   const locale = useLocale();
-
-  if (params.locale !== locale) {
-    NotFound();
-  }
+  const messages = (await import(`~/messages/${locale}.json`))
+  .default;
   return (
     <html lang={locale}>
       <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
+        </NextIntlClientProvider>
         <Script
           async={true}
           src="https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B"

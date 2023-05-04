@@ -1,3 +1,4 @@
+import BasicFooter from "~/components/footers/BasicFooter";
 import DefaultHeader from "~/components/headers/DefaultHeader";
 
 type Props = {
@@ -7,8 +8,9 @@ type Props = {
 export default function DefaultLayout({ children }: Props) {
     return <>
         <DefaultHeader></DefaultHeader>
-        <main className="pt-16 h-full w-full">
+        <main>
             {children}
         </main>
+        <BasicFooter></BasicFooter>
     </>
 }

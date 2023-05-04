@@ -1,4 +1,5 @@
 const withNextIntl = require('next-intl/plugin')();
+const rewrites = require("./router.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,12 +11,7 @@ const nextConfig = {
     domains: ["cdn.turistikrota.com"]
   },
   rewrites() {
-    return [
-      {
-        source: '/tr/hakkimizda',
-        destination: '/tr/about-us'
-      }
-    ]
+    return rewrites
   },
 };
 
