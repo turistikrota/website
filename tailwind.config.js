@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    mode: 'jit',
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx}',
         './src/components/**/*.{js,ts,jsx,tsx}',
@@ -51,6 +52,7 @@ module.exports = {
             backgroundColor: {
                 'popup': 'var(--popup-background-color)',
                 'header': 'var(--header-background-color)',
+                'second': 'var(--second-background-color)',
             },
             boxShadow: {
                 'top': '0 -1px 3px 0 var(--shadow-color-start), 0 -4px 8px 3px var(--shadow-color-end)',

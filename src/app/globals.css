@@ -10,6 +10,8 @@
     --header-background-color: #fff;
     --default-background: rgb(239, 244, 245);
 
+    --second-background-color: #fff;
+
     --shadow-color-start: rgba(0, 0, 0, 0.1);
     --shadow-color-end: rgba(0, 0, 0, 0.6);
 
@@ -49,6 +51,7 @@
         --popup-background-color: #121212;
         --header-background-color: #050505;
         --default-background: #0F0E0E;
+        --second-background-color: #121212;
 
         --shadow-color-start: rgba(255, 255, 255, 0.1);
         --shadow-color-end: rgba(255, 255, 255, 0.6);
