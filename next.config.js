@@ -6,6 +6,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["cdn.turistikrota.com"]
+  }
 };
 
 module.exports = withNextIntl(nextConfig)

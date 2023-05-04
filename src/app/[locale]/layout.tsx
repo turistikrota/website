@@ -23,7 +23,7 @@ export async function generateMetadata() : Promise<Metadata> {
     icons: [
       {
         rel: "icon",
-        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
+        url: "https://cdn.turistikrota.com/logo/mini.ico",
       },
     ],
     authors: [
