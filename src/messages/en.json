@@ -99,6 +99,26 @@
       "title": "It will be put into",
       "subtitle": "Service Soon!",
       "text": "Turistikrota is a platform that aims to provide you with the best and real tourism experience, see other people's tourism experiences, communicate with them, get to know popular touristic areas and be safe while doing all these."
+    },
+    "features": {
+      "title": "Why will it be great?",
+      "items": {
+        "network": {
+          "title": "Network",
+          "text": "Meet on a shared social platform with hotels, hosts, guides, tourists, tour companies and more."
+        },
+        "safe": {
+          "title": "Secure",
+          "text": "Turistikrota offers advanced security measures to ensure the safety of travelers and hosts."
+        },
+        "worldwide": {
+          "title": "Worldwide",
+          "text": "Turistikrota allows people from all over the world to interact with each other. Meet and travel with people all over the world."
+        }
+      }
+    },
+    "meta": {
+      
     }
   }
 }

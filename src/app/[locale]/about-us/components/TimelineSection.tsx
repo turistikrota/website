@@ -21,20 +21,20 @@ export default function TimelineSection() {
                 <i className='bx bx-sm bxs-devices text-white'></i>
                 </div>
             </div>
-            <hr className="z-10 absolute top-2/4 w-full bg-gray-200" />
+            <hr className="z-10 absolute top-2/4 w-full bg-gray-200 dark:bg-gray-500" />
         </div>
         <div className="grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
             <div>
-                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 mt-6">{t('founding.title')}</h3>
-                <p className="font-normal text-base leading-6 text-gray-600 mt-6">{t('founding.text')}</p>
+                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 dark:text-primary mt-6">{t('founding.title')}</h3>
+                <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-400 mt-6">{t('founding.text')}</p>
             </div>
             <div>
-                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 mt-6">{t('development.title')}</h3>
-                <p className="font-normal text-base leading-6 text-gray-600 mt-6">{t('development.text')}</p>
+                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 dark:text-primary mt-6">{t('development.title')}</h3>
+                <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-400 mt-6">{t('development.text')}</p>
             </div>
             <div className="sm:block hidden">
-                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 mt-6">{t('launch.title')}</h3>
-                <p className="font-normal text-base leading-6 text-gray-600 mt-6">{t('launch.text')}</p>
+                <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 dark:text-primary mt-6">{t('launch.title')}</h3>
+                <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-400 mt-6">{t('launch.text')}</p>
             </div>
         </div>
         <div className="sm:hidden block relative mt-8">
@@ -51,8 +51,8 @@ export default function TimelineSection() {
         </div>
         <div className="sm:hidden grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
             <div>
-            <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 mt-6">{t('launch.title')}</h3>
-                <p className="font-normal text-base leading-6 text-gray-600 mt-6">{t('launch.text')}</p>
+            <h3 className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 dark:text-primary mt-6">{t('launch.title')}</h3>
+                <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-400 mt-6">{t('launch.text')}</p>
             </div>
         </div>
     </section>

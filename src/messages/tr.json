@@ -99,6 +99,28 @@
       "title": "En yakın zamanda",
       "subtitle": "Hizmete Girecek!",
       "text": "Turistikrota en iyi ve gerçek turizm deneyimini yaşamanıza, diğer insanların turizm deneyimlerini görmenize, onlarla iletişime geçmenize, popüler turistik alanları tanımanıza ve bütün bunları yaparken güvende olmanızı sağlamayı amaçlayan bir platformdur."
+    },
+    "features": {
+      "title": "Neden harika olacak?",
+      "items": {
+        "network": {
+          "title": "Ağ",
+          "text": "Oteller, ev sahipleri, rehberler, turistler, tur şirketleri ve daha fazlası ile ortak bir sosyal platformda buluşun."
+        },
+        "safe": {
+          "title": "Güvenli",
+          "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
+        },
+        "worldwide": {
+          "title": "Dünya Çapında",
+          "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
+        }
+      }
+    },
+    "meta": {
+      "title": "Hakkımızda - Turistikrota",
+      "description": "Turistik Rota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur.",
+      "keywords": "turistikrota, turistik rota, hakkımızda, turistikrota hakkında, turistik rota hakkında"
     }
   }
 }
