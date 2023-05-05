@@ -46,6 +46,29 @@ export async function generateMetadata() : Promise<Metadata> {
         follow: true,
       }
     },
+    openGraph: {
+      title: t('meta.title'),
+      description: t('meta.description'),
+        type: "website",
+        url: "https://turistikrota.com",
+        images: [
+            {
+                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@turistikrota",
+        creator: "@turistikrota",
+        title: t('meta.title'),
+        description: t('meta.description'),
+        images: [
+            {
+                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
+            }
+        ],
+    },
     viewport: "width=device-width, initial-scale=1",
   }
 }
@@ -58,7 +81,7 @@ export default async function Root({
   .default;
   return (
     <html lang={locale}>
-      <body>
+      <body suppressHydrationWarning={true} >
         <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
         </NextIntlClientProvider>
