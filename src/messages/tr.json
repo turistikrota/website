@@ -60,6 +60,20 @@
         "founderAndDeveloper": "Kurucu & Yazılım Geliştirici"
       },
       "link": "{name}'ın {socialMedia} profili"
+    },
+    "timeline": {
+      "founding": {
+        "title": "Kurucu",
+         "text": "Turistik Rota, 2021 yılında seyahat etmeyi seven bir grup arkadaş tarafından kuruldu. Fikir, insanların tatillerini planlamalarına ve tur rezervasyonu yapmalarına yardımcı olacak bir web sitesi oluşturmaktı. Web sitesi şu anda geliştirme aşamasındadır ve yakında hizmete açılacaktır. ."
+      },
+      "development": {
+        "title": "Geliştirme",
+         "text": "Turistik Rota şu anda geliştirilme aşamasındadır. En kısa sürede kullanıma sunmak için yoğun bir şekilde çalışıyoruz. En kısa zamanda web sitesini yayına alacağız."
+      },
+      "launch": {
+        "title": "Başlat",
+         "text": "Turistik Rota yakında hizmete girecek. Tatil planlama, seyahat tavsiyeleri, keşfedilmemiş rotalar ve seyahat rehberliği sunacağız. Ayrıca tur rezervasyonları ve konaklama seçenekleri de sunacağız. Daha fazla bilgi için sitemizi takip edin!"
+      }
     }
   }
 }

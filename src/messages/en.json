@@ -60,6 +60,21 @@
         "founderAndDeveloper": "Founder & Software Developer"
       },
       "link": "{name}'s {socialMedia} profile"
+    },
+    "timeline": {
+      "title": "Our Story",
+      "founding": {
+        "title": "Founding",
+        "text": "Turistik Rota was founded in 2021 by a group of friends who love to travel. The idea was to create a website that would help people plan their vacations and book tours. The website is currently under development and will be launched soon."
+      },
+      "development": {
+        "title": "Development",
+        "text": "Turistik Rota is currently under development. We are working hard to make it available as soon as possible. We will be launching the website soon."
+      },
+      "launch": {
+        "title": "Launch",
+        "text": "Turistik Rota will be launched soon. We will be offering vacation planning, travel advice, unexplored routes and travel guidance. We will also be offering tour bookings and accommodation options. Follow our site for more information!"
+      }
     }
   }
 }
