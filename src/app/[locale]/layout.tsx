@@ -1,7 +1,7 @@
-import "boxicons/css/boxicons.min.css";
 import { Metadata } from "next";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from 'next-intl/server';
+import { Arimo } from 'next/font/google';
 import Script from "next/script";
 import "~/app/globals.css";
 
@@ -21,7 +21,7 @@ export async function generateMetadata() : Promise<Metadata> {
     icons: [
       {
         rel: "icon",
-        url: "https://cdn.turistikrota.com/logo/mini.ico",
+        url: "/favicon.ico",
       },
     ],
     authors: [
@@ -73,6 +73,12 @@ export async function generateMetadata() : Promise<Metadata> {
   }
 }
 
+const arimo = Arimo({
+  subsets: ["latin-ext"],
+  display: "swap",
+  preload: true,
+})
+
 export default async function Root({
   children
 }:Props) {
@@ -80,7 +86,7 @@ export default async function Root({
   const messages = (await import(`~/messages/${locale}.json`))
   .default;
   return (
-    <html lang={locale}>
+    <html lang={locale} className={arimo.className}>
       <body suppressHydrationWarning={true} >
         <NextIntlClientProvider locale={locale} messages={messages}>
         {children}

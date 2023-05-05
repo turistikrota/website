@@ -37,15 +37,17 @@ const MemberCard = (props: CardProps) => {
           />
         </div>
         <div className="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
-          <h5 className="text-lg font-bold mb-2">{props.fullName}</h5>
-          <p className="text-gray-500 mb-4">{props.avatarTitle}</p>
+          <h3 className="text-lg font-bold mb-2">{props.fullName}</h3>
+          <p className="text-gray-500 dark:text-gray-400 mb-4">{props.avatarTitle}</p>
           <ul className="list-inside flex mx-auto justify-center lg:justify-start">
             {props.social.map((social) => (
+              <li key={social.title}>
               <Link href={social.link} key={social.title} title={social.title}>
                 <span className="px-2 lg:pl-0 lg:pr-2">
                   <i className={`bx bx-sm ${social.icon} text-primary-600 hover:text-primary-400 transition-all duration-100`}></i>
                 </span>
               </Link>
+              </li>
             ))}
           </ul>
         </div>
