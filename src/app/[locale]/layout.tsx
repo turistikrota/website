@@ -1,14 +1,12 @@
-import "boxicons/css/boxicons.min.css";
 import { Metadata } from "next";
-import { useLocale } from "next-intl";
+import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from 'next-intl/server';
+import { Arimo } from 'next/font/google';
 import Script from "next/script";
 import "~/app/globals.css";
-import NotFound from "./not-found";
 
 type Props = {
   children: React.ReactNode;
-  params: {locale: string};
 }
 
 export async function generateMetadata() : Promise<Metadata> {
@@ -23,7 +21,7 @@ export async function generateMetadata() : Promise<Metadata> {
     icons: [
       {
         rel: "icon",
-        url: "https://cdn.turistikrota.com/default-logo-vertical.ico",
+        url: "/favicon.ico",
       },
     ],
     authors: [
@@ -48,23 +46,51 @@ export async function generateMetadata() : Promise<Metadata> {
         follow: true,
       }
     },
+    openGraph: {
+      title: t('meta.title'),
+      description: t('meta.description'),
+        type: "website",
+        url: "https://turistikrota.com",
+        images: [
+            {
+                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        site: "@turistikrota",
+        creator: "@turistikrota",
+        title: t('meta.title'),
+        description: t('meta.description'),
+        images: [
+            {
+                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
+            }
+        ],
+    },
     viewport: "width=device-width, initial-scale=1",
   }
 }
 
-export default function Root({
-  children,
-  params
+const arimo = Arimo({
+  subsets: ["latin-ext"],
+  display: "swap",
+  preload: true,
+})
+
+export default async function Root({
+  children
 }:Props) {
   const locale = useLocale();
-
-  if (params.locale !== locale) {
-    NotFound();
-  }
+  const messages = (await import(`~/messages/${locale}.json`))
+  .default;
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={arimo.className}>
+      <body suppressHydrationWarning={true} >
+        <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
+        </NextIntlClientProvider>
         <Script
           async={true}
           src="https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B"

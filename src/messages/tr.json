@@ -1,28 +1,27 @@
 {
-    "waitlist": {
-        "title1": "Turistik",
-        "title2": "rota",
-        "subtitle": "Çok Yakında",
-        "description": "Web Sitemiz yakında hizmete açılacaktır. Herkese açık hale gelmeden önce betayı denemek için bekleme listesine katılın.",
-        "enter_email": "E-posta adresinizi girin",
-        "email": "E-posta",
-        "join_waitlist": "Katıl",
-        "img": "https://cdn.turistikrota.com/img/coming-soon.tr.svg",
-        "img_alt": "Turistikrota banner",
-        "email_invalid": "Geçersiz e-posta adresi",
-        "email_required": "E-posta adresi gereklidir",
-        "messages": {
-          "success": {
-            "title": "Teşekkürler!",
-            "description": "E-posta adresiniz başarıyla bekleme listesine kaydedildi."
-          },
-          "error": {
-            "title": "Hata",
-            "description": "E-posta adresiniz kaydedilemedi."
-          }
-        },
-        "copyright": "Turistikrota. Tüm hakları saklıdır."
-    }, 
+  "waitlist": {
+    "title1": "Çok",
+    "title2": "Yakında",
+    "subtitle": "Hazır olacağız",
+    "description": "Web Sitemiz yakında hizmete açılacaktır. Herkese açık hale gelmeden önce betayı denemek için bekleme listesine katılın.",
+    "enter_email": "E-posta adresinizi girin",
+    "email": "E-posta",
+    "join_waitlist": "Katıl",
+    "img": "https://cdn.turistikrota.com/img/coming-soon.tr.svg",
+    "img_alt": "Turistikrota banner",
+    "email_invalid": "Geçersiz e-posta adresi",
+    "email_required": "E-posta adresi gereklidir",
+    "messages": {
+      "success": {
+        "title": "Teşekkürler!",
+        "description": "E-posta adresiniz başarıyla bekleme listesine kaydedildi."
+      },
+      "error": {
+        "title": "Hata",
+        "description": "E-posta adresiniz kaydedilemedi."
+      }
+    }
+  },
   "notfound": {
     "title": "Bir şey eksik.",
     "subtitle": "Üzgünüz, o sayfayı bulamıyoruz. Ana sayfada keşfedilecek çok şey bulacaksınız.",
@@ -38,6 +37,90 @@
       "title": "Turistik Rota | Tatil Planlama | Tur Rezervasyonu",
       "description": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
       "keywords": "Tatil planlama, gezi önerileri, seyahat rehberi, turistik rotalar, keşfedilmemiş yerler, Yurt içi tatil, Yurt dışı tatil, Kültür turizmi, Doğa turizmi, Şehir turizmi, Macera turizmi, Aile tatili, Romantik tatil, Deniz tatili"
+    }
+  },
+  "footer": {
+    "copyright": "Turistikrota. Tüm hakları saklıdır."
+  },
+  "header": {
+    "left": {
+      "promotion": "Gerçek turizm deneyimi çok yakında!"
+    },
+    "links": {
+      "aboutUs": "Hakkımızda"
+    }
+  },
+  "aboutUs": {
+    "team": {
+      "meetTheTeam": "Ekibimizi Tanıyın",
+      "avatar": "{name}'ın fotoğrafı",
+      "title": {
+        "founder": "Kurucu",
+        "developer": "Yazılım Geliştirici",
+        "founderAndDeveloper": "Kurucu & Yazılım Geliştirici"
+      },
+      "link": "{name}'ın {socialMedia} profili"
+    },
+    "timeline": {
+      "title": "Hikayemiz",
+      "founding": {
+        "title": "Kurulma",
+        "text": "Turistik Rota, 2023 yılının Şubat ayında seyahat etmeyi seven ve turistik bir bölgede yaşayan bir genç tarafından kuruldu. Fikir, insanların tatillerini planlamalarına, diğer insanların deneyimlerinden faydalanmalarına ve tur rezervasyonu yapmalarına yardımcı olacak bir web sitesi oluşturmaktı."
+      },
+      "development": {
+        "title": "Geliştirme",
+        "text": "Turistik Rota şu anda geliştirilme aşamasındadır. En kısa sürede kullanıma sunmak için yoğun bir şekilde çalışıyoruz. En kısa zamanda web sitesini yayına alacağız."
+      },
+      "launch": {
+        "title": "Başlat",
+        "text": "Turistik Rota yakında hizmete girecek. Tatil planlama, seyahat tavsiyeleri, keşfedilmemiş rotalar ve seyahat rehberliği sunacağız. Ayrıca tur rezervasyonları ve konaklama seçenekleri de sunacağız. Daha fazla bilgi için sitemizi takip edin!"
+      }
+    },
+    "ourVision": {
+      "title": "Vizyonumuz",
+      "p1": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
+      "p2": "Sitemiz, seyahat etmeyi seven insanlara çeşitli imkanlar sunarken aynı zamanda kullanıcıların deneyimlerini paylaşmalarına da olanak tanıyor. Konaklama seçenekleri, yerel turlar, doğa yürüyüşleri, gastronomi turları gibi aktivitelerimiz ziyaretçilerimizin tatil deneyimlerini daha keyifli hale getirirken aynı zamanda yerel halkla daha yakın etkileşim kurmalarını sağlıyor.",
+      "cards": {
+        "quality": {
+          "title": "Kalite",
+          "text": "Turizmde kalite, misafir memnuniyeti ile doğrudan ilişkilidir. Bizim vizyonumuz ise ziyaretçilerimize en yüksek kalitede hizmet sunmak ve unutulmaz bir tatil deneyimi yaşatmaktır. Bu nedenle, sürekli olarak işimizi geliştirmek, personelimizi eğitmek ve sektördeki en son trendleri takip etmek için çaba gösteriyoruz."
+        },
+        "experience": {
+          "title": "Deneyim",
+          "text": "Turizm deneyimi, ziyaretçilerin seyahat ettikleri yerlerdeki aktiviteler, kültür, tarih ve doğal güzelliklerle etkileşimleri sonucu edindikleri bir deneyimdir. Bu deneyim, ziyaretçilerin unutulmaz anılar biriktirmelerine ve farklı kültürleri tanımalarına yardımcı olur. Bizim amacımız ise ziyaretçilerimize bu deneyimi en üst düzeyde yaşatmak ve onların tatillerini unutulmaz bir anıya dönüştürmektir."
+        },
+        "social": {
+          "title": "Sosyal",
+          "text": "Turistikrota'da ziyaretçiler birbirleri ile etkileşime geçebilir, seyahat deneyimlerini paylaşabilir ve seyahat ile ilgili konularda bilgi alışverişinde bulunabilirler. Ayrıca, ziyaretçilerimiz seyahat etmeyi seven insanlar için bir topluluk oluşturabilirler."
+        }
+      }
+    },
+    "head": {
+      "title": "En yakın zamanda",
+      "subtitle": "Hizmete Girecek!",
+      "text": "Turistikrota en iyi ve gerçek turizm deneyimini yaşamanıza, diğer insanların turizm deneyimlerini görmenize, onlarla iletişime geçmenize, popüler turistik alanları tanımanıza ve bütün bunları yaparken güvende olmanızı sağlamayı amaçlayan bir platformdur."
+    },
+    "features": {
+      "title": "Neden harika olacak?",
+      "items": {
+        "network": {
+          "title": "Ağ",
+          "text": "Oteller, ev sahipleri, rehberler, turistler, tur şirketleri ve daha fazlası ile ortak bir sosyal platformda buluşun."
+        },
+        "safe": {
+          "title": "Güvenli",
+          "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
+        },
+        "worldwide": {
+          "title": "Dünya Çapında",
+          "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
+        }
+      }
+    },
+    "meta": {
+      "title": "Hakkımızda | Turistik Rota",
+      "description": "Turistik Rota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur.",
+      "keywords": "turistikrota, turistik rota, hakkımızda, turistikrota hakkında, turistik rota hakkında"
     }
   }
 }
