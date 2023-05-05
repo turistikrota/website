@@ -49,5 +49,17 @@
     "links": {
       "aboutUs": "About Us"
     }
+  },
+  "aboutUs": {
+    "team": {
+      "meetTheTeam": "Meet the Team",
+      "avatar": "{name}'s avatar",
+      "title": {
+        "founder": "Founder",
+        "developer": "Software Developer",
+        "founderAndDeveloper": "Founder & Software Developer"
+      },
+      "link": "{name}'s {socialMedia} profile"
+    }
   }
 }

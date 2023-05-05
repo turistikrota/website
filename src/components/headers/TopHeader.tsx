@@ -6,14 +6,14 @@ type Props = {
 
 const Left = ({ children }: BaseProps) => {
     return (
-        <div className="flex items-center text-xs gap-8 text-gray-300">
+        <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
             {children}
         </div>
     )
 }
 
 const Right = ({ children }: BaseProps) => {
-    return <div className="flex items-center text-xs gap-8 text-gray-300">
+    return <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
         {children}
     </div>
 }

@@ -49,5 +49,17 @@
     "links": {
       "aboutUs": "Hakkımızda"
     }
+  },
+  "aboutUs": {
+    "team": {
+      "meetTheTeam": "Ekibimizi Tanıyın",
+      "avatar": "{name}'ın fotoğrafı",
+      "title": {
+        "founder": "Kurucu",
+        "developer": "Yazılım Geliştirici",
+        "founderAndDeveloper": "Kurucu & Yazılım Geliştirici"
+      },
+      "link": "{name}'ın {socialMedia} profili"
+    }
   }
 }

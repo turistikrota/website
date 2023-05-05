@@ -8,7 +8,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["cdn.turistikrota.com"]
+    domains: ["cdn.turistikrota.com", "mdbootstrap.com"]
   },
   rewrites() {
     return rewrites

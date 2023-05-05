@@ -60,7 +60,7 @@ function MobileHeader({children} : BaseProps) {
     });
     
     return (
-        <header className={`backdrop-saturate-200 backdrop-blur-sm w-full h-16 border-b border-gray-200 dark:border-gray-800 ${isFixed && 'fixed top-0 left-0 z-10 animate-slide-down'}`}>
+        <header className={`backdrop-saturate-200 backdrop-blur-sm w-full h-16 border-b border-gray-200 dark:border-gray-800 ${isFixed && 'fixed top-0 left-0 z-30 animate-slide-down'}`}>
             <div className="flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
                 {children}
             </div>
