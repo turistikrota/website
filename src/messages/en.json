@@ -1,27 +1,27 @@
 {
-    "waitlist": {
-        "title1": "Coming",
-        "title2": "Soon",
-        "subtitle": "We will be ready",
-        "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
-        "enter_email": "Enter your email",
-        "email": "Email Address",
-        "join_waitlist": "Join Waitlist",
-        "img": "https://cdn.turistikrota.com/img/coming-soon.en.svg",
-        "img_alt": "Turistikrota banner",
-        "email_invalid": "Please enter a valid email address",
-        "email_required": "Please enter your email address",
-        "messages": {
-          "success": {
-            "title": "Thank you!",
-            "description": "You have successfully joined the waitlist."
-          },
-          "error": {
-            "title": "Oops!",
-            "description": "Something went wrong. Please try again later."
-          }
-        }
-    }, 
+  "waitlist": {
+    "title1": "Coming",
+    "title2": "Soon",
+    "subtitle": "We will be ready",
+    "description": "Our Website will launch soon. Join the waitlist to try the beta before its publicly available.",
+    "enter_email": "Enter your email",
+    "email": "Email Address",
+    "join_waitlist": "Join Waitlist",
+    "img": "https://cdn.turistikrota.com/img/coming-soon.en.svg",
+    "img_alt": "Turistikrota banner",
+    "email_invalid": "Please enter a valid email address",
+    "email_required": "Please enter your email address",
+    "messages": {
+      "success": {
+        "title": "Thank you!",
+        "description": "You have successfully joined the waitlist."
+      },
+      "error": {
+        "title": "Oops!",
+        "description": "Something went wrong. Please try again later."
+      }
+    }
+  },
   "notfound": {
     "title": "Something's missing.",
     "subtitle": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
@@ -65,7 +65,7 @@
       "title": "Our Story",
       "founding": {
         "title": "Founding",
-        "text": "Turistik Rota was founded in 2021 by a group of friends who love to travel. The idea was to create a website that would help people plan their vacations and book tours. The website is currently under development and will be launched soon."
+        "text": "Turistik Rota was founded in February 2023 by a young person who likes to travel and lives in a touristic area. The idea was to create a website that would help people plan their vacations, benefit from other people's experiences, and book tours."
       },
       "development": {
         "title": "Development",
@@ -74,6 +74,25 @@
       "launch": {
         "title": "Launch",
         "text": "Turistik Rota will be launched soon. We will be offering vacation planning, travel advice, unexplored routes and travel guidance. We will also be offering tour bookings and accommodation options. Follow our site for more information!"
+      }
+    },
+    "ourVision": {
+      "title": "Our Vision",
+      "p1": "Turistik Rota is a website specializing in vacation planning, travel suggestions, undiscovered routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Accommodation options, Follow our site for tour bookings and guidance on travel matters!",
+      "p2": "While our site offers various opportunities to people who love to travel, it also allows users to share their experiences. Our activities such as accommodation options, local tours, nature walks, gastronomic tours make the holiday experience of our visitors more enjoyable, while also enabling them to interact more closely with the local people.",
+      "cards": {
+        "quality": {
+          "title": "Quality",
+          "text": "Quality in tourism is directly related to guest satisfaction. Our vision is to provide our visitors with the highest quality service and an unforgettable holiday experience. Therefore, we strive to constantly improve our business, train our staff and follow the latest trends in the industry. "
+        },
+        "experience": {
+          "title": "Experience",
+          "text": "Tourism experience is an experience that visitors get as a result of their interaction with the activities, culture, history and natural beauties in the places they travel. This experience helps visitors to collect unforgettable memories and get to know different cultures. Our aim is to give our visitors the highest level of experience. and to turn their vacation into an unforgettable memory."
+        },
+        "social": {
+          "title": "Social",
+          "text": "In Turistikrota, visitors can interact with each other, share their travel experiences and exchange information on travel-related topics. Also, our visitors can create a community for people who love to travel."
+        }
       }
     }
   }
