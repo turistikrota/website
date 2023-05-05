@@ -26,7 +26,7 @@ const MemberCard = (props: CardProps) => {
   return <div className="mb-6 lg:mb-0 hover:shadow-lg transition-all duration-100">
     <div className="relative block rounded-lg shadow-lg bg-white dark:bg-second p-6">
       <div className="lg:flex flex-row items-center">
-        <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6">
+        <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6 flex justify-center sm:block">
           <Image
             src={props.avatar}
             alt={props.avatarAlt}
