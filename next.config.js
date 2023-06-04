@@ -3,10 +3,10 @@ const rewrites = require("./router.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  runtime: "edge",
   output: "standalone",
   experimental: {
     appDir: true,
+    runtime: "edge",
   },
   images: {
     domains: ["cdn.turistikrota.com", "mdbootstrap.com"],

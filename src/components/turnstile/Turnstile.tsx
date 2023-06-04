@@ -54,7 +54,12 @@ export default function Turnstile({
     // @ts-ignore
     window[names.unsupported] = onUnsupported;
   }, [
-    names,
+    names.callback,
+    names.error,
+    names.expire,
+    names.beforeInteractive,
+    names.afterInteractive,
+    names.unsupported,
     onAny,
     onError,
     onExpire,
