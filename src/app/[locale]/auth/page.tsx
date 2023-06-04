@@ -1,9 +1,12 @@
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
+import LoginForm from "./components/LoginForm";
 
 export default function AuthHome() {
+
   return (
     <section className="h-full">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-full lg:py-0">
@@ -39,6 +42,7 @@ export default function AuthHome() {
                 required
                 autoFocus
               />
+              <LoginForm />
 
               <Button>Sign In</Button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
