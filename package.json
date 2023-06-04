@@ -16,7 +16,7 @@
     "formik": "^2.2.9",
     "negotiator": "0.6.3",
     "next": "canary",
-    "next-intl": "^2.14.0-beta.3",
+    "next-intl": "2.15.0-beta.5",
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",

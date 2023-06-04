@@ -152,7 +152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl-localematcher@npm:0.2.32":
+"@formatjs/intl-localematcher@npm:0.2.32, @formatjs/intl-localematcher@npm:^0.2.32":
   version: 0.2.32
   resolution: "@formatjs/intl-localematcher@npm:0.2.32"
   dependencies:
@@ -3122,18 +3122,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^2.14.0-beta.3":
-  version: 2.14.0-beta.3
-  resolution: "next-intl@npm:2.14.0-beta.3"
+"next-intl@npm:2.15.0-beta.5":
+  version: 2.15.0-beta.5
+  resolution: "next-intl@npm:2.15.0-beta.5"
   dependencies:
-    "@formatjs/intl-localematcher": 0.2.32
-    negotiator: 0.6.3
+    "@formatjs/intl-localematcher": ^0.2.32
+    negotiator: ^0.6.3
     server-only: 0.0.1
-    use-intl: ^2.13.1
+    use-intl: ^2.14.6
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 69210ff103d1f6031d0d8694c7bfa414646f9faa55c2752cb346d6ebf12042b2957b4359ccf945cb1c58cae624fd7a017d5687c54c261f22c915fdac7e4d5054
+  checksum: deb047b605592b4c2201eca30a661a75966391362dafd85ddaa31d705cc1a9e5308b9c5e72652af8b70279413b8a27c9135a2e203a7555f7adb0a45d6c716937
   languageName: node
   linkType: hard
 
@@ -4060,7 +4060,7 @@ __metadata:
     formik: ^2.2.9
     negotiator: 0.6.3
     next: canary
-    next-intl: ^2.14.0-beta.3
+    next-intl: 2.15.0-beta.5
     postcss: 8.4.21
     prettier: ^2.8.7
     react: 18.2.0
@@ -4606,15 +4606,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:^2.13.1":
-  version: 2.13.2
-  resolution: "use-intl@npm:2.13.2"
+"use-intl@npm:^2.14.6":
+  version: 2.14.6
+  resolution: "use-intl@npm:2.14.6"
   dependencies:
     "@formatjs/ecma402-abstract": ^1.11.4
     intl-messageformat: ^9.3.18
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 0bf610fa57bc5ce49db08401ee2cac499a4d1475eb29c4d2e22c36aa2dd5da15893c70818a629b99418b9f16bd03524228b494da67b4b074338762bfffceb62f
+  checksum: f6b39f62219a12bae7eb7d1ea230f46141554ddd773452c085baada3e577138bb0bb6939ab0d530075a1e8aebd24f1b258c215d27382e9f157c6e2132c1bf06c
   languageName: node
   linkType: hard
 

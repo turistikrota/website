@@ -1,5 +1,5 @@
 /** @type {import('next').Rewrite[]} */
-const data = [
+module.exports = [
   {
     source: "/tr/hakkimizda",
     destination: "/tr/about-us",
@@ -9,5 +9,3 @@ const data = [
     destination: "/tr/coming-soon",
   },
 ];
-
-export default data;

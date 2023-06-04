@@ -1,5 +1,5 @@
-import nextIntlPlugin from "next-intl/plugin";
-import rewrites from "./router.config.mjs";
+const withNextIntl = require("next-intl/plugin")();
+const rewrites = require("./router.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -16,4 +16,4 @@ const nextConfig = {
   },
 };
 
-export default nextIntlPlugin()(nextConfig);
+module.exports = withNextIntl(nextConfig);
