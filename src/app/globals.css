@@ -23,6 +23,7 @@
     --default-background: rgb(239, 244, 245);
 
     --second-background-color: #fff;
+    --border-color: #e6e6e6;
 
     --shadow-color-start: rgba(0, 0, 0, 0.1);
     --shadow-color-end: rgba(0, 0, 0, 0.6);
@@ -53,6 +54,9 @@
     --secondary-color-900: #8f4f00;
     --secondary-color-1000: #663300;
     --secondary-color-1100: #4d2600;
+
+    --autofill-background-color: var(--primary-color-100);
+    --autofill-color: var(--primary-color-900);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -67,6 +71,11 @@
 
         --shadow-color-start: rgba(255, 255, 255, 0.1);
         --shadow-color-end: rgba(255, 255, 255, 0.6);
+
+        --border-color: #303030;
+
+        --autofill-background-color: var(--primary-color-1000);
+        --autofill-color: var(--primary-color-50);
     }
 }
 
@@ -74,4 +83,21 @@ body {
     color: rgb(var(--foreground-rgb));
     background: var(--default-background);
     height: 100vh;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--autofill-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
+  box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: var(--autofill-color);
 }
