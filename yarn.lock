@@ -4067,6 +4067,7 @@ __metadata:
     react-dom: 18.2.0
     server-only: 0.0.1
     tailwindcss: 3.3.1
+    turnstile-next: 0.0.2
     typescript: 5.0.4
     yup: ^1.1.0
   languageName: unknown
@@ -4476,6 +4477,15 @@ __metadata:
   peerDependencies:
     typescript: ">=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta"
   checksum: 1843f4c1b2e0f975e08c4c21caa4af4f7f65a12ac1b81b3b8489366826259323feb3fc7a243123453d2d1a02314205a7634e048d4a8009921da19f99755cdc48
+  languageName: node
+  linkType: hard
+
+"turnstile-next@npm:0.0.2":
+  version: 0.0.2
+  resolution: "turnstile-next@npm:0.0.2"
+  peerDependencies:
+    react: ">=16"
+  checksum: 000c91a58f0be2eb8f67247fd39286b6f9d1d0d0b4e0efbd64724043f9d1192225a9202bff1727267c0b55904dd4383ec131dd10fc9dcd952c9b556715ed79ff
   languageName: node
   linkType: hard
 
