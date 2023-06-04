@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "0.2.32",
@@ -24,6 +25,7 @@
     "yup": "^1.1.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.0.1",
     "@types/negotiator": "0.6.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
