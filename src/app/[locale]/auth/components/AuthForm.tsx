@@ -1,65 +1,79 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import Turnstile from "turnstile-next";
-import Button from "~/components/button/Button";
-import Condition from "~/components/condition/Condition";
-import Input from "~/components/form/Input";
+import Spin from "sspin";
+import { Condition, Skeleton } from "~/components";
 
-const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+type Id = "check-username" | "login" | "register";
+
+const Components = {
+  CheckUserName: dynamic(() => import("./CheckUserNameForm"), {
+    ssr: false,
+    loading: () => <Skeleton.Block size="3xl" />,
+  }),
+  Login: dynamic(() => import("./LoginForm"), {
+    ssr: false,
+  }),
+  Register: dynamic(() => import("./RegisterForm"), {
+    ssr: false,
+  }),
+};
+
+type ChainEl = {
+  title: string;
+  component: keyof typeof Components;
+};
+
+const chain: Record<Id, ChainEl> = {
+  "check-username": {
+    title: "Sign in or Sign up to your account",
+    component: "CheckUserName",
+  },
+  login: {
+    title: "Sign in to your account",
+    component: "Login",
+  },
+  register: {
+    title: "Sign up to your account",
+    component: "Register",
+  },
+};
+
+const getActiveChain = (id: Id): ChainEl => {
+  return chain[id];
+};
 
 export default function LoginForm() {
-  const locale = useLocale();
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [emailExist, setEmailExist] = useState(false);
+  const [id, setId] = useState<Id>("check-username");
+  const [activeChain, setActiveChain] = useState<ChainEl>(
+    getActiveChain("check-username")
+  );
 
-  const onTurnstileVerify = (token: string) => {
-    setTurnstileToken(token);
+  const onNext = (id: Id) => {
+    setId(id);
+    setActiveChain(getActiveChain(id));
   };
-
-  const onTurnstileError = (error: string) => {
-    console.error(error);
-    setTurnstileToken(null);
-  };
-
-  const checkEmail = async () => {};
-
-  const login = async () => {};
-
-  const register = async () => {};
-
-  const onClick = () => {};
-
   return (
     <>
-      <form className="space-y-4 md:space-y-6" action="#">
-        <Input
-          label="Your email"
-          name="email"
-          autoComplete="on"
-          required
-          autoFocus
-        />
-        <Condition value={emailExist}>
-          <Input
-            label="Your password"
-            name="password"
-            autoComplete="on"
-            required
-            autoFocus
-          />
-        </Condition>
-
-        <Turnstile
-          siteKey={SITE_KEY!}
-          locale={locale}
-          onVerify={onTurnstileVerify}
-          onError={onTurnstileError}
-        />
-
-        <Button onClick={onClick}>Sign In</Button>
-      </form>
+      <Spin.WithContext value={false}>
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            {activeChain.title}
+          </h1>
+          <Condition value={id === "check-username"}>
+            <Components.CheckUserName
+              onNext={(val: boolean) => onNext(val ? "login" : "register")}
+            />
+          </Condition>
+          <Condition value={id === "login"}>
+            <Components.Login />
+          </Condition>
+          <Condition value={id === "register"}>
+            <Components.Register />
+          </Condition>
+        </div>
+      </Spin.WithContext>
     </>
   );
 }

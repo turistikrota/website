@@ -3,86 +3,116 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "boxicons";
-    font-style: normal;
-    font-weight: 400;
-    src: local("../../node_modules/boxicons/fonts/boxicons.woff2") format("woff2"),
+  font-family: "boxicons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("../../node_modules/boxicons/fonts/boxicons.woff2") format("woff2"),
     local("../../node_modules/boxicons/fonts/boxicons.woff") format("woff"),
     local("../../node_modules/boxicons/fonts/boxicons.ttf") format("truetype");
-    font-display: swap;
+  font-display: swap;
 }
 
 @import "boxicons/css/boxicons.min.css";
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-color-start: rgb(239, 244, 245);
-    --background-color-end: rgb(255, 255, 255);
-    --popup-background-color: #fff;
-    --header-background-color: #fff;
-    --default-background: rgb(239, 244, 245);
+  --foreground-rgb: 0, 0, 0;
+  --background-color-start: rgb(239, 244, 245);
+  --background-color-end: rgb(255, 255, 255);
+  --popup-background-color: #fff;
+  --header-background-color: #fff;
+  --default-background: rgb(239, 244, 245);
 
-    --second-background-color: #fff;
-    --border-color: #e6e6e6;
+  --second-background-color: #fff;
+  --border-color: #e6e6e6;
 
-    --shadow-color-start: rgba(0, 0, 0, 0.1);
-    --shadow-color-end: rgba(0, 0, 0, 0.6);
+  --shadow-color-start: rgba(0, 0, 0, 0.1);
+  --shadow-color-end: rgba(0, 0, 0, 0.6);
 
-    --primary-color: #87CEEB;
-    --primary-color-50: #f0f8ff;
-    --primary-color-100: #c7e1f7;
-    --primary-color-200: #87ceeb;
-    --primary-color-300: #5cafe7;
-    --primary-color-400: #3397e6;
-    --primary-color-500: #0077cc;
-    --primary-color-600: #006bb3;
-    --primary-color-700: #005a9c;
-    --primary-color-800: #004d80;
-    --primary-color-900: #003d66;
-    --primary-color-1000: #002e4d;
-    --primary-color-1100: #002233;
-    --secondary-color: #FFA500;
-    --secondary-color-50: #fff8f0;
-    --secondary-color-100: #fee7c3;
-    --secondary-color-200: #fcd992;
-    --secondary-color-300: #ffcc66;
-    --secondary-color-400: #ffa500;
-    --secondary-color-500: #ff9900;
-    --secondary-color-600: #e68a00;
-    --secondary-color-700: #cc7a00;
-    --secondary-color-800: #b36b00;
-    --secondary-color-900: #8f4f00;
-    --secondary-color-1000: #663300;
-    --secondary-color-1100: #4d2600;
+  --radius-base: 0.5rem;
 
-    --autofill-background-color: var(--primary-color-100);
-    --autofill-color: var(--primary-color-900);
+  --primary-color: #87ceeb;
+  --primary-color-50: #f0f8ff;
+  --primary-color-100: #c7e1f7;
+  --primary-color-200: #87ceeb;
+  --primary-color-300: #5cafe7;
+  --primary-color-400: #3397e6;
+  --primary-color-500: #0077cc;
+  --primary-color-600: #006bb3;
+  --primary-color-700: #005a9c;
+  --primary-color-800: #004d80;
+  --primary-color-900: #003d66;
+  --primary-color-1000: #002e4d;
+  --primary-color-1100: #002233;
+  --secondary-color: #ffa500;
+  --secondary-color-50: #fff8f0;
+  --secondary-color-100: #fee7c3;
+  --secondary-color-200: #fcd992;
+  --secondary-color-300: #ffcc66;
+  --secondary-color-400: #ffa500;
+  --secondary-color-500: #ff9900;
+  --secondary-color-600: #e68a00;
+  --secondary-color-700: #cc7a00;
+  --secondary-color-800: #b36b00;
+  --secondary-color-900: #8f4f00;
+  --secondary-color-1000: #663300;
+  --secondary-color-1100: #4d2600;
+
+  --skeleton-default-color: #e6e6e6;
+  --skeleton-color-50: #fafafa;
+  --skeleton-color-100: #f2f2f2;
+  --skeleton-color-200: #ebebeb;
+  --skeleton-color-300: #e4e4e4;
+  --skeleton-color-400: #dcdcdc;
+  --skeleton-color-500: #d4d4d4;
+  --skeleton-color-600: #cccccc;
+  --skeleton-color-700: #c4c4c4;
+  --skeleton-color-800: #bdbdbd;
+  --skeleton-color-900: #b5b5b5;
+  --skeleton-color-1000: #adadad;
+  --skeleton-color-1100: #a5a5a5;
+
+  --autofill-background-color: var(--primary-color-100);
+  --autofill-color: var(--primary-color-900);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-color-start: #141414;
-        --background-color-end: #121212;
-        --popup-background-color: #121212;
-        --header-background-color: #050505;
-        --default-background: #0F0E0E;
-        --second-background-color: #121212;
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-color-start: #141414;
+    --background-color-end: #121212;
+    --popup-background-color: #121212;
+    --header-background-color: #050505;
+    --default-background: #0f0e0e;
+    --second-background-color: #121212;
 
-        --shadow-color-start: rgba(255, 255, 255, 0.1);
-        --shadow-color-end: rgba(255, 255, 255, 0.6);
+    --skeleton-default-color: #201c1c;
+    --skeleton-color-50: #212121;
+    --skeleton-color-100: #1f1f1f;
+    --skeleton-color-200: #1d1d1d;
+    --skeleton-color-300: #1b1b1b;
+    --skeleton-color-400: #191919;
+    --skeleton-color-500: #171717;
+    --skeleton-color-600: #151515;
+    --skeleton-color-700: #131313;
+    --skeleton-color-800: #111111;
+    --skeleton-color-900: #0f0f0f;
+    --skeleton-color-1000: #0d0d0d;
+    --skeleton-color-1100: #0b0b0b;
 
-        --border-color: #303030;
+    --shadow-color-start: rgba(255, 255, 255, 0.1);
+    --shadow-color-end: rgba(255, 255, 255, 0.6);
 
-        --autofill-background-color: var(--primary-color-1000);
-        --autofill-color: var(--primary-color-50);
-    }
+    --border-color: #303030;
+
+    --autofill-background-color: var(--primary-color-1000);
+    --autofill-color: var(--primary-color-50);
+  }
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: var(--default-background);
-    height: 100vh;
+  color: rgb(var(--foreground-rgb));
+  background: var(--default-background);
+  height: 100vh;
 }
 
 /* Change Autocomplete styles in Chrome*/
@@ -100,4 +130,13 @@ select:-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
   transition: background-color 5000s ease-in-out 0s;
   color: var(--autofill-color);
+}
+
+.sspin {
+  --color-primary: var(--primary-color);
+}
+
+.sspin-provider.sspin-loading .sspin-overlay {
+  backdrop-filter: brightness(0.5) !important;
+  border-radius: var(--radius-base);
 }

@@ -6,6 +6,7 @@ type Size = "sm" | "md" | "lg";
 type Props = {
   variant?: Variant;
   size?: Size;
+  htmlType?: "button" | "submit" | "reset";
   onClick?: () => void;
 };
 
@@ -27,11 +28,12 @@ export default function Button({
   children,
   size = "md",
   variant = "primary",
+  htmlType = "button",
   onClick,
 }: PropsWithChildren<Props>) {
   return (
     <button
-      type="submit"
+      type={htmlType}
       className={`block w-full rounded-md font-medium text-white shadow focus:outline-none transition duration-150 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900 ${variants[variant]} ${sizes[size]}`}
       onClick={onClick}
     >
