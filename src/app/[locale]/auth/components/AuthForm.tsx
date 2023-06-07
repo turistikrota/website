@@ -1,9 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spin from "sspin";
 import { Condition, Skeleton } from "~/components";
+import { useToast } from "~/components/toast/Toast";
 
 type Id = "check-username" | "login" | "register";
 
@@ -46,9 +47,42 @@ const getActiveChain = (id: Id): ChainEl => {
 
 export default function LoginForm() {
   const [id, setId] = useState<Id>("check-username");
+  const toast = useToast();
   const [activeChain, setActiveChain] = useState<ChainEl>(
     getActiveChain("check-username")
   );
+
+  useEffect(() => {
+    toast.askSecondary({
+      cancelText: "Cancel",
+      confirmText: "Continue",
+      description: "Do you want to continue?",
+      onCancel: () => {
+        toast.info("You canceled");
+      },
+      onConfirm: () => {
+        toast.success("You confirmed");
+      },
+      title: "Welcome",
+    });
+    toast.askPrimary({
+      cancelText: "Cancel",
+      confirmText: "Continue",
+      description: "Do you want to continue?",
+      onCancel: () => {
+        toast.info("You canceled");
+      },
+      onConfirm: () => {
+        toast.success("You confirmed");
+      },
+      title: "Welcome",
+    });
+    toast.secondary("Welcome to the app with long text to test the wrapping");
+    toast.primary("Welcome to the app with long text to test the wrapping");
+    toast.success("Welcome to the app with long text to test the wrapping");
+    toast.error("Welcome to the app with long text to test the wrapping");
+    toast.info("Welcome to the app with long text to test the wrapping");
+  }, []);
 
   const onNext = (id: Id) => {
     setId(id);

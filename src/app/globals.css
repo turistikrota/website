@@ -30,46 +30,45 @@
 
   --radius-base: 0.5rem;
 
-  --primary-color: #87ceeb;
-  --primary-color-50: #f0f8ff;
-  --primary-color-100: #c7e1f7;
-  --primary-color-200: #87ceeb;
-  --primary-color-300: #5cafe7;
-  --primary-color-400: #3397e6;
-  --primary-color-500: #0077cc;
-  --primary-color-600: #006bb3;
-  --primary-color-700: #005a9c;
-  --primary-color-800: #004d80;
-  --primary-color-900: #003d66;
-  --primary-color-1000: #002e4d;
-  --primary-color-1100: #002233;
-  --secondary-color: #ffa500;
-  --secondary-color-50: #fff8f0;
-  --secondary-color-100: #fee7c3;
-  --secondary-color-200: #fcd992;
-  --secondary-color-300: #ffcc66;
-  --secondary-color-400: #ffa500;
-  --secondary-color-500: #ff9900;
-  --secondary-color-600: #e68a00;
-  --secondary-color-700: #cc7a00;
-  --secondary-color-800: #b36b00;
-  --secondary-color-900: #8f4f00;
-  --secondary-color-1000: #663300;
-  --secondary-color-1100: #4d2600;
-
-  --skeleton-default-color: #e6e6e6;
-  --skeleton-color-50: #fafafa;
-  --skeleton-color-100: #f2f2f2;
-  --skeleton-color-200: #ebebeb;
-  --skeleton-color-300: #e4e4e4;
-  --skeleton-color-400: #dcdcdc;
-  --skeleton-color-500: #d4d4d4;
-  --skeleton-color-600: #cccccc;
-  --skeleton-color-700: #c4c4c4;
-  --skeleton-color-800: #bdbdbd;
-  --skeleton-color-900: #b5b5b5;
-  --skeleton-color-1000: #adadad;
-  --skeleton-color-1100: #a5a5a5;
+  --primary-color: 135, 206, 235;
+  --primary-color-50: 240, 248, 255;
+  --primary-color-100: 199, 225, 247;
+  --primary-color-200: 135, 206, 235;
+  --primary-color-300: 92, 175, 231;
+  --primary-color-400: 51, 151, 230;
+  --primary-color-500: 0, 119, 204;
+  --primary-color-600: 0, 107, 179;
+  --primary-color-700: 0, 90, 156;
+  --primary-color-800: 0, 77, 128;
+  --primary-color-900: 0, 61, 102;
+  --primary-color-1000: 0, 46, 77;
+  --primary-color-1100: 0, 34, 51;
+  --secondary-color: 255, 165, 0;
+  --secondary-color-50: 255, 248, 240;
+  --secondary-color-100: 254, 231, 195;
+  --secondary-color-200: 252, 217, 146;
+  --secondary-color-300: 255, 204, 102;
+  --secondary-color-400: 255, 165, 0;
+  --secondary-color-500: 255, 153, 0;
+  --secondary-color-600: 230, 138, 0;
+  --secondary-color-700: 204, 122, 0;
+  --secondary-color-800: 179, 107, 0;
+  --secondary-color-900: 143, 79, 0;
+  --secondary-color-1000: 102, 51, 0;
+  --secondary-color-1100: 77, 38, 0;
+  --skeleton-default-color: 230, 230, 230;
+  --skeleton-color-50: 250, 250, 250;
+  --skeleton-color-100: 242, 242, 242;
+  --skeleton-color-200: 235, 235, 235;
+  --skeleton-color-300: 228, 228, 228;
+  --skeleton-color-400: 220, 220, 220;
+  --skeleton-color-500: 212, 212, 212;
+  --skeleton-color-600: 204, 204, 204;
+  --skeleton-color-700: 196, 196, 196;
+  --skeleton-color-800: 189, 189, 189;
+  --skeleton-color-900: 181, 181, 181;
+  --skeleton-color-1000: 173, 173, 173;
+  --skeleton-color-1100: 165, 165, 165;
 
   --autofill-background-color: var(--primary-color-100);
   --autofill-color: var(--primary-color-900);
@@ -139,4 +138,16 @@ select:-webkit-autofill:focus {
 .sspin-provider.sspin-loading .sspin-overlay {
   backdrop-filter: brightness(0.5) !important;
   border-radius: var(--radius-base);
+}
+
+.bx-xxs {
+  width: 0.5rem;
+}
+
+.bx-xs {
+  font-size: 1.25rem !important;
+}
+
+.bx-base {
+  font-size: 1.7rem !important;
 }

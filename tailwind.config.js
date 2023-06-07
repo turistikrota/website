@@ -1,3 +1,12 @@
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(${variableName}, ${opacityValue})`;
+    }
+    return `rgb(${variableName})`;
+  };
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
@@ -10,49 +19,49 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: "var(--primary-color-50)",
-          100: "var(--primary-color-100)",
-          200: "var(--primary-color-200)",
-          300: "var(--primary-color-300)",
-          400: "var(--primary-color-400)",
-          500: "var(--primary-color-500)",
-          600: "var(--primary-color-600)",
-          700: "var(--primary-color-700)",
-          800: "var(--primary-color-800)",
-          900: "var(--primary-color-900)",
-          1000: "var(--primary-color-1000)",
-          1100: "var(--primary-color-1100)",
-          DEFAULT: "var(--primary-color)",
+          50: withOpacity("var(--primary-color-50)"),
+          100: withOpacity("var(--primary-color-100)"),
+          200: withOpacity("var(--primary-color-200)"),
+          300: withOpacity("var(--primary-color-300)"),
+          400: withOpacity("var(--primary-color-400)"),
+          500: withOpacity("var(--primary-color-500)"),
+          600: withOpacity("var(--primary-color-600)"),
+          700: withOpacity("var(--primary-color-700)"),
+          800: withOpacity("var(--primary-color-800)"),
+          900: withOpacity("var(--primary-color-900)"),
+          1000: withOpacity("var(--primary-color-1000)"),
+          1100: withOpacity("var(--primary-color-1100)"),
+          DEFAULT: withOpacity("var(--primary-color)"),
         },
         skeleton: {
-          50: "var(--skeleton-color-50)",
-          100: "var(--skeleton-color-100)",
-          200: "var(--skeleton-color-200)",
-          300: "var(--skeleton-color-300)",
-          400: "var(--skeleton-color-400)",
-          500: "var(--skeleton-color-500)",
-          600: "var(--skeleton-color-600)",
-          700: "var(--skeleton-color-700)",
-          800: "var(--skeleton-color-800)",
-          900: "var(--skeleton-color-900)",
-          1000: "var(--skeleton-color-1000)",
-          1100: "var(--skeleton-color-1100)",
-          DEFAULT: "var(--skeleton-default-color)",
+          50: withOpacity("var(--skeleton-color-50)"),
+          100: withOpacity("var(--skeleton-color-100)"),
+          200: withOpacity("var(--skeleton-color-200)"),
+          300: withOpacity("var(--skeleton-color-300)"),
+          400: withOpacity("var(--skeleton-color-400)"),
+          500: withOpacity("var(--skeleton-color-500)"),
+          600: withOpacity("var(--skeleton-color-600)"),
+          700: withOpacity("var(--skeleton-color-700)"),
+          800: withOpacity("var(--skeleton-color-800)"),
+          900: withOpacity("var(--skeleton-color-900)"),
+          1000: withOpacity("var(--skeleton-color-1000)"),
+          1100: withOpacity("var(--skeleton-color-1100)"),
+          DEFAULT: withOpacity("var(--skeleton-default-color)"),
         },
         secondary: {
-          50: "var(--secondary-color-50)",
-          100: "var(--secondary-color-100)",
-          200: "var(--secondary-color-200)",
-          300: "var(--secondary-color-300)",
-          400: "var(--secondary-color-400)",
-          500: "var(--secondary-color-500)",
-          600: "var(--secondary-color-600)",
-          700: "var(--secondary-color-700)",
-          800: "var(--secondary-color-800)",
-          900: "var(--secondary-color-900)",
-          1000: "var(--secondary-color-1000)",
-          1100: "var(--secondary-color-1100)",
-          DEFAULT: "var(--secondary-color)",
+          50: withOpacity("var(--secondary-color-50)"),
+          100: withOpacity("var(--secondary-color-100)"),
+          200: withOpacity("var(--secondary-color-200)"),
+          300: withOpacity("var(--secondary-color-300)"),
+          400: withOpacity("var(--secondary-color-400)"),
+          500: withOpacity("var(--secondary-color-500)"),
+          600: withOpacity("var(--secondary-color-600)"),
+          700: withOpacity("var(--secondary-color-700)"),
+          800: withOpacity("var(--secondary-color-800)"),
+          900: withOpacity("var(--secondary-color-900)"),
+          1000: withOpacity("var(--secondary-color-1000)"),
+          1100: withOpacity("var(--secondary-color-1100)"),
+          DEFAULT: withOpacity("var(--secondary-color)"),
         },
       },
       borderColor: {
@@ -91,16 +100,24 @@ module.exports = {
       animation: {
         "in-from-top": "inFromTop 0.3s ease-out",
         "in-from-bottom": "inFromBottom 0.3s ease-out",
+        "in-from-left": "inFromLeft 0.3s ease-out",
+        "in-from-right": "inFromRight 0.3s ease-out",
         "out-to-top": "outToTop 0.3s ease-out",
         "out-to-bottom": "outToBottom 0.3s ease-out",
+        "out-to-left": "outToLeft 0.3s ease-out",
+        "out-to-right": "outToRight 0.3s ease-out",
         "fade-in": "fadeIn 0.3s ease-out",
         "fade-out": "fadeOut 0.3s ease-out",
         "fade-in-from-top": "fadeIn 0.3s ease-out, inFromTop 0.3s ease-out",
         "fade-in-from-bottom":
           "fadeIn 0.3s ease-out, inFromBottom 0.3s ease-out",
+        "fade-in-from-left": "fadeIn 0.3s ease-out, inFromLeft 0.3s ease-out",
+        "fade-in-from-right": "fadeIn 0.3s ease-out, inFromRight 0.3s ease-out",
         "fade-out-to-top": "fadeOut 0.3s ease-out, outToTop 0.3s ease-out",
         "fade-out-to-bottom":
           "fadeOut 0.3s ease-out, outToBottom 0.3s ease-out",
+        "fade-out-to-left": "fadeOut 0.3s ease-out, outToLeft 0.3s ease-out",
+        "fade-out-to-right": "fadeOut 0.3s ease-out, outToRight 0.3s ease-out",
         "slide-down": "inFromTop 0.3s ease-out, fadeIn 0.3s ease-out",
         "slide-up": "outToTop 0.3s ease-out, fadeOut 0.3s ease-out",
       },
@@ -121,6 +138,22 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        inFromLeft: {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
+        inFromRight: {
+          "0%": {
+            transform: "translateX(100%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
         outToTop: {
           "0%": {
             transform: "translateY(0)",
@@ -135,6 +168,22 @@ module.exports = {
           },
           "100%": {
             transform: "translateY(100%)",
+          },
+        },
+        outToLeft: {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        outToRight: {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
           },
         },
         fadeIn: {
