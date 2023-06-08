@@ -53,35 +53,10 @@ export default function LoginForm() {
   );
 
   useEffect(() => {
-    toast.askSecondary({
-      cancelText: "Cancel",
-      confirmText: "Continue",
-      description: "Do you want to continue?",
-      onCancel: () => {
-        toast.info("You canceled");
-      },
-      onConfirm: () => {
-        toast.success("You confirmed");
-      },
-      title: "Welcome",
-    });
-    toast.askPrimary({
-      cancelText: "Cancel",
-      confirmText: "Continue",
-      description: "Do you want to continue?",
-      onCancel: () => {
-        toast.info("You canceled");
-      },
-      onConfirm: () => {
-        toast.success("You confirmed");
-      },
-      title: "Welcome",
-    });
-    toast.secondary("Welcome to the app with long text to test the wrapping");
-    toast.primary("Welcome to the app with long text to test the wrapping");
-    toast.success("Welcome to the app with long text to test the wrapping");
-    toast.error("Welcome to the app with long text to test the wrapping");
-    toast.info("Welcome to the app with long text to test the wrapping");
+    toast.secondary(
+      "Welcome to the app with long text to test the wrapping",
+      2500
+    );
   }, []);
 
   const onNext = (id: Id) => {

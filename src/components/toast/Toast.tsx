@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type ToastType =
   | "success"
@@ -327,15 +327,34 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({
 export const ToastListProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
+  const [removes, setRemoves] = useState<{ id: string; duration: number }[]>(
+    []
+  );
   const [toasts, setToasts] = useState<Toast[]>([]);
+
+  useEffect(() => {
+    if (removes.length > 0) {
+      removes.forEach((rem) => {
+        setTimeout(() => {
+          removeToast(rem.id);
+        }, rem.duration);
+      });
+      setRemoves([]);
+    }
+  }, [removes]);
 
   const onToast = (toast: Toast) => {
     setToasts((prev) => [...prev, toast]);
+    if (toast.duration) {
+      setRemoves((prev) => [
+        ...prev,
+        { id: toast.id, duration: toast.duration! },
+      ]);
+    }
   };
 
   const removeToast = (id: string) => {
     const toast = toasts.find((t) => t.id === id);
-    console.log("toasts::", toasts);
     if (toast) {
       toast.closing = true;
       setToasts((prev) => [...prev]);
@@ -365,12 +384,15 @@ export const ToastProvider = ({ children }: Props) => {
 
   const addToast = (type: ToastType, message: string, duration?: number) => {
     const id = Math.random().toString(36).substr(2, 9);
-    const toast = { id, type, message, interactive: false, closing: false };
+    const toast = {
+      id,
+      type,
+      message,
+      interactive: false,
+      closing: false,
+      duration,
+    };
     onToast(toast);
-    if (duration) {
-      console.log("duration", duration);
-      setTimeout(() => removeToast(id), duration);
-    }
   };
 
   const success = (message: string, duration?: number) =>
