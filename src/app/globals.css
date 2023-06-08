@@ -70,8 +70,8 @@
   --skeleton-color-1000: 173, 173, 173;
   --skeleton-color-1100: 165, 165, 165;
 
-  --autofill-background-color: var(--primary-color-100);
-  --autofill-color: var(--primary-color-900);
+  --autofill-background-color: rgb(var(--primary-color-100));
+  --autofill-color: rgb(var(--primary-color-900));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -103,8 +103,8 @@
 
     --border-color: #303030;
 
-    --autofill-background-color: var(--primary-color-1000);
-    --autofill-color: var(--primary-color-50);
+    --autofill-background-color: rgb(var(--primary-color-1000));
+    --autofill-color: rgb(var(--primary-color-50));
   }
 }
 
@@ -128,7 +128,7 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
   box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
   transition: background-color 5000s ease-in-out 0s;
-  color: var(--autofill-color);
+  color: var(--autofill-color) !important;
 }
 
 .sspin {

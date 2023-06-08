@@ -15,6 +15,7 @@ const Components = {
   }),
   Login: dynamic(() => import("./LoginForm"), {
     ssr: false,
+    loading: () => <Skeleton.Block size="4xl" />,
   }),
   Register: dynamic(() => import("./RegisterForm"), {
     ssr: false,
@@ -46,10 +47,10 @@ const getActiveChain = (id: Id): ChainEl => {
 };
 
 export default function LoginForm() {
-  const [id, setId] = useState<Id>("check-username");
+  const [id, setId] = useState<Id>("register");
   const toast = useToast();
   const [activeChain, setActiveChain] = useState<ChainEl>(
-    getActiveChain("check-username")
+    getActiveChain("register")
   );
 
   useEffect(() => {
