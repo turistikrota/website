@@ -1,4 +1,4 @@
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useContext } from "react";
 import { SpinContext } from "sspin";
 import TurnstileInput from "turnstile-next";
@@ -7,6 +7,7 @@ import { Config } from "~/config";
 import { useHttp } from "~/hooks/http/http";
 
 export default function LoginForm() {
+  const t = useTranslations("auth.login");
   const locale = useLocale();
   const http = useHttp();
   const { setSpin } = useContext(SpinContext);
@@ -17,14 +18,14 @@ export default function LoginForm() {
     <div>
       <form className="space-y-4 md:space-y-6 ease-in" onSubmit={onSubmit}>
         <Input
-          label="Your email"
+          label={t("email")}
           name="email"
           autoComplete="on"
           required
           autoFocus
         />
         <Input
-          label="Your password"
+          label={t("password")}
           name="password"
           type="password"
           autoComplete="on"
@@ -32,7 +33,7 @@ export default function LoginForm() {
           autoFocus
         />
         <TurnstileInput siteKey={Config.turnstile.siteKey} locale={locale} />
-        <Button htmlType="submit">Sign In</Button>
+        <Button htmlType="submit">{t("button")}</Button>
       </form>
     </div>
   );

@@ -1,8 +1,10 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import AuthForm from "./components/AuthForm";
 
-export default function AuthHome() {
+export default async function AuthHome() {
+  const t = await getTranslations("auth");
   return (
     <section className="h-full">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-full lg:py-0">

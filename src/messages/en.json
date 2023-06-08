@@ -1,4 +1,23 @@
 {
+  "auth": {
+    "login": {
+      "title": "Sign In to Your Account",
+      "email": "Your email",
+      "password": "Your password",
+      "button": "Sign in"
+    },
+    "check": {
+      "title": "Sign In to Your Account",
+      "email": "Your email",
+      "button": "Sign in"
+    },
+    "register": {
+      "title": "Register for an Account",
+      "email": "Your email",
+      "password": "Your password",
+      "button": "Sign up"
+    }
+  },
   "waitlist": {
     "title1": "Coming",
     "title2": "Soon",

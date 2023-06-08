@@ -1,10 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Spin from "sspin";
 import { Condition, Skeleton } from "~/components";
-import { useToast } from "~/components/toast/Toast";
 
 type Id = "check-username" | "login" | "register";
 
@@ -29,15 +29,15 @@ type ChainEl = {
 
 const chain: Record<Id, ChainEl> = {
   "check-username": {
-    title: "Sign in or Sign up to your account",
+    title: "check.title",
     component: "CheckUserName",
   },
   login: {
-    title: "Sign in to your account",
+    title: "login.title",
     component: "Login",
   },
   register: {
-    title: "Sign up to your account",
+    title: "register.title",
     component: "Register",
   },
 };
@@ -47,18 +47,11 @@ const getActiveChain = (id: Id): ChainEl => {
 };
 
 export default function LoginForm() {
-  const [id, setId] = useState<Id>("register");
-  const toast = useToast();
+  const t = useTranslations("auth");
+  const [id, setId] = useState<Id>("check-username");
   const [activeChain, setActiveChain] = useState<ChainEl>(
-    getActiveChain("register")
+    getActiveChain("check-username")
   );
-
-  useEffect(() => {
-    toast.secondary(
-      "Welcome to the app with long text to test the wrapping",
-      2500
-    );
-  }, []);
 
   const onNext = (id: Id) => {
     setId(id);
@@ -69,7 +62,7 @@ export default function LoginForm() {
       <Spin.WithContext value={false}>
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            {activeChain.title}
+            {t(activeChain.title as any)}
           </h1>
           <Condition value={id === "check-username"}>
             <Components.CheckUserName

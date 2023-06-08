@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useContext } from "react";
 import { SpinContext } from "sspin";
 import Turnstile from "turnstile-next";
@@ -13,6 +13,7 @@ type Props = {
 };
 
 export default function CheckUserNameForm({ onNext }: Props) {
+  const t = useTranslations("auth.check");
   const locale = useLocale();
   const http = useHttp();
   const { setSpin } = useContext(SpinContext);
@@ -52,14 +53,14 @@ export default function CheckUserNameForm({ onNext }: Props) {
     <div>
       <form className="space-y-4 md:space-y-6 ease-in" onSubmit={onSubmit}>
         <Input
-          label="Your email"
+          label={t("email")}
           name="email"
           autoComplete="on"
           required
           autoFocus
         />
         <Turnstile siteKey={Config.turnstile.siteKey} locale={locale} />
-        <Button htmlType="submit">Sign In</Button>
+        <Button htmlType="submit">{t("button")}</Button>
       </form>
     </div>
   );
