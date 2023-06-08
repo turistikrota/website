@@ -9,7 +9,7 @@ import { Config } from "~/config";
 import { useHttp } from "~/hooks/http/http";
 
 type Props = {
-  onNext: (val: boolean) => void;
+  onNext: (val: boolean, mail?: string) => void;
 };
 
 export default function CheckUserNameForm({ onNext }: Props) {
@@ -43,7 +43,7 @@ export default function CheckUserNameForm({ onNext }: Props) {
       .catch(http.onError);
     setSpin(false);
     if (res && res.status < 300 && res.data && res.data.exists) {
-      onNext(true);
+      onNext(true, email);
     } else {
       // show error message
     }

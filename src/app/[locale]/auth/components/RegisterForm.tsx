@@ -6,7 +6,11 @@ import { Button, Input } from "~/components";
 import { Config } from "~/config";
 import { useHttp } from "~/hooks/http/http";
 
-export default function RegisterForm() {
+type Props = {
+  email: string;
+};
+
+export default function RegisterForm({ email }: Props) {
   const t = useTranslations("auth.register");
   const locale = useLocale();
   const http = useHttp();
@@ -23,6 +27,7 @@ export default function RegisterForm() {
           autoComplete="on"
           required
           autoFocus
+          value={email}
         />
         <Input
           label={t("password")}

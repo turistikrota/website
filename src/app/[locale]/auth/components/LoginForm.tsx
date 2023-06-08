@@ -6,7 +6,11 @@ import { Button, Input } from "~/components";
 import { Config } from "~/config";
 import { useHttp } from "~/hooks/http/http";
 
-export default function LoginForm() {
+type Props = {
+  email: string;
+};
+
+export default function LoginForm({ email }: Props) {
   const t = useTranslations("auth.login");
   const locale = useLocale();
   const http = useHttp();
@@ -23,6 +27,7 @@ export default function LoginForm() {
           autoComplete="on"
           required
           autoFocus
+          value={email}
         />
         <Input
           label={t("password")}

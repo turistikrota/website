@@ -41,14 +41,17 @@ const getActiveChain = (id: Id): ChainEl => {
 
 export default function AuthForm() {
   const t = useTranslations("auth");
+  const [email, setEmail] = useState<string>("");
   const [id, setId] = useState<Id>("check-username");
   const [activeChain, setActiveChain] = useState<ChainEl>(
     getActiveChain("check-username")
   );
 
-  const onNext = (id: Id) => {
+  const onNext = (id: Id, mail?: string) => {
     setId(id);
     setActiveChain(getActiveChain(id));
+    if (mail) setEmail(mail);
+    else setEmail("");
   };
   return (
     <>
@@ -59,14 +62,16 @@ export default function AuthForm() {
           </h1>
           <Condition value={id === "check-username"}>
             <Components.CheckUserName
-              onNext={(val: boolean) => onNext(val ? "login" : "register")}
+              onNext={(val: boolean, mail?: string) =>
+                onNext(val ? "login" : "register", mail)
+              }
             />
           </Condition>
           <Condition value={id === "login"}>
-            <Components.Login />
+            <Components.Login email={email} />
           </Condition>
           <Condition value={id === "register"}>
-            <Components.Register />
+            <Components.Register email={email} />
           </Condition>
         </div>
       </Spin.WithContext>
