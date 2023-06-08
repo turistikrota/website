@@ -49,6 +49,10 @@ export default function CheckUserNameForm({ onNext }: Props) {
     }
   };
 
+  const onError = (err: string) => {
+    console.log("err::", err);
+  };
+
   return (
     <div>
       <form className="space-y-4 md:space-y-6 ease-in" onSubmit={onSubmit}>
@@ -59,7 +63,19 @@ export default function CheckUserNameForm({ onNext }: Props) {
           required
           autoFocus
         />
-        <Turnstile siteKey={Config.turnstile.siteKey} locale={locale} />
+        <Turnstile
+          siteKey={Config.turnstile.siteKey}
+          locale={locale}
+          onError={onError}
+          refreshOnExpired="auto"
+          onAfterInteractive={() => console.log("after interactive")}
+          onBeforeInteractive={() => console.log("before interactive")}
+          onExpire={() => console.log("expire")}
+          onVerify={() => console.log("verify")}
+          onUnsupported={() => console.log("unsupported")}
+          retryInterval={1000}
+          retry
+        />
         <Button htmlType="submit">{t("button")}</Button>
       </form>
     </div>

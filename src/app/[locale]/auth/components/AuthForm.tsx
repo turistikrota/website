@@ -1,25 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
 import { useState } from "react";
 import Spin from "sspin";
-import { Condition, Skeleton } from "~/components";
-
+import { Condition } from "~/components";
+import CheckUserNameForm from "./CheckUserNameForm";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 type Id = "check-username" | "login" | "register";
 
 const Components = {
-  CheckUserName: dynamic(() => import("./CheckUserNameForm"), {
-    ssr: false,
-    loading: () => <Skeleton.Block size="3xl" />,
-  }),
-  Login: dynamic(() => import("./LoginForm"), {
-    ssr: false,
-    loading: () => <Skeleton.Block size="4xl" />,
-  }),
-  Register: dynamic(() => import("./RegisterForm"), {
-    ssr: false,
-  }),
+  CheckUserName: CheckUserNameForm,
+  Login: LoginForm,
+  Register: RegisterForm,
 };
 
 type ChainEl = {
@@ -46,7 +39,7 @@ const getActiveChain = (id: Id): ChainEl => {
   return chain[id];
 };
 
-export default function LoginForm() {
+export default function AuthForm() {
   const t = useTranslations("auth");
   const [id, setId] = useState<Id>("check-username");
   const [activeChain, setActiveChain] = useState<ChainEl>(
