@@ -34,6 +34,16 @@ const makeFormDataBody = (json: Record<string, any>) => {
   return formData;
 };
 
+type Headers = {
+  headers: Record<string, any>;
+};
+
+const makeHeaders = (key: string, value?: string): Headers => ({
+  headers: {
+    [key]: value,
+  },
+});
+
 type UseHttpHookOptions = {
   headers?: Record<string, string>;
   formData?: boolean;
@@ -42,9 +52,10 @@ type UseHttpHookOptions = {
 interface UseHttpResponse extends Axios {
   onError: (err: Error) => null;
   makeFormDataBody: (json: Record<string, any>) => FormData;
+  makeHeaders: (key: string, value?: string) => Headers;
 }
 
-const useHttp = (
+const getHttp = (
   {
     headers = ContentTypeHeaders.json.headers,
     formData = false,
@@ -64,8 +75,23 @@ const useHttp = (
   const _client: UseHttpResponse = Object.assign(client, {
     onError,
     makeFormDataBody,
+    makeHeaders,
   });
   return _client;
 };
 
-export { useHttp };
+const useHttp = (
+  {
+    headers = ContentTypeHeaders.json.headers,
+    formData = false,
+  }: UseHttpHookOptions = {
+    headers: ContentTypeHeaders.json.headers,
+    formData: false,
+  }
+): UseHttpResponse =>
+  getHttp({
+    headers,
+    formData,
+  });
+
+export { getHttp, useHttp };

@@ -1,8 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface AuthState {}
+interface AuthState {
+  isAuthenticated: boolean;
+  tokens: {
+    accessToken: string;
+    refreshToken: string;
+    turnstileToken: string;
+  };
+}
 
-const initialState: AuthState = {};
+const initialState: AuthState = {
+  isAuthenticated: false,
+  tokens: {
+    accessToken: "",
+    refreshToken: "",
+    turnstileToken: "",
+  },
+};
 
 const authSlice = createSlice({
   name: "auth",

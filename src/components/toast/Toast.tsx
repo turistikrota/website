@@ -63,6 +63,8 @@ const ToastContext = React.createContext<ContextType>({
   askSecondary: () => Promise.resolve(false),
 });
 
+export type ToastContextType = ContextType;
+
 type ListContextType = {
   toasts: Toast[];
   onToast: (toast: Toast) => void;

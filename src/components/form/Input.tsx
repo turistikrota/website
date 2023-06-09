@@ -1,17 +1,20 @@
 "use client";
 
+import { ChangeEvent } from "react";
+
 type InputValue = string | number | readonly string[] | undefined;
 
 type Size = "sm" | "md" | "lg";
 
 type InputProps<Value extends InputValue = string> = {
+  id?: string;
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   value?: Value;
-  onChange?: (value: Value) => void;
-  onBlur?: () => void;
+  onChange?: (e: ChangeEvent) => void;
+  onBlur?: (e: ChangeEvent) => void;
   autoComplete?: string;
   autoFocus?: boolean;
   disabled?: boolean;
@@ -53,7 +56,7 @@ function Input<Value extends InputValue = string>({
         required={required}
         value={value}
         onChange={(e) => {
-          onChange?.(e.target.value as Value);
+          onChange && onChange(e);
         }}
         onBlur={onBlur}
         {...props}

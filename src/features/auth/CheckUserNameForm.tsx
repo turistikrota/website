@@ -1,12 +1,16 @@
 "use client";
 
+import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SpinContext } from "sspin";
 import Turnstile from "turnstile-next";
 import { Button, Input } from "~/components";
+import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
-import { useHttp } from "~/hooks/http/http";
+import { parseApiError } from "~/utils/response";
+import { useSchema } from "~/utils/schema";
+import { useCheckEmailMutation } from "./auth.api";
 
 type Props = {
   onNext: (val: boolean, mail?: string) => void;
@@ -14,40 +18,37 @@ type Props = {
 
 export default function CheckUserNameForm({ onNext }: Props) {
   const t = useTranslations("auth.check");
+  const schema = useSchema();
   const locale = useLocale();
-  const http = useHttp();
+  const toast = useToast();
   const { setSpin } = useContext(SpinContext);
+  const [handleCheckEmail, { isLoading, data, status, error, originalArgs }] =
+    useCheckEmailMutation({});
+  const form = useFormik({
+    initialValues: {
+      email: "",
+      "cf-turnstile-response": "",
+    },
+    validationSchema: schema.auth.checkEmail,
+    onSubmit: (values) => {
+      handleCheckEmail({
+        email: values.email,
+        turnstileToken: values["cf-turnstile-response"],
+      });
+    },
+  });
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email") as string;
-    const turnstileToken = formData.get("cf-turnstile-response") as string;
-    if (!turnstileToken) {
-      console.log("Robot doğrulaması yapınız");
-      return;
+  useEffect(() => {
+    setSpin(isLoading);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (status === "fulfilled") {
+      onNext(data, form.values.email);
+    } else if (status === "rejected") {
+      parseApiError(error, toast);
     }
-    setSpin(true);
-    const res = await http
-      .post(
-        "/auth/checkEmail",
-        {
-          email: email,
-        },
-        {
-          headers: {
-            "X-Turnstile-Token": turnstileToken ?? "x",
-          },
-        }
-      )
-      .catch(http.onError);
-    setSpin(false);
-    if (res && res.status < 300 && res.data && res.data.exists) {
-      onNext(true, email);
-    } else {
-      // show error message
-    }
-  };
+  }, [status]);
 
   const onError = (err: string) => {
     console.log("err::", err);
@@ -55,26 +56,29 @@ export default function CheckUserNameForm({ onNext }: Props) {
 
   return (
     <div>
-      <form className="space-y-4 md:space-y-6 ease-in" onSubmit={onSubmit}>
+      <form
+        className="space-y-4 md:space-y-6 ease-in"
+        onSubmit={form.handleSubmit}
+      >
         <Input
           label={t("email")}
           name="email"
+          id="email"
           autoComplete="on"
           required
           autoFocus
+          onChange={form.handleChange}
+          value={form.values.email}
+          onBlur={form.handleBlur}
         />
         <Turnstile
           siteKey={Config.turnstile.siteKey}
           locale={locale}
           onError={onError}
           refreshOnExpired="auto"
-          onAfterInteractive={() => console.log("after interactive")}
-          onBeforeInteractive={() => console.log("before interactive")}
-          onExpire={() => console.log("expire")}
-          onVerify={() => console.log("verify")}
-          onUnsupported={() => console.log("unsupported")}
-          retryInterval={1000}
-          retry
+          onVerify={(token) => {
+            form.setFieldValue("cf-turnstile-response", token);
+          }}
         />
         <Button htmlType="submit">{t("button")}</Button>
       </form>

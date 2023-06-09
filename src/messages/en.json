@@ -141,5 +141,9 @@
       "description": "Touristic Route is a platform that allows you to experience the best tourism experience worldwide and share this experience with other people.",
       "keywords": "tourist route, tourist route, about us, about tourist route, about tourist route"
     }
+  },
+  "validation": {
+    "invalidEmail": "Please enter a valid email address",
+    "required": "This field is required"
   }
 }
