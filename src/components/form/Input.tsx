@@ -22,6 +22,9 @@ type InputProps<Value extends InputValue = string> = {
   placeholder?: string;
   size?: Size;
   error?: string;
+  ariaLabel?: string;
+  ariaDescribedBy?: string;
+  ariaInvalid?: boolean;
 };
 
 const sizes: Record<Size, string> = {
@@ -46,16 +49,19 @@ function Input<Value extends InputValue = string>({
   onBlur,
   error,
   size = "lg",
+  ariaLabel,
+  ariaDescribedBy,
+  ariaInvalid,
   ...props
 }: InputProps<Value>) {
   return (
     <>
       <div className={`relative w-full min-w-[200px] ${sizes[size]}`}>
         <input
-          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 transition-all  focus:border-2 focus:border-secondary-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${
+          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 focus:border-t-transparent transition-all  focus:border-2 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${
             !!error
-              ? "invalid border-red-500 focus:border-red-500 border-t-transparent text-red-500"
-              : ""
+              ? "invalid border-red-500 focus:border-red-500 text-red-500"
+              : "focus:border-secondary-500 "
           }`}
           placeholder=" "
           name={name}
@@ -68,6 +74,9 @@ function Input<Value extends InputValue = string>({
           onBlur={(e) => {
             onBlur && onBlur(e);
           }}
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedBy}
+          aria-invalid={ariaInvalid}
           {...props}
         />
         <label

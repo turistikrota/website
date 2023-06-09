@@ -11,11 +11,16 @@ type Props = {
 };
 
 const variants: Record<Variant, string> = {
-  primary: "bg-primary-400 hover:bg-primary-300",
-  secondary: "bg-secondary-400 hover:bg-secondary-300",
-  success: "bg-success-400 hover:bg-success-300",
-  error: "bg-error-400 hover:bg-error-300",
-  warning: "bg-warning-400 hover:bg-warning-300",
+  primary:
+    "bg-primary-400 hover:bg-primary-300 dark:bg-primary-500 dark:hover:bg-primary-400",
+  secondary:
+    "bg-secondary-400 hover:bg-secondary-300 dark:bg-secondary-500 dark:hover:bg-secondary-400",
+  success:
+    "bg-success-400 hover:bg-success-300 dark:bg-success-500 dark:hover:bg-success-400",
+  error:
+    "bg-error-400 hover:bg-error-300 dark:bg-error-500 dark:hover:bg-error-400",
+  warning:
+    "bg-warning-400 hover:bg-warning-300 dark:bg-warning-500 dark:hover:bg-warning-400",
 };
 
 const sizes: Record<Size, string> = {

@@ -33,7 +33,6 @@ export default function CheckUserNameForm({ onNext }: Props) {
       email: "",
     },
     validationSchema: schema.auth.checkEmail,
-    validateOnMount: false,
     onSubmit: (values) => {
       handleCheckEmail({
         email: values.email,
@@ -74,17 +73,18 @@ export default function CheckUserNameForm({ onNext }: Props) {
           id="email"
           type="email"
           required
-          autoComplete="email"
+          autoFocus
+          autoComplete="on"
           onChange={form.handleChange}
           value={form.values.email}
           onBlur={form.handleBlur}
           error={form.errors.email}
+          ariaLabel={t("email")}
         />
         <Turnstile
           siteKey={Config.turnstile.siteKey}
           locale={locale}
           onError={onError}
-          refreshOnExpired="auto"
           onVerify={onVerify}
         />
         <Button htmlType="submit">{t("button")}</Button>

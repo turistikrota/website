@@ -24,34 +24,4 @@ export const authApi = createApi({
   }),
 });
 
-/*
-      queryFn: async ({
-        email,
-        turnstileToken,
-      }: CheckEmailFormData): Promise<any> => {
-        const http = getHttp();
-        const res = await http
-          .post(
-            "/auth/checkEmail",
-            { email: email },
-            http.makeHeaders(Config.headers.TurnstileToken, turnstileToken)
-          )
-          .catch(http.onError);
-        if (
-          res &&
-          res.status < 300 &&
-          res.data &&
-          typeof res.data.exists !== "undefined"
-        ) {
-          return {
-            data: res.data.exists,
-            error: null,
-          };
-        }
-        return {
-          error: res?.data ?? res?.data?.message ?? res?.statusText,
-        };
-      },
-*/
-
 export const { useCheckEmailMutation } = authApi;

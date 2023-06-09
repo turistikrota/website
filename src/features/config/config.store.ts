@@ -13,7 +13,6 @@ const configSlice = createSlice({
   initialState,
   reducers: {
     setLocale: (state, action) => {
-      console.log("lang setted");
       state.locale = action.payload;
     },
   },

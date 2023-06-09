@@ -1,10 +1,14 @@
+import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/router";
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
 import TurnstileInput from "turnstile-next";
 import { Button, Input } from "~/components";
 import { Config } from "~/config";
-import { useHttp } from "~/hooks/http/http";
+import { useSchema } from "~/utils/schema";
+import { setTurnstileToken } from "./auth.store";
 
 type Props = {
   email: string;
@@ -13,31 +17,64 @@ type Props = {
 export default function LoginForm({ email }: Props) {
   const t = useTranslations("auth.login");
   const locale = useLocale();
-  const http = useHttp();
+  const schema = useSchema();
+  const dispatch = useDispatch();
+  const router = useRouter();
   const { setSpin } = useContext(SpinContext);
+  const form = useFormik({
+    initialValues: {
+      email: email,
+      password: "",
+    },
+    validationSchema: schema.auth.login,
+    onSubmit: (values) => {},
+  });
 
-  const onSubmit = async () => {};
+  const onError = (err: string) => {
+    dispatch(setTurnstileToken(""));
+  };
+
+  const onVerify = (token: string) => {
+    dispatch(setTurnstileToken(token));
+  };
 
   return (
     <div>
-      <form className="space-y-4 md:space-y-6 ease-in" onSubmit={onSubmit}>
+      <form
+        className="space-y-4 md:space-y-6 ease-in"
+        onSubmit={form.handleSubmit}
+      >
         <Input
           label={t("email")}
           name="email"
+          id="email"
+          type="email"
           autoComplete="on"
           required
           autoFocus
-          value={email}
+          value={form.values.email}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          ariaLabel={t("email")}
         />
         <Input
           label={t("password")}
           name="password"
           type="password"
+          id="password"
           autoComplete="on"
           required
-          autoFocus
+          value={form.values.password}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          ariaLabel={t("password")}
         />
-        <TurnstileInput siteKey={Config.turnstile.siteKey} locale={locale} />
+        <TurnstileInput
+          siteKey={Config.turnstile.siteKey}
+          locale={locale}
+          onError={onError}
+          onVerify={onVerify}
+        />
         <Button htmlType="submit">{t("button")}</Button>
       </form>
     </div>

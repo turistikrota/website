@@ -144,6 +144,7 @@
   },
   "validation": {
     "invalidEmail": "Geçersiz e-posta adresi",
+    "passwordMin": "Şifre en az {min} karakter olmalıdır",
     "required": "Bu alan zorunludur"
   }
 }
