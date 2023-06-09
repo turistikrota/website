@@ -21,8 +21,20 @@ const initialState: AuthState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    setTokens: (state, action) => {
+      state.tokens = action.payload;
+    },
+    setIsAuthenticated: (state, action) => {
+      state.isAuthenticated = action.payload;
+    },
+    setTurnstileToken: (state, action) => {
+      state.tokens.turnstileToken = action.payload;
+    },
+  },
   extraReducers: (builder) => {},
 });
 
 export default authSlice.reducer;
+export const { setTokens, setIsAuthenticated, setTurnstileToken } =
+  authSlice.actions;

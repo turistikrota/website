@@ -4,6 +4,8 @@ type config = {
   };
   headers: {
     TurnstileToken: string;
+    Authorization: string;
+    AcceptLang: string;
   };
 };
 
@@ -13,5 +15,7 @@ export const Config: config = {
   },
   headers: {
     TurnstileToken: "X-Turnstile-Token",
+    Authorization: "Authorization",
+    AcceptLang: "Accept-Language",
   },
 };

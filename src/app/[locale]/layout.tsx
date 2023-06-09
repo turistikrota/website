@@ -39,6 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
         tr: "/tr",
       },
     },
+    colorScheme: "light dark",
     robots: {
       index: true,
       follow: true,

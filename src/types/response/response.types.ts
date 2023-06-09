@@ -12,3 +12,5 @@ export type ValidationErrorDetail = {
   namespace?: string;
   value: string;
 };
+
+export type AnyResponse<T> = T | ValidationErrorDetail[] | BaseResponse;

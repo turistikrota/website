@@ -1,14 +1,30 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { Config } from "~/config";
-import { getHttp } from "~/hooks/http/http";
 import { baseQuery } from "~/store/config";
-import { CheckEmailFormData } from "./auth.types";
+import { AnyResponse } from "~/types/response/response.types";
+import { CheckEmailFormData, CheckEmailResponse } from "./auth.types";
 
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: baseQuery,
   endpoints: (builder) => ({
-    checkEmail: builder.mutation({
+    checkEmail: builder.mutation<
+      AnyResponse<CheckEmailResponse>,
+      CheckEmailFormData
+    >({
+      query: (data: CheckEmailFormData) => ({
+        url: "/auth/checkEmail",
+        method: "POST",
+        body: data,
+      }),
+      transformErrorResponse: (res) => {
+        console.log("err:", res);
+        return res.data;
+      },
+    }),
+  }),
+});
+
+/*
       queryFn: async ({
         email,
         turnstileToken,
@@ -36,8 +52,6 @@ export const authApi = createApi({
           error: res?.data ?? res?.data?.message ?? res?.statusText,
         };
       },
-    }),
-  }),
-});
+*/
 
 export const { useCheckEmailMutation } = authApi;

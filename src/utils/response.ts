@@ -15,7 +15,7 @@ const checkIfValidationError = (
 ): boolean => {
   if (Array.isArray(error)) {
     error.forEach((err) => {
-      toastContext.error(err.message, 5000);
+      toastContext.error(err.message, 10000);
     });
     return true;
   }
@@ -26,9 +26,9 @@ const checkIfBaseError = (
   toastContext: ToastContextType
 ): boolean => {
   if (error && typeof error === "string") {
-    toastContext.error(error, 5000);
+    toastContext.error(error, 10000);
   } else if (error && typeof error === "object" && error.message) {
-    toastContext.error(error.message, 5000);
+    toastContext.error(error.message, 10000);
   }
   return true;
 };
