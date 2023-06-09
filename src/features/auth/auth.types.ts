@@ -22,3 +22,16 @@ export type LoginResponse = {
 export function isLoginResponse(arg: any): arg is LoginResponse {
   return arg && arg.token !== undefined;
 }
+
+export type RegisterFormData = {
+  email: string;
+  password: string;
+};
+
+export type RegisterResponse = {
+  token: string;
+};
+
+export function isRegisterResponse(arg: any): arg is RegisterResponse {
+  return arg && arg.token !== undefined;
+}

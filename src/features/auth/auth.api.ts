@@ -6,6 +6,8 @@ import {
   CheckEmailResponse,
   LoginFormData,
   LoginResponse,
+  RegisterFormData,
+  RegisterResponse,
 } from "./auth.types";
 
 export const authApi = createApi({
@@ -37,7 +39,21 @@ export const authApi = createApi({
         return res.data;
       },
     }),
+    register: builder.mutation<AnyResponse<RegisterResponse>, RegisterFormData>(
+      {
+        query: (data: RegisterFormData) => ({
+          url: "/auth/register",
+          method: "POST",
+          body: data,
+          credentials: "include",
+        }),
+        transformErrorResponse: (res) => {
+          return res.data;
+        },
+      }
+    ),
   }),
 });
 
-export const { useCheckEmailMutation, useLoginMutation } = authApi;
+export const { useCheckEmailMutation, useLoginMutation, useRegisterMutation } =
+  authApi;

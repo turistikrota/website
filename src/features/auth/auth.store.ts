@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { authApi } from "./auth.api";
-import { isLoginResponse } from "./auth.types";
+import { isLoginResponse, isRegisterResponse } from "./auth.types";
 
 interface AuthState {
   isAuthenticated: boolean;
@@ -39,6 +39,15 @@ const authSlice = createSlice({
       authApi.endpoints.login.matchFulfilled,
       (state, action) => {
         if (isLoginResponse(action.payload)) {
+          state.tokens.accessToken = action.payload.token;
+          state.isAuthenticated = true;
+        }
+      }
+    );
+    builder.addMatcher(
+      authApi.endpoints.register.matchFulfilled,
+      (state, action) => {
+        if (isRegisterResponse(action.payload)) {
           state.tokens.accessToken = action.payload.token;
           state.isAuthenticated = true;
         }
