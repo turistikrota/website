@@ -54,6 +54,7 @@ export default function RegisterForm({ email }: Props) {
 
   useEffect(() => {
     if (status === "fulfilled") {
+      toast.success(t("success"));
       checkRedirectable(router, searchParams);
     } else if (status === "rejected") {
       parseApiError(error, form, toast);

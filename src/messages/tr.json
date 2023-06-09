@@ -15,7 +15,8 @@
       "title": "Yeni Bir Hesap Kayıt Olun",
       "email": "E-posta adresiniz",
       "password": "Şifreniz",
-      "button": "Kayıt ol"
+      "button": "Kayıt ol",
+      "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın."
     }
   },
   "waitlist": {

@@ -15,7 +15,8 @@
       "title": "Register for an Account",
       "email": "Your email",
       "password": "Your password",
-      "button": "Sign up"
+      "button": "Sign up",
+      "success": "Registration Successful! Please verify your account by clicking the link sent to your email address."
     }
   },
   "waitlist": {
