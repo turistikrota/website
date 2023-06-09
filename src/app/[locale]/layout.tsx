@@ -3,10 +3,8 @@ import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Arimo } from "next/font/google";
 import Script from "next/script";
-import { Provider } from "react-redux";
 import "~/app/globals.css";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
-import store from "~/store/store";
 
 type Props = {
   children: React.ReactNode;
@@ -89,11 +87,9 @@ export default async function Root({ children }: Props) {
     <html lang={locale} className={arimo.className}>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Provider store={store}>
-            <ToastListProvider>
-              <ToastProvider>{children}</ToastProvider>
-            </ToastListProvider>
-          </Provider>
+          <ToastListProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </ToastListProvider>
         </NextIntlClientProvider>
         <Script
           async={true}

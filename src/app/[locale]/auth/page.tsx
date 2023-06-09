@@ -1,6 +1,6 @@
+import Link from "next-intl/link";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import AuthForm from "./components/AuthForm";
 
 export default async function AuthHome() {

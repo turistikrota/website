@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import Link from "next-intl/link";
 
 export default function BasicFooter() {
-    const t = useTranslations("footer");
-    return  <footer >
+  const t = useTranslations("footer");
+  return (
+    <footer>
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
         <div className="mt-8 flex justify-center space-x-6">
           <Link
@@ -26,8 +27,9 @@ export default function BasicFooter() {
           </Link>
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          © {new Date().getFullYear()} {t('copyright')}
+          © {new Date().getFullYear()} {t("copyright")}
         </p>
       </div>
     </footer>
+  );
 }
