@@ -1,8 +1,12 @@
-import { NextRouter } from "next/router";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+import { ReadonlyURLSearchParams } from "next/navigation";
 
-export const checkRedirectable = (router: NextRouter) => {
-  if (router.query.redirect) {
-    const redirect = router.query.redirect as string;
+export const checkRedirectable = (
+  router: AppRouterInstance,
+  searchParams: ReadonlyURLSearchParams
+) => {
+  const redirect = searchParams.get("redirect");
+  if (redirect) {
     const redirectUrl = new URL(redirect);
     const currentUrl = new URL(window.location.href);
     if (redirectUrl.hostname === currentUrl.hostname) {

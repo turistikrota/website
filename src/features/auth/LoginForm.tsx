@@ -1,14 +1,19 @@
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
 import TurnstileInput from "turnstile-next";
 import { Button, Input } from "~/components";
+import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
+import { refreshTurnstile } from "~/utils/turnstile";
+import { useLoginMutation } from "./auth.api";
 import { setTurnstileToken } from "./auth.store";
+import { checkRedirectable } from "./auth.utils";
 
 type Props = {
   email: string;
@@ -20,15 +25,41 @@ export default function LoginForm({ email }: Props) {
   const schema = useSchema();
   const dispatch = useDispatch();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const toast = useToast();
   const { setSpin } = useContext(SpinContext);
+  const [handleLogin, { isLoading, data, status, error, originalArgs }] =
+    useLoginMutation({});
   const form = useFormik({
     initialValues: {
       email: email,
       password: "",
     },
     validationSchema: schema.auth.login,
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      handleLogin({
+        email: values.email,
+        password: values.password,
+      });
+    },
   });
+
+  useEffect(() => {
+    refreshTurnstile();
+  }, []);
+
+  useEffect(() => {
+    setSpin(isLoading);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (status === "fulfilled") {
+      checkRedirectable(router, searchParams);
+    } else if (status === "rejected") {
+      parseApiError(error, form, toast);
+      refreshTurnstile();
+    }
+  }, [status]);
 
   const onError = (err: string) => {
     dispatch(setTurnstileToken(""));
@@ -55,6 +86,7 @@ export default function LoginForm({ email }: Props) {
           value={form.values.email}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
+          error={form.errors.email}
           ariaLabel={t("email")}
         />
         <Input
@@ -67,6 +99,7 @@ export default function LoginForm({ email }: Props) {
           value={form.values.password}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
+          error={form.errors.password}
           ariaLabel={t("password")}
         />
         <TurnstileInput

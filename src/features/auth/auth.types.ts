@@ -9,3 +9,16 @@ export type CheckEmailResponse = {
 export function isCheckEmailResponse(arg: any): arg is CheckEmailResponse {
   return arg && arg.exists !== undefined;
 }
+
+export type LoginFormData = {
+  email: string;
+  password: string;
+};
+
+export type LoginResponse = {
+  token: string;
+};
+
+export function isLoginResponse(arg: any): arg is LoginResponse {
+  return arg && arg.token !== undefined;
+}

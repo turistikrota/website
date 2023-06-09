@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { authApi } from "./auth.api";
+import { isLoginResponse } from "./auth.types";
 
 interface AuthState {
   isAuthenticated: boolean;
@@ -32,7 +34,17 @@ const authSlice = createSlice({
       state.tokens.turnstileToken = action.payload;
     },
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder.addMatcher(
+      authApi.endpoints.login.matchFulfilled,
+      (state, action) => {
+        if (isLoginResponse(action.payload)) {
+          state.tokens.accessToken = action.payload.token;
+          state.isAuthenticated = true;
+        }
+      }
+    );
+  },
 });
 
 export default authSlice.reducer;

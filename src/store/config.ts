@@ -19,6 +19,7 @@ export const baseQuery = fetchBaseQuery({
         state.auth.tokens.turnstileToken
       );
     }
+    //headers.set(Config.headers.Credentials, "true");
     return headers;
   },
   credentials: "same-origin",
