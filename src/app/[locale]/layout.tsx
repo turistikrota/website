@@ -5,6 +5,7 @@ import { Arimo } from "next/font/google";
 import Script from "next/script";
 import "~/app/globals.css";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
+import ReduxProvider from "~/store/provider";
 
 type Props = {
   children: React.ReactNode;
@@ -87,9 +88,11 @@ export default async function Root({ children }: Props) {
     <html lang={locale} className={arimo.className}>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ToastListProvider>
-            <ToastProvider>{children}</ToastProvider>
-          </ToastListProvider>
+          <ReduxProvider>
+            <ToastListProvider>
+              <ToastProvider>{children}</ToastProvider>
+            </ToastListProvider>
+          </ReduxProvider>
         </NextIntlClientProvider>
         <Script
           async={true}
