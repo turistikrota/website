@@ -3,7 +3,8 @@ import { ReadonlyURLSearchParams } from "next/navigation";
 
 export const checkRedirectable = (
   router: AppRouterInstance,
-  searchParams: ReadonlyURLSearchParams
+  searchParams: ReadonlyURLSearchParams,
+  fallback: string = "/"
 ) => {
   const redirect = searchParams.get("redirect");
   if (redirect) {
@@ -13,5 +14,5 @@ export const checkRedirectable = (
       return router.push(redirect);
     }
   }
-  router.push("/");
+  router.push(fallback);
 };
