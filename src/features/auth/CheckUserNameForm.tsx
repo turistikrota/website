@@ -48,7 +48,7 @@ export default function CheckUserNameForm({ onNext }: Props) {
     if (status === "fulfilled") {
       onNext(isCheckEmailResponse(data) && data.exists, form.values.email);
     } else if (status === "rejected") {
-      parseApiError(error, form, toast);
+      parseApiError({ error, form, toast });
     }
   }, [status]);
 

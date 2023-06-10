@@ -13,6 +13,7 @@ import { useSchema } from "~/utils/schema";
 import { refreshTurnstile } from "~/utils/turnstile";
 import { useLoginMutation } from "./auth.api";
 import { setTurnstileToken } from "./auth.store";
+import { isVerifyRequiredForLoginResponse } from "./auth.types";
 import { checkRedirectable } from "./auth.utils";
 
 type Props = {
@@ -56,7 +57,10 @@ export default function LoginForm({ email }: Props) {
     if (status === "fulfilled") {
       checkRedirectable(router, searchParams);
     } else if (status === "rejected") {
-      parseApiError(error, form, toast);
+      if (isVerifyRequiredForLoginResponse(error)) {
+        return router.push(`/auth/re-send?email=${form.values.email}`);
+      }
+      parseApiError({ error, form, toast });
       refreshTurnstile();
     }
   }, [status]);

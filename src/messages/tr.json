@@ -17,6 +17,22 @@
       "password": "Şifreniz",
       "button": "Kayıt ol",
       "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın."
+    },
+    "activate": {
+      "title": "Hesabınızı Aktifleştirin",
+      "button": "Aktifleştir",
+      "success": "Hesabınız başarıyla aktifleştirildi! Şimdi giriş yapabilirsiniz.",
+      "reSend": {
+        "notHave": "Aktivasyon kodunuz yoksa",
+        "send": "buraya tıklayarak yeni bir kod alabilirsiniz."
+      },
+      "codeNotExist": "Aktivasyon kodu bulunamadı."
+    },
+    "reSend": {
+      "title": "Doğrulama Kodu Gönder",
+      "email": "E-posta adresiniz",
+      "button": "Gönder",
+      "success": "Doğrulama kodu başarıyla gönderildi! Lütfen e-posta adresinizi kontrol edin."
     }
   },
   "waitlist": {

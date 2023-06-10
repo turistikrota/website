@@ -6,8 +6,11 @@ import {
   CheckEmailResponse,
   LoginFormData,
   LoginResponse,
+  ReSendVerificationFormData,
   RegisterFormData,
   RegisterResponse,
+  VerifyFailResponse,
+  VerifyFormData,
 } from "./auth.types";
 
 export const authApi = createApi({
@@ -52,8 +55,36 @@ export const authApi = createApi({
         },
       }
     ),
+    verify: builder.mutation<AnyResponse<VerifyFailResponse>, VerifyFormData>({
+      query: (data: VerifyFormData) => ({
+        url: `/auth/${data.token}`,
+        method: "POST",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    reSendVerify: builder.mutation<AnyResponse<{}>, ReSendVerificationFormData>(
+      {
+        query: (data: ReSendVerificationFormData) => ({
+          url: "/auth/re-verify",
+          method: "POST",
+          body: data,
+          credentials: "include",
+        }),
+        transformErrorResponse: (res) => {
+          return res.data;
+        },
+      }
+    ),
   }),
 });
 
-export const { useCheckEmailMutation, useLoginMutation, useRegisterMutation } =
-  authApi;
+export const {
+  useCheckEmailMutation,
+  useLoginMutation,
+  useRegisterMutation,
+  useVerifyMutation,
+  useReSendVerifyMutation,
+} = authApi;

@@ -17,6 +17,22 @@
       "password": "Your password",
       "button": "Sign up",
       "success": "Registration Successful! Please verify your account by clicking the link sent to your email address."
+    },
+    "activate": {
+      "title": "Activate Your Account",
+      "button": "Activate",
+      "success": "Your account has been successfully activated! You can login now.",
+      "codeNotExist": "The activation code you entered does not exist.",
+      "reSend": {
+        "notHave": "If you don't have an activation code",
+        "send": "click here to get a new code."
+      }
+    },
+    "reSend": {
+      "title": "Send Verification Code",
+      "email": "Your e-mail address",
+      "button": "Submit",
+      "success": "Verification code sent successfully! Please check your email address."
     }
   },
   "waitlist": {

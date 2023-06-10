@@ -57,7 +57,7 @@ export default function RegisterForm({ email }: Props) {
       toast.success(t("success"));
       checkRedirectable(router, searchParams);
     } else if (status === "rejected") {
-      parseApiError(error, form, toast);
+      parseApiError({ error, form, toast });
       refreshTurnstile();
     }
   }, [status]);

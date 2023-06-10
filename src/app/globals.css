@@ -22,6 +22,7 @@
   --popup-background-color: #fff;
   --header-background-color: #fff;
   --default-background: rgb(239, 244, 245);
+  --loading-backdrop: brightness(0.8) blur(1px);
 
   --second-background-color: #fff;
   --border-color: #e6e6e6;
@@ -99,6 +100,7 @@
     --skeleton-color-900: #0f0f0f;
     --skeleton-color-1000: #0d0d0d;
     --skeleton-color-1100: #0b0b0b;
+    --loading-backdrop: brightness(0.5) blur(1px);
 
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
@@ -138,7 +140,7 @@ select:-webkit-autofill:focus {
 }
 
 .sspin-provider.sspin-loading .sspin-overlay {
-  backdrop-filter: brightness(0.5) !important;
+  backdrop-filter: var(--loading-backdrop) !important;
   border-radius: var(--radius-base);
 }
 

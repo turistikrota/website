@@ -2,22 +2,18 @@ import { ToastContextType } from "~/components/toast/Toast";
 
 type ErrorChainEl = {
   error: any;
-  form: any;
-  toastContext: ToastContextType;
+  form?: any;
+  toast: ToastContextType;
 };
 
-export const parseApiError = (
-  error: any,
-  form: any,
-  toastContext: ToastContextType
-) => {
+export const parseApiError = ({ error, form, toast }: ErrorChainEl) => {
   const arr = [checkIfValidationError, checkIfBaseError];
   for (let i = 0; i < arr.length; i++) {
     if (
       arr[i]({
         error,
         form,
-        toastContext,
+        toast,
       })
     ) {
       return;
@@ -28,14 +24,14 @@ export const parseApiError = (
 const checkIfValidationError = ({
   error,
   form,
-  toastContext,
+  toast,
 }: ErrorChainEl): boolean => {
   if (Array.isArray(error)) {
     error.forEach((err) => {
       setFormError({
         form,
         msg: err.message,
-        callback: () => toastContext.error(err.message, 10000),
+        callback: () => toast.error(err.message, 10000),
         field: err.namespace,
       });
     });
@@ -43,15 +39,11 @@ const checkIfValidationError = ({
   }
   return false;
 };
-const checkIfBaseError = ({
-  error,
-  form,
-  toastContext,
-}: ErrorChainEl): boolean => {
+const checkIfBaseError = ({ error, form, toast }: ErrorChainEl): boolean => {
   if (error && typeof error === "string") {
-    toastContext.error(error, 10000);
+    toast.error(error, 10000);
   } else if (error && typeof error === "object" && error.message) {
-    toastContext.error(error.message, 10000);
+    toast.error(error.message, 10000);
   }
   return true;
 };

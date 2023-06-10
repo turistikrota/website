@@ -19,8 +19,18 @@ export type LoginResponse = {
   token: string;
 };
 
+export type VerifyRequiredForLoginResponse = {
+  verifyRequired: boolean;
+};
+
 export function isLoginResponse(arg: any): arg is LoginResponse {
   return arg && arg.token !== undefined;
+}
+
+export function isVerifyRequiredForLoginResponse(
+  arg: any
+): arg is VerifyRequiredForLoginResponse {
+  return arg && arg.verifyRequired !== undefined;
 }
 
 export type RegisterFormData = {
@@ -35,3 +45,20 @@ export type RegisterResponse = {
 export function isRegisterResponse(arg: any): arg is RegisterResponse {
   return arg && arg.token !== undefined;
 }
+
+export type VerifyFormData = {
+  token: string;
+};
+
+export type VerifyFailResponse = {
+  email: string;
+  reSendable: boolean;
+};
+
+export function isVerifyFailResponse(arg: any): arg is VerifyFailResponse {
+  return arg && arg.email !== undefined && arg.reSendable !== undefined;
+}
+
+export type ReSendVerificationFormData = {
+  email: string;
+};
