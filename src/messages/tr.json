@@ -4,7 +4,8 @@
       "title": "Bir profil seçin",
       "tool": {
         "individual": "Bireysel hesap",
-        "corporate": "Kurumsal hesap"
+        "corporate": "Kurumsal hesap",
+        "completedRate": "Bu profil {rate}% oranında tamamlandı"
       },
       "new": "Yeni bir profil oluşturun"
     }

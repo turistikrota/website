@@ -4,7 +4,8 @@
       "title": "Choose a profile",
       "tool": {
         "individual": "Individual account",
-        "corporate": "Corporate account"
+        "corporate": "Corporate account",
+        "completedRate": "This profile is {rate}% complete"
       },
       "new": "Create a new profile"
     }
