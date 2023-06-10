@@ -1,4 +1,14 @@
 {
+  "account": {
+    "select": {
+      "title": "Bir profil seçin",
+      "tool": {
+        "individual": "Bireysel hesap",
+        "corporate": "Kurumsal hesap"
+      },
+      "new": "Yeni bir profil oluşturun"
+    }
+  },
   "auth": {
     "login": {
       "title": "Hesabınıza Giriş Yapın",

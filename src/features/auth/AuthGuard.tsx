@@ -1,12 +1,5 @@
 "use client";
-import {
-  notFound,
-  redirect,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
-import { useDispatch } from "react-redux";
+import { notFound, redirect, usePathname } from "next/navigation";
 import { Spinner } from "sspin";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
@@ -42,9 +35,6 @@ export default function AuthGuard({
   claims = [],
 }: React.PropsWithChildren<Props>) {
   const path = usePathname();
-  const router = useRouter();
-  const dispatch = useDispatch();
-  const searchParams = useSearchParams();
   const { isLoading, data, error } = useGetCurrentQuery({});
 
   const replaceLocales = (path: string) => {

@@ -7,10 +7,6 @@ import {
   isRegisterResponse,
 } from "./auth.types";
 
-enum StorageKeys {
-  AccessToken = "auth:token",
-}
-
 interface AuthState {
   isAuthenticated: boolean;
   isLoading: boolean;

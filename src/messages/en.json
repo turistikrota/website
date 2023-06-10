@@ -1,4 +1,14 @@
 {
+  "account": {
+    "select": {
+      "title": "Choose a profile",
+      "tool": {
+        "individual": "Individual account",
+        "corporate": "Corporate account"
+      },
+      "new": "Create a new profile"
+    }
+  },
   "auth": {
     "login": {
       "title": "Sign In to Your Account",
