@@ -32,7 +32,8 @@ export default function ActivateForm() {
 
   useEffect(() => {
     if (status === "fulfilled") {
-      console.log("data::", data);
+      toast.success(t("success"));
+      router.push("/auth");
     } else if (status === "rejected") {
       if (isVerifyFailResponse(error) && error.reSendable) {
         return router.push(`/auth/re-send?email=${error.email}`);

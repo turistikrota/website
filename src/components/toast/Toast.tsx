@@ -347,7 +347,7 @@ export const ToastListProvider: React.FC<React.PropsWithChildren> = ({
 
   const onToast = (toast: Toast) => {
     setToasts((prev) => [...prev, toast]);
-    if (toast.duration) {
+    if (toast.duration && toast.duration !== -1) {
       setRemoves((prev) => [
         ...prev,
         { id: toast.id, duration: toast.duration! },
@@ -384,7 +384,11 @@ export const useToastList = () => {
 export const ToastProvider = ({ children }: Props) => {
   const { onToast, removeToast, toasts } = useToastList();
 
-  const addToast = (type: ToastType, message: string, duration?: number) => {
+  const addToast = (
+    type: ToastType,
+    message: string,
+    duration: number = 10000
+  ) => {
     const id = Math.random().toString(36).substr(2, 9);
     const toast = {
       id,

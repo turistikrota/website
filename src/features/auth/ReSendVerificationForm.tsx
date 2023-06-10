@@ -1,3 +1,5 @@
+"use client";
+
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
