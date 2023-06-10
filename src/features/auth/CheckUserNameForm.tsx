@@ -20,7 +20,7 @@ type Props = {
   onNext: (val: boolean, mail?: string) => void;
 };
 
-export default function CheckUserNameForm({ onNext }: Props) {
+export default function CheckUserNameForm(props: Props) {
   const t = useTranslations("auth.check");
   const schema = useSchema();
   const locale = useLocale();
@@ -51,7 +51,10 @@ export default function CheckUserNameForm({ onNext }: Props) {
 
   useEffect(() => {
     if (status === "fulfilled") {
-      onNext(isCheckEmailResponse(data) && data.exists, form.values.email);
+      props.onNext(
+        isCheckEmailResponse(data) && data.exists,
+        form.values.email
+      );
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
     }
