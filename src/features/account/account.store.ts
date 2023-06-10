@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UserAccount } from "~/types/user";
+import { AccountListItem } from "./account.types";
 
 interface AccountState {
-  currentAccount: UserAccount | null;
+  currentAccount: AccountListItem | null;
 }
 
 const initialState: AccountState = {

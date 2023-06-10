@@ -6,7 +6,7 @@ import { PropsWithChildren, useState } from "react";
 import { Config } from "~/config";
 
 type AccountSelectionProps = {
-  onSelect: () => void;
+  onSelect?: () => void;
 };
 
 type AccountSelectionCardType = React.FC<
@@ -118,7 +118,7 @@ const FullName = ({ children }: React.PropsWithChildren) => {
 const Card: AccountSelectionCardType = ({ children, onSelect }) => {
   return (
     <div
-      className="grid grid-cols-4 relative cursor-pointer"
+      className="grid grid-cols-4 relative cursor-pointer ease-in duration-300"
       onClick={onSelect}
     >
       {children}
