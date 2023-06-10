@@ -31,7 +31,7 @@ const checkIfValidationError = ({
       setFormError({
         form,
         msg: err.message,
-        callback: () => toast.error(err.message, 10000),
+        callback: () => toast.error(err.message),
         field: err.namespace,
       });
     });
@@ -41,9 +41,9 @@ const checkIfValidationError = ({
 };
 const checkIfBaseError = ({ error, form, toast }: ErrorChainEl): boolean => {
   if (error && typeof error === "string") {
-    toast.error(error, 10000);
+    toast.error(error);
   } else if (error && typeof error === "object" && error.message) {
-    toast.error(error.message, 10000);
+    toast.error(error.message);
   }
   return true;
 };

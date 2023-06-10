@@ -57,7 +57,7 @@ export default function ActivateForm() {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const verificationCode = searchParams.get("code");
-    if (!verificationCode) return toast.error(t("codeNotExist"), 10000);
+    if (!verificationCode) return toast.error(t("codeNotExist"));
     handleVerify({
       token: verificationCode,
     });
