@@ -1,6 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
+import { User } from "~/types/user";
 import {
   CheckEmailFormData,
   CheckEmailResponse,
@@ -78,6 +79,26 @@ export const authApi = createApi({
         },
       }
     ),
+    refresh: builder.mutation<AnyResponse<{}>, {}>({
+      query: () => ({
+        url: "/auth/refresh",
+        method: "PUT",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    getCurrent: builder.mutation<AnyResponse<User>, {}>({
+      query: () => ({
+        url: "/auth",
+        method: "GET",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
   }),
 });
 
@@ -87,4 +108,6 @@ export const {
   useRegisterMutation,
   useVerifyMutation,
   useReSendVerifyMutation,
+  useRefreshMutation,
+  useGetCurrentMutation,
 } = authApi;

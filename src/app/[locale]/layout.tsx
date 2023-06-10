@@ -2,13 +2,16 @@ import { Metadata } from "next";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Arimo } from "next/font/google";
+import { cookies } from "next/headers";
 import Script from "next/script";
 import "~/app/globals.css";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
+import AuthProvider from "~/features/auth/AuthProvider";
 import ReduxProvider from "~/store/provider";
 
 type Props = {
   children: React.ReactNode;
+  token: string;
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -84,6 +87,8 @@ const arimo = Arimo({
 
 export default async function Root({ children }: Props) {
   const locale = useLocale();
+  const cookieStore = cookies();
+  const token = cookieStore.get("access_token");
   const messages = (await import(`~/messages/${locale}.json`)).default;
   return (
     <html lang={locale} className={arimo.className}>
@@ -94,7 +99,11 @@ export default async function Root({ children }: Props) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
             <ToastListProvider>
-              <ToastProvider>{children}</ToastProvider>
+              <ToastProvider>
+                <AuthProvider token={token?.value ?? ""}>
+                  {children}
+                </AuthProvider>
+              </ToastProvider>
             </ToastListProvider>
           </ReduxProvider>
         </NextIntlClientProvider>

@@ -1,9 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { User, isUser } from "~/types/user";
 import { authApi } from "./auth.api";
 import { isLoginResponse, isRegisterResponse } from "./auth.types";
 
+enum StorageKeys {
+  AccessToken = "auth:token",
+}
+
 interface AuthState {
   isAuthenticated: boolean;
+  isLoading: boolean;
+  currentUser: User | null;
   tokens: {
     accessToken: string;
     refreshToken: string;
@@ -13,6 +20,8 @@ interface AuthState {
 
 const initialState: AuthState = {
   isAuthenticated: false,
+  isLoading: false,
+  currentUser: null,
   tokens: {
     accessToken: "",
     refreshToken: "",
@@ -33,6 +42,15 @@ const authSlice = createSlice({
     setTurnstileToken: (state, action) => {
       state.tokens.turnstileToken = action.payload;
     },
+    setAccessToken: (state, action) => {
+      state.tokens.accessToken = action.payload;
+    },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
+    setUser: (state, action) => {
+      state.currentUser = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -50,6 +68,16 @@ const authSlice = createSlice({
         if (isRegisterResponse(action.payload)) {
           state.tokens.accessToken = action.payload.token;
           state.isAuthenticated = true;
+          localStorage.setItem(StorageKeys.AccessToken, action.payload.token);
+        }
+      }
+    );
+    builder.addMatcher(
+      authApi.endpoints.getCurrent.matchFulfilled,
+      (state, action) => {
+        if (isUser(action.payload)) {
+          state.isAuthenticated = true;
+          state.currentUser = action.payload;
         }
       }
     );
@@ -57,5 +85,10 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
-export const { setTokens, setIsAuthenticated, setTurnstileToken } =
-  authSlice.actions;
+export const {
+  setTokens,
+  setIsAuthenticated,
+  setTurnstileToken,
+  setAccessToken,
+  setIsLoading,
+} = authSlice.actions;
