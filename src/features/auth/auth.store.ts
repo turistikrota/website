@@ -50,6 +50,7 @@ const authSlice = createSlice({
     },
     setUser: (state, action) => {
       state.currentUser = action.payload;
+      state.isAuthenticated = !!action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -68,7 +69,6 @@ const authSlice = createSlice({
         if (isRegisterResponse(action.payload)) {
           state.tokens.accessToken = action.payload.token;
           state.isAuthenticated = true;
-          localStorage.setItem(StorageKeys.AccessToken, action.payload.token);
         }
       }
     );
@@ -81,6 +81,14 @@ const authSlice = createSlice({
         }
       }
     );
+    builder.addMatcher(
+      authApi.endpoints.logout.matchFulfilled,
+      (state, action) => {
+        state.isAuthenticated = false;
+        state.currentUser = null;
+        state.tokens.accessToken = "";
+      }
+    );
   },
 });
 
@@ -91,4 +99,5 @@ export const {
   setTurnstileToken,
   setAccessToken,
   setIsLoading,
+  setUser,
 } = authSlice.actions;

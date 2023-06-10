@@ -89,10 +89,20 @@ export const authApi = createApi({
         return res.data;
       },
     }),
-    getCurrent: builder.mutation<AnyResponse<User>, {}>({
+    getCurrent: builder.query<AnyResponse<User>, {}>({
       query: () => ({
         url: "/auth",
         method: "GET",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    logout: builder.mutation<AnyResponse<{}>, {}>({
+      query: () => ({
+        url: "/auth/logout",
+        method: "POST",
         credentials: "include",
       }),
       transformErrorResponse: (res) => {
@@ -109,5 +119,6 @@ export const {
   useVerifyMutation,
   useReSendVerifyMutation,
   useRefreshMutation,
-  useGetCurrentMutation,
+  useLogoutMutation,
+  useGetCurrentQuery,
 } = authApi;
