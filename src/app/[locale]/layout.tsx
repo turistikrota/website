@@ -87,6 +87,9 @@ export default async function Root({ children }: Props) {
   const messages = (await import(`~/messages/${locale}.json`)).default;
   return (
     <html lang={locale} className={arimo.className}>
+      <head>
+        <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+      </head>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>

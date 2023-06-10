@@ -8,4 +8,8 @@ module.exports = [
     source: "/tr/cok-yakinda",
     destination: "/tr/coming-soon",
   },
+  {
+    source: "/tr/giris",
+    destination: "/tr/auth",
+  },
 ];

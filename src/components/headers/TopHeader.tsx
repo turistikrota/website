@@ -1,31 +1,35 @@
 import { BaseProps } from "~/types/base";
 
 type Props = {
-    className?: string;
-}
+  className?: string;
+};
 
 const Left = ({ children }: BaseProps) => {
-    return (
-        <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
-            {children}
-        </div>
-    )
-}
+  return (
+    <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
+      {children}
+    </div>
+  );
+};
 
 const Right = ({ children }: BaseProps) => {
-    return <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
-        {children}
+  return (
+    <div className="flex items-center text-xs gap-8 text-gray-500 dark:text-gray-300">
+      {children}
     </div>
-}
+  );
+};
 
-function TopHeader({children, className}: BaseProps & Props) {
-    return (
-        <section className={`flex items-center justify-between w-full h-8  dark:border-gray-800 ${className}`}>
-            <div className="flex items-center justify-between w-full px-4 mx-auto max-w-7xl">
-                {children}
-            </div>
-        </section>
-    )
+function TopHeader({ children, className }: BaseProps & Props) {
+  return (
+    <section
+      className={`flex items-center justify-between w-full h-8 bg-default dark:border-gray-800 ${className}`}
+    >
+      <div className="flex items-center justify-between w-full px-4 mx-auto max-w-7xl">
+        {children}
+      </div>
+    </section>
+  );
 }
 
 TopHeader.Left = Left;
