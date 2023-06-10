@@ -4,6 +4,7 @@ import { Provider, useDispatch } from "react-redux";
 
 import { useLocale } from "next-intl";
 import { PropsWithChildren, useEffect } from "react";
+import { onStartClient } from "~/features/account/account.store";
 import { setLocale } from "~/features/config/config.store";
 import store from "./store";
 
@@ -14,6 +15,11 @@ function ConfigProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     dispatch(setLocale(locale));
   }, [locale]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    onStartClient(dispatch);
+  }, []);
   return <>{children}</>;
 }
 
