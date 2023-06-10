@@ -1,13 +1,20 @@
 "use client";
-import { notFound, redirect } from "next/navigation";
+import {
+  notFound,
+  redirect,
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
+import { useDispatch } from "react-redux";
 import { Spinner } from "sspin";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
 import { useGetCurrentQuery } from "./auth.api";
+import { isExpiredError } from "./auth.types";
 
 type Props = {
   blockPageOnLoading?: boolean;
-  requiredAuth?: boolean;
   claimGuard?: boolean;
   redirectIfFound?: boolean;
   redirectIfNotFound?: boolean;
@@ -34,22 +41,49 @@ export default function AuthGuard({
   redirectIfClaimNotFoundPath = "/errors/403",
   claims = [],
 }: React.PropsWithChildren<Props>) {
+  const path = usePathname();
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const searchParams = useSearchParams();
   const { isLoading, data, error } = useGetCurrentQuery({});
 
+  const replaceLocales = (path: string) => {
+    const regex = new RegExp(`^/(tr|en)`);
+    return path.replace(regex, "");
+  };
+
   if (blockPageOnLoading && (isLoading || data === null)) return <Loading />;
-  if (redirectIfFound && data !== null) {
+  if (
+    redirectIfFound &&
+    isUser(data) &&
+    !isLoading &&
+    replaceLocales(path) !== redirectIfFoundPath
+  ) {
+    console.log("point 1");
     return redirect(redirectIfFoundPath);
   }
-  if (redirectIfNotFound && data === null) {
+  if (
+    redirectIfNotFound &&
+    data === null &&
+    !isLoading &&
+    replaceLocales(path) !== redirectIfNotFoundPath
+  ) {
+    console.log("point 2");
     return redirect(redirectIfNotFoundPath);
   }
-  if (error) {
-    if (redirectIfNotFound) {
+  if (error && !isLoading) {
+    if (redirectIfNotFound && !isExpiredError(error)) {
       return redirect(redirectIfNotFoundPath);
     }
-    return notFound();
+    if (!isExpiredError(error)) return notFound();
   }
-  if (claimGuard && isUser(data) && claims.length > 0) {
+  if (
+    claimGuard &&
+    !isExpiredError(error) &&
+    !isLoading &&
+    isUser(data) &&
+    claims.length > 0
+  ) {
     const hasClaim = claims.some((claim) => data.roles.includes(claim));
     if (!hasClaim) {
       return redirect(redirectIfClaimNotFoundPath);

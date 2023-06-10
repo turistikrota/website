@@ -1,12 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Spin from "sspin";
 import { Condition } from "~/components";
+import { RootState } from "~/store/store";
 import CheckUserNameForm from "./CheckUserNameForm";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
+import { useRefreshMutation } from "./auth.api";
 type Id = "check-username" | "login" | "register";
 
 const Components = {
@@ -41,11 +44,19 @@ const getActiveChain = (id: Id): ChainEl => {
 
 export default function AuthForm() {
   const t = useTranslations("auth");
+  const isExpired = useSelector((state: RootState) => state.auth.isExpired);
   const [email, setEmail] = useState<string>("");
   const [id, setId] = useState<Id>("check-username");
   const [activeChain, setActiveChain] = useState<ChainEl>(
     getActiveChain("check-username")
   );
+  const [handleRefresh, { isLoading }] = useRefreshMutation({});
+
+  useEffect(() => {
+    if (isExpired) {
+      handleRefresh({});
+    }
+  }, [isExpired]);
 
   const onNext = (id: Id, mail?: string) => {
     setId(id);
@@ -55,7 +66,7 @@ export default function AuthForm() {
   };
   return (
     <>
-      <Spin.WithContext value={false}>
+      <Spin.WithContext value={isLoading}>
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             {t(activeChain.title as any)}

@@ -11,6 +11,7 @@ import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
+import { refreshTurnstile } from "~/utils/turnstile";
 import { useCheckEmailMutation } from "./auth.api";
 import { setTurnstileToken } from "./auth.store";
 import { isCheckEmailResponse } from "./auth.types";
@@ -39,6 +40,10 @@ export default function CheckUserNameForm({ onNext }: Props) {
       });
     },
   });
+
+  useEffect(() => {
+    refreshTurnstile();
+  }, []);
 
   useEffect(() => {
     setSpin(isLoading);

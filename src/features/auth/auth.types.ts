@@ -62,3 +62,11 @@ export function isVerifyFailResponse(arg: any): arg is VerifyFailResponse {
 export type ReSendVerificationFormData = {
   email: string;
 };
+
+export type ExpiredError = {
+  isExpire: boolean;
+};
+
+export function isExpiredError(arg: any): arg is ExpiredError {
+  return arg && typeof arg.isExpire !== undefined;
+}

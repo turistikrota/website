@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { User } from "~/types/user";
 import { setUser } from "./auth.store";
@@ -14,6 +14,8 @@ export default function AuthClientProvider({
   children,
 }: React.PropsWithChildren<Props>) {
   const dispatch = useDispatch();
-  dispatch(setUser(user));
+  useEffect(() => {
+    dispatch(setUser(user));
+  }, [user]);
   return <>{children}</>;
 }

@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { User, isUser } from "~/types/user";
 import { authApi } from "./auth.api";
-import { isLoginResponse, isRegisterResponse } from "./auth.types";
+import {
+  isExpiredError,
+  isLoginResponse,
+  isRegisterResponse,
+} from "./auth.types";
 
 enum StorageKeys {
   AccessToken = "auth:token",
@@ -10,6 +14,7 @@ enum StorageKeys {
 interface AuthState {
   isAuthenticated: boolean;
   isLoading: boolean;
+  isExpired: boolean;
   currentUser: User | null;
   tokens: {
     accessToken: string;
@@ -20,6 +25,7 @@ interface AuthState {
 
 const initialState: AuthState = {
   isAuthenticated: false,
+  isExpired: false,
   isLoading: false,
   currentUser: null,
   tokens: {
@@ -51,6 +57,9 @@ const authSlice = createSlice({
     setUser: (state, action) => {
       state.currentUser = action.payload;
       state.isAuthenticated = !!action.payload;
+    },
+    setIsExpired: (state, action) => {
+      state.isExpired = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -87,6 +96,17 @@ const authSlice = createSlice({
         state.isAuthenticated = false;
         state.currentUser = null;
         state.tokens.accessToken = "";
+      }
+    );
+    builder.addMatcher(
+      authApi.endpoints.getCurrent.matchRejected,
+      (state, action) => {
+        if (isExpiredError(action.payload)) {
+          state.isExpired = action.payload.isExpire;
+          state.isAuthenticated = false;
+          state.currentUser = null;
+          state.tokens.accessToken = "";
+        }
       }
     );
   },
