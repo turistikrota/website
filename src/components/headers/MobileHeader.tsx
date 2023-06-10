@@ -39,11 +39,22 @@ const Logo = ({ children }: BaseProps) => {
   );
 };
 
+const Button = ({ children, onClick }: BaseProps & ClickableProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-100 rounded-full hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200"
+    >
+      {children}
+    </button>
+  );
+};
+
 const Avatar = ({ children, onClick }: BaseProps & ClickableProps) => {
   return (
     <button
       onClick={onClick}
-      className="p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-100 rounded-full hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+      className="p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-100 rounded-full hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200"
     >
       {children}
     </button>
@@ -61,7 +72,7 @@ function MobileHeader({ children }: BaseProps) {
   return (
     <header
       className={`backdrop-saturate-200 backdrop-blur-sm w-full h-16 border-b border-gray-200 dark:border-gray-800 ${
-        isFixed && "fixed top-0 left-0 z-30 animate-slide-down"
+        isFixed ? "fixed top-0 left-0 z-30 animate-slide-down" : ""
       }`}
     >
       <div className="flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
@@ -76,5 +87,6 @@ MobileHeader.Right = Right;
 MobileHeader.Logo = Logo;
 MobileHeader.Avatar = Avatar;
 MobileHeader.Fill = Fill;
+MobileHeader.Button = Button;
 
 export default MobileHeader;

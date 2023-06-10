@@ -101,7 +101,9 @@
       "promotion": "Gerçek turizm deneyimi çok yakında!"
     },
     "links": {
-      "aboutUs": "Hakkımızda"
+      "aboutUs": "Hakkımızda",
+      "login": "Giriş Yap",
+      "selectAccount": "Profil Seç"
     }
   },
   "aboutUs": {
