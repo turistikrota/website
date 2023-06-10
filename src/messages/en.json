@@ -173,5 +173,13 @@
     "invalidEmail": "Please enter a valid email address",
     "passwordMin": "Password must be at least {min} characters",
     "required": "This field is required"
+  },
+  "general": {
+    "verified": "Verified",
+    "verified_alt": "This account has been verified",
+    "active": "Active",
+    "active_alt": "This account is active",
+    "inactive": "Inactive",
+    "inactive_alt": "This account is inactive"
   }
 }

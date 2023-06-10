@@ -173,5 +173,13 @@
     "invalidEmail": "Geçersiz e-posta adresi",
     "passwordMin": "Şifre en az {min} karakter olmalıdır",
     "required": "Bu alan zorunludur"
+  },
+  "general": {
+    "verified": "Doğrulandı",
+    "verified_alt": "Bu hesap doğrulanmıştır",
+    "active": "Aktif",
+    "active_alt": "Bu hesap aktiftir",
+    "inactive": "Pasif",
+    "inactive_alt": "Bu hesap pasiftir"
   }
 }

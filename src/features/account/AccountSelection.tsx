@@ -1,8 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
+import { Condition } from "~/components";
 import { Config } from "~/config";
+import { useDayJS } from "~/utils/dayjs";
 import { useListQuery } from "./account.api";
 import { AccountListItem, isAccountListResponse } from "./account.types";
 
@@ -13,17 +15,52 @@ type AccountSelectionProps = {
   onSelect: (name: string, code: string) => void;
 } & AccountListItem;
 
+const CompletedRangeLine = ({ completedRate }: { completedRate: number }) => {
+  return (
+    <div className="absolute bottom-0 left-0 w-full h-1 bg-green-50 dark:bg-green-950 bg-opacity-50 rounded-b-md">
+      <div
+        className={`h-full bg-green-400 dark:bg-green-500 rounded-b-md`}
+        style={{ width: `${completedRate}%` }}
+      ></div>
+    </div>
+  );
+};
+
+const VerifiedBadge = () => {
+  const t = useTranslations("general");
+  return (
+    <div
+      className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full"
+      role="alert"
+      aria-label={t("verified")}
+      title={t("verified_alt")}
+    >
+      <i className="bx bx-md bxs-badge-check text-primary-500"></i>
+    </div>
+  );
+};
+
 const AccountSelectionCard: React.FC<AccountSelectionProps> = ({
   avatarUrl,
   userName,
   userCode,
   completedRate,
+  createdAt,
+  description,
+  fullName,
+  isActive,
+  isVerified,
   onSelect,
 }) => {
+  const t = useTranslations("general");
+  const locale = useLocale();
   const [avatar, setAvatar] = useState<string>(avatarUrl);
-
+  const dayjs = useDayJS(locale);
   return (
-    <div className="grid grid-cols-3 relative">
+    <div
+      className="grid grid-cols-3 relative cursor-pointer"
+      onClick={() => onSelect(userName, userCode)}
+    >
       <div className="col-span-1 bg-default flex items-center justify-center p-4 rounded-tl-md rounded-bl-md">
         <Image
           src={avatar}
@@ -33,19 +70,36 @@ const AccountSelectionCard: React.FC<AccountSelectionProps> = ({
           onError={() => setAvatar(Config.cdn.notFound)}
         />
       </div>
-      <div className="col-span-2 bg-header flex items-center px-4 rounded-tr-md rounded-br-md">
-        <div className="text-sm font-semibold text-gray-900 dark:text-white">
+      <div className="col-span-2 bg-header flex flex-col p-4 rounded-tr-md rounded-br-md">
+        <div className="text-xl font-semibold text-gray-900 dark:text-white">
           {userName}
-          <span className="text-xs text-gray-500"> #{userCode}</span>
+          <span className="text-sm text-gray-500"> #{userCode}</span>
+        </div>
+        <div className="text-sm text-gray-500 line-clamp-1">{fullName}</div>
+        <div className="text-sm text-gray-500 line-clamp-1">
+          {description} {description} {description} {description}
+          {description}
+        </div>
+        <div className="flex items-center justify-between mt-4">
+          <div className="text-sm text-gray-500">
+            {dayjs(createdAt).format("DD MMMM YYYY, HH:mm")}
+          </div>
+          <div
+            className={`text-sm ${
+              isActive ? "text-green-500" : "text-red-500"
+            }`}
+            role="alert"
+            aria-label={t(isActive ? "active" : "inactive")}
+            title={t(isActive ? "active" : "inactive")}
+          >
+            {t(isActive ? "active" : "inactive")}
+          </div>
         </div>
       </div>
-      {/* render completed range line */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-green-50 dark:bg-green-950 bg-opacity-50 rounded-b-md">
-        <div
-          className={`h-full bg-green-400 dark:bg-green-500 rounded-b-md`}
-          style={{ width: `${completedRate}%` }}
-        ></div>
-      </div>
+      <CompletedRangeLine completedRate={completedRate} />
+      <Condition value={isVerified}>
+        <VerifiedBadge />
+      </Condition>
     </div>
   );
 };

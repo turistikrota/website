@@ -116,6 +116,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-url) var(--default-background);
   height: 100vh;
+  perspective: 1500px;
 }
 
 /* Change Autocomplete styles in Chrome*/
