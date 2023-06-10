@@ -8,6 +8,9 @@ type config = {
     AcceptLang: string;
     Credentials: string;
   };
+  cdn: {
+    notFound: string;
+  };
 };
 
 export const Config: config = {
@@ -19,5 +22,8 @@ export const Config: config = {
     Authorization: "Authorization",
     AcceptLang: "Accept-Language",
     Credentials: "Access-Control-Allow-Credentials",
+  },
+  cdn: {
+    notFound: "https://cdn.turistikrota.com/site/404.png",
   },
 };

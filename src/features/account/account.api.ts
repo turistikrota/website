@@ -1,12 +1,13 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
+import { AccountListResponse } from "./account.types";
 
 export const accountApi = createApi({
   reducerPath: "accountApi",
   baseQuery: baseQuery,
   endpoints: (builder) => ({
-    list: builder.query<AnyResponse<any>, any>({
+    list: builder.query<AnyResponse<AccountListResponse>, any>({
       query: () => ({
         url: "/account",
         method: "GET",

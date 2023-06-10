@@ -29,7 +29,7 @@ export default function AuthGuard({
   redirectIfFound = false,
   redirectIfNotFound = false,
   claimGuard = false,
-  redirectIfFoundPath = "/account-select",
+  redirectIfFoundPath = "/account/select",
   redirectIfNotFoundPath = "/auth",
   redirectIfClaimNotFoundPath = "/errors/403",
   claims = [],
@@ -42,23 +42,21 @@ export default function AuthGuard({
     return path.replace(regex, "");
   };
 
-  if (blockPageOnLoading && (isLoading || data === null)) return <Loading />;
+  if (blockPageOnLoading && isLoading) return <Loading />;
   if (
     redirectIfFound &&
     isUser(data) &&
     !isLoading &&
     replaceLocales(path) !== redirectIfFoundPath
   ) {
-    console.log("point 1");
     return redirect(redirectIfFoundPath);
   }
   if (
     redirectIfNotFound &&
-    data === null &&
+    !data &&
     !isLoading &&
     replaceLocales(path) !== redirectIfNotFoundPath
   ) {
-    console.log("point 2");
     return redirect(redirectIfNotFoundPath);
   }
   if (error && !isLoading) {
