@@ -27,3 +27,5 @@ export default async function AuthHome() {
     </section>
   );
 }
+
+export const revalidate = 3600; // 1 hour
