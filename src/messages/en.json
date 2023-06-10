@@ -8,6 +8,13 @@
         "completedRate": "This profile is {rate}% complete"
       },
       "new": "Create a new profile"
+    },
+    "create": {
+      "title": "Create a New Profile",
+      "userName": "Your username",
+      "userCode": "Your user code",
+      "button": "Create",
+      "success": "Profile created successfully!"
     }
   },
   "auth": {

@@ -17,3 +17,8 @@ export function isAccountListResponse(
 ): response is AccountListResponse {
   return Array.isArray(response);
 }
+
+export type AccountCreateFormData = {
+  userName: string;
+  userCode: string;
+};

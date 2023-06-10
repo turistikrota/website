@@ -8,6 +8,13 @@
         "completedRate": "Bu profil {rate}% oranında tamamlandı"
       },
       "new": "Yeni bir profil oluşturun"
+    },
+    "create": {
+      "title": "Yeni Bir Profil Oluşturun",
+      "userName": "Kullanıcı adınız",
+      "userCode": "Kullanıcı kodunuz",
+      "button": "Oluştur",
+      "success": "Profil başarıyla oluşturuldu!"
     }
   },
   "auth": {
