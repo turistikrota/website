@@ -86,7 +86,7 @@ export default function WaitlistForm() {
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-primary-400 hover:bg-primary-300 py-3 px-4 font-medium text-white shadow focus:outline-none transition duration-150 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="block w-full rounded-md bg-primary-400 hover:bg-primary-300 py-3 px-4 font-medium text-white shadow focus:outline-none transition duration-200 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 {t("join_waitlist")}
               </button>

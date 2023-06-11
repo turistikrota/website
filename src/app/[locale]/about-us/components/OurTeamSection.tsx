@@ -24,7 +24,7 @@ type CardProps = Member & {
 
 const MemberCard = (props: CardProps) => {
   return (
-    <div className="mb-6 lg:mb-0 hover:shadow-lg transition-all duration-100">
+    <div className="mb-6 lg:mb-0 hover:shadow-lg transition-all duration-200">
       <div className="relative block rounded-lg shadow-lg bg-white dark:bg-second p-6">
         <div className="lg:flex flex-row items-center">
           <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6 flex justify-center sm:block">
@@ -52,7 +52,7 @@ const MemberCard = (props: CardProps) => {
                   >
                     <span className="px-2 lg:pl-0 lg:pr-2">
                       <i
-                        className={`bx bx-sm ${social.icon} text-primary-600 hover:text-primary-400 transition-all duration-100`}
+                        className={`bx bx-sm ${social.icon} text-primary-600 hover:text-primary-400 transition-all duration-200`}
                       ></i>
                     </span>
                   </Link>

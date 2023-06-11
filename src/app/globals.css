@@ -15,6 +15,7 @@
   --loading-backdrop: brightness(0.8) blur(1px);
 
   --second-background-color: #fff;
+  --third-background-color: #e7edef;
   --border-color: #e6e6e6;
 
   --shadow-color-start: rgba(0, 0, 0, 0.1);
@@ -76,6 +77,7 @@
     --header-background-color: #050505;
     --default-background: #0f0e0e;
     --second-background-color: #121212;
+    --third-background-color: #141414;
 
     --skeleton-default-color: #201c1c;
     --skeleton-color-50: #212121;

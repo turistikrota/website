@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import Spin from "sspin";
 import Condition from "~/components/condition/Condition";
 import AccountSelectionCard from "./AccountSelectionCard";
+import UserCode from "./UserCode";
+import UserName from "./UserName";
 import { useListQuery } from "./account.api";
 import { setAccount } from "./account.store";
 import { AccountListItem, isAccountListResponse } from "./account.types";
@@ -45,12 +47,10 @@ export default function AccountSelection() {
                     ></AccountSelectionCard.Avatar>
                   </AccountSelectionCard.Image>
                   <AccountSelectionCard.Content>
-                    <AccountSelectionCard.UserName>
+                    <UserName size="xl">
                       {item.userName}
-                      <AccountSelectionCard.UserCode>
-                        {item.userCode}
-                      </AccountSelectionCard.UserCode>
-                    </AccountSelectionCard.UserName>
+                      <UserCode>{item.userCode}</UserCode>
+                    </UserName>
                     <AccountSelectionCard.FullName>
                       {item.fullName}
                     </AccountSelectionCard.FullName>

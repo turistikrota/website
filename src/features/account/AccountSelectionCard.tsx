@@ -16,8 +16,6 @@ type AccountSelectionCardType = React.FC<
   VerifiedBadge: typeof VerifiedBadge;
   Image: typeof AImage;
   Content: typeof Content;
-  UserName: typeof UserName;
-  UserCode: typeof UserCode;
   FullName: typeof FullName;
   Avatar: typeof Avatar;
   Text: typeof Text;
@@ -85,15 +83,7 @@ const Avatar = ({ src, alt }: AvatarProps) => {
 
 const Content = ({ children }: React.PropsWithChildren) => {
   return (
-    <div className="col-span-3 bg-header flex flex-col justify-center p-4 rounded-tr-md rounded-br-md">
-      {children}
-    </div>
-  );
-};
-
-const UserName = ({ children }: React.PropsWithChildren) => {
-  return (
-    <div className="text-xl font-semibold text-gray-900 dark:text-white">
+    <div className="col-span-3 bg-third dark:bg-header flex flex-col justify-center p-4 rounded-tr-md rounded-br-md">
       {children}
     </div>
   );
@@ -104,12 +94,6 @@ const Text = ({ children }: React.PropsWithChildren) => {
     <span className="text-md font-semibold text-gray-900 dark:text-white">
       {children}
     </span>
-  );
-};
-
-const UserCode = ({ children }: React.PropsWithChildren) => {
-  return (
-    <span className="text-sm text-gray-500 dark:text-gray-400">{children}</span>
   );
 };
 
@@ -124,7 +108,7 @@ const FullName = ({ children }: React.PropsWithChildren) => {
 const Card: AccountSelectionCardType = ({ children, onSelect }) => {
   return (
     <div
-      className="grid grid-cols-4 relative cursor-pointer ease-in duration-300"
+      className="grid grid-cols-4 relative cursor-pointer ease-in duration-200"
       onClick={onSelect}
     >
       {children}
@@ -136,8 +120,6 @@ Card.CompletedRangeLine = CompletedRangeLine;
 Card.VerifiedBadge = VerifiedBadge;
 Card.Image = AImage;
 Card.Content = Content;
-Card.UserName = UserName;
-Card.UserCode = UserCode;
 Card.FullName = FullName;
 Card.Avatar = Avatar;
 Card.Text = Text;
