@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "boxicons";
-  font-style: normal;
-  font-weight: 400;
-  src: local("../../node_modules/boxicons/fonts/boxicons.woff2") format("woff2"),
-    local("../../node_modules/boxicons/fonts/boxicons.woff") format("woff"),
-    local("../../node_modules/boxicons/fonts/boxicons.ttf") format("truetype");
-  font-display: swap;
-}
-
 @import "boxicons/css/boxicons.min.css";
 
 :root {

@@ -108,11 +108,17 @@ const Text = ({ children }: React.PropsWithChildren) => {
 };
 
 const UserCode = ({ children }: React.PropsWithChildren) => {
-  return <span className="text-sm text-gray-500"> #{children}</span>;
+  return (
+    <span className="text-sm text-gray-500 dark:text-gray-400">{children}</span>
+  );
 };
 
 const FullName = ({ children }: React.PropsWithChildren) => {
-  return <div className="text-sm text-gray-500 line-clamp-1">{children}</div>;
+  return (
+    <div className="text-sm text-gray-500 line-clamp-1 dark:text-gray-500">
+      {children}
+    </div>
+  );
 };
 
 const Card: AccountSelectionCardType = ({ children, onSelect }) => {

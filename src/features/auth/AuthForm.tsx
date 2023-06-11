@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Spin from "sspin";
-import { Condition } from "~/components";
+import Condition from "~/components/condition/Condition";
 import { RootState } from "~/store/store";
 import CheckUserNameForm from "./CheckUserNameForm";
 import LoginForm from "./LoginForm";

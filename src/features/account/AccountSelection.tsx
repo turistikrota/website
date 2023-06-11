@@ -4,7 +4,7 @@ import Link from "next-intl/link";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
-import { Condition } from "~/components";
+import Condition from "~/components/condition/Condition";
 import AccountSelectionCard from "./AccountSelectionCard";
 import { useListQuery } from "./account.api";
 import { setAccount } from "./account.store";

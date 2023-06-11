@@ -17,6 +17,7 @@ export default function ConfigurationLayout({
             height={30}
             alt={"Turistikrota logo"}
             title="Turistikrota logo"
+            priority
           />
         </Link>
         <div className="w-full bg-second shadow-lg rounded-lg md:mt-0 sm:max-w-md xl:p-0">

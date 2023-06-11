@@ -7,7 +7,7 @@ import { FormEvent, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
 import TurnstileInput from "turnstile-next";
-import { Button } from "~/components";
+import Button from "~/components/button/Button";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
 import { parseApiError } from "~/utils/response";
