@@ -38,7 +38,22 @@ export const accountApi = createApi({
         return res.data;
       },
     }),
+    getMyAccount: builder.query<AnyResponse<any>, string>({
+      query: (body) => ({
+        url: `/account/@${body}/my`,
+        method: "GET",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
   }),
 });
 
-export const { useListQuery, useDetailQuery, useCreateMutation } = accountApi;
+export const {
+  useListQuery,
+  useDetailQuery,
+  useCreateMutation,
+  useGetMyAccountQuery,
+} = accountApi;
