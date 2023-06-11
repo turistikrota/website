@@ -1,3 +1,4 @@
+import { getCookie } from "cookies-next";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { ReadonlyURLSearchParams } from "next/navigation";
 
@@ -15,4 +16,10 @@ export const checkRedirectable = (
     }
   }
   router.push(fallback);
+};
+
+export const checkSkipCurrentUser = (): boolean => {
+  const accessToken = getCookie("access_token");
+  const refreshToken = getCookie("refresh_token");
+  return !(accessToken && refreshToken);
 };
