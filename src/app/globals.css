@@ -36,6 +36,9 @@
   --primary-color-900: 0, 61, 102;
   --primary-color-1000: 0, 46, 77;
   --primary-color-1100: 0, 34, 51;
+  --primary-color-1200: 0, 22, 38;
+  --primary-color-1300: 0, 11, 19;
+  --primary-color-1400: 0, 0, 0;
   --secondary-color: 255, 165, 0;
   --secondary-color-50: 255, 248, 240;
   --secondary-color-100: 254, 231, 195;
@@ -49,6 +52,9 @@
   --secondary-color-900: 143, 79, 0;
   --secondary-color-1000: 102, 51, 0;
   --secondary-color-1100: 77, 38, 0;
+  --secondary-color-1200: 51, 26, 0;
+  --secondary-color-1300: 38, 19, 0;
+  --secondary-color-1400: 26, 13, 0;
   --skeleton-default-color: 230, 230, 230;
   --skeleton-color-50: 250, 250, 250;
   --skeleton-color-100: 242, 242, 242;

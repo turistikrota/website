@@ -48,7 +48,14 @@ const LoginButton = () => {
 
 const SelectProfileButton = () => {
   const t = useTranslations("header");
-  return <Link href="/account/select">{t("links.selectAccount")}</Link>;
+  return (
+    <Link
+      href="/account/select"
+      className="hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out"
+    >
+      {t("links.selectAccount")}
+    </Link>
+  );
 };
 
 export default function AccountHeaderButton() {
