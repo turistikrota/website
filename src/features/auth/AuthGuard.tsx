@@ -5,9 +5,9 @@ import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
 import { useGetCurrentQuery } from "./auth.api";
 import { isExpiredError } from "./auth.types";
-import { checkSkipCurrentUser } from "./auth.utils";
 
 type Props = {
+  skip?: boolean;
   blockPageOnLoading?: boolean;
   claimGuard?: boolean;
   redirectIfFound?: boolean;
@@ -26,6 +26,7 @@ const Loading = () => (
 
 export default function AuthGuard({
   children,
+  skip = false,
   blockPageOnLoading = false,
   redirectIfFound = false,
   redirectIfNotFound = false,
@@ -36,7 +37,6 @@ export default function AuthGuard({
   claims = [],
 }: React.PropsWithChildren<Props>) {
   const path = usePathname();
-  const skip = checkSkipCurrentUser();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
 
   const replaceLocales = (path: string) => {

@@ -1,4 +1,4 @@
-import { getCookie } from "cookies-next";
+import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { ReadonlyURLSearchParams } from "next/navigation";
 
@@ -18,8 +18,10 @@ export const checkRedirectable = (
   router.push(fallback);
 };
 
-export const checkSkipCurrentUser = (): boolean => {
-  const accessToken = getCookie("access_token");
-  const refreshToken = getCookie("refresh_token");
+export const checkSkipCurrentUser = (
+  cookies: ReadonlyRequestCookies
+): boolean => {
+  const accessToken = cookies.get("access_token");
+  const refreshToken = cookies.get("refresh_token");
   return !(accessToken && refreshToken);
 };
