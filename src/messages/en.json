@@ -15,6 +15,11 @@
       "userCode": "Your user code",
       "button": "Create",
       "success": "Profile created successfully!"
+    },
+    "detail": {
+      "buttons": {
+        "change": "Switch Profile"
+      }
     }
   },
   "auth": {

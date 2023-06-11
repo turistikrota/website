@@ -1,3 +1,5 @@
+"use client";
+
 import NextImage from "next/image";
 import React, { type ComponentProps } from "react";
 import { Config } from "~/config";

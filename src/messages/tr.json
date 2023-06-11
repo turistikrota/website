@@ -15,6 +15,11 @@
       "userCode": "Kullanıcı kodunuz",
       "button": "Oluştur",
       "success": "Profil başarıyla oluşturuldu!"
+    },
+    "detail": {
+      "buttons": {
+        "change": "Profil Değiştir"
+      }
     }
   },
   "auth": {

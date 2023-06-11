@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { useSelector } from "react-redux";
+import Button from "~/components/button/Button";
+import Condition from "~/components/condition/Condition";
 import Image from "~/components/image/image";
 import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
@@ -11,27 +15,49 @@ type Props = {
 };
 
 export default function AccountMenuProfileCard({ open }: Props) {
+  const t = useTranslations("account.detail.buttons");
   const account = useSelector(
     (state: RootState) => state.account.currentAccount
   );
   if (account === null) return null;
   return (
-    <div className={`flex ${open ? "flex-col" : ""}`}>
-      <div className="flex items-center justify-center w-16 h-16 mb-4 overflow-hidden bg-gray-100 rounded-full">
+    <div
+      className={`flex items-center justify-center gap-2 ${
+        open ? "flex-col" : ""
+      }`}
+    >
+      <div
+        className={`flex overflow-hidden bg-secondary-300 dark:bg-secondary-500 rounded-full ${
+          open ? "items-center justify-center w-20 h-20" : "h-16 w-16"
+        }`}
+      >
         <Image
           src={account.avatarUrl}
-          width={48}
-          height={48}
+          width={open ? 80 : 64}
+          height={open ? 80 : 64}
           alt={account.fullName}
           title={account.fullName}
         />
       </div>
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <UserName>
-          {account.userName}
-          <UserCode size="xs">{account.userCode}</UserCode>
-        </UserName>
-      </div>
+      <Condition value={open}>
+        <div className="flex flex-col items-center justify-center w-full h-full">
+          <p className="text-md text-gray-500 dark:text-gray-300 font-medium">
+            {account.fullName}
+          </p>
+          <UserName>
+            {account.userName}
+            <UserCode size="xs">{account.userCode}</UserCode>
+          </UserName>
+        </div>
+        <Link
+          href="/account/select"
+          className="my-2"
+          title={t("change")}
+          aria-label={t("change")}
+        >
+          <Button size="sm">{t("change")}</Button>
+        </Link>
+      </Condition>
     </div>
   );
 }
