@@ -16,6 +16,11 @@ type BadgeProps = {
 
 type ContentProps = {
   isLink?: boolean;
+  hidden?: boolean;
+};
+
+type IconWrapperProps = {
+  open?: boolean;
 };
 
 type LinkIconProps = {
@@ -25,11 +30,11 @@ type LinkIconProps = {
 type DefaultProps = {
   onClick?: () => void;
   className?: string;
+  title: string;
 };
 
 type LinkProps = DefaultProps & {
   href: string;
-  title: string;
   alt?: string;
 };
 
@@ -50,9 +55,14 @@ const BadgeStyles: Record<Colors, string> = {
   info: "bg-info-500",
 };
 
-const IconWrapper = ({ children }: React.PropsWithChildren) => {
+const IconWrapper = ({
+  children,
+  open,
+}: React.PropsWithChildren<IconWrapperProps>) => {
   return (
-    <div className="flex items-center justify-center">
+    <div
+      className={`flex items-center justify-center ${open ? "col-span-4" : ""}`}
+    >
       <div className="relative flex items-center justify-center">
         {children}
       </div>
@@ -88,10 +98,15 @@ const LinkIcon = ({ visible }: LinkIconProps) => {
 
 const Content = ({
   children,
+  hidden,
   isLink,
 }: React.PropsWithChildren<ContentProps>) => {
   return (
-    <div className="flex flex-col items-start justify-center col-span-3 relative">
+    <div
+      className={`flex-col items-start justify-center relative ${
+        hidden ? "hidden fade-out" : "flex fade-in col-span-3"
+      }`}
+    >
       <span className="text-md font-semibold text-gray-900  dark:text-white">
         {children}
       </span>
@@ -103,12 +118,16 @@ const Content = ({
 const DefaultProvider = ({
   children,
   className,
+  title,
   onClick,
 }: React.PropsWithChildren<DefaultProps>) => {
   return (
     <div
       className={`cursor-pointer ${className ? className : ""}`}
       onClick={onClick}
+      role="button"
+      title={title}
+      aria-label={title}
     >
       {children}
     </div>
@@ -130,12 +149,8 @@ const LinkProvider = ({
   );
 };
 
-const AccountMenuItem: AccountMenuItemType = ({
-  children,
-  className,
-  ...props
-}) => {
-  const classes = `w-full bg-second rounded-md grid grid-cols-4 py-3 hover:bg-third transition-colors duration-200 ${className}`;
+const AccountMenuItem: AccountMenuItemType = ({ children, ...props }) => {
+  const classes = `w-full rounded-md grid grid-cols-4 py-3 hover:bg-third transition-colors duration-200 bg-second`;
   if (isLinkProps(props)) {
     return (
       <LinkProvider {...props} className={classes}>

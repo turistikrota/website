@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { useParams } from "next/navigation";
 import { useContext } from "react";
+import MobileHeader from "~/components/headers/MobileHeader";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
 
 export type Pages =
@@ -11,7 +12,8 @@ export type Pages =
   | "notifications"
   | "settings"
   | "security"
-  | "privacy";
+  | "privacy"
+  | "logout";
 
 type Props = {
   page: Pages;
@@ -37,7 +39,7 @@ const ToggleButton = () => {
   const t = useTranslations("account.detail.buttons");
   return (
     <button
-      className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+      className="flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
       title={t("toggle")}
       aria-label={t("toggle")}
       onClick={() => menuContext.setOpenMenu(!menuContext.openMenu)}
@@ -49,13 +51,12 @@ const ToggleButton = () => {
 
 export default function AccountDetailHeader({ page }: Props) {
   const t = useTranslations("account.detail.links");
-  const params = useParams();
   return (
-    <div className="flex justify-start items-center w-full bg-second px-3 py-3 gap-3">
-      <div className="items-center justify-center gap-2 hidden md:flex">
+    <MobileHeader className="justify-start gap-3">
+      <div className="items-center justify-center gap-2 hidden lg:flex">
         <ToggleButton />
       </div>
-      <div className="flex items-center justify-center gap-2 md:hidden">
+      <div className="flex items-center justify-center gap-2 lg:hidden">
         <BackButton />
       </div>
       <div className="flex flex-col items-start justify-center">
@@ -63,6 +64,6 @@ export default function AccountDetailHeader({ page }: Props) {
           {t(page)}
         </h1>
       </div>
-    </div>
+    </MobileHeader>
   );
 }

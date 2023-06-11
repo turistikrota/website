@@ -28,13 +28,13 @@ export default function AccountMenuProfileCard({ open }: Props) {
     >
       <div
         className={`flex overflow-hidden bg-secondary-300 dark:bg-secondary-500 rounded-full ${
-          open ? "items-center justify-center w-20 h-20" : "h-16 w-16"
+          open ? "items-center justify-center w-20 h-20" : "h-12 w-12"
         }`}
       >
         <Image
           src={account.avatarUrl}
-          width={open ? 80 : 64}
-          height={open ? 80 : 64}
+          width={open ? 80 : 48}
+          height={open ? 80 : 48}
           alt={account.fullName}
           title={account.fullName}
         />

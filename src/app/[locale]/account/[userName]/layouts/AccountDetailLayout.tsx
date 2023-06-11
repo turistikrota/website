@@ -34,21 +34,27 @@ export default function AccountDetailLayout({
         setOpenMenu: setMenuOpen,
       }}
     >
-      <div className="flex min-h-screen h-full w-full">
-        <aside
-          className={`${
-            menuOpen ? "block w-full lg:w-1/5" : "w-0 hidden md:block lg:w-1/5"
-          } transition-all duration-300`}
-        >
-          <AccountMenu open={open} />
-        </aside>
-        <div
-          className={`${
-            menuOpen ? "w-0 hidden lg:block" : "w-full lg:w-4/5"
-          } transition-all duration-300`}
-        >
+      <div className="flex flex-col min-h-screen h-full w-full">
+        <div className="block lg:hidden">
           <AccountDetailHeader page={page} />
-          {children}
+        </div>
+        <div className="flex h-full w-full flex-grow">
+          <aside
+            className={`${
+              menuOpen
+                ? "block w-full lg:w-2/12"
+                : "w-0 hidden lg:block lg:w-fit h-full"
+            } transition-all duration-200`}
+          >
+            <AccountMenu isDetail={true} />
+          </aside>
+          <div
+            className={`${
+              menuOpen ? "w-0 hidden lg:block lg:w-10/12" : "w-full"
+            } transition-all duration-200 h-full`}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </AccountDetailContext.Provider>

@@ -12,7 +12,7 @@
   --popup-background-color: #fff;
   --header-background-color: #fff;
   --default-background: rgb(239, 244, 245);
-  --loading-backdrop: brightness(0.8) blur(1px);
+  --loading-backdrop: brightness(0.9) blur(1px);
 
   --second-background-color: #fff;
   --third-background-color: #e7edef;
