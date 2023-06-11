@@ -38,7 +38,8 @@
       "title": "Hesabınıza Giriş Yapın",
       "email": "E-posta adresiniz",
       "password": "Şifreniz",
-      "button": "Giriş yap"
+      "button": "Giriş yap",
+      "success": "Giriş başarılı!"
     },
     "check": {
       "title": "Hesabınıza Giriş Yapın",

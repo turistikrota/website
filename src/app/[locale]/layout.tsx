@@ -3,6 +3,7 @@ import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Arimo } from "next/font/google";
 import Script from "next/script";
+import "sspin/dist/index.css";
 import "~/app/globals.css";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
 import ReduxProvider from "~/store/provider";

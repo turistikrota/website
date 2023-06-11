@@ -57,6 +57,7 @@ export default function LoginForm({ email }: Props) {
   useEffect(() => {
     if (status === "fulfilled") {
       checkRedirectable(router, searchParams, "/account/select");
+      toast.success(t("success"));
     } else if (status === "rejected") {
       if (isVerifyRequiredForLoginResponse(error)) {
         return router.push(`/auth/re-send?email=${form.values.email}`);

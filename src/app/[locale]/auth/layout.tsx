@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import "sspin/dist/index.css";
 import AuthLayout from "~/app/layouts/auth";
 import ConfigurationLayout from "~/app/layouts/configuration";
 import AuthGuard from "~/features/auth/AuthGuard";

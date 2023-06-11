@@ -17,6 +17,8 @@ type Props = {
   isDetail: boolean;
 };
 
+type Actions = "logout";
+
 const ToggleButton = dynamic(() => import("./AccountMenuToggle"), {
   ssr: false,
 });
@@ -25,7 +27,7 @@ type MenuItem = {
   title: Pages;
   icon: string;
   href?: (_: string) => string;
-  action?: string;
+  action?: Actions;
   badge?: number;
   badgeType?: Colors;
 };
@@ -67,6 +69,13 @@ export default function AccountMenu({ isDetail }: Props) {
   const params = useParams();
   const menuContext = useContext(AccountDetailContext);
   const t = useTranslations("account.detail.links");
+
+  const actions: Record<Actions, (page: Pages) => void> = {
+    logout: (page: Pages) => {
+      console.log("logout");
+    },
+  };
+
   return (
     <div className="flex flex-col items-center justify-start w-full h-full rounded-md px-4 py-4">
       <Condition value={isDetail}>
@@ -92,7 +101,11 @@ export default function AccountMenu({ isDetail }: Props) {
           <AccountMenuItem
             key={i}
             isLink={!!el.href}
-            onClick={() => console.log("clicked")}
+            onClick={
+              typeof el.action !== "undefined"
+                ? () => actions[el.action!](el.title)
+                : undefined
+            }
             title={t(el.title)}
             aria-label={t(el.title)}
             href={el.href ? el.href(params.userName) : undefined}

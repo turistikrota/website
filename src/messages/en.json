@@ -38,7 +38,8 @@
       "title": "Sign In to Your Account",
       "email": "Your email",
       "password": "Your password",
-      "button": "Sign in"
+      "button": "Sign in",
+      "success": "Login Successful!"
     },
     "check": {
       "title": "Sign In to Your Account",
