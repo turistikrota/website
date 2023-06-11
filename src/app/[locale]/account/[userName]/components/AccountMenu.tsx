@@ -1,3 +1,5 @@
+const MenuItem = () => {};
+
 export default function AccountMenu() {
   const els = [
     {
