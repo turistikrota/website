@@ -3,11 +3,11 @@
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { useSelector } from "react-redux";
-import Image from "~/components/image/image";
 import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
 import { AccountListItem } from "~/features/account/account.types";
 import { RootState } from "~/store/store";
+import Image from "../image/image";
 import MobileHeader from "./MobileHeader";
 
 const ProfileButton = ({ account }: { account: AccountListItem }) => {

@@ -95,6 +95,10 @@ export const authApi = createApi({
         method: "GET",
         credentials: "include",
       }),
+      forceRefetch({ state }) {
+        // @ts-ignore
+        return state.auth.tokens.accessToken == "";
+      },
       transformErrorResponse: (res) => {
         return res.data;
       },

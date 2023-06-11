@@ -135,7 +135,7 @@ select:-webkit-autofill:focus {
 }
 
 .sspin {
-  --color-primary: var(--primary-color);
+  --color-primary: rgb(var(--primary-color));
 }
 
 .sspin-provider.sspin-loading .sspin-overlay {
@@ -153,4 +153,9 @@ select:-webkit-autofill:focus {
 
 .bx-base {
   font-size: 1.7rem !important;
+}
+
+.spin-sm .sspin {
+  width: 25px;
+  height: 25px;
 }

@@ -57,6 +57,11 @@ const authSlice = createSlice({
     setIsExpired: (state, action) => {
       state.isExpired = action.payload;
     },
+    logout: (state) => {
+      state.isAuthenticated = false;
+      state.currentUser = null;
+      state.tokens.accessToken = "";
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -89,6 +94,7 @@ const authSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.logout.matchFulfilled,
       (state, action) => {
+        console.log("logout fulfilled");
         state.isAuthenticated = false;
         state.currentUser = null;
         state.tokens.accessToken = "";
@@ -116,4 +122,5 @@ export const {
   setAccessToken,
   setIsLoading,
   setUser,
+  logout,
 } = authSlice.actions;

@@ -12,8 +12,7 @@ export type Pages =
   | "notifications"
   | "settings"
   | "security"
-  | "privacy"
-  | "logout";
+  | "privacy";
 
 type Props = {
   page: Pages;

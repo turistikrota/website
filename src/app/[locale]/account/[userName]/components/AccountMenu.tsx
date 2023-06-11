@@ -10,14 +10,13 @@ import Logo from "~/components/logo/logo";
 import { Colors } from "~/types/base";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
 import { Pages } from "./AccountDetailHeader";
+import LogoutButton from "./AccountLogoutButton";
 import AccountMenuItem from "./AccountMenuItem";
 import AccountMenuProfileCard from "./AccountMenuProfileCard";
 
 type Props = {
   isDetail: boolean;
 };
-
-type Actions = "logout";
 
 const ToggleButton = dynamic(() => import("./AccountMenuToggle"), {
   ssr: false,
@@ -26,8 +25,7 @@ const ToggleButton = dynamic(() => import("./AccountMenuToggle"), {
 type MenuItem = {
   title: Pages;
   icon: string;
-  href?: (_: string) => string;
-  action?: Actions;
+  href: (_: string) => string;
   badge?: number;
   badgeType?: Colors;
 };
@@ -58,23 +56,12 @@ const menuItems: MenuItem[] = [
     icon: "bx bx-lock-alt",
     href: (username) => `/account/${username}/privacy`,
   },
-  {
-    title: "logout",
-    icon: "bx bx-log-out",
-    action: "logout",
-  },
 ];
 
 export default function AccountMenu({ isDetail }: Props) {
   const params = useParams();
   const menuContext = useContext(AccountDetailContext);
   const t = useTranslations("account.detail.links");
-
-  const actions: Record<Actions, (page: Pages) => void> = {
-    logout: (page: Pages) => {
-      console.log("logout");
-    },
-  };
 
   return (
     <div className="flex flex-col items-center justify-start w-full h-full rounded-md px-4 py-4">
@@ -101,14 +88,9 @@ export default function AccountMenu({ isDetail }: Props) {
           <AccountMenuItem
             key={i}
             isLink={!!el.href}
-            onClick={
-              typeof el.action !== "undefined"
-                ? () => actions[el.action!](el.title)
-                : undefined
-            }
             title={t(el.title)}
             aria-label={t(el.title)}
-            href={el.href ? el.href(params.userName) : undefined}
+            href={el.href(params.userName)}
           >
             <AccountMenuItem.IconWrapper
               open={isDetail ? !menuContext?.openMenu : false}
@@ -129,6 +111,7 @@ export default function AccountMenu({ isDetail }: Props) {
             </AccountMenuItem.Content>
           </AccountMenuItem>
         ))}
+        <LogoutButton hideContent={isDetail ? !menuContext?.openMenu : false} />
       </div>
     </div>
   );

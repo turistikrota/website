@@ -22,14 +22,17 @@
         "back": "Back",
         "toggle": "Toggle Menu"
       },
+      "logout": {
+        "text": "Logout",
+        "success": "Logout Successful!"
+      },
       "links": {
         "edit": "Edit Profile",
         "security": "Security",
         "privacy": "Privacy",
         "notifications": "Notifications",
         "settings": "Settings",
-        "delete": "Delete Profile",
-        "logout": "Logout"
+        "delete": "Delete Profile"
       }
     }
   },

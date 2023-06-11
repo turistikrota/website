@@ -22,14 +22,17 @@
         "back": "Geri",
         "toggle": "Menüyü Aç/Kapat"
       },
+      "logout": {
+        "text": "Çıkış Yap",
+        "success": "Çıkış başarılı!"
+      },
       "links": {
         "edit": "Profili Düzenle",
         "security": "Güvenlik",
         "privacy": "Gizlilik",
         "notifications": "Bildirimler",
         "settings": "Ayarlar",
-        "delete": "Profili Sil",
-        "logout": "Çıkış Yap"
+        "delete": "Profili Sil"
       }
     }
   },
