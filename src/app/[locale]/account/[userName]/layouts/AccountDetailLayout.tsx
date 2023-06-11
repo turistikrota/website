@@ -35,7 +35,7 @@ export default function AccountDetailLayout({
       }}
     >
       <div className="flex flex-col min-h-screen h-full w-full">
-        <div className="block lg:hidden">
+        <div className={`lg:hidden ${menuOpen ? "hidden" : "block"}`}>
           <AccountDetailHeader page={page} />
         </div>
         <div className="flex h-full w-full flex-grow">

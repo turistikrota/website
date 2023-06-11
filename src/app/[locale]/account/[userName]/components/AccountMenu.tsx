@@ -8,6 +8,7 @@ import { useContext } from "react";
 import Condition from "~/components/condition/Condition";
 import Logo from "~/components/logo/logo";
 import { Colors } from "~/types/base";
+import { isWindowLtLg } from "~/utils/responsive";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
 import { Pages } from "./AccountDetailHeader";
 import LogoutButton from "./AccountLogoutButton";
@@ -63,11 +64,17 @@ export default function AccountMenu({ isDetail }: Props) {
   const menuContext = useContext(AccountDetailContext);
   const t = useTranslations("account.detail.links");
 
+  const onMenuClick = () => {
+    if (isDetail && isWindowLtLg()) {
+      menuContext?.setOpenMenu(false);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-start w-full h-full rounded-md px-4 py-4">
       <Condition value={isDetail}>
         <div
-          className={`flex mb-2 w-full ${
+          className={`hidden lg:flex mb-2 w-full ${
             menuContext.openMenu ? "justify-start" : "justify-center"
           }`}
         >
@@ -91,6 +98,7 @@ export default function AccountMenu({ isDetail }: Props) {
             title={t(el.title)}
             aria-label={t(el.title)}
             href={el.href(params.userName)}
+            onClick={onMenuClick}
           >
             <AccountMenuItem.IconWrapper
               open={isDetail ? !menuContext?.openMenu : false}
