@@ -1,6 +1,13 @@
 import { PropsWithChildren } from "react";
 
-type Variant = "primary" | "secondary" | "success" | "error" | "warning";
+type Variant =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "warning"
+  | "gray"
+  | "gray-text";
 type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -21,6 +28,9 @@ const variants: Record<Variant, string> = {
     "bg-error-400 hover:bg-error-300 dark:bg-error-500 dark:hover:bg-error-400",
   warning:
     "bg-warning-400 hover:bg-warning-300 dark:bg-warning-500 dark:hover:bg-warning-400",
+  gray: "bg-gray-400 hover:bg-gray-300 dark:bg-gray-500 dark:hover:bg-gray-400",
+  "gray-text":
+    "text-gray-400 bg-transparent hover:bg-gray-300 dark:text-gray-500 dark:hover:bg-gray-400",
 };
 
 const sizes: Record<Size, string> = {

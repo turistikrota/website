@@ -3,5 +3,5 @@ import AccountDetailLayout from "../layouts/AccountDetailLayout";
 export default function HelpAccountLayout({
   children,
 }: React.PropsWithChildren) {
-  return <AccountDetailLayout>{children}</AccountDetailLayout>;
+  return <AccountDetailLayout page="security">{children}</AccountDetailLayout>;
 }

@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import AccountDetailHeader from "../components/AccountDetailHeader";
+import AccountDetailHeader, {
+  type Pages,
+} from "../components/AccountDetailHeader";
 import AccountMenu from "../components/AccountMenu";
 
 type Props = {
   open?: boolean;
-  title?: string;
+  page: Pages;
 };
 
 type Context = {
@@ -14,14 +16,14 @@ type Context = {
   setOpenMenu: (openMenu: boolean) => void;
 };
 
-const AccountDetailContext = React.createContext<Context>({
+export const AccountDetailContext = React.createContext<Context>({
   openMenu: false,
   setOpenMenu: () => {},
 });
 
 export default function AccountDetailLayout({
   open = false,
-  title,
+  page,
   children,
 }: React.PropsWithChildren<Props>) {
   const [menuOpen, setMenuOpen] = useState(open);
@@ -35,17 +37,17 @@ export default function AccountDetailLayout({
       <div className="flex min-h-screen h-full w-full">
         <aside
           className={`${
-            menuOpen ? "block w-full lg:w-1/5" : "w-0 hidden"
+            menuOpen ? "block w-full lg:w-1/5" : "w-0 hidden md:block lg:w-1/5"
           } transition-all duration-300`}
         >
           <AccountMenu open={open} />
         </aside>
         <div
           className={`${
-            menuOpen ? "w-0 hidden lg:w-4/5 lg:block" : "w-full"
+            menuOpen ? "w-0 hidden lg:block" : "w-full lg:w-4/5"
           } transition-all duration-300`}
         >
-          <AccountDetailHeader />
+          <AccountDetailHeader page={page} />
           {children}
         </div>
       </div>

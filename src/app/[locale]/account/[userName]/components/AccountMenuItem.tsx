@@ -24,6 +24,7 @@ type LinkIconProps = {
 
 type DefaultProps = {
   onClick?: () => void;
+  className?: string;
 };
 
 type LinkProps = DefaultProps & {
@@ -52,13 +53,15 @@ const BadgeStyles: Record<Colors, string> = {
 const IconWrapper = ({ children }: React.PropsWithChildren) => {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative">{children}</div>
+      <div className="relative flex items-center justify-center">
+        {children}
+      </div>
     </div>
   );
 };
 
 const Icon = ({ icon }: { icon: string }) => {
-  return <i className={`${icon} text-2xl text-gray-700 dark:text-white`}></i>;
+  return <i className={`${icon} bx-sm text-gray-700 dark:text-white`}></i>;
 };
 
 const Badge = ({
@@ -79,7 +82,7 @@ const Badge = ({
 const LinkIcon = ({ visible }: LinkIconProps) => {
   if (!visible) return null;
   return (
-    <i className="bx bx-chevron-right text-gray-700 dark:text-white absolute top-1/2 right-2 transform -translate-y-1/2"></i>
+    <i className="bx bx-sm bx-chevron-right text-gray-700 dark:text-white absolute top-1/2 right-2 transform -translate-y-1/2"></i>
   );
 };
 
@@ -89,7 +92,7 @@ const Content = ({
 }: React.PropsWithChildren<ContentProps>) => {
   return (
     <div className="flex flex-col items-start justify-center col-span-3 relative">
-      <span className="text-sm font-semibold text-gray-900  dark:text-white">
+      <span className="text-md font-semibold text-gray-900  dark:text-white">
         {children}
       </span>
       <LinkIcon visible={isLink} />
@@ -99,11 +102,12 @@ const Content = ({
 
 const DefaultProvider = ({
   children,
+  className,
   onClick,
 }: React.PropsWithChildren<DefaultProps>) => {
   return (
     <div
-      className="w-full bg-second rounded-md grid grid-cols-4 py-1 hover:bg-third cursor-pointer"
+      className={`cursor-pointer ${className ? className : ""}`}
       onClick={onClick}
     >
       {children}
@@ -115,26 +119,35 @@ const LinkProvider = ({
   children,
   onClick,
   title,
+  className,
   alt,
   href,
 }: React.PropsWithChildren<LinkProps>) => {
   return (
-    <Link
-      href={href}
-      title={title}
-      onClick={onClick}
-      className="w-full bg-second rounded-md grid grid-cols-4 py-1 hover:bg-third"
-    >
+    <Link href={href} title={title} onClick={onClick} className={className}>
       {children}
     </Link>
   );
 };
 
-const AccountMenuItem: AccountMenuItemType = ({ children, ...props }) => {
+const AccountMenuItem: AccountMenuItemType = ({
+  children,
+  className,
+  ...props
+}) => {
+  const classes = `w-full bg-second rounded-md grid grid-cols-4 py-3 hover:bg-third transition-colors duration-200 ${className}`;
   if (isLinkProps(props)) {
-    return <LinkProvider {...props}>{children}</LinkProvider>;
+    return (
+      <LinkProvider {...props} className={classes}>
+        {children}
+      </LinkProvider>
+    );
   }
-  return <DefaultProvider {...props}>{children}</DefaultProvider>;
+  return (
+    <DefaultProvider {...props} className={classes}>
+      {children}
+    </DefaultProvider>
+  );
 };
 
 AccountMenuItem.Content = Content;

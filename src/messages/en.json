@@ -18,7 +18,18 @@
     },
     "detail": {
       "buttons": {
-        "change": "Switch Profile"
+        "change": "Switch Profile",
+        "back": "Back",
+        "toggle": "Toggle Menu"
+      },
+      "links": {
+        "edit": "Edit Profile",
+        "security": "Security",
+        "privacy": "Privacy",
+        "notifications": "Notifications",
+        "settings": "Settings",
+        "delete": "Delete Profile",
+        "logout": "Logout"
       }
     }
   },
