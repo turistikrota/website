@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import Image from "next/image";
+import Image from "~/components/image/image";
 
 type Social = {
   icon: string;

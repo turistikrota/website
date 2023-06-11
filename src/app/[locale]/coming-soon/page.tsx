@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import Image from "~/components/image/image";
 import WaitlistForm from "../components/WaitlistForm";
 
 export async function generateMetadata(...props: any): Promise<Metadata> {

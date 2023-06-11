@@ -1,6 +1,27 @@
-const MenuItem = () => {};
+"use client";
 
-export default function AccountMenu() {
+import Link from "next-intl/link";
+import Logo from "~/components/logo/logo";
+import { Colors } from "~/types/base";
+import AccountMenuItem from "./AccountMenuItem";
+import AccountMenuProfileCard from "./AccountMenuProfileCard";
+
+type Props = {
+  open: boolean;
+};
+
+type MenuItem = {
+  title: string;
+  icon: string;
+  href?: string;
+  action?: string;
+  badge?: number;
+  badgeType?: Colors;
+};
+
+const menuItems: MenuItem[] = [];
+
+export default function AccountMenu({ open }: Props) {
   const els = [
     {
       title: "My Profile",
@@ -17,7 +38,7 @@ export default function AccountMenu() {
       href: "/account/[userName]/notifications",
       icon: "bx bx-bell",
       badge: 2,
-      badgeColor: "bg-red-500",
+      badgeType: "primary",
     },
     {
       title: "Billing",
@@ -32,37 +53,37 @@ export default function AccountMenu() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-start w-full h-full rounded-md">
+    <div className="flex flex-col items-center justify-center w-full h-full rounded-md">
+      <Link
+        href="/"
+        className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+      >
+        <Logo />
+      </Link>
+      <AccountMenuProfileCard open={open} />
       <h1 className="text-2xl font-bold">AccountMenu</h1>
       <div className="grid gap-4 w-full">
         {els.map((el, i) => (
-          <div
+          <AccountMenuItem
             key={i}
-            className="w-full bg-second rounded-md grid grid-cols-4 py-1"
+            isLink={!!el.href}
+            onClick={() => console.log("clicked")}
+            title={el.title}
+            href={"/"}
           >
-            <div className="flex items-center justify-center rounded-md">
-              <div className="relative">
-                <i
-                  className={`${el.icon} text-2xl text-gray-700 dark:text-white`}
-                ></i>
-                {el.badge && (
-                  <span
-                    className={`absolute top-0 -right-2 flex items-center text-xs text-white justify-center w-4 h-4 rounded-full ${el.badgeColor}`}
-                    role="alert"
-                    aria-label="notify-badge"
-                    title="notify-badge"
-                  >
-                    {el.badge}
-                  </span>
-                )}
-              </div>
-            </div>
-            <div className="flex flex-col items-start justify-center col-span-3">
-              <span className="text-sm font-semibold text-gray-900  dark:text-white">
-                {el.title}
-              </span>
-            </div>
-          </div>
+            <AccountMenuItem.IconWrapper>
+              <AccountMenuItem.Icon icon={el.icon} />
+              <AccountMenuItem.Badge
+                type={el.badgeType as Colors}
+                visible={!!el.badge}
+              >
+                {el.badge}
+              </AccountMenuItem.Badge>
+            </AccountMenuItem.IconWrapper>
+            <AccountMenuItem.Content isLink={!!el.href}>
+              {el.title}
+            </AccountMenuItem.Content>
+          </AccountMenuItem>
         ))}
       </div>
     </div>

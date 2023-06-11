@@ -1,17 +1,16 @@
 import Link from "next-intl/link";
+import { Colors } from "~/types/base";
 
-type AccountMenuItemType = React.FC & {};
-
-type BadgeType =
-  | "primary"
-  | "secondary"
-  | "success"
-  | "danger"
-  | "warning"
-  | "info";
+type AccountMenuItemType = React.FC<React.PropsWithChildren<Props>> & {
+  Content: typeof Content;
+  Icon: typeof Icon;
+  IconWrapper: typeof IconWrapper;
+  Badge: typeof Badge;
+  LinkIcon: typeof LinkIcon;
+};
 
 type BadgeProps = {
-  type?: BadgeType;
+  type?: Colors;
   visible?: boolean;
 };
 
@@ -33,11 +32,15 @@ type LinkProps = DefaultProps & {
   alt?: string;
 };
 
-type Props = DefaultProps & {
+type Props = {
   isLink?: boolean;
-};
+} & (LinkProps | DefaultProps);
 
-const BadgeStyles: Record<BadgeType, string> = {
+function isLinkProps(props: Props): props is LinkProps {
+  return (props as LinkProps).href !== undefined;
+}
+
+const BadgeStyles: Record<Colors, string> = {
   primary: "bg-primary-500",
   secondary: "bg-secondary-500",
   success: "bg-success-500",
@@ -46,12 +49,16 @@ const BadgeStyles: Record<BadgeType, string> = {
   info: "bg-info-500",
 };
 
-const Icon = ({ children }: React.PropsWithChildren) => {
+const IconWrapper = ({ children }: React.PropsWithChildren) => {
   return (
     <div className="flex items-center justify-center">
       <div className="relative">{children}</div>
     </div>
   );
+};
+
+const Icon = ({ icon }: { icon: string }) => {
+  return <i className={`${icon} text-2xl text-gray-700 dark:text-white`}></i>;
 };
 
 const Badge = ({
@@ -123,19 +130,17 @@ const LinkProvider = ({
   );
 };
 
-const AccountMenuItem = ({
-  children,
-  isLink,
-  onClick,
-}: React.PropsWithChildren<Props>) => {
-  if (isLink) {
-    return (
-      <LinkProvider href="#" title="AccountMenuItem" onClick={onClick}>
-        {children}
-      </LinkProvider>
-    );
+const AccountMenuItem: AccountMenuItemType = ({ children, ...props }) => {
+  if (isLinkProps(props)) {
+    return <LinkProvider {...props}>{children}</LinkProvider>;
   }
-  return <DefaultProvider onClick={onClick}>{children}</DefaultProvider>;
+  return <DefaultProvider {...props}>{children}</DefaultProvider>;
 };
+
+AccountMenuItem.Content = Content;
+AccountMenuItem.IconWrapper = IconWrapper;
+AccountMenuItem.Badge = Badge;
+AccountMenuItem.Icon = Icon;
+AccountMenuItem.LinkIcon = LinkIcon;
 
 export default AccountMenuItem;

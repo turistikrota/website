@@ -1,5 +1,5 @@
 import Link from "next-intl/link";
-import Image from "next/image";
+import Logo from "~/components/logo/logo";
 
 export default function ConfigurationLayout({
   children,
@@ -11,14 +11,7 @@ export default function ConfigurationLayout({
           href="/"
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
         >
-          <Image
-            src={"https://cdn.turistikrota.com/logo/horizontal.svg"}
-            width={186}
-            height={30}
-            alt={"Turistikrota logo"}
-            title="Turistikrota logo"
-            priority
-          />
+          <Logo />
         </Link>
         <div className="w-full bg-second shadow-lg rounded-lg md:mt-0 sm:max-w-md xl:p-0">
           {children}

@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import Image from "next/image";
 import { useSelector } from "react-redux";
+import Image from "~/components/image/image";
 import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
 import { AccountListItem } from "~/features/account/account.types";

@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { PropsWithChildren, useState } from "react";
+import Image from "~/components/image/image";
 import { Config } from "~/config";
 
 type AccountSelectionProps = {
