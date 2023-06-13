@@ -7,14 +7,24 @@
         "corporate": "Kurumsal hesap",
         "completedRate": "Bu profil {rate}% oranında tamamlandı"
       },
-      "new": "Yeni bir profil oluşturun"
+      "new": "Yeni bir profil oluşturun",
+      "meta": {
+        "title": "Profil Seç | Turistik Rota",
+        "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
+        "keywords": "Profil Seç, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
     },
     "create": {
       "title": "Yeni Bir Profil Oluşturun",
       "userName": "Kullanıcı adınız",
       "userCode": "Kullanıcı kodunuz",
       "button": "Oluştur",
-      "success": "Profil başarıyla oluşturuldu!"
+      "success": "Profil başarıyla oluşturuldu!",
+      "meta": {
+        "title": "Yeni Profil Oluştur | Turistik Rota",
+        "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
+        "keywords": "Yeni Profil Oluştur, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
     },
     "detail": {
       "buttons": {
@@ -33,6 +43,11 @@
         "notifications": "Bildirimler",
         "settings": "Ayarlar",
         "delete": "Profili Sil"
+      },
+      "meta": {
+        "title": "Profil | Turistik Rota",
+        "description": "Turistikrota profilinizi düzenleyin, güvenliğinizi ve gizliliğinizi ayarlayın, bildirimleri yönetin ve hesap ayarlarınızı değiştirin.",
+        "keywords": "Profil, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
     }
   },
@@ -42,7 +57,12 @@
       "email": "E-posta adresiniz",
       "password": "Şifreniz",
       "button": "Giriş yap",
-      "success": "Giriş başarılı!"
+      "success": "Giriş başarılı!",
+      "meta": {
+        "title": "Giriş Yap | Turistik Rota",
+        "description": "Turistikrota hesabınıza giriş yapın ve tatil planlamaya başlayın!",
+        "keywords": "Giriş Yap, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
     },
     "check": {
       "title": "Hesabınıza Giriş Yapın",
@@ -54,7 +74,12 @@
       "email": "E-posta adresiniz",
       "password": "Şifreniz",
       "button": "Kayıt ol",
-      "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın."
+      "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın.",
+      "meta": {
+        "title": "Kayıt Ol | Turistik Rota",
+        "description": "Turistikrota hesabınızı oluşturun ve tatil planlamaya başlayın!",
+        "keywords": "Kayıt Ol, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
     },
     "activate": {
       "title": "Hesabınızı Aktifleştirin",
@@ -64,7 +89,12 @@
         "notHave": "Aktivasyon kodunuz yoksa",
         "send": "buraya tıklayarak yeni bir kod alabilirsiniz."
       },
-      "codeNotExist": "Aktivasyon kodu bulunamadı."
+      "codeNotExist": "Aktivasyon kodu bulunamadı.",
+      "meta": {
+        "title": "Hesabınızı Aktifleştirin | Turistik Rota",
+        "description": "Turistikrota hesabınızı aktifleştirin ve tatil planlamaya başlayın!",
+        "keywords": "Hesabınızı Aktifleştirin, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
     },
     "reSend": {
       "title": "Doğrulama Kodu Gönder",

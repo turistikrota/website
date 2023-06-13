@@ -1,11 +1,6 @@
-import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Image from "~/components/image/image";
 import WaitlistForm from "../components/WaitlistForm";
-
-export async function generateMetadata(...props: any): Promise<Metadata> {
-  return {};
-}
 
 export default async function ComingSoon() {
   const t = await getTranslations("waitlist");
@@ -16,7 +11,7 @@ export default async function ComingSoon() {
           <div className="mx-auto max-w-5xl lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-md px-4 text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0 lg:text-left">
-                <div className="py-16 px-6 bg-default">
+                <div className="py-16 px-6">
                   <h1 className="mt-4 text-4xl font-bold tracking-tight sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                     <div>
                       <span className="text-secondary-400 dark:text-secondary-500">

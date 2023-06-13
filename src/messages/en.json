@@ -7,14 +7,24 @@
         "corporate": "Corporate account",
         "completedRate": "This profile is {rate}% complete"
       },
-      "new": "Create a new profile"
+      "new": "Create a new profile",
+      "meta": {
+        "title": "Select Profile | Touristic Route",
+        "description": "For a unique tourism experience, whether you are a tourist or a tourist, create your Touristic Route account and start planning your vacation! Moreover, you can create multiple profiles.",
+        "keywords": "Select Profile, Touristic Route, Vacation Planning, Tour Reservation"
+      }
     },
     "create": {
       "title": "Create a New Profile",
       "userName": "Your username",
       "userCode": "Your user code",
       "button": "Create",
-      "success": "Profile created successfully!"
+      "success": "Profile created successfully!",
+      "meta": {
+        "title": "Create a New Profile | Turistik Rota",
+        "description": "For a unique tourism experience, whether you are a tourist or a tourist, create your Touristic Route account and start planning your vacation! Moreover, you can create multiple profiles.",
+        "keywords": "Create New Profile, Touristic Route, Vacation Planning, Tour Reservation"
+      }
     },
     "detail": {
       "buttons": {
@@ -33,6 +43,11 @@
         "notifications": "Notifications",
         "settings": "Settings",
         "delete": "Delete Profile"
+      },
+      "meta": {
+        "title": "Profile | Tourist Route",
+        "description": "Edit your tourist route profile, set your security and privacy, manage notifications and change your account settings.",
+        "keywords": "Profile, Touristic Route, Vacation Planning, Tour Reservation"
       }
     }
   },
@@ -42,7 +57,12 @@
       "email": "Your email",
       "password": "Your password",
       "button": "Sign in",
-      "success": "Login Successful!"
+      "success": "Login Successful!",
+      "meta": {
+        "title": "Log In | Tourist Route",
+        "description": "Log in to your Touristic Route account and start planning your vacation!",
+        "keywords": "Login, Touristic Route, Vacation Planning, Tour Reservation"
+      }
     },
     "check": {
       "title": "Sign In to Your Account",
@@ -54,7 +74,12 @@
       "email": "Your email",
       "password": "Your password",
       "button": "Sign up",
-      "success": "Registration Successful! Please verify your account by clicking the link sent to your email address."
+      "success": "Registration Successful! Please verify your account by clicking the link sent to your email address.",
+      "meta": {
+        "title": "Register | Tourist Route",
+        "description": "Create your Touristic Route account and start planning your vacation!",
+        "keywords": "Register, Touristic Route, Vacation Planning, Tour Reservation"
+      }
     },
     "activate": {
       "title": "Activate Your Account",
@@ -64,6 +89,11 @@
       "reSend": {
         "notHave": "If you don't have an activation code",
         "send": "click here to get a new code."
+      },
+      "meta": {
+        "title": "Activate Your Account | Touristic Route",
+        "description": "Activate your tourist route account and start planning your vacation!",
+        "keywords": "Activate Your Account, Touristic Route, Vacation Planning, Tour Reservation"
       }
     },
     "reSend": {
