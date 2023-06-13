@@ -26,7 +26,7 @@ export const StaticRoutes: PageProvider = {
     AuthLogin: "/giris",
     AuthRegister: "/kayit",
     AccountSelectProfile: "/hesap/sec",
-    AccountProfile: "/hesap/{userName}",
+    AccountProfile: "/hesap/detaylar",
   },
   en: {
     AboutUs: "/about-us",
@@ -35,7 +35,7 @@ export const StaticRoutes: PageProvider = {
     AuthLogin: "/login",
     AuthRegister: "/register",
     AccountSelectProfile: "/account/select",
-    AccountProfile: "/account/{userName}",
+    AccountProfile: "/account/details",
   },
 };
 

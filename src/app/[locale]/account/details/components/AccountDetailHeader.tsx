@@ -1,10 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import { useParams } from "next/navigation";
 import { useContext } from "react";
 import MobileHeader from "~/components/headers/MobileHeader";
+import { Page, staticRoute } from "~/static/pages";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
 
 export type Pages =
@@ -20,10 +20,10 @@ type Props = {
 
 const BackButton = () => {
   const t = useTranslations("account.detail.buttons");
-  const params = useParams();
+  const locale = useLocale();
   return (
     <Link
-      href={`/account/${params.userName}`}
+      href={staticRoute(Page.AccountProfile, locale)}
       className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
       title={t("back")}
       aria-label={t("back")}

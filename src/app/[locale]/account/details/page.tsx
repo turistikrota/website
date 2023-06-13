@@ -1,25 +1,24 @@
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
-import ConfigurationLayout from "~/app/layouts/configuration";
-import AccountSelection from "~/features/account/AccountSelection";
 import { StaticRoutes } from "~/static/pages";
 import { generateDefaultMetadata } from "~/utils/meta";
+import AccountMenu from "./components/AccountMenu";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("account.select.meta");
+  const t = await getTranslations("account.detail.meta");
   const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
-    page: StaticRoutes.en.AccountSelectProfile,
+    page: StaticRoutes.en.AccountProfile,
   });
 }
 
-export default function AccountSelect() {
+export default function AccountDetail() {
   return (
-    <ConfigurationLayout>
-      <AccountSelection />
-    </ConfigurationLayout>
+    <section className="sm:max-w-md mx-auto min-h-screen h-full flex items-start justify-center">
+      <AccountMenu isDetail={false} />
+    </section>
   );
 }
