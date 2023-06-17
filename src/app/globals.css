@@ -159,3 +159,7 @@ select:-webkit-autofill:focus {
   width: 25px;
   height: 25px;
 }
+
+::-webkit-datetime-edit-text {
+  padding: 0 0.3em;
+}

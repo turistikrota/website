@@ -13,13 +13,16 @@ type InputProps<Value extends InputValue = string> = {
   type?: string;
   required?: boolean;
   value?: Value;
-  onChange?: (e: ChangeEvent) => void;
-  onBlur?: (e: ChangeEvent) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
   autoComplete?: string;
   autoFocus?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
   placeholder?: string;
+  pattern?: string;
+  min?: string;
+  max?: string;
   size?: Size;
   error?: string;
   ariaLabel?: string;
