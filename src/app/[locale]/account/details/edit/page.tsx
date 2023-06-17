@@ -1,11 +1,15 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useSelector } from "react-redux";
 import { useGetMyAccountQuery } from "~/features/account/account.api";
+import { RootState } from "~/store/store";
 
 export default function EditAccount() {
-  const params = useParams();
-  const { isLoading, data, error } = useGetMyAccountQuery(params.userName);
-
+  const account = useSelector(
+    (state: RootState) => state.account.currentAccount
+  );
+  const { isLoading, data, error } = useGetMyAccountQuery(
+    `${account!.userName}-${account!.userCode}`
+  );
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>error</div>;
   if (!data) return <div>not found</div>;

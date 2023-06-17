@@ -26,7 +26,7 @@ const ToggleButton = dynamic(() => import("./AccountMenuToggle"), {
 type MenuItem = {
   title: Pages;
   icon: string;
-  href: (_: string) => string;
+  href: string;
   badge?: number;
   badgeType?: Colors;
 };
@@ -35,27 +35,27 @@ const menuItems: MenuItem[] = [
   {
     title: "edit",
     icon: "bx bx-edit",
-    href: (username) => `/account/${username}/edit`,
+    href: "/account/details/edit",
   },
   {
     title: "notifications",
     icon: "bx bx-bell",
-    href: (username) => `/account/${username}/notifications`,
+    href: "/account/details/notifications",
   },
   {
     title: "settings",
     icon: "bx bx-cog",
-    href: (username) => `/account/${username}/settings`,
+    href: "/account/details/settings",
   },
   {
     title: "security",
     icon: "bx bx-lock",
-    href: (username) => `/account/${username}/security`,
+    href: "/account/details/security",
   },
   {
     title: "privacy",
     icon: "bx bx-lock-alt",
-    href: (username) => `/account/${username}/privacy`,
+    href: "/account/details/privacy",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function AccountMenu({ isDetail }: Props) {
             isLink={!!el.href}
             title={t(el.title)}
             aria-label={t(el.title)}
-            href={el.href(params.userName)}
+            href={el.href}
             onClick={onMenuClick}
           >
             <AccountMenuItem.IconWrapper

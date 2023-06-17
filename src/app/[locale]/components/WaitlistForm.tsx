@@ -7,6 +7,7 @@ import Spin from "sspin";
 import * as Yup from "yup";
 import Alert from "~/components/alert/Alert";
 import { usePost } from "~/hooks/http/request";
+import { Services, apiUrl } from "~/static/api";
 import { BaseResponse } from "~/types/response/response.types";
 
 export default function WaitlistForm() {
@@ -14,7 +15,7 @@ export default function WaitlistForm() {
   const [alertVisible, setAlertVisible] = useState<boolean>(true);
   const [result, setResult] = useState<BaseResponse | null>(null);
   const [loading, dispatch, error] = usePost<{ email: string }, BaseResponse>(
-    "/waitlist"
+    apiUrl(Services.Soon, "/")
   );
   const form = useFormik({
     enableReinitialize: true,

@@ -22,7 +22,7 @@ export default function AccountSelection() {
 
   const onProfileSelect = (item: AccountListItem) => {
     dispatch(setAccount(item));
-    router.push(`/account/${item.userName}-${item.userCode}`);
+    router.push(`/account/details`);
   };
 
   return (

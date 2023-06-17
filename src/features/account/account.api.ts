@@ -1,4 +1,5 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
+import { Services, apiUrl } from "~/static/api";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
 import { AccountCreateFormData, AccountListResponse } from "./account.types";
@@ -9,7 +10,7 @@ export const accountApi = createApi({
   endpoints: (builder) => ({
     list: builder.query<AnyResponse<AccountListResponse>, any>({
       query: () => ({
-        url: "/account",
+        url: apiUrl(Services.Account, `/`),
         method: "GET",
         credentials: "include",
       }),
@@ -19,7 +20,7 @@ export const accountApi = createApi({
     }),
     detail: builder.query<AnyResponse<any>, string>({
       query: (userName) => ({
-        url: `/account/@${userName}/my`,
+        url: apiUrl(Services.Account, `/@${userName}/my`),
         method: "GET",
         credentials: "include",
       }),
@@ -29,7 +30,7 @@ export const accountApi = createApi({
     }),
     create: builder.mutation<AnyResponse<any>, AccountCreateFormData>({
       query: (body) => ({
-        url: "/account",
+        url: apiUrl(Services.Account, `/`),
         method: "POST",
         credentials: "include",
         body,
@@ -40,7 +41,7 @@ export const accountApi = createApi({
     }),
     getMyAccount: builder.query<AnyResponse<any>, string>({
       query: (body) => ({
-        url: `/account/@${body}/my`,
+        url: apiUrl(Services.Account, `/@${body}/my`),
         method: "GET",
         credentials: "include",
       }),

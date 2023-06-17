@@ -39,7 +39,7 @@ export default function AccountCreateForm() {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
-      router.push(`/account/${form.values.userName}-${form.values.userCode}`);
+      router.push(`/account/details`);
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
     }

@@ -1,7 +1,5 @@
 import axios, { Axios } from "axios";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-
 const onError = (err: Error) => {
   console.error(err);
   return null;
@@ -65,7 +63,6 @@ const getHttp = (
   }
 ): UseHttpResponse => {
   const client: Axios = axios.create({
-    baseURL: BASE_URL,
     headers: {
       ...headers,
       "Content-Type": formData ? "multipart/form-data" : "application/json",

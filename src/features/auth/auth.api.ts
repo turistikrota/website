@@ -1,4 +1,5 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
+import { Services, apiUrl } from "~/static/api";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
 import { User } from "~/types/user";
@@ -23,7 +24,7 @@ export const authApi = createApi({
       CheckEmailFormData
     >({
       query: (data: CheckEmailFormData) => ({
-        url: "/auth/checkEmail",
+        url: apiUrl(Services.Auth, "/checkEmail"),
         method: "POST",
         body: data,
         credentials: "include",
@@ -34,7 +35,7 @@ export const authApi = createApi({
     }),
     login: builder.mutation<AnyResponse<LoginResponse>, LoginFormData>({
       query: (data: LoginFormData) => ({
-        url: "/auth/login",
+        url: apiUrl(Services.Auth, "/login"),
         method: "POST",
         body: data,
         credentials: "include",
@@ -46,7 +47,7 @@ export const authApi = createApi({
     register: builder.mutation<AnyResponse<RegisterResponse>, RegisterFormData>(
       {
         query: (data: RegisterFormData) => ({
-          url: "/auth/register",
+          url: apiUrl(Services.Auth, "/register"),
           method: "POST",
           body: data,
           credentials: "include",
@@ -58,7 +59,7 @@ export const authApi = createApi({
     ),
     verify: builder.mutation<AnyResponse<VerifyFailResponse>, VerifyFormData>({
       query: (data: VerifyFormData) => ({
-        url: `/auth/${data.token}`,
+        url: apiUrl(Services.Auth, `/${data.token}`),
         method: "POST",
         credentials: "include",
       }),
@@ -69,7 +70,7 @@ export const authApi = createApi({
     reSendVerify: builder.mutation<AnyResponse<{}>, ReSendVerificationFormData>(
       {
         query: (data: ReSendVerificationFormData) => ({
-          url: "/auth/re-verify",
+          url: apiUrl(Services.Auth, `/re-verify`),
           method: "POST",
           body: data,
           credentials: "include",
@@ -81,7 +82,7 @@ export const authApi = createApi({
     ),
     refresh: builder.mutation<AnyResponse<{}>, {}>({
       query: () => ({
-        url: "/auth/refresh",
+        url: apiUrl(Services.Auth, `/refresh`),
         method: "PUT",
         credentials: "include",
       }),
@@ -91,7 +92,7 @@ export const authApi = createApi({
     }),
     getCurrent: builder.query<AnyResponse<User>, {}>({
       query: () => ({
-        url: "/auth",
+        url: apiUrl(Services.Auth, `/`),
         method: "GET",
         credentials: "include",
       }),
@@ -105,7 +106,7 @@ export const authApi = createApi({
     }),
     logout: builder.mutation<AnyResponse<{}>, {}>({
       query: () => ({
-        url: "/auth/logout",
+        url: apiUrl(Services.Auth, `/logout`),
         method: "POST",
         credentials: "include",
       }),

@@ -50,10 +50,11 @@ export default function AuthForm() {
   const [activeChain, setActiveChain] = useState<ChainEl>(
     getActiveChain("check-username")
   );
-  const [handleRefresh, { isLoading }] = useRefreshMutation({});
+  const [handleRefresh, { isLoading, status }] = useRefreshMutation({});
 
   useEffect(() => {
-    if (isExpired) {
+    if (isExpired && status === "uninitialized") {
+      console.log("saaa");
       handleRefresh({});
     }
   }, [isExpired]);
