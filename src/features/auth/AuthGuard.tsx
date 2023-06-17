@@ -1,5 +1,5 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
 import {
@@ -57,6 +57,7 @@ export default function AuthGuard({
   claims = [],
 }: React.PropsWithChildren<Props>) {
   const path = usePathname();
+  const query = useSearchParams();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
   const chain: ChainList = [
     CheckLoading,
@@ -69,6 +70,7 @@ export default function AuthGuard({
 
   const result = reduceChain(chain, {
     currentPath: path,
+    query,
     blockPageOnLoading,
     loading: isLoading,
     error: error,

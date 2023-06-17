@@ -53,8 +53,7 @@ export default function AuthForm() {
   const [handleRefresh, { isLoading, status }] = useRefreshMutation({});
 
   useEffect(() => {
-    if (isExpired && status === "uninitialized") {
-      console.log("saaa");
+    if (isExpired && !isLoading && status === "uninitialized") {
       handleRefresh({});
     }
   }, [isExpired]);

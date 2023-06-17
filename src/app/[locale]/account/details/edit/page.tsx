@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 import { useGetMyAccountQuery } from "~/features/account/account.api";
 import { RootState } from "~/store/store";
+import AccountEditForm from "./components/AccountEditForm";
 
 export default function EditAccount() {
   const account = useSelector(
@@ -14,5 +15,5 @@ export default function EditAccount() {
   if (error) return <div>error</div>;
   if (!data) return <div>not found</div>;
   console.log("data:", data);
-  return <div>edit account</div>;
+  return <AccountEditForm />;
 }

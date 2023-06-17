@@ -1,5 +1,5 @@
 import { redirect } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { ReadonlyURLSearchParams, notFound } from "next/navigation";
 import { Spinner } from "sspin";
 import { isUser } from "~/types/user";
 import { isExpiredError } from "./auth.types";
@@ -7,6 +7,7 @@ import { isExpiredError } from "./auth.types";
 export type ChainContext = {
   currentPath: string;
   blockPageOnLoading: boolean;
+  query: ReadonlyURLSearchParams;
   loading: boolean;
   error: any;
   data: any;
@@ -17,6 +18,7 @@ export type ChainContext = {
   redirectIfNotFoundPath: string;
   claims: string[];
   redirectIfClaimNotFoundPath: string;
+  skipContent?: boolean;
 };
 
 export type ChainResult = React.ReactNode | null | undefined;
@@ -40,22 +42,18 @@ export const CheckLoading = (ctx: ChainContext): ChainResult => {
 };
 
 export const RedirectIfFound = (ctx: ChainContext): ChainResult => {
-  console.log("ctx1::", ctx);
   if (
     ctx.redirectIfFound &&
     isUser(ctx.data) &&
     !ctx.loading &&
     replaceLocales(ctx.currentPath) === ctx.redirectIfFoundPath
   ) {
-    console.log("redirected");
     return redirect(ctx.redirectIfFoundPath);
   }
-  console.log("not redirected");
   return null;
 };
 
 export const RedirectIfNotFound = (ctx: ChainContext): ChainResult => {
-  console.log("ctx2::", ctx);
   if (
     ctx.redirectIfNotFound &&
     !ctx.data &&
@@ -68,13 +66,13 @@ export const RedirectIfNotFound = (ctx: ChainContext): ChainResult => {
 };
 
 export const CheckRefreshAvailable = (ctx: ChainContext): ChainResult => {
-  if (
-    ctx.error &&
-    !ctx.loading &&
-    ctx.redirectIfNotFound &&
-    isExpiredError(ctx.error)
-  ) {
-    return redirect(ctx.redirectIfNotFoundPath);
+  if (ctx.error && !ctx.loading && isExpiredError(ctx.error)) {
+    const query = ctx.query.get("refresh");
+    if (query === "true") {
+      ctx.skipContent = true;
+      return null;
+    }
+    return redirect(ctx.redirectIfNotFoundPath + "?refresh=true");
   }
   return null;
 };
@@ -83,16 +81,15 @@ export const CheckAllExpired = (ctx: ChainContext): ChainResult => {
   if (
     ctx.error &&
     !ctx.loading &&
-    !(ctx.redirectIfNotFound && !isExpiredError(ctx.error))
+    !(ctx.redirectIfNotFound && !isExpiredError(ctx.error)) &&
+    !ctx.skipContent
   ) {
-    console.log("ben bur anasıl geldim");
     return notFound();
   }
   return null;
 };
 
 export const ClaimGuard = (ctx: ChainContext): ChainResult => {
-  console.log("ctx4::", ctx);
   if (
     ctx.claimGuard &&
     isUser(ctx.data) &&

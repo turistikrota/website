@@ -74,6 +74,15 @@ const authSlice = createSlice({
       }
     );
     builder.addMatcher(
+      authApi.endpoints.refresh.matchFulfilled,
+      (state, action) => {
+        if (isLoginResponse(action.payload)) {
+          state.tokens.accessToken = action.payload.token;
+          state.isAuthenticated = true;
+        }
+      }
+    );
+    builder.addMatcher(
       authApi.endpoints.register.matchFulfilled,
       (state, action) => {
         if (isRegisterResponse(action.payload)) {
