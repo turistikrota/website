@@ -2,9 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
-
-export type Contract = "privacy-notification" | "privacy-and-policy";
-export type Locale = "tr" | "en";
+import { Contract, Locale } from "./ContractTypes";
 
 const TrPrivacy = dynamic(() => import("./tr/privacy-notification.md"), {
   ssr: false,
