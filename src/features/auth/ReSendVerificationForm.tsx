@@ -1,7 +1,8 @@
 "use client";
 
 import { useFormik } from "formik";
-import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";

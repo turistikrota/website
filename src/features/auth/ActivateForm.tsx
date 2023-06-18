@@ -1,6 +1,7 @@
 "use client";
 
-import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import Link from "next-intl/link";
 import { useSearchParams } from "next/navigation";
 import { FormEvent, useEffect } from "react";

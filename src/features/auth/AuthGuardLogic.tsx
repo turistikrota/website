@@ -1,4 +1,4 @@
-import { useLocalizedRouter } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import { redirect } from "next-intl/server";
 import { ReadonlyURLSearchParams, notFound } from "next/navigation";
 import { Spinner } from "sspin";

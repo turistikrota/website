@@ -1,5 +1,6 @@
 "use client";
-import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import Link from "next-intl/link";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";

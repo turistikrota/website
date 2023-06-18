@@ -1,5 +1,6 @@
 "use client";
-import { useLocale, useLocalizedRouter } from "next-intl";
+import { useLocale } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import { usePathname, useSearchParams } from "next/navigation";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";

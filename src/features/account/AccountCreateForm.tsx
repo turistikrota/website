@@ -1,6 +1,7 @@
 "use client";
 import { useFormik } from "formik";
-import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useLocalizedRouter } from "next-intl/client";
 import { useEffect } from "react";
 import Spin from "sspin";
 import Button from "~/components/button/Button";
