@@ -1,20 +1,25 @@
 import { Metadata } from "next";
 import { NextIntlClientProvider, useLocale } from "next-intl";
-import { getTranslations } from 'next-intl/server';
-import { Arimo } from 'next/font/google';
+import { getTranslations } from "next-intl/server";
+import { Arimo } from "next/font/google";
 import Script from "next/script";
+import "sspin/dist/index.css";
 import "~/app/globals.css";
+import PwaHead from "~/components/pwa/PwaHead";
+import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
+import ReduxProvider from "~/store/provider";
 
 type Props = {
   children: React.ReactNode;
-}
+  token: string;
+};
 
-export async function generateMetadata() : Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("base");
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
-    keywords: t('meta.keywords'),
+    title: t("meta.title"),
+    description: t("meta.description"),
+    keywords: t("meta.keywords"),
     applicationName: "Turistikrota",
     generator: "Turistikrota",
     referrer: "origin-when-cross-origin",
@@ -35,8 +40,9 @@ export async function generateMetadata() : Promise<Metadata> {
       languages: {
         en: "/en",
         tr: "/tr",
-      }
+      },
     },
+    colorScheme: "light dark",
     robots: {
       index: true,
       follow: true,
@@ -44,52 +50,57 @@ export async function generateMetadata() : Promise<Metadata> {
       googleBot: {
         index: true,
         follow: true,
-      }
+      },
     },
     openGraph: {
-      title: t('meta.title'),
-      description: t('meta.description'),
-        type: "website",
-        url: "https://turistikrota.com",
-        images: [
-            {
-                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
-            }
-        ]
+      title: t("meta.title"),
+      description: t("meta.description"),
+      type: "website",
+      url: "https://turistikrota.com",
+      images: [
+        {
+          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+        },
+      ],
     },
     twitter: {
-        card: "summary_large_image",
-        site: "@turistikrota",
-        creator: "@turistikrota",
-        title: t('meta.title'),
-        description: t('meta.description'),
-        images: [
-            {
-                url: "https://cdn.turistikrota.com/logo/vertical_500x500.png"
-            }
-        ],
+      card: "summary_large_image",
+      site: "@turistikrota",
+      creator: "@turistikrota",
+      title: t("meta.title"),
+      description: t("meta.description"),
+      images: [
+        {
+          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+        },
+      ],
     },
     viewport: "width=device-width, initial-scale=1",
-  }
+  };
 }
 
 const arimo = Arimo({
   subsets: ["latin-ext"],
   display: "swap",
   preload: true,
-})
+});
 
-export default async function Root({
-  children
-}:Props) {
+export default async function Root({ children }: Props) {
   const locale = useLocale();
-  const messages = (await import(`~/messages/${locale}.json`))
-  .default;
+  const messages = (await import(`~/messages/${locale}.json`)).default;
   return (
     <html lang={locale} className={arimo.className}>
-      <body suppressHydrationWarning={true} >
+      <head>
+        <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+        <PwaHead locale={locale} />
+      </head>
+      <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-        {children}
+          <ReduxProvider>
+            <ToastListProvider>
+              <ToastProvider>{children}</ToastProvider>
+            </ToastListProvider>
+          </ReduxProvider>
         </NextIntlClientProvider>
         <Script
           async={true}

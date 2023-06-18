@@ -23,12 +23,6 @@ type CreateRequestHookResult<Result = never, Body = never> = [
   Error | null
 ];
 
-const BASE_URL = "https://api.turistikrota.com";
-
-const makeUrl = (url: string): string => {
-  return BASE_URL + url;
-};
-
 const useHttpRequest = <Body, Result>({
   url,
   body,
@@ -60,7 +54,7 @@ const useHttpRequest = <Body, Result>({
           reqHeaders.Authorization = token;
         }
 
-        const response = await fetch(makeUrl(url), {
+        const response = await fetch(url, {
           method,
           headers: reqHeaders,
           body: _body ? JSON.stringify(_body) : undefined,

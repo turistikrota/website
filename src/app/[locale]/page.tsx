@@ -1,8 +1,12 @@
-import { useLocale } from "next-intl";
-import { redirect } from 'next-intl/server';
-import { Page, staticRoute } from "~/static/pages";
+import { redirect } from "next-intl/server";
+import { getStaticRoute } from "~/static/page";
 
-export default async function Home() {
-    const locale = useLocale();
-    redirect(staticRoute(Page.ComingSoon, locale))
+type Props = {
+  params: {
+    locale: string;
+  };
+};
+
+export default function Home({ params: { locale } }: Props) {
+  redirect(getStaticRoute(locale).comingSoon);
 }

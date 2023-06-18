@@ -25,12 +25,17 @@ type BaseProps = {
 };
 
 const Styles: Record<AlertType, string> = {
-  success: "bg-green-100 border-green-500 text-green-700",
-  error: "bg-red-100 border-red-500 text-red-700",
-  info: "bg-blue-100 border-blue-500 text-blue-700",
-  warning: "bg-yellow-100 border-yellow-500 text-yellow-700",
-  primary: "bg-primary-100 border-primary-500 text-primary-700",
-  secondary: "bg-secondary-100 border-secondary-500 text-secondary-700",
+  success:
+    "bg-green-400 text-green-900 border-green-400 bg-opacity-30 dark:text-green-400 dark:bg-green-900 dark:bg-opacity-30",
+  error:
+    "bg-red-400 text-red-900 border-red-400 bg-opacity-30 dark:text-red-400 dark:bg-red-900 dark:bg-opacity-30",
+  info: "bg-blue-400 text-blue-900 border-blue-400 bg-opacity-30 dark:text-blue-400 dark:bg-blue-900 dark:bg-opacity-30",
+  warning:
+    "bg-yellow-400 text-yellow-900 border-yellow-400 bg-opacity-30 dark:text-yellow-400 dark:bg-yellow-900 dark:bg-opacity-30",
+  primary:
+    "bg-primary-400 text-primary-900 border-primary-400 bg-opacity-30 dark:text-primary-400 dark:bg-primary-900 dark:bg-opacity-30",
+  secondary:
+    "bg-secondary-400 text-secondary-900 border-secondary-400 bg-opacity-30 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-30",
 };
 
 const Title: React.FC<BaseProps> = ({ children }) => {

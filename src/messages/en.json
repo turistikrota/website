@@ -1,4 +1,174 @@
 {
+  "contracts": {
+    "privacy-notification": {
+      "title": "Privacy Notification",
+      "description": "We use cookies to provide you with a better service. By continuing to use our website, you consent to the use of cookies.",
+      "keywords": "Privacy Notification, Turistik Rota, Vacation Planning, Tour Reservation"
+    },
+    "privacy-and-policy": {
+      "title": "Privacy and Policy",
+      "description": "Find out how we use and protect your data. Visit our privacy and policy page.",
+      "keywords": "Privacy and Policy, Turistik Rota, Vacation Planning, Tour Reservation"
+    },
+    "terms-of-use": {
+      "title": "Terms of Use",
+      "description": "We have set our terms of use to serve you better. By continuing to use our site, you accept our terms of use.",
+      "keywords": "Terms of Use, Touristic Route, Holiday Planning, Tour Reservation"
+    }
+  },
+  "maintaining": {
+    "page": {
+      "title": "We are under maintenance",
+      "description": "This page is currently unavailable for maintenance. Please try again later."
+    }
+  },
+  "account": {
+    "select": {
+      "title": "Choose a profile",
+      "tool": {
+        "individual": "Individual account",
+        "corporate": "Corporate account",
+        "completedRate": "This profile is {rate}% complete"
+      },
+      "new": "Create a new profile",
+      "meta": {
+        "title": "Select Profile | Turistik Rota",
+        "description": "For a unique tourism experience, whether you are a tourist or a tourist, create your Turistik Rota account and start planning your vacation! Moreover, you can create multiple profiles.",
+        "keywords": "Select Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+      }
+    },
+    "create": {
+      "title": "Create a New Profile",
+      "userName": "Your username",
+      "userCode": "Your user code",
+      "button": "Create",
+      "success": "Profile created successfully!",
+      "meta": {
+        "title": "Create a New Profile | Turistik Rota",
+        "description": "For a unique tourism experience, whether you are a tourist or a tourist, create your Turistik Rota account and start planning your vacation! Moreover, you can create multiple profiles.",
+        "keywords": "Create New Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+      }
+    },
+    "details": {
+      "edit": {
+        "meta": {
+          "title": "Edit Profile | Turistik Rota",
+          "description": "Edit your tourist route profile, set your avatar, username and user code, and change your account settings.",
+          "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      },
+      "notifications": {
+        "meta": {
+          "title": "Notifications | Turistik Rota",
+          "description": "View your notification preferences, set your notification preferences, and change your account settings.",
+          "keywords": "Notifications, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      },
+      "settings": {
+        "meta": {
+          "title": "Settings | Turistik Rota",
+          "description": "View your account settings, set your account settings, and change your account settings.",
+          "keywords": "Settings, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      },
+      "security": {
+        "meta": {
+          "title": "Security | Turistik Rota",
+          "description": "View your security settings, set your security settings, and change your account settings.",
+          "keywords": "Security, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      },
+      "privacy": {
+        "meta": {
+          "title": "Privacy | Turistik Rota",
+          "description": "View your privacy settings, set your privacy settings, and change your account settings.",
+          "keywords": "Privacy, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      }
+    },
+    "detail": {
+      "buttons": {
+        "change": "Switch Profile",
+        "back": "Back",
+        "toggle": "Toggle Menu"
+      },
+      "logout": {
+        "text": "Logout",
+        "success": "Logout Successful!"
+      },
+      "links": {
+        "edit": "Edit Profile",
+        "security": "Security",
+        "privacy": "Privacy",
+        "notifications": "Notifications",
+        "settings": "Settings",
+        "delete": "Delete Profile"
+      },
+      "meta": {
+        "title": "Profile | Tourist Route",
+        "description": "Edit your tourist route profile, set your security and privacy, manage notifications and change your account settings.",
+        "keywords": "Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In to Your Account",
+      "email": "Your email",
+      "password": "Your password",
+      "button": "Sign in",
+      "success": "Login Successful!",
+      "meta": {
+        "title": "Log In | Tourist Route",
+        "description": "Log in to your Turistik Rota account and start planning your vacation!",
+        "keywords": "Login, Turistik Rota, Vacation Planning, Tour Reservation"
+      }
+    },
+    "check": {
+      "title": "Sign In to Your Account",
+      "email": "Your email",
+      "button": "Sign in"
+    },
+    "register": {
+      "title": "Register for an Account",
+      "email": "Your email",
+      "password": "Your password",
+      "button": "Sign up",
+      "success": "Registration Successful! Please verify your account by clicking the link sent to your email address.",
+      "meta": {
+        "title": "Register | Tourist Route",
+        "description": "Create your Turistik Rota account and start planning your vacation!",
+        "keywords": "Register, Turistik Rota, Vacation Planning, Tour Reservation"
+      },
+      "privacy": {
+        "text": "I have read and agree to <termsOfUse></termsOfUse>, <privacyNotify></privacyNotify> and <privacyPolicy></privacyPolicy>.",
+        "termsOfUse": "Terms of Use",
+        "privacyNotify": "Privacy Notice",
+        "privacyPolicy": "Privacy Policy"
+      }
+    },
+    "activate": {
+      "title": "Activate Your Account",
+      "button": "Activate",
+      "success": "Your account has been successfully activated! You can login now.",
+      "codeNotExist": "The activation code you entered does not exist.",
+      "reSend": {
+        "notHave": "If you don't have an activation code",
+        "send": "click here to get a new code."
+      },
+      "meta": {
+        "title": "Activate Your Account | Turistik Rota",
+        "description": "Activate your tourist route account and start planning your vacation!",
+        "keywords": "Activate Your Account, Turistik Rota, Vacation Planning, Tour Reservation"
+      }
+    },
+    "reSend": {
+      "title": "Send Verification Code",
+      "email": "Your e-mail address",
+      "button": "Submit",
+      "success": "Verification code sent successfully! Please check your email address."
+    }
+  },
   "waitlist": {
     "title1": "Coming",
     "title2": "Soon",
@@ -47,7 +217,9 @@
       "promotion": "Real tourism experience coming soon!"
     },
     "links": {
-      "aboutUs": "About Us"
+      "aboutUs": "About Us",
+      "login": "Login",
+      "selectAccount": "Select Profile"
     }
   },
   "aboutUs": {
@@ -119,8 +291,21 @@
     },
     "meta": {
       "title": "About Us | Turistik Rota",
-      "description": "Touristic Route is a platform that allows you to experience the best tourism experience worldwide and share this experience with other people.",
+      "description": "Turistik Rota is a platform that allows you to experience the best tourism experience worldwide and share this experience with other people.",
       "keywords": "tourist route, tourist route, about us, about tourist route, about tourist route"
     }
+  },
+  "validation": {
+    "invalidEmail": "Please enter a valid email address",
+    "passwordMin": "Password must be at least {min} characters",
+    "required": "This field is required"
+  },
+  "general": {
+    "verified": "Verified",
+    "verified_alt": "This account has been verified",
+    "active": "Active",
+    "active_alt": "This account is active",
+    "inactive": "Inactive",
+    "inactive_alt": "This account is inactive"
   }
 }

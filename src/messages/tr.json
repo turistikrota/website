@@ -1,4 +1,174 @@
 {
+  "contracts": {
+    "privacy-notification": {
+      "title": "Gizlilik Bildirimi",
+      "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
+      "keywords": "Gizlilik Bildirimi, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "privacy-and-policy": {
+      "title": "Gizlilik ve Politika",
+      "description": "Verilerinizi nasıl kullandığımızı ve koruduğumuzu öğrenin. Gizlilik ve politika sayfamızı ziyaret edin.",
+      "keywords": "Gizlilik ve Politika, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "terms-of-use": {
+      "title": "Kullanım Koşulları",
+      "description": "Size daha iyi hizmet verebilmek için kullanım koşullarımızı belirledik. Sitemizi kullanmaya devam ederek kullanım koşullarımızı kabul etmiş oluyorsunuz.",
+      "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    }
+  },
+  "maintaining": {
+    "page": {
+      "title": "Bakımdayız",
+      "description": "Bu sayfa şu anda bakım nedeniyle kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+    }
+  },
+  "account": {
+    "select": {
+      "title": "Bir profil seçin",
+      "tool": {
+        "individual": "Bireysel hesap",
+        "corporate": "Kurumsal hesap",
+        "completedRate": "Bu profil {rate}% oranında tamamlandı"
+      },
+      "new": "Yeni bir profil oluşturun",
+      "meta": {
+        "title": "Profil Seç | Turistik Rota",
+        "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
+        "keywords": "Profil Seç, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
+    },
+    "create": {
+      "title": "Yeni Bir Profil Oluşturun",
+      "userName": "Kullanıcı adınız",
+      "userCode": "Kullanıcı kodunuz",
+      "button": "Oluştur",
+      "success": "Profil başarıyla oluşturuldu!",
+      "meta": {
+        "title": "Yeni Profil Oluştur | Turistik Rota",
+        "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
+        "keywords": "Yeni Profil Oluştur, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
+    },
+    "details": {
+      "edit": {
+        "meta": {
+          "title": "Profili Düzenle | Turistik Rota",
+          "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "notifications": {
+        "meta": {
+          "title": "Bildirimler | Turistik Rota",
+          "description": "Bildirim tercihlerinizi görüntüleyin, bildirim tercihlerinizi belirleyin ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Bildirimler, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "settings": {
+        "meta": {
+          "title": "Ayarlar | Turistik Rota",
+          "description": "Hesap ayarlarınızı görüntüleyin, hesap ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Ayarlar, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "security": {
+        "meta": {
+          "title": "Güvenlik | Turistik Rota",
+          "description": "Güvenlik ayarlarınızı görüntüleyin, güvenlik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Güvenlik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "privacy": {
+        "meta": {
+          "title": "Gizlilik | Turistik Rota",
+          "description": "Gizlilik ayarlarınızı görüntüleyin, gizlilik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Gizlilik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      }
+    },
+    "detail": {
+      "buttons": {
+        "change": "Profil Değiştir",
+        "back": "Geri",
+        "toggle": "Menüyü Aç/Kapat"
+      },
+      "logout": {
+        "text": "Çıkış Yap",
+        "success": "Çıkış başarılı!"
+      },
+      "links": {
+        "edit": "Profili Düzenle",
+        "security": "Güvenlik",
+        "privacy": "Gizlilik",
+        "notifications": "Bildirimler",
+        "settings": "Ayarlar",
+        "delete": "Profili Sil"
+      },
+      "meta": {
+        "title": "Profil | Turistik Rota",
+        "description": "Turistikrota profilinizi düzenleyin, güvenliğinizi ve gizliliğinizi ayarlayın, bildirimleri yönetin ve hesap ayarlarınızı değiştirin.",
+        "keywords": "Profil, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Hesabınıza Giriş Yapın",
+      "email": "E-posta adresiniz",
+      "password": "Şifreniz",
+      "button": "Giriş yap",
+      "success": "Giriş başarılı!",
+      "meta": {
+        "title": "Giriş Yap | Turistik Rota",
+        "description": "Turistikrota hesabınıza giriş yapın ve tatil planlamaya başlayın!",
+        "keywords": "Giriş Yap, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
+    },
+    "check": {
+      "title": "Hesabınıza Giriş Yapın",
+      "email": "E-posta adresiniz",
+      "button": "Giriş yap"
+    },
+    "register": {
+      "title": "Yeni Bir Hesap Kayıt Olun",
+      "email": "E-posta adresiniz",
+      "password": "Şifreniz",
+      "button": "Kayıt ol",
+      "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın.",
+      "meta": {
+        "title": "Kayıt Ol | Turistik Rota",
+        "description": "Turistikrota hesabınızı oluşturun ve tatil planlamaya başlayın!",
+        "keywords": "Kayıt Ol, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      },
+      "privacy": {
+        "text": "<termsOfUse></termsOfUse>, <privacyNotify></privacyNotify> ve <privacyPolicy></privacyPolicy>'ni okudum ve kabul ediyorum.",
+        "termsOfUse": "Kullanım Koşulları",
+        "privacyNotify": "Gizlilik Bildirimi",
+        "privacyPolicy": "Gizlilik Politikası"
+      }
+    },
+    "activate": {
+      "title": "Hesabınızı Aktifleştirin",
+      "button": "Aktifleştir",
+      "success": "Hesabınız başarıyla aktifleştirildi! Şimdi giriş yapabilirsiniz.",
+      "reSend": {
+        "notHave": "Aktivasyon kodunuz yoksa",
+        "send": "buraya tıklayarak yeni bir kod alabilirsiniz."
+      },
+      "codeNotExist": "Aktivasyon kodu bulunamadı.",
+      "meta": {
+        "title": "Hesabınızı Aktifleştirin | Turistik Rota",
+        "description": "Turistikrota hesabınızı aktifleştirin ve tatil planlamaya başlayın!",
+        "keywords": "Hesabınızı Aktifleştirin, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      }
+    },
+    "reSend": {
+      "title": "Doğrulama Kodu Gönder",
+      "email": "E-posta adresiniz",
+      "button": "Gönder",
+      "success": "Doğrulama kodu başarıyla gönderildi! Lütfen e-posta adresinizi kontrol edin."
+    }
+  },
   "waitlist": {
     "title1": "Çok",
     "title2": "Yakında",
@@ -47,7 +217,9 @@
       "promotion": "Gerçek turizm deneyimi çok yakında!"
     },
     "links": {
-      "aboutUs": "Hakkımızda"
+      "aboutUs": "Hakkımızda",
+      "login": "Giriş Yap",
+      "selectAccount": "Profil Seç"
     }
   },
   "aboutUs": {
@@ -122,5 +294,18 @@
       "description": "Turistik Rota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur.",
       "keywords": "turistikrota, turistik rota, hakkımızda, turistikrota hakkında, turistik rota hakkında"
     }
+  },
+  "validation": {
+    "invalidEmail": "Geçersiz e-posta adresi",
+    "passwordMin": "Şifre en az {min} karakter olmalıdır",
+    "required": "Bu alan zorunludur"
+  },
+  "general": {
+    "verified": "Doğrulandı",
+    "verified_alt": "Bu hesap doğrulanmıştır",
+    "active": "Aktif",
+    "active_alt": "Bu hesap aktiftir",
+    "inactive": "Pasif",
+    "inactive_alt": "Bu hesap pasiftir"
   }
 }

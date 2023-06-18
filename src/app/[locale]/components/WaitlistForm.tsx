@@ -3,18 +3,19 @@
 import { useFormik } from "formik";
 import { useTranslations } from "next-intl";
 import { FormEvent, useState } from "react";
+import Spin from "sspin";
 import * as Yup from "yup";
 import Alert from "~/components/alert/Alert";
-import Spin from "~/components/spin/Spin";
 import { usePost } from "~/hooks/http/request";
+import { Services, apiUrl } from "~/static/api";
 import { BaseResponse } from "~/types/response/response.types";
 
-export default function WaitlistForm () {
+export default function WaitlistForm() {
   const t = useTranslations("waitlist");
   const [alertVisible, setAlertVisible] = useState<boolean>(true);
   const [result, setResult] = useState<BaseResponse | null>(null);
   const [loading, dispatch, error] = usePost<{ email: string }, BaseResponse>(
-    "/waitlist"
+    apiUrl(Services.Soon, "/")
   );
   const form = useFormik({
     enableReinitialize: true,
@@ -22,7 +23,9 @@ export default function WaitlistForm () {
       email: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email(t('email_invalid')).required(t('email_required')),
+      email: Yup.string()
+        .email(t("email_invalid"))
+        .required(t("email_required")),
     }),
     onSubmit: (values) => {
       dispatch(setResult, null, values);
@@ -41,8 +44,10 @@ export default function WaitlistForm () {
         show={!loading && alertVisible && error === null && result !== null}
       >
         <>
-          <Alert.Title>{t('messages.success.title')}</Alert.Title>
-          <Alert.Description>{t('messages.success.description')}</Alert.Description>
+          <Alert.Title>{t("messages.success.title")}</Alert.Title>
+          <Alert.Description>
+            {t("messages.success.description")}
+          </Alert.Description>
         </>
       </Alert>
       <Alert
@@ -52,9 +57,9 @@ export default function WaitlistForm () {
         className="mb-2 mt-2"
       >
         <>
-          <Alert.Title>{t('messages.error.title')}</Alert.Title>
+          <Alert.Title>{t("messages.error.title")}</Alert.Title>
           <Alert.Description>
-            {error?.message || t('messages.error.description')}
+            {error?.message || t("messages.error.description")}
           </Alert.Description>
         </>
       </Alert>
@@ -63,12 +68,12 @@ export default function WaitlistForm () {
           <div className="sm:flex">
             <div className="min-w-0 flex-1">
               <label htmlFor="email" className="sr-only">
-                {t('email')}
+                {t("email")}
               </label>
               <input
                 id="email"
                 type="email"
-                placeholder={t('enter_email')}
+                placeholder={t("enter_email")}
                 className="block w-full rounded-md border-0 bg-gray-200 px-4 py-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400"
                 value={form.values.email}
                 onChange={form.handleChange}
@@ -82,9 +87,9 @@ export default function WaitlistForm () {
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-primary-400 hover:bg-primary-300 py-3 px-4 font-medium text-white shadow focus:outline-none transition duration-150 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="block w-full rounded-md bg-primary-400 hover:bg-primary-300 py-3 px-4 font-medium text-white shadow focus:outline-none transition duration-200 ease-out hover:ease-in focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
-                {t('join_waitlist')}
+                {t("join_waitlist")}
               </button>
             </div>
           </div>
@@ -92,4 +97,4 @@ export default function WaitlistForm () {
       )}
     </Spin>
   );
-};
+}

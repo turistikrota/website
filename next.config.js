@@ -1,18 +1,43 @@
-const withNextIntl = require('next-intl/plugin')();
-const rewrites = require("./router.config");
+const withNextIntl = require("next-intl/plugin")();
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+const withPwa = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  transpilePackages: ["next-intl"],
+  reactStrictMode: true,
+  poweredByHeader: false,
+  devIndicators: {
+    buildActivity: false,
+  },
   experimental: {
     appDir: true,
+    mdxRs: true,
   },
   images: {
-    domains: ["cdn.turistikrota.com", "mdbootstrap.com"]
+    domains: ["cdn.turistikrota.com"],
   },
-  rewrites() {
-    return rewrites
-  },
+  headers: () => [
+    {
+      source: "/:path*",
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "public, max-age=31536000, immutable",
+        },
+      ],
+    },
+  ],
 };
 
-module.exports = withNextIntl(nextConfig)
+module.exports = withPwa(withNextIntl(withMDX(nextConfig)));

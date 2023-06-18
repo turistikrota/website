@@ -2,76 +2,191 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "boxicons";
-    font-style: normal;
-    font-weight: 400;
-    src: local("../../node_modules/boxicons/fonts/boxicons.woff2") format("woff2"),
-    local("../../node_modules/boxicons/fonts/boxicons.woff") format("woff"),
-    local("../../node_modules/boxicons/fonts/boxicons.ttf") format("truetype");
-    font-display: swap;
-}
-
 @import "boxicons/css/boxicons.min.css";
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-color-start: rgb(239, 244, 245);
-    --background-color-end: rgb(255, 255, 255);
-    --popup-background-color: #fff;
-    --header-background-color: #fff;
-    --default-background: rgb(239, 244, 245);
+  --foreground-rgb: 0, 0, 0;
+  --background-url: url("https://cdn.turistikrota.com/site/background.png");
+  --background-color-start: rgb(239, 244, 245);
+  --background-color-end: rgb(255, 255, 255);
+  --popup-background-color: #fff;
+  --header-background-color: #fff;
+  --default-background: rgb(239, 244, 245);
+  --loading-backdrop: brightness(0.9) blur(1px);
 
-    --second-background-color: #fff;
+  --second-background-color: #fff;
+  --third-background-color: #e7edef;
+  --border-color: #e6e6e6;
 
-    --shadow-color-start: rgba(0, 0, 0, 0.1);
-    --shadow-color-end: rgba(0, 0, 0, 0.6);
+  --shadow-color-start: rgba(0, 0, 0, 0.1);
+  --shadow-color-end: rgba(0, 0, 0, 0.6);
 
-    --primary-color: #87CEEB;
-    --primary-color-50: #f0f8ff;
-    --primary-color-100: #c7e1f7;
-    --primary-color-200: #87ceeb;
-    --primary-color-300: #5cafe7;
-    --primary-color-400: #3397e6;
-    --primary-color-500: #0077cc;
-    --primary-color-600: #006bb3;
-    --primary-color-700: #005a9c;
-    --primary-color-800: #004d80;
-    --primary-color-900: #003d66;
-    --primary-color-1000: #002e4d;
-    --primary-color-1100: #002233;
-    --secondary-color: #FFA500;
-    --secondary-color-50: #fff8f0;
-    --secondary-color-100: #fee7c3;
-    --secondary-color-200: #fcd992;
-    --secondary-color-300: #ffcc66;
-    --secondary-color-400: #ffa500;
-    --secondary-color-500: #ff9900;
-    --secondary-color-600: #e68a00;
-    --secondary-color-700: #cc7a00;
-    --secondary-color-800: #b36b00;
-    --secondary-color-900: #8f4f00;
-    --secondary-color-1000: #663300;
-    --secondary-color-1100: #4d2600;
+  --radius-base: 0.5rem;
+
+  --primary-color: 135, 206, 235;
+  --primary-color-50: 240, 248, 255;
+  --primary-color-100: 199, 225, 247;
+  --primary-color-200: 135, 206, 235;
+  --primary-color-300: 92, 175, 231;
+  --primary-color-400: 51, 151, 230;
+  --primary-color-500: 0, 119, 204;
+  --primary-color-600: 0, 107, 179;
+  --primary-color-700: 0, 90, 156;
+  --primary-color-800: 0, 77, 128;
+  --primary-color-900: 0, 61, 102;
+  --primary-color-1000: 0, 46, 77;
+  --primary-color-1100: 0, 34, 51;
+  --primary-color-1200: 0, 22, 38;
+  --primary-color-1300: 0, 11, 19;
+  --primary-color-1400: 0, 0, 0;
+  --secondary-color: 255, 165, 0;
+  --secondary-color-50: 255, 248, 240;
+  --secondary-color-100: 254, 231, 195;
+  --secondary-color-200: 252, 217, 146;
+  --secondary-color-300: 255, 204, 102;
+  --secondary-color-400: 255, 165, 0;
+  --secondary-color-500: 255, 153, 0;
+  --secondary-color-600: 230, 138, 0;
+  --secondary-color-700: 204, 122, 0;
+  --secondary-color-800: 179, 107, 0;
+  --secondary-color-900: 143, 79, 0;
+  --secondary-color-1000: 102, 51, 0;
+  --secondary-color-1100: 77, 38, 0;
+  --secondary-color-1200: 51, 26, 0;
+  --secondary-color-1300: 38, 19, 0;
+  --secondary-color-1400: 26, 13, 0;
+  --skeleton-default-color: 230, 230, 230;
+  --skeleton-color-50: 250, 250, 250;
+  --skeleton-color-100: 242, 242, 242;
+  --skeleton-color-200: 235, 235, 235;
+  --skeleton-color-300: 228, 228, 228;
+  --skeleton-color-400: 220, 220, 220;
+  --skeleton-color-500: 212, 212, 212;
+  --skeleton-color-600: 204, 204, 204;
+  --skeleton-color-700: 196, 196, 196;
+  --skeleton-color-800: 189, 189, 189;
+  --skeleton-color-900: 181, 181, 181;
+  --skeleton-color-1000: 173, 173, 173;
+  --skeleton-color-1100: 165, 165, 165;
+
+  --scroll-bar-bg: var(--primary-color-300);
+  --scroll-bar-bg-hover: var(--primary-color-400);
+
+  --autofill-background-color: rgb(var(--primary-color-100));
+  --autofill-color: rgb(var(--primary-color-900));
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-color-start: #141414;
-        --background-color-end: #121212;
-        --popup-background-color: #121212;
-        --header-background-color: #050505;
-        --default-background: #0F0E0E;
-        --second-background-color: #121212;
+  :root {
+    --background-url: url("https://cdn.turistikrota.com/site/background-dark.png");
+    --foreground-rgb: 255, 255, 255;
+    --background-color-start: #141414;
+    --background-color-end: #121212;
+    --popup-background-color: #121212;
+    --header-background-color: #050505;
+    --default-background: #0f0e0e;
+    --second-background-color: #121212;
+    --third-background-color: #141414;
 
-        --shadow-color-start: rgba(255, 255, 255, 0.1);
-        --shadow-color-end: rgba(255, 255, 255, 0.6);
-    }
+    --skeleton-default-color: #201c1c;
+    --skeleton-color-50: #212121;
+    --skeleton-color-100: #1f1f1f;
+    --skeleton-color-200: #1d1d1d;
+    --skeleton-color-300: #1b1b1b;
+    --skeleton-color-400: #191919;
+    --skeleton-color-500: #171717;
+    --skeleton-color-600: #151515;
+    --skeleton-color-700: #131313;
+    --skeleton-color-800: #111111;
+    --skeleton-color-900: #0f0f0f;
+    --skeleton-color-1000: #0d0d0d;
+    --skeleton-color-1100: #0b0b0b;
+    --loading-backdrop: brightness(0.5) blur(1px);
+
+    --scroll-bar-bg: rgb(var(--primary-color-300));
+    --scroll-bar-bg-hover: rgb(var(--primary-color-400));
+
+    --shadow-color-start: rgba(255, 255, 255, 0.1);
+    --shadow-color-end: rgba(255, 255, 255, 0.6);
+
+    --border-color: #303030;
+
+    --autofill-background-color: rgb(var(--primary-color-1000));
+    --autofill-color: rgb(var(--primary-color-50));
+  }
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: var(--default-background);
-    height: 100vh;
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-url) var(--default-background);
+  height: 100vh;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--autofill-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
+  box-shadow: 0 0 0px 1000px var(--autofill-background-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: var(--autofill-color) !important;
+}
+
+.sspin {
+  --color-primary: rgb(var(--primary-color));
+}
+
+.sspin-provider.sspin-loading .sspin-overlay {
+  backdrop-filter: var(--loading-backdrop) !important;
+  border-radius: var(--radius-base);
+}
+
+.bx-xxs {
+  width: 0.5rem;
+}
+
+.bx-xs {
+  font-size: 1.25rem !important;
+}
+
+.bx-base {
+  font-size: 1.7rem !important;
+}
+
+.spin-sm .sspin {
+  width: 25px;
+  height: 25px;
+}
+
+::-webkit-datetime-edit-text {
+  padding: 0 0.3em;
+}
+
+::-webkit-scrollbar,
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb,
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-bg);
+  border-radius: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover,
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-bar-bg-hover);
+}
+
+::-webkit-scrollbar-track,
+.scrollbar::-webkit-scrollbar-track {
+  background-color: var(--background-color-end);
 }
