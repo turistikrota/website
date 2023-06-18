@@ -32,6 +32,43 @@
         "keywords": "Yeni Profil Oluştur, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
     },
+    "details": {
+      "edit": {
+        "meta": {
+          "title": "Profili Düzenle | Turistik Rota",
+          "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "notifications": {
+        "meta": {
+          "title": "Bildirimler | Turistik Rota",
+          "description": "Bildirim tercihlerinizi görüntüleyin, bildirim tercihlerinizi belirleyin ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Bildirimler, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "settings": {
+        "meta": {
+          "title": "Ayarlar | Turistik Rota",
+          "description": "Hesap ayarlarınızı görüntüleyin, hesap ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Ayarlar, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "security": {
+        "meta": {
+          "title": "Güvenlik | Turistik Rota",
+          "description": "Güvenlik ayarlarınızı görüntüleyin, güvenlik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Güvenlik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "privacy": {
+        "meta": {
+          "title": "Gizlilik | Turistik Rota",
+          "description": "Gizlilik ayarlarınızı görüntüleyin, gizlilik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "Gizlilik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      }
+    },
     "detail": {
       "buttons": {
         "change": "Profil Değiştir",

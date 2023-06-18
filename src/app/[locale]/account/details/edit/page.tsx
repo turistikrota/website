@@ -1,5 +1,7 @@
-"use client";
+import { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
+import { generateDefaultMetadata } from "~/utils/meta";
 
 /*
   const account = useSelector(
@@ -14,6 +16,17 @@ import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
   console.log("data:", data);
   return <AccountEditForm />;
 */
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("account.details.edit.meta");
+  const locale = getLocale();
+  return generateDefaultMetadata(locale, {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords"),
+    page: "/account/details/edit",
+  });
+}
 
 export default function EditAccount() {
   return (

@@ -5,6 +5,7 @@ import AccountDetailHeader, {
   type Pages,
 } from "../components/AccountDetailHeader";
 import AccountMenu from "../components/AccountMenu";
+import AccountSelectionRedirect from "./AccountSelectionRedirect";
 
 type Props = {
   open?: boolean;
@@ -57,6 +58,7 @@ export default function AccountDetailLayout({
           </div>
         </div>
       </div>
+      <AccountSelectionRedirect />
     </AccountDetailContext.Provider>
   );
 }
