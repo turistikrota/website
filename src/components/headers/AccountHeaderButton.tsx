@@ -1,18 +1,20 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { useSelector } from "react-redux";
 import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
 import { AccountListItem } from "~/features/account/account.types";
+import { getStaticRoute } from "~/static/page";
 import { RootState } from "~/store/store";
 import Image from "../image/image";
 import MobileHeader from "./MobileHeader";
 
 const ProfileButton = ({ account }: { account: AccountListItem }) => {
+  const locale = useLocale();
   return (
-    <Link href="/account/details">
+    <Link href={getStaticRoute(locale).account.details.default}>
       <div className="group relative flex items-center flex-row space-x-1 hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out">
         <div className="flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center">
           <MobileHeader.Avatar>
@@ -37,8 +39,9 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
 };
 
 const LoginButton = () => {
+  const locale = useLocale();
   return (
-    <Link href="/auth">
+    <Link href={getStaticRoute(locale).auth.default}>
       <MobileHeader.Button>
         <i className="bx bx-user"></i>
       </MobileHeader.Button>
@@ -48,9 +51,10 @@ const LoginButton = () => {
 
 const SelectProfileButton = () => {
   const t = useTranslations("header");
+  const locale = useLocale();
   return (
     <Link
-      href="/account/select"
+      href={getStaticRoute(locale).account.select}
       className="hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out"
     >
       {t("links.selectAccount")}

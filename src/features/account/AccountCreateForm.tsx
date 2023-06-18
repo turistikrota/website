@@ -1,12 +1,12 @@
 "use client";
 import { useFormik } from "formik";
-import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
 import { useEffect } from "react";
 import Spin from "sspin";
 import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
+import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 import { useCreateMutation } from "./account.api";
@@ -14,7 +14,8 @@ import { useCreateMutation } from "./account.api";
 export default function AccountCreateForm() {
   const t = useTranslations("account.create");
   const schema = useSchema();
-  const router = useRouter();
+  const router = useLocalizedRouter();
+  const locale = useLocale();
   const toast = useToast();
   const [handleCreate, { isLoading, data, status, error }] = useCreateMutation(
     {}
@@ -39,7 +40,7 @@ export default function AccountCreateForm() {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
-      router.push(`/account/details`);
+      router.push(getStaticRoute(locale).account.details.default);
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
     }

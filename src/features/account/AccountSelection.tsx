@@ -1,10 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
 import Condition from "~/components/condition/Condition";
+import { getStaticRoute } from "~/static/page";
 import AccountSelectionCard from "./AccountSelectionCard";
 import UserCode from "./UserCode";
 import UserName from "./UserName";
@@ -12,17 +12,16 @@ import { useListQuery } from "./account.api";
 import { setAccount } from "./account.store";
 import { AccountListItem, isAccountListResponse } from "./account.types";
 
-// avatar files like avatar_1.png, avatar_2.png, avatar_3.png
-// const avatarFiles = Array.from({ length: 24 }, (_, i) => `avatar_${i + 1}.png`);
 export default function AccountSelection() {
   const t = useTranslations("account.select");
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useLocalizedRouter();
+  const locale = useLocale();
   const { isLoading, data, error } = useListQuery({});
 
   const onProfileSelect = (item: AccountListItem) => {
     dispatch(setAccount(item));
-    router.push(`/account/details`);
+    router.push(getStaticRoute(locale).account.details.default);
   };
 
   return (

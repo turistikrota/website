@@ -1,8 +1,8 @@
 "use client";
 
 import { useFormik } from "formik";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
@@ -11,6 +11,7 @@ import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 import { refreshTurnstile } from "~/utils/turnstile";
@@ -22,7 +23,7 @@ export default function ReSendVerificationForm() {
   const dispatch = useDispatch();
   const toast = useToast();
   const locale = useLocale();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const schema = useSchema();
   const searchParams = useSearchParams();
   const [handleReSend, { isLoading, data, status, error, originalArgs }] =
@@ -47,7 +48,7 @@ export default function ReSendVerificationForm() {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
-      router.push("/auth");
+      router.push(getStaticRoute(locale).auth.default);
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
     }

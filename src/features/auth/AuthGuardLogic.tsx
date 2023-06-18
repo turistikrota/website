@@ -1,6 +1,8 @@
+import { useLocalizedRouter } from "next-intl";
 import { redirect } from "next-intl/server";
 import { ReadonlyURLSearchParams, notFound } from "next/navigation";
 import { Spinner } from "sspin";
+import { getStaticRoute } from "~/static/page";
 import { isUser } from "~/types/user";
 import { isExpiredError } from "./auth.types";
 
@@ -9,15 +11,14 @@ export type ChainContext = {
   blockPageOnLoading: boolean;
   query: ReadonlyURLSearchParams;
   loading: boolean;
+  locale: string;
+  router: ReturnType<typeof useLocalizedRouter>;
   error: any;
   data: any;
   claimGuard: boolean;
   redirectIfFound: boolean;
   redirectIfNotFound: boolean;
-  redirectIfFoundPath: string;
-  redirectIfNotFoundPath: string;
   claims: string[];
-  redirectIfClaimNotFoundPath: string;
   skipContent?: boolean;
 };
 
@@ -42,25 +43,27 @@ export const CheckLoading = (ctx: ChainContext): ChainResult => {
 };
 
 export const RedirectIfFound = (ctx: ChainContext): ChainResult => {
+  const path = getStaticRoute(ctx.locale).account.select;
   if (
     ctx.redirectIfFound &&
     isUser(ctx.data) &&
     !ctx.loading &&
-    replaceLocales(ctx.currentPath) === ctx.redirectIfFoundPath
+    replaceLocales(ctx.currentPath) === path
   ) {
-    return redirect(ctx.redirectIfFoundPath);
+    return redirect(path);
   }
   return null;
 };
 
 export const RedirectIfNotFound = (ctx: ChainContext): ChainResult => {
+  const path = getStaticRoute(ctx.locale).auth.default;
   if (
     ctx.redirectIfNotFound &&
     !ctx.data &&
     !ctx.loading &&
-    replaceLocales(ctx.currentPath) !== ctx.redirectIfNotFoundPath
+    replaceLocales(ctx.currentPath) !== path
   ) {
-    return redirect(ctx.redirectIfNotFoundPath);
+    return redirect(path);
   }
   return null;
 };
@@ -72,7 +75,7 @@ export const CheckRefreshAvailable = (ctx: ChainContext): ChainResult => {
       ctx.skipContent = true;
       return null;
     }
-    return redirect(ctx.redirectIfNotFoundPath + "?refresh=true");
+    return redirect(getStaticRoute(ctx.locale).auth.refresh);
   }
   return null;
 };
@@ -97,7 +100,7 @@ export const ClaimGuard = (ctx: ChainContext): ChainResult => {
     !ctx.loading &&
     !ctx.claims.every((claim) => ctx.data?.claims?.includes(claim))
   ) {
-    return redirect(ctx.redirectIfClaimNotFoundPath);
+    return notFound();
   }
   return null;
 };

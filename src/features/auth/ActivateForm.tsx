@@ -1,8 +1,8 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { FormEvent, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
@@ -10,6 +10,7 @@ import TurnstileInput from "turnstile-next";
 import Button from "~/components/button/Button";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { refreshTurnstile } from "~/utils/turnstile";
 import { useVerifyMutation } from "./auth.api";
@@ -21,7 +22,7 @@ export default function ActivateForm() {
   const dispatch = useDispatch();
   const toast = useToast();
   const locale = useLocale();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const searchParams = useSearchParams();
   const [handleVerify, { isLoading, data, status, error }] = useVerifyMutation(
     {}
@@ -33,10 +34,12 @@ export default function ActivateForm() {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
-      router.push("/auth");
+      router.push(getStaticRoute(locale).auth.default);
     } else if (status === "rejected") {
       if (isVerifyFailResponse(error) && error.reSendable) {
-        return router.push(`/auth/re-send?email=${error.email}`);
+        return router.push(
+          `${getStaticRoute(locale).auth.reSend}?email=${error.email}`
+        );
       }
       parseApiError({
         error,
@@ -82,7 +85,7 @@ export default function ActivateForm() {
           <p className="mt-7 text-sm text-center text-gray-600">
             {t("reSend.notHave")} <br />{" "}
             <Link
-              href="/auth/re-send"
+              href={getStaticRoute(locale).auth.reSend}
               className="text-secondary-600 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-500"
             >
               {t("reSend.send")}

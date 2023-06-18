@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
@@ -9,6 +9,7 @@ import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 import { refreshTurnstile } from "~/utils/turnstile";
@@ -26,7 +27,7 @@ export default function LoginForm({ email }: Props) {
   const locale = useLocale();
   const schema = useSchema();
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const searchParams = useSearchParams();
   const toast = useToast();
   const { setSpin } = useContext(SpinContext);
@@ -56,11 +57,17 @@ export default function LoginForm({ email }: Props) {
 
   useEffect(() => {
     if (status === "fulfilled") {
-      checkRedirectable(router, searchParams, "/account/select");
+      checkRedirectable(
+        router,
+        searchParams,
+        getStaticRoute(locale).account.select
+      );
       toast.success(t("success"));
     } else if (status === "rejected") {
       if (isVerifyRequiredForLoginResponse(error)) {
-        return router.push(`/auth/re-send?email=${form.values.email}`);
+        return router.push(
+          `${getStaticRoute(locale).auth.reSend}?email=${form.values.email}`
+        );
       }
       parseApiError({ error, form, toast });
       refreshTurnstile();

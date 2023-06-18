@@ -1,4 +1,5 @@
 "use client";
+import { useLocale, useLocalizedRouter } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
@@ -51,13 +52,12 @@ export default function AuthGuard({
   redirectIfFound = false,
   redirectIfNotFound = false,
   claimGuard = false,
-  redirectIfFoundPath = "/account/select",
-  redirectIfNotFoundPath = "/auth",
-  redirectIfClaimNotFoundPath = "/errors/403",
   claims = [],
 }: React.PropsWithChildren<Props>): JSX.Element {
   const path = usePathname();
   const query = useSearchParams();
+  const router = useLocalizedRouter();
+  const locale = useLocale();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
   const chain: ChainList = [
     CheckLoading,
@@ -78,10 +78,9 @@ export default function AuthGuard({
     claimGuard,
     redirectIfFound,
     redirectIfNotFound,
-    redirectIfFoundPath,
-    redirectIfNotFoundPath,
     claims,
-    redirectIfClaimNotFoundPath,
+    locale,
+    router,
   });
   if (result) return result as JSX.Element;
   return (

@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import Image from "next/image";
+import { getStaticRoute } from "~/static/page";
 import AccountHeaderButton from "./AccountHeaderButton";
 import MobileHeader from "./MobileHeader";
 import TopHeader from "./TopHeader";
@@ -16,7 +17,7 @@ export default function DefaultHeader() {
         <TopHeader.Left>{t("left.promotion")}</TopHeader.Left>
         <TopHeader.Right>
           <Link
-            href={"/about-us"}
+            href={getStaticRoute(locale).aboutUs}
             className="hover:opacity-80 transition-all duration-200 ease-in-out"
           >
             {t("links.aboutUs")}
@@ -32,6 +33,7 @@ export default function DefaultHeader() {
               height={30}
               alt={"Turistikrota logo"}
               title="Turistikrota logo"
+              priority
             />
           </MobileHeader.Logo>
         </MobileHeader.Left>

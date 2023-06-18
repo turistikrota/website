@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useLocalizedRouter, useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
@@ -11,6 +11,7 @@ import Checkbox from "~/components/form/Checkbox";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 import { refreshTurnstile } from "~/utils/turnstile";
@@ -27,7 +28,7 @@ export default function RegisterForm({ email }: Props) {
   const locale = useLocale();
   const schema = useSchema();
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const searchParams = useSearchParams();
   const toast = useToast();
   const { setSpin } = useContext(SpinContext);
@@ -41,7 +42,6 @@ export default function RegisterForm({ email }: Props) {
     },
     validationSchema: schema.auth.register,
     onSubmit: (values) => {
-      console.log("values::", values);
       handleRegister({
         email: values.email,
         password: values.password,
@@ -61,7 +61,11 @@ export default function RegisterForm({ email }: Props) {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
-      checkRedirectable(router, searchParams);
+      checkRedirectable(
+        router,
+        searchParams,
+        getStaticRoute(locale).account.select
+      );
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
       refreshTurnstile();
@@ -126,7 +130,7 @@ export default function RegisterForm({ email }: Props) {
           {t.rich("privacy.text", {
             termsOfUse: () => (
               <Link
-                href="/contracts/terms-of-use"
+                href={getStaticRoute(locale).contracts.terms}
                 className="text-secondary-500"
                 target="_blank"
               >
@@ -135,7 +139,7 @@ export default function RegisterForm({ email }: Props) {
             ),
             privacyPolicy: () => (
               <Link
-                href="/contracts/privacy-and-policy"
+                href={getStaticRoute(locale).contracts.privacy}
                 className="text-secondary-500"
                 target="_blank"
               >
@@ -144,7 +148,7 @@ export default function RegisterForm({ email }: Props) {
             ),
             privacyNotify: () => (
               <Link
-                href="/contracts/privacy-notification"
+                href={getStaticRoute(locale).contracts.privacyNotify}
                 className="text-secondary-500 hover:text-secondary-600 dark:hover:text-secondary-400"
                 target="_blank"
               >
