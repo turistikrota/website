@@ -12,7 +12,7 @@ All kinds of information and materials on the site;
 
 All or part of the Site cannot be used in a different way by revising, adding or changing a part of it.
 
-Any information (written or visual) that can be obtained from the Site cannot be used without adding the phrase "© 2023, [turistikrota.com](https://www.turistikrota.com/), All Rights Reserved" in a size that can be easily seen.
+Any information (written or visual) that can be obtained from the Site cannot be used without adding the phrase "© 2023, [Turistikrota](https://www.turistikrota.com/), All Rights Reserved" in a size that can be easily seen.
 
 Registered trademarks, services, logos, etc. belonging to third parties or institutions in the expressions on the site. Warnings and brackets cannot be removed when quoting from the site.
 

@@ -12,7 +12,7 @@ Sitede yer alan her türlü bilgi ve materyal;
 
 Site'nin tamamı ya da bir bölümü revize edilerek, ekleme yapılarak ya da bir kısmı değiştirilerek farklı bir biçimde kullanılamaz.
 
-Site'den alınabilecek her türlü bilgi (yazılı ya da görsel) rahatlıkla görülebilecek büyüklükte "© 2023, [turistikrota.com](https://www.turistikrota.com/), Tüm Hakları Saklıdır" ifadesi eklenmeden kullanılamaz.
+Site'den alınabilecek her türlü bilgi (yazılı ya da görsel) rahatlıkla görülebilecek büyüklükte "© 2023, [Turistikrota](https://www.turistikrota.com/), Tüm Hakları Saklıdır" ifadesi eklenmeden kullanılamaz.
 
 Sitede yer alan ifadeler içerisindeki 3. kişi ya da kurumlara ait tescilli marka, hizmet, logo vb. uyarılar ve ayraçlar, siteden alıntı yapıldığında kaldırılamaz.
 
