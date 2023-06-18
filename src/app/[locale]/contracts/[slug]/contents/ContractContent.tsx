@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
 
 export type Contract = "privacy-notification" | "privacy-and-policy";
 export type Locale = "tr" | "en";
@@ -59,7 +60,7 @@ type Props = {
 };
 
 export default function ContractContent({ locale, slug }: Props) {
-  if (!isExist(slug)) return <>not found</>;
+  if (!isExist(slug)) return notFound();
   const Component = getLocaleComponent(slug, locale);
   return (
     <section className="contract-page p-4 mx-auto max-w-7xl ">
