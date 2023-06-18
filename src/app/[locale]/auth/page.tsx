@@ -5,5 +5,3 @@ export default async function AuthHome() {
   const t = await getTranslations("auth");
   return <AuthForm />;
 }
-
-export const revalidate = 3600;

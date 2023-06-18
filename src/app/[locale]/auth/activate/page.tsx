@@ -5,5 +5,3 @@ export default async function ActivateAccount() {
   const t = await getTranslations("auth");
   return <ActivateForm />;
 }
-
-export const revalidate = 3600;

@@ -5,5 +5,3 @@ export default async function ReSendVerification() {
   const t = await getTranslations("auth");
   return <ReSendVerificationForm />;
 }
-
-export const revalidate = 3600;
