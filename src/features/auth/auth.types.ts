@@ -36,6 +36,7 @@ export function isVerifyRequiredForLoginResponse(
 export type RegisterFormData = {
   email: string;
   password: string;
+  privacy: boolean;
 };
 
 export type RegisterResponse = {

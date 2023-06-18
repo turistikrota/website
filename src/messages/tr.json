@@ -7,8 +7,13 @@
     },
     "privacy-and-policy": {
       "title": "Gizlilik ve Politika",
-      "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
+      "description": "Verilerinizi nasıl kullandığımızı ve koruduğumuzu öğrenin. Gizlilik ve politika sayfamızı ziyaret edin.",
       "keywords": "Gizlilik ve Politika, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "terms-of-use": {
+      "title": "Kullanım Koşulları",
+      "description": "Size daha iyi hizmet verebilmek için kullanım koşullarımızı belirledik. Sitemizi kullanmaya devam ederek kullanım koşullarımızı kabul etmiş oluyorsunuz.",
+      "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     }
   },
   "maintaining": {
@@ -134,6 +139,12 @@
         "title": "Kayıt Ol | Turistik Rota",
         "description": "Turistikrota hesabınızı oluşturun ve tatil planlamaya başlayın!",
         "keywords": "Kayıt Ol, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+      },
+      "privacy": {
+        "text": "<termsOfUse></termsOfUse>, <privacyNotify></privacyNotify> ve <privacyPolicy></privacyPolicy>'ni okudum ve kabul ediyorum.",
+        "termsOfUse": "Kullanım Koşulları",
+        "privacyNotify": "Gizlilik Bildirimi",
+        "privacyPolicy": "Gizlilik Politikası"
       }
     },
     "activate": {

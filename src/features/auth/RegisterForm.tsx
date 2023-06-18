@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
+import Link from "next-intl/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
 import TurnstileInput from "turnstile-next";
 import Button from "~/components/button/Button";
+import Checkbox from "~/components/form/Checkbox";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
@@ -35,12 +37,15 @@ export default function RegisterForm({ email }: Props) {
     initialValues: {
       email: email,
       password: "",
+      privacy: false,
     },
     validationSchema: schema.auth.register,
     onSubmit: (values) => {
+      console.log("values::", values);
       handleRegister({
         email: values.email,
         password: values.password,
+        privacy: values.privacy,
       });
     },
   });
@@ -69,6 +74,10 @@ export default function RegisterForm({ email }: Props) {
 
   const onVerify = (token: string) => {
     dispatch(setTurnstileToken(token));
+  };
+
+  const onCheckboxChange = (val: boolean) => {
+    form.setFieldValue("privacy", val);
   };
 
   return (
@@ -105,6 +114,45 @@ export default function RegisterForm({ email }: Props) {
           error={form.errors.password}
           ariaLabel={t("password")}
         />
+        <Checkbox
+          name="privacy"
+          id="privacy"
+          onChange={onCheckboxChange}
+          onBlur={onCheckboxChange}
+          error={form.errors.privacy}
+          value={form.values.privacy}
+          required
+        >
+          {t.rich("privacy.text", {
+            termsOfUse: () => (
+              <Link
+                href="/contracts/terms-of-use"
+                className="text-secondary-500"
+                target="_blank"
+              >
+                {t("privacy.termsOfUse")}
+              </Link>
+            ),
+            privacyPolicy: () => (
+              <Link
+                href="/contracts/privacy-and-policy"
+                className="text-secondary-500"
+                target="_blank"
+              >
+                {t("privacy.privacyPolicy")}
+              </Link>
+            ),
+            privacyNotify: () => (
+              <Link
+                href="/contracts/privacy-notification"
+                className="text-secondary-500 hover:text-secondary-600 dark:hover:text-secondary-400"
+                target="_blank"
+              >
+                {t("privacy.privacyNotify")}
+              </Link>
+            ),
+          })}
+        </Checkbox>
         <TurnstileInput
           siteKey={Config.turnstile.siteKey}
           locale={locale}

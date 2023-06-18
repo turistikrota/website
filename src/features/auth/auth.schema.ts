@@ -42,6 +42,7 @@ const register = (t: any) =>
         })
       )
       .required(t("validation.required")),
+    privacyPolicy: Yup.boolean().oneOf([true], t("validation.required")),
   });
 
 const reSendVerify = (t: any) =>

@@ -16,6 +16,12 @@ const TrPrivacyAndPolicy = dynamic(() => import("./tr/privacy-and-policy.md"), {
 const EnPrivacyAndPolicy = dynamic(() => import("./en/privacy-and-policy.md"), {
   ssr: false,
 });
+const TrTermsOfUse = dynamic(() => import("./tr/terms-of-use.md"), {
+  ssr: false,
+});
+const EnTermsOfUse = dynamic(() => import("./en/terms-of-use.md"), {
+  ssr: false,
+});
 
 type ContractsType = {
   locale: {
@@ -32,7 +38,7 @@ const Contracts: Record<Contract, ContractsType> = {
       tr: TrPrivacy,
       en: EnPrivacy,
     },
-    date: "2021-01-01",
+    date: "2023-06-18",
     slug: "privacy-notification",
   },
   "privacy-and-policy": {
@@ -40,8 +46,16 @@ const Contracts: Record<Contract, ContractsType> = {
       tr: TrPrivacyAndPolicy,
       en: EnPrivacyAndPolicy,
     },
-    date: "2021-01-01",
+    date: "2023-06-18",
     slug: "privacy-and-policy",
+  },
+  "terms-of-use": {
+    locale: {
+      tr: TrTermsOfUse,
+      en: EnTermsOfUse,
+    },
+    date: "2023-06-18",
+    slug: "terms-of-use",
   },
 };
 
