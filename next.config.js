@@ -1,4 +1,3 @@
-const router = require("./router.config");
 const withNextIntl = require("next-intl/plugin")();
 
 /** @type {import('next').NextConfig} */
@@ -12,11 +11,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  async rewrites() {
-    return router;
-  },
   images: {
-    domains: ["cdn.turistikrota.com", "mdbootstrap.com"],
+    domains: ["cdn.turistikrota.com"],
   },
 };
 

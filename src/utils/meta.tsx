@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { withLocaleUrl } from "~/static/pages";
 
 type Options = {
   title: string;
@@ -18,15 +17,15 @@ export const generateDefaultMetadata = (
     keywords: opts.keywords,
     alternates: {
       languages: {
-        tr: withLocaleUrl(opts.page, "tr"),
-        en: withLocaleUrl(opts.page, "en"),
+        tr: `/tr${opts.page}`,
+        en: `/en${opts.page}`,
       },
     },
     openGraph: {
       title: opts.title,
       description: opts.description,
       type: "website",
-      url: `https://turistikrota.com${withLocaleUrl(opts.page, locale)}`,
+      url: `https://turistikrota.com/${locale}${opts.page}`,
       images: [
         {
           url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",

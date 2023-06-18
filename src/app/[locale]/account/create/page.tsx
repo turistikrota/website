@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import ConfigurationLayout from "~/app/layouts/configuration";
 import AccountCreateForm from "~/features/account/AccountCreateForm";
-import { StaticRoutes } from "~/static/pages";
 import { generateDefaultMetadata } from "~/utils/meta";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -12,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
-    page: StaticRoutes.en.AccountCreate,
+    page: "/account/create",
   });
 }
 

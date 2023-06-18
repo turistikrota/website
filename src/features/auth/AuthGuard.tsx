@@ -55,7 +55,7 @@ export default function AuthGuard({
   redirectIfNotFoundPath = "/auth",
   redirectIfClaimNotFoundPath = "/errors/403",
   claims = [],
-}: React.PropsWithChildren<Props>) {
+}: React.PropsWithChildren<Props>): JSX.Element {
   const path = usePathname();
   const query = useSearchParams();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
@@ -83,7 +83,7 @@ export default function AuthGuard({
     claims,
     redirectIfClaimNotFoundPath,
   });
-  if (result) return result;
+  if (result) return result as JSX.Element;
   return (
     <AuthClientProvider user={isUser(data) ? data : null}>
       {children}

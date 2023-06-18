@@ -4,7 +4,6 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { useContext } from "react";
 import MobileHeader from "~/components/headers/MobileHeader";
-import { Page, staticRoute } from "~/static/pages";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
 
 export type Pages =
@@ -23,7 +22,7 @@ const BackButton = () => {
   const locale = useLocale();
   return (
     <Link
-      href={staticRoute(Page.AccountProfile, locale)}
+      href="/account/details"
       className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
       title={t("back")}
       aria-label={t("back")}

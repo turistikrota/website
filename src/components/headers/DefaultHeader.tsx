@@ -3,7 +3,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import Image from "next/image";
-import { Page, staticRoute } from "~/static/pages";
 import AccountHeaderButton from "./AccountHeaderButton";
 import MobileHeader from "./MobileHeader";
 import TopHeader from "./TopHeader";
@@ -17,7 +16,7 @@ export default function DefaultHeader() {
         <TopHeader.Left>{t("left.promotion")}</TopHeader.Left>
         <TopHeader.Right>
           <Link
-            href={staticRoute(Page.AboutUs, locale)}
+            href={"/about-us"}
             className="hover:opacity-80 transition-all duration-200 ease-in-out"
           >
             {t("links.aboutUs")}
