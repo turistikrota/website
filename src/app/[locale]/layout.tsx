@@ -5,6 +5,7 @@ import { Arimo } from "next/font/google";
 import Script from "next/script";
 import "sspin/dist/index.css";
 import "~/app/globals.css";
+import PwaHead from "~/components/pwa/PwaHead";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
 import ReduxProvider from "~/store/provider";
 
@@ -91,6 +92,7 @@ export default async function Root({ children }: Props) {
     <html lang={locale} className={arimo.className}>
       <head>
         <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+        <PwaHead locale={locale} />
       </head>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>

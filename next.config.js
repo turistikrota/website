@@ -6,6 +6,9 @@ const withMDX = require("@next/mdx")({
     rehypePlugins: [],
   },
 });
+const withPwa = require("next-pwa")({
+  dest: "public",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -36,4 +39,4 @@ const nextConfig = {
   ],
 };
 
-module.exports = withNextIntl(withMDX(nextConfig));
+module.exports = withPwa(withNextIntl(withMDX(nextConfig)));

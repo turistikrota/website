@@ -1,5 +1,5 @@
 import { redirect } from "next-intl/server";
 
-export default async function Home() {
+export default function Home() {
   redirect(`/coming-soon`);
 }
