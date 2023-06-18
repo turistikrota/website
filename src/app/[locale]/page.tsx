@@ -1,5 +1,12 @@
 import { redirect } from "next-intl/server";
+import { getStaticRoute } from "~/static/page";
 
-export default function Home() {
-  redirect(`/coming-soon`);
+type Props = {
+  params: {
+    locale: string;
+  };
+};
+
+export default function Home({ params: { locale } }: Props) {
+  redirect(getStaticRoute(locale).comingSoon);
 }

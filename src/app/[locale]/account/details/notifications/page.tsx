@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
+import { getStaticRoute } from "~/static/page";
 import { generateDefaultMetadata } from "~/utils/meta";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,7 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
-    page: "/account/details/notifications",
+    page: {
+      tr: getStaticRoute("tr").account.details.notifications,
+      en: getStaticRoute("en").account.details.notifications,
+    },
   });
 }
 

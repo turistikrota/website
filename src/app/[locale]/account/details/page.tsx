@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import { getStaticRoute } from "~/static/page";
 import { generateDefaultMetadata } from "~/utils/meta";
 import AccountMenu from "./components/AccountMenu";
 
@@ -10,7 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
-    page: "/account/details",
+    page: {
+      tr: getStaticRoute("tr").account.details.default,
+      en: getStaticRoute("en").account.details.default,
+    },
   });
 }
 

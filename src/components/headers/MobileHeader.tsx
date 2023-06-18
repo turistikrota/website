@@ -74,7 +74,7 @@ function MobileHeader({
 
   return (
     <header
-      className={` backdrop-blur w-full h-16 border-b border-gray-200 dark:border-gray-800 ${
+      className={` backdrop-blur-md w-full h-16 border-b border-gray-200 dark:border-gray-800 ${
         isFixed ? "fixed top-0 left-0 z-30 animate-slide-down" : ""
       }`}
     >

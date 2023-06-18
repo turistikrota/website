@@ -26,7 +26,7 @@ type RouteType = {
   };
 };
 
-type Locales = "en" | "tr";
+export type Locales = "en" | "tr";
 
 const Routes: Record<Locales, RouteType> = {
   tr: {

@@ -1,10 +1,14 @@
 import { Metadata } from "next";
+import { Locales, mergeUrlWithLocale } from "~/static/page";
 
 type Options = {
   title: string;
   description: string;
   keywords: string;
-  page: string;
+  page: {
+    tr: string;
+    en: string;
+  };
 };
 
 export const generateDefaultMetadata = (
@@ -17,15 +21,15 @@ export const generateDefaultMetadata = (
     keywords: opts.keywords,
     alternates: {
       languages: {
-        tr: `/tr${opts.page}`,
-        en: `/en${opts.page}`,
+        tr: mergeUrlWithLocale("tr", opts.page.tr),
+        en: mergeUrlWithLocale("en", opts.page.en),
       },
     },
     openGraph: {
       title: opts.title,
       description: opts.description,
       type: "website",
-      url: `https://turistikrota.com/${locale}${opts.page}`,
+      url: `https://turistikrota.com/${locale}${opts.page[locale as Locales]}`,
       images: [
         {
           url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
