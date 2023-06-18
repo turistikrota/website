@@ -1,7 +1,15 @@
 const withNextIntl = require("next-intl/plugin")();
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-intl"],
   reactStrictMode: true,
   poweredByHeader: false,
@@ -10,6 +18,7 @@ const nextConfig = {
   },
   experimental: {
     appDir: true,
+    mdxRs: true,
   },
   images: {
     domains: ["cdn.turistikrota.com"],
@@ -27,4 +36,4 @@ const nextConfig = {
   ],
 };
 
-module.exports = withNextIntl(nextConfig);
+module.exports = withNextIntl(withMDX(nextConfig));

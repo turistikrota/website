@@ -1,4 +1,16 @@
 {
+  "contracts": {
+    "privacy-notification": {
+      "title": "Gizlilik Bildirimi",
+      "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
+      "keywords": "Gizlilik Bildirimi, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "privacy-and-policy": {
+      "title": "Gizlilik ve Politika",
+      "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
+      "keywords": "Gizlilik ve Politika, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    }
+  },
   "maintaining": {
     "page": {
       "title": "Bakımdayız",

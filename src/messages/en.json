@@ -1,4 +1,16 @@
 {
+  "contracts": {
+    "privacy-notification": {
+      "title": "Privacy Notification",
+      "description": "We use cookies to provide you with a better service. By continuing to use our website, you consent to the use of cookies.",
+      "keywords": "Privacy Notification, Turistik Rota, Vacation Planning, Tour Reservation"
+    },
+    "privacy-and-policy": {
+      "title": "Privacy and Policy",
+      "description": "We use cookies to provide you with a better service. By continuing to use our website, you consent to the use of cookies.",
+      "keywords": "Privacy and Policy, Turistik Rota, Vacation Planning, Tour Reservation"
+    }
+  },
   "maintaining": {
     "page": {
       "title": "We are under maintenance",
