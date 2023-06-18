@@ -1,10 +1,7 @@
 "use client";
-import { useSelector } from "react-redux";
-import { useGetMyAccountQuery } from "~/features/account/account.api";
-import { RootState } from "~/store/store";
-import AccountEditForm from "./components/AccountEditForm";
+import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 
-export default function EditAccount() {
+/*
   const account = useSelector(
     (state: RootState) => state.account.currentAccount
   );
@@ -16,4 +13,12 @@ export default function EditAccount() {
   if (!data) return <div>not found</div>;
   console.log("data:", data);
   return <AccountEditForm />;
+*/
+
+export default function EditAccount() {
+  return (
+    <div className="p-4">
+      <MaintenanceAlert />
+    </div>
+  );
 }

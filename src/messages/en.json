@@ -1,4 +1,10 @@
 {
+  "maintaining": {
+    "page": {
+      "title": "We are under maintenance",
+      "description": "This page is currently unavailable for maintenance. Please try again later."
+    }
+  },
   "account": {
     "select": {
       "title": "Choose a profile",

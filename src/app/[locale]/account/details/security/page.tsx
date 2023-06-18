@@ -1,3 +1,9 @@
+import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
+
 export default function SecurityAccount() {
-  return <div>security page</div>;
+  return (
+    <div className="p-4">
+      <MaintenanceAlert />
+    </div>
+  );
 }
