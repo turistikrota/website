@@ -103,7 +103,6 @@ const authSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.logout.matchFulfilled,
       (state, action) => {
-        console.log("logout fulfilled");
         state.isAuthenticated = false;
         state.currentUser = null;
         state.tokens.accessToken = "";
