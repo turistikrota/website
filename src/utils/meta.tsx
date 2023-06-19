@@ -16,7 +16,7 @@ export const generateDefaultMetadata = (
   opts: Options
 ): Metadata => {
   return {
-    title: opts.title,
+    title: opts.title + " | Turistik Rota",
     description: opts.description,
     keywords: opts.keywords,
     alternates: {

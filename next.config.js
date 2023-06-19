@@ -27,17 +27,6 @@ const nextConfig = {
   images: {
     domains: ["s3.turistikrota.com"],
   },
-  headers: () => [
-    {
-      source: "/:path*",
-      headers: [
-        {
-          key: "Cache-Control",
-          value: "public, max-age=31536000, immutable",
-        },
-      ],
-    },
-  ],
 };
 
 module.exports = withPwa(withNextIntl(withMDX(nextConfig)));
