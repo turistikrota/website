@@ -5,8 +5,8 @@
       "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
       "keywords": "Gizlilik Bildirimi, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     },
-    "privacy-and-policy": {
-      "title": "Gizlilik ve Politika",
+    "privacy-and-protection": {
+      "title": "Kişisel Verilerin Korunması ve Gizlilik Politikası",
       "description": "Verilerinizi nasıl kullandığımızı ve koruduğumuzu öğrenin. Gizlilik ve politika sayfamızı ziyaret edin.",
       "keywords": "Gizlilik ve Politika, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     },
@@ -32,7 +32,7 @@
       },
       "new": "Yeni bir profil oluşturun",
       "meta": {
-        "title": "Profil Seç | Turistik Rota",
+        "title": "Profil Seç",
         "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
         "keywords": "Profil Seç, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
@@ -44,7 +44,7 @@
       "button": "Oluştur",
       "success": "Profil başarıyla oluşturuldu!",
       "meta": {
-        "title": "Yeni Profil Oluştur | Turistik Rota",
+        "title": "Yeni Profil Oluştur",
         "description": "Eşsiz bir turizm deneyimi için ister turist ister turizmci olun, Turistik Rota hesabınızı oluşturun ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
         "keywords": "Yeni Profil Oluştur, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
@@ -52,35 +52,35 @@
     "details": {
       "edit": {
         "meta": {
-          "title": "Profili Düzenle | Turistik Rota",
+          "title": "Profili Düzenle",
           "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
       "notifications": {
         "meta": {
-          "title": "Bildirimler | Turistik Rota",
+          "title": "Bildirimler",
           "description": "Bildirim tercihlerinizi görüntüleyin, bildirim tercihlerinizi belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Bildirimler, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
       "settings": {
         "meta": {
-          "title": "Ayarlar | Turistik Rota",
+          "title": "Ayarlar",
           "description": "Hesap ayarlarınızı görüntüleyin, hesap ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
           "keywords": "Ayarlar, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
       "security": {
         "meta": {
-          "title": "Güvenlik | Turistik Rota",
+          "title": "Güvenlik",
           "description": "Güvenlik ayarlarınızı görüntüleyin, güvenlik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
           "keywords": "Güvenlik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
       "privacy": {
         "meta": {
-          "title": "Gizlilik | Turistik Rota",
+          "title": "Gizlilik",
           "description": "Gizlilik ayarlarınızı görüntüleyin, gizlilik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
           "keywords": "Gizlilik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
@@ -105,13 +105,21 @@
         "delete": "Profili Sil"
       },
       "meta": {
-        "title": "Profil | Turistik Rota",
+        "title": "Profil",
         "description": "Turistikrota profilinizi düzenleyin, güvenliğinizi ve gizliliğinizi ayarlayın, bildirimleri yönetin ve hesap ayarlarınızı değiştirin.",
         "keywords": "Profil, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
     }
   },
   "auth": {
+    "buttons": {
+      "back": "Önceki sayfaya dön"
+    },
+    "meta": {
+      "title": "Giriş Yap",
+      "description": "Turistikrota hesabınıza giriş yapın ve tatil planlamaya başlayın! Üstelik birden fazla profil oluşturabilirsiniz.",
+      "keywords": "Giriş Yap, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
     "login": {
       "title": "Hesabınıza Giriş Yapın",
       "email": "E-posta adresiniz",
@@ -119,7 +127,7 @@
       "button": "Giriş yap",
       "success": "Giriş başarılı!",
       "meta": {
-        "title": "Giriş Yap | Turistik Rota",
+        "title": "Giriş Yap",
         "description": "Turistikrota hesabınıza giriş yapın ve tatil planlamaya başlayın!",
         "keywords": "Giriş Yap, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
@@ -136,7 +144,7 @@
       "button": "Kayıt ol",
       "success": "Kayıt başarılı! Lütfen e-posta adresinize gönderilen bağlantıyı tıklayarak hesabınızı doğrulayın.",
       "meta": {
-        "title": "Kayıt Ol | Turistik Rota",
+        "title": "Kayıt Ol",
         "description": "Turistikrota hesabınızı oluşturun ve tatil planlamaya başlayın!",
         "keywords": "Kayıt Ol, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       },
@@ -157,7 +165,7 @@
       },
       "codeNotExist": "Aktivasyon kodu bulunamadı.",
       "meta": {
-        "title": "Hesabınızı Aktifleştirin | Turistik Rota",
+        "title": "Hesabınızı Aktifleştirin",
         "description": "Turistikrota hesabınızı aktifleştirin ve tatil planlamaya başlayın!",
         "keywords": "Hesabınızı Aktifleştirin, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
       }
@@ -177,7 +185,7 @@
     "enter_email": "E-posta adresinizi girin",
     "email": "E-posta",
     "join_waitlist": "Katıl",
-    "img": "https://cdn.turistikrota.com/img/coming-soon.tr.svg",
+    "img": "https://s3.turistikrota.com/site/coming-soon/tr.png",
     "img_alt": "Turistikrota banner",
     "email_invalid": "Geçersiz e-posta adresi",
     "email_required": "E-posta adresi gereklidir",
@@ -290,7 +298,7 @@
       }
     },
     "meta": {
-      "title": "Hakkımızda | Turistik Rota",
+      "title": "Hakkımızda",
       "description": "Turistik Rota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur.",
       "keywords": "turistikrota, turistik rota, hakkımızda, turistikrota hakkında, turistik rota hakkında"
     }

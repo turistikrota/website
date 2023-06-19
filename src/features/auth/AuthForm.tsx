@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Spin from "sspin";
+import Button from "~/components/button/Button";
 import Condition from "~/components/condition/Condition";
 import { RootState } from "~/store/store";
 import CheckUserNameForm from "./CheckUserNameForm";
@@ -64,13 +65,37 @@ export default function AuthForm() {
     if (mail) setEmail(mail);
     else setEmail("");
   };
+
+  const onPrev = () => {
+    const keys = Object.keys(chain);
+    const index = keys.findIndex((k) => k === id);
+    if (index > 0) {
+      const prevId = keys[index - 1] as Id;
+      setId(prevId);
+      setActiveChain(getActiveChain(prevId));
+    }
+  };
+
   return (
     <>
       <Spin.WithContext value={isLoading}>
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            {t(activeChain.title as any)}
-          </h1>
+          <div className="flex">
+            <Condition value={["login", "register"].includes(id)}>
+              <Button
+                block={false}
+                variant="transparent"
+                size="normal"
+                className="mr-1"
+                title={t("buttons.back")}
+              >
+                <i className="bx bx-left-arrow-alt text-3xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"></i>
+              </Button>
+            </Condition>
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              {t(activeChain.title as any)}
+            </h1>
+          </div>
           <Condition value={id === "check-username"}>
             <Components.CheckUserName
               onNext={(val: boolean, mail?: string) =>

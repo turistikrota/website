@@ -1,3 +1,5 @@
-import PrivacyAndProtectionPage from "~/app/[locale]/contracts/privacy-and-protection-of-personal-data/page";
+import PrivacyAndProtectionPage, {
+  generateMetadata,
+} from "~/app/[locale]/contracts/privacy-and-protection-of-personal-data/page";
 
-export default PrivacyAndProtectionPage;
+export { generateMetadata, PrivacyAndProtectionPage as default };

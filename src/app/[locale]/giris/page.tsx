@@ -1,3 +1,3 @@
-import AuthHome from "~/app/[locale]/auth/page";
+import AuthHome, { generateMetadata } from "~/app/[locale]/auth/page";
 
-export default AuthHome;
+export { AuthHome as default, generateMetadata };

@@ -16,7 +16,7 @@ export const generateDefaultMetadata = (
   opts: Options
 ): Metadata => {
   return {
-    title: opts.title,
+    title: opts.title + " | Turistik Rota",
     description: opts.description,
     keywords: opts.keywords,
     alternates: {
@@ -32,7 +32,7 @@ export const generateDefaultMetadata = (
       url: `https://turistikrota.com/${locale}${opts.page[locale as Locales]}`,
       images: [
         {
-          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+          url: "https://s3.turistikrota.com/logo/vertical_500x500.png",
         },
       ],
     },
@@ -44,7 +44,7 @@ export const generateDefaultMetadata = (
       description: opts.description,
       images: [
         {
-          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+          url: "https://s3.turistikrota.com/logo/vertical_500x500.png",
         },
       ],
     },
