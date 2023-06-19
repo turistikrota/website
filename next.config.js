@@ -25,7 +25,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ["cdn.turistikrota.com"],
+    domains: ["s3.turistikrota.com"],
   },
   headers: () => [
     {

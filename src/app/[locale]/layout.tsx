@@ -59,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://turistikrota.com",
       images: [
         {
-          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+          url: "https://s3.turistikrota.com/logo/vertical_500x500.png",
         },
       ],
     },
@@ -71,7 +71,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t("meta.description"),
       images: [
         {
-          url: "https://cdn.turistikrota.com/logo/vertical_500x500.png",
+          url: "https://s3.turistikrota.com/logo/vertical_500x500.png",
         },
       ],
     },

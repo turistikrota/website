@@ -6,7 +6,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-url: url("https://cdn.turistikrota.com/site/background.png");
+  --background-url: url("https://s3.turistikrota.com/ui/background/culture-light.png");
   --background-color-start: rgb(239, 244, 245);
   --background-color-end: rgb(255, 255, 255);
   --popup-background-color: #fff;
@@ -78,7 +78,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-url: url("https://cdn.turistikrota.com/site/background-dark.png");
+    --background-url: url("https://s3.turistikrota.com/ui/background/culture-dark.png");
     --foreground-rgb: 255, 255, 255;
     --background-color-start: #141414;
     --background-color-end: #121212;

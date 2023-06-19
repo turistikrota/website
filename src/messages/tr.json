@@ -177,7 +177,7 @@
     "enter_email": "E-posta adresinizi girin",
     "email": "E-posta",
     "join_waitlist": "Katıl",
-    "img": "https://cdn.turistikrota.com/img/coming-soon.tr.svg",
+    "img": "https://s3.turistikrota.com/site/coming-soon/tr.png",
     "img_alt": "Turistikrota banner",
     "email_invalid": "Geçersiz e-posta adresi",
     "email_required": "E-posta adresi gereklidir",

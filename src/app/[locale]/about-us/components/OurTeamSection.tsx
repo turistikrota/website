@@ -70,7 +70,7 @@ export default function OurTeamSection() {
   const t = useTranslations("aboutUs.team");
   const members: Member[] = [
     {
-      avatar: "https://cdn.turistikrota.com/avatars/ssi.jpg",
+      avatar: "https://s3.turistikrota.com/site/users/ssi.jpg",
       title: "founderAndDeveloper",
       fullName: "Sami Salih İbrahimbaş",
       social: [

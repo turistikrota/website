@@ -177,7 +177,7 @@
     "enter_email": "Enter your email",
     "email": "Email Address",
     "join_waitlist": "Join Waitlist",
-    "img": "https://cdn.turistikrota.com/img/coming-soon.en.svg",
+    "img": "https://s3.turistikrota.com/site/coming-soon/en.png",
     "img_alt": "Turistikrota banner",
     "email_invalid": "Please enter a valid email address",
     "email_required": "Please enter your email address",

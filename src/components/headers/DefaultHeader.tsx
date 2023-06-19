@@ -2,8 +2,8 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
-import Image from "next/image";
 import { getStaticRoute } from "~/static/page";
+import Logo from "../logo/logo";
 import AccountHeaderButton from "./AccountHeaderButton";
 import MobileHeader from "./MobileHeader";
 import TopHeader from "./TopHeader";
@@ -27,14 +27,7 @@ export default function DefaultHeader() {
       <MobileHeader>
         <MobileHeader.Left>
           <MobileHeader.Logo>
-            <Image
-              src={"https://cdn.turistikrota.com/logo/1x/horizontal.png"}
-              width={186}
-              height={30}
-              alt={"Turistikrota logo"}
-              title="Turistikrota logo"
-              priority
-            />
+            <Logo width={186} height={30} />
           </MobileHeader.Logo>
         </MobileHeader.Left>
         <MobileHeader.Fill className="hidden md:flex">{``}</MobileHeader.Fill>

@@ -24,6 +24,6 @@ export const Config: config = {
     Credentials: "Access-Control-Allow-Credentials",
   },
   cdn: {
-    notFound: "https://cdn.turistikrota.com/site/404.png",
+    notFound: "https://s3.turistikrota.com/ui/404.png",
   },
 };
