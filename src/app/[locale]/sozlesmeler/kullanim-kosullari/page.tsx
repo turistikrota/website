@@ -1,3 +1,5 @@
-import TermsOfUsePage from "~/app/[locale]/contracts/terms-of-use/page";
+import TermsOfUsePage, {
+  generateMetadata,
+} from "~/app/[locale]/contracts/terms-of-use/page";
 
-export default TermsOfUsePage;
+export { generateMetadata, TermsOfUsePage as default };
