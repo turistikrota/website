@@ -8,31 +8,187 @@
 <url>
   <loc>https://turistikrota.com/en</loc>
   <lastmod>2023-04-28T10:34:17+00:00</lastmod>
+  <priority>1.0</priority>
 </url>
 
 <url>
   <loc>https://turistikrota.com/tr</loc>
   <lastmod>2023-04-28T10:34:53+00:00</lastmod>
+  <priority>1.0</priority>
 </url>
 
 <url>
   <loc>https://turistikrota.com/en/about-us</loc>
   <lastmod>2023-05-05T15:35:17+00:00</lastmod>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/hakkimizda</loc>
-  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
+  <priority>0.8</priority>
 </url>
 
 <url>
   <loc>https://turistikrota.com/en/coming-soon</loc>
   <lastmod>2023-05-05T15:35:17+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hakkimizda</loc>
+  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
+  <priority>0.8</priority>
 </url>
 
 <url>
   <loc>https://turistikrota.com/tr/cok-yakinda</loc>
   <lastmod>2023-05-05T15:35:17+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/giris</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/auth</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/olustur</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/create</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/sec</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/select</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/ayarlar</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details/settings</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/bildirim-tercihleri</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details/notifications</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/duzenle</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details/edit</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/gizlilik</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details/privacy</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/guvenlik</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/account/details/security</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/sozlesmeler/gizlilik-bildirimi</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/contracts/privacy-and-protection-of-personal-data</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/contracts/privacy-notice</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/sozlesmeler/kullanim-kosullari</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/en/contracts/terms-of-use</loc>
+	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+  <changeFreq>monthly</changeFreq>
 </url>
 
 </urlset>
