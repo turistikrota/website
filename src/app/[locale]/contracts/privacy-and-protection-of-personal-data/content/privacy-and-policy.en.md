@@ -164,7 +164,7 @@ Turistikrota uses various cookies for different purposes in accordance with its 
 
 **Functionality Cookies:** When you visit the website again, your language preferences, region selection, etc. allows it to be remembered.
 
-**Targeting/Advertising Cookies:** ETS uses different first-party and third-party cookies for targeting and advertising purposes on the website. It is possible to block these cookies by changing your browser settings or by changing your cookie preferences as shown in this Policy.
+**Targeting/Advertising Cookies:** turistikrota uses different first-party and third-party cookies for targeting and advertising purposes on the website. It is possible to block these cookies by changing your browser settings or by changing your cookie preferences as shown in this Policy.
 
 ### Managing cookie preferences
 

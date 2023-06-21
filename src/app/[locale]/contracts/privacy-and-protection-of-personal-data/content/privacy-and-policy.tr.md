@@ -146,7 +146,7 @@ turistikrota.com, Gizilik Politikası'na uygun olarak farklı amaçlarla çeşit
 
 **İşlevsellik Çerezleri:** Web sitesini tekrar ziyaret ettiğinizde dil tercihlerinizin, bölge seçiminizin vb. hatırlanmasına olanak sağlar.
 
-**Hedefleme/Reklam Çerezleri:** ETS web sitesinde hedefleme ve reklam amacıyla farklı birinci taraf ve üçüncü taraf çerezler kullanmaktadır. Bu çerezleri tarayıcınızın ayarlarını değiştirerek ya da bu Politika’da gösterildiği şekilde çerez tercihlerini değiştirerek engellemeniz mümkündür.
+**Hedefleme/Reklam Çerezleri:** turistikrota web sitesinde hedefleme ve reklam amacıyla farklı birinci taraf ve üçüncü taraf çerezler kullanmaktadır. Bu çerezleri tarayıcınızın ayarlarını değiştirerek ya da bu Politika’da gösterildiği şekilde çerez tercihlerini değiştirerek engellemeniz mümkündür.
 
 ### Çerez tercihlerinin yönetilmesi
 
