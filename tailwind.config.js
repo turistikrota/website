@@ -82,6 +82,9 @@ module.exports = {
       backdropBlur: {
         xs: "3px",
       },
+      fontSize: {
+        xxs: "0.625rem",
+      },
       backgroundColor: {
         popup: "var(--popup-background-color)",
         header: "var(--header-background-color)",

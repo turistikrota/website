@@ -18,7 +18,7 @@ export default async function ComingSoon() {
                         {t("title1")}
                       </span>
                       &nbsp;
-                      <span className="text-primary-200 dark:text-primary-300">
+                      <span className="text-primary-400 dark:text-primary-300">
                         {t("title2")}
                       </span>
                     </div>
