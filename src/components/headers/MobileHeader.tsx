@@ -13,6 +13,11 @@ type ClickableProps = {
   onClick?: () => void;
 };
 
+type ButtonProps = {
+  ariaLabel?: string;
+  title?: string;
+};
+
 const Left = ({ children }: BaseProps) => {
   return <div className="flex items-center">{children}</div>;
 };
@@ -39,11 +44,16 @@ const Logo = ({ children }: BaseProps) => {
   );
 };
 
-const Button = ({ children, onClick }: BaseProps & ClickableProps) => {
+const Button = ({
+  children,
+  onClick,
+  ...props
+}: BaseProps & ButtonProps & ClickableProps) => {
   return (
     <button
       onClick={onClick}
       className="p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-200 rounded-full hover:bg-gray-300 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200"
+      {...props}
     >
       {children}
     </button>

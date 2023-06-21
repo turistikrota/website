@@ -11,9 +11,14 @@ import Image from "../image/image";
 import MobileHeader from "./MobileHeader";
 
 const ProfileButton = ({ account }: { account: AccountListItem }) => {
+  const t = useTranslations("header.button");
   const locale = useLocale();
   return (
-    <Link href={getStaticRoute(locale).account.details.default}>
+    <Link
+      href={getStaticRoute(locale).account.details.default}
+      aria-label={t("profile")}
+      title={t("profile")}
+    >
       <div className="group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out">
         <div className="flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center">
           <MobileHeader.Avatar>
@@ -35,10 +40,11 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
 };
 
 const LoginButton = () => {
+  const t = useTranslations("header.button");
   const locale = useLocale();
   return (
     <Link href={getStaticRoute(locale).auth.default}>
-      <MobileHeader.Button>
+      <MobileHeader.Button ariaLabel={t("login")} title={t("login")}>
         <i className="bx bx-user"></i>
       </MobileHeader.Button>
     </Link>
@@ -52,6 +58,8 @@ const SelectProfileButton = () => {
     <Link
       href={getStaticRoute(locale).account.select}
       className="hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out"
+      aria-label={t("links.selectAccount")}
+      title={t("links.selectAccount")}
     >
       {t("links.selectAccount")}
     </Link>

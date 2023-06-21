@@ -228,6 +228,11 @@
       "aboutUs": "About Us",
       "login": "Login",
       "selectAccount": "Select Profile"
+    },
+    "button": {
+      "login": "Login",
+      "select": "Select Profile",
+      "profile": "profile"
     }
   },
   "aboutUs": {

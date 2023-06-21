@@ -228,6 +228,11 @@
       "aboutUs": "Hakkımızda",
       "login": "Giriş Yap",
       "selectAccount": "Profil Seç"
+    },
+    "button": {
+      "login": "Giriş Yap",
+      "select": "Profil Seç",
+      "profile": "Profil"
     }
   },
   "aboutUs": {
