@@ -1,12 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { useContext } from "react";
 import Condition from "~/components/condition/Condition";
 import Logo from "~/components/logo/logo";
+import { RouteType, getStaticRoute } from "~/static/page";
 import { Colors } from "~/types/base";
 import { isWindowLtLg } from "~/utils/responsive";
 import { AccountDetailContext } from "../layouts/AccountDetailLayout";
@@ -26,7 +26,7 @@ const ToggleButton = dynamic(() => import("./AccountMenuToggle"), {
 type MenuItem = {
   title: Pages;
   icon: string;
-  href: string;
+  href: (r: RouteType) => string;
   badge?: number;
   badgeType?: Colors;
 };
@@ -35,32 +35,32 @@ const menuItems: MenuItem[] = [
   {
     title: "edit",
     icon: "bx bx-edit",
-    href: "/account/details/edit",
+    href: (r: RouteType) => r.account.details.edit,
   },
   {
     title: "notifications",
     icon: "bx bx-bell",
-    href: "/account/details/notifications",
+    href: (r: RouteType) => r.account.details.notifications,
   },
   {
     title: "settings",
     icon: "bx bx-cog",
-    href: "/account/details/settings",
+    href: (r: RouteType) => r.account.details.settings,
   },
   {
     title: "security",
     icon: "bx bx-lock",
-    href: "/account/details/security",
+    href: (r: RouteType) => r.account.details.security,
   },
   {
     title: "privacy",
     icon: "bx bx-lock-alt",
-    href: "/account/details/privacy",
+    href: (r: RouteType) => r.account.details.privacy,
   },
 ];
 
 export default function AccountMenu({ isDetail }: Props) {
-  const params = useParams();
+  const locale = useLocale();
   const menuContext = useContext(AccountDetailContext);
   const t = useTranslations("account.detail.links");
 
@@ -94,7 +94,7 @@ export default function AccountMenu({ isDetail }: Props) {
             isLink={!!el.href}
             title={t(el.title)}
             aria-label={t(el.title)}
-            href={el.href}
+            href={el.href(getStaticRoute(locale))}
             onClick={onMenuClick}
           >
             <AccountMenuItem.IconWrapper

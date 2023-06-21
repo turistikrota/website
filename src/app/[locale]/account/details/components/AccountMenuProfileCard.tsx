@@ -26,7 +26,7 @@ export default function AccountMenuProfileCard({ open }: Props) {
       }`}
     >
       <div
-        className={`flex bg-secondary-300 dark:bg-secondary-500 rounded-full ${
+        className={`flex bg-gray-300 dark:bg-gray-700 rounded-full ${
           open ? "items-center justify-center w-20 h-20" : "h-12 w-12"
         }`}
       >

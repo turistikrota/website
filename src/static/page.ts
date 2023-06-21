@@ -1,4 +1,4 @@
-type RouteType = {
+export type RouteType = {
   aboutUs: string;
   account: {
     create: string;
