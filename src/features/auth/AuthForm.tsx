@@ -88,6 +88,7 @@ export default function AuthForm() {
                 size="normal"
                 className="mr-1"
                 title={t("buttons.back")}
+                onClick={onPrev}
               >
                 <i className="bx bx-left-arrow-alt text-3xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"></i>
               </Button>
