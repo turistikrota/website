@@ -13,6 +13,7 @@ const withPwa = require("next-pwa")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-intl"],
   reactStrictMode: true,
