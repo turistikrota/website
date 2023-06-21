@@ -1,16 +1,10 @@
 FROM node:18-alpine AS base
 
 FROM base AS deps
-RUN apk add --no-cache --virtual libc6-compat
 WORKDIR /app
 
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
-  else echo "No lock file found, installing with yarn"; yarn; \
-  fi
+COPY package.json yarn.lock* ./
+RUN yarn install --frozen-lockfile 
 
 FROM base AS builder
 WORKDIR /app
