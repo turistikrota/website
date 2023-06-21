@@ -3,6 +3,16 @@ type Props = {
   height?: number;
 };
 
+function Beta() {
+  return (
+    <span className="absolute -top-2 -right-8">
+      <span className="inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-white bg-secondary rounded-md">
+        beta
+      </span>
+    </span>
+  );
+}
+
 export default function Logo({ width = 186, height = 30 }: Props) {
   return (
     <div className="relative">
@@ -37,12 +47,7 @@ export default function Logo({ width = 186, height = 30 }: Props) {
           </tspan>
         </text>
       </svg>
-      {/* BetaBadge */}
-      <span className="absolute -top-2 -right-8">
-        <span className="inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-white bg-secondary rounded-md">
-          beta
-        </span>
-      </span>
+      <Beta />
     </div>
   );
 }
