@@ -14,7 +14,7 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
   const locale = useLocale();
   return (
     <Link href={getStaticRoute(locale).account.details.default}>
-      <div className="group relative flex items-center flex-row space-x-1 hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out">
+      <div className="group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out">
         <div className="flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center">
           <MobileHeader.Avatar>
             <Image
