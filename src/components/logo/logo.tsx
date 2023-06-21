@@ -6,7 +6,7 @@ type Props = {
 function Beta() {
   return (
     <span className="absolute -top-2 -right-8">
-      <span className="inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-white bg-secondary rounded-md">
+      <span className="inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-black bg-secondary rounded-md">
         beta
       </span>
     </span>
