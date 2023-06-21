@@ -24,7 +24,6 @@ export default function AccountCreateForm() {
   const form = useFormik({
     initialValues: {
       userName: "",
-      userCode: "",
     },
     validationSchema: schema.account.create,
     validateOnBlur: true,
@@ -33,7 +32,6 @@ export default function AccountCreateForm() {
     onSubmit: (values) => {
       handleCreate({
         userName: values.userName,
-        userCode: `${values.userCode}`,
       });
     },
   });
@@ -71,19 +69,6 @@ export default function AccountCreateForm() {
               onBlur={form.handleBlur}
               error={form.errors.userName}
               ariaLabel={t("userName")}
-            />
-            <Input
-              label={t("userCode")}
-              id="userCode"
-              name="userCode"
-              type="number"
-              autoComplete="on"
-              required
-              value={form.values.userCode}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              error={form.errors.userCode}
-              ariaLabel={t("userCode")}
             />
             <Button htmlType="submit">{t("button")}</Button>
           </form>

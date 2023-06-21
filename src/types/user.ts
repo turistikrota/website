@@ -1,11 +1,9 @@
 export type UserAccount = {
   avatar: string;
-  code: string;
   name: string;
 };
 
 export type UserOwner = {
-  accountCode: string;
   accountName: string;
   nickName: string;
   roles: string[];

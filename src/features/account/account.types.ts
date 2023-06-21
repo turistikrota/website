@@ -20,5 +20,4 @@ export function isAccountListResponse(
 
 export type AccountCreateFormData = {
   userName: string;
-  userCode: string;
 };

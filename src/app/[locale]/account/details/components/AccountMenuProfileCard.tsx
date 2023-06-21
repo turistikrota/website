@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import Button from "~/components/button/Button";
 import Condition from "~/components/condition/Condition";
 import Image from "~/components/image/image";
-import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
 import { RootState } from "~/store/store";
 
@@ -44,10 +43,7 @@ export default function AccountMenuProfileCard({ open }: Props) {
           <p className="text-md text-gray-500 dark:text-gray-300 font-medium">
             {account.fullName}
           </p>
-          <UserName>
-            {account.userName}
-            <UserCode size="xs">{account.userCode}</UserCode>
-          </UserName>
+          <UserName>{account.userName}</UserName>
         </div>
         <Link
           href="/account/select"

@@ -3,7 +3,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { useSelector } from "react-redux";
-import UserCode from "~/features/account/UserCode";
 import UserName from "~/features/account/UserName";
 import { AccountListItem } from "~/features/account/account.types";
 import { getStaticRoute } from "~/static/page";
@@ -28,10 +27,7 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
           </MobileHeader.Avatar>
         </div>
         <div className="hidden flex-col items-start justify-center md:flex">
-          <UserName>
-            {account.userName}
-            <UserCode size="xs">{account.userCode}</UserCode>
-          </UserName>
+          <UserName>{account.userName}</UserName>
         </div>
       </div>
     </Link>

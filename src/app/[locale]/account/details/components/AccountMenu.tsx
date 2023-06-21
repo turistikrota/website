@@ -82,10 +82,7 @@ export default function AccountMenu({ isDetail }: Props) {
         </div>
       </Condition>
       <Condition value={!isDetail}>
-        <Link
-          href="/"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-        >
+        <Link href="/" className="flex items-center mb-6">
           <Logo />
         </Link>
       </Condition>

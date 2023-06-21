@@ -7,7 +7,6 @@ export type AccountSchema = {
 const create = (t: any) =>
   Yup.object().shape({
     userName: Yup.string().required(t("validation.required")),
-    userCode: Yup.string().required(t("validation.required")),
   });
 
 const buildAccountSchema = (t: any): AccountSchema => ({

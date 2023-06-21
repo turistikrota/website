@@ -7,7 +7,6 @@ import Spin from "sspin";
 import Condition from "~/components/condition/Condition";
 import { getStaticRoute } from "~/static/page";
 import AccountSelectionCard from "./AccountSelectionCard";
-import UserCode from "./UserCode";
 import UserName from "./UserName";
 import { useListQuery } from "./account.api";
 import { setAccount } from "./account.store";
@@ -47,10 +46,7 @@ export default function AccountSelection() {
                     ></AccountSelectionCard.Avatar>
                   </AccountSelectionCard.Image>
                   <AccountSelectionCard.Content>
-                    <UserName size="xl">
-                      {item.userName}
-                      <UserCode>{item.userCode}</UserCode>
-                    </UserName>
+                    <UserName size="xl">{item.userName}</UserName>
                     <AccountSelectionCard.FullName>
                       {item.fullName}
                     </AccountSelectionCard.FullName>
