@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormik } from "formik";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FormEvent, useState } from "react";
 import Spin from "sspin";
 import * as Yup from "yup";
@@ -12,10 +12,17 @@ import { BaseResponse } from "~/types/response/response.types";
 
 export default function WaitlistForm() {
   const t = useTranslations("waitlist");
+  const locale = useLocale();
   const [alertVisible, setAlertVisible] = useState<boolean>(true);
   const [result, setResult] = useState<BaseResponse | null>(null);
   const [loading, dispatch, error] = usePost<{ email: string }, BaseResponse>(
-    apiUrl(Services.Soon, "/")
+    apiUrl(Services.Soon, "/"),
+    undefined,
+    {
+      headers: {
+        "Accept-Language": locale,
+      },
+    }
   );
   const form = useFormik({
     enableReinitialize: true,
