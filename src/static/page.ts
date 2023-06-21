@@ -54,7 +54,7 @@ const Routes: Record<Locales, RouteType> = {
       terms: "/sozlesmeler/kullanim-kosullari",
       privacyNotify: "/sozlesmeler/gizlilik-bildirimi",
       privacy:
-        "/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizililik-politikası",
+        "/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi",
     },
   },
   en: {
