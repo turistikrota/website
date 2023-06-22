@@ -67,12 +67,9 @@ export default function AuthForm() {
   };
 
   const onPrev = () => {
-    const keys = Object.keys(chain);
-    const index = keys.findIndex((k) => k === id);
-    if (index > 0) {
-      const prevId = keys[index - 1] as Id;
-      setId(prevId);
-      setActiveChain(getActiveChain(prevId));
+    if (["login", "register"].includes(id)) {
+      setId("check-username");
+      setActiveChain(getActiveChain("check-username"));
     }
   };
 
