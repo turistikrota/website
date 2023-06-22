@@ -61,9 +61,9 @@ function Input<Value extends InputValue = string>({
     <>
       <div className={`relative w-full min-w-[200px] ${sizes[size]}`}>
         <input
-          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 focus:border-t-transparent transition-all  focus:border-2 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${
+          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 focus:border-t-transparent transition-all  focus:border-2 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 focus-visible:outline-none ${
             !!error
-              ? "invalid border-red-500 focus:border-red-500 text-red-500"
+              ? "invalid border-red-500 focus:border-red-500 text-red-500 border-t-transparent focus:border-t-transparent focus-visible:border-t-transparent border-2"
               : "focus:border-secondary-500 "
           }`}
           placeholder=" "

@@ -10,6 +10,7 @@ import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { useWindowSize } from "~/hooks/dom/useWindowSize";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 import { refreshTurnstile } from "~/utils/turnstile";
@@ -25,6 +26,7 @@ export default function CheckUserNameForm(props: Props) {
   const t = useTranslations("auth.check");
   const schema = useSchema();
   const locale = useLocale();
+  const size = useWindowSize();
   const dispatch = useDispatch();
   const toast = useToast();
   const { setSpin } = useContext(SpinContext);
@@ -34,6 +36,9 @@ export default function CheckUserNameForm(props: Props) {
     initialValues: {
       email: "",
     },
+    validateOnBlur: false,
+    validateOnChange: false,
+    validateOnMount: false,
     validationSchema: schema.auth.checkEmail,
     onSubmit: (values) => {
       handleCheckEmail({
@@ -95,6 +100,7 @@ export default function CheckUserNameForm(props: Props) {
           locale={locale}
           onError={onError}
           onVerify={onVerify}
+          size={size.width && size.width < 768 ? "compact" : "normal"}
         />
         <Button htmlType="submit">{t("button")}</Button>
       </form>

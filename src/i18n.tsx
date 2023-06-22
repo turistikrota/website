@@ -5,7 +5,6 @@ export default getRequestConfig(async ({ locale }) => {
   const now = headers().get("x-now");
   const timeZone = headers().get("x-time-zone") ?? undefined;
   const messages = (await import(`./messages/${locale}.json`)).default;
-  console.log("lss", locale);
   return {
     now: now ? new Date(now) : undefined,
     timeZone,
