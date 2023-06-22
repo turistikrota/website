@@ -12,8 +12,8 @@ export default function ShowHideButton({ show, onClick }: ShowHideButtonProps) {
       type="button"
       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-gray-400"
       onClick={onClick}
-      aria-label={show ? t("hide") : t("show")}
-      title={show ? t("hide") : t("show")}
+      aria-label={show ? t("show") : t("hide")}
+      title={show ? t("show") : t("hide")}
     >
       <i className={show ? "bx bx-show" : "bx bx-hide"}></i>
     </button>

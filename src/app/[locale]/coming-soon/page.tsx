@@ -38,7 +38,7 @@ export default async function ComingSoon() {
                   alt={t("img_alt")}
                   width={300}
                   height={200}
-                  priority
+                  priority={false}
                 />
               </div>
             </div>
