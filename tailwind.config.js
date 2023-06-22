@@ -18,6 +18,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        "8xl": "88rem",
+        "9xl": "96rem",
+        "10xl": "104rem",
+      },
       colors: {
         primary: {
           50: withOpacity("var(--primary-color-50)"),

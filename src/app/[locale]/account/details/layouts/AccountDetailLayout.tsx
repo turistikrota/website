@@ -35,7 +35,7 @@ export default function AccountDetailLayout({
         setOpenMenu: setMenuOpen,
       }}
     >
-      <div className="flex flex-col min-h-screen h-full w-full">
+      <div className="flex flex-col min-h-screen h-full w-full 2xl:container 2xl:mx-auto">
         <div className={`lg:hidden ${menuOpen ? "hidden" : "block"}`}>
           <AccountDetailHeader page={page} />
         </div>
@@ -43,7 +43,7 @@ export default function AccountDetailLayout({
           <aside
             className={`${
               menuOpen
-                ? "block w-full lg:w-2/12"
+                ? "block w-full lg:w-3/12 xl:max-w-sm"
                 : "w-0 hidden lg:block lg:w-fit h-full"
             } transition-all duration-200`}
           >
@@ -51,7 +51,7 @@ export default function AccountDetailLayout({
           </aside>
           <div
             className={`${
-              menuOpen ? "w-0 hidden lg:block lg:w-10/12" : "w-full"
+              menuOpen ? "w-0 hidden lg:block lg:w-9/12" : "w-full"
             } transition-all duration-200 h-full`}
           >
             {children}

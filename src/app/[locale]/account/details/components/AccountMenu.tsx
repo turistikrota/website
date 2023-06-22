@@ -71,7 +71,7 @@ export default function AccountMenu({ isDetail }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start w-full h-full rounded-md px-4 py-4">
+    <div className="flex flex-col items-center justify-start w-full h-full rounded-md px-4 py-4 lg:px-0">
       <Condition value={isDetail}>
         <div
           className={`hidden lg:flex mb-2 w-full ${
@@ -81,7 +81,7 @@ export default function AccountMenu({ isDetail }: Props) {
           <ToggleButton />
         </div>
       </Condition>
-      <Condition value={!isDetail}>
+      <Condition value={!isDetail || menuContext.openMenu}>
         <Link href="/" className="flex items-center mb-6">
           <Logo />
         </Link>
