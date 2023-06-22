@@ -320,5 +320,11 @@
     "active_alt": "Bu hesap aktiftir",
     "inactive": "Pasif",
     "inactive_alt": "Bu hesap pasiftir"
+  },
+  "ux": {
+    "button": {
+      "show": "Göster",
+      "hide": "Gizle"
+    }
   }
 }

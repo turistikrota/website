@@ -1,6 +1,8 @@
 "use client";
 
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
+import Condition from "../condition/Condition";
+import ShowHideButton from "./ShowHideButton";
 
 type InputValue = string | number | readonly string[] | undefined;
 
@@ -28,6 +30,7 @@ type InputProps<Value extends InputValue = string> = {
   ariaLabel?: string;
   ariaDescribedBy?: string;
   ariaInvalid?: boolean;
+  suffix?: string;
 };
 
 const sizes: Record<Size, string> = {
@@ -57,18 +60,19 @@ function Input<Value extends InputValue = string>({
   ariaInvalid,
   ...props
 }: InputProps<Value>) {
+  const [inputType, setInputType] = useState(type);
   return (
     <>
       <div className={`relative w-full min-w-[200px] ${sizes[size]}`}>
         <input
-          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 focus:border-t-transparent transition-all  focus:border-2 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 focus-visible:outline-none ${
+          className={`peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-default px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline-0 focus:border-t-transparent transition-all  focus:border-2 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 focus-visible:outline-0 focus-visible:outline-none ${
             !!error
               ? "invalid border-red-500 focus:border-red-500 text-red-500 border-t-transparent focus:border-t-transparent focus-visible:border-t-transparent border-2"
               : "focus:border-secondary-500 "
           }`}
           placeholder=" "
           name={name}
-          type={type}
+          type={inputType}
           required={required}
           value={value}
           onChange={(e) => {
@@ -93,6 +97,14 @@ function Input<Value extends InputValue = string>({
         >
           {label}
         </label>
+        <Condition value={type === "password" && value !== ""}>
+          <ShowHideButton
+            show={inputType === "password"}
+            onClick={() => {
+              setInputType(inputType === "password" ? "text" : "password");
+            }}
+          />
+        </Condition>
       </div>
       {error && <small className="text-xs text-red-500">{error}</small>}
     </>

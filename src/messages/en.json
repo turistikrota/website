@@ -320,5 +320,11 @@
     "active_alt": "This account is active",
     "inactive": "Inactive",
     "inactive_alt": "This account is inactive"
+  },
+  "ux": {
+    "button": {
+      "show": "Show",
+      "hide": "Hide"
+    }
   }
 }
