@@ -26,3 +26,13 @@ export const useWindowSize = (): Size => {
   }, []);
   return windowSize;
 };
+
+export const useIsMobile = (): boolean => {
+  const { width } = useWindowSize();
+  return width ? width < 768 : false;
+};
+
+export const useIsSmallMobile = (): boolean => {
+  const { width } = useWindowSize();
+  return width ? width < 375 : false;
+};

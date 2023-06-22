@@ -11,6 +11,7 @@ import TurnstileInput from "turnstile-next";
 import Button from "~/components/button/Button";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { useIsSmallMobile } from "~/hooks/dom/useWindowSize";
 import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { refreshTurnstile } from "~/utils/turnstile";
@@ -23,6 +24,7 @@ export default function ActivateForm() {
   const dispatch = useDispatch();
   const toast = useToast();
   const locale = useLocale();
+  const isMobile = useIsSmallMobile();
   const router = useLocalizedRouter();
   const searchParams = useSearchParams();
   const [handleVerify, { isLoading, data, status, error }] = useVerifyMutation(
@@ -80,6 +82,7 @@ export default function ActivateForm() {
               locale={locale}
               onError={onError}
               onVerify={onVerify}
+              size={isMobile ? "compact" : "normal"}
             />
             <Button htmlType="submit">{t("button")}</Button>
           </form>

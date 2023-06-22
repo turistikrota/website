@@ -10,6 +10,7 @@ import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { useIsSmallMobile } from "~/hooks/dom/useWindowSize";
 import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
@@ -27,6 +28,7 @@ export default function LoginForm({ email }: Props) {
   const t = useTranslations("auth.login");
   const locale = useLocale();
   const schema = useSchema();
+  const isMobile = useIsSmallMobile();
   const dispatch = useDispatch();
   const router = useLocalizedRouter();
   const searchParams = useSearchParams();
@@ -39,6 +41,9 @@ export default function LoginForm({ email }: Props) {
       email: email,
       password: "",
     },
+    validateOnBlur: false,
+    validateOnChange: false,
+    validateOnMount: false,
     validationSchema: schema.auth.login,
     onSubmit: (values) => {
       handleLogin({
@@ -121,6 +126,7 @@ export default function LoginForm({ email }: Props) {
           locale={locale}
           onError={onError}
           onVerify={onVerify}
+          size={isMobile ? "compact" : "normal"}
         />
         <Button htmlType="submit">{t("button")}</Button>
       </form>

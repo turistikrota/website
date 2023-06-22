@@ -12,6 +12,7 @@ import Checkbox from "~/components/form/Checkbox";
 import Input from "~/components/form/Input";
 import { useToast } from "~/components/toast/Toast";
 import { Config } from "~/config";
+import { useIsSmallMobile } from "~/hooks/dom/useWindowSize";
 import { getStaticRoute } from "~/static/page";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
@@ -28,6 +29,7 @@ export default function RegisterForm({ email }: Props) {
   const t = useTranslations("auth.register");
   const locale = useLocale();
   const schema = useSchema();
+  const isMobile = useIsSmallMobile();
   const dispatch = useDispatch();
   const router = useLocalizedRouter();
   const searchParams = useSearchParams();
@@ -41,6 +43,9 @@ export default function RegisterForm({ email }: Props) {
       password: "",
       privacy: false,
     },
+    validateOnBlur: false,
+    validateOnChange: false,
+    validateOnMount: false,
     validationSchema: schema.auth.register,
     onSubmit: (values) => {
       handleRegister({
@@ -163,6 +168,7 @@ export default function RegisterForm({ email }: Props) {
           locale={locale}
           onError={onError}
           onVerify={onVerify}
+          size={isMobile ? "compact" : "normal"}
         />
         <Button htmlType="submit">{t("button")}</Button>
       </form>
