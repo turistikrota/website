@@ -36,3 +36,13 @@ export const useIsSmallMobile = (): boolean => {
   const { width } = useWindowSize();
   return width ? width < 375 : false;
 };
+
+export const useIsTablet = (): boolean => {
+  const { width } = useWindowSize();
+  return width ? width < 1024 : false;
+};
+
+export const useIsDesktop = (): boolean => {
+  const { width } = useWindowSize();
+  return width ? width >= 1280 : false;
+};

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useIsDesktop } from "~/hooks/dom/useWindowSize";
 import AccountDetailHeader, {
   AccountDetailTitle,
   type Pages,
@@ -29,6 +30,7 @@ export default function AccountDetailLayout({
   children,
 }: React.PropsWithChildren<Props>) {
   const [menuOpen, setMenuOpen] = useState(open);
+  const isDesktop = useIsDesktop();
   return (
     <AccountDetailContext.Provider
       value={{
@@ -44,7 +46,7 @@ export default function AccountDetailLayout({
         <div className="flex h-full w-full flex-grow">
           <aside
             className={`${
-              menuOpen
+              menuOpen || isDesktop
                 ? "block w-full lg:w-3/12 xl:max-w-sm"
                 : "w-0 hidden lg:block lg:w-fit h-full"
             } transition-all duration-200`}
