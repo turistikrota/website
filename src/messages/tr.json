@@ -102,7 +102,15 @@
         "privacy": "Gizlilik",
         "notifications": "Bildirimler",
         "settings": "Ayarlar",
-        "delete": "Profili Sil"
+        "delete": "Profili Sil",
+        "subtitles": {
+          "edit": "Profil resminizi, bilgilerinizi ve sosyal medya hesaplarınızı düzenleyin.",
+          "security": "Şifrenizi değiştirin, iki faktörlü kimlik doğrulamayı etkinleştirin ve oturum açma cihazlarınızı yönetin.",
+          "privacy": "Gizlilik ayarlarınızı düzenleyin ve profilinizi arama sonuçlarında görünür veya görünmez yapın.",
+          "notifications": "Bildirim tercihlerinizi düzenleyin.",
+          "settings": "Hesap ayarlarınızı düzenleyin.",
+          "delete": "Profilinizi silin."
+        }
       },
       "meta": {
         "title": "Profil",

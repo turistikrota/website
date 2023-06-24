@@ -102,7 +102,15 @@
         "privacy": "Privacy",
         "notifications": "Notifications",
         "settings": "Settings",
-        "delete": "Delete Profile"
+        "delete": "Delete Profile",
+        "subtitles": {
+          "edit": "Edit your profile picture, information and social media accounts.",
+          "security": "Change your password, enable two-factor authentication and manage your login devices.",
+          "privacy": "Edit your privacy settings and make your profile visible or invisible in search results.",
+          "notifications": "Edit your notification preferences.",
+          "settings": "Edit your account settings.",
+          "delete": "Delete your profile."
+        }
       },
       "meta": {
         "title": "Profile | Tourist Route",

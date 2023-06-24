@@ -18,6 +18,10 @@ type Props = {
   page: Pages;
 };
 
+type HeaderProps = {
+  page: string;
+};
+
 const BackButton = () => {
   const t = useTranslations("account.detail.buttons");
   const locale = useLocale();
@@ -48,8 +52,7 @@ const ToggleButton = () => {
   );
 };
 
-export default function AccountDetailHeader({ page }: Props) {
-  const t = useTranslations("account.detail.links");
+function FixedHeader({ page }: HeaderProps) {
   return (
     <MobileHeader className="justify-start gap-3">
       <div className="items-center justify-center gap-2 hidden lg:flex">
@@ -60,9 +63,28 @@ export default function AccountDetailHeader({ page }: Props) {
       </div>
       <div className="flex flex-col items-start justify-center">
         <h1 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
-          {t(page)}
+          {page}
         </h1>
       </div>
     </MobileHeader>
   );
+}
+
+export function AccountDetailTitle({ page }: Props) {
+  const t = useTranslations("account.detail.links");
+  return (
+    <div className="gap-2 mx-auto max-w-4xl">
+      <h1 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
+        {t(page)}
+      </h1>
+      <p className="text-gray-500 dark:text-gray-400">
+        {t(`subtitles.${page}`)}
+      </p>
+    </div>
+  );
+}
+
+export default function AccountDetailHeader({ page }: Props) {
+  const t = useTranslations("account.detail.links");
+  return <FixedHeader page={t(page)} />;
 }
