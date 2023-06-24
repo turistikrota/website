@@ -1,7 +1,7 @@
 import Button from "~/components/button/Button";
 import Input from "~/components/form/Input";
 
-export default function AccountEditForm() {
+export default function AccountEditGeneralForm() {
   return (
     <section>
       <div className="container mx-auto p-4">

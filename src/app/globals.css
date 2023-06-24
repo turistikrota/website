@@ -16,7 +16,7 @@
 
   --second-background-color: #fff;
   --third-background-color: #e7edef;
-  --border-color: #e6e6e6;
+  --border-color: #f2f0f0;
 
   --shadow-color-start: rgba(0, 0, 0, 0.1);
   --shadow-color-end: rgba(0, 0, 0, 0.6);
@@ -109,7 +109,7 @@
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
 
-    --border-color: #303030;
+    --border-color: #1a1717;
 
     --autofill-background-color: rgb(var(--primary-color-1000));
     --autofill-color: rgb(var(--primary-color-50));

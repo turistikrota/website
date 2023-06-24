@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import Button from "~/components/button/Button";
+import FormSection from "~/components/form/FormSection";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 import { getStaticRoute } from "~/static/page";
 import { generateDefaultMetadata } from "~/utils/meta";
+import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
 
 /*
   const account = useSelector(
@@ -36,9 +39,23 @@ export default function EditAccount() {
   return (
     <div className="p-4">
       <MaintenanceAlert />
-      {/*
-      <AccountEditAvatarForm />
-     */}
+      sa
+      <FormSection>
+        <FormSection.Head>
+          <FormSection.Head.Title>Profil Düzenle</FormSection.Head.Title>
+          <FormSection.Head.Subtitle>
+            Profil bilgilerinizi düzenleyin.
+          </FormSection.Head.Subtitle>
+        </FormSection.Head>
+        <FormSection.Body>
+          <AccountEditAvatarForm />
+        </FormSection.Body>
+        <FormSection.Footer>
+          <Button block={false} size={"md"}>
+            sa
+          </Button>
+        </FormSection.Footer>
+      </FormSection>
     </div>
   );
 }
