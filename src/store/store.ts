@@ -4,6 +4,7 @@ import accountReducer from "~/features/account/account.store";
 import { authApi } from "~/features/auth/auth.api";
 import authReducer from "~/features/auth/auth.store";
 import configReducer from "~/features/config/config.store";
+import { uploadApi } from "~/features/upload/upload.api";
 
 const store = configureStore({
   reducer: {
@@ -12,11 +13,13 @@ const store = configureStore({
     account: accountReducer,
     [authApi.reducerPath]: authApi.reducer,
     [accountApi.reducerPath]: accountApi.reducer,
+    [uploadApi.reducerPath]: uploadApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }).concat([
       authApi.middleware,
       accountApi.middleware,
+      uploadApi.middleware,
     ]),
 });
 

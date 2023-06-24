@@ -48,7 +48,7 @@ export const RedirectIfFound = (ctx: ChainContext): ChainResult => {
     ctx.redirectIfFound &&
     isUser(ctx.data) &&
     !ctx.loading &&
-    replaceLocales(ctx.currentPath) === path
+    replaceLocales(ctx.currentPath) !== path
   ) {
     return redirect(path);
   }
