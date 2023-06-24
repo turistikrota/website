@@ -31,11 +31,7 @@ Head.Title = Title;
 Head.Subtitle = Subtitle;
 
 function FormSection({ children }: React.PropsWithChildren) {
-  return (
-    <section>
-      <div className="container mx-auto">{children}</div>
-    </section>
-  );
+  return <section>{children}</section>;
 }
 
 FormSection.Head = Head;
