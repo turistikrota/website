@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 import { getStaticRoute } from "~/static/page";
 import { generateDefaultMetadata } from "~/utils/meta";
+import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
 import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
 
 /*
@@ -38,6 +39,7 @@ export default function EditAccount() {
     <div className="p-4">
       <MaintenanceAlert />
       <AccountEditGeneralForm />
+      <AccountEditAvatarForm />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSelector } from "react-redux";
+import AvatarUpload from "~/components/form/AvatarUpload";
 import { useUploadAvatarMutation } from "~/features/upload/upload.api";
 import { RootState } from "~/store/store";
 
@@ -12,12 +13,10 @@ export default function AccountEditAvatarForm() {
     useUploadAvatarMutation({});
   return (
     <div>
-      <input
-        type="file"
-        onChange={(e) => {
-          if (!e.target.files) return;
-          const file = e.target.files[0];
-          handleUpload({ file, username: account!.userName });
+      <AvatarUpload
+        avatar="https://avatar.turistikrota.com/@test.png"
+        onChange={(file) => {
+          console.log("file:", file);
         }}
       />
     </div>
