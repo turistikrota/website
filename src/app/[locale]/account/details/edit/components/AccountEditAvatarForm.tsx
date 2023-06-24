@@ -13,12 +13,14 @@ export default function AccountEditAvatarForm() {
     useUploadAvatarMutation({});
   return (
     <div>
-      <AvatarUpload
-        avatar="https://avatar.turistikrota.com/@test.png"
-        onChange={(file) => {
-          console.log("file:", file);
-        }}
-      />
+      <div className="space-y-4 md:space-y-6">
+        <AvatarUpload
+          avatar="https://avatar.turistikrota.com/@test.png"
+          onChange={(file) => {
+            console.log("file:", file);
+          }}
+        />
+      </div>
     </div>
   );
 }

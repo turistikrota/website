@@ -28,8 +28,7 @@ const variants: Record<Variant, string> = {
     "bg-secondary-400 hover:bg-secondary-300 dark:bg-secondary-500 dark:hover:bg-secondary-400",
   success:
     "bg-success-400 hover:bg-success-300 dark:bg-success-500 dark:hover:bg-success-400",
-  error:
-    "bg-error-400 hover:bg-error-300 dark:bg-error-500 dark:hover:bg-error-400",
+  error: "bg-red-400 hover:bg-red-300 dark:bg-red-500 dark:hover:bg-red-400",
   warning:
     "bg-warning-400 hover:bg-warning-300 dark:bg-warning-500 dark:hover:bg-warning-400",
   gray: "bg-gray-400 hover:bg-gray-300 dark:bg-gray-500 dark:hover:bg-gray-400",

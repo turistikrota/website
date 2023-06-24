@@ -5,9 +5,13 @@ import Button from "~/components/button/Button";
 import FormSection from "~/components/form/FormSection";
 import Input from "~/components/form/Input";
 
-export default function AccountEditGeneralForm() {
+type Props = {
+  className?: string;
+};
+
+export default function AccountEditGeneralForm({ className }: Props) {
   return (
-    <FormSection>
+    <FormSection className={className}>
       <Spin loading={false}>
         <form>
           <FormSection.Head>

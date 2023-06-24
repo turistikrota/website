@@ -1,3 +1,7 @@
+type Props = {
+  className?: string;
+};
+
 type Head = {
   Title: typeof Title;
   Subtitle: typeof Subtitle;
@@ -30,8 +34,8 @@ function Footer({ children }: React.PropsWithChildren) {
 Head.Title = Title;
 Head.Subtitle = Subtitle;
 
-function FormSection({ children }: React.PropsWithChildren) {
-  return <section>{children}</section>;
+function FormSection({ children, className }: React.PropsWithChildren<Props>) {
+  return <section className={className}>{children}</section>;
 }
 
 FormSection.Head = Head;

@@ -94,7 +94,7 @@ export default function AvatarUpload({
           title={t("upload")}
           width={150}
           height={150}
-          className="object-cover w-52 h-52 rounded-full cursor-pointer bg-second border"
+          className="object-cover w-52 h-52 md:w-48 md:h-48 rounded-full cursor-pointer bg-second border"
           onClick={focus}
         />
         <span

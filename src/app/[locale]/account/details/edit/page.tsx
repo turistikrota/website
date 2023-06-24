@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
-import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 import { getStaticRoute } from "~/static/page";
 import { generateDefaultMetadata } from "~/utils/meta";
 import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
@@ -36,10 +35,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function EditAccount() {
   return (
-    <div className="p-4">
-      <MaintenanceAlert />
-      <AccountEditGeneralForm />
+    <div className="p-4 space-y-4 md:space-y-6">
       <AccountEditAvatarForm />
+      <AccountEditGeneralForm className="max-w-4xl mx-auto" />
     </div>
   );
 }
