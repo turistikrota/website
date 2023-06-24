@@ -326,5 +326,17 @@
       "show": "Show",
       "hide": "Hide"
     }
+  },
+  "avatar-form": {
+    "edit": "Edit",
+    "upload": "Upload profile picture",
+    "errors": {
+      "min": "Profile picture must be at least {min} MB",
+      "max": "Profile picture must be no more than {max} MB",
+      "type": "Profile picture can only be in {type} format",
+      "minSize": "Profile picture must be at least {minWidth}x{minHeight} pixels",
+      "maxSize": "The profile picture must be no more than {maxWidth}x{maxHeight} pixels",
+      "required": "This field is required"
+    }
   }
 }
