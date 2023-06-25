@@ -99,7 +99,7 @@ export default function AvatarUpload({
         />
         <span
           role="button"
-          className="absolute bottom-2 text-white flex items-center justify-center gap-1 right-1/2 transform translate-x-1/2 translate-y-1/2 backdrop-blur-md border rounded-md px-3 py-1"
+          className="absolute bottom-2 text-gray-800 dark:text-gray-200 flex items-center justify-center gap-1 right-1/2 transform translate-x-1/2 translate-y-1/2 backdrop-blur-md border rounded-md px-3 py-1"
           onClick={focus}
           title={t("upload")}
           aria-label={t("upload")}
