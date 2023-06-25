@@ -1,7 +1,7 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
 import Link from "next-intl/link";
+import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
 import Condition from "~/components/condition/Condition";
@@ -15,7 +15,7 @@ import { AccountListItem, isAccountListResponse } from "./account.types";
 export default function AccountSelection() {
   const t = useTranslations("account.select");
   const dispatch = useDispatch();
-  const router = useLocalizedRouter();
+  const router = useRouter();
   const locale = useLocale();
   const { isLoading, data, error } = useListQuery({});
 

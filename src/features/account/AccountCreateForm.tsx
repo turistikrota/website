@@ -1,7 +1,7 @@
 "use client";
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Spin from "sspin";
 import Button from "~/components/button/Button";
@@ -15,7 +15,7 @@ import { useCreateMutation } from "./account.api";
 export default function AccountCreateForm() {
   const t = useTranslations("account.create");
   const schema = useSchema();
-  const router = useLocalizedRouter();
+  const router = useRouter();
   const locale = useLocale();
   const toast = useToast();
   const [handleCreate, { isLoading, data, status, error }] = useCreateMutation(

@@ -1,9 +1,8 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
 import Link from "next-intl/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
@@ -25,7 +24,7 @@ export default function ActivateForm() {
   const toast = useToast();
   const locale = useLocale();
   const isMobile = useIsSmallMobile();
-  const router = useLocalizedRouter();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [handleVerify, { isLoading, data, status, error }] = useVerifyMutation(
     {}

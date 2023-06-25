@@ -1,8 +1,7 @@
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
 import Link from "next-intl/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { SpinContext } from "sspin";
@@ -31,7 +30,7 @@ export default function RegisterForm({ email }: Props) {
   const schema = useSchema();
   const isMobile = useIsSmallMobile();
   const dispatch = useDispatch();
-  const router = useLocalizedRouter();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const toast = useToast();
   const { setSpin } = useContext(SpinContext);
