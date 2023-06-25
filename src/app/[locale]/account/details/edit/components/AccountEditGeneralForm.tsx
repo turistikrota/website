@@ -4,6 +4,7 @@ import Spin from "sspin";
 import Button from "~/components/button/Button";
 import FormSection from "~/components/form/FormSection";
 import Input from "~/components/form/Input";
+import Textarea from "~/components/form/Textarea";
 
 type Props = {
   className?: string;
@@ -22,8 +23,9 @@ export default function AccountEditGeneralForm({ className }: Props) {
           </FormSection.Head>
           <FormSection.Body>
             <div className="space-y-4 md:space-y-6">
+              <Input name="fullName" label="Kullanıcı adı" />
               <Input name="fullName" label="Ad Soyad" />
-              <Input name="description" label="Hakkında" />
+              <Textarea name="description" label="Hakkında" rows={5} />
               <Input name="birthDate" label="Doğum Tarihi" type="date" />
             </div>
           </FormSection.Body>
