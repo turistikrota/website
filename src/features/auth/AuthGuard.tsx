@@ -57,7 +57,7 @@ export default function AuthGuard({
     !isLoading &&
     isUser(data) &&
     !(error && isExpiredError(error)) &&
-    replaceLocales(path) !== redirectIfFoundPath
+    replaceLocales(path) === redirectIfNotFoundPath
   )
     return redirect(redirectIfFoundPath);
 
