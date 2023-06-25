@@ -57,11 +57,7 @@ export default function AuthForm() {
   const refreshQuery = query.get("refresh");
 
   useEffect(() => {
-    if (
-      isExpired &&
-      !isLoading &&
-      (status === "uninitialized" || refreshQuery === "true")
-    ) {
+    if (isExpired && !isLoading && status === "uninitialized") {
       console.log("refresh");
       handleRefresh({});
     } else {

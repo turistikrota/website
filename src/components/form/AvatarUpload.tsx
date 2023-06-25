@@ -96,6 +96,7 @@ export default function AvatarUpload({
           height={150}
           className="object-cover w-52 h-52 md:w-48 md:h-48 rounded-md cursor-pointer bg-second border"
           onClick={focus}
+          priority={true}
         />
         <span
           role="button"
