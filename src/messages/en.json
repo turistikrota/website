@@ -63,7 +63,19 @@
         "activation": {
           "title": "Account Status",
           "active": "Your account is active. Click the side button to deactivate your account.",
-          "passive": "Your account is disabled. Click the side button to activate your account."
+          "passive": "Your account is disabled. Click the side button to activate your account.",
+          "enable": {
+            "cancel": "Cancel",
+            "confirm": "Activate",
+            "title": "Activate Account",
+            "description": "Are you sure you want to activate your account? Once your account is activated, you will need to log in again for the changes to be reflected on the entire site."
+          },
+          "disable": {
+            "cancel": "Cancel",
+            "confirm": "Disable",
+            "title": "Deactivate Account",
+            "description": "Are you sure you want to deactivate your account? Once your account is deactivated, you will need to log in again for the changes to be reflected on the entire site."
+          }
         },
         "deletion": {
           "title": "Delete Account",

@@ -63,7 +63,19 @@
         "activation": {
           "title": "Hesap Durumu",
           "active": "Hesabınız aktif. Hesabınızı devre dışı bırakmak için yandaki butona tıklayın.",
-          "passive": "Hesabınız devre dışı. Hesabınızı aktif hale getirmek için yandaki butona tıklayın."
+          "passive": "Hesabınız devre dışı. Hesabınızı aktif hale getirmek için yandaki butona tıklayın.",
+          "enable": {
+            "cancel": "Vazgeç",
+            "confirm": "Aktif Et",
+            "title": "Hesabı Aktif Hale Getir",
+            "description": "Hesabınızı aktif hale getirmek istediğinize emin misiniz? Hesabınız aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir."
+          },
+          "disable": {
+            "cancel": "Vazgeç",
+            "confirm": "Devre Dışı Bırak",
+            "title": "Hesabı Devre Dışı Bırak",
+            "description": "Hesabınızı devre dışı bırakmak istediğinize emin misiniz? Hesabınız devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir."
+          }
         },
         "deletion": {
           "title": "Hesabı Sil",

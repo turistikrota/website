@@ -11,7 +11,10 @@ type ToastType =
   | "primary"
   | "secondary"
   | "ask-primary"
-  | "ask-secondary";
+  | "ask-secondary"
+  | "ask-error"
+  | "ask-success"
+  | "ask-warning";
 
 type Toast = {
   id: string;
@@ -49,6 +52,9 @@ type ContextType = {
   secondary: (message: string, duration?: number) => void;
   askPrimary: (props: AskProps) => Promise<boolean>;
   askSecondary: (props: AskProps) => Promise<boolean>;
+  askError: (props: AskProps) => Promise<boolean>;
+  askSuccess: (props: AskProps) => Promise<boolean>;
+  askWarning: (props: AskProps) => Promise<boolean>;
 };
 
 const ToastContext = React.createContext<ContextType>({
@@ -61,6 +67,9 @@ const ToastContext = React.createContext<ContextType>({
   secondary: () => {},
   askPrimary: () => Promise.resolve(false),
   askSecondary: () => Promise.resolve(false),
+  askError: () => Promise.resolve(false),
+  askSuccess: () => Promise.resolve(false),
+  askWarning: () => Promise.resolve(false),
 });
 
 export type ToastContextType = ContextType;
@@ -91,6 +100,9 @@ const DefaultIcons: Record<ToastType, React.ReactNode | JSX.Element> = {
   secondary: <i className="bx bx-sm bx-error"></i>,
   "ask-primary": <i className="bx bx-base bx-question-mark"></i>,
   "ask-secondary": <i className="bx bx-base bx-question-mark"></i>,
+  "ask-error": <i className="bx bx-base bx-question-mark"></i>,
+  "ask-success": <i className="bx bx-base bx-question-mark"></i>,
+  "ask-warning": <i className="bx bx-base bx-question-mark"></i>,
 };
 
 type Styles = {
@@ -106,89 +118,123 @@ type Styles = {
 const ToastStyles: Record<ToastType, Styles> = {
   success: {
     icon: "text-green-500 bg-green-100 dark:text-green-400 dark:bg-green-900 dark:bg-opacity-50",
-    card: "bg-green-400 text-green-900 bg-opacity-10 dark:text-green-400 dark:bg-green-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-green-700",
+    card: "bg-second text-green-900 dark:text-green-400 dark:bg-second shadow-lg dark:shadow-md shadow-green-50 dark:shadow-green-900 lg:shadow-lg lg:shadow-green-50 lg:dark:shadow-sm lg:dark:shadow-green-900",
+    title: "text-green-600 dark:text-green-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-green-500 hover:text-green-700",
-    primaryButton: "",
-    secondaryButton: "",
+    primaryButton:
+      "bg-green-400 bg-opacity-20 text-green-800 hover:text-green-700 dark:bg-green-900 dark:bg-opacity-20 dark:text-green-400 dark:hover:text-green-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   error: {
-    icon: "text-red-500 bg-red-200 bg-opacity-50 dark:text-red-400 dark:bg-red-900 dark:bg-opacity-50",
-    card: "bg-red-400 text-red-900 bg-opacity-10 dark:text-red-400 dark:bg-red-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-red-700",
+    icon: "text-red-500 bg-red-100 dark:text-red-400 dark:bg-red-900 dark:bg-opacity-50",
+    card: "bg-second text-red-900 dark:text-red-400 dark:bg-second shadow-lg dark:shadow-md shadow-red-50 dark:shadow-red-900 lg:shadow-lg lg:shadow-red-50 lg:dark:shadow-sm lg:dark:shadow-red-900",
+    title: "text-red-600 dark:text-red-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-red-500 hover:text-red-700",
-    primaryButton: "",
-    secondaryButton: "",
+    primaryButton:
+      "bg-red-400 bg-opacity-20 text-red-800 hover:text-red-700 dark:bg-red-900 dark:bg-opacity-20 dark:text-red-400 dark:hover:text-red-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   info: {
-    icon: "text-blue-500 bg-blue-200 bg-opacity-50 dark:text-blue-400 dark:bg-blue-900 dark:bg-opacity-50",
-    card: "bg-blue-400 text-blue-900 bg-opacity-10 dark:text-blue-400 dark:bg-blue-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-blue-700",
+    icon: "text-blue-500 bg-blue-100 dark:text-blue-400 dark:bg-blue-900 dark:bg-opacity-50",
+    card: "bg-second text-blue-900 dark:text-blue-400 dark:bg-second shadow-lg dark:shadow-md shadow-blue-50 dark:shadow-blue-900 lg:shadow-lg lg:shadow-blue-50 lg:dark:shadow-sm lg:dark:shadow-blue-900",
+    title: "text-blue-600 dark:text-blue-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-blue-500 hover:text-blue-700",
-    primaryButton: "",
-    secondaryButton: "",
+    primaryButton:
+      "bg-blue-400 bg-opacity-20 text-blue-800 hover:text-blue-700 dark:bg-blue-900 dark:bg-opacity-20 dark:text-blue-400 dark:hover:text-blue-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   warning: {
-    icon: "text-yellow-500 bg-yellow-200 bg-opacity-50 dark:text-yellow-400 dark:bg-yellow-900 dark:bg-opacity-50",
-    card: "bg-yellow-400 text-yellow-900 bg-opacity-10 dark:text-yellow-400 dark:bg-yellow-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-yellow-700",
+    icon: "text-yellow-500 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900 dark:bg-opacity-50",
+    card: "bg-second text-yellow-900 dark:text-yellow-400 dark:bg-second shadow-lg dark:shadow-md shadow-yellow-50 dark:shadow-yellow-900 lg:shadow-lg lg:shadow-yellow-50 lg:dark:shadow-sm lg:dark:shadow-yellow-900",
+    title: "text-yellow-600 dark:text-yellow-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-yellow-500 hover:text-yellow-700",
-    primaryButton: "",
-    secondaryButton: "",
+    primaryButton:
+      "bg-yellow-400 bg-opacity-20 text-yellow-800 hover:text-yellow-700 dark:bg-yellow-900 dark:bg-opacity-20 dark:text-yellow-400 dark:hover:text-yellow-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   ask: {
     icon: "text-secondary-500 bg-secondary-100 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-50",
-    card: "bg-second-400 text-secondary-900 bg-opacity-10 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-secondary-700",
+    card: "bg-second text-secondary-900 dark:text-secondary-400 dark:bg-second shadow-lg dark:shadow-md shadow-secondary-50 dark:shadow-secondary-900 lg:shadow-lg lg:shadow-secondary-50 lg:dark:shadow-sm lg:dark:shadow-secondary-900",
+    title: "text-secondary-600 dark:text-secondary-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-secondary-500 hover:text-secondary-700",
-    primaryButton: "bg-secondary-500 hover:bg-secondary-600 text-white",
-    secondaryButton:
-      "bg-secondary-700 bg-opacity-10 hover:bg-opacity-20 text-secondary-700 hover:text-secondary-800 border-secondary-700",
+    primaryButton:
+      "bg-secondary-400 bg-opacity-20 text-secondary-800 hover:text-secondary-700 dark:bg-secondary-900 dark:bg-opacity-20 dark:text-secondary-400 dark:hover:text-secondary-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   primary: {
     icon: "text-primary-500 bg-primary-100 dark:text-primary-400 dark:bg-primary-900 dark:bg-opacity-50",
-    card: "bg-primary-400 text-primary-900 bg-opacity-10 dark:text-primary-400 dark:bg-primary-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-primary-700",
+    card: "bg-second text-primary-900 dark:text-primary-400 dark:bg-second shadow-lg dark:shadow-md shadow-primary-50 dark:shadow-primary-900 lg:shadow-lg lg:shadow-primary-50 lg:dark:shadow-sm lg:dark:shadow-primary-900",
+    title: "text-primary-600 dark:text-primary-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-primary-500 hover:text-primary-700",
-    primaryButton: "bg-primary-500 hover:bg-primary-600 text-white",
-    secondaryButton:
-      "bg-primary-700 bg-opacity-10 hover:bg-opacity-20 text-primary-700 hover:text-primary-800 border-primary-100 dark:border-primary-700",
+    primaryButton:
+      "bg-primary-400 bg-opacity-20 text-primary-800 hover:text-primary-700 dark:bg-primary-900 dark:bg-opacity-20 dark:text-primary-400 dark:hover:text-primary-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   secondary: {
     icon: "text-secondary-500 bg-secondary-100 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-50",
-    card: "bg-secondary-400 text-secondary-900 bg-opacity-10 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-secondary-700",
+    card: "bg-second text-secondary-900 dark:text-secondary-400 dark:bg-second shadow-lg dark:shadow-md shadow-secondary-50 dark:shadow-secondary-900 lg:shadow-lg lg:shadow-secondary-50 lg:dark:shadow-sm lg:dark:shadow-secondary-900",
+    title: "text-secondary-600 dark:text-secondary-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-secondary-500 hover:text-secondary-700",
-    primaryButton: "bg-secondary-500 hover:bg-secondary-600 text-white",
-    secondaryButton:
-      "bg-secondary-700 bg-opacity-10 hover:bg-opacity-20 text-secondary-700 hover:text-secondary-800 border-secondary-100 dark:border-secondary-700",
+    primaryButton:
+      "bg-secondary-400 bg-opacity-20 text-secondary-800 hover:text-secondary-700 dark:bg-secondary-900 dark:bg-opacity-20 dark:text-secondary-400 dark:hover:text-secondary-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   "ask-primary": {
     icon: "text-primary-500 bg-primary-100 dark:text-primary-400 dark:bg-primary-900 dark:bg-opacity-50",
-    card: "bg-primary-400 text-primary-900 bg-opacity-10 dark:text-primary-400 dark:bg-primary-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-primary-700",
+    card: "bg-second text-primary-900 dark:text-primary-400 dark:bg-second shadow-lg dark:shadow-md shadow-primary-50 dark:shadow-primary-900 lg:shadow-lg lg:shadow-primary-50 lg:dark:shadow-sm lg:dark:shadow-primary-900",
+    title: "text-primary-600 dark:text-primary-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-primary-500 hover:text-primary-700",
-    primaryButton: "bg-primary-500 hover:bg-primary-600 text-white",
-    secondaryButton:
-      "bg-primary-700 bg-opacity-10 hover:bg-opacity-20 text-primary-700 hover:text-primary-800 border-primary-500 dark:border-primary-700",
+    primaryButton:
+      "bg-primary-400 bg-opacity-20 text-primary-800 hover:text-primary-700 dark:bg-primary-900 dark:bg-opacity-20 dark:text-primary-400 dark:hover:text-primary-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
   "ask-secondary": {
     icon: "text-secondary-500 bg-secondary-100 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-50",
-    card: "bg-second-400 text-secondary-900 bg-opacity-10 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-10",
-    title: "",
-    text: "text-secondary-700",
+    card: "bg-second text-secondary-900 dark:text-secondary-400 dark:bg-second shadow-lg dark:shadow-md shadow-secondary-50 dark:shadow-secondary-900 lg:shadow-lg lg:shadow-secondary-50 lg:dark:shadow-sm lg:dark:shadow-secondary-900",
+    title: "text-secondary-600 dark:text-secondary-500",
+    text: "text-gray-700 dark:text-gray-500",
     close: "text-secondary-500 hover:text-secondary-700",
-    primaryButton: "bg-secondary-500 hover:bg-secondary-600 text-white",
-    secondaryButton:
-      "bg-secondary-700 bg-opacity-10 hover:bg-opacity-20 text-secondary-700 hover:text-secondary-800 border-secondary-700",
+    primaryButton:
+      "bg-secondary-400 bg-opacity-20 text-secondary-800 hover:text-secondary-700 dark:bg-secondary-900 dark:bg-opacity-20 dark:text-secondary-400 dark:hover:text-secondary-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
+  },
+  "ask-error": {
+    icon: "text-red-500 bg-red-100 dark:text-red-400 dark:bg-red-900 dark:bg-opacity-50",
+    card: "bg-second text-red-900 dark:text-red-400 dark:bg-second shadow-lg dark:shadow-md shadow-red-50 dark:shadow-red-900 lg:shadow-lg lg:shadow-red-50 lg:dark:shadow-sm lg:dark:shadow-red-900",
+    title: "text-red-600 dark:text-red-500",
+    text: "text-gray-700 dark:text-gray-500",
+    close: "text-red-500 hover:text-red-700",
+    primaryButton:
+      "bg-red-400 bg-opacity-20 text-red-800 hover:text-red-700 dark:bg-red-900 dark:bg-opacity-20 dark:text-red-400 dark:hover:text-red-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
+  },
+  "ask-warning": {
+    icon: "text-yellow-500 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900 dark:bg-opacity-50",
+    card: "bg-second text-yellow-900 dark:text-yellow-400 dark:bg-second shadow-lg dark:shadow-md shadow-yellow-50 dark:shadow-yellow-900 lg:shadow-lg lg:shadow-yellow-50 lg:dark:shadow-sm lg:dark:shadow-yellow-900",
+    title: "text-yellow-600 dark:text-yellow-500",
+    text: "text-gray-700 dark:text-gray-500",
+    close: "text-yellow-500 hover:text-yellow-700",
+    primaryButton:
+      "bg-yellow-400 bg-opacity-20 text-yellow-800 hover:text-yellow-700 dark:bg-yellow-900 dark:bg-opacity-20 dark:text-yellow-400 dark:hover:text-yellow-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
+  },
+  "ask-success": {
+    icon: "text-green-500 bg-green-100 dark:text-green-400 dark:bg-green-900 dark:bg-opacity-50",
+    card: "bg-second text-green-900 dark:text-green-400 dark:bg-second shadow-lg dark:shadow-md shadow-green-50 dark:shadow-green-900 lg:shadow-lg lg:shadow-green-50 lg:dark:shadow-sm lg:dark:shadow-green-900",
+    title: "text-green-600 dark:text-green-500",
+    text: "text-gray-700 dark:text-gray-500",
+    close: "text-green-500 hover:text-green-700",
+    primaryButton:
+      "bg-green-400 bg-opacity-20 text-green-800 hover:text-green-700 dark:bg-green-900 dark:bg-opacity-20 dark:text-green-400 dark:hover:text-green-500",
+    secondaryButton: "text-gray-600 dark:text-gray-300",
   },
 };
 
@@ -247,7 +293,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({
   return (
     <div
       id={toast.id}
-      className={`w-full max-w-xs p-4 rounded-lg shadow ${
+      className={`w-full lg:max-w-xs p-4 rounded-lg shadow ${
         ToastStyles[toast.type].card
       } ${
         toast.closing
@@ -287,7 +333,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({
                   onClose();
                   if (toast.onConfirm) toast.onConfirm();
                 }}
-                className={`inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center rounded-lg transition-colors ${
+                className={`inline-flex justify-center w-full px-2 py-2 lg:py-1.5 text-xs font-medium text-center rounded-lg transition-colors ${
                   ToastStyles[toast.type].primaryButton
                 }`}
               >
@@ -300,7 +346,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({
                   onClose();
                   if (toast.onCancel) toast.onCancel();
                 }}
-                className={`inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center border rounded-lg transition-colors ${
+                className={`inline-flex justify-center w-full px-2 py-2 lg:py-1.5 text-xs font-medium text-center border rounded-lg transition-colors ${
                   ToastStyles[toast.type].secondaryButton
                 }`}
               >
@@ -445,6 +491,12 @@ export const ToastProvider = ({ children }: Props) => {
     addAskToast(props, "primary");
   const askSecondary = (props: AskProps): Promise<boolean> =>
     addAskToast(props, "secondary");
+  const askSuccess = (props: AskProps): Promise<boolean> =>
+    addAskToast(props, "success");
+  const askError = (props: AskProps): Promise<boolean> =>
+    addAskToast(props, "error");
+  const askWarning = (props: AskProps): Promise<boolean> =>
+    addAskToast(props, "warning");
 
   return (
     <ToastContext.Provider
@@ -456,12 +508,15 @@ export const ToastProvider = ({ children }: Props) => {
         ask,
         askPrimary,
         askSecondary,
+        askSuccess,
+        askError,
+        askWarning,
         primary,
         secondary,
       }}
     >
       {children}
-      <div className="fixed bottom-0 right-0 p-4 gap-3 flex flex-col items-end z-50">
+      <div className="fixed bottom-0 max-w-[100vw] min-w-[100vw] md:min-w-none md:max-w-none right-1/2 transform translate-x-1/2 lg:transform-none lg:translate-x-0 lg:right-0 p-4 gap-5 lg:gap-3 flex flex-col items-center lg:items-end z-50">
         {toasts.map((toast) =>
           toast.interactive ? (
             <InteractiveToast
