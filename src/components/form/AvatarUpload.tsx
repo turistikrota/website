@@ -1,8 +1,8 @@
 "use client";
-
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { default as NextImage } from "next/image";
 import { useState } from "react";
+import { Cropper } from "react-advanced-cropper";
 import Spin from "sspin/dist/esm/Spin";
 import Condition from "../condition/Condition";
 
@@ -36,6 +36,7 @@ export default function AvatarUpload({
   const [src, setSrc] = useState(avatar);
   const [error, setError] = useState<string | null>(initialError);
   const t = useTranslations("avatar-form");
+  const locale = useLocale();
 
   const validate = (file: File | undefined): Promise<File> => {
     return new Promise((resolve, reject) => {
@@ -57,6 +58,7 @@ export default function AvatarUpload({
       if (!file.type.startsWith(accept))
         return reject(t("errors.type", { accept }).toString());
 
+      /*
       const img = new Image();
       img.src = URL.createObjectURL(file);
       img.onload = () => {
@@ -68,9 +70,9 @@ export default function AvatarUpload({
           return reject(
             t("errors.maxSize", { maxWidth, maxHeight: maxHeight }).toString()
           );
-
-        return resolve(file);
       };
+        */
+      return resolve(file);
     });
   };
 
@@ -80,10 +82,11 @@ export default function AvatarUpload({
       setError(err);
       return null;
     });
+
     if (validFile) {
       setError(null);
       setSrc(URL.createObjectURL(validFile));
-      onChange(validFile);
+      //onChange(dest);
     }
   };
 
@@ -95,6 +98,14 @@ export default function AvatarUpload({
     <div className="flex flex-col items-center">
       <div className="relative">
         <Spin loading={loading}>
+          <Cropper
+            src={src}
+            onChange={(cropper) => {
+              console.log(cropper.getCoordinates(), cropper.getCanvas());
+            }}
+            className={"cropper"}
+          />
+          ;
           <NextImage
             src={src}
             alt="Avatar"
