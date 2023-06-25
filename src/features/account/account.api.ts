@@ -49,6 +49,36 @@ export const accountApi = createApi({
         return res.data;
       },
     }),
+    enableMyAccount: builder.mutation<AnyResponse<any>, string>({
+      query: (userName) => ({
+        url: apiUrl(Services.Account, `/@${userName}/enable`),
+        method: "PUT",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    disableMyAccount: builder.mutation<AnyResponse<any>, string>({
+      query: (userName) => ({
+        url: apiUrl(Services.Account, `/@${userName}/disable`),
+        method: "PUT",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    deleteMyAccount: builder.mutation<AnyResponse<any>, string>({
+      query: (userName) => ({
+        url: apiUrl(Services.Account, `/@${userName}`),
+        method: "DELETE",
+        credentials: "include",
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
   }),
 });
 
@@ -57,4 +87,7 @@ export const {
   useDetailQuery,
   useCreateMutation,
   useGetMyAccountQuery,
+  useEnableMyAccountMutation,
+  useDisableMyAccountMutation,
+  useDeleteMyAccountMutation,
 } = accountApi;

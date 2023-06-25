@@ -21,3 +21,7 @@ export function isAccountListResponse(
 export type AccountCreateFormData = {
   userName: string;
 };
+
+export type BaseOperationFormData = {
+  userName: string;
+};

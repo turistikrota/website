@@ -3,6 +3,7 @@ import { safeStorageParse } from "~/utils/storage";
 import { authApi } from "../auth/auth.api";
 import { uploadApi } from "../upload/upload.api";
 import { isFileUploadedResponse } from "../upload/upload.types";
+import { accountApi } from "./account.api";
 import { AccountListItem } from "./account.types";
 
 enum AccountStorage {
@@ -58,6 +59,35 @@ const accountSlice = createSlice({
           AccountStorage.CurrentAccount,
           JSON.stringify(state.currentAccount)
         );
+      }
+    );
+    builder.addMatcher(
+      accountApi.endpoints.disableMyAccount.matchFulfilled,
+      (state, action) => {
+        if (!state.currentAccount) return;
+        state.currentAccount.isActive = false;
+        localStorage.setItem(
+          AccountStorage.CurrentAccount,
+          JSON.stringify(state.currentAccount)
+        );
+      }
+    );
+    builder.addMatcher(
+      accountApi.endpoints.enableMyAccount.matchFulfilled,
+      (state, action) => {
+        if (!state.currentAccount) return;
+        state.currentAccount.isActive = true;
+        localStorage.setItem(
+          AccountStorage.CurrentAccount,
+          JSON.stringify(state.currentAccount)
+        );
+      }
+    );
+    builder.addMatcher(
+      accountApi.endpoints.deleteMyAccount.matchFulfilled,
+      (state, action) => {
+        state.currentAccount = null;
+        localStorage.removeItem(AccountStorage.CurrentAccount);
       }
     );
   },
