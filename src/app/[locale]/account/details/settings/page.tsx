@@ -1,12 +1,14 @@
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 import { getStaticRoute } from "~/static/page";
+import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("account.details.settings.meta");
-  const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),

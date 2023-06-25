@@ -1,12 +1,14 @@
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
+import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
 import PrivacyAndProtectionContent from "./content/Content";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("contracts.privacy-and-protection");
-  const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),

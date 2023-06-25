@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
+import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
 import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
 import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
@@ -19,9 +20,10 @@ import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
   return <AccountEditForm />;
 */
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("account.details.edit.meta");
-  const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),

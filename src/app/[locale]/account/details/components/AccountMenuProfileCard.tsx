@@ -36,7 +36,7 @@ export default function AccountMenuProfileCard({ open }: Props) {
           height={open ? 110 : 48}
           alt={account.fullName}
           title={account.fullName}
-          className="rounded-full bg-gray-300 dark:bg-gray-800 border"
+          className="rounded-md bg-second border p-2 lg:p-0"
         />
       </div>
       <Condition value={open}>

@@ -9,3 +9,9 @@ export type Colors =
   | "danger"
   | "warning"
   | "info";
+
+export type LayoutProps = {
+  params: {
+    locale: string;
+  };
+};

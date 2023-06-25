@@ -22,18 +22,9 @@ export default function AccountEditGeneralForm({ className }: Props) {
           </FormSection.Head>
           <FormSection.Body>
             <div className="space-y-4 md:space-y-6">
-              <Input name="fullName" label="Ad Soyad" placeholder="Ad Soyad" />
-              <Input
-                name="description"
-                label="Hakkında"
-                placeholder="Hakkında"
-              />
-              <Input
-                name="birthDate"
-                label="Doğum Tarihi"
-                placeholder="Doğum Tarihi"
-                type="date"
-              />
+              <Input name="fullName" label="Ad Soyad" />
+              <Input name="description" label="Hakkında" />
+              <Input name="birthDate" label="Doğum Tarihi" type="date" />
             </div>
           </FormSection.Body>
           <FormSection.Footer>
