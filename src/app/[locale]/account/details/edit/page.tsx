@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
 import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
+import AccountActivationForm from "./components/AccountActivationForm";
 import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
 import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
 
@@ -40,6 +41,7 @@ export default function EditAccount() {
     <div className="p-4 space-y-10">
       <AccountEditAvatarForm />
       <AccountEditGeneralForm className="max-w-4xl mx-auto" />
+      <AccountActivationForm />
     </div>
   );
 }

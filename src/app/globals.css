@@ -202,3 +202,7 @@ select:-webkit-autofill:focus {
 .advanced-cropper .preview {
   border: dashed 2px var(--preview-border-color);
 }
+
+.disable-highlight {
+  -webkit-tap-highlight-color: transparent;
+}

@@ -63,7 +63,7 @@ export default function Button({
   return (
     <button
       type={htmlType}
-      className={`block rounded-md font-medium text-white shadow focus:outline-none transition duration-200 ease-out hover:ease-in focus:ring-4 focus-visible:outline-none ${
+      className={`block rounded-md font-medium disable-highlight text-white shadow focus:outline-none transition duration-200 ease-out hover:ease-in focus:ring-4 focus-visible:outline-none ${
         variants[variant]
       } ${sizes[size]} ${block ? "w-full" : ""} ${className ? className : ""}`}
       onClick={onClick}
