@@ -4,7 +4,6 @@ import {
   notFound,
   redirect,
   usePathname,
-  useRouter,
   useSearchParams,
 } from "next/navigation";
 import Loading from "~/components/loading/Loading";
@@ -41,7 +40,6 @@ export default function AuthGuard({
   claims = [],
 }: React.PropsWithChildren<Props>): JSX.Element {
   const path = usePathname();
-  const router = useRouter();
   const query = useSearchParams();
   const locale = useLocale();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
@@ -58,8 +56,8 @@ export default function AuthGuard({
     redirectIfFound &&
     !isLoading &&
     isUser(data) &&
-    replaceLocales(path) !== redirectIfFoundPath &&
-    refreshQuery !== "true"
+    !(error && isExpiredError(error)) &&
+    replaceLocales(path) !== redirectIfFoundPath
   )
     return redirect(redirectIfFoundPath);
 
@@ -68,25 +66,23 @@ export default function AuthGuard({
     redirectIfNotFound &&
     !isLoading &&
     !data &&
+    !(error && isExpiredError(error)) &&
     replaceLocales(path) !== redirectIfNotFoundPath &&
     refreshQuery !== "true"
   )
     return redirect(redirectIfNotFoundPath);
 
   // check refresh
-  if (!isLoading && error && isExpiredError(error) && refreshQuery !== "true") {
-    if (replaceLocales(path) === redirectIfNotFoundPath) {
-      router.replace(path, { query: { refresh: "true" } });
-    } else {
-      return redirect(getStaticRoute(locale).auth.refresh);
-    }
-  }
+  if (!isLoading && error && isExpiredError(error) && refreshQuery !== "true")
+    return redirect(getStaticRoute(locale).auth.refresh);
 
   // check all expired
   if (
     !isLoading &&
-    error &&
-    !(redirectIfNotFound && !isExpiredError(error) && refreshQuery !== "true")
+    !(error && isExpiredError(error)) &&
+    refreshQuery !== "true" &&
+    !data &&
+    redirectIfNotFound
   ) {
     return redirect(getStaticRoute(locale).auth.default);
   }
@@ -102,7 +98,10 @@ export default function AuthGuard({
     return notFound();
 
   return (
-    <AuthClientProvider user={isUser(data) ? data : null}>
+    <AuthClientProvider
+      user={isUser(data) ? data : null}
+      isExpired={!isLoading && error !== undefined && isExpiredError(error)}
+    >
       {children}
     </AuthClientProvider>
   );

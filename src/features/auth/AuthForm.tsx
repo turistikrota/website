@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Spin from "sspin";
@@ -45,6 +46,7 @@ const getActiveChain = (id: Id): ChainEl => {
 
 export default function AuthForm() {
   const t = useTranslations("auth");
+  const query = useSearchParams();
   const isExpired = useSelector((state: RootState) => state.auth.isExpired);
   const [email, setEmail] = useState<string>("");
   const [id, setId] = useState<Id>("check-username");
@@ -52,12 +54,20 @@ export default function AuthForm() {
     getActiveChain("check-username")
   );
   const [handleRefresh, { isLoading, status }] = useRefreshMutation({});
+  const refreshQuery = query.get("refresh");
 
   useEffect(() => {
-    if (isExpired && !isLoading && status === "uninitialized") {
+    if (
+      isExpired &&
+      !isLoading &&
+      (status === "uninitialized" || refreshQuery === "true")
+    ) {
+      console.log("refresh");
       handleRefresh({});
+    } else {
+      console.log("no refresh");
     }
-  }, [isExpired]);
+  }, [handleRefresh, isExpired, isLoading, status, refreshQuery]);
 
   const onNext = (id: Id, mail?: string) => {
     setId(id);

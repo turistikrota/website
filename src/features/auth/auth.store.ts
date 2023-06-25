@@ -129,6 +129,7 @@ export const {
   setTurnstileToken,
   setAccessToken,
   setIsLoading,
+  setIsExpired,
   setUser,
   logout,
 } = authSlice.actions;
