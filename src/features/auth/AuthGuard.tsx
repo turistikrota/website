@@ -1,20 +1,18 @@
 "use client";
 import { useLocale } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
-import { usePathname, useSearchParams } from "next/navigation";
+import {
+  notFound,
+  redirect,
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
+import Loading from "~/components/loading/Loading";
+import { getStaticRoute } from "~/static/page";
 import { isUser } from "~/types/user";
 import AuthClientProvider from "./AuthClientProvider";
-import {
-  ChainContext,
-  ChainResult,
-  CheckAllExpired,
-  CheckLoading,
-  CheckRefreshAvailable,
-  ClaimGuard,
-  RedirectIfFound,
-  RedirectIfNotFound,
-} from "./AuthGuardLogic";
 import { useGetCurrentQuery } from "./auth.api";
+import { isExpiredError } from "./auth.types";
 
 type Props = {
   skip?: boolean;
@@ -28,22 +26,9 @@ type Props = {
   redirectIfClaimNotFoundPath?: string;
 };
 
-type ChainEl = (ctx: ChainContext) => ChainResult;
-type ChainList = ChainEl[];
-
-const reduceChain = (
-  chain: ChainList,
-  ctx: ChainContext
-): ChainResult | null => {
-  if (chain.length === 0) return null;
-  const res = chain[0](ctx);
-  if (!res) {
-    chain.shift();
-    if (chain.length > 0) {
-      return reduceChain(chain, ctx);
-    }
-  }
-  return res;
+const replaceLocales = (path: string) => {
+  const regex = new RegExp(`^/(tr|en)`);
+  return path.replace(regex, "");
 };
 
 export default function AuthGuard({
@@ -56,34 +41,66 @@ export default function AuthGuard({
   claims = [],
 }: React.PropsWithChildren<Props>): JSX.Element {
   const path = usePathname();
+  const router = useRouter();
   const query = useSearchParams();
-  const router = useLocalizedRouter();
   const locale = useLocale();
   const { isLoading, data, error } = useGetCurrentQuery({}, { skip });
-  const chain: ChainList = [
-    CheckLoading,
-    RedirectIfFound,
-    RedirectIfNotFound,
-    CheckRefreshAvailable,
-    CheckAllExpired,
-    ClaimGuard,
-  ];
 
-  const result = reduceChain(chain, {
-    currentPath: path,
-    query,
-    blockPageOnLoading,
-    loading: isLoading,
-    error: error,
-    data: data,
-    claimGuard,
-    redirectIfFound,
-    redirectIfNotFound,
-    claims,
-    locale,
-    router,
-  });
-  if (result) return result as JSX.Element;
+  const redirectIfFoundPath = getStaticRoute(locale).account.select;
+  const redirectIfNotFoundPath = getStaticRoute(locale).auth.default;
+  const refreshQuery = query.get("refresh");
+
+  // check loading
+  if (blockPageOnLoading && isLoading) return <Loading />;
+
+  // redirect if found
+  if (
+    redirectIfFound &&
+    !isLoading &&
+    isUser(data) &&
+    replaceLocales(path) !== redirectIfFoundPath &&
+    refreshQuery !== "true"
+  )
+    return redirect(redirectIfFoundPath);
+
+  // redirect if not found
+  if (
+    redirectIfNotFound &&
+    !isLoading &&
+    !data &&
+    replaceLocales(path) !== redirectIfNotFoundPath &&
+    refreshQuery !== "true"
+  )
+    return redirect(redirectIfNotFoundPath);
+
+  // check refresh
+  if (!isLoading && error && isExpiredError(error) && refreshQuery !== "true") {
+    if (replaceLocales(path) === redirectIfNotFoundPath) {
+      router.replace(path, { query: { refresh: "true" } });
+    } else {
+      return redirect(getStaticRoute(locale).auth.refresh);
+    }
+  }
+
+  // check all expired
+  if (
+    !isLoading &&
+    error &&
+    !(redirectIfNotFound && !isExpiredError(error) && refreshQuery !== "true")
+  ) {
+    return redirect(getStaticRoute(locale).auth.default);
+  }
+
+  // claim guard
+  if (
+    claimGuard &&
+    !isLoading &&
+    isUser(data) &&
+    !isExpiredError(error) &&
+    !claims.every((claim) => data.roles.includes(claim))
+  )
+    return notFound();
+
   return (
     <AuthClientProvider user={isUser(data) ? data : null}>
       {children}
