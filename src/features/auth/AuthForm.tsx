@@ -58,10 +58,8 @@ export default function AuthForm() {
 
   useEffect(() => {
     if (isExpired && !isLoading && status === "uninitialized") {
-      console.log("refresh");
       handleRefresh({});
     } else {
-      console.log("no refresh");
     }
   }, [handleRefresh, isExpired, isLoading, status, refreshQuery]);
 

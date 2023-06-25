@@ -7,6 +7,7 @@ import AvatarUpload from "~/components/form/AvatarUpload";
 import { useToast } from "~/components/toast/Toast";
 import { useUploadAvatarMutation } from "~/features/upload/upload.api";
 import { RootState } from "~/store/store";
+import { toFormData } from "~/utils/content-type";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 
@@ -31,7 +32,9 @@ export default function AccountEditAvatarForm() {
 
   const handleUploadAvatar = (file: File) => {
     if (!file) return setInputError(t("required").toString());
-    handleUpload({ file: file, username: account?.userName ?? "" });
+    handleUpload(
+      toFormData({ avatar: file, username: account?.userName ?? "" })
+    );
   };
 
   return (

@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import Condition from "../condition/Condition";
+import ErrorText from "../text/ErrorText";
 import ShowHideButton from "./ShowHideButton";
 
 type InputValue = string | number | readonly string[] | undefined;
@@ -110,7 +111,7 @@ function Input<Value extends InputValue = string>({
           />
         </Condition>
       </div>
-      {error && <small className="text-xs text-red-500">{error}</small>}
+      {error && <ErrorText>{error}</ErrorText>}
     </>
   );
 }

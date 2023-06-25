@@ -68,13 +68,15 @@
             "cancel": "Vazgeç",
             "confirm": "Aktif Et",
             "title": "Hesabı Aktif Hale Getir",
-            "description": "Hesabınızı aktif hale getirmek istediğinize emin misiniz? Hesabınız aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir."
+            "description": "Hesabınızı aktif hale getirmek istediğinize emin misiniz? Hesabınız aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Hesabınız başarıyla aktif hale getirildi! Lütfen tekrar giriş yapın."
           },
           "disable": {
             "cancel": "Vazgeç",
             "confirm": "Devre Dışı Bırak",
             "title": "Hesabı Devre Dışı Bırak",
-            "description": "Hesabınızı devre dışı bırakmak istediğinize emin misiniz? Hesabınız devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir."
+            "description": "Hesabınızı devre dışı bırakmak istediğinize emin misiniz? Hesabınız devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Hesabınız başarıyla devre dışı bırakıldı! Lütfen tekrar giriş yapın."
           }
         },
         "deletion": {

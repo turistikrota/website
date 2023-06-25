@@ -14,3 +14,7 @@ export type ValidationErrorDetail = {
 };
 
 export type AnyResponse<T> = T | ValidationErrorDetail[] | BaseResponse;
+
+export function isBaseResponse(response: any): response is BaseResponse {
+  return response && response.message;
+}

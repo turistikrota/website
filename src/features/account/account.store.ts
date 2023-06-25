@@ -33,6 +33,22 @@ const accountSlice = createSlice({
       state.currentAccount = null;
       localStorage.removeItem(AccountStorage.CurrentAccount);
     },
+    enableAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount.isActive = true;
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
+    disableAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount.isActive = false;
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -62,28 +78,6 @@ const accountSlice = createSlice({
       }
     );
     builder.addMatcher(
-      accountApi.endpoints.disableMyAccount.matchFulfilled,
-      (state, action) => {
-        if (!state.currentAccount) return;
-        state.currentAccount.isActive = false;
-        localStorage.setItem(
-          AccountStorage.CurrentAccount,
-          JSON.stringify(state.currentAccount)
-        );
-      }
-    );
-    builder.addMatcher(
-      accountApi.endpoints.enableMyAccount.matchFulfilled,
-      (state, action) => {
-        if (!state.currentAccount) return;
-        state.currentAccount.isActive = true;
-        localStorage.setItem(
-          AccountStorage.CurrentAccount,
-          JSON.stringify(state.currentAccount)
-        );
-      }
-    );
-    builder.addMatcher(
       accountApi.endpoints.deleteMyAccount.matchFulfilled,
       (state, action) => {
         state.currentAccount = null;
@@ -93,7 +87,8 @@ const accountSlice = createSlice({
   },
 });
 
-export const { setAccount, removeAccount } = accountSlice.actions;
+export const { setAccount, removeAccount, enableAccount, disableAccount } =
+  accountSlice.actions;
 export default accountSlice.reducer;
 
 export const onStartClient = (dispatch: any) => {

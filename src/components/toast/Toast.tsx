@@ -384,6 +384,7 @@ export const ToastListProvider: React.FC<React.PropsWithChildren> = ({
     if (removes.length > 0) {
       removes.forEach((rem) => {
         setTimeout(() => {
+          console.log('removing...', rem)
           removeToast(rem.id);
         }, rem.duration);
       });
