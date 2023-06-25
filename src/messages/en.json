@@ -55,6 +55,9 @@
           "title": "Edit Profile",
           "description": "Edit your tourist route profile, set your avatar, username and user code, and change your account settings.",
           "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+        },
+        "avatar": {
+          "success": "Profile picture updated successfully!"
         }
       },
       "notifications": {

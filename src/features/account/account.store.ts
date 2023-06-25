@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { safeStorageParse } from "~/utils/storage";
 import { authApi } from "../auth/auth.api";
+import { uploadApi } from "../upload/upload.api";
+import { isFileUploadedResponse } from "../upload/upload.types";
 import { AccountListItem } from "./account.types";
 
 enum AccountStorage {
@@ -44,6 +46,18 @@ const accountSlice = createSlice({
       (state, action) => {
         state.currentAccount = null;
         localStorage.removeItem(AccountStorage.CurrentAccount);
+      }
+    );
+    builder.addMatcher(
+      uploadApi.endpoints.uploadAvatar.matchFulfilled,
+      (state, action) => {
+        if (!state.currentAccount || !isFileUploadedResponse(action.payload))
+          return;
+        state.currentAccount.avatarUrl = action.payload.url;
+        localStorage.setItem(
+          AccountStorage.CurrentAccount,
+          JSON.stringify(state.currentAccount)
+        );
       }
     );
   },

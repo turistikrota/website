@@ -55,6 +55,9 @@
           "title": "Profili Düzenle",
           "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        },
+        "avatar": {
+          "success": "Avatar başarıyla değiştirildi!"
         }
       },
       "notifications": {
