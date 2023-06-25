@@ -2,6 +2,7 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 import { Services, apiUrl } from "~/static/api";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
+import { toFormData } from "~/utils/content-type";
 import { FileUploadedResponse, UploadAvatarFormData } from "./upload.types";
 
 export const uploadApi = createApi({
@@ -16,8 +17,11 @@ export const uploadApi = createApi({
         url: apiUrl(Services.Upload, `/@${body.username}`),
         method: "POST",
         credentials: "include",
-        body,
+        body: toFormData(body),
         formData: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       }),
       transformErrorResponse: (res) => {
         return res.data;

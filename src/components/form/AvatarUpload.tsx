@@ -27,6 +27,7 @@ export default function AvatarUpload({
   loading = false,
 }: Props) {
   const [src, setSrc] = useState(avatar);
+  const [cropSrc, setCropSrc] = useState<string | null>(null);
   const [cropVisible, setCropVisible] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string | null>(initialError);
@@ -64,7 +65,7 @@ export default function AvatarUpload({
 
     if (validFile) {
       setError(null);
-      setSrc(URL.createObjectURL(validFile));
+      setCropSrc(URL.createObjectURL(validFile));
       setCropVisible(true);
     }
   };
@@ -81,6 +82,7 @@ export default function AvatarUpload({
   };
 
   const onCrop = (file: File) => {
+    setSrc(URL.createObjectURL(file));
     setCropVisible(false);
     onChange(file);
     if (!fileInputRef.current) return;
@@ -94,7 +96,7 @@ export default function AvatarUpload({
           visible={cropVisible}
           onClose={onClose}
           onCrop={onCrop}
-          src={src}
+          src={cropSrc!}
           circle={true}
         ></ImageCropper>
         <Spin loading={loading}>

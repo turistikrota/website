@@ -62,12 +62,12 @@ export default function ImageCropper({
 
   const flipHorizontal = () => {
     if (!cropperRef.current) return;
-    cropperRef.current.flipImage(true, false);
+    cropperRef.current.flipImage(false, true);
   };
 
   const flipVertical = () => {
     if (!cropperRef.current) return;
-    cropperRef.current.flipImage(false, true);
+    cropperRef.current.flipImage(true, false);
   };
 
   const handleOnCancel = () => {
@@ -86,9 +86,6 @@ export default function ImageCropper({
                 aspectRatio: 1 / 1,
                 grid: true,
                 previewClassName: "preview",
-              }}
-              onChange={(cropper) => {
-                console.log(cropper.getCoordinates(), cropper.getCanvas());
               }}
               onReady={(cropper) => {
                 cropper.reset();

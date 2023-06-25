@@ -57,7 +57,8 @@
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         },
         "avatar": {
-          "success": "Avatar başarıyla değiştirildi!"
+          "success": "Avatar başarıyla değiştirildi!",
+          "required": "Lütfen bir avatar seçin."
         }
       },
       "notifications": {

@@ -57,7 +57,8 @@
           "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
         },
         "avatar": {
-          "success": "Profile picture updated successfully!"
+          "success": "Profile picture updated successfully!",
+          "required": "Please select a profile picture."
         }
       },
       "notifications": {
