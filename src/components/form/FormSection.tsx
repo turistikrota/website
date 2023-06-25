@@ -8,7 +8,7 @@ type Head = {
 } & typeof Head;
 
 function Title({ children }: React.PropsWithChildren) {
-  return <h4 className="text-lg font-bold lg:block">{children}</h4>;
+  return <h2 className="text-lg font-bold lg:block">{children}</h2>;
 }
 
 function Subtitle({ children }: React.PropsWithChildren) {

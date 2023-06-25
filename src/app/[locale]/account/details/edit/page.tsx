@@ -37,7 +37,7 @@ export async function generateMetadata({
 
 export default function EditAccount() {
   return (
-    <div className="p-4 space-y-4 md:space-y-6">
+    <div className="p-4 space-y-10">
       <AccountEditAvatarForm />
       <AccountEditGeneralForm className="max-w-4xl mx-auto" />
     </div>
