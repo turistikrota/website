@@ -35,7 +35,10 @@ export default function ImageCropper({
     if (!canvas) return;
     canvas.toBlob((blob) => {
       if (!blob) return;
-      const file = new File([blob], "avatar.png", { type: "image/png" });
+      const file = new File([blob], "avatar.png", {
+        type: "image/png",
+        lastModified: Date.now(),
+      });
       onCrop(file);
     });
   };
@@ -92,7 +95,6 @@ export default function ImageCropper({
               }}
               checkOrientation={true}
               stencilComponent={circle ? CircleStencil : undefined}
-              //  wrapperComponent={Wrapper}
             />
           </Condition>
           <div className="absolute -top-14 right-1/2 transform translate-x-1/2 flex gap-2">

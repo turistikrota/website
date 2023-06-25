@@ -1,7 +1,7 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { default as NextImage } from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "react-advanced-cropper/dist/style.css";
 import Spin from "sspin/dist/esm/Spin";
 import Condition from "../condition/Condition";
@@ -12,10 +12,6 @@ type Props = {
   onChange: (file: File) => void;
   minSize?: number;
   maxSize?: number;
-  minWidth?: number;
-  maxWidth?: number;
-  minHeight?: number;
-  maxHeight?: number;
   accept?: string;
   loading?: boolean;
   error: string | null;
@@ -26,19 +22,15 @@ export default function AvatarUpload({
   onChange,
   minSize = 0,
   maxSize = 1,
-  minWidth = 500,
-  maxWidth = 500,
-  minHeight = 500,
-  maxHeight = 500,
   accept = "image/png",
   error: initialError = null,
   loading = false,
 }: Props) {
   const [src, setSrc] = useState(avatar);
   const [cropVisible, setCropVisible] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string | null>(initialError);
   const t = useTranslations("avatar-form");
-  const locale = useLocale();
 
   const validate = (file: File | undefined): Promise<File> => {
     return new Promise((resolve, reject) => {
@@ -59,21 +51,6 @@ export default function AvatarUpload({
 
       if (!file.type.startsWith(accept))
         return reject(t("errors.type", { accept }).toString());
-
-      /*
-      const img = new Image();
-      img.src = URL.createObjectURL(file);
-      img.onload = () => {
-        if (img.width < minWidth || img.height < minHeight)
-          return reject(
-            t("errors.minSize", { minWidth, minHeight: minHeight }).toString()
-          );
-        if (img.width > maxWidth || img.height > maxHeight)
-          return reject(
-            t("errors.maxSize", { maxWidth, maxHeight: maxHeight }).toString()
-          );
-      };
-        */
       return resolve(file);
     });
   };
@@ -89,12 +66,25 @@ export default function AvatarUpload({
       setError(null);
       setSrc(URL.createObjectURL(validFile));
       setCropVisible(true);
-      //onChange(dest);
     }
   };
 
   const focus = () => {
-    document.getElementById("avatar")?.click();
+    if (!fileInputRef.current) return;
+    fileInputRef.current.click();
+  };
+
+  const onClose = () => {
+    setCropVisible(false);
+    if (!fileInputRef.current) return;
+    fileInputRef.current.value = "";
+  };
+
+  const onCrop = (file: File) => {
+    setCropVisible(false);
+    onChange(file);
+    if (!fileInputRef.current) return;
+    fileInputRef.current.value = "";
   };
 
   return (
@@ -102,10 +92,8 @@ export default function AvatarUpload({
       <div className="relative">
         <ImageCropper
           visible={cropVisible}
-          onClose={() => setCropVisible(false)}
-          onCrop={(file) => {
-            console.log("file:", file);
-          }}
+          onClose={onClose}
+          onCrop={onCrop}
           src={src}
           circle={true}
         ></ImageCropper>
@@ -135,11 +123,11 @@ export default function AvatarUpload({
         </Spin>
       </div>
       <input
-        id="avatar"
         type="file"
         className="hidden"
         accept={accept}
         onChange={handleChange}
+        ref={fileInputRef}
       />
       {error && <p className="mt-5 text-sm text-red-500">{error}</p>}
     </div>
