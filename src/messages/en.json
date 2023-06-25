@@ -335,7 +335,8 @@
   "ux": {
     "button": {
       "show": "Show",
-      "hide": "Hide"
+      "hide": "Hide",
+      "close": "Close"
     }
   },
   "avatar-form": {

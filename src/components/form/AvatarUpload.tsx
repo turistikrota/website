@@ -2,9 +2,10 @@
 import { useLocale, useTranslations } from "next-intl";
 import { default as NextImage } from "next/image";
 import { useState } from "react";
-import { Cropper } from "react-advanced-cropper";
+import "react-advanced-cropper/dist/style.css";
 import Spin from "sspin/dist/esm/Spin";
 import Condition from "../condition/Condition";
+import Modal from "../modal/Modal";
 
 type Props = {
   avatar: string;
@@ -34,6 +35,7 @@ export default function AvatarUpload({
   loading = false,
 }: Props) {
   const [src, setSrc] = useState(avatar);
+  const [cropVisible, setCropVisible] = useState(false);
   const [error, setError] = useState<string | null>(initialError);
   const t = useTranslations("avatar-form");
   const locale = useLocale();
@@ -86,6 +88,7 @@ export default function AvatarUpload({
     if (validFile) {
       setError(null);
       setSrc(URL.createObjectURL(validFile));
+      setCropVisible(true);
       //onChange(dest);
     }
   };
@@ -97,15 +100,37 @@ export default function AvatarUpload({
   return (
     <div className="flex flex-col items-center">
       <div className="relative">
+        <button onClick={() => setCropVisible(true)}>open</button>
+        <Modal
+          open={cropVisible}
+          onClose={() => {
+            setCropVisible(false);
+          }}
+        >
+          <Modal.Head>
+            <Modal.Head.Title>titlee</Modal.Head.Title>
+            <Modal.Head.Subtitle>subtitle</Modal.Head.Subtitle>
+            <Modal.Head.CloseButton onClose={() => {}} />
+          </Modal.Head>
+          <Modal.Body>sa</Modal.Body>
+          <Modal.Footer>ehe</Modal.Footer>
+        </Modal>
         <Spin loading={loading}>
-          <Cropper
-            src={src}
-            onChange={(cropper) => {
-              console.log(cropper.getCoordinates(), cropper.getCanvas());
-            }}
-            className={"cropper"}
-          />
-          ;
+          {/*
+          <Popup open={cropVisible} onClose={() => setCropVisible(false)}>
+            <Condition value={cropVisible}>
+              <Cropper
+                src={
+                  "https://images.unsplash.com/photo-1599140849279-1014532882fe?fit=crop&w=1300&q=80"
+                }
+                onChange={(cropper) => {
+                  console.log(cropper.getCoordinates(), cropper.getCanvas());
+                }}
+                className={"cropper"}
+              />
+            </Condition>
+          </Popup>
+          */}
           <NextImage
             src={src}
             alt="Avatar"

@@ -335,7 +335,8 @@
   "ux": {
     "button": {
       "show": "Göster",
-      "hide": "Gizle"
+      "hide": "Gizle",
+      "close": "Kapat"
     }
   },
   "avatar-form": {
