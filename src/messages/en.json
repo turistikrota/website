@@ -59,6 +59,15 @@
         "avatar": {
           "success": "Profile picture updated successfully!",
           "required": "Please select a profile picture."
+        },
+        "activation": {
+          "title": "Account Status",
+          "active": "Your account is active. Click the side button to deactivate your account.",
+          "passive": "Your account is disabled. Click the side button to activate your account."
+        },
+        "deletion": {
+          "title": "Delete Account",
+          "description": "You can delete your account by checking the box on the side."
         }
       },
       "notifications": {

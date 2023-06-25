@@ -59,6 +59,15 @@
         "avatar": {
           "success": "Avatar başarıyla değiştirildi!",
           "required": "Lütfen bir avatar seçin."
+        },
+        "activation": {
+          "title": "Hesap Durumu",
+          "active": "Hesabınız aktif. Hesabınızı devre dışı bırakmak için yandaki butona tıklayın.",
+          "passive": "Hesabınız devre dışı. Hesabınızı aktif hale getirmek için yandaki butona tıklayın."
+        },
+        "deletion": {
+          "title": "Hesabı Sil",
+          "description": "Yandaki kutucuğu işaretleyerek hesabınızı silebilirsiniz."
         }
       },
       "notifications": {
