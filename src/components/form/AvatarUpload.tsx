@@ -5,7 +5,7 @@ import { useState } from "react";
 import "react-advanced-cropper/dist/style.css";
 import Spin from "sspin/dist/esm/Spin";
 import Condition from "../condition/Condition";
-import Modal from "../modal/Modal";
+import ImageCropper from "../cropper/ImageCropper";
 
 type Props = {
   avatar: string;
@@ -100,37 +100,16 @@ export default function AvatarUpload({
   return (
     <div className="flex flex-col items-center">
       <div className="relative">
-        <button onClick={() => setCropVisible(true)}>open</button>
-        <Modal
-          open={cropVisible}
-          onClose={() => {
-            setCropVisible(false);
+        <ImageCropper
+          visible={cropVisible}
+          onClose={() => setCropVisible(false)}
+          onCrop={(file) => {
+            console.log("file:", file);
           }}
-        >
-          <Modal.Head>
-            <Modal.Head.Title>titlee</Modal.Head.Title>
-            <Modal.Head.Subtitle>subtitle</Modal.Head.Subtitle>
-            <Modal.Head.CloseButton onClose={() => {}} />
-          </Modal.Head>
-          <Modal.Body>sa</Modal.Body>
-          <Modal.Footer>ehe</Modal.Footer>
-        </Modal>
+          src={src}
+          circle={true}
+        ></ImageCropper>
         <Spin loading={loading}>
-          {/*
-          <Popup open={cropVisible} onClose={() => setCropVisible(false)}>
-            <Condition value={cropVisible}>
-              <Cropper
-                src={
-                  "https://images.unsplash.com/photo-1599140849279-1014532882fe?fit=crop&w=1300&q=80"
-                }
-                onChange={(cropper) => {
-                  console.log(cropper.getCoordinates(), cropper.getCanvas());
-                }}
-                className={"cropper"}
-              />
-            </Condition>
-          </Popup>
-          */}
           <NextImage
             src={src}
             alt="Avatar"

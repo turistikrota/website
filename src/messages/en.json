@@ -336,7 +336,15 @@
     "button": {
       "show": "Show",
       "hide": "Hide",
-      "close": "Close"
+      "close": "Close",
+      "save": "Save",
+      "cancel": "Cancel",
+      "zoom-in": "Zoom In",
+      "zoom-out": "Zoom Out",
+      "rotate-left": "Rotate Left",
+      "rotate-right": "Rotate Right",
+      "flip-horizontal": "Flip Horizontal",
+      "flip-vertical": "Flip Vertical"
     }
   },
   "avatar-form": {

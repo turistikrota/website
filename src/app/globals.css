@@ -74,6 +74,7 @@
 
   --autofill-background-color: rgb(var(--primary-color-100));
   --autofill-color: rgb(var(--primary-color-900));
+  --preview-border-color: rgba(0, 0, 0, 0.25);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -108,6 +109,7 @@
 
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
+    --preview-border-color: rgba(255, 255, 255, 0.25);
 
     --border-color: #1a1717;
 
@@ -189,4 +191,14 @@ select:-webkit-autofill:focus {
 ::-webkit-scrollbar-track,
 .scrollbar::-webkit-scrollbar-track {
   background-color: var(--background-color-end);
+}
+
+.advanced-cropper {
+  /* background-color: transparent !important; */
+  /* background: none !important; 
+  backdrop-filter: none !important;
+  overflow: unset !important;*/
+}
+.advanced-cropper .preview {
+  border: dashed 2px var(--preview-border-color);
 }

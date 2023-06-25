@@ -18,6 +18,7 @@ type ModalProps = CloseableProps & {
   unmount?: boolean;
   delay?: number;
   open?: boolean;
+  shadow?: boolean;
 };
 
 type HeadType = typeof Head & {
@@ -26,7 +27,11 @@ type HeadType = typeof Head & {
 };
 
 function Head({ children }: React.PropsWithChildren) {
-  return <div className="flex flex-col p-4 border-b">{children}</div>;
+  return (
+    <div className="flex bg-second w-full flex-col p-4 border-b rounded-t-md">
+      {children}
+    </div>
+  );
 }
 
 function Title({ children }: React.PropsWithChildren) {
@@ -53,12 +58,16 @@ function CloseButton({ onClose }: CloseableProps) {
 }
 
 function Body({ children }: React.PropsWithChildren) {
-  return <div className="p-4 grow">{children}</div>;
+  return (
+    <div className="p-4 grow bg-second w-full overflow-hidden overflow-y-auto scrollbar">
+      {children}
+    </div>
+  );
 }
 
 function Footer({ children }: React.PropsWithChildren) {
   return (
-    <div className="flex p-4 justify-between items-center border-t">
+    <div className="flex p-4 bg-second w-full justify-between items-center border-t rounded-b-md">
       {children}
     </div>
   );
@@ -71,12 +80,15 @@ function Modal({
   open = false,
   transitionClass = "modal-scaler",
   unmount = true,
+  shadow = true,
 }: React.PropsWithChildren<ModalProps>) {
   const nodeRef = useRef(null);
   return (
     <div
       className={`items-center justify-center flex-col ${
-        open ? "fixed inset-0 z-50 flex" : "hidden"
+        open
+          ? "fixed inset-0 z-50 flex overflow-hidden backdrop-blur-md"
+          : "hidden"
       }`}
     >
       <div
@@ -94,7 +106,9 @@ function Modal({
         nodeRef={nodeRef}
       >
         <div
-          className="w-full max-w-md flex flex-col bg-second rounded-lg shadow-lg relative z-10 min-h-[50vh] min-w-[50vw]"
+          className={`w-full max-w-md flex flex-col items-center justify-center rounded-lg relative z-10 min-h-[50vh] min-w-[50vw] ${
+            shadow ? "shadow-lg" : ""
+          }`}
           ref={nodeRef}
         >
           {children}

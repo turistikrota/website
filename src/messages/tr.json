@@ -336,7 +336,15 @@
     "button": {
       "show": "Göster",
       "hide": "Gizle",
-      "close": "Kapat"
+      "close": "Kapat",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "zoom-in": "Yakınlaştır",
+      "zoom-out": "Uzaklaştır",
+      "rotate-left": "Sola döndür",
+      "rotate-right": "Sağa döndür",
+      "flip-horizontal": "Yatay çevir",
+      "flip-vertical": "Dikey çevir"
     }
   },
   "avatar-form": {

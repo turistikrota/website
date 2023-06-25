@@ -8,7 +8,8 @@ type Variant =
   | "warning"
   | "gray"
   | "gray-text"
-  | "transparent";
+  | "transparent"
+  | "opacity";
 type Size = "normal" | "xs" | "sm" | "md" | "lg";
 
 type Props = {
@@ -37,6 +38,8 @@ const variants: Record<Variant, string> = {
     "text-gray-400 bg-transparent hover:bg-gray-400 dark:text-gray-500 dark:hover:bg-gray-600 focus:ring-gray-300 dark:focus:ring-gray-900",
   transparent:
     "bg-transparent hover:bg-transparent dark:hover:bg-transparent shadow-none text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent",
+  opacity:
+    "bg-opacity-70 bg-gray-600 dark:bg-gray-700 hover:bg-opacity-100 dark:bg-opacity-70 dark:hover:bg-opacity-100 shadow-none dark:text-gray-200 dark:hover:text-white transition-colors duration-200 focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent",
 };
 
 const sizes: Record<Size, string> = {
