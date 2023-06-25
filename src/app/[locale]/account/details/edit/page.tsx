@@ -4,6 +4,7 @@ import { getStaticRoute } from "~/static/page";
 import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
 import AccountActivationForm from "./components/AccountActivationForm";
+import AccountDeletionForm from "./components/AccountDeletionForm";
 import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
 import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
 
@@ -41,7 +42,10 @@ export default function EditAccount() {
     <div className="p-4 space-y-10">
       <AccountEditAvatarForm />
       <AccountEditGeneralForm className="max-w-4xl mx-auto" />
-      <AccountActivationForm />
+      <div className="space-y-4">
+        <AccountActivationForm />
+        <AccountDeletionForm />
+      </div>
     </div>
   );
 }

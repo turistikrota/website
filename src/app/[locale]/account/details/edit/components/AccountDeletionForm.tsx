@@ -4,7 +4,7 @@ import { useState } from "react";
 import LineForm from "~/components/form/LineForm";
 import ToggleButton from "~/components/form/Toggle";
 
-export default function AccountActivationForm() {
+export default function AccountDeletionForm() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -14,11 +14,13 @@ export default function AccountActivationForm() {
   return (
     <LineForm className="bg-second p-4 rounded-md">
       <LineForm.Left>
-        <LineForm.Left.Title>Hesap Durumu</LineForm.Left.Title>
-        <LineForm.Left.Description></LineForm.Left.Description>
+        <LineForm.Left.Title>Hesabımı Sil</LineForm.Left.Title>
+        <LineForm.Left.Description>
+          Yandaki kutucuğu işaretleyerek hesabınızı silebilirsiniz.
+        </LineForm.Left.Description>
       </LineForm.Left>
       <LineForm.Right>
-        <ToggleButton defaultChecked={false} variant="success"></ToggleButton>
+        <ToggleButton defaultChecked={false} variant="error"></ToggleButton>
       </LineForm.Right>
     </LineForm>
   );

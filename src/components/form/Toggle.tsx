@@ -14,6 +14,7 @@ type Variants = {
   default: string;
   checked: string;
   circle: string;
+  circleChecked: string;
 };
 
 type Sizes = {
@@ -27,29 +28,34 @@ const variants: Record<Variant, Variants> = {
     default: "bg-gray-100 dark:bg-default",
     checked:
       "bg-primary-500 bg-opacity-20 dark:bg-primary-500 dark:bg-opacity-20",
-    circle: "bg-primary-500 dark:bg-primary-500",
+    circleChecked: "bg-primary-500 dark:bg-primary-500",
+    circle: "bg-gray-400 dark:bg-gray-700",
   },
   secondary: {
     default: "bg-gray-100 dark:bg-default",
     checked:
       "bg-secondary-500 bg-opacity-20 dark:bg-secondary-500 dark:bg-opacity-20",
-    circle: "bg-secondary-500 dark:bg-secondary-500",
+    circleChecked: "bg-secondary-500 dark:bg-secondary-500",
+    circle: "bg-gray-400 dark:bg-gray-700",
   },
   success: {
     default: "bg-gray-100 dark:bg-default",
     checked: "bg-green-500 bg-opacity-20 dark:bg-green-500 dark:bg-opacity-20",
-    circle: "bg-green-500 dark:bg-green-500",
+    circleChecked: "bg-green-500 dark:bg-green-500",
+    circle: "bg-gray-400 dark:bg-gray-700",
   },
   error: {
     default: "bg-gray-100 dark:bg-default",
     checked: "bg-red-500 bg-opacity-20 dark:bg-red-500 dark:bg-opacity-20",
-    circle: "bg-red-500 dark:bg-red-500",
+    circleChecked: "bg-red-500 dark:bg-red-500",
+    circle: "bg-gray-400 dark:bg-gray-700",
   },
   warning: {
     default: "bg-gray-100 dark:bg-default",
     checked:
       "bg-orange-500 bg-opacity-20 dark:bg-orange-500 dark:bg-opacity-20",
-    circle: "bg-orange-500 dark:bg-orange-500",
+    circleChecked: "bg-orange-500 dark:bg-orange-500",
+    circle: "bg-gray-400 dark:bg-gray-700",
   },
 };
 
@@ -99,7 +105,9 @@ const ToggleButton: React.FC<Props> = ({
         className={`inline-block transform transition-transform ease-in-out rounded-full ${
           variants[variant].circle
         } ${sizes[size].circle} ${
-          checked ? sizes[size].circleChecked : "translate-x-1"
+          checked
+            ? `${sizes[size].circleChecked} ${variants[variant].circleChecked}`
+            : "translate-x-1"
         }`}
       />
     </button>
