@@ -60,6 +60,15 @@
           "success": "Profile picture updated successfully!",
           "required": "Please select a profile picture."
         },
+        "general": {
+          "title": "Profile Information",
+          "subtitle": "The information here will appear on your profile. You can change this information at any time.",
+          "fullName": "Your first and last name",
+          "description": "About you",
+          "birthDate": "Your date of birth",
+          "save": "Save Changes",
+          "success": "Your profile information has been successfully updated!"
+        },
         "activation": {
           "title": "Account Status",
           "active": "Your account is active. Click the side button to deactivate your account.",

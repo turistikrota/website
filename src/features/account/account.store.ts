@@ -49,6 +49,17 @@ const accountSlice = createSlice({
         JSON.stringify(state.currentAccount)
       );
     },
+    updateAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount = {
+        ...state.currentAccount,
+        ...action.payload,
+      };
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -87,8 +98,13 @@ const accountSlice = createSlice({
   },
 });
 
-export const { setAccount, removeAccount, enableAccount, disableAccount } =
-  accountSlice.actions;
+export const {
+  setAccount,
+  removeAccount,
+  updateAccount,
+  enableAccount,
+  disableAccount,
+} = accountSlice.actions;
 export default accountSlice.reducer;
 
 export const onStartClient = (dispatch: any) => {

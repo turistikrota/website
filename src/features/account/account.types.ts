@@ -25,3 +25,10 @@ export type AccountCreateFormData = {
 export type BaseOperationFormData = {
   userName: string;
 };
+
+export type AccountUpdateFormData = {
+  userName: string;
+  fullName: string;
+  description: string;
+  birthDate: string;
+};

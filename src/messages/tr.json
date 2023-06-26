@@ -60,6 +60,15 @@
           "success": "Avatar başarıyla değiştirildi!",
           "required": "Lütfen bir avatar seçin."
         },
+        "general": {
+          "title": "Profil Bilgileri",
+          "subtitle": "Buradaki bilgiler profilinizde görünecektir. Bu bilgileri dilediğiniz zaman değiştirebilirsiniz.",
+          "fullName": "Adınız ve soyadınız",
+          "description": "Hakkınızda",
+          "birthDate": "Doğum tarihiniz",
+          "save": "Değişiklikleri Kaydet",
+          "success": "Profil bilgileriniz başarıyla güncellendi!"
+        },
         "activation": {
           "title": "Hesap Durumu",
           "active": "Hesabınız aktif. Hesabınızı devre dışı bırakmak için yandaki butona tıklayın.",

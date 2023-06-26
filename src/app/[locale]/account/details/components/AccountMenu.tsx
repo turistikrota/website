@@ -120,7 +120,9 @@ export default function AccountMenu({ isDetail }: Props) {
             </AccountMenuItem.Content>
           </AccountMenuItem>
         ))}
-        <LogoutButton hideContent={isDetail ? !menuContext?.openMenu : false} />
+        <LogoutButton
+          hideContent={isDetail && !isDesktop ? !menuContext?.openMenu : false}
+        />
       </div>
     </div>
   );

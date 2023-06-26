@@ -2,7 +2,11 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 import { Services, apiUrl } from "~/static/api";
 import { baseQuery } from "~/store/config";
 import { AnyResponse } from "~/types/response/response.types";
-import { AccountCreateFormData, AccountListResponse } from "./account.types";
+import {
+  AccountCreateFormData,
+  AccountListResponse,
+  AccountUpdateFormData,
+} from "./account.types";
 
 export const accountApi = createApi({
   reducerPath: "accountApi",
@@ -34,6 +38,21 @@ export const accountApi = createApi({
         method: "POST",
         credentials: "include",
         body,
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
+    updateAccount: builder.mutation<AnyResponse<any>, AccountUpdateFormData>({
+      query: (body) => ({
+        url: apiUrl(Services.Account, `/@${body.userName}`),
+        method: "PUT",
+        credentials: "include",
+        body: {
+          fullName: body.fullName,
+          description: body.description,
+          birthDate: body.birthDate,
+        },
       }),
       transformErrorResponse: (res) => {
         return res.data;
@@ -86,6 +105,7 @@ export const {
   useListQuery,
   useDetailQuery,
   useCreateMutation,
+  useUpdateAccountMutation,
   useGetMyAccountQuery,
   useEnableMyAccountMutation,
   useDisableMyAccountMutation,
