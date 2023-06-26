@@ -42,7 +42,7 @@ export default function EditAccount() {
     <div className="p-4 space-y-10">
       <AccountEditAvatarForm />
       <AccountEditGeneralForm className="max-w-4xl mx-auto" />
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-4xl mx-auto">
         <AccountActivationForm />
         <AccountDeletionForm />
       </div>
