@@ -3,7 +3,7 @@
 import { useFormik } from "formik";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Spin from "sspin";
 import Button from "~/components/button/Button";
 import FormSection from "~/components/form/FormSection";
@@ -12,18 +12,16 @@ import Textarea from "~/components/form/Textarea";
 import { useToast } from "~/components/toast/Toast";
 import { useUpdateAccountMutation } from "~/features/account/account.api";
 import { updateAccount } from "~/features/account/account.store";
-import { RootState } from "~/store/store";
+import { Account } from "~/features/account/account.types";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 
 type Props = {
   className?: string;
+  account: Account;
 };
 
-export default function AccountEditGeneralForm({ className }: Props) {
-  const account = useSelector(
-    (state: RootState) => state.account.currentAccount
-  );
+export default function AccountEditGeneralForm({ className, account }: Props) {
   const t = useTranslations("account.details.edit.general");
   const toast = useToast();
   const schema = useSchema();
@@ -33,9 +31,9 @@ export default function AccountEditGeneralForm({ className }: Props) {
   );
   const form = useFormik({
     initialValues: {
-      fullName: account!.fullName,
-      description: account!.description,
-      birthDate: account!.createdAt,
+      fullName: account.fullName,
+      description: account.description,
+      birthDate: account.birthDate,
     },
     validateOnBlur: false,
     validateOnChange: false,
@@ -43,10 +41,10 @@ export default function AccountEditGeneralForm({ className }: Props) {
     validationSchema: schema.account.update,
     onSubmit: (values) => {
       handleUpdate({
-        userName: account!.userName,
+        userName: account.userName,
         fullName: values.fullName,
         description: values.description,
-        birthDate: values.birthDate,
+        birthDate: values.birthDate ?? null,
       });
     },
   });
@@ -105,7 +103,7 @@ export default function AccountEditGeneralForm({ className }: Props) {
                 autoComplete="birthDate"
                 label={t("birthDate")}
                 ariaLabel={t("birthDate")}
-                value={form.values.birthDate}
+                value={form.values.birthDate || ""}
                 error={form.errors.birthDate}
                 onChange={form.handleChange}
                 onBlur={form.handleBlur}

@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import Spin from "sspin";
 import Condition from "~/components/condition/Condition";
 import LineForm from "~/components/form/LineForm";
@@ -8,18 +7,18 @@ import ToggleButton from "~/components/form/Toggle";
 import ErrorText from "~/components/text/ErrorText";
 import { useToast } from "~/components/toast/Toast";
 import { useDisableMyAccountMutation } from "~/features/account/account.api";
-import { RootState } from "~/store/store";
 import { isBaseResponse } from "~/types/response/response.types";
 import { parseApiError } from "~/utils/response";
 
 type Props = {
   onOk: () => void;
+  userName: string;
 };
 
-export default function AccountActivationDisableForm({ onOk }: Props) {
-  const account = useSelector(
-    (state: RootState) => state.account.currentAccount
-  );
+export default function AccountActivationDisableForm({
+  onOk,
+  userName,
+}: Props) {
   const t = useTranslations("account.details.edit.activation");
   const toast = useToast();
   const [handleDisable, { isLoading, error, status }] =
@@ -41,7 +40,7 @@ export default function AccountActivationDisableForm({ onOk }: Props) {
       description: t("disable.description"),
       title: t("disable.title"),
       onConfirm: () => {
-        handleDisable(account!.userName);
+        handleDisable(userName);
       },
     });
   };

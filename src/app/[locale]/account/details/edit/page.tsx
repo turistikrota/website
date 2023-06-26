@@ -3,10 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
 import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
-import AccountActivationForm from "./components/AccountActivationForm";
-import AccountDeletionForm from "./components/AccountDeletionForm";
-import AccountEditAvatarForm from "./components/AccountEditAvatarForm";
-import AccountEditGeneralForm from "./components/AccountEditGeneralForm";
+import AccountEditDetailProvider from "./components/AccountEditDetailProvider";
 
 /*
   const account = useSelector(
@@ -38,14 +35,5 @@ export async function generateMetadata({
 }
 
 export default function EditAccount() {
-  return (
-    <div className="p-4 space-y-10">
-      <AccountEditAvatarForm />
-      <AccountEditGeneralForm className="max-w-4xl mx-auto" />
-      <div className="space-y-4 max-w-4xl mx-auto">
-        <AccountActivationForm />
-        <AccountDeletionForm />
-      </div>
-    </div>
-  );
+  return <AccountEditDetailProvider />;
 }

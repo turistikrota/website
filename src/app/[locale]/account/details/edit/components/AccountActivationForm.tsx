@@ -1,21 +1,22 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useToast } from "~/components/toast/Toast";
 import {
   disableAccount,
   enableAccount,
 } from "~/features/account/account.store";
-import { RootState } from "~/store/store";
 import AccountActivationDisableForm from "./AccountActivationDisableForm";
 import AccountActivationEnableForm from "./AccountActivationEnableForm";
 
-export default function AccountActivationForm() {
+type Props = {
+  isActive: boolean;
+  userName: string;
+};
+
+export default function AccountActivationForm({ isActive, userName }: Props) {
   const t = useTranslations("account.details.edit.activation");
-  const account = useSelector(
-    (state: RootState) => state.account.currentAccount
-  );
   const toast = useToast();
   const dispatch = useDispatch();
 
@@ -28,9 +29,9 @@ export default function AccountActivationForm() {
     toast.success(t("disable.success"));
   };
 
-  return account?.isActive ? (
-    <AccountActivationDisableForm onOk={onDisableOk} />
+  return isActive ? (
+    <AccountActivationDisableForm onOk={onDisableOk} userName={userName} />
   ) : (
-    <AccountActivationEnableForm onOk={onEnableOk} />
+    <AccountActivationEnableForm onOk={onEnableOk} userName={userName} />
   );
 }
