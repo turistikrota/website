@@ -4,7 +4,6 @@ import { headers } from "next/headers";
 export default getRequestConfig(async ({ locale }) => {
   const now = headers().get("x-now");
   const timeZone = headers().get("x-time-zone") ?? undefined;
-  console.log("locale", locale);
   const messages = (await import(`./messages/${locale}.json`)).default;
   return {
     now: now ? new Date(now) : undefined,

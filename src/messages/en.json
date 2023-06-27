@@ -56,6 +56,10 @@
           "description": "Edit your tourist route profile, set your avatar, username and user code, and change your account settings.",
           "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
         },
+        "disabled": {
+          "title": "Profile Disabled",
+          "description": "Updating your profile while it is disabled will result in an error. You can activate your profile from the Profile Status form at the bottom of the page. If you updated your profile in the last 2 minutes, please wait 2 minutes and try again."
+        },
         "rate": {
           "title": "Profile Completion Rate",
           "description": "Complete the steps below to increase your profile completion rate. When your profile completion rate is 100%, you can be found more easily by other users."

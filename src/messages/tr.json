@@ -56,6 +56,10 @@
           "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         },
+        "disabled": {
+          "title": "Profil Devre Dışı",
+          "description": "Profiliniz devre dışı iken yapacağınız profil güncelleme işlemleri hata ile sonuçlanacaktır. Profilinizi sayfanın en altında yer alan Profil Durumu formundan aktifleştirebilirsiniz. Eğer profilinizi son 2 dakika içerisinde güncellediyseniz lütfen 2 dakika bekleyin ve tekrar deneyin."
+        },
         "rate": {
           "title": "Profil Tamamlama Oranı",
           "description": "Profil tamamlama oranınızı artırmak için aşağıdaki adımları tamamlayın. Profil tamamlama oranınız %100 olduğunda, diğer kullanıcılar tarafından daha kolay bulunabilirsiniz."

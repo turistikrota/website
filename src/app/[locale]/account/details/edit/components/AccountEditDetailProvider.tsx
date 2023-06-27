@@ -14,6 +14,7 @@ import AccountActivationForm from "./AccountActivationForm";
 import AccountChangeUserNameForm from "./AccountChangeUserNameForm";
 import AccountCompletedRateArea from "./AccountCompletedRateArea";
 import AccountDeletionForm from "./AccountDeletionForm";
+import AccountDisabledAlert from "./AccountDisabledAlert";
 import AccountEditAvatarForm from "./AccountEditAvatarForm";
 import AccountEditGeneralForm from "./AccountEditGeneralForm";
 
@@ -39,6 +40,9 @@ export default function AccountEditDetailProvider() {
 
   return (
     <section className="p-4 lg:pl-0 space-y-10 max-w-4xl mx-auto relative">
+      <Condition value={!data.isActive}>
+        <AccountDisabledAlert />
+      </Condition>
       <AccountEditAvatarForm
         avatar={data.avatarUrl}
         userName={data.userName}
