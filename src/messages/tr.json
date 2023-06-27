@@ -70,27 +70,27 @@
           "success": "Profil bilgileriniz başarıyla güncellendi!"
         },
         "activation": {
-          "title": "Hesap Durumu",
-          "active": "Hesabınız aktif. Hesabınızı devre dışı bırakmak için yandaki butona tıklayın.",
-          "passive": "Hesabınız devre dışı. Hesabınızı aktif hale getirmek için yandaki butona tıklayın.",
+          "title": "Profil Durumu",
+          "active": "Profiliniz aktif. Profilinizi devre dışı bırakmak için yandaki butona tıklayın.",
+          "passive": "Profiliniz devre dışı. Profilinizi aktif hale getirmek için yandaki butona tıklayın.",
           "enable": {
             "cancel": "Vazgeç",
             "confirm": "Aktif Et",
-            "title": "Hesabı Aktif Hale Getir",
-            "description": "Hesabınızı aktif hale getirmek istediğinize emin misiniz? Hesabınız aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
-            "success": "Hesabınız başarıyla aktif hale getirildi! Lütfen tekrar giriş yapın."
+            "title": "Profili Aktif Hale Getir",
+            "description": "Profilinizi aktif hale getirmek istediğinize emin misiniz? Profiliniz aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Profiliniz başarıyla aktif hale getirildi! Lütfen tekrar giriş yapın."
           },
           "disable": {
             "cancel": "Vazgeç",
             "confirm": "Devre Dışı Bırak",
-            "title": "Hesabı Devre Dışı Bırak",
-            "description": "Hesabınızı devre dışı bırakmak istediğinize emin misiniz? Hesabınız devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
-            "success": "Hesabınız başarıyla devre dışı bırakıldı! Lütfen tekrar giriş yapın."
+            "title": "Profili Devre Dışı Bırak",
+            "description": "Profilinizi devre dışı bırakmak istediğinize emin misiniz? Profiliniz devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Profiliniz başarıyla devre dışı bırakıldı! Lütfen tekrar giriş yapın."
           }
         },
         "deletion": {
-          "title": "Hesabı Sil",
-          "description": "Yandaki kutucuğu işaretleyerek hesabınızı silebilirsiniz."
+          "title": "Profili Sil",
+          "description": "Yandaki kutucuğu işaretleyerek profilinizi silebilirsiniz."
         }
       },
       "notifications": {

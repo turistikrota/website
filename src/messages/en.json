@@ -70,27 +70,27 @@
           "success": "Your profile information has been successfully updated!"
         },
         "activation": {
-          "title": "Account Status",
-          "active": "Your account is active. Click the side button to deactivate your account.",
-          "passive": "Your account is disabled. Click the side button to activate your account.",
+          "title": "Profile Status",
+          "active": "Your profile is active. Click the side button to deactivate your profile.",
+          "passive": "Your profile is disabled. Click the side button to activate your profile.",
           "enable": {
             "cancel": "Cancel",
             "confirm": "Activate",
-            "title": "Activate Account",
-            "description": "Are you sure you want to activate your account? Once your account is activated, you will need to log in again for the changes to be reflected on the entire site.",
-            "success": "Your account has been successfully activated! Please log in again."
+            "title": "Activate Profile",
+            "description": "Are you sure you want to activate your profile? Once your profile is activated, you will need to log in again for the changes to be reflected on the entire site.",
+            "success": "Your profile has been successfully activated! Please log in again."
           },
           "disable": {
             "cancel": "Cancel",
             "confirm": "Disable",
-            "title": "Deactivate Account",
-            "description": "Are you sure you want to deactivate your account? Once your account is deactivated, you will need to log in again for the changes to be reflected on the entire site.",
-            "success": "Your account has been successfully deactivated! Please log in again."
+            "title": "Deactivate Profile",
+            "description": "Are you sure you want to deactivate your profile? Once your profile is deactivated, you will need to log in again for the changes to be reflected on the entire site.",
+            "success": "Your profile has been successfully deactivated! Please log in again."
           }
         },
         "deletion": {
-          "title": "Delete Account",
-          "description": "You can delete your account by checking the box on the side."
+          "title": "Delete Profile",
+          "description": "You can delete your profile by checking the box on the side."
         }
       },
       "notifications": {
@@ -165,7 +165,7 @@
       "keywords": "Login, Touristic Route, Vacation Planning, Tour Reservation"
     },
     "login": {
-      "title": "Sign In to Your Account",
+      "title": "Sign In to Your Profile",
       "email": "Your email",
       "password": "Your password",
       "button": "Sign in",
@@ -177,12 +177,12 @@
       }
     },
     "check": {
-      "title": "Sign In to Your Account",
+      "title": "Sign In to Your Profile",
       "email": "Your email",
       "button": "Sign in"
     },
     "register": {
-      "title": "Register for an Account",
+      "title": "Register for an Profile",
       "email": "Your email",
       "password": "Your password",
       "button": "Sign up",
@@ -200,7 +200,7 @@
       }
     },
     "activate": {
-      "title": "Activate Your Account",
+      "title": "Activate Your Profile",
       "button": "Activate",
       "success": "Your account has been successfully activated! You can login now.",
       "codeNotExist": "The activation code you entered does not exist.",
@@ -209,9 +209,9 @@
         "send": "click here to get a new code."
       },
       "meta": {
-        "title": "Activate Your Account",
+        "title": "Activate Your Profile",
         "description": "Activate your tourist route account and start planning your vacation!",
-        "keywords": "Activate Your Account, Turistik Rota, Vacation Planning, Tour Reservation"
+        "keywords": "Activate Your Profile, Turistik Rota, Vacation Planning, Tour Reservation"
       }
     },
     "reSend": {
