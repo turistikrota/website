@@ -15,7 +15,7 @@ const withPwa = require("next-pwa")({
 const nextConfig = {
   output: "standalone",
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-intl"],
+  transpilePackages: ["next-intl", "@pqina/pintura", "@pqina/react-pintura"],
   reactStrictMode: true,
   poweredByHeader: false,
   devIndicators: {
@@ -26,7 +26,11 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ["s3.turistikrota.com", "avatar.turistikrota.com"],
+    domains: [
+      "s3.turistikrota.com",
+      "avatar.turistikrota.com",
+      "images.unsplash.com",
+    ],
   },
 };
 

@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
-import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
+import { getTranslations } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
+import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
+import AccountEditDetailProvider from "./components/AccountEditDetailProvider";
 
 /*
   const account = useSelector(
@@ -18,9 +19,10 @@ import { generateDefaultMetadata } from "~/utils/meta";
   return <AccountEditForm />;
 */
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("account.details.edit.meta");
-  const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),
@@ -33,12 +35,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function EditAccount() {
-  return (
-    <div className="p-4">
-      <MaintenanceAlert />
-      {/*
-      <AccountEditAvatarForm />
-     */}
-    </div>
-  );
+  return <AccountEditDetailProvider />;
 }

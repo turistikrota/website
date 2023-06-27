@@ -55,6 +55,56 @@
           "title": "Profili Düzenle",
           "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        },
+        "rate": {
+          "title": "Profil Tamamlama Oranı",
+          "description": "Profil tamamlama oranınızı artırmak için aşağıdaki adımları tamamlayın. Profil tamamlama oranınız %100 olduğunda, diğer kullanıcılar tarafından daha kolay bulunabilirsiniz."
+        },
+        "avatar": {
+          "success": "Avatar başarıyla değiştirildi!",
+          "required": "Lütfen bir avatar seçin."
+        },
+        "userName": {
+          "title": "Kullanıcı Adı",
+          "subtitle": "Bu formu kullanarak kullanıcı adınızı değiştirebilirsiniz.",
+          "userName": "Kullanıcı adınız",
+          "save": "Değişiklikleri Kaydet",
+          "success": "Kullanıcı adı başarıyla değiştirildi!"
+        },
+        "general": {
+          "title": "Profil Bilgileri",
+          "subtitle": "Buradaki bilgiler profilinizde görünecektir. Bu bilgileri dilediğiniz zaman değiştirebilirsiniz.",
+          "fullName": "Adınız ve soyadınız",
+          "description": "Hakkınızda",
+          "birthDate": "Doğum tarihiniz",
+          "save": "Değişiklikleri Kaydet",
+          "success": "Profil bilgileriniz başarıyla güncellendi!"
+        },
+        "activation": {
+          "title": "Profil Durumu",
+          "active": "Profiliniz aktif. Profilinizi devre dışı bırakmak için yandaki butona tıklayın.",
+          "passive": "Profiliniz devre dışı. Profilinizi aktif hale getirmek için yandaki butona tıklayın.",
+          "enable": {
+            "cancel": "Vazgeç",
+            "confirm": "Aktif Et",
+            "title": "Profili Aktif Hale Getir",
+            "description": "Profilinizi aktif hale getirmek istediğinize emin misiniz? Profiliniz aktif hale getirildiğinde, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Profiliniz başarıyla aktif hale getirildi! Lütfen tekrar giriş yapın.",
+            "alt": "Profili aktif hale getir"
+          },
+          "disable": {
+            "cancel": "Vazgeç",
+            "confirm": "Devre Dışı Bırak",
+            "title": "Profili Devre Dışı Bırak",
+            "description": "Profilinizi devre dışı bırakmak istediğinize emin misiniz? Profiliniz devre dışı bırakıldığında, değişikliklerin tüm siteye yansıması için tekrar giriş yapmanız gerekecektir.",
+            "success": "Profiliniz başarıyla devre dışı bırakıldı! Lütfen tekrar giriş yapın.",
+            "alt": "Profili devre dışı bırak"
+          }
+        },
+        "deletion": {
+          "title": "Profili Sil",
+          "description": "Yandaki kutucuğu işaretleyerek profilinizi silebilirsiniz.",
+          "alt": "Profili sil"
         }
       },
       "notifications": {
@@ -69,6 +119,13 @@
           "title": "Ayarlar",
           "description": "Hesap ayarlarınızı görüntüleyin, hesap ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
           "keywords": "Ayarlar, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
+      "vip": {
+        "meta": {
+          "title": "VIP Üyelik",
+          "description": "VIP üyelik ayarlarınızı görüntüleyin, VIP üyelik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "VIP Üyelik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
       "security": {
@@ -102,7 +159,17 @@
         "privacy": "Gizlilik",
         "notifications": "Bildirimler",
         "settings": "Ayarlar",
-        "delete": "Profili Sil"
+        "delete": "Profili Sil",
+        "vip": "VIP Üyelik",
+        "subtitles": {
+          "edit": "Profil resminizi, bilgilerinizi ve sosyal medya hesaplarınızı düzenleyin.",
+          "security": "Şifrenizi değiştirin, iki faktörlü kimlik doğrulamayı etkinleştirin ve oturum açma cihazlarınızı yönetin.",
+          "privacy": "Gizlilik ayarlarınızı düzenleyin ve profilinizi arama sonuçlarında görünür veya görünmez yapın.",
+          "notifications": "Bildirim tercihlerinizi düzenleyin.",
+          "settings": "Hesap ayarlarınızı düzenleyin.",
+          "delete": "Profilinizi silin.",
+          "vip": "VIP üyelik avantajları hakkında bilgi alın ve VIP üyeliğinizi yönetin veya oluşturun."
+        }
       },
       "meta": {
         "title": "Profil",
@@ -324,7 +391,52 @@
   "ux": {
     "button": {
       "show": "Göster",
-      "hide": "Gizle"
+      "hide": "Gizle",
+      "close": "Kapat",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "zoom-in": "Yakınlaştır",
+      "zoom-out": "Uzaklaştır",
+      "rotate-left": "Sola döndür",
+      "rotate-right": "Sağa döndür",
+      "flip-horizontal": "Yatay çevir",
+      "flip-vertical": "Dikey çevir"
+    }
+  },
+  "avatar-form": {
+    "edit": "Düzenle",
+    "upload": "Profil resmini yükle",
+    "errors": {
+      "min": "Profil resmi en az {min} MB olmalıdır",
+      "max": "Profil resmi en fazla {max} MB olmalıdır",
+      "type": "Profil resmi sadece {type} formatında olabilir",
+      "minSize": "Profil resmi en az {minWidth}x{minHeight} piksel olmalıdır",
+      "maxSize": "Profil resmi en fazla {maxWidth}x{maxHeight} piksel olmalıdır",
+      "required": "Bu alan zorunludur"
+    }
+  },
+  "sections": {
+    "disabled": {
+      "title": "Bu bölüm şu anda kullanılamıyor",
+      "text": "Bu bölüm şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+      "maintenance": {
+        "title": "Bakım çalışması",
+        "text": "Bu bölüm şu anda bakım çalışması nedeniyle kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+      },
+      "error": {
+        "title": "Bir hata oluştu",
+        "text": "Bu bölüm şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+      }
+    },
+    "vip": {
+      "title": "VIP İçerik",
+      "text": "Bu içerik VIP üyelerimize özeldir. VIP üye olmak için lütfen aşağıdaki butona tıklayın.",
+      "upgrade": "VIP üyeliğe yükselt"
+    },
+    "deluxe": {
+      "title": "Deluxe İçerik",
+      "text": "Bu içerik Deluxe üyelerimize özeldir. Deluxe üye olmak için lütfen aşağıdaki butona tıklayın.",
+      "upgrade": "Deluxe üyeliğe yükselt"
     }
   }
 }

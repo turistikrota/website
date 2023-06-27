@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { safeStorageParse } from "~/utils/storage";
 import { authApi } from "../auth/auth.api";
+import { uploadApi } from "../upload/upload.api";
+import { isFileUploadedResponse } from "../upload/upload.types";
+import { accountApi } from "./account.api";
 import { AccountListItem } from "./account.types";
 
 enum AccountStorage {
@@ -30,6 +33,33 @@ const accountSlice = createSlice({
       state.currentAccount = null;
       localStorage.removeItem(AccountStorage.CurrentAccount);
     },
+    enableAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount.isActive = true;
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
+    disableAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount.isActive = false;
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
+    updateAccount: (state, action) => {
+      if (!state.currentAccount) return;
+      state.currentAccount = {
+        ...state.currentAccount,
+        ...action.payload,
+      };
+      localStorage.setItem(
+        AccountStorage.CurrentAccount,
+        JSON.stringify(state.currentAccount)
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -46,10 +76,35 @@ const accountSlice = createSlice({
         localStorage.removeItem(AccountStorage.CurrentAccount);
       }
     );
+    builder.addMatcher(
+      uploadApi.endpoints.uploadAvatar.matchFulfilled,
+      (state, action) => {
+        if (!state.currentAccount || !isFileUploadedResponse(action.payload))
+          return;
+        state.currentAccount.avatarUrl = action.payload.url;
+        localStorage.setItem(
+          AccountStorage.CurrentAccount,
+          JSON.stringify(state.currentAccount)
+        );
+      }
+    );
+    builder.addMatcher(
+      accountApi.endpoints.deleteMyAccount.matchFulfilled,
+      (state, action) => {
+        state.currentAccount = null;
+        localStorage.removeItem(AccountStorage.CurrentAccount);
+      }
+    );
   },
 });
 
-export const { setAccount, removeAccount } = accountSlice.actions;
+export const {
+  setAccount,
+  removeAccount,
+  updateAccount,
+  enableAccount,
+  disableAccount,
+} = accountSlice.actions;
 export default accountSlice.reducer;
 
 export const onStartClient = (dispatch: any) => {

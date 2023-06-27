@@ -8,6 +8,7 @@ import "~/app/globals.css";
 import PwaHead from "~/components/pwa/PwaHead";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
 import ReduxProvider from "~/store/provider";
+import "~/styles/mobile.css";
 
 type Props = {
   children: React.ReactNode;

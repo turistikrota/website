@@ -16,13 +16,14 @@
 
   --second-background-color: #fff;
   --third-background-color: #e7edef;
-  --border-color: #e6e6e6;
+  --border-color: #f2f0f0;
 
   --shadow-color-start: rgba(0, 0, 0, 0.1);
   --shadow-color-end: rgba(0, 0, 0, 0.6);
 
   --radius-base: 0.5rem;
 
+  /* primary color */
   --primary-color: 51, 151, 230;
   --primary-color-50: 240, 248, 255;
   --primary-color-100: 199, 225, 247;
@@ -39,6 +40,8 @@
   --primary-color-1200: 0, 22, 38;
   --primary-color-1300: 0, 11, 19;
   --primary-color-1400: 0, 0, 0;
+
+  /* secondary color */
   --secondary-color: 255, 165, 0;
   --secondary-color-50: 255, 248, 240;
   --secondary-color-100: 254, 231, 195;
@@ -55,6 +58,8 @@
   --secondary-color-1200: 51, 26, 0;
   --secondary-color-1300: 38, 19, 0;
   --secondary-color-1400: 26, 13, 0;
+
+  /* skeleton color */
   --skeleton-default-color: 230, 230, 230;
   --skeleton-color-50: 250, 250, 250;
   --skeleton-color-100: 242, 242, 242;
@@ -69,11 +74,56 @@
   --skeleton-color-1000: 173, 173, 173;
   --skeleton-color-1100: 165, 165, 165;
 
+  /* vip color */
+  --vip-color: 255, 215, 0;
+  --vip-color-50: 255, 248, 240;
+  --vip-color-100: 254, 231, 195;
+  --vip-color-200: 252, 217, 146;
+  --vip-color-300: 255, 204, 102;
+  --vip-color-400: 255, 165, 0;
+  --vip-color-500: 255, 153, 0;
+  --vip-color-600: 230, 138, 0;
+  --vip-color-700: 204, 122, 0;
+  --vip-color-800: 179, 107, 0;
+  --vip-color-900: 143, 79, 0;
+  --vip-color-1000: 102, 51, 0;
+  --vip-color-1100: 77, 38, 0;
+  --vip-color-1200: 51, 26, 0;
+  --vip-color-1300: 38, 19, 0;
+  --vip-color-1400: 26, 13, 0;
+
+  /* deluxe color */
+  --deluxe-color: 135, 206, 235;
+  --deluxe-color-50: 235, 245, 250;
+  --deluxe-color-100: 197, 232, 250;
+  --deluxe-color-200: 144, 207, 240;
+  --deluxe-color-300: 94, 183, 238;
+  --deluxe-color-400: 50, 161, 232;
+  --deluxe-color-500: 31, 136, 200;
+  --deluxe-color-600: 24, 117, 173;
+  --deluxe-color-700: 19, 99, 144;
+  --deluxe-color-800: 15, 81, 116;
+  --deluxe-color-900: 12, 65, 92;
+  --deluxe-color-1000: 8, 52, 73;
+  --deluxe-color-1100: 5, 40, 56;
+  --deluxe-color-1200: 3, 26, 36;
+  --deluxe-color-1300: 2, 19, 27;
+  --deluxe-color-1400: 1, 13, 18;
+
   --scroll-bar-bg: var(--primary-color-300);
   --scroll-bar-bg-hover: var(--primary-color-400);
 
+  --progressbar-background: rgb(var(--primary-color-50));
+
   --autofill-background-color: rgb(var(--primary-color-100));
   --autofill-color: rgb(var(--primary-color-900));
+  --preview-border-color: rgba(0, 0, 0, 0.25);
+
+  --vip-border-image: linear-gradient(
+    to bottom,
+    rgba(var(--vip-color-300), 0.5) 10%,
+    rgba(var(--vip-color-500), 0.5) 70%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,10 +156,13 @@
     --scroll-bar-bg: rgb(var(--primary-color-300));
     --scroll-bar-bg-hover: rgb(var(--primary-color-400));
 
+    --progressbar-background: rgb(var(--primary-color-1100));
+
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
+    --preview-border-color: rgba(255, 255, 255, 0.25);
 
-    --border-color: #303030;
+    --border-color: #1a1717;
 
     --autofill-background-color: rgb(var(--primary-color-1000));
     --autofill-color: rgb(var(--primary-color-50));
@@ -160,6 +213,14 @@ select:-webkit-autofill:focus {
   font-size: 1.7rem !important;
 }
 
+.bx-xl {
+  font-size: 2.5rem !important;
+}
+
+.bx-2xl {
+  font-size: 3.5rem !important;
+}
+
 .spin-sm .sspin {
   width: 25px;
   height: 25px;
@@ -189,4 +250,117 @@ select:-webkit-autofill:focus {
 ::-webkit-scrollbar-track,
 .scrollbar::-webkit-scrollbar-track {
   background-color: var(--background-color-end);
+}
+
+.advanced-cropper {
+  /* background-color: transparent !important; */
+  /* background: none !important; 
+  backdrop-filter: none !important;
+  overflow: unset !important;*/
+}
+.advanced-cropper .preview {
+  border: dashed 2px var(--preview-border-color);
+}
+
+.disable-highlight {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+@-webkit-keyframes animate-stripes {
+  100% {
+    background-position: -100px 0px;
+  }
+}
+
+@keyframes animate-stripes {
+  100% {
+    background-position: -100px 0px;
+  }
+}
+
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #09c, #f44);
+
+  border-radius: 20px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+
+  -webkit-animation: animate-stripes 5s linear infinite;
+  animation: animate-stripes 5s linear infinite;
+}
+
+progress[value]::-webkit-progress-value::before {
+  content: "80%";
+  position: absolute;
+  right: 0;
+  top: -125%;
+}
+
+progress[value]::-webkit-progress-value::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  right: 7px;
+  top: 7px;
+  background-color: white;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+
+  width: 250px;
+  height: 20px;
+}
+
+progress[value]::-moz-progress-bar {
+  background-image: -moz-linear-gradient(
+      135deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -moz-linear-gradient(left, #09c, #f44);
+
+  border-radius: 20px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+*/
+
+.CircularProgressbar {
+  fill: rgb(var(--secondary-color)) !important;
+}
+
+.CircularProgressbar-path {
+  stroke: rgb(var(--primary-color)) !important;
+}
+.CircularProgressbar-trail {
+  stroke: var(--progressbar-background) !important;
+}
+.CircularProgressbar-text {
+  fill: rgb(var(--secondary-color)) !important;
+}
+.CircularProgressbar-background {
+  fill: green !important;
 }

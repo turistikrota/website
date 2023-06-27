@@ -2,8 +2,7 @@
 
 import { useFormik } from "formik";
 import { useLocale, useTranslations } from "next-intl";
-import { useLocalizedRouter } from "next-intl/client";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
@@ -26,7 +25,7 @@ export default function ReSendVerificationForm() {
   const toast = useToast();
   const locale = useLocale();
   const isMobile = useIsSmallMobile();
-  const router = useLocalizedRouter();
+  const router = useRouter();
   const schema = useSchema();
   const searchParams = useSearchParams();
   const [handleReSend, { isLoading, data, status, error, originalArgs }] =

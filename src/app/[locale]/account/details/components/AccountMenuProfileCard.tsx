@@ -26,16 +26,17 @@ export default function AccountMenuProfileCard({ open }: Props) {
       }`}
     >
       <div
-        className={`flex bg-gray-300 dark:bg-gray-700 rounded-full ${
-          open ? "items-center justify-center w-20 h-20" : "h-12 w-12"
+        className={`flex ${
+          open ? "items-center justify-center w-23 h-23" : "h-12 w-12"
         }`}
       >
         <Image
           src={account.avatarUrl}
-          width={open ? 80 : 48}
-          height={open ? 80 : 48}
+          width={open ? 110 : 48}
+          height={open ? 110 : 48}
           alt={account.fullName}
           title={account.fullName}
+          className="rounded-md bg-second border p-2 lg:p-0"
         />
       </div>
       <Condition value={open}>

@@ -102,6 +102,18 @@
 </url>
 
 <url>
+  <loc>https://turistikrota.com/en/account/details/vip</loc>
+	<lastmod>2023-06-27T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://turistikrota.com/tr/hesap/detay/vip</loc>
+	<lastmod>2023-06-27T23:00:17+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
   <loc>https://turistikrota.com/tr/hesap/detay/bildirim-tercihleri</loc>
 	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
   <priority>0.8</priority>

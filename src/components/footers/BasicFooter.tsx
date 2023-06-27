@@ -26,7 +26,7 @@ export default function BasicFooter() {
             <i className="bx bx-sm bxl-instagram"></i>
           </Link>
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
+        <p className="mt-8 text-center text-base text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()} {t("copyright")}
         </p>
       </div>

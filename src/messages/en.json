@@ -55,6 +55,56 @@
           "title": "Edit Profile",
           "description": "Edit your tourist route profile, set your avatar, username and user code, and change your account settings.",
           "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
+        },
+        "rate": {
+          "title": "Profile Completion Rate",
+          "description": "Complete the steps below to increase your profile completion rate. When your profile completion rate is 100%, you can be found more easily by other users."
+        },
+        "avatar": {
+          "success": "Profile picture updated successfully!",
+          "required": "Please select a profile picture."
+        },
+        "userName": {
+          "title": "Username",
+          "subtitle": "You can change your username using this form.",
+          "userName": "Your username",
+          "save": "Save Changes",
+          "success": "Username changed successfully!"
+        },
+        "general": {
+          "title": "Profile Information",
+          "subtitle": "The information here will appear on your profile. You can change this information at any time.",
+          "fullName": "Your first and last name",
+          "description": "About you",
+          "birthDate": "Your date of birth",
+          "save": "Save Changes",
+          "success": "Your profile information has been successfully updated!"
+        },
+        "activation": {
+          "title": "Profile Status",
+          "active": "Your profile is active. Click the side button to deactivate your profile.",
+          "passive": "Your profile is disabled. Click the side button to activate your profile.",
+          "enable": {
+            "cancel": "Cancel",
+            "confirm": "Activate",
+            "title": "Activate Profile",
+            "description": "Are you sure you want to activate your profile? Once your profile is activated, you will need to log in again for the changes to be reflected on the entire site.",
+            "success": "Your profile has been successfully activated! Please log in again.",
+            "alt": "Activate Profile"
+          },
+          "disable": {
+            "cancel": "Cancel",
+            "confirm": "Disable",
+            "title": "Deactivate Profile",
+            "description": "Are you sure you want to deactivate your profile? Once your profile is deactivated, you will need to log in again for the changes to be reflected on the entire site.",
+            "success": "Your profile has been successfully deactivated! Please log in again.",
+            "alt": "Deactivate Profile"
+          }
+        },
+        "deletion": {
+          "title": "Delete Profile",
+          "description": "You can delete your profile by checking the box on the side.",
+          "alt": "Delete Profile"
         }
       },
       "notifications": {
@@ -62,6 +112,13 @@
           "title": "Notifications",
           "description": "View your notification preferences, set your notification preferences, and change your account settings.",
           "keywords": "Notifications, Turistik Rota, Vacation Planning, Tour Reservation"
+        }
+      },
+      "vip": {
+        "meta": {
+          "title": "VIP Membership",
+          "description": "View your VIP membership settings, set your VIP membership settings and change your account settings.",
+          "keywords": "VIP Membership, Turistik Rota, Holiday Planning, Tour Reservation"
         }
       },
       "settings": {
@@ -102,7 +159,17 @@
         "privacy": "Privacy",
         "notifications": "Notifications",
         "settings": "Settings",
-        "delete": "Delete Profile"
+        "delete": "Delete Profile",
+        "vip": "VIP Membership",
+        "subtitles": {
+          "edit": "Edit your profile picture, information and social media accounts.",
+          "security": "Change your password, enable two-factor authentication and manage your login devices.",
+          "privacy": "Edit your privacy settings and make your profile visible or invisible in search results.",
+          "notifications": "Edit your notification preferences.",
+          "settings": "Edit your account settings.",
+          "delete": "Delete your profile.",
+          "vip": "Learn about VIP membership benefits and manage or create your VIP membership."
+        }
       },
       "meta": {
         "title": "Profile | Tourist Route",
@@ -121,7 +188,7 @@
       "keywords": "Login, Touristic Route, Vacation Planning, Tour Reservation"
     },
     "login": {
-      "title": "Sign In to Your Account",
+      "title": "Sign In to Your Profile",
       "email": "Your email",
       "password": "Your password",
       "button": "Sign in",
@@ -133,12 +200,12 @@
       }
     },
     "check": {
-      "title": "Sign In to Your Account",
+      "title": "Sign In to Your Profile",
       "email": "Your email",
       "button": "Sign in"
     },
     "register": {
-      "title": "Register for an Account",
+      "title": "Register for an Profile",
       "email": "Your email",
       "password": "Your password",
       "button": "Sign up",
@@ -156,7 +223,7 @@
       }
     },
     "activate": {
-      "title": "Activate Your Account",
+      "title": "Activate Your Profile",
       "button": "Activate",
       "success": "Your account has been successfully activated! You can login now.",
       "codeNotExist": "The activation code you entered does not exist.",
@@ -165,9 +232,9 @@
         "send": "click here to get a new code."
       },
       "meta": {
-        "title": "Activate Your Account",
+        "title": "Activate Your Profile",
         "description": "Activate your tourist route account and start planning your vacation!",
-        "keywords": "Activate Your Account, Turistik Rota, Vacation Planning, Tour Reservation"
+        "keywords": "Activate Your Profile, Turistik Rota, Vacation Planning, Tour Reservation"
       }
     },
     "reSend": {
@@ -324,7 +391,52 @@
   "ux": {
     "button": {
       "show": "Show",
-      "hide": "Hide"
+      "hide": "Hide",
+      "close": "Close",
+      "save": "Save",
+      "cancel": "Cancel",
+      "zoom-in": "Zoom In",
+      "zoom-out": "Zoom Out",
+      "rotate-left": "Rotate Left",
+      "rotate-right": "Rotate Right",
+      "flip-horizontal": "Flip Horizontal",
+      "flip-vertical": "Flip Vertical"
+    }
+  },
+  "avatar-form": {
+    "edit": "Edit",
+    "upload": "Upload profile picture",
+    "errors": {
+      "min": "Profile picture must be at least {min} MB",
+      "max": "Profile picture must be no more than {max} MB",
+      "type": "Profile picture can only be in {type} format",
+      "minSize": "Profile picture must be at least {minWidth}x{minHeight} pixels",
+      "maxSize": "The profile picture must be no more than {maxWidth}x{maxHeight} pixels",
+      "required": "This field is required"
+    }
+  },
+  "sections": {
+    "disabled": {
+      "title": "This episode is currently unavailable",
+      "text": "This episode is currently unavailable. Please try again later.",
+      "maintenance": {
+        "title": "Maintenance work",
+        "text": "This episode is currently unavailable due to maintenance work. Please try again later."
+      },
+      "error": {
+        "title": "An error occurred",
+        "text": "This episode is currently unavailable. Please try again later."
+      }
+    },
+    "vip": {
+      "title": "This episode is only for VIP members",
+      "text": "This section is only for VIP members. For more information about VIP membership, please contact us.",
+      "upgrade": "Upgrade to VIP"
+    },
+    "deluxe": {
+      "title": "This episode is only for Deluxe members",
+      "text": "This section is exclusive to Deluxe members. For more information about Deluxe membership, please contact us.",
+      "upgrade": "Upgrade to Deluxe"
     }
   }
 }

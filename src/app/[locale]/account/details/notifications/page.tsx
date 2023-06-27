@@ -1,12 +1,14 @@
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import MaintenanceAlert from "~/components/maintenance/MaintenanceAlert";
 import { getStaticRoute } from "~/static/page";
+import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("account.details.notifications.meta");
-  const locale = getLocale();
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),
@@ -20,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function NotificationsAccount() {
   return (
-    <div className="p-4">
+    <div className="p-4 lg:pl-0 max-w-4xl mx-auto">
       <MaintenanceAlert />
     </div>
   );

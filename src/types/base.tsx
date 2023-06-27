@@ -8,4 +8,23 @@ export type Colors =
   | "success"
   | "danger"
   | "warning"
-  | "info";
+  | "info"
+  | "vip";
+
+export type LayoutProps = {
+  params: {
+    locale: string;
+  };
+};
+
+export type Variant =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "warning"
+  | "gray"
+  | "gray-text"
+  | "transparent"
+  | "opacity"
+  | "vip";

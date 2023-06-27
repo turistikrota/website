@@ -42,6 +42,11 @@ type Props = {
   isLink?: boolean;
 } & (LinkProps | DefaultProps);
 
+type IconProps = {
+  icon: string;
+  className?: string;
+};
+
 function isLinkProps(props: Props): props is LinkProps {
   return (props as LinkProps).href !== undefined;
 }
@@ -53,6 +58,7 @@ const BadgeStyles: Record<Colors, string> = {
   danger: "bg-danger-500",
   warning: "bg-warning-500",
   info: "bg-info-500",
+  vip: "bg-vip-400",
 };
 
 const IconWrapper = ({
@@ -70,8 +76,14 @@ const IconWrapper = ({
   );
 };
 
-const Icon = ({ icon }: { icon: string }) => {
-  return <i className={`${icon} bx-sm text-gray-700 dark:text-white`}></i>;
+const Icon = ({ icon, className }: IconProps) => {
+  return (
+    <i
+      className={`${icon} bx-sm ${
+        className ? className : "text-gray-700 dark:text-white"
+      }`}
+    ></i>
+  );
 };
 
 const Badge = ({
