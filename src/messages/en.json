@@ -60,6 +60,13 @@
           "success": "Profile picture updated successfully!",
           "required": "Please select a profile picture."
         },
+        "userName": {
+          "title": "Username",
+          "subtitle": "You can change your username using this form.",
+          "userName": "Your username",
+          "save": "Save Changes",
+          "success": "Username changed successfully!"
+        },
         "general": {
           "title": "Profile Information",
           "subtitle": "The information here will appear on your profile. You can change this information at any time.",
@@ -404,6 +411,16 @@
         "title": "An error occurred",
         "text": "This episode is currently unavailable. Please try again later."
       }
+    },
+    "vip": {
+      "title": "This episode is only for VIP members",
+      "text": "This section is only for VIP members. For more information about VIP membership, please contact us.",
+      "upgrade": "Upgrade to VIP"
+    },
+    "deluxe": {
+      "title": "This episode is only for Deluxe members",
+      "text": "This section is exclusive to Deluxe members. For more information about Deluxe membership, please contact us.",
+      "upgrade": "Upgrade to Deluxe"
     }
   }
 }

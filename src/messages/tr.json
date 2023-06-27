@@ -60,6 +60,13 @@
           "success": "Avatar başarıyla değiştirildi!",
           "required": "Lütfen bir avatar seçin."
         },
+        "userName": {
+          "title": "Kullanıcı Adı",
+          "subtitle": "Bu formu kullanarak kullanıcı adınızı değiştirebilirsiniz.",
+          "userName": "Kullanıcı adınız",
+          "save": "Değişiklikleri Kaydet",
+          "success": "Kullanıcı adı başarıyla değiştirildi!"
+        },
         "general": {
           "title": "Profil Bilgileri",
           "subtitle": "Buradaki bilgiler profilinizde görünecektir. Bu bilgileri dilediğiniz zaman değiştirebilirsiniz.",
@@ -404,6 +411,16 @@
         "title": "Bir hata oluştu",
         "text": "Bu bölüm şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
       }
+    },
+    "vip": {
+      "title": "Bu bölüm VIP üyelere özeldir",
+      "text": "Bu bölüm VIP üyelere özeldir. VIP üyelik hakkında daha fazla bilgi için lütfen bizimle iletişime geçin.",
+      "upgrade": "VIP üyeliğe yükselt"
+    },
+    "deluxe": {
+      "title": "Bu bölüm Deluxe üyelere özeldir",
+      "text": "Bu bölüm Deluxe üyelere özeldir. Deluxe üyelik hakkında daha fazla bilgi için lütfen bizimle iletişime geçin.",
+      "upgrade": "Deluxe üyeliğe yükselt"
     }
   }
 }
