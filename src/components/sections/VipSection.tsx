@@ -1,4 +1,6 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
+import { getStaticRoute } from "~/static/page";
 import Button from "../button/Button";
 import VipIcon from "../icon/VipIcon";
 import DisabledSection from "./DisabledSection";
@@ -19,6 +21,7 @@ function VipFeature({ children }: React.PropsWithChildren) {
 }
 function VipRequired({ children }: React.PropsWithChildren) {
   const t = useTranslations("sections.vip");
+  const locale = useLocale();
   return (
     <DisabledSection
       title={t("title")}
@@ -26,9 +29,19 @@ function VipRequired({ children }: React.PropsWithChildren) {
       variant="vip"
       size="md"
       button={
-        <Button block={false} variant="vip" className="mt-4">
-          {t("upgrade")}
-        </Button>
+        <Link
+          href={getStaticRoute(locale).account.details.vip}
+          aria-label={t("upgrade")}
+        >
+          <Button
+            block={false}
+            variant="vip"
+            className="mt-4"
+            aria-label={t("upgrade")}
+          >
+            {t("upgrade")}
+          </Button>
+        </Link>
       }
     >
       {children}
