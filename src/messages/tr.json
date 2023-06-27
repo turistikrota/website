@@ -391,5 +391,19 @@
       "maxSize": "Profil resmi en fazla {maxWidth}x{maxHeight} piksel olmalıdır",
       "required": "Bu alan zorunludur"
     }
+  },
+  "sections": {
+    "disabled": {
+      "title": "Bu bölüm şu anda kullanılamıyor",
+      "text": "Bu bölüm şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+      "maintenance": {
+        "title": "Bakım çalışması",
+        "text": "Bu bölüm şu anda bakım çalışması nedeniyle kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+      },
+      "error": {
+        "title": "Bir hata oluştu",
+        "text": "Bu bölüm şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+      }
+    }
   }
 }

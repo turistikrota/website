@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { notFound } from "next/navigation";
 import { useSelector } from "react-redux";
 import Loading from "~/components/loading/Loading";
@@ -14,6 +15,7 @@ import AccountEditAvatarForm from "./AccountEditAvatarForm";
 import AccountEditGeneralForm from "./AccountEditGeneralForm";
 
 export default function AccountEditDetailProvider() {
+  const t = useTranslations("sections.disabled");
   const account = useSelector(
     (state: RootState) => state.account.currentAccount
   );
@@ -49,7 +51,11 @@ export default function AccountEditDetailProvider() {
           isActive={data.isActive}
           userName={data.userName}
         />
-        <DisabledSection>
+        <DisabledSection
+          title={t("maintenance.title")}
+          description={t("maintenance.text")}
+          variant="maintenance"
+        >
           <AccountDeletionForm />
         </DisabledSection>
       </div>

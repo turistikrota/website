@@ -391,5 +391,19 @@
       "maxSize": "The profile picture must be no more than {maxWidth}x{maxHeight} pixels",
       "required": "This field is required"
     }
+  },
+  "sections": {
+    "disabled": {
+      "title": "This episode is currently unavailable",
+      "text": "This episode is currently unavailable. Please try again later.",
+      "maintenance": {
+        "title": "Maintenance work",
+        "text": "This episode is currently unavailable due to maintenance work. Please try again later."
+      },
+      "error": {
+        "title": "An error occurred",
+        "text": "This episode is currently unavailable. Please try again later."
+      }
+    }
   }
 }
