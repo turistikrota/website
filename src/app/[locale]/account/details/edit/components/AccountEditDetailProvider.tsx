@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { useSelector } from "react-redux";
 import Loading from "~/components/loading/Loading";
 import DisabledSection from "~/components/sections/DisabledSection";
+import ProgressBar from "~/components/statics/ProgressBar";
 import { useGetMyAccountQuery } from "~/features/account/account.api";
 import { isAccount } from "~/features/account/account.types";
 import { RootState } from "~/store/store";
@@ -42,6 +43,7 @@ export default function AccountEditDetailProvider() {
         userName={data.userName}
         onUpdate={() => reFetch()}
       />
+      <ProgressBar progress={10} />
       <AccountChangeUserNameForm />
       <AccountEditGeneralForm account={data} onUpdate={() => reFetch()} />
       <div className="space-y-4 ">

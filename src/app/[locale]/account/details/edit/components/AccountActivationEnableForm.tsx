@@ -57,6 +57,7 @@ export default function AccountActivationEnableForm({ onOk, userName }: Props) {
               defaultChecked={false}
               onChange={handleChange}
               variant="success"
+              title={t("enable.alt")}
             ></ToggleButton>
           </LineForm.Right>
         </LineForm>

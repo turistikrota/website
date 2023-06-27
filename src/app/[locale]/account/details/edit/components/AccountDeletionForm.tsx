@@ -18,7 +18,11 @@ export default function AccountDeletionForm() {
         </LineForm.Left.Description>
       </LineForm.Left>
       <LineForm.Right>
-        <ToggleButton defaultChecked={false} variant="error"></ToggleButton>
+        <ToggleButton
+          defaultChecked={false}
+          variant="error"
+          title={t("alt")}
+        ></ToggleButton>
       </LineForm.Right>
     </LineForm>
   );

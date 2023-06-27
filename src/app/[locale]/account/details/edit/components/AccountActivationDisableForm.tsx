@@ -57,6 +57,7 @@ export default function AccountActivationDisableForm({
             defaultChecked={true}
             onChange={handleChange}
             variant="success"
+            title={t("disable.alt")}
           ></ToggleButton>
         </LineForm.Right>
       </LineForm>

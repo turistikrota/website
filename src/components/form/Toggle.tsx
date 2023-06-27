@@ -8,6 +8,7 @@ type Props = {
   onChange?: (checked: boolean) => void;
   variant?: Variant;
   size?: Size;
+  title: string;
 };
 
 type Variants = {
@@ -81,6 +82,7 @@ const ToggleButton: React.FC<Props> = ({
   defaultChecked = false,
   variant = "primary",
   size = "md",
+  title,
   onChange,
 }) => {
   const [checked, setChecked] = useState(defaultChecked);
@@ -100,6 +102,8 @@ const ToggleButton: React.FC<Props> = ({
         sizes[size].default
       } ${checked ? variants[variant].checked : variants[variant].default}`}
       onClick={handleChange}
+      title={title}
+      aria-label={title}
     >
       <span
         className={`inline-block transform transition-transform ease-in-out rounded-full ${

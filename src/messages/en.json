@@ -85,19 +85,22 @@
             "confirm": "Activate",
             "title": "Activate Profile",
             "description": "Are you sure you want to activate your profile? Once your profile is activated, you will need to log in again for the changes to be reflected on the entire site.",
-            "success": "Your profile has been successfully activated! Please log in again."
+            "success": "Your profile has been successfully activated! Please log in again.",
+            "alt": "Activate Profile"
           },
           "disable": {
             "cancel": "Cancel",
             "confirm": "Disable",
             "title": "Deactivate Profile",
             "description": "Are you sure you want to deactivate your profile? Once your profile is deactivated, you will need to log in again for the changes to be reflected on the entire site.",
-            "success": "Your profile has been successfully deactivated! Please log in again."
+            "success": "Your profile has been successfully deactivated! Please log in again.",
+            "alt": "Deactivate Profile"
           }
         },
         "deletion": {
           "title": "Delete Profile",
-          "description": "You can delete your profile by checking the box on the side."
+          "description": "You can delete your profile by checking the box on the side.",
+          "alt": "Delete Profile"
         }
       },
       "notifications": {
