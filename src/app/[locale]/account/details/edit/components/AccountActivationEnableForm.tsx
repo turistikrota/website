@@ -27,7 +27,7 @@ export default function AccountActivationEnableForm({ onOk, userName }: Props) {
     } else if (status === "rejected") {
       parseApiError({ error, toast });
     }
-  }, [error, status, onOk]);
+  }, [status]);
 
   const handleChange = (val: boolean) => {
     if (!val) return;

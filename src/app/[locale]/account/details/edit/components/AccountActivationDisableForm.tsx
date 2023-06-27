@@ -30,7 +30,7 @@ export default function AccountActivationDisableForm({
     } else if (status === "rejected") {
       parseApiError({ error, toast });
     }
-  }, [error, status, onOk]);
+  }, [status]);
 
   const handleChange = (val: boolean) => {
     if (val) return;
