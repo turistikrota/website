@@ -56,6 +56,10 @@
           "description": "Turist güzergahı profilinizi düzenleyin, avatarınızı, kullanıcı adınızı ve kullanıcı kodunuzu belirleyin ve hesap ayarlarınızı değiştirin.",
           "keywords": "Profili Düzenle, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         },
+        "rate": {
+          "title": "Profil Tamamlama Oranı",
+          "description": "Profil tamamlama oranınızı artırmak için aşağıdaki adımları tamamlayın. Profil tamamlama oranınız %100 olduğunda, diğer kullanıcılar tarafından daha kolay bulunabilirsiniz."
+        },
         "avatar": {
           "success": "Avatar başarıyla değiştirildi!",
           "required": "Lütfen bir avatar seçin."

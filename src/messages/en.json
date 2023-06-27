@@ -56,6 +56,10 @@
           "description": "Edit your tourist route profile, set your avatar, username and user code, and change your account settings.",
           "keywords": "Edit Profile, Turistik Rota, Vacation Planning, Tour Reservation"
         },
+        "rate": {
+          "title": "Profile Completion Rate",
+          "description": "Complete the steps below to increase your profile completion rate. When your profile completion rate is 100%, you can be found more easily by other users."
+        },
         "avatar": {
           "success": "Profile picture updated successfully!",
           "required": "Please select a profile picture."

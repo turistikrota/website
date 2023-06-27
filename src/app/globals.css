@@ -113,6 +113,8 @@
   --scroll-bar-bg: var(--primary-color-300);
   --scroll-bar-bg-hover: var(--primary-color-400);
 
+  --progressbar-background: rgb(var(--primary-color-50));
+
   --autofill-background-color: rgb(var(--primary-color-100));
   --autofill-color: rgb(var(--primary-color-900));
   --preview-border-color: rgba(0, 0, 0, 0.25);
@@ -153,6 +155,8 @@
 
     --scroll-bar-bg: rgb(var(--primary-color-300));
     --scroll-bar-bg-hover: rgb(var(--primary-color-400));
+
+    --progressbar-background: rgb(var(--primary-color-1100));
 
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
@@ -262,6 +266,7 @@ select:-webkit-autofill:focus {
   -webkit-tap-highlight-color: transparent;
 }
 
+/*
 @-webkit-keyframes animate-stripes {
   100% {
     background-position: -100px 0px;
@@ -273,6 +278,7 @@ select:-webkit-autofill:focus {
     background-position: -100px 0px;
   }
 }
+
 
 progress[value]::-webkit-progress-bar {
   border-radius: 10px;
@@ -315,15 +321,12 @@ progress[value]::-webkit-progress-value::after {
 }
 
 progress[value] {
-  /* Reset the default appearance */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
-  /* Get rid of default border in Firefox. */
   border: none;
 
-  /* Dimensions */
   width: 250px;
   height: 20px;
 }
@@ -341,4 +344,23 @@ progress[value]::-moz-progress-bar {
 
   border-radius: 20px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+*/
+
+.CircularProgressbar {
+  fill: rgb(var(--secondary-color)) !important;
+}
+
+.CircularProgressbar-path {
+  stroke: rgb(var(--primary-color)) !important;
+}
+.CircularProgressbar-trail {
+  stroke: var(--progressbar-background) !important;
+}
+.CircularProgressbar-text {
+  fill: rgb(var(--secondary-color)) !important;
+}
+.CircularProgressbar-background {
+  fill: green !important;
 }
