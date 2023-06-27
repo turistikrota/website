@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import AvatarUpload from "~/components/form/AvatarUpload";
@@ -11,9 +9,14 @@ import { parseApiError } from "~/utils/response";
 type Props = {
   avatar: string;
   userName: string;
+  onUpdate: () => void;
 };
 
-export default function AccountEditAvatarForm({ avatar, userName }: Props) {
+export default function AccountEditAvatarForm({
+  avatar,
+  userName,
+  onUpdate,
+}: Props) {
   const t = useTranslations("account.details.edit.avatar");
   const [inputError, setInputError] = useState<string | null>(null);
   const toast = useToast();
@@ -23,6 +26,7 @@ export default function AccountEditAvatarForm({ avatar, userName }: Props) {
   useEffect(() => {
     if (status === "fulfilled") {
       toast.success(t("success"));
+      onUpdate();
     } else if (status === "rejected") {
       parseApiError({ error, toast });
     }

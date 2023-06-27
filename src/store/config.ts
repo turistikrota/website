@@ -6,7 +6,6 @@ export const baseQuery = fetchBaseQuery({
   baseUrl: process.env.NEXT_PUBLIC_API_URL,
   prepareHeaders: (headers, { getState }) => {
     const state = getState() as RootState;
-    console.log("headers::", headers);
     headers.set(Config.headers.AcceptLang, state.config.locale);
     if (state.auth.tokens.accessToken != "") {
       /*

@@ -1,7 +1,5 @@
-"use client";
-
 import { useFormik } from "formik";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Spin from "sspin";
@@ -13,18 +11,26 @@ import { useToast } from "~/components/toast/Toast";
 import { useUpdateAccountMutation } from "~/features/account/account.api";
 import { updateAccount } from "~/features/account/account.store";
 import { Account } from "~/features/account/account.types";
+import { useDayJS } from "~/utils/dayjs";
 import { parseApiError } from "~/utils/response";
 import { useSchema } from "~/utils/schema";
 
 type Props = {
   className?: string;
   account: Account;
+  onUpdate: () => void;
 };
 
-export default function AccountEditGeneralForm({ className, account }: Props) {
+export default function AccountEditGeneralForm({
+  className,
+  account,
+  onUpdate,
+}: Props) {
   const t = useTranslations("account.details.edit.general");
+  const locale = useLocale();
   const toast = useToast();
   const schema = useSchema();
+  const dayjs = useDayJS(locale);
   const dispatch = useDispatch();
   const [handleUpdate, { isLoading, error, status }] = useUpdateAccountMutation(
     {}
@@ -33,7 +39,9 @@ export default function AccountEditGeneralForm({ className, account }: Props) {
     initialValues: {
       fullName: account.fullName,
       description: account.description,
-      birthDate: account.birthDate,
+      birthDate: account.birthDate
+        ? dayjs(account.birthDate).format("YYYY-MM-DD")
+        : null,
     },
     validateOnBlur: false,
     validateOnChange: false,
@@ -55,6 +63,7 @@ export default function AccountEditGeneralForm({ className, account }: Props) {
       toast.success(t("success"));
       form.initialValues = form.values;
       form.resetForm();
+      onUpdate();
     } else if (status === "rejected") {
       parseApiError({ error, form, toast });
     }
