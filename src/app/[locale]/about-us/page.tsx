@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
 import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
@@ -12,7 +12,7 @@ import TimelineSection from "./components/TimelineSection";
 export async function generateMetadata({
   params: { locale },
 }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations("aboutUs.meta");
+  const t = await getTranslator(locale, "aboutUs.meta");
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),

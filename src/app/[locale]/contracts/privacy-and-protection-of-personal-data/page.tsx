@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 import { getStaticRoute } from "~/static/page";
 import { LayoutProps } from "~/types/base";
 import { generateDefaultMetadata } from "~/utils/meta";
@@ -8,7 +8,7 @@ import PrivacyAndProtectionContent from "./content/Content";
 export async function generateMetadata({
   params: { locale },
 }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations("contracts.privacy-and-protection");
+  const t = await getTranslator(locale, "contracts.privacy-and-protection");
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),
