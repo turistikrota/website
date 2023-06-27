@@ -413,13 +413,13 @@
       }
     },
     "vip": {
-      "title": "Bu bölüm VIP üyelere özeldir",
-      "text": "Bu bölüm VIP üyelere özeldir. VIP üyelik hakkında daha fazla bilgi için lütfen bizimle iletişime geçin.",
+      "title": "VIP İçerik",
+      "text": "Bu içerik VIP üyelerimize özeldir. VIP üye olmak için lütfen aşağıdaki butona tıklayın.",
       "upgrade": "VIP üyeliğe yükselt"
     },
     "deluxe": {
-      "title": "Bu bölüm Deluxe üyelere özeldir",
-      "text": "Bu bölüm Deluxe üyelere özeldir. Deluxe üyelik hakkında daha fazla bilgi için lütfen bizimle iletişime geçin.",
+      "title": "Deluxe İçerik",
+      "text": "Bu içerik Deluxe üyelerimize özeldir. Deluxe üye olmak için lütfen aşağıdaki butona tıklayın.",
       "upgrade": "Deluxe üyeliğe yükselt"
     }
   }

@@ -8,12 +8,12 @@ type Head = {
 } & typeof Head;
 
 function Title({ children }: React.PropsWithChildren) {
-  return <h2 className="text-lg font-bold lg:block">{children}</h2>;
+  return <h2 className="text-lg text-left font-bold lg:block">{children}</h2>;
 }
 
 function Subtitle({ children }: React.PropsWithChildren) {
   return (
-    <p className="text-gray-600 text-sm dark:text-gray-400 lg:block">
+    <p className="text-gray-600 text-left text-sm dark:text-gray-400 lg:block">
       {children}
     </p>
   );

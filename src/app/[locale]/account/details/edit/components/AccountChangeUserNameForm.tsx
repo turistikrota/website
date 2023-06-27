@@ -7,7 +7,7 @@ import VipSection from "~/components/sections/VipSection";
 export default function AccountChangeUserNameForm() {
   const t = useTranslations("account.details.edit.userName");
   return (
-    <VipSection enabled={true}>
+    <VipSection enabled={false}>
       <FormSection>
         <FormSection.Head>
           <FormSection.Head.Title>{t("title")}</FormSection.Head.Title>
@@ -18,12 +18,12 @@ export default function AccountChangeUserNameForm() {
             id="userName"
             name="userName"
             type="text"
-            autoComplete="userName"
+            autoComplete="nickname"
             label={t("userName")}
           />
         </FormSection.Body>
         <FormSection.Footer>
-          <Button block={false} htmlType="submit">
+          <Button block={false} htmlType="submit" disabled={true}>
             {t("save")}
           </Button>
         </FormSection.Footer>

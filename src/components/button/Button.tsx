@@ -8,6 +8,7 @@ type Props = {
   size?: Size;
   htmlType?: "button" | "submit" | "reset";
   block?: boolean;
+  disabled?: boolean;
   className?: string;
   title?: string;
   onClick?: () => void;
@@ -16,6 +17,7 @@ type Props = {
 const variants: Record<Variant, string> = {
   primary:
     "bg-primary-500 hover:bg-primary-400 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-500 dark:focus:ring-primary-900",
+  vip: "bg-vip-500 hover:bg-vip-400 focus:ring-vip-300 dark:bg-vip-600 dark:hover:bg-vip-500 dark:focus:ring-vip-900",
   secondary:
     "bg-secondary-500 hover:bg-secondary-400 focus:ring-secondary-300 dark:bg-secondary-600 dark:hover:bg-secondary-500 dark:focus:ring-secondary-900",
   success:

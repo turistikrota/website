@@ -25,4 +25,5 @@ export type Variant =
   | "gray"
   | "gray-text"
   | "transparent"
-  | "opacity";
+  | "opacity"
+  | "vip";
