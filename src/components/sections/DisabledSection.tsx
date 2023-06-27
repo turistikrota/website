@@ -5,6 +5,8 @@ type Props = {
   rounded?: boolean;
   variant?: Variant;
   icon?: string;
+  title: string;
+  description: string;
 };
 
 type Color = {
@@ -64,15 +66,12 @@ export default function DisabledSection({
   rounded = true,
   variant = "elite",
   icon,
+  title,
+  description,
   children,
 }: React.PropsWithChildren<Props>) {
   return (
-    <div
-      className="relative w-full h-full text-center border-2 rounded-md"
-      role="alert"
-      title={decodeURI("avbsadsa\n with a very long title")}
-      aria-label="avbsadsa"
-    >
+    <div className="relative w-full h-full text-center border-2 rounded-md">
       <div className={`w-full ${blur ? "blur-xxs" : ""}`}>{children}</div>
       <span
         className={`
@@ -92,10 +91,10 @@ export default function DisabledSection({
           <div
             className={`text-sm text-left font-semibold ${Variants[variant].title}`}
           >
-            Disabled
+            {title}
           </div>
           <p className={`text-xs text-left ${Variants[variant].text}`}>
-            This section is disabled
+            {description}
           </p>
         </div>
       </span>
