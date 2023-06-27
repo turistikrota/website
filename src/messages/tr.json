@@ -121,6 +121,13 @@
           "keywords": "Ayarlar, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
         }
       },
+      "vip": {
+        "meta": {
+          "title": "VIP Üyelik",
+          "description": "VIP üyelik ayarlarınızı görüntüleyin, VIP üyelik ayarlarınızı yapın ve hesap ayarlarınızı değiştirin.",
+          "keywords": "VIP Üyelik, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+        }
+      },
       "security": {
         "meta": {
           "title": "Güvenlik",
@@ -153,13 +160,15 @@
         "notifications": "Bildirimler",
         "settings": "Ayarlar",
         "delete": "Profili Sil",
+        "vip": "VIP Üyelik",
         "subtitles": {
           "edit": "Profil resminizi, bilgilerinizi ve sosyal medya hesaplarınızı düzenleyin.",
           "security": "Şifrenizi değiştirin, iki faktörlü kimlik doğrulamayı etkinleştirin ve oturum açma cihazlarınızı yönetin.",
           "privacy": "Gizlilik ayarlarınızı düzenleyin ve profilinizi arama sonuçlarında görünür veya görünmez yapın.",
           "notifications": "Bildirim tercihlerinizi düzenleyin.",
           "settings": "Hesap ayarlarınızı düzenleyin.",
-          "delete": "Profilinizi silin."
+          "delete": "Profilinizi silin.",
+          "vip": "VIP üyelik avantajları hakkında bilgi alın ve VIP üyeliğinizi yönetin veya oluşturun."
         }
       },
       "meta": {

@@ -114,6 +114,13 @@
           "keywords": "Notifications, Turistik Rota, Vacation Planning, Tour Reservation"
         }
       },
+      "vip": {
+        "meta": {
+          "title": "VIP Membership",
+          "description": "View your VIP membership settings, set your VIP membership settings and change your account settings.",
+          "keywords": "VIP Membership, Turistik Rota, Holiday Planning, Tour Reservation"
+        }
+      },
       "settings": {
         "meta": {
           "title": "Settings",
@@ -153,13 +160,15 @@
         "notifications": "Notifications",
         "settings": "Settings",
         "delete": "Delete Profile",
+        "vip": "VIP Membership",
         "subtitles": {
           "edit": "Edit your profile picture, information and social media accounts.",
           "security": "Change your password, enable two-factor authentication and manage your login devices.",
           "privacy": "Edit your privacy settings and make your profile visible or invisible in search results.",
           "notifications": "Edit your notification preferences.",
           "settings": "Edit your account settings.",
-          "delete": "Delete your profile."
+          "delete": "Delete your profile.",
+          "vip": "Learn about VIP membership benefits and manage or create your VIP membership."
         }
       },
       "meta": {

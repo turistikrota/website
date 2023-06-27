@@ -8,7 +8,8 @@ export type Colors =
   | "success"
   | "danger"
   | "warning"
-  | "info";
+  | "info"
+  | "vip";
 
 export type LayoutProps = {
   params: {

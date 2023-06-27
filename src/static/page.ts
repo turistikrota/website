@@ -9,6 +9,7 @@ export type RouteType = {
       security: string;
       settings: string;
       default: string;
+      vip: string;
     };
     select: string;
   };
@@ -39,6 +40,7 @@ const Routes: Record<Locales, RouteType> = {
         privacy: "/hesap/detay/gizlilik",
         security: "/hesap/detay/guvenlik",
         settings: "/hesap/detay/ayarlar",
+        vip: "/hesap/detay/vip",
         default: "/hesap/detay",
       },
       select: "/hesap/sec",
@@ -67,6 +69,7 @@ const Routes: Record<Locales, RouteType> = {
         privacy: "/account/details/privacy",
         security: "/account/details/security",
         settings: "/account/details/settings",
+        vip: "/account/details/vip",
         default: "/account/details",
       },
       select: "/account/select",

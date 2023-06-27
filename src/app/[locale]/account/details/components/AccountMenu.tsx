@@ -30,9 +30,16 @@ type MenuItem = {
   href: (r: RouteType) => string;
   badge?: number;
   badgeType?: Colors;
+  color?: string;
 };
 
 const menuItems: MenuItem[] = [
+  {
+    title: "vip",
+    icon: "bx bxl-sketch",
+    href: (r: RouteType) => r.account.details.vip,
+    color: "text-vip",
+  },
   {
     title: "edit",
     icon: "bx bx-edit",
@@ -104,7 +111,7 @@ export default function AccountMenu({ isDetail }: Props) {
             <AccountMenuItem.IconWrapper
               open={isDetail && !isDesktop ? !menuContext?.openMenu : false}
             >
-              <AccountMenuItem.Icon icon={el.icon} />
+              <AccountMenuItem.Icon icon={el.icon} className={el.color} />
               <AccountMenuItem.Badge
                 type={el.badgeType as Colors}
                 visible={!!el.badge}

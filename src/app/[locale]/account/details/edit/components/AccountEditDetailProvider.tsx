@@ -38,7 +38,7 @@ export default function AccountEditDetailProvider() {
   };
 
   return (
-    <section className="p-4 space-y-10 max-w-4xl mx-auto relative">
+    <section className="p-4 lg:pl-0 space-y-10 max-w-4xl mx-auto relative">
       <AccountEditAvatarForm
         avatar={data.avatarUrl}
         userName={data.userName}
