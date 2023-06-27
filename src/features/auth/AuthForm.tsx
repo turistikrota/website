@@ -1,17 +1,19 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Spin from "sspin";
 import Button from "~/components/button/Button";
 import Condition from "~/components/condition/Condition";
+import { getStaticRoute } from "~/static/page";
 import { RootState } from "~/store/store";
 import CheckUserNameForm from "./CheckUserNameForm";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import { useRefreshMutation } from "./auth.api";
+import { isLoginResponse } from "./auth.types";
 type Id = "check-username" | "login" | "register";
 
 const Components = {
@@ -47,14 +49,21 @@ const getActiveChain = (id: Id): ChainEl => {
 export default function AuthForm() {
   const t = useTranslations("auth");
   const query = useSearchParams();
+  const locale = useLocale();
   const isExpired = useSelector((state: RootState) => state.auth.isExpired);
   const [email, setEmail] = useState<string>("");
   const [id, setId] = useState<Id>("check-username");
   const [activeChain, setActiveChain] = useState<ChainEl>(
     getActiveChain("check-username")
   );
-  const [handleRefresh, { isLoading, status }] = useRefreshMutation({});
+  const [handleRefresh, { isLoading, data, status }] = useRefreshMutation({});
   const refreshQuery = query.get("refresh");
+
+  useEffect(() => {
+    if (status === "fulfilled" && isLoginResponse(data)) {
+      redirect(getStaticRoute(locale).account.select);
+    }
+  }, [status, data]);
 
   useEffect(() => {
     if (isExpired && !isLoading && status === "uninitialized") {

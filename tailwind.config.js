@@ -23,6 +23,10 @@ module.exports = {
         "9xl": "96rem",
         "10xl": "104rem",
       },
+      rotate: {
+        15: "15deg",
+        30: "30deg",
+      },
       colors: {
         primary: {
           50: withOpacity("var(--primary-color-50)"),

@@ -116,6 +116,12 @@
   --autofill-background-color: rgb(var(--primary-color-100));
   --autofill-color: rgb(var(--primary-color-900));
   --preview-border-color: rgba(0, 0, 0, 0.25);
+
+  --vip-border-image: linear-gradient(
+    to bottom,
+    rgba(var(--vip-color-300), 0.5) 10%,
+    rgba(var(--vip-color-500), 0.5) 70%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -246,4 +252,28 @@ select:-webkit-autofill:focus {
 
 .disable-highlight {
   -webkit-tap-highlight-color: transparent;
+}
+
+.default-border {
+  border: 10px solid;
+  border-image-source: var(--vip-border-image);
+  border-image-slice: 1;
+  border-width: 5px;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 0;
+}
+
+.vip-content {
+  position: relative;
+}
+
+.vip-content::after {
+  content: "vip content";
+  position: absolute;
+  top: 7%;
+  left: 98%;
+  width: max-content;
+  transform: rotate(90deg);
+  color: rgb(var(--vip-color-50));
 }
