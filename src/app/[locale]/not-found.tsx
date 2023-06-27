@@ -1,10 +1,13 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 import Link from "next/link";
+import { LayoutProps } from "~/types/base";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("notfound");
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
+  const t = await getTranslator(locale, "notfound");
   return {
     title: t("meta.title"),
     robots: {

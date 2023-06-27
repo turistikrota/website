@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 import ConfigurationLayout from "~/app/layouts/configuration";
 import AccountSelection from "~/features/account/AccountSelection";
 import { getStaticRoute } from "~/static/page";
@@ -9,7 +9,7 @@ import { generateDefaultMetadata } from "~/utils/meta";
 export async function generateMetadata({
   params: { locale },
 }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations("account.select.meta");
+  const t = await getTranslator(locale, "account.select.meta");
   return generateDefaultMetadata(locale, {
     title: t("title"),
     description: t("description"),

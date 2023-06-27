@@ -1,9 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslator } from "next-intl/server";
 import Image from "~/components/image/image";
+import { LayoutProps } from "~/types/base";
 import WaitlistForm from "../components/WaitlistForm";
 
-export default async function ComingSoon() {
-  const t = await getTranslations("waitlist");
+export default async function ComingSoon({ params: { locale } }: LayoutProps) {
+  const t = await getTranslator(locale, "waitlist");
   return (
     <>
       <div className="relative overflow-hidden">

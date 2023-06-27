@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import { NextIntlClientProvider, useLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslator } from "next-intl/server";
 import { Arimo } from "next/font/google";
 import Script from "next/script";
 import "sspin/dist/index.css";
@@ -9,14 +9,17 @@ import PwaHead from "~/components/pwa/PwaHead";
 import { ToastListProvider, ToastProvider } from "~/components/toast/Toast";
 import ReduxProvider from "~/store/provider";
 import "~/styles/mobile.css";
+import { LayoutProps } from "~/types/base";
 
-type Props = {
+type Props = LayoutProps & {
   children: React.ReactNode;
   token: string;
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("base");
+export async function generateMetadata({
+  params: { locale },
+}: LayoutProps): Promise<Metadata> {
+  const t = await getTranslator(locale, "base");
   return {
     title: t("meta.title"),
     description: t("meta.description"),
@@ -86,8 +89,7 @@ const arimo = Arimo({
   preload: true,
 });
 
-export default async function Root({ children }: Props) {
-  const locale = useLocale();
+export default async function Root({ children, params: { locale } }: Props) {
   const messages = (await import(`~/messages/${locale}.json`)).default;
   return (
     <html lang={locale} className={arimo.className}>
