@@ -137,6 +137,10 @@ module.exports = {
         "slide-down": "inFromTop 0.2s ease-out, fadeIn 0.2s ease-out",
         "slide-up": "outToTop 0.2s ease-out, fadeOut 0.2s ease-out",
       },
+      blur: {
+        xxs: "1.5px",
+        xs: "3px",
+      },
       keyframes: {
         inFromTop: {
           "0%": {

@@ -15,3 +15,14 @@ export type LayoutProps = {
     locale: string;
   };
 };
+
+export type Variant =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "warning"
+  | "gray"
+  | "gray-text"
+  | "transparent"
+  | "opacity";

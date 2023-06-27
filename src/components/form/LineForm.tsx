@@ -8,7 +8,7 @@ function Left({ children }: React.PropsWithChildren) {
 
 function Title({ children }: React.PropsWithChildren) {
   return (
-    <div className="text-lg font-bold text-gray-800 dark:text-gray-200">
+    <div className="text-lg text-left font-bold text-gray-800 dark:text-gray-200">
       {children}
     </div>
   );
@@ -16,7 +16,9 @@ function Title({ children }: React.PropsWithChildren) {
 
 function Description({ children }: React.PropsWithChildren) {
   return (
-    <div className="text-sm text-gray-600 dark:text-gray-400">{children}</div>
+    <div className="text-sm text-left text-gray-600 dark:text-gray-400">
+      {children}
+    </div>
   );
 }
 

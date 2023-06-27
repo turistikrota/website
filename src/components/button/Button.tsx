@@ -1,15 +1,6 @@
 import { PropsWithChildren } from "react";
+import { Variant } from "~/types/base";
 
-type Variant =
-  | "primary"
-  | "secondary"
-  | "success"
-  | "error"
-  | "warning"
-  | "gray"
-  | "gray-text"
-  | "transparent"
-  | "opacity";
 type Size = "normal" | "xs" | "sm" | "md" | "lg";
 
 type Props = {
