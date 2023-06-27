@@ -22,7 +22,7 @@ export async function generateMetadata({
 
 export default function NotificationsAccount() {
   return (
-    <div className="p-4">
+    <div className="p-4 lg:pl-0 max-w-4xl mx-auto">
       <MaintenanceAlert />
     </div>
   );
