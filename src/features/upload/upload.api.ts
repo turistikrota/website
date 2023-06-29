@@ -14,6 +14,7 @@ export const uploadApi = createApi({
           url: apiUrl(Services.Upload, `/@${body.get("username")}`),
           method: "POST",
           credentials: "include",
+          mode: "no-cors",
           body,
         }),
         transformErrorResponse: (res) => {
