@@ -21,6 +21,7 @@
     "boxicons": "^2.1.4",
     "dayjs": "^1.11.8",
     "formik": "^2.2.9",
+    "leaflet": "^1.9.4",
     "negotiator": "0.6.3",
     "next": "canary",
     "next-intl": "3.0.0-beta.5",
@@ -30,6 +31,7 @@
     "react-advanced-cropper": "^0.19.3",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1",
     "react-redux": "^8.0.7",
     "react-transition-group": "^4.4.5",
     "redux": "^4.2.1",
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.0.1",
+    "@types/leaflet": "^1.9.3",
     "@types/negotiator": "0.6.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",

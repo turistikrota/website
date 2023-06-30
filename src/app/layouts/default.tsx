@@ -4,11 +4,7 @@ import DefaultHeader from "~/components/headers/DefaultHeader";
 import AuthGuard from "~/features/auth/AuthGuard";
 import { checkSkipCurrentUser } from "~/features/auth/auth.utils";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function DefaultLayout({ children }: Props) {
+export default function DefaultLayout({ children }: React.PropsWithChildren) {
   return (
     <>
       <AuthGuard
