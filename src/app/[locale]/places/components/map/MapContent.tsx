@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { Marker, Popup } from "react-leaflet";
 import MapDefaultConfig from "~/components/map/MapDefaultConfig";
-import { ContentProps } from "./ContentSwitcher";
+import { ContentProps } from "../ContentSwitcher";
 
 const DynamicMap = dynamic(() => import("~/components/map/MapDynamic"), {
   ssr: false,

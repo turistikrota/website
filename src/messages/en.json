@@ -405,6 +405,9 @@
       "rotate-right": "Rotate Right",
       "flip-horizontal": "Flip Horizontal",
       "flip-vertical": "Flip Vertical"
+    },
+    "select": {
+      "default": "Select"
     }
   },
   "avatar-form": {

@@ -20,8 +20,8 @@ export type ContentProps = {
   data: ListResponse<PlaceListItem> | null;
 };
 
-const DynamicList = dynamic(() => import("./ListContent"));
-const DynamicMap = dynamic(() => import("./MapContent"), { ssr: false });
+const DynamicList = dynamic(() => import("./list/ListContent"));
+const DynamicMap = dynamic(() => import("./map/MapContent"), { ssr: false });
 
 type ButtonProps = {
   text: string;

@@ -405,6 +405,9 @@
       "rotate-right": "Sağa döndür",
       "flip-horizontal": "Yatay çevir",
       "flip-vertical": "Dikey çevir"
+    },
+    "select": {
+      "default": "Seçiniz"
     }
   },
   "avatar-form": {
