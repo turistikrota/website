@@ -1,6 +1,8 @@
 import { useState } from "react";
 import CitySelect from "~/components/city/CitySelect";
-import Select from "~/components/form/Select";
+import Radio from "~/components/form/Radio";
+import RadioGroup from "~/components/form/RadioGroup";
+import SelectGroup from "~/components/form/SelectGroup";
 import { City } from "~/static/location/cities";
 import { ContentProps } from "../ContentSwitcher";
 
@@ -17,16 +19,22 @@ export default function ListFilter({ data, loading }: ContentProps) {
       </div>
 
       <div className="p-4 flex flex-col gap-4">
-        <Select label="Abc" name="test">
-          <Select.DefaultOption />
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </Select>
         <CitySelect
           selectedCityName={city?.name ?? ""}
           onSelect={(city) => setCity(city)}
         />
+        <SelectGroup title="Seç bir şeyler" />
+        <RadioGroup title="Seç bir şey">
+          <Radio name="keyfim" value="">
+            ahahahah
+          </Radio>
+          <Radio name="keyfim" value="">
+            ahahahah1111
+          </Radio>
+          <Radio name="keyfim" value="">
+            ahahahah2222
+          </Radio>
+        </RadioGroup>
       </div>
     </section>
   );

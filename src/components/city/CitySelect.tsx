@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import cities, { type City } from "~/static/location/cities";
 import Select from "../form/Select";
 
@@ -12,6 +13,7 @@ const findCityByName = (name: string): City | null => {
 };
 
 export default function CitySelect({ selectedCityName, onSelect }: Props) {
+  const t = useTranslations("place.filter");
   const onCitySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const city = findCityByName(e.target.value);
     if (city) {
@@ -22,10 +24,11 @@ export default function CitySelect({ selectedCityName, onSelect }: Props) {
   return (
     <>
       <Select
-        label="City"
+        label={t("city")}
         name="city"
         defaultValue={selectedCityName}
         onChange={onCitySelect}
+        autoComplete="off"
       >
         <Select.DefaultOption />
         {cities.map((city) => (

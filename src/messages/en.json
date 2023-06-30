@@ -22,6 +22,11 @@
       "description": "This page is currently unavailable for maintenance. Please try again later."
     }
   },
+  "place": {
+    "filter": {
+      "city": "City"
+    }
+  },
   "account": {
     "select": {
       "title": "Choose a profile",

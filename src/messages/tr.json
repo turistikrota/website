@@ -22,6 +22,11 @@
       "description": "Bu sayfa şu anda bakım nedeniyle kullanılamıyor. Lütfen daha sonra tekrar deneyin."
     }
   },
+  "place": {
+    "filter": {
+      "city": "Şehir"
+    }
+  },
   "account": {
     "select": {
       "title": "Bir profil seçin",
