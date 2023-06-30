@@ -7,5 +7,5 @@ export default function AnimationClick() {
     });
   });
 
-  return null;
+  return <> </>;
 }
