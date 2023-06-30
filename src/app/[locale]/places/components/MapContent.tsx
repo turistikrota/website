@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { Marker, Popup } from "react-leaflet";
 import MapDefaultConfig from "~/components/map/MapDefaultConfig";
+import { ContentProps } from "./ContentSwitcher";
 
 const DynamicMap = dynamic(() => import("~/components/map/MapDynamic"), {
   ssr: false,
@@ -13,7 +14,11 @@ const DynamicMap = dynamic(() => import("~/components/map/MapDynamic"), {
 
 const position: LatLngTuple = [41.0082, 28.9784];
 
-export default function MapContent() {
+type MapProps = {
+  position: LatLngTuple;
+};
+
+export default function MapContent({}: ContentProps & MapProps) {
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl: "/images/marker-icon.png",

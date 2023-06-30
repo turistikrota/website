@@ -1,16 +1,25 @@
 "use client";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
-import { ComponentType, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "~/components/button/Button";
+import { useListMutation } from "~/features/place/place.api";
+import {
+  PlaceListItem,
+  isPlaceListResponse,
+} from "~/features/place/place.types";
 import { Variant } from "~/types/base";
+import { ListResponse } from "~/types/response/response.types";
 
 type ContentType = "list" | "map";
 
-const Components: Record<ContentType, ComponentType> = {
-  list: dynamic(() => import("./ListContent")),
-  map: dynamic(() => import("./MapContent"), { ssr: false }),
+export type ContentProps = {
+  loading: boolean;
+  data: ListResponse<PlaceListItem> | null;
 };
+
+const DynamicList = dynamic(() => import("./ListContent"));
+const DynamicMap = dynamic(() => import("./MapContent"), { ssr: false });
 
 type ButtonProps = {
   text: string;
@@ -42,12 +51,20 @@ const AbsoluteButton: React.FC<ButtonProps> = ({
 
 export default function ContentSwitcher() {
   const t = useTranslations("content-switch");
+  const [fetchData, { data, isLoading }] = useListMutation({});
   const [active, setActive] = useState<ContentType>("list");
+
+  useEffect(() => {
+    fetchData({ filter: {} });
+  }, []);
 
   if (active === "list") {
     return (
       <>
-        <Components.list />
+        <DynamicList
+          data={isPlaceListResponse(data) ? data : null}
+          loading={isLoading}
+        />
         <AbsoluteButton
           text={t("map")}
           icon="map-alt"
@@ -60,7 +77,11 @@ export default function ContentSwitcher() {
 
   return (
     <>
-      <Components.map />
+      <DynamicMap
+        data={isPlaceListResponse(data) ? data : null}
+        loading={isLoading}
+        position={[41.0082, 28.9784]}
+      />
       <AbsoluteButton
         text={t("list")}
         icon="list-ul"
