@@ -442,5 +442,9 @@
       "text": "Bu içerik Deluxe üyelerimize özeldir. Deluxe üye olmak için lütfen aşağıdaki butona tıklayın.",
       "upgrade": "Deluxe üyeliğe yükselt"
     }
+  },
+  "content-switch": {
+    "map": "Haritayı göster",
+    "list": "Listeyi göster"
   }
 }

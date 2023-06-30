@@ -442,5 +442,9 @@
       "text": "This section is exclusive to Deluxe members. For more information about Deluxe membership, please contact us.",
       "upgrade": "Upgrade to Deluxe"
     }
+  },
+  "content-switch": {
+    "map": "Show Map",
+    "list": "Show List"
   }
 }

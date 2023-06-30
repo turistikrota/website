@@ -1,5 +1,5 @@
-import MapContent from "./components/MapContent";
+import ContentSwitcher from "./components/ContentSwitcher";
 
 export default function PlacesPage() {
-  return <MapContent />;
+  return <ContentSwitcher />;
 }

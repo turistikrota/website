@@ -3,6 +3,7 @@ export enum Services {
   Auth = "auth",
   Soon = "soon",
   Upload = "upload",
+  Place = "place",
 }
 
 export const ApiUrls: Record<Services, string> = {
@@ -10,6 +11,7 @@ export const ApiUrls: Record<Services, string> = {
   [Services.Auth]: process.env.NEXT_PUBLIC_API_AUTH_SRV_URL!,
   [Services.Soon]: process.env.NEXT_PUBLIC_API_SOON_SRV_URL!,
   [Services.Upload]: process.env.NEXT_PUBLIC_API_UPLOAD_SRV_URL!,
+  [Services.Place]: process.env.NEXT_PUBLIC_API_PLACE_SRV_URL!,
 };
 
 export const apiUrl = (service: Services, path: string) =>
