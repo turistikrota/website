@@ -4,10 +4,12 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import Button from "~/components/button/Button";
 import { useListMutation } from "~/features/place/place.api";
+import { usePlaceFilter } from "~/features/place/place.filter";
 import {
   PlaceListItem,
   isPlaceListResponse,
 } from "~/features/place/place.types";
+import debounce from "~/hooks/dom/useDebounce";
 import { Variant } from "~/types/base";
 import { ListResponse } from "~/types/response/response.types";
 
@@ -51,12 +53,16 @@ const AbsoluteButton: React.FC<ButtonProps> = ({
 
 export default function ContentSwitcher() {
   const t = useTranslations("content-switch");
+  const filter = usePlaceFilter();
   const [fetchData, { data, isLoading }] = useListMutation({});
   const [active, setActive] = useState<ContentType>("list");
+  const debouncedFilter = debounce((filter) => {
+    fetchData(filter);
+  }, 500);
 
   useEffect(() => {
-    fetchData({ filter: {} });
-  }, []);
+    debouncedFilter(filter);
+  }, [filter]);
 
   if (active === "list") {
     return (

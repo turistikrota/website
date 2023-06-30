@@ -46,12 +46,16 @@ type FeatureTranslation = {
   description: string;
 };
 
-enum Type {
+export enum Type {
   Eating = "eating",
   Coffee = "coffee",
   Bar = "bar",
   Beach = "beach",
   Amaze = "amaze",
+}
+
+export function isPlaceType(type: string): type is Type {
+  return Object.values(Type).includes(type as Type);
 }
 
 type PlaceImage = {
@@ -86,7 +90,7 @@ type Review = {
   averagePoint: number;
 };
 
-type Coordinates = [number, number];
+export type Coordinates = [number, number];
 
 export function isPlaceListResponse(
   response: any
