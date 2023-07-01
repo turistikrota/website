@@ -25,6 +25,26 @@
   "place": {
     "filter": {
       "city": "City"
+    },
+    "switch": {
+      "filter": "Filter",
+      "sort": "Sort"
+    },
+    "sort": {
+      "mobile": {
+        "title": "Sort",
+        "sort-by": {
+          "title": "Sort by",
+          "most-popular": "Popularity",
+          "rate": "Score",
+          "distance": "Distance"
+        },
+        "order-by": {
+          "title": "Sort Method",
+          "desc": "descending",
+          "asc": "asc"
+        }
+      }
     }
   },
   "account": {

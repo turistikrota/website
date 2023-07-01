@@ -88,7 +88,7 @@ function Popup({ children, className, onClose, open, size = "lg" }: Props) {
         onTouchEnd={onSwipeEnd}
       >
         <span
-          className={`absolute -top-2.5 w-10 h-0.5 bg-gray-600 dark:bg-gray-200 rounded-full left-1/2 transform -translate-x-1/2`}
+          className={`absolute -top-2.5 w-10 h-0.5 bg-primary rounded-full left-1/2 transform -translate-x-1/2`}
         />
         {children}
       </div>
