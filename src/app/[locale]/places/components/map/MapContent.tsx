@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { Marker, Popup } from "react-leaflet";
 import MapDefaultConfig from "~/components/map/MapDefaultConfig";
+import { useSizeWithoutHeader } from "~/hooks/dom/useHeaderSize";
 import { ContentProps } from "../ContentSwitcher";
 
 const DynamicMap = dynamic(() => import("~/components/map/MapDynamic"), {
@@ -19,6 +20,7 @@ type MapProps = {
 };
 
 export default function MapContent({}: ContentProps & MapProps) {
+  const size = useSizeWithoutHeader();
   useEffect(() => {
     Leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl: "/images/marker-icon.png",
@@ -28,7 +30,11 @@ export default function MapContent({}: ContentProps & MapProps) {
   }, []);
 
   return (
-    <>
+    <div
+      style={{
+        height: size,
+      }}
+    >
       <DynamicMap position={position}>
         <MapDefaultConfig />
         <Marker position={position}>
@@ -37,6 +43,6 @@ export default function MapContent({}: ContentProps & MapProps) {
           </Popup>
         </Marker>
       </DynamicMap>
-    </>
+    </div>
   );
 }
