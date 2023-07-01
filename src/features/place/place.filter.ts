@@ -114,3 +114,52 @@ export const usePlaceFilter = (): PaginationRequest<PlaceFilterRequest> => {
 
   return query;
 };
+
+export const placeToQuery = (
+  place: PaginationRequest<PlaceFilterRequest>
+): string => {
+  const query = new URLSearchParams();
+  if (place.page) {
+    query.append("page", place.page.toString());
+  }
+  if (place.limit) {
+    query.append("limit", place.limit.toString());
+  }
+  if (place.filter.coordinates) {
+    const [lat, lng] = place.filter.coordinates;
+    query.append("lat", lat.toString());
+    query.append("lng", lng.toString());
+  }
+  if (place.filter.featureUUIDs) {
+    query.append("features", place.filter.featureUUIDs.join(","));
+  }
+  if (place.filter.types) {
+    query.append("types", place.filter.types.join(","));
+  }
+  if (place.filter.isPayed !== undefined) {
+    query.append("pay", place.filter.isPayed ? "on" : "off");
+  }
+  if (place.filter.distance) {
+    query.append("dist", place.filter.distance.toString());
+  }
+  if (place.filter.timeSpent) {
+    const { min, max } = place.filter.timeSpent;
+    query.append("time", `${min},${max}`);
+  }
+  if (place.filter.minReview) {
+    query.append("minRev", place.filter.minReview.toString());
+  }
+  if (place.filter.maxReview) {
+    query.append("maxRev", place.filter.maxReview.toString());
+  }
+  if (place.filter.minAveragePoint) {
+    query.append("minPoint", place.filter.minAveragePoint.toString());
+  }
+  if (place.filter.maxAveragePoint) {
+    query.append("maxPoint", place.filter.maxAveragePoint.toString());
+  }
+  if (place.filter.query) {
+    query.append("q", place.filter.query);
+  }
+  return query.toString();
+};

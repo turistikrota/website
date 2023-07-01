@@ -14,6 +14,17 @@ export type PlaceFilterRequest = {
   maxAveragePoint?: number;
 };
 
+export type PlaceFeatureListItem = {
+  uuid: string;
+  icon: string;
+  translations: I18nTranslation<PlaceFeatureListItemTranslations>;
+};
+
+type PlaceFeatureListItemTranslations = {
+  title: string;
+  description: string;
+};
+
 export type PlaceListItem = {
   images: PlaceImage[];
   translations: I18nTranslation<TranslationItem>;
@@ -96,4 +107,10 @@ export function isPlaceListResponse(
   response: any
 ): response is ListResponse<PlaceListItem> {
   return response && response.list && response.total;
+}
+
+export function isPlaceFeatureList(
+  response: any
+): response is PlaceFeatureListItem[] {
+  return Array.isArray(response) && response.length > 0;
 }

@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { PropsWithChildren, useEffect } from "react";
 import { onStartClient } from "~/features/account/account.store";
 import { setLocale } from "~/features/config/config.store";
+import { onStartClient as onStartClientPlace } from "~/features/place/place.store";
 import store from "./store";
 
 function ConfigProvider({ children }: PropsWithChildren) {
@@ -19,6 +20,7 @@ function ConfigProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     if (typeof window === "undefined") return;
     onStartClient(dispatch);
+    onStartClientPlace(dispatch);
   }, []);
   return <>{children}</>;
 }

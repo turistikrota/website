@@ -1,3 +1,5 @@
+import type { Locales } from "../../static/page";
+
 export type BaseResponse = {
   message: string;
 };
@@ -29,6 +31,5 @@ export type ListResponse<T> = {
 };
 
 export type I18nTranslation<T> = {
-  en: T;
-  tr: T;
+  [key in Locales]: T;
 };

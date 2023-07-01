@@ -30,15 +30,15 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-3 w-3",
-  md: "h-5 w-5",
-  lg: "h-7 w-7",
+  sm: "h-4 w-4 lg:h-3 lg:w-3",
+  md: "h-6 w-6 lg:h-5 lg:w-5",
+  lg: "h-8 w-8 lg:h-7 lg:w-7",
 };
 
 const svgSizes: Record<Size, string> = {
-  sm: "h-2.5 w-2.5",
-  md: "h-4 w-4",
-  lg: "h-6 w-6",
+  sm: "h-3 w-3 lg:h-2.5 lg:w-2.5",
+  md: "h-5 w-5 lg:h-4 lg:w-4",
+  lg: "h-7 w-7 lg:h-6 lg:w-6",
 };
 
 export default function Checkbox({

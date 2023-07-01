@@ -29,6 +29,10 @@ export type RouteType = {
 
 export type Locales = "en" | "tr";
 
+export function isLocale(val: string): val is Locales {
+  return ["en", "tr"].includes(val);
+}
+
 const Routes: Record<Locales, RouteType> = {
   tr: {
     aboutUs: "/hakkimizda",

@@ -25,7 +25,14 @@
   "place": {
     "filter": {
       "title": "Filter",
-      "city": "City"
+      "city": "City",
+      "features": "Features",
+      "components": {
+        "city-select": {
+          "title": "Select City",
+          "text": "City"
+        }
+      }
     },
     "switch": {
       "filter": "Filter",
@@ -436,6 +443,9 @@
     },
     "select": {
       "default": "Select"
+    },
+    "label": {
+      "result": "Result"
     }
   },
   "avatar-form": {

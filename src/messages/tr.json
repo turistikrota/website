@@ -25,7 +25,14 @@
   "place": {
     "filter": {
       "title": "Filtrele",
-      "city": "Şehir"
+      "city": "Şehir",
+      "features": "Özellikler",
+      "components": {
+        "city-select": {
+          "title": "Şehir Seçin",
+          "text": "Şehir"
+        }
+      }
     },
     "switch": {
       "filter": "Filtrele",
@@ -436,6 +443,9 @@
     },
     "select": {
       "default": "Seçiniz"
+    },
+    "label": {
+      "result": "Sonuç"
     }
   },
   "avatar-form": {

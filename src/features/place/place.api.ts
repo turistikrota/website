@@ -3,7 +3,11 @@ import { Services, apiUrl } from "~/static/api";
 import { baseQuery } from "~/store/config";
 import { PaginationRequest } from "~/types/request/request.types";
 import { AnyResponse, ListResponse } from "~/types/response/response.types";
-import { PlaceFilterRequest, PlaceListItem } from "./place.types";
+import {
+  PlaceFeatureListItem,
+  PlaceFilterRequest,
+  PlaceListItem,
+} from "./place.types";
 
 export const placeApi = createApi({
   reducerPath: "placeApi",
@@ -26,7 +30,18 @@ export const placeApi = createApi({
         return res.data;
       },
     }),
+    listFeatures: builder.query<AnyResponse<PlaceFeatureListItem[]>, any>({
+      query: () => ({
+        url: apiUrl(Services.Place, "/feature"),
+        method: "GET",
+        credentials: "include",
+        keepUnusedDataFor: 180 * 1000,
+      }),
+      transformErrorResponse: (res) => {
+        return res.data;
+      },
+    }),
   }),
 });
 
-export const { useListMutation } = placeApi;
+export const { useListMutation, useListFeaturesQuery } = placeApi;

@@ -1,16 +1,11 @@
 import { useTranslations } from "next-intl";
-import cities, { type City } from "~/static/location/cities";
+import cities, { findCityByName, type City } from "~/static/location/cities";
 import Input from "../form/Input";
 import SelectGroup from "../form/SelectGroup";
 
 type Props = {
   selectedCityName: string;
   onSelect: (city: City) => void;
-};
-
-const findCityByName = (name: string): City | null => {
-  const city = cities.find((city) => city.name === name);
-  return city || null;
 };
 
 export default function CitySelect({ selectedCityName, onSelect }: Props) {
