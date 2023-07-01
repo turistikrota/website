@@ -409,7 +409,9 @@
       "rotate-left": "Rotate Left",
       "rotate-right": "Rotate Right",
       "flip-horizontal": "Flip Horizontal",
-      "flip-vertical": "Flip Vertical"
+      "flip-vertical": "Flip Vertical",
+      "clear": "Clear",
+      "clear-filter": "Clear Filter"
     },
     "select": {
       "default": "Select"

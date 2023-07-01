@@ -35,7 +35,7 @@ export type InputProps<Value extends InputValue = string> = {
   ariaLabel?: string;
   ariaDescribedBy?: string;
   ariaInvalid?: boolean;
-  suffix?: string;
+  suffix?: React.ReactNode;
 };
 
 const sizes: Record<Size, string> = {
@@ -59,6 +59,7 @@ function Input<Value extends InputValue = string>({
   onChange,
   onBlur,
   error,
+  suffix,
   size = "lg",
   ariaLabel,
   ariaDescribedBy,
@@ -74,7 +75,7 @@ function Input<Value extends InputValue = string>({
             !!error
               ? "invalid border-red-500 focus:border-red-500 text-red-500 border-t-transparent focus:border-t-transparent focus-visible:border-t-transparent border-2"
               : "focus:border-secondary-500 "
-          }`}
+          }  ${suffix ? "pr-9" : ""}`}
           placeholder=" "
           name={name}
           type={inputType}
@@ -100,10 +101,15 @@ function Input<Value extends InputValue = string>({
             !!error
               ? "peer-invalid:text-red-500 peer-focus:peer-invalid:text-red-500 peer-focus:text-red-500 peer-focus:before:border-red-500 peer-invalid:before:border-red-500 peer-invalid:after:border-red-500 peer-focus:after:border-red-500 peer-invalid:before:border-t-2 peer-invalid:before:border-l-2 peer-invalid:after:border-t-2 peer-invalid:after:border-r-2 peer-invalid:peer-placeholder-shown:before:border-transparent peer-invalid:peer-placeholder-shown:after:border-transparent peer-invalid:peer-placeholder-shown:text-red-500 peer-focus:peer-invalid:before:border-red-500 peer-focus:peer-invalid:after:border-red-500"
               : ""
-          } `}
+          }`}
         >
           {label}
         </label>
+        {suffix && (
+          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-gray-400 flex items-center justify-center">
+            {suffix}
+          </span>
+        )}
         <Condition value={type === "password" && value !== ""}>
           <ShowHideButton
             show={inputType === "password"}

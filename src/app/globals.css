@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "boxicons/css/boxicons.min.css";
+@import "styles/scrollbar.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -110,8 +111,9 @@
   --deluxe-color-1300: 2, 19, 27;
   --deluxe-color-1400: 1, 13, 18;
 
-  --scroll-bar-bg: var(--primary-color-300);
-  --scroll-bar-bg-hover: var(--primary-color-400);
+  --scroll-bar-bg: rgb(var(--primary-color-300));
+  --scroll-bar-bg-hover: rgb(var(--primary-color-400));
+  --scroll-bar-track: rgb(var(--primary-color-50));
 
   --progressbar-background: rgb(var(--primary-color-50));
 
@@ -155,6 +157,7 @@
 
     --scroll-bar-bg: rgb(var(--primary-color-300));
     --scroll-bar-bg-hover: rgb(var(--primary-color-400));
+    --scroll-bar-track: rgb(var(--primary-color-100));
 
     --progressbar-background: rgb(var(--primary-color-1100));
 
@@ -230,34 +233,6 @@ select:-webkit-autofill:focus {
   padding: 0 0.3em;
 }
 
-::-webkit-scrollbar,
-.scrollbar::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-thumb,
-.scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-bar-bg);
-  border-radius: 20px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-::-webkit-scrollbar-thumb:hover,
-.scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scroll-bar-bg-hover);
-}
-
-::-webkit-scrollbar-track,
-.scrollbar::-webkit-scrollbar-track {
-  background-color: var(--background-color-end);
-}
-
-.advanced-cropper {
-  /* background-color: transparent !important; */
-  /* background: none !important; 
-  backdrop-filter: none !important;
-  overflow: unset !important;*/
-}
 .advanced-cropper .preview {
   border: dashed 2px var(--preview-border-color);
 }
@@ -265,88 +240,6 @@ select:-webkit-autofill:focus {
 .disable-highlight {
   -webkit-tap-highlight-color: transparent;
 }
-
-/*
-@-webkit-keyframes animate-stripes {
-  100% {
-    background-position: -100px 0px;
-  }
-}
-
-@keyframes animate-stripes {
-  100% {
-    background-position: -100px 0px;
-  }
-}
-
-
-progress[value]::-webkit-progress-bar {
-  border-radius: 10px;
-}
-
-progress[value]::-webkit-progress-value {
-  background-image: -webkit-linear-gradient(
-      -45deg,
-      transparent 33%,
-      rgba(0, 0, 0, 0.1) 33%,
-      rgba(0, 0, 0, 0.1) 66%,
-      transparent 66%
-    ),
-    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-    -webkit-linear-gradient(left, #09c, #f44);
-
-  border-radius: 20px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
-
-  -webkit-animation: animate-stripes 5s linear infinite;
-  animation: animate-stripes 5s linear infinite;
-}
-
-progress[value]::-webkit-progress-value::before {
-  content: "80%";
-  position: absolute;
-  right: 0;
-  top: -125%;
-}
-
-progress[value]::-webkit-progress-value::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  border-radius: 100%;
-  right: 7px;
-  top: 7px;
-  background-color: white;
-}
-
-progress[value] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  border: none;
-
-  width: 250px;
-  height: 20px;
-}
-
-progress[value]::-moz-progress-bar {
-  background-image: -moz-linear-gradient(
-      135deg,
-      transparent 33%,
-      rgba(0, 0, 0, 0.1) 33%,
-      rgba(0, 0, 0, 0.1) 66%,
-      transparent 66%
-    ),
-    -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-    -moz-linear-gradient(left, #09c, #f44);
-
-  border-radius: 20px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-*/
 
 .CircularProgressbar {
   fill: rgb(var(--secondary-color)) !important;
@@ -363,4 +256,33 @@ progress[value]::-moz-progress-bar {
 }
 .CircularProgressbar-background {
   fill: green !important;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  background: #d3d5d8;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4f46e5;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4f46e5;
+  cursor: pointer;
 }

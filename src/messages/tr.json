@@ -409,7 +409,9 @@
       "rotate-left": "Sola döndür",
       "rotate-right": "Sağa döndür",
       "flip-horizontal": "Yatay çevir",
-      "flip-vertical": "Dikey çevir"
+      "flip-vertical": "Dikey çevir",
+      "clear": "Temizle",
+      "filter-clear": "Filtreleri temizle"
     },
     "select": {
       "default": "Seçiniz"

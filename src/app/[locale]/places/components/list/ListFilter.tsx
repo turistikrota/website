@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CitySelect from "~/components/city/CitySelect";
+import Input from "~/components/form/Input";
 import Radio from "~/components/form/Radio";
 import RadioGroup from "~/components/form/RadioGroup";
 import SelectGroup from "~/components/form/SelectGroup";
@@ -10,7 +11,7 @@ export default function ListFilter({ data, loading }: ContentProps) {
   const [city, setCity] = useState<City | null>(null);
 
   return (
-    <section className="col-span-12 lg:col-span-3 rounded-md border">
+    <section className="col-span-12 lg:col-span-3 rounded-md border bg-second">
       <div className="border-b p-4 flex justify-between items-center">
         <h2 className="text-2xl font-bold">Filter</h2>
         <span className="text-sm text-gray-400">
@@ -23,7 +24,20 @@ export default function ListFilter({ data, loading }: ContentProps) {
           selectedCityName={city?.name ?? ""}
           onSelect={(city) => setCity(city)}
         />
-        <SelectGroup title="Seç bir şeyler" />
+        <SelectGroup
+          title="Seç bir şeyler"
+          filtered
+          filter={
+            <Input
+              label="Search"
+              name="search"
+              size="md"
+              suffix={<i className="bx bx-search-alt-2"></i>}
+            />
+          }
+        >
+          <SelectGroup.Item name="abc">bir şeyler</SelectGroup.Item>
+        </SelectGroup>
         <RadioGroup title="Seç bir şey">
           <Radio id="keyfim" name="keyfim" value="">
             ahahahah

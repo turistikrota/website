@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import cities, { type City } from "~/static/location/cities";
-import Select from "../form/Select";
+import Input from "../form/Input";
+import SelectGroup from "../form/SelectGroup";
 
 type Props = {
   selectedCityName: string;
@@ -23,20 +24,24 @@ export default function CitySelect({ selectedCityName, onSelect }: Props) {
 
   return (
     <>
-      <Select
-        label={t("city")}
-        name="city"
-        defaultValue={selectedCityName}
-        onChange={onCitySelect}
-        autoComplete="off"
+      <SelectGroup
+        title={t("city")}
+        filtered
+        filter={
+          <Input
+            label="Search"
+            name="search"
+            size="md"
+            suffix={<i className="bx bx-search-alt-2"></i>}
+          />
+        }
       >
-        <Select.DefaultOption />
         {cities.map((city) => (
-          <option key={city.name} value={city.name}>
+          <SelectGroup.Item key={city.name} name="city">
             {city.name}
-          </option>
+          </SelectGroup.Item>
         ))}
-      </Select>
+      </SelectGroup>
     </>
   );
 }
