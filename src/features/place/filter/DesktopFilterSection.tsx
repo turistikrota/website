@@ -38,13 +38,13 @@ export default function DesktopFilterSection({ data, loading }: ContentProps) {
           <SelectGroup.Item name="abc">bir şeyler</SelectGroup.Item>
         </SelectGroup>
         <RadioGroup title="Seç bir şey">
-          <Radio id="keyfim" name="keyfim" value="">
+          <Radio id="keyfim" name="keyfim">
             ahahahah
           </Radio>
-          <Radio id="keyfim1" name="keyfim" value="">
+          <Radio id="keyfim1" name="keyfim">
             ahahahah1111
           </Radio>
-          <Radio id="keyfim2" name="keyfim" value="">
+          <Radio id="keyfim2" name="keyfim">
             ahahahah2222
           </Radio>
         </RadioGroup>

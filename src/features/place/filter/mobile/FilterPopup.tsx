@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { ContentProps } from "~/app/[locale]/places/components/ContentSwitcher";
 import Popup from "~/components/popup/Popup";
+import { PlaceFilterRequest } from "../../place.types";
 import FilterHead from "./FilterPopupHead";
 import FilterMenu from "./FilterPopupMenu";
 
@@ -23,12 +24,17 @@ const Components: Record<FilterComponents, React.ComponentType<any>> = {
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
   const [title, setTitle] = useState<string | null>(null);
+  const [key, setKey] = useState<keyof PlaceFilterRequest | null>(null);
   const [filterComponent, setFilterComponent] =
     useState<FilterComponents | null>(null);
   const t = useTranslations("place.filter");
 
-  const onOpenFilter = (component: FilterComponents) => {
+  const onOpenFilter = (
+    component: FilterComponents,
+    key: keyof PlaceFilterRequest
+  ) => {
     setFilterComponent(component);
+    setKey(key);
     setTitle(t(`components.${component}.title`));
   };
 
@@ -50,6 +56,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
           resultCount={!title ? data?.list.length ?? 0 : 0}
           onClose={onCloseFilter}
           closeable={!!title}
+          filterKey={key}
         />
       }
     >

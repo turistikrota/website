@@ -28,3 +28,14 @@ export type Variant =
   | "transparent"
   | "opacity"
   | "vip";
+
+export type Coordinates = [number, number];
+
+export function isCoordinates(value: any): value is Coordinates {
+  return (
+    Array.isArray(value) &&
+    value.length === 2 &&
+    typeof value[0] === "number" &&
+    typeof value[1] === "number"
+  );
+}

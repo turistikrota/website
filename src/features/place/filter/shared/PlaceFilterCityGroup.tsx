@@ -7,7 +7,6 @@ import debounce from "~/hooks/dom/useDebounce";
 import { useCities } from "~/hooks/location/city";
 import { City } from "~/static/location/cities";
 import { placeToQuery, usePlaceFilter } from "../../place.filter";
-import { PlaceFilterRequest } from "../../place.types";
 
 type Props = {
   onClose: () => void;
@@ -25,16 +24,6 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ onClose }) => {
     router.push(url);
     onClose();
   }, 500);
-
-  const checkActive = (
-    filter: PlaceFilterRequest,
-    coordinates: number[]
-  ): boolean => {
-    if (!filter.coordinates) return true;
-    return filter.coordinates.every(
-      (coordinate, index) => coordinate === coordinates[index]
-    );
-  };
 
   const onSelectCity = (city: City, direction: boolean) => {
     if (direction) {
@@ -57,7 +46,11 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ onClose }) => {
             key={city.name}
             name="city"
             id={city.name}
-            checked={checkActive(query.filter, city.coordinates)}
+            checked={
+              query.filter.coordinates &&
+              query.filter.coordinates[0] === city.coordinates[0] &&
+              query.filter.coordinates[1] === city.coordinates[1]
+            }
             reverse
             onChange={(e) => onSelectCity(city, e)}
           >

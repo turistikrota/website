@@ -1,6 +1,6 @@
 "use client";
 
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 
 type Variant = "primary" | "secondary" | "success" | "error" | "warning";
 type Size = "sm" | "md" | "lg";
@@ -60,12 +60,18 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
+  useEffect(() => {
+    if (checked !== isChecked) {
+      setIsChecked(checked);
+    }
+  }, [checked]);
+
   const handleChange = () => {
     const newVal = !isChecked;
-    setIsChecked(!newVal);
+    setIsChecked(newVal);
 
     if (onChange) {
-      onChange(!newVal);
+      onChange(newVal);
     }
   };
 

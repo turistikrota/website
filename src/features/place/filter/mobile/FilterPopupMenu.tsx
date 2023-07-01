@@ -1,12 +1,13 @@
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import { placeToQuery, usePlaceFilter } from "../../place.filter";
+import { findCityByCoordinates } from "~/static/location/cities";
+import { isCoordinates } from "~/types/base";
+import { usePlaceFilter } from "../../place.filter";
 import { PlaceFilterRequest } from "../../place.types";
 import FilterGroup from "./FilterGroup";
 import { FilterComponents } from "./FilterPopup";
 
 type Props = {
-  onOpen: (component: FilterComponents) => void;
+  onOpen: (component: FilterComponents, key: keyof PlaceFilterRequest) => void;
 };
 
 type Item = {
@@ -24,21 +25,17 @@ const items: Item[] = [
 
 const componentValueParsers: Record<FilterComponents, (value: any) => any> = {
   "city-select": (value) => {
-    console.log("value", value);
-    return value;
+    if (isCoordinates(value)) {
+      const city = findCityByCoordinates(value);
+      if (city) return city.name;
+    }
+    return "";
   },
 };
 
 const FilterMenu: React.FC<Props> = ({ onOpen }) => {
   const t = useTranslations("place.filter");
   const query = usePlaceFilter();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const clear = (queryKey: keyof PlaceFilterRequest) => {
-    query.filter[queryKey] = undefined;
-    router.push(`${pathname}?${placeToQuery(query)}}`);
-  };
 
   return (
     <>
@@ -46,12 +43,10 @@ const FilterMenu: React.FC<Props> = ({ onOpen }) => {
         <FilterGroup
           key={item.component}
           title={t(`components.${item.component}.text`)}
-          onClick={() => onOpen(item.component)}
+          onClick={() => onOpen(item.component, item.queryKey)}
           values={componentValueParsers[item.component](
             query.filter[item.queryKey]
           )}
-          filtered={!!query.filter[item.queryKey]}
-          onClear={() => clear(item.queryKey)}
         ></FilterGroup>
       ))}
     </>
