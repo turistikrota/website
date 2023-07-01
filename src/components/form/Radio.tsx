@@ -8,11 +8,11 @@ type Size = "sm" | "md" | "lg";
 interface RadioProps {
   id: string;
   name: string;
-  value: string;
   checked?: boolean;
   variant?: Variant;
+  reverse?: boolean;
   size?: Size;
-  onChange?: (value: string) => void;
+  onChange?: (value: boolean) => void;
 }
 
 const variants: Record<Variant, string> = {
@@ -37,41 +37,47 @@ const svgVariants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-3 w-3",
-  md: "h-5 w-5",
-  lg: "h-7 w-7",
+  sm: "h4 w-4 lg:h-3 lg:w-3",
+  md: "h-6 w-6 lg:h-5 lg:w-5",
+  lg: "h-8 w-8 lg:h-7 lg:w-7",
 };
 
-const svgSizes: Record<Size, string> = {
-  sm: "h-2.5 w-2.5",
-  md: "h-3.5 w-3.5",
-  lg: "h-6 w-6",
+const iconSizes: Record<Size, string> = {
+  sm: "",
+  md: "bx-sm",
+  lg: "bx-md",
 };
 
 const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
   children,
-  value,
   id,
   name,
   size = "md",
   variant = "primary",
   checked = false,
+  reverse = false,
   onChange,
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => {
-    setIsChecked(true);
+    const newVal = !isChecked;
+    setIsChecked(!newVal);
 
     if (onChange) {
-      onChange(value);
+      onChange(!newVal);
     }
   };
 
   return (
-    <div className="flex items-center">
+    <label
+      className={`flex items-center disable-highlight ${
+        reverse ? "flex-row-reverse justify-between" : ""
+      }`}
+      htmlFor={id}
+    >
       <label
-        className="relative flex cursor-pointer items-center rounded-full p-3"
+        className="relative flex disable-highlight cursor-pointer items-center rounded-full p-3"
         htmlFor={id}
       >
         <input
@@ -79,23 +85,23 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
           name={name}
           type="radio"
           className={`before:content[''] peer relative disable-highlight cursor-pointer appearance-none rounded-full border transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
-          value={value}
+          value=""
           checked={isChecked}
           onChange={handleChange}
         />
         <div
           className={`pointer-events-none flex items-center justify-center absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 opacity-0 transition-opacity peer-checked:opacity-100 ${svgVariants[variant]}`}
         >
-          <i className="bx bx-xs bx-check"></i>
+          <i className={`bx bx-check ${iconSizes[size]}`}></i>
         </div>
       </label>
       <label
-        className="mt-px cursor-pointer select-none disable-highlight font-light text-gray-500 dark:text-gray-500"
+        className="cursor-pointer select-none disable-highlight font-light text-gray-500 dark:text-gray-500"
         htmlFor={id}
       >
         {children}
       </label>
-    </div>
+    </label>
   );
 };
 

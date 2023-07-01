@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { ContentProps } from "~/app/[locale]/places/components/ContentSwitcher";
 import Popup from "~/components/popup/Popup";
-import { City } from "~/static/location/cities";
 import FilterHead from "./FilterPopupHead";
 import FilterMenu from "./FilterPopupMenu";
 
@@ -19,11 +18,10 @@ type Props = ContentProps &
 export type FilterComponents = "city-select";
 
 const Components: Record<FilterComponents, React.ComponentType<any>> = {
-  "city-select": dynamic(() => import("~/components/city/CitySelect")),
+  "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup")),
 };
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
-  const [city, setCity] = useState<City | null>(null);
   const [title, setTitle] = useState<string | null>(null);
   const [filterComponent, setFilterComponent] =
     useState<FilterComponents | null>(null);
@@ -42,14 +40,20 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
   const ActiveComponent = filterComponent && Components[filterComponent];
 
   return (
-    <Popup onClose={onClose} open={open} size="3xl">
-      <FilterHead
-        title={title ?? t("title").toString()}
-        resultCount={!title ? data?.list.length ?? 0 : 0}
-        onClose={onCloseFilter}
-        closeable={!!title}
-      />
-      <div className="mt-4">
+    <Popup
+      onClose={onClose}
+      open={open}
+      size="3xl"
+      head={
+        <FilterHead
+          title={title ?? t("title").toString()}
+          resultCount={!title ? data?.list.length ?? 0 : 0}
+          onClose={onCloseFilter}
+          closeable={!!title}
+        />
+      }
+    >
+      <>
         {ActiveComponent && <ActiveComponent onClose={onCloseFilter} />}
         {!ActiveComponent && <FilterMenu onOpen={onOpenFilter}></FilterMenu>}
         {/*
@@ -70,7 +74,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
           />
         </FilterGroup>
          */}
-      </div>
+      </>
     </Popup>
   );
 };

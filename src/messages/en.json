@@ -446,6 +446,9 @@
     },
     "label": {
       "result": "Result"
+    },
+    "input": {
+      "search": "Search"
     }
   },
   "avatar-form": {

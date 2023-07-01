@@ -155,9 +155,9 @@
     --skeleton-color-1100: #0b0b0b;
     --loading-backdrop: brightness(0.5) blur(1px);
 
-    --scroll-bar-bg: rgb(var(--primary-color-300));
-    --scroll-bar-bg-hover: rgb(var(--primary-color-400));
-    --scroll-bar-track: rgb(var(--primary-color-100));
+    --scroll-bar-bg: rgb(var(--primary-color-500));
+    --scroll-bar-bg-hover: rgb(var(--primary-color-600));
+    --scroll-bar-track: var(--background-color-end);
 
     --progressbar-background: rgb(var(--primary-color-1100));
 
