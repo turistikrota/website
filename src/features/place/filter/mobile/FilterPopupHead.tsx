@@ -20,7 +20,7 @@ const ClearButton: React.FC<ClearButtonProps> = ({ onClear }) => {
   const t = useTranslations("ux.button");
   return (
     <span
-      className="text-sm text-primary hover:opacity-90 transition-colors"
+      className=" text-primary hover:opacity-90 transition-colors"
       onClick={() => onClear && onClear()}
       role="button"
       title={t("clear-filter")}
@@ -56,30 +56,32 @@ const FilterHead: React.FC<Props> = ({
     }
   };
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex items-center">
-        {closeable && (
-          <span
-            className="text-gray-600 dark:text-gray-300 mr-3 h-full flex items-center"
-            onClick={onClose}
-            role="button"
-            title={t("button.close")}
-            aria-label={t("button.close")}
-          >
-            <i className="bx bx-sm bx-arrow-back"></i>
-          </span>
+    <>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          {closeable && (
+            <span
+              className="text-gray-600 dark:text-gray-300 mr-3 h-full flex items-center"
+              onClick={onClose}
+              role="button"
+              title={t("button.close")}
+              aria-label={t("button.close")}
+            >
+              <i className="bx bx-sm bx-arrow-back"></i>
+            </span>
+          )}
+          <span className="text-2xl font-semibold">{title}</span>
+        </div>
+        {filterKey && !!query.filter[filterKey] && (
+          <ClearButton onClear={() => clear()} />
         )}
-        <span className="text-2xl font-semibold">{title}</span>
       </div>
       {!closeable && (
-        <span className="text-gray-600 dark:text-gray-300">
+        <span className="text-gray-500 text-sm dark:text-gray-400">
           {resultCount} {t("label.result")}
         </span>
       )}
-      {filterKey && !!query.filter[filterKey] && (
-        <ClearButton onClear={() => clear()} />
-      )}
-    </div>
+    </>
   );
 };
 
