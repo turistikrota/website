@@ -25,13 +25,13 @@ export default function ListFilter({ data, loading }: ContentProps) {
         />
         <SelectGroup title="Seç bir şeyler" />
         <RadioGroup title="Seç bir şey">
-          <Radio name="keyfim" value="">
+          <Radio id="keyfim" name="keyfim" value="">
             ahahahah
           </Radio>
-          <Radio name="keyfim" value="">
+          <Radio id="keyfim1" name="keyfim" value="">
             ahahahah1111
           </Radio>
-          <Radio name="keyfim" value="">
+          <Radio id="keyfim2" name="keyfim" value="">
             ahahahah2222
           </Radio>
         </RadioGroup>

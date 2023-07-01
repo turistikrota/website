@@ -6,6 +6,7 @@ type Variant = "primary" | "secondary" | "success" | "error" | "warning";
 type Size = "sm" | "md" | "lg";
 
 interface RadioProps {
+  id: string;
   name: string;
   value: string;
   checked?: boolean;
@@ -50,6 +51,7 @@ const svgSizes: Record<Size, string> = {
 const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
   children,
   value,
+  id,
   name,
   size = "md",
   variant = "primary",
@@ -70,10 +72,10 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
     <div className="flex items-center">
       <label
         className="relative flex cursor-pointer items-center rounded-full p-3"
-        htmlFor={name}
+        htmlFor={id}
       >
         <input
-          id={name}
+          id={id}
           name={name}
           type="radio"
           className={`before:content[''] peer relative cursor-pointer appearance-none rounded-full border transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
@@ -89,7 +91,7 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
       </label>
       <label
         className="mt-px cursor-pointer select-none font-light text-gray-500 dark:text-gray-500"
-        htmlFor={name}
+        htmlFor={id}
       >
         {children}
       </label>
