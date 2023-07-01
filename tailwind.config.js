@@ -26,6 +26,7 @@ module.exports = {
       },
       zIndex: {
         500: "500",
+        501: "501",
         5000: "5000",
       },
       width: {
@@ -162,6 +163,7 @@ module.exports = {
         "popup-xl": "max(100vh - 15rem, 80vh)",
         "popup-2xl": "max(100vh - 12rem, 85vh)",
         "popup-3xl": "max(100vh - 10rem, 90vh)",
+        "popup-4xl": "max(100vh - 8rem, 95vh)",
       },
       animation: {
         "in-from-top": "inFromTop 0.2s ease-out",
