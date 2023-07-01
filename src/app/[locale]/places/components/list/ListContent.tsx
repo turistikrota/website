@@ -7,7 +7,7 @@ function ListItemSection({ data, loading }: ContentProps) {
   return (
     <section className="col-span-12 lg:col-span-9 bg-blue-800">
       {data.list.map((item, idx) => (
-        <div key={idx}>{JSON.stringify(item)}</div>
+        <div key={idx}>{item.translations.tr.title}</div>
       ))}
     </section>
   );

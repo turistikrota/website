@@ -75,7 +75,7 @@ function Popup({ children, className, onClose, open, size = "lg" }: Props) {
       onClick={checkOutsideClick}
     >
       <div
-        className={`bg-popup rounded-t-3xl p-4 ${className} min-w-0 w-full ${
+        className={`bg-popup border-t shadow-top shadow-slate-200 dark:shadow-gray-950 rounded-t-3xl p-4 ${className} min-w-0 w-full ${
           PopupSizes[size]
         } relative border-gray-200 dark:border-gray-800 ${
           isClosing
