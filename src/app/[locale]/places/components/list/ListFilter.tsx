@@ -1,5 +1,5 @@
-import DesktopFilterSection from "~/components/filter/desktop/DesktopFilterSection";
-import MobileFilterSection from "~/components/filter/mobile/MobileFilterSection";
+import DesktopFilterSection from "~/features/place/filter/DesktopFilterSection";
+import MobileFilterSection from "~/features/place/filter/MobileFilterSection";
 import { useIsDesktop } from "~/hooks/dom/useWindowSize";
 import { ContentProps } from "../ContentSwitcher";
 

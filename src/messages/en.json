@@ -24,6 +24,7 @@
   },
   "place": {
     "filter": {
+      "title": "Filter",
       "city": "City"
     },
     "switch": {

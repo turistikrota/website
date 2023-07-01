@@ -24,6 +24,7 @@
   },
   "place": {
     "filter": {
+      "title": "Filtrele",
       "city": "Şehir"
     },
     "switch": {
@@ -431,7 +432,7 @@
       "flip-horizontal": "Yatay çevir",
       "flip-vertical": "Dikey çevir",
       "clear": "Temizle",
-      "filter-clear": "Filtreleri temizle"
+      "clear-filter": "Filtreleri temizle"
     },
     "select": {
       "default": "Seçiniz"
