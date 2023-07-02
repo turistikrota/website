@@ -5,7 +5,7 @@ type Props = {
   text?: string;
 };
 
-const ClearButton: React.FC<Props> = ({ onClear }) => {
+const ClearButton: React.FC<Props> = ({ onClear, text }) => {
   const t = useTranslations("ux.button");
   return (
     <span
@@ -15,7 +15,7 @@ const ClearButton: React.FC<Props> = ({ onClear }) => {
       title={t("clear-filter")}
       aria-label={t("clear-filter")}
     >
-      {t("clear")}
+      {text ?? t("clear")}
     </span>
   );
 };

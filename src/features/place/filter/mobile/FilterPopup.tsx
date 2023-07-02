@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { Spinner } from "sspin";
 import { ContentProps } from "~/app/[locale]/places/components/ContentSwitcher";
 import Button from "~/components/button/Button";
 import Condition from "~/components/condition/Condition";
@@ -29,15 +30,37 @@ export type FilterComponents =
   | "types"
   | "review";
 
+const Spin = () => (
+  <div className="w-full min-h-[5vh] flex items-center justify-center">
+    <Spinner />
+  </div>
+);
+
 const Components: Record<FilterComponents, React.ComponentType<any>> = {
-  "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup")),
-  distance: dynamic(() => import("../shared/PlaceFilterDistanceGroup")),
-  features: dynamic(() => import("../shared/PlaceFilterFeatureGroup")),
-  "time-spent": dynamic(() => import("../shared/PlaceFilterTimeSpentGroup")),
-  query: dynamic(() => import("../shared/PlaceFilterQueryGroup")),
-  "is-payed": dynamic(() => import("../shared/PlaceFilterIsPayedGroup")),
-  types: dynamic(() => import("../shared/PlaceFilterTypeGroup")),
-  review: dynamic(() => import("../shared/PlaceFilterReviewGroup")),
+  "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup"), {
+    loading: Spin,
+  }),
+  distance: dynamic(() => import("../shared/PlaceFilterDistanceGroup"), {
+    loading: Spin,
+  }),
+  features: dynamic(() => import("../shared/PlaceFilterFeatureGroup"), {
+    loading: Spin,
+  }),
+  "time-spent": dynamic(() => import("../shared/PlaceFilterTimeSpentGroup"), {
+    loading: Spin,
+  }),
+  query: dynamic(() => import("../shared/PlaceFilterQueryGroup"), {
+    loading: Spin,
+  }),
+  "is-payed": dynamic(() => import("../shared/PlaceFilterIsPayedGroup"), {
+    loading: Spin,
+  }),
+  types: dynamic(() => import("../shared/PlaceFilterTypeGroup"), {
+    loading: Spin,
+  }),
+  review: dynamic(() => import("../shared/PlaceFilterReviewGroup"), {
+    loading: Spin,
+  }),
 };
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
@@ -73,7 +96,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
     <Popup
       onClose={onClose}
       open={open}
-      size="3xl"
+      size="2xl"
       head={
         <FilterHead
           title={title ?? t("title").toString()}
@@ -81,22 +104,38 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
           onClose={onCloseFilter}
           closeable={!!title}
           filterKey={key}
+          onClearAll={onClearFilter}
+          clearable={isFiltered}
         />
       }
     >
       <>
-        {ActiveComponent && <ActiveComponent onClose={onCloseFilter} />}
+        {ActiveComponent && (
+          <>
+            <ActiveComponent onClose={onCloseFilter} />
+            <Button
+              className="mt-12"
+              variant="secondary"
+              onClick={onCloseFilter}
+              disabled={loading}
+            >
+              {t("apply")}
+            </Button>
+          </>
+        )}
         {!ActiveComponent && (
           <>
             <FilterMenu onOpen={onOpenFilter}></FilterMenu>
             <Condition value={isFiltered}>
               <Button
                 className="mt-12"
-                variant="error"
+                variant="primary"
                 onClick={onClearFilter}
                 disabled={loading}
               >
-                {t("clear-all")}
+                {t("see-results", {
+                  count: data?.list.length ?? 0,
+                })}
               </Button>
             </Condition>
           </>

@@ -30,7 +30,7 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ onClose }) => {
         suffix={<i className="bx bx-xs bx-search-alt-2"></i>}
         onChange={(e) => setSearchVal(e.target.value)}
       />
-      <div className="space-y-1 mt-2">
+      <div className="space-y-1 mt-2 max-h-[50vh] overflow-y-auto">
         {cities.map((city, idx) => (
           <Radio
             key={city.name}

@@ -7,8 +7,10 @@ type Props = {
   title: string;
   filterKey: keyof PlaceFilterRequest | null;
   closeable?: boolean;
+  clearable?: boolean;
   resultCount: number;
   onClose: () => void;
+  onClearAll: () => void;
 };
 
 type FilterComponent = React.FC<Props> & {
@@ -30,8 +32,10 @@ const FilterHead: FilterComponent = ({
   title,
   resultCount,
   filterKey,
+  clearable = false,
   closeable = false,
   onClose,
+  onClearAll,
 }) => {
   const t = useTranslations("ux");
   const { query, push } = usePlaceFilter();
@@ -61,6 +65,12 @@ const FilterHead: FilterComponent = ({
         </div>
         {filterKey && !!query.filter[filterKey] && (
           <ClearButton onClear={() => clear()} />
+        )}
+        {!filterKey && clearable && (
+          <ClearButton
+            onClear={() => onClearAll()}
+            text={t("button.clear-filter")}
+          />
         )}
       </div>
       {!closeable && (

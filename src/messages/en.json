@@ -83,6 +83,8 @@
         }
       },
       "clear-all": "Clear All Filters",
+      "apply": "Apply",
+      "see-results": "See Results ({count})",
       "tools": {
         "min": "At least {time} minutes",
         "max": "max {time} minutes",
