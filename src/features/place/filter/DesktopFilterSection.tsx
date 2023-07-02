@@ -13,15 +13,12 @@ export default function DesktopFilterSection({ data, loading }: ContentProps) {
   const { isFiltered, clean } = usePlaceFilter();
   return (
     <section className="col-span-12 lg:col-span-3 rounded-md border bg-second">
-      <div className="border-b p-4">
-        <span className="text-sm text-gray-400">
+      <div className="border-b p-4 flex justify-between items-center">
+        <span className="text-gray-400">
           {t("results", {
             count: data?.filteredTotal || 0,
           })}
         </span>
-      </div>
-      <div className="border-b p-4 flex justify-between items-center">
-        <h2 className="text-2xl font-bold">{t("title")}</h2>
         {isFiltered && (
           <PlaceDesktopHead.Clear
             text={t("clear-filter")}
