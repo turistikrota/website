@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import Input from "./Input";
+import Input, { Size } from "./Input";
 
 export type MinMaxValue = {
   min: number;
@@ -11,9 +11,16 @@ type Props = {
   onChange: (values: MinMaxValue) => void;
   min?: number;
   max?: number;
+  size?: Size;
 };
 
-const InputRange: React.FC<Props> = ({ values, onChange, min = 0, max }) => {
+const InputRange: React.FC<Props> = ({
+  values,
+  onChange,
+  min = 0,
+  max,
+  size,
+}) => {
   const t = useTranslations("ux.input");
 
   const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,15 +46,17 @@ const InputRange: React.FC<Props> = ({ values, onChange, min = 0, max }) => {
           type="number"
           value={values.min}
           onChange={handleMinChange}
+          size={size}
           min={min}
           max={values.max > 0 ? values.max : max}
         />
-        <span>-</span>
+        <span className="lg:hidden">-</span>
         <Input
           label={t("max")}
           name="max"
           type="number"
           value={values.max}
+          size={size}
           onChange={handleMaxChange}
           min={values.min > 0 ? values.min : min}
           max={max}

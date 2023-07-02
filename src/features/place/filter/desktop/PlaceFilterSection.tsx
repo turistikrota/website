@@ -3,6 +3,7 @@ import PlaceDesktopDistanceGroup from "./PlaceDesktopDistanceGroup";
 import PlaceDesktopFeatureGroup from "./PlaceDesktopFeatureGroup";
 import PlaceDesktopIsPayedGroup from "./PlaceDesktopOtherGroup";
 import PlaceDesktopQueryGroup from "./PlaceDesktopQueryGroup";
+import PlaceDesktopTimeSpentGroup from "./PlaceDesktopTimeSpentGroup";
 import PlaceDesktopTypeGroup from "./PlaceDesktopTypeGroup";
 
 export default function PlaceFilterSection() {
@@ -13,6 +14,7 @@ export default function PlaceFilterSection() {
       <PlaceDesktopTypeGroup />
       <PlaceDesktopFeatureGroup />
       <PlaceDesktopQueryGroup />
+      <PlaceDesktopTimeSpentGroup />
       <PlaceDesktopIsPayedGroup />
     </>
   );
