@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { MobileInfoBox } from "~/components/accessibility/InfoBox";
 import SelectGroup from "~/components/form/SelectGroup";
+import { useIsDesktop } from "~/hooks/dom/useWindowSize";
 import { useLocaleCode } from "~/hooks/i18n/locale";
 import { RootState } from "~/store/store";
 import { useListFeaturesQuery } from "../../place.api";
@@ -16,6 +17,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const features = useSelector((state: RootState) => state.place.features);
   const locale = useLocaleCode();
+  const isDesktop = useIsDesktop();
   const t = useTranslations("place.filter.components.features");
   const { query, push } = usePlaceFilter();
   useListFeaturesQuery(null);
@@ -53,7 +55,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
           name="feature"
           value={selected.includes(feature.uuid)}
           onChange={() => handleChange(feature.uuid)}
-          reversed
+          reversed={!isDesktop}
         >
           {feature.translations[locale].title}
         </SelectGroup.Item>
