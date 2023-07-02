@@ -3,6 +3,7 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 
 type Variant = "primary" | "secondary" | "success" | "error" | "warning";
+type Effect = "hover" | "ring";
 type Size = "sm" | "md" | "lg";
 
 interface RadioProps {
@@ -10,6 +11,7 @@ interface RadioProps {
   name: string;
   checked?: boolean;
   variant?: Variant;
+  effect?: Effect;
   reverse?: boolean;
   size?: Size;
   onChange?: (value: boolean) => void;
@@ -48,12 +50,30 @@ const iconSizes: Record<Size, string> = {
   lg: "bx-md",
 };
 
+type EffectType = {
+  label: string;
+  input: string;
+};
+
+const effects: Record<Effect, EffectType> = {
+  ring: {
+    label: "",
+    input:
+      "relative before:content[''] before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10",
+  },
+  hover: {
+    label: "hover:bg-third transition-colors duration-200",
+    input: "",
+  },
+};
+
 const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
   children,
   id,
   name,
   size = "md",
   variant = "primary",
+  effect = "ring",
   checked = false,
   reverse = false,
   onChange,
@@ -77,20 +97,20 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
 
   return (
     <label
-      className={`flex items-center disable-highlight ${
+      className={`flex items-center disable-highlight rounded-md cursor-pointer ${
         reverse ? "flex-row-reverse justify-between" : ""
-      }`}
+      } ${effects[effect].label} `}
       htmlFor={id}
     >
       <label
-        className="relative flex disable-highlight cursor-pointer items-center rounded-full p-3"
+        className="relative flex disable-highlight cursor-pointer items-center rounded-full p-3 lg:p-1.5"
         htmlFor={id}
       >
         <input
           id={id}
           name={name}
           type="radio"
-          className={`before:content[''] peer relative disable-highlight cursor-pointer appearance-none rounded-full border transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
+          className={`peer disable-highlight cursor-pointer appearance-none rounded-full border transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
           value={id}
           checked={isChecked}
           onChange={handleChange}

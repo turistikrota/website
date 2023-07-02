@@ -6,6 +6,7 @@ import Radio from "~/components/form/Radio";
 import RadioGroup from "~/components/form/RadioGroup";
 import SelectGroup from "~/components/form/SelectGroup";
 import { City } from "~/static/location/cities";
+import PlaceFilterSection from "./desktop/PlaceFilterSection";
 
 export default function DesktopFilterSection({ data, loading }: ContentProps) {
   const [city, setCity] = useState<City | null>(null);
@@ -18,7 +19,8 @@ export default function DesktopFilterSection({ data, loading }: ContentProps) {
         </span>
       </div>
 
-      <div className="p-4 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
+        <PlaceFilterSection />
         <CitySelect
           selectedCityName={city?.name ?? ""}
           onSelect={(city) => setCity(city)}
