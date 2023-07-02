@@ -80,6 +80,9 @@
             "x": "{star} Yıldız ve Üzeri",
             "last": "Yalnızca {star} yıldız"
           }
+        },
+        "other": {
+          "title": "Diğer Filtreler"
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",

@@ -96,7 +96,7 @@ export default function Checkbox({
           </div>
         </label>
         <label
-          className="mt-px cursor-pointer select-none disable-highlight grow font-light text-gray-800 dark:text-gray-400"
+          className="mt-px flex items-center justify-between cursor-pointer select-none disable-highlight grow font-light text-gray-800 dark:text-gray-400"
           htmlFor={id}
         >
           {children}

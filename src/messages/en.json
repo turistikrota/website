@@ -80,6 +80,9 @@
             "x": "{star} Stars and Up",
             "last": "{star} stars only"
           }
+        },
+        "other": {
+          "title": "Other Filters"
         }
       },
       "clear-all": "Clear All Filters",
