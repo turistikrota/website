@@ -1,5 +1,11 @@
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
+import {
+  ReadonlyURLSearchParams,
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
 import { useEffect, useState } from "react";
+import debounce from "~/hooks/dom/useDebounce";
 import { PaginationRequest } from "~/types/request/request.types";
 import {
   PlaceFilterRequest,
@@ -133,6 +139,18 @@ export const usePlaceFilter = (): PaginationRequest<PlaceFilterRequest> => {
   }, [searchParams]);
 
   return query;
+};
+
+export const usePlaceFilterChanger = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const debouncedPush = debounce((query: string, cb?: () => void) => {
+    const url = `${pathname}?${query}`;
+    console.log("url::", url);
+    router.push(url, { shallow: true });
+    if (cb) cb();
+  }, 500);
+  return debouncedPush;
 };
 
 export const placeToQuery = (

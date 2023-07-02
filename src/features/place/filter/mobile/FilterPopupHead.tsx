@@ -3,6 +3,7 @@ import { usePathname, useRouter } from "next/navigation";
 import debounce from "~/hooks/dom/useDebounce";
 import { placeToQuery, usePlaceFilter } from "../../place.filter";
 import { PlaceFilterRequest } from "../../place.types";
+import ClearButton from "./ClearButton";
 
 type Props = {
   title: string;
@@ -12,26 +13,22 @@ type Props = {
   onClose: () => void;
 };
 
-type ClearButtonProps = {
-  onClear?: () => void;
+type FilterComponent = React.FC<Props> & {
+  TitleSection: typeof FilterTitleSection;
+  Title: typeof FilterTitle;
+  ClearButton: typeof ClearButton;
 };
 
-const ClearButton: React.FC<ClearButtonProps> = ({ onClear }) => {
-  const t = useTranslations("ux.button");
-  return (
-    <span
-      className=" text-primary hover:opacity-90 transition-colors"
-      onClick={() => onClear && onClear()}
-      role="button"
-      title={t("clear-filter")}
-      aria-label={t("clear-filter")}
-    >
-      {t("clear")}
-    </span>
-  );
+const FilterTitleSection: React.FC<React.PropsWithChildren> = ({
+  children,
+}) => {
+  return <div className="flex justify-between items-center">{children}</div>;
+};
+const FilterTitle: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return <span className="text-2xl font-semibold">{children}</span>;
 };
 
-const FilterHead: React.FC<Props> = ({
+const FilterHead: FilterComponent = ({
   title,
   resultCount,
   filterKey,
@@ -84,5 +81,9 @@ const FilterHead: React.FC<Props> = ({
     </>
   );
 };
+
+FilterHead.TitleSection = FilterTitleSection;
+FilterHead.Title = FilterTitle;
+FilterHead.ClearButton = ClearButton;
 
 export default FilterHead;

@@ -91,7 +91,7 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
           name={name}
           type="radio"
           className={`before:content[''] peer relative disable-highlight cursor-pointer appearance-none rounded-full border transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
-          value=""
+          value={id}
           checked={isChecked}
           onChange={handleChange}
         />

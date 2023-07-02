@@ -43,9 +43,10 @@
         "title": "Sıralama",
         "sort-by": {
           "title": "Sıralama Alanı",
-          "most-popular": "Popülerlik",
-          "rate": "Puan",
-          "distance": "Uzaklık"
+          "most_popular": "Popülerlik",
+          "most_liked": "Beğenilenler",
+          "most_recent": "Eklenme Tarihi",
+          "nearest": "Yakınlık"
         },
         "order-by": {
           "title": "Sıralama Yöntemi",

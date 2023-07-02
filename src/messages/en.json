@@ -43,9 +43,10 @@
         "title": "Sort",
         "sort-by": {
           "title": "Sort by",
-          "most-popular": "Popularity",
-          "rate": "Score",
-          "distance": "Distance"
+          "most_popular": "Popularity",
+          "most_liked": "Liked",
+          "most_recent": "Date Added",
+          "nearest": "Nearness"
         },
         "order-by": {
           "title": "Sort Method",
