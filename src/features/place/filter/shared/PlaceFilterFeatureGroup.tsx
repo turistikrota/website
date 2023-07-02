@@ -11,7 +11,7 @@ type Props = {
   onClose: () => void;
 };
 
-const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
+const PLaceFilterFeatureGroup: React.FC = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const features = useSelector((state: RootState) => state.place.features);
   const locale = useLocaleCode();

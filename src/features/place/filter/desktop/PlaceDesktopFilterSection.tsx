@@ -7,7 +7,7 @@ const PlaceDesktopFilterSection: React.FC<React.PropsWithChildren<Props>> = ({
   className,
 }) => {
   return (
-    <div className={`p-4 border-b ${className ? className : ""}`}>
+    <div className={`px-4 pb-4 border-b ${className ? className : ""}`}>
       {children}
     </div>
   );

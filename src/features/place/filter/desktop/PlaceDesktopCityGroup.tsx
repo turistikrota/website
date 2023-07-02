@@ -22,7 +22,7 @@ export default function PlaceDesktopCityGroup() {
     push(query);
   };
   return (
-    <PlaceDesktopFilterSection>
+    <PlaceDesktopFilterSection className="pt-4">
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title>{t("text")}</PlaceDesktopHead.Title>
         {!!city && <PlaceDesktopHead.Clear onClear={clearCity} />}
