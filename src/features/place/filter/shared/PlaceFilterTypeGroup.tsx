@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { MobileInfoBox } from "~/components/accessibility/InfoBox";
 import SelectGroup from "~/components/form/SelectGroup";
+import { useIsDesktop } from "~/hooks/dom/useWindowSize";
 import { usePlaceFilter } from "../../place.filter";
 import { Type } from "../../place.types";
 
@@ -10,6 +12,7 @@ export default function PlaceFilterTypeGroup() {
   const [selected, setSelected] = useState<Type[]>([]);
   const t = useTranslations("place.filter.components.types");
   const { query, push } = usePlaceFilter();
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
     if (
@@ -34,7 +37,7 @@ export default function PlaceFilterTypeGroup() {
 
   return (
     <div className="space-y-4">
-      <p className="text-sm text-gray-500 mb-4">{t("description")}</p>
+      <MobileInfoBox>{t("description")}</MobileInfoBox>
       {types.map((type) => (
         <SelectGroup.Item
           key={type}
@@ -42,7 +45,7 @@ export default function PlaceFilterTypeGroup() {
           name="types"
           value={selected.includes(type)}
           onChange={() => handleChange(type)}
-          reversed
+          reversed={!isDesktop}
         >
           {t(`translation.${type}`)}
         </SelectGroup.Item>

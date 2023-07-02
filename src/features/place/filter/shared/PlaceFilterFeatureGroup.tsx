@@ -1,7 +1,10 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { MobileInfoBox } from "~/components/accessibility/InfoBox";
+import {
+  DesktopInfoBox,
+  MobileInfoBox,
+} from "~/components/accessibility/InfoBox";
 import SelectGroup from "~/components/form/SelectGroup";
 import { useIsDesktop } from "~/hooks/dom/useWindowSize";
 import { useLocaleCode } from "~/hooks/i18n/locale";
@@ -58,6 +61,9 @@ const PLaceFilterFeatureGroup: React.FC = () => {
           reversed={!isDesktop}
         >
           {feature.translations[locale].title}
+          <DesktopInfoBox size="md">
+            {feature.translations[locale].description}
+          </DesktopInfoBox>
         </SelectGroup.Item>
       ))}
     </div>
