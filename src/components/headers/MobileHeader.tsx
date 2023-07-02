@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next-intl/link";
-import { useState } from "react";
-import { useListener } from "~/hooks/dom/useListener";
+import { useHeaderFixed } from "~/hooks/dom/useHeaderFixed";
 import { BaseProps } from "~/types/base";
 
 type HeaderProps = {
@@ -76,17 +75,12 @@ function MobileHeader({
   children,
   className,
 }: React.PropsWithChildren<HeaderProps>) {
-  const [isFixed, setIsFixed] = useState(false);
-
-  useListener("scroll", () => {
-    let checkPoint = isFixed ? 64 : 120;
-    setIsFixed(window.scrollY >= checkPoint);
-  });
+  const headerFixed = useHeaderFixed();
 
   return (
     <header
       className={` backdrop-blur-md w-full h-16 border-b border-gray-200 dark:border-gray-800 ${
-        isFixed ? "fixed top-0 left-0 z-30 animate-slide-down" : ""
+        headerFixed ? "fixed top-0 left-0 z-30 animate-slide-down" : ""
       }`}
     >
       <div

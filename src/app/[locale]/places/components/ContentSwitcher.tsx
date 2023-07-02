@@ -30,14 +30,14 @@ type ButtonProps = {
   variant: Variant;
 };
 
-const AbsoluteButton: React.FC<ButtonProps> = ({
+const FixedButton: React.FC<ButtonProps> = ({
   text,
   variant,
   icon,
   onClick,
 }) => {
   return (
-    <div className="absolute bottom-10 right-1/2 transform translate-x-1/2 z-500">
+    <div className="fixed bottom-10 right-1/2 transform translate-x-1/2 z-500">
       <Button
         onClick={() => onClick()}
         className="hover:scale-103 hover:shadow-lg flex items-center justify-center gap-2 text-lg"
@@ -71,7 +71,7 @@ export default function ContentSwitcher() {
           data={isPlaceListResponse(data) ? data : null}
           loading={isLoading}
         />
-        <AbsoluteButton
+        <FixedButton
           text={t("map")}
           icon="map-alt"
           onClick={() => setActive("map")}
@@ -88,7 +88,7 @@ export default function ContentSwitcher() {
         loading={isLoading}
         position={[41.0082, 28.9784]}
       />
-      <AbsoluteButton
+      <FixedButton
         text={t("list")}
         icon="list-ul"
         onClick={() => setActive("list")}

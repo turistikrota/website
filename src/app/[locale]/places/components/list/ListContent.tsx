@@ -5,17 +5,187 @@ function ListItemSection({ data, loading }: ContentProps) {
   if (loading) return <div>loading...</div>;
   if (!data) return <div>no data</div>;
   return (
-    <section className="col-span-12 lg:col-span-9 bg-blue-800">
+    <section className="grow">
       {data.list.map((item, idx) => (
         <div key={idx}>{item.translations.tr.title}</div>
       ))}
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
+      <div>aaa</div>
+      <br />
     </section>
   );
 }
 
 export default function ListContent({ data, loading }: ContentProps) {
   return (
-    <section className="max-w-7xl p-4 lg:p-0 mx-auto grid grid-cols-12 gap-4 lg:h-full">
+    <section className="max-w-7xl p-4 lg:p-0 mx-auto flex gap-4 lg:h-full">
       <ListFilter data={data} loading={loading} />
       <ListItemSection data={data} loading={loading} />
     </section>

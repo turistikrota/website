@@ -24,6 +24,9 @@ module.exports = {
         103: "1.03",
         104: "1.04",
       },
+      transitionProperty: {
+        top: "top",
+      },
       zIndex: {
         500: "500",
         501: "501",
@@ -165,6 +168,10 @@ module.exports = {
         "popup-2xl": "max(100vh - 12rem, 85vh)",
         "popup-3xl": "max(100vh - 10rem, 90vh)",
         "popup-4xl": "max(100vh - 8rem, 95vh)",
+        "sticky-bar": "calc(100vh - 6.5rem)",
+      },
+      top: {
+        "sticky-bar": "80px",
       },
       animation: {
         "in-from-top": "inFromTop 0.2s ease-out",

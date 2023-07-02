@@ -175,7 +175,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-url) var(--default-background);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Change Autocomplete styles in Chrome*/
