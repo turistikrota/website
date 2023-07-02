@@ -5,7 +5,7 @@ import { ContentProps } from "~/app/[locale]/places/components/ContentSwitcher";
 import Button from "~/components/button/Button";
 import Condition from "~/components/condition/Condition";
 import Popup from "~/components/popup/Popup";
-import { useAnyPlaceFiltered, usePlaceFilterCleaner } from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 import { PlaceFilterRequest } from "../../place.types";
 import FilterHead from "./FilterPopupHead";
 import FilterMenu from "./FilterPopupMenu";
@@ -19,19 +19,23 @@ type Props = ContentProps &
     open: boolean;
   };
 
-export type FilterComponents = "city-select" | "distance" | "features";
+export type FilterComponents =
+  | "city-select"
+  | "distance"
+  | "features"
+  | "time-spent";
 
 const Components: Record<FilterComponents, React.ComponentType<any>> = {
   "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup")),
   distance: dynamic(() => import("../shared/PlaceFilterDistanceGroup")),
   features: dynamic(() => import("../shared/PlaceFilterFeatureGroup")),
+  "time-spent": dynamic(() => import("../shared/PlaceFilterTimeSpentGroup")),
 };
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
   const [title, setTitle] = useState<string | null>(null);
   const [key, setKey] = useState<keyof PlaceFilterRequest | null>(null);
-  const filtered = useAnyPlaceFiltered();
-  const cleaner = usePlaceFilterCleaner();
+  const { isFiltered, clean } = usePlaceFilter();
   const [filterComponent, setFilterComponent] =
     useState<FilterComponents | null>(null);
   const t = useTranslations("place.filter");
@@ -52,7 +56,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
   };
 
   const onClearFilter = () => {
-    cleaner(onClose);
+    clean(onClose);
   };
 
   const ActiveComponent = filterComponent && Components[filterComponent];
@@ -77,7 +81,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
         {!ActiveComponent && (
           <>
             <FilterMenu onOpen={onOpenFilter}></FilterMenu>
-            <Condition value={filtered}>
+            <Condition value={isFiltered}>
               <Button
                 className="mt-12"
                 variant="error"

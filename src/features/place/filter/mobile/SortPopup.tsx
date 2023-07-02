@@ -2,11 +2,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import RadioGroup from "~/components/form/RadioGroup";
 import Popup from "~/components/popup/Popup";
-import {
-  placeToQuery,
-  usePlaceFilter,
-  usePlaceFilterChanger,
-} from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 import { Order, Sort } from "../../place.types";
 import FilterHead from "./FilterPopupHead";
 
@@ -38,7 +34,6 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
   const t = useTranslations("place.sort.mobile.sort-by");
 
   useEffect(() => {
-    console.log("selected::", selected);
     setCurrentSort(selected ?? Defaults.sort);
   }, [selected]);
 
@@ -89,8 +84,7 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
 const SortPopup: React.FC<Props> = ({ onClose, open }) => {
   const t = useTranslations("place.sort.mobile");
   const [isDefault, setIsDefault] = useState<boolean>(true);
-  const query = usePlaceFilter();
-  const filterChanger = usePlaceFilterChanger();
+  const { query, push } = usePlaceFilter();
 
   useEffect(() => {
     const isSortDefault = query.filter.sort
@@ -105,17 +99,17 @@ const SortPopup: React.FC<Props> = ({ onClose, open }) => {
   const clear = () => {
     query.filter.sort = undefined;
     query.filter.order = undefined;
-    filterChanger(placeToQuery(query));
+    push(query);
   };
 
   const onSortSelect = (sort: Sort) => {
     query.filter.sort = sort;
-    filterChanger(placeToQuery(query));
+    push(query);
   };
 
   const onOrderSelect = (order: Order) => {
     query.filter.order = order;
-    filterChanger(placeToQuery(query));
+    push(query);
   };
 
   return (

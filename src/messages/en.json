@@ -42,6 +42,11 @@
           "title": "Select Feature",
           "text": "Features",
           "description": "Choose which features you want to see the venues."
+        },
+        "time-spent": {
+          "title": "Avg. Elapsed Time",
+          "text": "Average Elapsed Time",
+          "description": "Determine the average time interval you will spend in venues"
         }
       },
       "clear-all": "Clear All Filters"
@@ -461,7 +466,9 @@
       "result": "Result"
     },
     "input": {
-      "search": "Search"
+      "search": "Search",
+      "min": "Min",
+      "max": "Max"
     }
   },
   "avatar-form": {

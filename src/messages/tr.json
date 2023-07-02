@@ -42,6 +42,11 @@
           "title": "Özellik Seçin",
           "text": "Özellikler",
           "description": "Hangi özelliklere sahip mekanları görmek istediğinizi seçin."
+        },
+        "time-spent": {
+          "title": "Ort. Geçen Süre",
+          "text": "Ortalama Geçen Süre",
+          "description": "Mekanlarda geçireceğiniz ortalama süre aralığını belirleyin."
         }
       },
       "clear-all": "Tüm Filtreleri Temizle"
@@ -461,7 +466,9 @@
       "result": "Sonuç"
     },
     "input": {
-      "search": "Ara"
+      "search": "Ara",
+      "min": "En az",
+      "max": "En çok"
     }
   },
   "avatar-form": {

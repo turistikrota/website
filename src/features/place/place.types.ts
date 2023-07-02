@@ -101,7 +101,7 @@ type Seo = {
   keywords: string;
 };
 
-type TimeSpent = {
+export type TimeSpent = {
   min: number;
   max: number;
 };

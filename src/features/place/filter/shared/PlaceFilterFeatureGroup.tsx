@@ -5,11 +5,7 @@ import SelectGroup from "~/components/form/SelectGroup";
 import { useLocaleCode } from "~/hooks/i18n/locale";
 import { RootState } from "~/store/store";
 import { useListFeaturesQuery } from "../../place.api";
-import {
-  placeToQuery,
-  usePlaceFilter,
-  usePlaceFilterChanger,
-} from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 
 type Props = {
   onClose: () => void;
@@ -20,8 +16,7 @@ const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
   const features = useSelector((state: RootState) => state.place.features);
   const locale = useLocaleCode();
   const t = useTranslations("place.filter.components.features");
-  const query = usePlaceFilter();
-  const changer = usePlaceFilterChanger();
+  const { query, push } = usePlaceFilter();
   useListFeaturesQuery(null);
 
   useEffect(() => {
@@ -32,7 +27,6 @@ const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
         selected.find((f) => f === uuid)
       )
     ) {
-      console.log("selected setted");
       setSelected([...query.filter.featureUUIDs]);
     }
   }, [query]);
@@ -46,7 +40,7 @@ const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
     }
     setSelected(newList);
     query.filter.featureUUIDs = newList;
-    changer(placeToQuery(query));
+    push(query);
   };
 
   return (

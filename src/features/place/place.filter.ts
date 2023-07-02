@@ -128,47 +128,6 @@ const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
   return query;
 };
 
-export const usePlaceFilter = (): PaginationRequest<PlaceFilterRequest> => {
-  const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>({
-    filter: {},
-  });
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    setQuery(getQueryByKeyBindings(searchParams));
-  }, [searchParams]);
-
-  return query;
-};
-
-export const usePlaceFilterChanger = () => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const debouncedPush = debounce((query: string, cb?: () => void) => {
-    const url = `${pathname}?${query}`;
-    console.log("url::", url);
-    router.push(url, { shallow: true });
-    if (cb) cb();
-  }, 500);
-  return debouncedPush;
-};
-
-export const usePlaceFilterCleaner = () => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const debouncedPush = debounce((cb?: () => void) => {
-    const url = `${pathname}`;
-    router.push(url, { shallow: true });
-    if (cb) cb();
-  }, 500);
-  return debouncedPush;
-};
-
-export const useAnyPlaceFiltered = () => {
-  const query = usePlaceFilter();
-  return Object.keys(query.filter).length > 0;
-};
-
 export const placeToQuery = (
   place: PaginationRequest<PlaceFilterRequest>
 ): string => {
@@ -222,4 +181,50 @@ export const placeToQuery = (
     query.append("order", place.filter.order);
   }
   return query.toString();
+};
+
+type Callback = () => void;
+
+type PlaceFilterHookResult = {
+  query: PaginationRequest<PlaceFilterRequest>;
+  push: (query: PaginationRequest<PlaceFilterRequest>, cb?: Callback) => void;
+  clean: (cb?: Callback) => void;
+  isFiltered: boolean;
+};
+
+export const usePlaceFilter = (): PlaceFilterHookResult => {
+  const [query, setQuery] = useState<PaginationRequest<PlaceFilterRequest>>({
+    filter: {},
+  });
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const debouncedPush = debounce((path: string, cb?: Callback) => {
+    const url = `${pathname}?${path}`;
+    router.push(url, { shallow: true });
+    if (cb) cb();
+  }, 500);
+
+  const cleaner = (cb?: Callback) => {
+    debouncedPush("", cb);
+  };
+
+  const push = (
+    query: PaginationRequest<PlaceFilterRequest>,
+    cb?: Callback
+  ) => {
+    const path = placeToQuery(query);
+    debouncedPush(path, cb);
+  };
+
+  useEffect(() => {
+    setQuery(getQueryByKeyBindings(searchParams));
+  }, [searchParams]);
+
+  return {
+    query,
+    isFiltered: Object.keys(query.filter).length > 0,
+    clean: cleaner,
+    push,
+  };
 };

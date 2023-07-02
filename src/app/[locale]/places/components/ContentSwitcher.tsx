@@ -53,7 +53,7 @@ const AbsoluteButton: React.FC<ButtonProps> = ({
 
 export default function ContentSwitcher() {
   const t = useTranslations("content-switch");
-  const filter = usePlaceFilter();
+  const { query } = usePlaceFilter();
   const [fetchData, { data, isLoading }] = useListMutation({});
   const [active, setActive] = useState<ContentType>("list");
   const debouncedFilter = debounce((filter) => {
@@ -61,8 +61,8 @@ export default function ContentSwitcher() {
   }, 500);
 
   useEffect(() => {
-    debouncedFilter(filter);
-  }, [filter]);
+    debouncedFilter(query);
+  }, [query]);
 
   if (active === "list") {
     return (

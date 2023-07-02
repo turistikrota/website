@@ -1,11 +1,7 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import Input from "~/components/form/Input";
-import {
-  placeToQuery,
-  usePlaceFilter,
-  usePlaceFilterChanger,
-} from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 
 const DefaultDistance: number = 100;
 
@@ -16,8 +12,7 @@ type Props = {
 export default function PlaceFilterDistanceGroup({ onClose }: Props) {
   const [distance, setDistance] = useState<number>(DefaultDistance);
   const t = useTranslations("place.filter.components.distance");
-  const query = usePlaceFilter();
-  const changer = usePlaceFilterChanger();
+  const { query, push } = usePlaceFilter();
 
   useEffect(() => {
     if (!!query.filter.distance && query.filter.distance !== distance) {
@@ -30,7 +25,7 @@ export default function PlaceFilterDistanceGroup({ onClose }: Props) {
     if (value) {
       setDistance(value);
       query.filter.distance = value;
-      changer(placeToQuery(query));
+      push(query);
     }
   };
 

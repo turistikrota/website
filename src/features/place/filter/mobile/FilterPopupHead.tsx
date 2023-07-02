@@ -1,7 +1,5 @@
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import debounce from "~/hooks/dom/useDebounce";
-import { placeToQuery, usePlaceFilter } from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 import { PlaceFilterRequest } from "../../place.types";
 import ClearButton from "./ClearButton";
 
@@ -36,20 +34,12 @@ const FilterHead: FilterComponent = ({
   onClose,
 }) => {
   const t = useTranslations("ux");
-  const query = usePlaceFilter();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const debouncedPush = debounce((url: string) => {
-    router.push(url, { shallow: true });
-    onClose();
-  }, 500);
+  const { query, push } = usePlaceFilter();
 
   const clear = () => {
     if (filterKey) {
       query.filter[filterKey] = undefined;
-      const url = `${pathname}?${placeToQuery(query)}`;
-      debouncedPush(url);
+      push(query);
     }
   };
   return (

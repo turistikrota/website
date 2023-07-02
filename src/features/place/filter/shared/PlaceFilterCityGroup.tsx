@@ -1,12 +1,10 @@
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import Input from "~/components/form/Input";
 import Radio from "~/components/form/Radio";
-import debounce from "~/hooks/dom/useDebounce";
 import { useCities } from "~/hooks/location/city";
 import { City } from "~/static/location/cities";
-import { placeToQuery, usePlaceFilter } from "../../place.filter";
+import { usePlaceFilter } from "../../place.filter";
 
 type Props = {
   onClose: () => void;
@@ -16,21 +14,13 @@ const PlaceFilterCityGroup: React.FC<Props> = ({ onClose }) => {
   const t = useTranslations("ux.input");
   const [searchVal, setSearchVal] = useState<string | null>(null);
   const cities = useCities(searchVal);
-  const query = usePlaceFilter();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const debouncedPush = debounce((url: string) => {
-    router.push(url);
-    onClose();
-  }, 500);
+  const { query, push } = usePlaceFilter();
 
   const onSelectCity = (city: City, direction: boolean) => {
     if (direction) {
       query.filter.coordinates = [city.coordinates[0], city.coordinates[1]];
     }
-    const url = `${pathname}?${placeToQuery(query)}`;
-    debouncedPush(url);
+    push(query);
   };
   return (
     <>

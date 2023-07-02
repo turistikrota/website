@@ -33,6 +33,10 @@ const items: Item[] = [
     component: "features",
     queryKey: "featureUUIDs",
   },
+  {
+    component: "time-spent",
+    queryKey: "timeSpent",
+  },
 ];
 
 type ParserOptions = {
@@ -67,11 +71,15 @@ const componentValueParsers: Record<
       return acc;
     }, "");
   },
+  "time-spent": (value) => {
+    console.log("time spent::", value);
+    return "";
+  },
 };
 
 const FilterMenu: React.FC<Props> = ({ onOpen }) => {
   const t = useTranslations("place.filter");
-  const query = usePlaceFilter();
+  const { query } = usePlaceFilter();
   const features = useSelector((state: RootState) => state.place.features);
   const locale = useLocaleCode();
 
