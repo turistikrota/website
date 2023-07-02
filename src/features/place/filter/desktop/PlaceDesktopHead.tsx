@@ -1,12 +1,8 @@
-import { useTranslations } from "next-intl";
-
-type ClearButtonProps = {
-  onClear?: () => void;
-};
+import ClearButton from "../mobile/ClearButton";
 
 type PlaceDesktopHeadType = React.FC<React.PropsWithChildren> & {
   Title: typeof Title;
-  Clear: typeof Clear;
+  Clear: typeof ClearButton;
 };
 
 const Title: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -14,20 +10,6 @@ const Title: React.FC<React.PropsWithChildren> = ({ children }) => {
     <div className="font-bold text-lg text-gray-700 dark:text-gray-200">
       {children}
     </div>
-  );
-};
-const Clear: React.FC<ClearButtonProps> = ({ onClear }) => {
-  const t = useTranslations("ux.button");
-  return (
-    <span
-      className="text-sm text-primary hover:opacity-90 transition-colors"
-      onClick={() => onClear && onClear()}
-      role="button"
-      title={t("clear-filter")}
-      aria-label={t("clear-filter")}
-    >
-      {t("clear")}
-    </span>
   );
 };
 
@@ -38,6 +20,6 @@ const PlaceDesktopHead: PlaceDesktopHeadType = ({ children }) => {
 };
 
 PlaceDesktopHead.Title = Title;
-PlaceDesktopHead.Clear = Clear;
+PlaceDesktopHead.Clear = ClearButton;
 
 export default PlaceDesktopHead;

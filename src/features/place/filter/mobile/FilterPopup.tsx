@@ -100,7 +100,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
       head={
         <FilterHead
           title={title ?? t("title").toString()}
-          resultCount={!title ? data?.list.length ?? 0 : 0}
+          resultCount={!title ? data?.filteredTotal ?? 0 : 0}
           onClose={onCloseFilter}
           closeable={!!title}
           filterKey={key}
@@ -134,7 +134,7 @@ const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {
                 disabled={loading}
               >
                 {t("see-results", {
-                  count: data?.list.length ?? 0,
+                  count: data?.filteredTotal ?? 0,
                 })}
               </Button>
             </Condition>

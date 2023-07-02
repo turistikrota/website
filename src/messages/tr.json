@@ -83,8 +83,10 @@
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",
+      "clear-filter": "Filtreleri temizle",
       "apply": "Uygula",
       "see-results": "Sonuçları Görüntüle ({count})",
+      "results": "{count} sonuç bulundu",
       "tools": {
         "min": "En az {time} dakika",
         "max": "en fazla {time} dakika",

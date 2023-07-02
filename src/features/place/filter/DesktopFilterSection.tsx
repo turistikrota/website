@@ -1,30 +1,37 @@
-import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ContentProps } from "~/app/[locale]/places/components/ContentSwitcher";
-import CitySelect from "~/components/city/CitySelect";
 import Input from "~/components/form/Input";
 import Radio from "~/components/form/Radio";
 import RadioGroup from "~/components/form/RadioGroup";
 import SelectGroup from "~/components/form/SelectGroup";
-import { City } from "~/static/location/cities";
+import { usePlaceFilter } from "../place.filter";
+import PlaceDesktopHead from "./desktop/PlaceDesktopHead";
 import PlaceFilterSection from "./desktop/PlaceFilterSection";
 
 export default function DesktopFilterSection({ data, loading }: ContentProps) {
-  const [city, setCity] = useState<City | null>(null);
+  const t = useTranslations("place.filter");
+  const { isFiltered, clean } = usePlaceFilter();
   return (
     <section className="col-span-12 lg:col-span-3 rounded-md border bg-second">
-      <div className="border-b p-4 flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Filter</h2>
+      <div className="border-b p-4">
         <span className="text-sm text-gray-400">
-          {data?.list.length} results
+          {t("results", {
+            count: data?.filteredTotal || 0,
+          })}
         </span>
+      </div>
+      <div className="border-b p-4 flex justify-between items-center">
+        <h2 className="text-2xl font-bold">{t("title")}</h2>
+        {isFiltered && (
+          <PlaceDesktopHead.Clear
+            text={t("clear-filter")}
+            onClear={() => clean()}
+          />
+        )}
       </div>
 
       <div className="flex flex-col gap-4">
         <PlaceFilterSection />
-        <CitySelect
-          selectedCityName={city?.name ?? ""}
-          onSelect={(city) => setCity(city)}
-        />
         <SelectGroup
           title="Seç bir şeyler"
           filtered
