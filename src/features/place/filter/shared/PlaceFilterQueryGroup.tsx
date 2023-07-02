@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { MobileInfoBox } from "~/components/accessibility/InfoBox";
 import Input from "~/components/form/Input";
 import { usePlaceFilter } from "../../place.filter";
 
@@ -22,7 +23,7 @@ export default function PlaceFilterQueryGroup() {
 
   return (
     <>
-      <p className="text-sm text-gray-500 mb-4">{t("description")}</p>
+      <MobileInfoBox>{t("description")}</MobileInfoBox>
       <Input
         label={t("label")}
         name="word"
