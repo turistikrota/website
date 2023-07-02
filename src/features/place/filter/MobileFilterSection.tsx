@@ -10,8 +10,6 @@ export default function MobileFilterSection({ data, loading }: ContentProps) {
   const [filterOpen, setFilterOpen] = useState(false);
   const [sortOpen, setSortOpen] = useState(false);
 
-  const onClose = () => {};
-
   return (
     <>
       <FilterPopupSwitcher
