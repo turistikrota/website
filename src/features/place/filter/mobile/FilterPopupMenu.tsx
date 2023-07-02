@@ -6,7 +6,11 @@ import { Locales } from "~/static/page";
 import { RootState } from "~/store/store";
 import { isCoordinates } from "~/types/base";
 import { usePlaceFilter } from "../../place.filter";
-import { PlaceFeatureListItem, PlaceFilterRequest } from "../../place.types";
+import {
+  PlaceFeatureListItem,
+  PlaceFilterRequest,
+  isTimeSpent,
+} from "../../place.types";
 import FilterGroup from "./FilterGroup";
 import { FilterComponents } from "./FilterPopup";
 
@@ -42,6 +46,7 @@ const items: Item[] = [
 type ParserOptions = {
   features: PlaceFeatureListItem[];
   locale: Locales;
+  t: ReturnType<typeof useTranslations>;
 };
 
 const componentValueParsers: Record<
@@ -71,8 +76,24 @@ const componentValueParsers: Record<
       return acc;
     }, "");
   },
-  "time-spent": (value) => {
-    console.log("time spent::", value);
+  "time-spent": (value, opts) => {
+    if (!value || !isTimeSpent(value)) return "";
+    if (value.min > 0) {
+      if (value.max > 0) {
+        return opts.t("tools.range", {
+          min: value.min,
+          max: value.max,
+        });
+      }
+      return opts.t("tools.min", {
+        time: value.min,
+      });
+    }
+    if (value.max > 0) {
+      return opts.t("tools.max", {
+        time: value.max,
+      });
+    }
     return "";
   },
 };
@@ -95,6 +116,7 @@ const FilterMenu: React.FC<Props> = ({ onOpen }) => {
             {
               features,
               locale,
+              t,
             }
           )}
         ></FilterGroup>

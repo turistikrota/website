@@ -136,3 +136,11 @@ export function isSort(sort: string): sort is Sort {
 export function isOrder(order: string): order is Order {
   return Object.values(Order).includes(order as Order);
 }
+
+export function isTimeSpent(timeSpent: any): timeSpent is TimeSpent {
+  return (
+    timeSpent &&
+    typeof timeSpent.min === "number" &&
+    typeof timeSpent.max === "number"
+  );
+}

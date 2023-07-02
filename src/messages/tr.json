@@ -46,10 +46,15 @@
         "time-spent": {
           "title": "Ort. Geçen Süre",
           "text": "Ortalama Geçen Süre",
-          "description": "Mekanlarda geçireceğiniz ortalama süre aralığını belirleyin."
+          "description": "Mekanlarda geçireceğiniz ortalama süre aralığını belirleyin. Süre aralığı dakika olarak hesaplanır."
         }
       },
-      "clear-all": "Tüm Filtreleri Temizle"
+      "clear-all": "Tüm Filtreleri Temizle",
+      "tools": {
+        "min": "En az {time} dakika",
+        "max": "en fazla {time} dakika",
+        "range": "{min} - {max} dakika"
+      }
     },
     "switch": {
       "filter": "Filtrele",
@@ -466,6 +471,9 @@
       "result": "Sonuç"
     },
     "input": {
+      "invalid": {
+        "min-max": "En çok değeri en az değerinden küçük olamaz"
+      },
       "search": "Ara",
       "min": "En az",
       "max": "En çok"

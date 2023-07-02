@@ -28,8 +28,8 @@ export type InputProps<Value extends InputValue = string> = {
   readOnly?: boolean;
   placeholder?: string;
   pattern?: string;
-  min?: string;
-  max?: string;
+  min?: string | number;
+  max?: string | number;
   size?: Size;
   error?: string;
   ariaLabel?: string;

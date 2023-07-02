@@ -4,13 +4,19 @@ function debounce<T extends (...args: any[]) => any>(
   func: T,
   delay: number
 ): (...args: Parameters<T>) => void {
-  let timer: Timer | null;
+  let timer: Timer | undefined;
+  let count: number = 0;
 
   return function debouncedFn(...args: Parameters<T>) {
-    clearTimeout(timer!);
+    count++;
+    const currentCount = count;
+    clearTimeout(timer);
 
     timer = setTimeout(() => {
-      func(...args);
+      if (currentCount === count) {
+        console.log("debouncedFn");
+        func(...args);
+      }
     }, delay);
   };
 }
