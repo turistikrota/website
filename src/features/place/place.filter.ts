@@ -73,10 +73,14 @@ const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
     },
     time: (value: string) => {
       const [min, max] = value.split(",");
-      query.filter.timeSpent = {
-        min: parseInt(min),
-        max: parseInt(max),
-      };
+      const minVal = parseInt(min);
+      const maxVal = parseInt(max);
+      if (!isNaN(minVal) && !isNaN(maxVal) && minVal < maxVal) {
+        query.filter.timeSpent = {
+          min: minVal,
+          max: maxVal,
+        };
+      }
     },
     minRev: (value: string) => {
       const val = parseInt(value);

@@ -11,15 +11,14 @@ export default function PlaceFilterTimeSpentGroup() {
   const { query, push } = usePlaceFilter();
 
   useEffect(() => {
-    if (
-      !firstSet &&
-      !!query.filter.timeSpent &&
-      ((query.filter.timeSpent.max !== 0 &&
-        query.filter.timeSpent.max !== values.max) ||
-        (query.filter.timeSpent.min !== 0 &&
-          query.filter.timeSpent.min !== values.min))
-    ) {
-      setFirstSet(true);
+    if (!firstSet || !query.filter.timeSpent) return;
+    const minIsZero = query.filter.timeSpent.min === 0;
+    const maxIsZero = query.filter.timeSpent.max === 0;
+    const minIsDifferent = query.filter.timeSpent.min !== values.min;
+    const maxIsDifferent = query.filter.timeSpent.max !== values.max;
+    setFirstSet(true);
+    if (minIsZero && maxIsZero) return;
+    if (minIsDifferent || maxIsDifferent) {
       setValues(query.filter.timeSpent);
     }
   }, [query]);
