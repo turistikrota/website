@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { MobileInfoBox } from "~/components/accessibility/InfoBox";
 import SelectGroup from "~/components/form/SelectGroup";
 import { useLocaleCode } from "~/hooks/i18n/locale";
 import { RootState } from "~/store/store";
@@ -44,7 +45,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <p className="text-sm text-gray-500 mb-4">{t("description")}</p>
+      <MobileInfoBox>{t("description")}</MobileInfoBox>
       {features.map((feature) => (
         <SelectGroup.Item
           key={feature.uuid}

@@ -81,6 +81,7 @@ function Popup({
           : "pointer-events-none opacity-0"
       }`}
       onClick={checkOutsideClick}
+      
     >
       <div
         className={`bg-popup border-t shadow-top shadow-slate-200 dark:shadow-gray-950 rounded-t-3xl ${className} min-w-0 w-full ${

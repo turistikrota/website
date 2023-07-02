@@ -39,6 +39,7 @@ module.exports = {
         30: "30deg",
       },
       colors: {
+        third: "var(--third-background-color)",
         primary: {
           50: withOpacity("var(--primary-color-50)"),
           100: withOpacity("var(--primary-color-100)"),

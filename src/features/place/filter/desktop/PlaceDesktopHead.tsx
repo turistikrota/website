@@ -1,13 +1,24 @@
 import ClearButton from "../mobile/ClearButton";
 
+type TitleProps = {
+  className?: string;
+};
+
 type PlaceDesktopHeadType = React.FC<React.PropsWithChildren> & {
   Title: typeof Title;
   Clear: typeof ClearButton;
 };
 
-const Title: React.FC<React.PropsWithChildren> = ({ children }) => {
+const Title: React.FC<React.PropsWithChildren<TitleProps>> = ({
+  children,
+  className,
+}) => {
   return (
-    <div className="font-bold text-lg text-gray-700 dark:text-gray-200">
+    <div
+      className={`font-bold text-lg text-gray-700 dark:text-gray-200 ${
+        className ? className : ""
+      }`}
+    >
       {children}
     </div>
   );
