@@ -9,7 +9,7 @@ type Props = {
   onClose: () => void;
 };
 
-export default function PlaceFilterDistanceGroup({ onClose }: Props) {
+export default function PlaceFilterDistanceGroup() {
   const [distance, setDistance] = useState<number>(DefaultDistance);
   const t = useTranslations("place.filter.components.distance");
   const { query, push } = usePlaceFilter();

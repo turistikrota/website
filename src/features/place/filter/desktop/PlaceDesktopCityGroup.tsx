@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { City, findCityByCoordinates } from "~/static/location/cities";
 import { usePlaceFilter } from "../../place.filter";
 import PlaceFilterCityGroup from "../shared/PlaceFilterCityGroup";
+import PlaceDesktopFilterSection from "./PlaceDesktopFilterSection";
 import PlaceDesktopHead from "./PlaceDesktopHead";
 
 export default function PlaceDesktopCityGroup() {
@@ -21,12 +22,12 @@ export default function PlaceDesktopCityGroup() {
     push(query);
   };
   return (
-    <div className="border-b p-4">
+    <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
         <PlaceDesktopHead.Title>{t("text")}</PlaceDesktopHead.Title>
         {!!city && <PlaceDesktopHead.Clear onClear={clearCity} />}
       </PlaceDesktopHead>
       <PlaceFilterCityGroup className="max-h-60 mt-2" />
-    </div>
+    </PlaceDesktopFilterSection>
   );
 }
