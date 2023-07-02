@@ -20,7 +20,6 @@ const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
   useListFeaturesQuery(null);
 
   useEffect(() => {
-    console.log("Query:", query);
     if (
       !!query.filter.featureUUIDs &&
       !query.filter.featureUUIDs.every((uuid) =>

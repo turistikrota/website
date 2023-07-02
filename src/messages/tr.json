@@ -59,6 +59,18 @@
           "text": "Ücretli Mekanlar",
           "description": "Ücretli mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
           "label": "Ücretli Mekanlar"
+        },
+        "types": {
+          "title": "Mekan Türleri",
+          "text": "Mekan Türleri",
+          "description": "Hangi tür mekanları görmek istediğinizi seçin.",
+          "translation": {
+            "eating": "Yeme - İçme",
+            "coffee": "Kahve",
+            "bar": "Bar",
+            "beach": "Plaj",
+            "amaze": "Eğlence"
+          }
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",

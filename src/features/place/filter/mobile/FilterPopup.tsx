@@ -25,7 +25,8 @@ export type FilterComponents =
   | "features"
   | "time-spent"
   | "query"
-  | "is-payed";
+  | "is-payed"
+  | "types";
 
 const Components: Record<FilterComponents, React.ComponentType<any>> = {
   "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup")),
@@ -34,6 +35,7 @@ const Components: Record<FilterComponents, React.ComponentType<any>> = {
   "time-spent": dynamic(() => import("../shared/PlaceFilterTimeSpentGroup")),
   query: dynamic(() => import("../shared/PlaceFilterQueryGroup")),
   "is-payed": dynamic(() => import("../shared/PlaceFilterIsPayedGroup")),
+  types: dynamic(() => import("../shared/PlaceFilterTypeGroup")),
 };
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {

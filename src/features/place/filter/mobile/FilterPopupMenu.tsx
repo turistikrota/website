@@ -9,6 +9,7 @@ import { usePlaceFilter } from "../../place.filter";
 import {
   PlaceFeatureListItem,
   PlaceFilterRequest,
+  isPlaceType,
   isTimeSpent,
 } from "../../place.types";
 import FilterGroup from "./FilterGroup";
@@ -48,6 +49,10 @@ const items: Item[] = [
   {
     component: "is-payed",
     queryKey: "isPayed",
+  },
+  {
+    component: "types",
+    queryKey: "types",
   },
 ];
 
@@ -111,6 +116,17 @@ const componentValueParsers: Record<
   "is-payed": (value, opts) => {
     if (typeof value === "undefined") return "";
     return value ? opts.t("tools.paid") : "";
+  },
+  types: (value, opts) => {
+    if (!value || !Array.isArray(value)) return "";
+    return value.reduce((acc, type) => {
+      if (!isPlaceType(type)) return acc;
+      if (acc.length > 0) {
+        acc += ", ";
+      }
+      acc += opts.t(`components.types.translation.${type}`);
+      return acc;
+    }, "");
   },
 };
 

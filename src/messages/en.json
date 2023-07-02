@@ -59,6 +59,18 @@
           "text": "Paid Locations",
           "description": "Check this option if you want to see paid venues.",
           "label": "Paying Places"
+        },
+        "types": {
+          "title": "Select Type",
+          "text": "Types",
+          "description": "Choose which types of venues you want to see.",
+          "translation": {
+            "eating": "Eating - Drinking",
+            "coffee": "Coffee",
+            "bar": "bar",
+            "beach": "beach",
+            "amaze": "entertainment"
+          }
         }
       },
       "clear-all": "Clear All Filters",
