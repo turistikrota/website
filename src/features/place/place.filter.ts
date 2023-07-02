@@ -153,6 +153,22 @@ export const usePlaceFilterChanger = () => {
   return debouncedPush;
 };
 
+export const usePlaceFilterCleaner = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const debouncedPush = debounce((cb?: () => void) => {
+    const url = `${pathname}`;
+    router.push(url, { shallow: true });
+    if (cb) cb();
+  }, 500);
+  return debouncedPush;
+};
+
+export const useAnyPlaceFiltered = () => {
+  const query = usePlaceFilter();
+  return Object.keys(query.filter).length > 0;
+};
+
 export const placeToQuery = (
   place: PaginationRequest<PlaceFilterRequest>
 ): string => {

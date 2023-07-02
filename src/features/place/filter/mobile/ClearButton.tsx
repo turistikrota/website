@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 
 type Props = {
   onClear?: () => void;
+  text?: string;
 };
 
 const ClearButton: React.FC<Props> = ({ onClear }) => {

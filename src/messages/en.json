@@ -37,8 +37,14 @@
           "text": "Distance",
           "description": "Enter how many kilometers from the city center you want to see the places you want to see.",
           "label": "Distance (km)"
+        },
+        "features": {
+          "title": "Select Feature",
+          "text": "Features",
+          "description": "Choose which features you want to see the venues."
         }
-      }
+      },
+      "clear-all": "Clear All Filters"
     },
     "switch": {
       "filter": "Filter",

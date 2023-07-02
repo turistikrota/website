@@ -37,8 +37,14 @@
           "text": "Mesafe",
           "description": "Seçtiğiniz şehir merkezinden kaç km uzaklıktaki yerleri görmek istediğinizi giriniz.",
           "label": "Mesafe (km)"
+        },
+        "features": {
+          "title": "Özellik Seçin",
+          "text": "Özellikler",
+          "description": "Hangi özelliklere sahip mekanları görmek istediğinizi seçin."
         }
-      }
+      },
+      "clear-all": "Tüm Filtreleri Temizle"
     },
     "switch": {
       "filter": "Filtrele",

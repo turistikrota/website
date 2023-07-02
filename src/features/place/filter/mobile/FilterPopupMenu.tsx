@@ -1,8 +1,12 @@
 import { useTranslations } from "next-intl";
+import { useSelector } from "react-redux";
+import { useLocaleCode } from "~/hooks/i18n/locale";
 import { findCityByCoordinates } from "~/static/location/cities";
+import { Locales } from "~/static/page";
+import { RootState } from "~/store/store";
 import { isCoordinates } from "~/types/base";
 import { usePlaceFilter } from "../../place.filter";
-import { PlaceFilterRequest } from "../../place.types";
+import { PlaceFeatureListItem, PlaceFilterRequest } from "../../place.types";
 import FilterGroup from "./FilterGroup";
 import { FilterComponents } from "./FilterPopup";
 
@@ -25,9 +29,21 @@ const items: Item[] = [
     component: "distance",
     queryKey: "distance",
   },
+  {
+    component: "features",
+    queryKey: "featureUUIDs",
+  },
 ];
 
-const componentValueParsers: Record<FilterComponents, (value: any) => any> = {
+type ParserOptions = {
+  features: PlaceFeatureListItem[];
+  locale: Locales;
+};
+
+const componentValueParsers: Record<
+  FilterComponents,
+  (value: any, options: ParserOptions) => any
+> = {
   "city-select": (value) => {
     if (isCoordinates(value)) {
       const city = findCityByCoordinates(value);
@@ -39,11 +55,25 @@ const componentValueParsers: Record<FilterComponents, (value: any) => any> = {
     if (!value) return "";
     return value + " km";
   },
+  features: (value, options) => {
+    if (!value || !Array.isArray(value)) return "";
+    return options.features.reduce((acc, feature) => {
+      if (value.includes(feature.uuid)) {
+        if (acc.length > 0) {
+          acc += ", ";
+        }
+        acc += feature.translations[options.locale].title;
+      }
+      return acc;
+    }, "");
+  },
 };
 
 const FilterMenu: React.FC<Props> = ({ onOpen }) => {
   const t = useTranslations("place.filter");
   const query = usePlaceFilter();
+  const features = useSelector((state: RootState) => state.place.features);
+  const locale = useLocaleCode();
 
   return (
     <>
@@ -53,7 +83,11 @@ const FilterMenu: React.FC<Props> = ({ onOpen }) => {
           title={t(`components.${item.component}.text`)}
           onClick={() => onOpen(item.component, item.queryKey)}
           values={componentValueParsers[item.component](
-            query.filter[item.queryKey]
+            query.filter[item.queryKey],
+            {
+              features,
+              locale,
+            }
           )}
         ></FilterGroup>
       ))}

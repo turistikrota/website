@@ -10,6 +10,7 @@ type Props = {
   value?: boolean;
   id?: string;
   error?: string;
+  reversed?: boolean;
   variant?: Variant;
   size?: Size;
   onChange?: (value: boolean) => void;
@@ -49,25 +50,30 @@ export default function Checkbox({
   onChange,
   onBlur,
   error,
+  id = name,
   size = "md",
+  reversed = false,
   variant = "primary",
   ...props
 }: Props) {
   return (
     <div>
-      <div className="flex items-center">
+      <div
+        className={`flex items-center justify-between ${
+          reversed ? "flex-row-reverse" : ""
+        }`}
+      >
         <label
-          className="relative flex cursor-pointer items-center rounded-full mr-3"
-          htmlFor={name}
-          data-ripple-dark="true"
+          className="relative flex cursor-pointer disable-highlight items-center rounded-full mr-3"
+          htmlFor={id}
         >
           <input
-            id={name}
+            id={id}
             name={name}
             type="checkbox"
             className={`before:content[''] peer relative cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
             required={required}
-            value={value ? "on" : "off"}
+            checked={value}
             onChange={(e) => onChange?.(e.target.checked)}
             onBlur={(e) => onBlur?.(e.target.checked)}
             {...props}
@@ -90,8 +96,8 @@ export default function Checkbox({
           </div>
         </label>
         <label
-          className="mt-px cursor-pointer select-none font-light text-gray-800 dark:text-gray-400"
-          htmlFor={name}
+          className="mt-px cursor-pointer select-none disable-highlight grow font-light text-gray-800 dark:text-gray-400"
+          htmlFor={id}
         >
           {children}
         </label>

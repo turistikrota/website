@@ -1,42 +1,70 @@
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SelectGroup from "~/components/form/SelectGroup";
 import { useLocaleCode } from "~/hooks/i18n/locale";
 import { RootState } from "~/store/store";
 import { useListFeaturesQuery } from "../../place.api";
+import {
+  placeToQuery,
+  usePlaceFilter,
+  usePlaceFilterChanger,
+} from "../../place.filter";
 
 type Props = {
-  selected: string[];
-  onChange: (featureId: string) => void;
-  onClear: () => void;
+  onClose: () => void;
 };
 
-const PLaceFilterFeatureGroup: React.FC<Props> = ({
-  selected,
-  onChange,
-  onClear,
-}) => {
+const PLaceFilterFeatureGroup: React.FC<Props> = ({ onClose }) => {
+  const [selected, setSelected] = useState<string[]>([]);
   const features = useSelector((state: RootState) => state.place.features);
   const locale = useLocaleCode();
-  const t = useTranslations("place.filter");
+  const t = useTranslations("place.filter.components.features");
+  const query = usePlaceFilter();
+  const changer = usePlaceFilterChanger();
   useListFeaturesQuery(null);
+
+  useEffect(() => {
+    console.log("Query:", query);
+    if (
+      !!query.filter.featureUUIDs &&
+      !query.filter.featureUUIDs.every((uuid) =>
+        selected.find((f) => f === uuid)
+      )
+    ) {
+      console.log("selected setted");
+      setSelected([...query.filter.featureUUIDs]);
+    }
+  }, [query]);
+
+  const handleChange = (uuid: string) => {
+    let newList: string[] = [];
+    if (selected.includes(uuid)) {
+      newList = selected.filter((item) => item !== uuid);
+    } else {
+      newList = [...selected, uuid];
+    }
+    setSelected(newList);
+    query.filter.featureUUIDs = newList;
+    changer(placeToQuery(query));
+  };
+
   return (
-    <SelectGroup
-      title={t("features")}
-      filtered={selected.length > 0}
-      onClear={onClear}
-    >
+    <div className="space-y-4">
+      <p className="text-sm text-gray-500 mb-4">{t("description")}</p>
       {features.map((feature) => (
         <SelectGroup.Item
           key={feature.uuid}
+          id={feature.uuid}
           name="feature"
           value={selected.includes(feature.uuid)}
-          onChange={() => onChange(feature.uuid)}
+          onChange={() => handleChange(feature.uuid)}
+          reversed
         >
           {feature.translations[locale].title}
         </SelectGroup.Item>
       ))}
-    </SelectGroup>
+    </div>
   );
 };
 
