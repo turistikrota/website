@@ -1,7 +1,13 @@
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PaginationRequest } from "~/types/request/request.types";
-import { PlaceFilterRequest, Type, isPlaceType } from "./place.types";
+import {
+  PlaceFilterRequest,
+  Type,
+  isOrder,
+  isPlaceType,
+  isSort,
+} from "./place.types";
 
 const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
   const query: PaginationRequest<PlaceFilterRequest> = { filter: {} };
@@ -93,6 +99,20 @@ const getQueryByKeyBindings = (searchParams: ReadonlyURLSearchParams) => {
     q: (value: string) => {
       query.filter.query = value;
     },
+    sort: (value: string) => {
+      if (isSort(value)) {
+        query.filter.sort = value;
+        return;
+      }
+      query.filter.sort = undefined;
+    },
+    order: (value: string) => {
+      if (isOrder(value)) {
+        query.filter.order = value;
+        return;
+      }
+      query.filter.order = undefined;
+    },
   };
   searchParams.forEach((value, key) => {
     if (Object.keys(keyBindings).includes(key)) {
@@ -160,6 +180,12 @@ export const placeToQuery = (
   }
   if (place.filter.query) {
     query.append("q", place.filter.query);
+  }
+  if (place.filter.sort) {
+    query.append("sort", place.filter.sort);
+  }
+  if (place.filter.order) {
+    query.append("order", place.filter.order);
   }
   return query.toString();
 };

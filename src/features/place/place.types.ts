@@ -12,6 +12,8 @@ export type PlaceFilterRequest = {
   maxReview?: number;
   minAveragePoint?: number;
   maxAveragePoint?: number;
+  sort?: Sort;
+  order?: Order;
 };
 
 export type PlaceFeatureListItem = {
@@ -65,8 +67,16 @@ export enum Type {
   Amaze = "amaze",
 }
 
-export function isPlaceType(type: string): type is Type {
-  return Object.values(Type).includes(type as Type);
+export enum Sort {
+  Popular = "most_popular",
+  Liked = "most_liked",
+  Recent = "most_recent",
+  Near = "nearest",
+}
+
+export enum Order {
+  Asc = "asc",
+  Desc = "desc",
 }
 
 type PlaceImage = {
@@ -113,4 +123,16 @@ export function isPlaceFeatureList(
   response: any
 ): response is PlaceFeatureListItem[] {
   return Array.isArray(response) && response.length > 0;
+}
+
+export function isPlaceType(type: string): type is Type {
+  return Object.values(Type).includes(type as Type);
+}
+
+export function isSort(sort: string): sort is Sort {
+  return Object.values(Sort).includes(sort as Sort);
+}
+
+export function isOrder(order: string): order is Order {
+  return Object.values(Order).includes(order as Order);
 }
