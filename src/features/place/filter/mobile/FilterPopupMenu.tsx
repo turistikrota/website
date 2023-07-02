@@ -45,6 +45,10 @@ const items: Item[] = [
     component: "query",
     queryKey: "query",
   },
+  {
+    component: "is-payed",
+    queryKey: "isPayed",
+  },
 ];
 
 type ParserOptions = {
@@ -103,6 +107,10 @@ const componentValueParsers: Record<
   query: (value) => {
     if (!value) return "";
     return value;
+  },
+  "is-payed": (value, opts) => {
+    if (typeof value === "undefined") return "";
+    return value ? opts.t("tools.paid") : "";
   },
 };
 

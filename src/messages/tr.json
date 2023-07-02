@@ -53,13 +53,20 @@
           "text": "Kelime Arama",
           "description": "Mekan adı, açıklaması veya etiketlerinde arama yapın.",
           "label": "Kelime"
+        },
+        "is-payed": {
+          "title": "Ücretli Mekanlar",
+          "text": "Ücretli Mekanlar",
+          "description": "Ücretli mekanları görmek istiyorsanız bu seçeneği işaretleyin.",
+          "label": "Ücretli Mekanlar"
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",
       "tools": {
         "min": "En az {time} dakika",
         "max": "en fazla {time} dakika",
-        "range": "{min} - {max} dakika"
+        "range": "{min} - {max} dakika",
+        "paid": "Aktif"
       }
     },
     "switch": {
