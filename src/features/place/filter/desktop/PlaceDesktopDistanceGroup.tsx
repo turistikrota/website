@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { DesktopInfoBox } from "~/components/accessibility/InfoBox";
 import { usePlaceFilter } from "../../place.filter";
 import PlaceFilterDistanceGroup from "../shared/PlaceFilterDistanceGroup";
 import PlaceDesktopFilterSection from "./PlaceDesktopFilterSection";
@@ -16,7 +17,10 @@ export default function PlaceDesktopDistanceGroup() {
   return (
     <PlaceDesktopFilterSection>
       <PlaceDesktopHead>
-        <PlaceDesktopHead.Title>{t("text")}</PlaceDesktopHead.Title>
+        <PlaceDesktopHead.Title className="flex">
+          {t("text")}
+          <DesktopInfoBox>{t("description")}</DesktopInfoBox>
+        </PlaceDesktopHead.Title>
         {!!query.filter.distance && (
           <PlaceDesktopHead.Clear onClear={clearDistance} />
         )}

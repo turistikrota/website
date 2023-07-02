@@ -6,7 +6,7 @@ const DesktopInfoBox: React.FC<React.PropsWithChildren> = ({ children }) => {
   if (!isDesktop) return null;
   return (
     <Tooltip content={children} size="xl">
-      <i className="bx bx-info-circle text-gray-500 text-xl ml-1"></i>
+      <i className="bx bx-info-circle text-gray-500 text-xl ml-1.5"></i>
     </Tooltip>
   );
 };
