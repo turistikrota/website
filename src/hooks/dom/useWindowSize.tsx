@@ -46,3 +46,8 @@ export const useIsDesktop = (): boolean => {
   const { width } = useWindowSize();
   return width ? width >= 1280 : false;
 };
+
+export const useWindowWidth = (): boolean => {
+  const { width } = useWindowSize();
+  return !!width;
+};
