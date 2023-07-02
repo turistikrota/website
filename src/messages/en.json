@@ -31,6 +31,12 @@
         "city-select": {
           "title": "Select City",
           "text": "City"
+        },
+        "distance": {
+          "title": "Distance",
+          "text": "Distance",
+          "description": "Enter how many kilometers from the city center you want to see the places you want to see.",
+          "label": "Distance (km)"
         }
       }
     },

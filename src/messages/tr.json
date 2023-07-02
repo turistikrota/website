@@ -31,6 +31,12 @@
         "city-select": {
           "title": "Şehir Seçin",
           "text": "Şehir"
+        },
+        "distance": {
+          "title": "Mesafe",
+          "text": "Mesafe",
+          "description": "Seçtiğiniz şehir merkezinden kaç km uzaklıktaki yerleri görmek istediğinizi giriniz.",
+          "label": "Mesafe (km)"
         }
       }
     },

@@ -16,10 +16,11 @@ type Props = ContentProps &
     open: boolean;
   };
 
-export type FilterComponents = "city-select";
+export type FilterComponents = "city-select" | "distance";
 
 const Components: Record<FilterComponents, React.ComponentType<any>> = {
   "city-select": dynamic(() => import("../shared/PlaceFilterCityGroup")),
+  distance: dynamic(() => import("../shared/PlaceFilterDistanceGroup")),
 };
 
 const FilterPopup: React.FC<Props> = ({ onClose, open, data, loading }) => {

@@ -21,6 +21,10 @@ const items: Item[] = [
     component: "city-select",
     queryKey: "coordinates",
   },
+  {
+    component: "distance",
+    queryKey: "distance",
+  },
 ];
 
 const componentValueParsers: Record<FilterComponents, (value: any) => any> = {
@@ -30,6 +34,10 @@ const componentValueParsers: Record<FilterComponents, (value: any) => any> = {
       if (city) return city.name;
     }
     return "";
+  },
+  distance: (value) => {
+    if (!value) return "";
+    return value + " km";
   },
 };
 

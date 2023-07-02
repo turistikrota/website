@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import Condition from "../condition/Condition";
 import ErrorText from "../text/ErrorText";
 import ShowHideButton from "./ShowHideButton";
@@ -67,6 +67,10 @@ function Input<Value extends InputValue = string>({
   ...props
 }: InputProps<Value>) {
   const [inputType, setInputType] = useState(type);
+
+  useEffect(() => {
+    setInputType(type);
+  }, [type]);
   return (
     <>
       <div className={`relative w-full min-w-[200px] ${sizes[size]}`}>
