@@ -71,6 +71,15 @@
             "beach": "Plaj",
             "amaze": "Eğlence"
           }
+        },
+        "review": {
+          "title": "Değerlendirme Puanı",
+          "text": "Değerlendirme Puanı",
+          "description": "Mekanların değerlendirme puanı aralığını belirleyin.",
+          "labels": {
+            "x": "{star} Yıldız ve Üzeri",
+            "last": "Yalnızca {star} yıldız"
+          }
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",

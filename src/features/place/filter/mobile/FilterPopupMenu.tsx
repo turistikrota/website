@@ -21,7 +21,6 @@ type Props = {
 
 type Item = {
   component: FilterComponents;
-  // query key key of PlaceFilterRequest
   queryKey: keyof PlaceFilterRequest;
 };
 
@@ -53,6 +52,10 @@ const items: Item[] = [
   {
     component: "types",
     queryKey: "types",
+  },
+  {
+    component: "review",
+    queryKey: "minReview",
   },
 ];
 
@@ -127,6 +130,19 @@ const componentValueParsers: Record<
       acc += opts.t(`components.types.translation.${type}`);
       return acc;
     }, "");
+  },
+  review: (value, opts) => {
+    const val = Number(value);
+    if (isNaN(val)) return "";
+
+    return opts.t(
+      val === 5
+        ? "components.review.labels.last"
+        : "components.review.labels.x",
+      {
+        star: val,
+      }
+    );
   },
 };
 

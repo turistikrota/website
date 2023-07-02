@@ -71,6 +71,15 @@
             "beach": "beach",
             "amaze": "entertainment"
           }
+        },
+        "review": {
+          "title": "Review Score",
+          "text": "Review Score",
+          "description": "Determine the review range of venues.",
+          "labels": {
+            "x": "{star} Stars and Up",
+            "last": "{star} stars only"
+          }
         }
       },
       "clear-all": "Clear All Filters",
