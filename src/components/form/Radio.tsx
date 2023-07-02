@@ -122,7 +122,7 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
         </div>
       </label>
       <label
-        className="cursor-pointer select-none disable-highlight font-light text-gray-500 dark:text-gray-500 flex items-center"
+        className={`cursor-pointer select-none disable-highlight font-light text-gray-500 dark:text-gray-500 flex items-center`}
         htmlFor={id}
       >
         {children}
