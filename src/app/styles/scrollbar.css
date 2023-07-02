@@ -2,7 +2,6 @@
 .scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
-  
 }
 
 ::-webkit-scrollbar-thumb,
@@ -19,5 +18,5 @@
 
 ::-webkit-scrollbar-track,
 .scrollbar::-webkit-scrollbar-track {
-  background-color: var(--scroll-bar-track);
+  background-color: var(--third-background-color);
 }

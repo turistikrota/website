@@ -36,7 +36,7 @@ export default function PlaceFilterTypeGroup() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 lg:space-y-0">
       <MobileInfoBox>{t("description")}</MobileInfoBox>
       {types.map((type) => (
         <SelectGroup.Item
@@ -46,6 +46,7 @@ export default function PlaceFilterTypeGroup() {
           value={selected.includes(type)}
           onChange={() => handleChange(type)}
           reversed={!isDesktop}
+          effect={isDesktop ? "hover" : undefined}
         >
           {t(`translation.${type}`)}
         </SelectGroup.Item>

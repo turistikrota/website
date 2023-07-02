@@ -2,6 +2,7 @@
 
 type Variant = "primary" | "secondary" | "success" | "error" | "warning";
 type Size = "sm" | "md" | "lg";
+type Effect = "hover" | "ring";
 
 type Props = {
   children: React.ReactNode;
@@ -11,10 +12,28 @@ type Props = {
   id?: string;
   error?: string;
   reversed?: boolean;
+  effect?: Effect;
   variant?: Variant;
   size?: Size;
   onChange?: (value: boolean) => void;
   onBlur?: (value: boolean) => void;
+};
+
+type EffectType = {
+  label: string;
+  input: string;
+};
+
+const effects: Record<Effect, EffectType> = {
+  ring: {
+    label: "",
+    input:
+      "relative before:content[''] before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10",
+  },
+  hover: {
+    label: "hover:bg-third transition-colors duration-200 px-2 py-1 rounded-md",
+    input: "",
+  },
 };
 
 const variants: Record<Variant, string> = {
@@ -52,6 +71,7 @@ export default function Checkbox({
   error,
   id = name,
   size = "md",
+  effect = "ring",
   reversed = false,
   variant = "primary",
   ...props
@@ -61,7 +81,7 @@ export default function Checkbox({
       <div
         className={`flex items-center justify-between ${
           reversed ? "flex-row-reverse" : ""
-        }`}
+        }  ${effects[effect].label}`}
       >
         <label
           className="relative flex cursor-pointer disable-highlight items-center rounded-full mr-3"
@@ -71,7 +91,7 @@ export default function Checkbox({
             id={id}
             name={name}
             type="checkbox"
-            className={`before:content[''] peer relative cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10 ${variants[variant]} ${sizes[size]}`}
+            className={`peer cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
             required={required}
             checked={value}
             onChange={(e) => onChange?.(e.target.checked)}

@@ -49,7 +49,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 lg:space-y-0">
       <MobileInfoBox>{t("description")}</MobileInfoBox>
       {features.map((feature) => (
         <SelectGroup.Item
@@ -59,6 +59,7 @@ const PLaceFilterFeatureGroup: React.FC = () => {
           value={selected.includes(feature.uuid)}
           onChange={() => handleChange(feature.uuid)}
           reversed={!isDesktop}
+          effect={isDesktop ? "hover" : undefined}
         >
           {feature.translations[locale].title}
           <DesktopInfoBox size="md">
