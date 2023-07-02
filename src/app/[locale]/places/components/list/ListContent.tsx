@@ -1,5 +1,6 @@
 import { ContentProps } from "../ContentSwitcher";
 import ListFilter from "./ListFilter";
+import ListHead from "./ListHead";
 
 function ListItemSection({ data, loading }: ContentProps) {
   if (loading) return <div>loading...</div>;
@@ -185,9 +186,12 @@ function ListItemSection({ data, loading }: ContentProps) {
 
 export default function ListContent({ data, loading }: ContentProps) {
   return (
-    <section className="max-w-7xl p-4 lg:p-0 mx-auto flex flex-col lg:flex-row gap-4 lg:h-full">
-      <ListFilter data={data} loading={loading} />
-      <ListItemSection data={data} loading={loading} />
+    <section className="max-w-7xl p-4 lg:p-0 mx-auto lg:h-full">
+      <ListHead />
+      <section className="flex flex-col lg:flex-row gap-4">
+        <ListFilter data={data} loading={loading} />
+        <ListItemSection data={data} loading={loading} />
+      </section>
     </section>
   );
 }
