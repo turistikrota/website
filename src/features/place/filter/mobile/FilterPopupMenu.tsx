@@ -41,6 +41,10 @@ const items: Item[] = [
     component: "time-spent",
     queryKey: "timeSpent",
   },
+  {
+    component: "query",
+    queryKey: "query",
+  },
 ];
 
 type ParserOptions = {
@@ -95,6 +99,10 @@ const componentValueParsers: Record<
       });
     }
     return "";
+  },
+  query: (value) => {
+    if (!value) return "";
+    return value;
   },
 };
 

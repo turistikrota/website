@@ -47,6 +47,12 @@
           "title": "Ort. Geçen Süre",
           "text": "Ortalama Geçen Süre",
           "description": "Mekanlarda geçireceğiniz ortalama süre aralığını belirleyin. Süre aralığı dakika olarak hesaplanır."
+        },
+        "query": {
+          "title": "Kelime Arama",
+          "text": "Kelime Arama",
+          "description": "Mekan adı, açıklaması veya etiketlerinde arama yapın.",
+          "label": "Kelime"
         }
       },
       "clear-all": "Tüm Filtreleri Temizle",

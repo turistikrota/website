@@ -47,6 +47,12 @@
           "title": "Avg. Elapsed Time",
           "text": "Average Elapsed Time",
           "description": "Determine the average time interval you will spend in venues. The time interval is calculated in minutes."
+        },
+        "query": {
+          "title": "Word Search",
+          "text": "Word Search",
+          "description": "Search venue name, description, or tags.",
+          "label": "Word"
         }
       },
       "clear-all": "Clear All Filters",

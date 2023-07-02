@@ -43,5 +43,3 @@ export default function PlaceFilterDistanceGroup({ onClose }: Props) {
     </>
   );
 }
-
-// add a slider input
