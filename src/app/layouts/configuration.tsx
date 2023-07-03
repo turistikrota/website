@@ -5,7 +5,7 @@ export default function ConfigurationLayout({
   children,
 }: React.PropsWithChildren) {
   return (
-    <section className="h-full">
+    <section className="h-screen">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-full lg:py-0">
         <Link href="/" className="flex items-center mb-6">
           <Logo />
