@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 import debounce from "~/hooks/dom/useDebounce";
 import { PaginationRequest } from "~/types/request/request.types";
 import {
+  Order,
   PlaceFilterRequest,
+  Sort,
   Type,
   isOrder,
   isPlaceType,
@@ -230,5 +232,21 @@ export const usePlaceFilter = (): PlaceFilterHookResult => {
     isFiltered: Object.keys(query.filter).length > 0,
     clean: cleaner,
     push,
+  };
+};
+
+type PlaceSortHookResult = {
+  defaultSort: Sort;
+  defaultOrder: Order;
+  sorts: Sort[];
+  orders: Order[];
+};
+
+export const usePlaceSort = (): PlaceSortHookResult => {
+  return {
+    defaultSort: Sort.Popular,
+    defaultOrder: Order.Desc,
+    orders: Object.values(Order),
+    sorts: Object.values(Sort),
   };
 };

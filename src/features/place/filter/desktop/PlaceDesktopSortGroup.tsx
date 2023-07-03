@@ -1,15 +1,8 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import RadioGroup from "~/components/form/RadioGroup";
-import Popup from "~/components/popup/Popup";
+import Dropdown from "~/components/dropdown/Dropdown";
 import { usePlaceFilter, usePlaceSort } from "../../place.filter";
 import { Order, Sort } from "../../place.types";
-import FilterHead from "./FilterPopupHead";
-
-type Props = {
-  onClose: () => void;
-  open: boolean;
-};
 
 type SortSectionProps = {
   selected?: Sort;
@@ -31,20 +24,16 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
   }, [selected]);
 
   return (
-    <RadioGroup title={t("title")}>
-      {sorts.map((sort) => (
-        <RadioGroup.Item
-          key={sort}
-          id={sort}
-          name="sort-by"
-          reverse
-          checked={currentSort === sort}
-          onChange={() => onSelect(sort)}
-        >
-          {t(sort)}
-        </RadioGroup.Item>
-      ))}
-    </RadioGroup>
+    <Dropdown>
+      <Dropdown.Button>{currentSort}</Dropdown.Button>
+      <Dropdown.Overlay>
+        {sorts.map((sort) => (
+          <Dropdown.OverlayItem key={sort} onClick={() => onSelect(sort)}>
+            {sort}
+          </Dropdown.OverlayItem>
+        ))}
+      </Dropdown.Overlay>
+    </Dropdown>
   );
 };
 
@@ -58,24 +47,20 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
   }, [selected]);
 
   return (
-    <RadioGroup title={t("title")}>
-      {orders.map((order, idx) => (
-        <RadioGroup.Item
-          key={idx}
-          id={`${order}-${idx}`}
-          name="order"
-          reverse
-          checked={currentOrder === order}
-          onChange={() => onSelect(order)}
-        >
-          {t(order)}
-        </RadioGroup.Item>
-      ))}
-    </RadioGroup>
+    <Dropdown>
+      <Dropdown.Button>{currentOrder}</Dropdown.Button>
+      <Dropdown.Overlay>
+        {orders.map((sort) => (
+          <Dropdown.OverlayItem key={sort} onClick={() => onSelect(sort)}>
+            {sort}
+          </Dropdown.OverlayItem>
+        ))}
+      </Dropdown.Overlay>
+    </Dropdown>
   );
 };
 
-const SortPopup: React.FC<Props> = ({ onClose, open }) => {
+export default function PlaceDesktopSortGroup() {
   const { defaultOrder, defaultSort } = usePlaceSort();
   const t = useTranslations("place.sort.mobile");
   const [isDefault, setIsDefault] = useState<boolean>(true);
@@ -106,23 +91,10 @@ const SortPopup: React.FC<Props> = ({ onClose, open }) => {
     query.filter.order = order;
     push(query);
   };
-
   return (
-    <Popup
-      onClose={onClose}
-      open={open}
-      size="2xl"
-      head={
-        <FilterHead.TitleSection>
-          <FilterHead.Title>{t("title")}</FilterHead.Title>
-          {!isDefault && <FilterHead.ClearButton onClear={() => clear()} />}
-        </FilterHead.TitleSection>
-      }
-    >
+    <div className="flex gap-3">
       <SortSection selected={query.filter.sort} onSelect={onSortSelect} />
       <OrderSection selected={query.filter.order} onSelect={onOrderSelect} />
-    </Popup>
+    </div>
   );
-};
-
-export default SortPopup;
+}
