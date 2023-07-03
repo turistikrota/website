@@ -10,3 +10,7 @@ export const TextSize: Record<Size, string> = {
   "3xl": "text-3xl",
   "4xl": "text-4xl",
 };
+
+export function isSize(size: string): size is Size {
+  return Object.keys(TextSize).includes(size);
+}

@@ -1,3 +1,4 @@
+import Carousel from "~/components/carousel/Carousel";
 import { ContentProps } from "../ContentSwitcher";
 import ListFilter from "./ListFilter";
 import ListHead from "./ListHead";
@@ -7,6 +8,9 @@ function ListItemSection({ data, loading }: ContentProps) {
   if (!data) return <div>no data</div>;
   return (
     <section className="grow">
+      <div className="">
+        <Carousel />
+      </div>
       {data.list.map((item, idx) => (
         <div key={idx}>{item.translations.tr.title}</div>
       ))}

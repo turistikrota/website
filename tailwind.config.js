@@ -19,6 +19,15 @@ module.exports = {
   theme: {
     extend: {
       scale: {
+        65: ".65",
+        70: ".70",
+        72.5: ".725",
+        75: ".75",
+        77.5: ".775",
+        80: ".80",
+        82.5: ".825",
+        85: ".85",
+        90: ".90",
         101: "1.01",
         102: "1.02",
         103: "1.03",
@@ -33,6 +42,9 @@ module.exports = {
         5000: "5000",
       },
       width: {
+        "dot-base": "0.375rem",
+        "dot-side": "0.325rem",
+        "dot-side-two": "0.275rem",
         "8xl": "88rem",
         "9xl": "96rem",
         "10xl": "104rem",
@@ -172,6 +184,9 @@ module.exports = {
         "popup-3xl": "max(100vh - 10rem, 90vh)",
         "popup-4xl": "max(100vh - 8rem, 95vh)",
         "sticky-bar": "calc(100vh - 6.5rem)",
+        "dot-base": "0.375rem",
+        "dot-side": "0.325rem",
+        "dot-side-two": "0.275rem",
       },
       top: {
         "sticky-bar": "80px",
