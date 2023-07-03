@@ -2,6 +2,10 @@ export type BaseProps = {
   children: React.ReactNode;
 };
 
+export type PropsWithClassName<P = any> = P & {
+  className?: string;
+};
+
 export type Colors =
   | "primary"
   | "secondary"

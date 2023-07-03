@@ -25,11 +25,17 @@ const SortSection: React.FC<SortSectionProps> = ({ selected, onSelect }) => {
 
   return (
     <Dropdown>
-      <Dropdown.Button>{currentSort}</Dropdown.Button>
+      <Dropdown.Button active={currentSort !== defaultSort}>
+        {t("title")}
+      </Dropdown.Button>
       <Dropdown.Overlay>
         {sorts.map((sort) => (
-          <Dropdown.OverlayItem key={sort} onClick={() => onSelect(sort)}>
-            {sort}
+          <Dropdown.OverlayItem
+            key={sort}
+            onClick={() => onSelect(sort)}
+            active={sort === currentSort}
+          >
+            {t(sort)}
           </Dropdown.OverlayItem>
         ))}
       </Dropdown.Overlay>
@@ -48,11 +54,17 @@ const OrderSection: React.FC<OrderSectionProps> = ({ selected, onSelect }) => {
 
   return (
     <Dropdown>
-      <Dropdown.Button>{currentOrder}</Dropdown.Button>
+      <Dropdown.Button active={currentOrder !== defaultOrder}>
+        {t("title")}
+      </Dropdown.Button>
       <Dropdown.Overlay>
-        {orders.map((sort) => (
-          <Dropdown.OverlayItem key={sort} onClick={() => onSelect(sort)}>
-            {sort}
+        {orders.map((order) => (
+          <Dropdown.OverlayItem
+            key={order}
+            onClick={() => onSelect(order)}
+            active={order === currentOrder}
+          >
+            {t(order)}
           </Dropdown.OverlayItem>
         ))}
       </Dropdown.Overlay>
@@ -83,6 +95,7 @@ export default function PlaceDesktopSortGroup() {
   };
 
   const onSortSelect = (sort: Sort) => {
+    console.log("sort", sort);
     query.filter.sort = sort;
     push(query);
   };

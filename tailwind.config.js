@@ -153,6 +153,9 @@ module.exports = {
         input: "var(--default-background)",
         default: "var(--default-background)",
       },
+      transitionDuration: {
+        DEFAULT: "200ms",
+      },
       boxShadow: {
         top: "0 -1px 3px 0 var(--shadow-color-start), 0 -4px 8px 3px var(--shadow-color-end)",
         bottom:
