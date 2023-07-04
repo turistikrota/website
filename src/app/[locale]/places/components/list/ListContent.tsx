@@ -190,7 +190,7 @@ function ListItemSection({ data, loading }: ContentProps) {
 
 export default function ListContent({ data, loading }: ContentProps) {
   return (
-    <section className="max-w-7xl p-4 lg:p-0 mx-auto lg:h-full">
+    <section className="max-w-7xl p-4 xl:p-0 mx-auto lg:h-full">
       <ListHead />
       <section className="flex flex-col lg:flex-row gap-4">
         <ListFilter data={data} loading={loading} />

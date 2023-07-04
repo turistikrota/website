@@ -62,6 +62,16 @@ const Carousel: React.FC = () => {
     );
   };
 
+  const checkRightSwipe = () => {
+    if (currentIndex === 0) return;
+    goToPreviousSlide();
+  };
+
+  const checkLeftSwipe = () => {
+    if (currentIndex === images.length - 1) return;
+    goToNextSlide();
+  };
+
   return (
     <div className="w-full group">
       <div className="relative h-64 w-64">
@@ -73,6 +83,8 @@ const Carousel: React.FC = () => {
               idx === currentIndex ? "opacity-100" : "opacity-0"
             }`}
             imgClassName="rounded-md"
+            onLeftSwipe={checkLeftSwipe}
+            onRightSwipe={checkRightSwipe}
           />
         ))}
         <DotRenderer

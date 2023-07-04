@@ -84,7 +84,7 @@ function MobileHeader({
       }`}
     >
       <div
-        className={`flex items-center h-full px-4 mx-auto max-w-7xl ${
+        className={`flex items-center h-full px-4 xl:p-0 mx-auto max-w-7xl ${
           className ? className : "justify-between"
         }`}
       >
