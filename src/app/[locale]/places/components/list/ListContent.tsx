@@ -9,7 +9,21 @@ function ListItemSection({ data, loading }: ContentProps) {
   return (
     <section className="grow">
       <div className="">
-        <Carousel />
+        <Carousel
+          images={[
+            "/images/demo/villa-bliss-pa.jpg",
+            "/images/demo/villa-bliss-02.jpg",
+            "/images/demo/villa-bliss-03.jpg",
+            "/images/demo/villa-bliss-04.jpg",
+            "/images/demo/villa-bliss-05.jpg",
+            "/images/demo/villa-bliss-06.jpg",
+            "/images/demo/villa-bliss-07.jpg",
+            "/images/demo/villa-bliss-08.jpg",
+            "/images/demo/villa-bliss-09.jpg",
+            "/images/demo/villa-bliss-10.jpg",
+          ]}
+          sizeClassName="h-96"
+        />
       </div>
       {data.list.map((item, idx) => (
         <div key={idx}>{item.translations.tr.title}</div>

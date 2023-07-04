@@ -15,6 +15,13 @@ const images = [
   "/images/demo/villa-bliss-10.jpg",
 ];
 
+type Props = {
+  images: string[];
+  sizeClassName: string;
+  className?: string;
+  onClick?: () => void;
+};
+
 type ButtonProps = {
   position: "left" | "right";
   onClick: () => void;
@@ -33,7 +40,12 @@ const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
   );
 };
 
-const Carousel: React.FC = () => {
+const Carousel: React.FC<Props> = ({
+  images,
+  sizeClassName,
+  className,
+  onClick,
+}) => {
   const [indexes, setIndexes] = useState([0, 0, 2]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -73,8 +85,11 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full group">
-      <div className="relative h-64 w-64">
+    <div
+      className={`w-full group ${className ? className : ""}`}
+      onClick={onClick}
+    >
+      <div className={`relative ${sizeClassName}`}>
         {images.map((img, idx) => (
           <PerfectImage
             key={idx}
