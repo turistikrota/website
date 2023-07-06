@@ -91,7 +91,7 @@ export default function Checkbox({
             id={id}
             name={name}
             type="checkbox"
-            className={`peer cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
+            className={`peer bg-white dark:bg-inherit cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
             required={required}
             checked={value}
             onChange={(e) => onChange?.(e.target.checked)}

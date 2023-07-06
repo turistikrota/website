@@ -1,6 +1,6 @@
 import { useIsDesktop } from "~/hooks/dom/useWindowSize";
-import Tooltip from "../tooltip/Tooltip";
 import { Size } from "~/types/size";
+import Tooltip from "../tooltip/Tooltip";
 
 type DesktopProps = {
   size?: Size;
@@ -13,7 +13,7 @@ const DesktopInfoBox: React.FC<React.PropsWithChildren<DesktopProps>> = ({
   const isDesktop = useIsDesktop();
   if (!isDesktop) return null;
   return (
-    <Tooltip content={children} size={size}>
+    <Tooltip content={children} size={size} position="top-right">
       <i className="bx bx-info-circle text-gray-500 text-xl ml-1.5"></i>
     </Tooltip>
   );
