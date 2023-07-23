@@ -16,6 +16,7 @@
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.6",
     "@reduxjs/toolkit": "^1.9.5",
+    "@turistikrota/ui": "^0.1.5",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.0.1",
+    "@turistikrota/prettier-config": "^0.1.0",
     "@types/negotiator": "0.6.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
@@ -49,8 +51,10 @@
     "cssnano": "^6.0.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "eslint-config-turistikrota": "^0.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.7",
     "typescript": "5.0.4"
-  }
+  },
+  "prettier": "@turistikrota/prettier-config"
 }

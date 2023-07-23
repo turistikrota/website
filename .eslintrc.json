@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:react-hooks/recommended"],
+  "extends": ["next/core-web-vitals", "plugin:react-hooks/recommended", "turistikrota"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off"
