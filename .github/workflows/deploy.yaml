@@ -24,6 +24,6 @@ jobs:
             cd $DIR
             git checkout main
             git pull origin main
-            docker build -t turistikrota-web .
-            docker rm -f turistikrota-web
-            docker run -d --name turistikrota-web -p 3000:3000 turistikrota-web
+            docker build -t turistikrota-site .
+            docker service rm turistikrota-site
+            docker service create --name turistikrota-site --publish 3000:3000 turistikrota-site
