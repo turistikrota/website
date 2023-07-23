@@ -303,7 +303,8 @@
     "button": {
       "login": "Giriş Yap",
       "select": "Profil Seç",
-      "profile": "Profil"
+      "profile": "Profil",
+      "loading": "Yükleniyor..."
     }
   },
   "aboutUs": {

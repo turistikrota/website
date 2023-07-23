@@ -5,10 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { FormEvent, useState } from "react";
 import Spin from "sspin";
 import * as Yup from "yup";
-import Alert from "~/components/alert/Alert";
+import Alert from "@turistikrota/ui/alert";
 import { usePost } from "~/hooks/http/request";
 import { Services, apiUrl } from "~/static/api";
-import { BaseResponse } from "~/types/response/response.types";
+import { BaseResponse } from "@turistikrota/ui/types";
 
 export default function WaitlistForm() {
   const t = useTranslations("waitlist");

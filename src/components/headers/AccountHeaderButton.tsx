@@ -1,80 +1,80 @@
-"use client";
+'use client'
 
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next-intl/link";
-import { useSelector } from "react-redux";
-import UserName from "~/features/account/UserName";
-import { AccountListItem } from "~/features/account/account.types";
-import { getStaticRoute } from "~/static/page";
-import { RootState } from "~/store/store";
-import Image from "../image/image";
-import MobileHeader from "./MobileHeader";
+import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next-intl/link'
+import { useSelector } from 'react-redux'
+import UserName from '@turistikrota/ui/username'
+import { AccountListItem } from '~/features/account/account.types'
+import { getStaticRoute } from '~/static/page'
+import { RootState } from '~/store/store'
+import Image from '../image/image'
+import MobileHeader from '@turistikrota/ui/headers/mobile'
+
+type Props = {
+  accessTokenIsExists: boolean
+}
 
 const ProfileButton = ({ account }: { account: AccountListItem }) => {
-  const t = useTranslations("header.button");
-  const locale = useLocale();
+  const t = useTranslations('header.button')
+  const locale = useLocale()
   return (
-    <Link
-      href={getStaticRoute(locale).account.details.default}
-      aria-label={t("profile")}
-      title={t("profile")}
-    >
-      <div className="group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out">
-        <div className="flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center">
+    <Link href={getStaticRoute(locale).account.details} aria-label={t('profile')} title={t('profile')}>
+      <div className='group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out'>
+        <div className='flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center'>
           <MobileHeader.Avatar>
-            <Image
-              src={account.avatarUrl}
-              width={48}
-              height={48}
-              alt={account.fullName}
-              title={account.fullName}
-            />
+            <Image src={account.avatarUrl} width={48} height={48} alt={account.fullName} title={account.fullName} />
           </MobileHeader.Avatar>
         </div>
-        <div className="hidden flex-col items-start justify-center md:flex">
+        <div className='hidden flex-col items-start justify-center md:flex'>
           <UserName>{account.userName}</UserName>
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
 const LoginButton = () => {
-  const t = useTranslations("header.button");
-  const locale = useLocale();
+  const t = useTranslations('header.button')
+  const locale = useLocale()
   return (
     <Link href={getStaticRoute(locale).auth.default}>
-      <MobileHeader.Button ariaLabel={t("login")} title={t("login")}>
-        <i className="bx bx-user"></i>
+      <MobileHeader.Button ariaLabel={t('login')} title={t('login')}>
+        <i className='bx bx-user'></i>
       </MobileHeader.Button>
     </Link>
-  );
-};
+  )
+}
+
+const LoadingButton = () => {
+  const t = useTranslations('header.button')
+  return (
+    <MobileHeader.Button ariaLabel={t('loading')} title={t('loading')}>
+      <i className='bx bx-loader-alt bx-spin'></i>
+    </MobileHeader.Button>
+  )
+}
 
 const SelectProfileButton = () => {
-  const t = useTranslations("header");
-  const locale = useLocale();
+  const t = useTranslations('header')
+  const locale = useLocale()
   return (
     <Link
       href={getStaticRoute(locale).account.select}
-      className="hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out"
-      aria-label={t("links.selectAccount")}
-      title={t("links.selectAccount")}
+      className='hover:bg-second dark:hover:bg-third rounded-md px-3 py-3 transition-colors duration-200 ease-in-out'
+      aria-label={t('links.selectAccount')}
+      title={t('links.selectAccount')}
     >
-      {t("links.selectAccount")}
+      {t('links.selectAccount')}
     </Link>
-  );
-};
+  )
+}
 
-export default function AccountHeaderButton() {
-  const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated
-  );
-  const account = useSelector(
-    (state: RootState) => state.account.currentAccount
-  );
+export default function AccountHeaderButton({ accessTokenIsExists }: Props) {
+  const isLoading = useSelector((state: RootState) => state.account.loading)
+  const account = useSelector((state: RootState) => state.account.currentAccount)
 
-  if (!isAuthenticated) return <LoginButton />;
-  if (account === null) return <SelectProfileButton />;
-  return <ProfileButton account={account} />;
+  if (isLoading) return <LoadingButton />
+  if (accessTokenIsExists && account === null) return <SelectProfileButton />
+  if (account === null) return <LoginButton />
+  return <ProfileButton account={account} />
 }

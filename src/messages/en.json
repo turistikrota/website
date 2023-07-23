@@ -303,7 +303,8 @@
     "button": {
       "login": "Login",
       "select": "Select Profile",
-      "profile": "profile"
+      "profile": "profile",
+      "loading": "Loading..."
     }
   },
   "aboutUs": {
