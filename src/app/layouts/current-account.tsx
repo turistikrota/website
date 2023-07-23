@@ -9,15 +9,20 @@ import { Services, apiUrl } from '~/static/api'
 
 type Props = {
   isAccountCookieExists: boolean
+  accessTokenIsExists: boolean
 }
 
-export default function CurrentAccountLayout({ children, isAccountCookieExists }: React.PropsWithChildren<Props>) {
+export default function CurrentAccountLayout({
+  children,
+  isAccountCookieExists,
+  accessTokenIsExists,
+}: React.PropsWithChildren<Props>) {
   const dispatch = useDispatch()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
-    if (!isAccountCookieExists || !!item) return
+    if (accessTokenIsExists && (!isAccountCookieExists || !!item)) return
     dispatch(setIsLoading(true))
     httpClient
       .get(apiUrl(Services.Account, '/selected'))

@@ -11,7 +11,10 @@ type Props = {
 export default function DefaultLayout({ children }: Props) {
   const cookie = cookies()
   return (
-    <CurrentAccountLayout isAccountCookieExists={cookie.get(Config.cookies.accountName) !== undefined}>
+    <CurrentAccountLayout
+      accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}
+      isAccountCookieExists={cookie.get(Config.cookies.accountName) !== undefined}
+    >
       <DefaultHeader accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}></DefaultHeader>
       <main>{children}</main>
       <BasicFooter></BasicFooter>
