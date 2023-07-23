@@ -26,4 +26,4 @@ jobs:
             git pull origin main
             docker build -t turistikrota-site .
             docker service rm turistikrota-site
-            docker service create --name turistikrota-site --publish 3000:3000 turistikrota-site
+            docker service create --name turistikrota-site --env-file .env --publish 3000:3000 turistikrota-site
