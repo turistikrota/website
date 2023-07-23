@@ -21,7 +21,6 @@
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",
     "cookies-next": "^2.1.2",
-    "dayjs": "^1.11.8",
     "formik": "^2.2.9",
     "negotiator": "0.6.3",
     "next": "canary",
@@ -29,8 +28,6 @@
     "next-pwa": "^5.6.0",
     "postcss": "8.4.21",
     "react": "18.2.0",
-    "react-advanced-cropper": "^0.19.3",
-    "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.7",
     "react-transition-group": "^4.4.5",
@@ -38,7 +35,6 @@
     "server-only": "0.0.1",
     "sspin": "1.0.8",
     "tailwindcss": "3.3.1",
-    "turnstile-next": "0.0.2",
     "yup": "^1.1.0"
   },
   "devDependencies": {

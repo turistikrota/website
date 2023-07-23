@@ -2,19 +2,24 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next-intl/link'
+import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import UserName from '@turistikrota/ui/username'
 import { AccountListItem } from '~/features/account/account.types'
 import { getStaticRoute } from '~/static/page'
 import { RootState } from '~/store/store'
-import Image from '../image/image'
 import MobileHeader from '@turistikrota/ui/headers/mobile'
+import { useImageSrc, setDefaultImageSrc } from '@turistikrota/ui/hooks/image'
+import { Config } from '~/config'
+
+setDefaultImageSrc(Config.cdn.notFound)
 
 type Props = {
   accessTokenIsExists: boolean
 }
 
 const ProfileButton = ({ account }: { account: AccountListItem }) => {
+  const { src, onError } = useImageSrc(account.avatarUrl)
   const t = useTranslations('header.button')
   const locale = useLocale()
   return (
@@ -22,7 +27,7 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
       <div className='group relative flex items-center flex-row space-x-1 md:hover:bg-second dark:hover:bg-third rounded-md md:px-3 transition-colors duration-200 ease-in-out'>
         <div className='flex flex-col items-end justify-center w-12 h-12 rounded-full md:items-center'>
           <MobileHeader.Avatar>
-            <Image src={account.avatarUrl} width={48} height={48} alt={account.fullName} title={account.fullName} />
+            <Image src={src} onError={onError} width={48} height={48} alt={account.fullName} title={account.fullName} />
           </MobileHeader.Avatar>
         </div>
         <div className='hidden flex-col items-start justify-center md:flex'>

@@ -4,8 +4,6 @@ import { useImageSrc, setDefaultImageSrc } from '@turistikrota/ui/hooks/image'
 import Image from 'next/image'
 import { Config } from '~/config'
 
-setDefaultImageSrc(Config.cdn.notFound)
-
 type Social = {
   icon: string
   link: string
