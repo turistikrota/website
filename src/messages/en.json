@@ -66,7 +66,8 @@
     "links": {
       "aboutUs": "About Us",
       "login": "Login",
-      "selectAccount": "Select Profile"
+      "selectAccount": "Select Profile",
+      "places": "Places"
     },
     "button": {
       "login": "Login",

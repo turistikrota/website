@@ -2,6 +2,7 @@ import { SiteUrls } from './site'
 
 export type RouteType = {
   aboutUs: string
+  places: string
   account: {
     details: string
     select: string
@@ -29,6 +30,7 @@ const Routes: Record<Locales, RouteType> = {
     auth: {
       default: SiteUrls.auth.tr,
     },
+    places: SiteUrls.places.tr,
     comingSoon: '/cok-yakinda',
     contracts: {
       terms: '/sozlesmeler/kullanim-kosullari',
@@ -51,6 +53,7 @@ const Routes: Record<Locales, RouteType> = {
       privacyNotify: '/contracts/privacy-notice',
       privacy: '/contracts/privacy-and-protection-of-personal-data',
     },
+    places: SiteUrls.places.en,
   },
 }
 
