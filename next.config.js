@@ -1,21 +1,20 @@
-const withNextIntl = require("next-intl/plugin")();
-const withMDX = require("@next/mdx")({
+const withNextIntl = require('next-intl/plugin')()
+const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
   },
-});
-const withPwa = require("next-pwa")({
-  dest: "public",
-  disable: process.env.NODE_ENV === "development",
-});
+})
+const withPwa = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-intl", "@pqina/pintura", "@pqina/react-pintura"],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  transpilePackages: ['next-intl', '@pqina/pintura', '@pqina/react-pintura'],
   reactStrictMode: true,
   poweredByHeader: false,
   devIndicators: {
@@ -26,12 +25,8 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: [
-      "s3.turistikrota.com",
-      "avatar.turistikrota.com",
-      "images.unsplash.com",
-    ],
+    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com', 'images.unsplash.com'],
   },
-};
+}
 
-module.exports = withPwa(withNextIntl(withMDX(nextConfig)));
+module.exports = withPwa(withNextIntl(withMDX(nextConfig)))
