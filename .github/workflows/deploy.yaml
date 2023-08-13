@@ -24,6 +24,6 @@ jobs:
             cd $DIR
             git checkout main
             git pull origin main
-            docker build -t turistikrota-site .
+            docker build -t turistikrota-site:latest .
             docker service rm turistikrota-site
             docker service create --name turistikrota-site --env-file .env --publish 3000:3000 --hostname 0.0.0.0 turistikrota-site
