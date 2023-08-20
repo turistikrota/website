@@ -2,10 +2,10 @@
 
 import MobileHeader from '@turistikrota/ui/headers/mobile'
 import TopHeader from '@turistikrota/ui/headers/top'
+import Logo from '@turistikrota/ui/logo'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next-intl/link'
 import { getStaticRoute } from '~/static/page'
-import Logo from '../logo/logo'
 import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
 
@@ -39,7 +39,9 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
       <MobileHeader>
         <MobileHeader.Left>
           <HeaderLogo>
-            <Logo width={186} height={30} />
+            <Logo width={186} height={30}>
+              <Logo.Badge>beta</Logo.Badge>
+            </Logo>
           </HeaderLogo>
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
