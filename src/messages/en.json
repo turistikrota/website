@@ -67,7 +67,8 @@
       "aboutUs": "About Us",
       "login": "Login",
       "selectAccount": "Select Profile",
-      "places": "Places"
+      "places": "Places",
+      "owners": "Seller Panel"
     },
     "button": {
       "login": "Login",
