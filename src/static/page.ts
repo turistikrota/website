@@ -3,6 +3,7 @@ import { SiteUrls } from './site'
 export type RouteType = {
   aboutUs: string
   places: string
+  owners: string
   account: {
     details: string
     select: string
@@ -23,6 +24,7 @@ export type Locales = 'en' | 'tr'
 const Routes: Record<Locales, RouteType> = {
   tr: {
     aboutUs: '/hakkimizda',
+    owners: `${SiteUrls.owners.tr}/detay/menu`,
     account: {
       details: `${SiteUrls.account.tr}/detay/menu`,
       select: SiteUrls.account.tr,
@@ -40,6 +42,7 @@ const Routes: Record<Locales, RouteType> = {
   },
   en: {
     aboutUs: '/about-us',
+    owners: `${SiteUrls.owners.en}/detail/menu`,
     account: {
       details: `${SiteUrls.account.en}/detail/menu`,
       select: SiteUrls.account.en,
