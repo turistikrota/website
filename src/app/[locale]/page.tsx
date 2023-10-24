@@ -1,12 +1,16 @@
-import { redirect } from "next-intl/server";
-import { getStaticRoute } from "~/static/page";
+import MobileAppLanding from '~/components/mobile/MobileAppLanding'
+import DefaultLayout from '../layouts/default'
 
 type Props = {
   params: {
-    locale: string;
-  };
-};
+    locale: string
+  }
+}
 
 export default function Home({ params: { locale } }: Props) {
-  redirect(getStaticRoute(locale).comingSoon);
+  return (
+    <DefaultLayout withoutFooter fullHeight>
+      <MobileAppLanding></MobileAppLanding>
+    </DefaultLayout>
+  )
 }

@@ -16,6 +16,14 @@
       "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     }
   },
+  "mobile": {
+    "title": "Türkiye'nin Gizli Köşelerini Keşfedin",
+    "subtitle": "Mobilde en kapsamlı turistik rehberinizle Türkiye'nin saklı cennetlerine adım atın.",
+    "download": "Uygulamamızı İndirin ve Keşfe Başlayın:",
+    "app-store": "App Store",
+    "play-store": "Google Play",
+    "screenshot": "Uygulamanın Ekran Görüntüleri"
+  },
   "waitlist": {
     "title1": "Çok",
     "title2": "Yakında",
