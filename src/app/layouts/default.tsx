@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers'
+import React from 'react'
 import BasicFooter from '~/components/footers/BasicFooter'
 import DefaultHeader from '~/components/headers/DefaultHeader'
 import { Config } from '~/config'
@@ -10,7 +11,7 @@ type Props = {
   fullHeight?: boolean
 }
 
-export default function DefaultLayout({ children, fullHeight = false, withoutFooter = false }: Props) {
+export function Layout({ children, fullHeight = false, withoutFooter = false }: Props) {
   const cookie = cookies()
   return (
     <CurrentAccountLayout
@@ -22,4 +23,8 @@ export default function DefaultLayout({ children, fullHeight = false, withoutFoo
       {!withoutFooter && <BasicFooter></BasicFooter>}
     </CurrentAccountLayout>
   )
+}
+
+export default function DefaultLayout({ children }: React.PropsWithChildren) {
+  return <Layout>{children}</Layout>
 }

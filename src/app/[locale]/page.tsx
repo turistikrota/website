@@ -1,5 +1,5 @@
 import MobileAppLanding from '~/components/mobile/MobileAppLanding'
-import DefaultLayout from '../layouts/default'
+import { Layout } from '../layouts/default'
 
 type Props = {
   params: {
@@ -9,8 +9,8 @@ type Props = {
 
 export default function Home({ params: { locale } }: Props) {
   return (
-    <DefaultLayout withoutFooter fullHeight>
+    <Layout withoutFooter fullHeight>
       <MobileAppLanding></MobileAppLanding>
-    </DefaultLayout>
+    </Layout>
   )
 }
