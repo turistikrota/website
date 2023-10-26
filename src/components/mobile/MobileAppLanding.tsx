@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { useSizeWithoutHeaderAndTopBar } from '~/hooks/header'
 import BasicFooter from '../footers/BasicFooter'
@@ -16,7 +17,7 @@ const MobileAppLanding: React.FC = () => {
         height: size,
       }}
     >
-      <div className='absolute top-0 left-0 h-full w-full bg-gradient-to-tr from-primary-200 dark:from-primary-1000 to-secondary-200 dark:to-secondary-1000 opacity-10 dark:opacity-10'></div>
+      <div className='absolute top-0 left-0 -z-10 h-full w-full bg-gradient-to-tr from-primary-200 dark:from-primary-1000 to-secondary-200 dark:to-secondary-1000 opacity-10 dark:opacity-10'></div>
       <div className='pb-14 bg-right z-10'>
         <div className='container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center'>
           <div className='flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden'>
@@ -27,15 +28,19 @@ const MobileAppLanding: React.FC = () => {
               {t('subtitle')}
             </p>
 
-            <p className='text-secondary font-bold pb-8 lg:pb-6 text-center md:text-left fade-in'>{t('download')}</p>
+            <p className='text-secondary font-bold text-center md:text-left fade-in'>{t('download')}</p>
+            <small className='dark:text-gray-300 pb-8 lg:pb-6'>{t('beta')}</small>
             <div className='flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in'>
-              <Image
-                alt={t('app-store')}
-                src='/images/app-store.svg'
-                className='h-12 pr-4 bounce-top-icons'
-                width={150}
-                height={50}
-              />
+              <Link href={`https://testflight.apple.com/join/2DbHY7wQ`} target='_blank'>
+                <Image
+                  alt={t('app-store')}
+                  src='/images/app-store.svg'
+                  className='h-12 pr-4 bounce-top-icons'
+                  width={150}
+                  height={50}
+                />
+              </Link>
+              {/*
               <Image
                 alt={t('play-store')}
                 src='/images/play-store.svg'
@@ -43,6 +48,7 @@ const MobileAppLanding: React.FC = () => {
                 width={150}
                 height={50}
               />
+              */}
             </div>
           </div>
 
