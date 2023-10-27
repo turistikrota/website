@@ -29,7 +29,7 @@ const MobileAppLanding: React.FC = () => {
             </p>
 
             <p className='text-secondary font-bold text-center md:text-left fade-in'>{t('download')}</p>
-            <small className='dark:text-gray-300 pb-8 lg:pb-6'>{t('beta')}</small>
+            <small className='dark:text-gray-300 pb-8 md:text-left lg:pb-6'>{t('beta')}</small>
             <div className='flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in'>
               <Link href={`https://testflight.apple.com/join/2DbHY7wQ`} target='_blank'>
                 <Image
@@ -40,15 +40,15 @@ const MobileAppLanding: React.FC = () => {
                   height={50}
                 />
               </Link>
-              {/*
-              <Image
-                alt={t('play-store')}
-                src='/images/play-store.svg'
-                className='h-12 bounce-top-icons'
-                width={150}
-                height={50}
-              />
-              */}
+              <Link href={`https://play.google.com/store/apps/details?id=com.turistikrota.app`} target='_blank'>
+                <Image
+                  alt={t('play-store')}
+                  src='/images/play-store.svg'
+                  className='h-12 bounce-top-icons'
+                  width={150}
+                  height={50}
+                />
+              </Link>
             </div>
           </div>
 
