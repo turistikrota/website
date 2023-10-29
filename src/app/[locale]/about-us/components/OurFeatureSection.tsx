@@ -23,7 +23,7 @@ export default function OurFeatures() {
           </div>
 
           <div className='mb-12 lg:mb-0'>
-            <div className='rounded-lg shadow-lg h-full block bg-second bg-watermark'>
+            <div className='rounded-lg shadow-lg h-full block bg-second'>
               <div className='flex justify-center'>
                 <div className='p-4 bg-secondary-600 rounded-full shadow-lg inline-block -mt-8'>
                   <i className='bx bx-md bx-shield-quarter text-white w-10 h-10'></i>
