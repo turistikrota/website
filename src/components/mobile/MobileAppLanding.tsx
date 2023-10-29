@@ -12,10 +12,10 @@ const MobileAppLanding: React.FC = () => {
   return (
     <>
       <div className='pb-14 bg-right z-10'>
-        <div className='container relative pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center'>
-          <GlassEffect justify='start' align='start' position='top-24 lg:left-20 lg:flex-row flex-col'>
-            <GlassEffect.Item color='bg-primary' size='lg' position='mt-10 lg:mt-40' />
-            <GlassEffect.Item color='bg-secondary' size='xl' position='ml-20 -mt-10 lg:ml-0 lg:mt-60' />
+        <div className='container relative pt-24 md:pt-12 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center'>
+          <GlassEffect justify='start' align='start' position='top-0 lg:left-20 lg:flex-row flex-col'>
+            <GlassEffect.Item color='bg-primary' size='lg' position='mt-10 lg:mt-20' />
+            <GlassEffect.Item color='bg-secondary' size='xl' position='ml-20 -mt-10 lg:ml-0 lg:mt-40' />
           </GlassEffect>
           <div className='flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden'>
             <h1 className='my-4 text-3xl md:text-5xl text-primary font-bold leading-tight text-center md:text-left slide-in-bottom-h1'>
