@@ -93,7 +93,8 @@
       "title": {
         "founder": "Founder",
         "developer": "Software Developer",
-        "founderAndDeveloper": "Founder & Software Developer"
+        "founderAndDeveloper": "Founder & Software Developer",
+        "contentManager": "Content Manager"
       },
       "link": "{name}'s {socialMedia} profile"
     },

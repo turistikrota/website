@@ -42,12 +42,10 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
           </Link>
         </TopHeader.Right>
       </TopHeader>
-      <MobileHeader>
+      <MobileHeader withTopHeader>
         <MobileHeader.Left>
           <HeaderLogo>
-            <Logo width={186} height={30}>
-              <Logo.Badge>beta</Logo.Badge>
-            </Logo>
+            <Logo width={186} height={30} />
           </HeaderLogo>
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>

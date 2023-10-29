@@ -5,7 +5,7 @@ export default function OurTeamSection() {
   const t = useTranslations('aboutUs.team')
   const members: Member[] = [
     {
-      avatar: 'https://s3.turistikrota.com/site/users/ssi.jpg',
+      avatar: 'https://s3.turistikrota.com/site/users/ssi.jpeg',
       title: 'founderAndDeveloper',
       fullName: 'Sami Salih İbrahimbaş',
       social: [
@@ -39,6 +39,21 @@ export default function OurTeamSection() {
           title: t('link', {
             name: 'Sami Salih İbrahimbaş',
             socialMedia: 'GitHub',
+          }),
+        },
+      ],
+    },
+    {
+      avatar: 'https://s3.turistikrota.com/site/users/sinci.jpg',
+      title: 'contentManager',
+      fullName: 'Semih İnci',
+      social: [
+        {
+          icon: 'bxl-linkedin-square',
+          link: 'https://linkedin.com/in/semih-inci-431505295',
+          title: t('link', {
+            name: 'Semih İnci',
+            socialMedia: 'LinkedIn',
           }),
         },
       ],

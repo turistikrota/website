@@ -18,5 +18,5 @@ export const useSizeWithoutHeader = () => {
 }
 
 export const useSizeWithoutHeaderAndTopBar = () => {
-  return 'calc(100vh - 63px - 33px)'
+  return 'calc(100vh - (63px + 33px))'
 }
