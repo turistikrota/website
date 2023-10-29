@@ -1,8 +1,7 @@
 'use client'
+import { useImageSrc } from '@turistikrota/ui/hooks/image'
 import Link from 'next-intl/link'
-import { useImageSrc, setDefaultImageSrc } from '@turistikrota/ui/hooks/image'
 import Image from 'next/image'
-import { Config } from '~/config'
 
 type Social = {
   icon: string
@@ -38,7 +37,7 @@ const MemberCard = (props: CardProps) => {
               title={props.avatarAlt}
               width={200}
               height={200}
-              className='rounded-md mb-6 lg:mb-0'
+              className='rounded-md mb-6 lg:mb-0 w-36 h-36 object-cover'
             />
           </div>
           <div className='grow-0 shrink-0 basis-auto w-full lg:w-7/12'>

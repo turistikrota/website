@@ -93,7 +93,8 @@
       "title": {
         "founder": "Kurucu",
         "developer": "Yazılım Geliştirici",
-        "founderAndDeveloper": "Kurucu & Yazılım Geliştirici"
+        "founderAndDeveloper": "Kurucu & Yazılım Geliştirici",
+        "contentManager": "İçerik Yöneticisi"
       },
       "link": "{name}'ın {socialMedia} profili"
     },
