@@ -6,7 +6,6 @@ export type AccountListItem = {
   fullName: string
   isActive: boolean
   isVerified: boolean
-  userCode: string
   userName: string
 }
 

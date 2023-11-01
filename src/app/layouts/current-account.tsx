@@ -8,13 +8,13 @@ import { httpClient } from '~/http/client'
 import { Services, apiUrl } from '~/static/api'
 
 type Props = {
-  isAccountCookieExists: boolean
+  accountCookie: string
   accessTokenIsExists: boolean
 }
 
 export default function CurrentAccountLayout({
   children,
-  isAccountCookieExists,
+  accountCookie,
   accessTokenIsExists,
 }: React.PropsWithChildren<Props>) {
   const dispatch = useDispatch()
@@ -22,7 +22,14 @@ export default function CurrentAccountLayout({
   useEffect(() => {
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
-    if (accessTokenIsExists && (!isAccountCookieExists || !!item)) return
+    if (accessTokenIsExists && (!accountCookie || !!item)) {
+      try {
+        const account = JSON.parse(item || '{}')
+        if (isAccountListItem(account) && accountCookie === account.userName) return
+      } catch (e) {
+        return
+      }
+    }
     dispatch(setIsLoading(true))
     httpClient
       .get(apiUrl(Services.Account, '/selected'))
@@ -37,7 +44,7 @@ export default function CurrentAccountLayout({
       .finally(() => {
         dispatch(setIsLoading(false))
       })
-  }, [isAccountCookieExists])
+  }, [accountCookie])
 
   return <>{children}</>
 }
