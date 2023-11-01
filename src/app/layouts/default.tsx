@@ -16,7 +16,7 @@ export function Layout({ children, fullHeight = false, withoutFooter = false }: 
   return (
     <CurrentAccountLayout
       accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}
-      isAccountCookieExists={cookie.get(Config.cookies.accountName) !== undefined}
+      accountCookie={cookie.get(Config.cookies.accountName)?.value ?? ''}
     >
       <DefaultHeader accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}></DefaultHeader>
       <main>{children}</main>
