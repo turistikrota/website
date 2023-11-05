@@ -12,8 +12,8 @@ const MobileAppLanding: React.FC = () => {
   return (
     <>
       <div className='pb-14 bg-right z-10'>
-        <div className='container relative pt-24 md:pt-12 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center'>
-          <GlassEffect justify='start' align='start' position='top-0 lg:left-20 lg:flex-row flex-col'>
+        <div className='container relative w-full pt-24 md:pt-12 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center overflow-hidden'>
+          <GlassEffect justify='start' align='start' position='top-0 lg:left-20 lg:flex-row flex-col overflow-hidden'>
             <GlassEffect.Item color='bg-primary' size='lg' position='mt-10 lg:mt-20' />
             <GlassEffect.Item color='bg-secondary' size='xl' position='ml-20 -mt-10 lg:ml-0 lg:mt-40' />
           </GlassEffect>
