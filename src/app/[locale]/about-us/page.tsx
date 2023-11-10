@@ -1,4 +1,3 @@
-import GlassEffect from '@turistikrota/ui/design/glass'
 import { Metadata } from 'next'
 import { getTranslator } from 'next-intl/server'
 import { getStaticRoute } from '~/static/page'
@@ -27,10 +26,6 @@ export default function AboutUs() {
   return (
     <>
       <HeadSection></HeadSection>
-      <GlassEffect justify='center' align='center' position='top-24'>
-        <GlassEffect.Item color='bg-primary' size='lg' position='-ml-20 mt-60' />
-        <GlassEffect.Item color='bg-secondary' size='xl' position='ml-10 mt-20' />
-      </GlassEffect>
       <OurFeatureSection></OurFeatureSection>
       <OurTeamSection></OurTeamSection>
       <TimelineSection></TimelineSection>

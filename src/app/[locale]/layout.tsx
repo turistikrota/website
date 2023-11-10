@@ -1,4 +1,5 @@
 import '@turistikrota/ui/assets/config.css'
+import GlassEffect from '@turistikrota/ui/design/glass'
 import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata } from 'next'
@@ -98,7 +99,10 @@ export default async function Root({ children, params: { locale } }: Props) {
       </head>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            <GlassEffect.Fixed />
+            {children}
+          </ReduxProvider>
         </NextIntlClientProvider>
         <Script async={true} src='https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B'></Script>
         <Script id='google-analytics-config' strategy='afterInteractive'>
