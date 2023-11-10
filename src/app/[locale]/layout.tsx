@@ -1,4 +1,5 @@
 import '@turistikrota/ui/assets/config.css'
+import GlassEffect from '@turistikrota/ui/design/glass'
 import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata } from 'next'
@@ -8,7 +9,6 @@ import { Arimo } from 'next/font/google'
 import Script from 'next/script'
 import 'sspin/dist/index.css'
 import '~/app/globals.css'
-import Glass from '~/components/design/Glass'
 import PwaHead from '~/components/pwa/PwaHead'
 import ReduxProvider from '~/store/provider'
 import { LayoutProps } from '~/types/base'
@@ -99,7 +99,10 @@ export default async function Root({ children, params: { locale } }: Props) {
       </head>
       <body suppressHydrationWarning={true}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ReduxProvider><Glass />{children}</ReduxProvider>
+          <ReduxProvider>
+            <GlassEffect.Fixed />
+            {children}
+          </ReduxProvider>
         </NextIntlClientProvider>
         <Script async={true} src='https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B'></Script>
         <Script id='google-analytics-config' strategy='afterInteractive'>
