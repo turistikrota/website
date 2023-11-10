@@ -1,6 +1,5 @@
 'use client'
 
-import GlassEffect from '@turistikrota/ui/design/glass'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,10 +12,6 @@ const MobileAppLanding: React.FC = () => {
     <>
       <div className='pb-14 bg-right z-10'>
         <div className='container relative w-full pt-24 md:pt-12 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center overflow-hidden'>
-          <GlassEffect justify='start' align='start' position='top-0 lg:left-20 lg:flex-row flex-col overflow-hidden'>
-            <GlassEffect.Item color='bg-primary' size='lg' position='mt-10 lg:mt-20' />
-            <GlassEffect.Item color='bg-secondary' size='xl' position='ml-20 -mt-10 lg:ml-0 lg:mt-40' />
-          </GlassEffect>
           <div className='flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden'>
             <h1 className='my-4 text-3xl md:text-5xl text-primary font-bold leading-tight text-center md:text-left slide-in-bottom-h1'>
               {t('title')}
