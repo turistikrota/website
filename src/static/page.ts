@@ -24,10 +24,10 @@ export type Locales = 'en' | 'tr'
 const Routes: Record<Locales, RouteType> = {
   tr: {
     aboutUs: '/hakkimizda',
-    owners: `${SiteUrls.owners.tr}/detay/menu`,
+    owners: `${SiteUrls.owners.tr}/menu`,
     account: {
-      details: `${SiteUrls.account.tr}/detay/menu`,
-      select: SiteUrls.account.tr,
+      details: `${SiteUrls.account.tr}/menu`,
+      select: `${SiteUrls.account.tr}/sec`,
     },
     auth: {
       default: SiteUrls.auth.tr,
@@ -42,10 +42,10 @@ const Routes: Record<Locales, RouteType> = {
   },
   en: {
     aboutUs: '/about-us',
-    owners: `${SiteUrls.owners.en}/detail/menu`,
+    owners: `${SiteUrls.owners.en}/menu`,
     account: {
-      details: `${SiteUrls.account.en}/detail/menu`,
-      select: SiteUrls.account.en,
+      details: `${SiteUrls.account.en}/menu`,
+      select: `${SiteUrls.account.en}/select`,
     },
     auth: {
       default: SiteUrls.auth.en,
