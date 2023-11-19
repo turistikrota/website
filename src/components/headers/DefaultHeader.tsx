@@ -21,10 +21,10 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
       <TopHeader>
         <TopHeader.Left>
           <Link
-            href={getStaticRoute(locale).owners}
+            href={getStaticRoute(locale).businesses}
             className='hover:opacity-80 transition-all duration-200 ease-in-out'
           >
-            {t('links.owners')}
+            {t('links.businesses')}
           </Link>
           <Link
             href={getStaticRoute(locale).places}
