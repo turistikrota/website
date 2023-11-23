@@ -64,7 +64,7 @@ export default function OurTeamSection() {
     <section className='container my-24 px-6 mx-auto'>
       <div className='mb-32 text-center lg:text-left'>
         <h2 className='text-3xl font-bold mb-12 text-center'>{t('meetTheTeam')}</h2>
-        <div className='grid md:grid-cols-3 gap-6 xl:gap-x-12'>
+        <div className='grid md:grid-cols-3 gap-4'>
           {members.map((member) => (
             <MemberCard
               {...member}
