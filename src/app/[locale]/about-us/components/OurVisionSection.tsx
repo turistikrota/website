@@ -1,3 +1,4 @@
+import Card from '@turistikrota/ui/cards/default'
 import { useTranslations } from 'next-intl'
 
 type VisionProps = {
@@ -7,7 +8,7 @@ type VisionProps = {
 }
 
 const VisionItem = ({ title, text, icon }: VisionProps) => (
-  <div className='flex p-4 shadow-md dark:bg-second dark:rounded relative'>
+  <Card className='flex relative transition-shadow duration-200 shadow-sm hover:shadow-md  dark:shadow-none dark:hover:shadow-none'>
     <div className='absolute left-1/2 top-2 transform -translate-x-1/2 -translate-y-1/2'>
       <div className='z-20 w-12 h-12 bg-secondary rounded-full justify-center items-center flex'>
         <i className={`bx bx-md text-white ${icon}`}></i>
@@ -19,7 +20,7 @@ const VisionItem = ({ title, text, icon }: VisionProps) => (
       </h3>
       <p className='mt-2 font-normal text-base leading-6 text-gray-600 dark:text-gray-400'>{text}</p>
     </div>
-  </div>
+  </Card>
 )
 
 export default function OurVisionSection() {
