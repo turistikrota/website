@@ -97,6 +97,7 @@ export default async function Root({ children, params: { locale } }: Props) {
     <html lang={locale} className={arimo.className}>
       <head>
         <meta httpEquiv='Permissions-Policy' content='interest-cohort=()' />
+        <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
         <PwaHead locale={locale} />
       </head>
       <body suppressHydrationWarning={true}>
