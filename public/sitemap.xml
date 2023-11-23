@@ -1,80 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<url>
-  <loc>https://turistikrota.com/en</loc>
-  <lastmod>2023-04-28T10:34:17+00:00</lastmod>
-  <priority>1.0</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr</loc>
-  <lastmod>2023-04-28T10:34:53+00:00</lastmod>
-  <priority>1.0</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/en/about-us</loc>
-  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/en/coming-soon</loc>
-  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/hakkimizda</loc>
-  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/cok-yakinda</loc>
-  <lastmod>2023-05-05T15:35:17+00:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/sozlesmeler/gizlilik-bildirimi</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/en/contracts/privacy-and-protection-of-personal-data</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/en/contracts/privacy-notice</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/tr/sozlesmeler/kullanim-kosullari</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://turistikrota.com/en/contracts/terms-of-use</loc>
-	<lastmod>2023-06-21T23:00:17+01:00</lastmod>
-  <priority>0.8</priority>
-</url>
-
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<sitemap>
+		<loc>
+			https://turistikrota.com/sitemaps/root.xml
+		</loc>
+	</sitemap>
+	<sitemap>
+		<loc>
+			https://tech.turistikrota.com/sitemap.xml
+		</loc>
+	</sitemap>
+	<sitemap>
+		<loc>
+			https://places.turistikrota.com/sitemap.xml
+		</loc>
+	</sitemap>
+	<sitemap>
+		<loc>
+			https://auth.turistikrota.com/sitemap.xml
+		</loc>
+	</sitemap>
+</sitemapindex>
