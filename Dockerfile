@@ -4,7 +4,7 @@ FROM base AS deps
 WORKDIR /app
 
 COPY package.json yarn.lock* ./
-RUN yarn install
+RUN yarn install && yarn add sharp
 
 FROM base AS builder
 WORKDIR /app
