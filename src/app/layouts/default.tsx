@@ -6,12 +6,11 @@ import { Config } from '~/config'
 import CurrentAccountLayout from './current-account'
 
 type Props = {
-  children: React.ReactNode
   withoutFooter?: boolean
   fullHeight?: boolean
 }
 
-export function Layout({ children, fullHeight = false, withoutFooter = false }: Props) {
+export function Layout({ children, fullHeight = false, withoutFooter = false }: React.PropsWithChildren<Props>) {
   const cookie = cookies()
   return (
     <CurrentAccountLayout
