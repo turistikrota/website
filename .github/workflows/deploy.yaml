@@ -45,4 +45,4 @@ jobs:
             docker service ls | grep -q site && docker service rm site || true
             cd $DIR
             docker pull turistikrota/site:$IMAGE_TAG
-            docker service create --name site --env-file .env --publish $APP_PORT:$APP_PORT --hostname 0.0.0.0 turistikrota/site:$IMAGE_TAG
+            docker service create --name site --env-file .env --publish $APP_PORT:3000 --hostname 0.0.0.0 turistikrota/site:$IMAGE_TAG
