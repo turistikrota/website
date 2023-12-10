@@ -7,6 +7,7 @@ COPY package.json yarn.lock* ./
 RUN yarn install --frozen-lockfile
 
 FROM base AS builder
+ENV NEXT_SHARP_PATH /app/node_modules/sharp
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
