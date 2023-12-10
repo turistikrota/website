@@ -14,11 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build and publish docker
-        run: |
-          IMAGE_TAG=${GITHUB_REF#refs/tags/}
-          docker build . --file Dockerfile --tag turistikrota/site-rc:$IMAGE_TAG --platform node/arm64
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker push turistikrota/site-rc:$IMAGE_TAG
+        with:
+          envs: IMAGE_TAG
+          run: |
+            docker build . --file Dockerfile --tag turistikrota/site-rc:$IMAGE_TAG
+            echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+            docker push turistikrota/site-rc:$IMAGE_TAG
 
   deploy:
     needs: build-and-push
