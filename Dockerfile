@@ -1,17 +1,15 @@
-FROM node:20-alpine AS base
+FROM node:18-alpine AS base
 
 FROM base AS deps
 WORKDIR /app
 
 COPY package.json yarn.lock* ./
-RUN yarn install --frozen-lockfile
-RUN yarn add sharp
+RUN yarn install --frozen-lockfile 
 
 FROM base AS builder
-ENV NEXT_SHARP_PATH /app/node_modules/sharp
 WORKDIR /app
-COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 
 RUN yarn build
 
@@ -19,7 +17,6 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
-ENV NEXT_SHARP_PATH /app/node_modules/sharp
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

@@ -25,17 +25,9 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https', 
-        hostname: 's3.turistikrota.com',
-      },
-      {
-        protocol: 'https', 
-        hostname: 'avatar.turistikrota.com',
-      }
-    ],
+    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
   },
+
 }
 
 module.exports = withPwa(withNextIntl(withMDX(nextConfig)))
