@@ -152,15 +152,15 @@ turistikrota.com, Gizilik Politikası'na uygun olarak farklı amaçlarla çeşit
 
 Çerezleri kullandığınız tarayıcının ayarlarını değiştirerek kişiselleştirmeniz ya da tamamen engellemeniz mümkündür. Farklı tarayıcılar için izlenmesi gereken adımlara ilişkin detaylı bilgiye aşağıdaki linklerden ulaşabilirsiniz:
 
-| Tarayıcı | Link |
-| --- | --- |
-| Google Chrome | [açmak için buraya tıklayınız](https://support.google.com/chrome/answer/95647?hl=tr) |
+| Tarayıcı          | Link                                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Google Chrome     | [açmak için buraya tıklayınız](https://support.google.com/chrome/answer/95647?hl=tr)                                           |
 | Internet Explorer | [açmak için buraya tıklayınız](https://support.microsoft.com/tr-tr/help/17442/windows-internet-explorer-delete-manage-cookies) |
-| Mozilla Firefox | [açmak için buraya tıklayınız](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sitelerinin-bilgilerini-kaldirma) |
-| Safari | [açmak için buraya tıklayınız](https://support.apple.com/tr-tr/HT201265) |
-| Microsoft Edge | [açmak için buraya tıklayınız](https://privacy.microsoft.com/tr-tr/windows-10-microsoft-edge-and-privacy) |
-| Opera | [açmak için buraya tıklayınız](https://www.opera.com/help/tutorials/security/privacy/) |
-| Yandex | [açmak için buraya tıklayınız](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml) |
+| Mozilla Firefox   | [açmak için buraya tıklayınız](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sitelerinin-bilgilerini-kaldirma)         |
+| Safari            | [açmak için buraya tıklayınız](https://support.apple.com/tr-tr/HT201265)                                                       |
+| Microsoft Edge    | [açmak için buraya tıklayınız](https://privacy.microsoft.com/tr-tr/windows-10-microsoft-edge-and-privacy)                      |
+| Opera             | [açmak için buraya tıklayınız](https://www.opera.com/help/tutorials/security/privacy/)                                         |
+| Yandex            | [açmak için buraya tıklayınız](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml)             |
 
 Diğer tarayıcılarda çerez tercihlerini yönetmek için ilgili tarayıcının yardım veya destek sayfasını inceleyebilirsiniz.
 

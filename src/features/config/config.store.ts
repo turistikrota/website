@@ -1,23 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 interface ConfigState {
-  locale: string;
+  locale: string
 }
 
 const initialState: ConfigState = {
-  locale: "en",
-};
+  locale: 'en',
+}
 
 const configSlice = createSlice({
-  name: "config",
+  name: 'config',
   initialState,
   reducers: {
     setLocale: (state, action) => {
-      state.locale = action.payload;
+      state.locale = action.payload
     },
   },
-});
+})
 
-export const { setLocale } = configSlice.actions;
+export const { setLocale } = configSlice.actions
 
-export default configSlice.reducer;
+export default configSlice.reducer

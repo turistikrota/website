@@ -8,6 +8,7 @@
     "start": "next start",
     "start:standalone": "node .next/standalone/server.js",
     "lint": "next lint",
+    "format": "prettier --write .",
     "export": "next export"
   },
   "dependencies": {
@@ -52,7 +53,7 @@
     "eslint-config-turistikrota": "^0.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.7",
+    "prettier": "^3.1.0",
     "typescript": "5.0.4"
   },
   "prettier": "@turistikrota/prettier-config"

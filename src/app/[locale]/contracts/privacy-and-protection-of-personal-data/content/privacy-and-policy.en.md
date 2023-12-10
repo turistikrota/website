@@ -170,15 +170,15 @@ Turistikrota uses various cookies for different purposes in accordance with its 
 
 It is possible to personalize or completely block cookies by changing the settings of the browser you use. You can find detailed information on the steps to be followed for different browsers from the links below:
 
-| Browser | Link |
-| --- | --- |
-| Google Chrome | [click to go](https://support.google.com/chrome/answer/95647?hl=en) |
+| Browser           | Link                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------- |
+| Google Chrome     | [click to go](https://support.google.com/chrome/answer/95647?hl=en)                                           |
 | Internet Explorer | [click to go](https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies) |
-| Mozilla Firefox | [click to go](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sites-information-removal) |
-| Safari | [click to go](https://support.apple.com/en-us/HT201265) |
-| Microsoft Edge | [click to go](https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy) |
-| Opera | [click to go](https://www.opera.com/help/tutorials/security/privacy/) |
-| Yandex | [click to go](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml) |
+| Mozilla Firefox   | [click to go](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sites-information-removal)                |
+| Safari            | [click to go](https://support.apple.com/en-us/HT201265)                                                       |
+| Microsoft Edge    | [click to go](https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy)                      |
+| Opera             | [click to go](https://www.opera.com/help/tutorials/security/privacy/)                                         |
+| Yandex            | [click to go](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml)             |
 
 To manage cookie preferences in other browsers, you can review the help or support page of the relevant browser.
 

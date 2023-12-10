@@ -15,10 +15,7 @@ import PwaHead from '~/components/pwa/PwaHead'
 import ReduxProvider from '~/store/provider'
 import { LayoutProps } from '~/types/base'
 
-type Props = LayoutProps & {
-  children: React.ReactNode
-  token: string
-}
+type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
   const t = await getTranslator(locale, 'base')
@@ -91,7 +88,7 @@ const arimo = Arimo({
   preload: true,
 })
 
-export default async function Root({ children, params: { locale } }: Props) {
+export default async function Root({ params: { locale }, children }: React.PropsWithChildren<Props>) {
   const messages = (await import(`~/messages/${locale}.json`)).default
   return (
     <html lang={locale} className={arimo.className}>

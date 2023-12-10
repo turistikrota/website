@@ -26,7 +26,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com', 'images.unsplash.com'],
+    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
   },
 }
 

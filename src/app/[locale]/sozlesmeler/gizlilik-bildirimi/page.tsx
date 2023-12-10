@@ -1,5 +1,3 @@
-import PrivacyNoticePage, {
-  generateMetadata,
-} from "~/app/[locale]/contracts/privacy-notice/page";
+import PrivacyNoticePage, { generateMetadata } from '~/app/[locale]/contracts/privacy-notice/page'
 
-export { generateMetadata, PrivacyNoticePage as default };
+export { generateMetadata, PrivacyNoticePage as default }

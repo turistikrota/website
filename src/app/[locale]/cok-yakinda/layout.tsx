@@ -1,3 +1,3 @@
-import DefaultLayout from "~/app/layouts/default";
+import DefaultLayout from '~/app/layouts/default'
 
-export default DefaultLayout;
+export default DefaultLayout
