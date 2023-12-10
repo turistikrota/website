@@ -35,7 +35,7 @@ export default getRequestConfig(async ({ locale }) => {
       }
     },
     getMessageFallback({ key, namespace }) {
-      return process.env.NODE_ENV === 'production' ? namespace : `${namespace}:${key}`
+      return process.env.NODE_ENV === 'production' ? key : `${namespace}:${key}`
     },
   }
 })

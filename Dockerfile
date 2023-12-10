@@ -21,7 +21,7 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN mkdir .next
