@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock* ./
 RUN yarn install --frozen-lockfile
+RUN yarn add sharp
 
 FROM base AS builder
 ENV NEXT_SHARP_PATH /app/node_modules/sharp
