@@ -1,12 +1,12 @@
 import ErrorPage from '@turistikrota/ui/pages/error'
 import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { getTranslator } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import { LayoutProps } from '~/types/base'
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslator(locale, 'notfound')
+  const t = await getTranslations('notfound')
   return {
     title: t('meta.title'),
     robots: {

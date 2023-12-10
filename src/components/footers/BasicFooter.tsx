@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import Link from 'next-intl/link'
+import Link from 'next/link'
 
 export default function BasicFooter() {
   const t = useTranslations('footer')

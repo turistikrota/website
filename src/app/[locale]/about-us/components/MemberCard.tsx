@@ -1,8 +1,8 @@
 'use client'
 import Card from '@turistikrota/ui/cards/default'
 import { useImageSrc } from '@turistikrota/ui/hooks/image'
-import Link from 'next-intl/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type Social = {
   icon: string

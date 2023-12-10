@@ -6,7 +6,7 @@ import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getTranslator } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
 import Script from 'next/script'
 import 'sspin/dist/index.css'
@@ -18,7 +18,7 @@ import { LayoutProps } from '~/types/base'
 type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslator(locale, 'base')
+  const t = await getTranslations('base')
   return {
     title: t('meta.title'),
     description: t('meta.description'),
