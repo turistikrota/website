@@ -22,13 +22,13 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
         <TopHeader.Left>
           <Link
             href={getStaticRoute(locale).businesses}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.businesses')}
           </Link>
           <Link
             href={getStaticRoute(locale).places}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.places')}
           </Link>
@@ -36,7 +36,7 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
         <TopHeader.Right>
           <Link
             href={getStaticRoute(locale).aboutUs}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.aboutUs')}
           </Link>

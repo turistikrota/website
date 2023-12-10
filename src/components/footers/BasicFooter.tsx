@@ -5,7 +5,7 @@ export default function BasicFooter() {
   const t = useTranslations('footer')
   return (
     <footer>
-      <div className='overflow-hidden py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='overflow-hidden px-4 py-12 sm:px-6 lg:px-8'>
         <div className='mt-8 flex justify-center space-x-6'>
           <Link
             href='https://twitter.com/turistikrota'

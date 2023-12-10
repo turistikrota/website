@@ -6,10 +6,6 @@ const withMDX = require('@next/mdx')({
     rehypePlugins: [],
   },
 })
-const withPwa = require('next-pwa')({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,8 +21,15 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
+    remotePatterns: [
+      {
+        hostname: 's3.turistikrota.com',
+      },
+      {
+        hostname: 'avatar.turistikrota.com',
+      },
+    ],
   },
 }
 
-module.exports = withPwa(withNextIntl(withMDX(nextConfig)))
+module.exports = withNextIntl(withMDX(nextConfig))

@@ -8,17 +8,17 @@ type VisionProps = {
 }
 
 const VisionItem = ({ title, text, icon }: VisionProps) => (
-  <Card className='flex relative transition-shadow duration-200 shadow-sm hover:shadow-md  dark:shadow-none dark:hover:shadow-none'>
-    <div className='absolute left-1/2 top-2 transform -translate-x-1/2 -translate-y-1/2'>
-      <div className='z-20 w-12 h-12 bg-secondary rounded-full justify-center items-center flex'>
+  <Card className='relative flex shadow-sm transition-shadow duration-200 hover:shadow-md  dark:shadow-none dark:hover:shadow-none'>
+    <div className='absolute left-1/2 top-2 -translate-x-1/2 -translate-y-1/2 transform'>
+      <div className='z-20 flex h-12 w-12 items-center justify-center rounded-full bg-secondary'>
         <i className={`bx bx-md text-white ${icon}`}></i>
       </div>
     </div>
-    <div className='text-center mt-8'>
-      <h3 className='font-semibold mb-4 lg:text-2xl text-xl lg:leading-6 leading-5 text-primary-800 dark:text-primary'>
+    <div className='mt-8 text-center'>
+      <h3 className='mb-4 text-xl font-semibold leading-5 text-primary-800 dark:text-primary lg:text-2xl lg:leading-6'>
         {title}
       </h3>
-      <p className='mt-2 font-normal text-base leading-6 text-gray-600 dark:text-gray-400'>{text}</p>
+      <p className='mt-2 text-base font-normal leading-6 text-gray-600 dark:text-gray-400'>{text}</p>
     </div>
   </Card>
 )
@@ -45,18 +45,18 @@ export default function OurVisionSection() {
   ]
 
   return (
-    <section className='container my-24 px-6 mx-auto flex lg:flex-row flex-col md:gap-10 gap-16 justify-evenly'>
-      <div className='w-full lg:w-6/12 text-center'>
-        <h2 className='font-bold lg:text-4xl text-3xl lg:leading-9 leading-7'>{t('title')}</h2>
-        <p className='font-normal text-base leading-6 text-gray-600 dark:text-gray-400 mt-6 w-full mx-auto lg:w-10/12 xl:w-9/12'>
+    <section className='container mx-auto my-24 flex flex-col justify-evenly gap-16 px-6 md:gap-10 lg:flex-row'>
+      <div className='w-full text-center lg:w-6/12'>
+        <h2 className='text-3xl font-bold leading-7 lg:text-4xl lg:leading-9'>{t('title')}</h2>
+        <p className='mx-auto mt-6 w-full text-base font-normal leading-6 text-gray-600 dark:text-gray-400 lg:w-10/12 xl:w-9/12'>
           {t('p1')}
         </p>
-        <p className='font-normal text-base leading-6 text-gray-600 dark:text-gray-400 w-full mx-auto lg:w-10/12 xl:w-9/12 mt-10'>
+        <p className='mx-auto mt-10 w-full text-base font-normal leading-6 text-gray-600 dark:text-gray-400 lg:w-10/12 xl:w-9/12'>
           {t('p2')}
         </p>
       </div>
       <div className='w-full lg:w-6/12'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12 gap-10'>
+        <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12'>
           {items.map((item, index) => (
             <VisionItem key={index} {...item} />
           ))}

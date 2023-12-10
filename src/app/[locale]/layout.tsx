@@ -4,7 +4,7 @@ import CubeEffect from '@turistikrota/ui/design/cube'
 import GlassEffect from '@turistikrota/ui/design/glass'
 import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
@@ -45,7 +45,6 @@ export async function generateMetadata({ params: { locale } }: LayoutProps): Pro
         tr: '/tr',
       },
     },
-    colorScheme: 'light dark',
     robots: {
       index: true,
       follow: true,
@@ -78,8 +77,13 @@ export async function generateMetadata({ params: { locale } }: LayoutProps): Pro
         },
       ],
     },
-    viewport: 'width=device-width, initial-scale=1.0',
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  colorScheme: 'light dark',
 }
 
 const arimo = Arimo({
