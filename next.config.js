@@ -22,11 +22,19 @@ const nextConfig = {
     buildActivity: false,
   },
   experimental: {
-    appDir: true,
     mdxRs: true,
   },
   images: {
-    remotePatterns: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
+    remotePatterns: [
+      {
+        protocol: 'https', 
+        hostname: 's3.turistikrota.com',
+      },
+      {
+        protocol: 'https', 
+        hostname: 'avatar.turistikrota.com',
+      }
+    ],
   },
 }
 
