@@ -26,7 +26,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
+    remotePatterns: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
   },
 }
 
