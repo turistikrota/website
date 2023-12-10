@@ -1,10 +1,10 @@
 'use client'
 
-import { Props as MDXProps } from '@mdx-js/react/lib'
+import ContentLoader from '@turistikrota/ui/cjs/loader'
+import type { MDXProps } from 'mdx/types'
 import { useLocale } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { ContractContentProps } from '~/components/contract/ContractContent'
-import ContentLoader from '@turistikrota/ui/loader'
 
 const TrContent = dynamic(() => import('./privacy-and-policy.tr.md'), {
   ssr: false,
@@ -16,8 +16,8 @@ const EnContent = dynamic(() => import('./privacy-and-policy.en.md'), {
 })
 
 const Contents: Record<string, React.ComponentType<MDXProps>> = {
-  tr: TrContent as React.ComponentType<MDXProps>,
-  en: EnContent as React.ComponentType<MDXProps>,
+  tr: TrContent,
+  en: EnContent,
 }
 
 export default function PrivacyAndProtectionContent() {

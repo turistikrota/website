@@ -1,10 +1,10 @@
 'use client'
 
 import { Props as MDXProps } from '@mdx-js/react/lib'
+import ContentLoader from '@turistikrota/ui/loader'
 import { useLocale } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { ContractContentProps } from '~/components/contract/ContractContent'
-import ContentLoader from '@turistikrota/ui/loader'
 
 const TrContent = dynamic(() => import('./terms-of-use.tr.md'), {
   ssr: false,

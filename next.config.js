@@ -27,7 +27,6 @@ const nextConfig = {
   images: {
     domains: ['s3.turistikrota.com', 'avatar.turistikrota.com'],
   },
-
 }
 
 module.exports = withPwa(withNextIntl(withMDX(nextConfig)))
