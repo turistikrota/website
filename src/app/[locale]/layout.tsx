@@ -97,7 +97,7 @@ export default async function Root({ params: { locale }, children }: React.Props
         <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
         <PwaHead locale={locale} />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
             <GlassEffect.Fixed />
