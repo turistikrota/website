@@ -1,4 +1,4 @@
-FROM node:latest AS base
+FROM node:20:alpine AS base
 
 FROM base AS deps
 WORKDIR /app
@@ -10,8 +10,8 @@ RUN yarn add sharp
 FROM base AS builder
 ENV NEXT_SHARP_PATH /app/node_modules/sharp
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+COPY --from=deps /app/node_modules ./node_modules
 
 RUN yarn build
 
