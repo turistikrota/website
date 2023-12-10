@@ -45,7 +45,7 @@ export default function BasicFooter() {
           </Link>
         </div>
         <p className='mt-8 text-center text-base text-gray-600 dark:text-gray-400'>
-          © {new Date().getFullYear()} {t('copyright')}
+          © 2023{/*new Date().getFullYear()*/} {t('copyright')}
         </p>
       </div>
     </footer>
