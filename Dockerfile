@@ -5,9 +5,9 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY package.json yarn.lock* ./
+COPY package.json ./
 
-RUN yarn --frozen-lockfile
+RUN yarn
 
 FROM base AS builder
 WORKDIR /app
