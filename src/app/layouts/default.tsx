@@ -12,6 +12,7 @@ type Props = {
 }
 
 export function Layout({ children, fullHeight = false, withoutFooter = false }: Props) {
+  console.log('inner layout works')
   const cookie = cookies()
   return (
     <CurrentAccountLayout

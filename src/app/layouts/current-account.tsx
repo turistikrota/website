@@ -17,6 +17,7 @@ export default function CurrentAccountLayout({
   accountCookie,
   accessTokenIsExists,
 }: React.PropsWithChildren<Props>) {
+  console.log('current account works')
   const dispatch = useDispatch()
 
   useEffect(() => {
