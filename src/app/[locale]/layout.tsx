@@ -6,19 +6,20 @@ import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
 import Script from 'next/script'
 import 'sspin/dist/index.css'
 import '~/app/globals.css'
 import PwaHead from '~/components/pwa/PwaHead'
+import { getMessages } from '~/i18n'
 import ReduxProvider from '~/store/provider'
 import { LayoutProps } from '~/types/base'
 
 type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations('base')
+  const t = await getTranslations({ locale, namespace: 'base' })
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -93,7 +94,10 @@ const arimo = Arimo({
 })
 
 export default async function Root({ params: { locale }, children }: React.PropsWithChildren<Props>) {
-  const messages = (await import(`~/messages/${locale}.json`)).default
+  const messages = await getMessages(locale)
+  if (!['en', 'tr'].includes(locale)) {
+    unstable_setRequestLocale('tr')
+  }
   return (
     <html lang={locale} className={arimo.className}>
       <head>

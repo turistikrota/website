@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { LayoutProps } from '~/types/base'
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations('notfound')
+  const t = await getTranslations({ locale, namespace: 'notfound' })
   return {
     title: t('meta.title'),
     robots: {

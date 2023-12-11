@@ -10,7 +10,7 @@ import OurVisionSection from './components/OurVisionSection'
 import TimelineSection from './components/TimelineSection'
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations('aboutUs.meta')
+  const t = await getTranslations({ locale, namespace: 'aboutUs.meta' })
   return generateDefaultMetadata(locale, {
     title: t('title'),
     description: t('description'),

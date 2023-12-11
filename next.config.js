@@ -1,4 +1,4 @@
-const withNextIntl = require('next-intl/plugin')()
+const withNextIntl = require('next-intl/plugin')('./src/i18n.tsx')
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {

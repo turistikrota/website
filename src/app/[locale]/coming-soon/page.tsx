@@ -4,7 +4,7 @@ import { LayoutProps } from '~/types/base'
 import WaitlistForm from '../components/WaitlistForm'
 
 export default async function ComingSoon({ params: { locale } }: LayoutProps) {
-  const t = await getTranslations('waitlist')
+  const t = await getTranslations({ locale, namespace: 'waitlist' })
   return (
     <>
       <div className='relative overflow-hidden'>

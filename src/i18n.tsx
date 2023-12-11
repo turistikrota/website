@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 export default getRequestConfig(async ({ locale }) => {
   const now = headers().get('x-now')
   const timeZone = headers().get('x-time-zone') ?? undefined
-  const messages = (await import(`./messages/${locale}.json`)).default
+  const messages = await getMessages(locale)
   return {
     now: now ? new Date(now) : undefined,
     timeZone,
@@ -22,20 +22,14 @@ export default getRequestConfig(async ({ locale }) => {
         },
       },
     },
-    onError(error) {
-      if (
-        error.message ===
-        (process.env.NODE_ENV === 'production'
-          ? 'MISSING_MESSAGE'
-          : 'MISSING_MESSAGE: Could not resolve `missing` in `Index`.')
-      ) {
-        // Do nothing, this error is triggered on purpose
-      } else {
-        console.error(JSON.stringify(error.message))
-      }
-    },
+    onError() {},
     getMessageFallback({ key, namespace }) {
       return process.env.NODE_ENV === 'production' ? key : `${namespace}:${key}`
     },
   }
 })
+
+export const getMessages = async (locale: string) => {
+  const fixed = ['en', 'tr'].includes(locale) ? locale : 'tr'
+  return (await import(`./messages/${fixed}.json`)).default
+}

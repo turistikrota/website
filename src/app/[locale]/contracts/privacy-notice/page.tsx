@@ -6,7 +6,7 @@ import { generateDefaultMetadata } from '~/utils/meta'
 import PrivacyNoticeContent from './content/Content'
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslations('contracts.privacy-notification')
+  const t = await getTranslations({ locale, namespace: 'contracts.privacy-notification' })
   return generateDefaultMetadata(locale, {
     title: t('title'),
     description: t('description'),
