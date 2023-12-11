@@ -16,6 +16,18 @@
       "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     }
   },
+  "home": {
+    "category-filter": {
+      "category": "Kategori",
+      "word": "Kelime ile Ara",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi",
+      "search": "Ara",
+      "explore": "Keşfet",
+      "listing": "Konaklama",
+      "place": "Keşfet"
+    }
+  },
   "mobile": {
     "title": "Türkiye'nin Gizli Köşelerini Keşfedin",
     "subtitle": "Mobilde en kapsamlı turistik rehberinizle Türkiye'nin saklı cennetlerine adım atın.",

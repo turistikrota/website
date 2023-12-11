@@ -1,3 +1,5 @@
+import CubeEffect from '@turistikrota/ui/design/cube'
+import GlassEffect from '@turistikrota/ui/design/glass'
 import { cookies } from 'next/headers'
 import React from 'react'
 import BasicFooter from '~/components/footers/BasicFooter'
@@ -8,16 +10,33 @@ import CurrentAccountLayout from './current-account'
 type Props = {
   withoutFooter?: boolean
   fullHeight?: boolean
+  fillSize?: boolean
+  useEffects?: boolean
 }
 
-export function Layout({ children, fullHeight = false, withoutFooter = false }: React.PropsWithChildren<Props>) {
+export function Layout({
+  children,
+  fullHeight = false,
+  fillSize = true,
+  withoutFooter = false,
+  useEffects = true,
+}: React.PropsWithChildren<Props>) {
   const cookie = cookies()
   return (
     <CurrentAccountLayout
       accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}
       accountCookie={cookie.get(Config.cookies.accountName)?.value ?? ''}
     >
-      <DefaultHeader accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}></DefaultHeader>
+      <DefaultHeader
+        fillSize={fillSize}
+        accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}
+      ></DefaultHeader>
+      {useEffects && (
+        <>
+          <GlassEffect.Fixed />
+          <CubeEffect.All />
+        </>
+      )}
       <main>{children}</main>
       {!withoutFooter && <BasicFooter></BasicFooter>}
     </CurrentAccountLayout>
