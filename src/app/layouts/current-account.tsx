@@ -17,11 +17,9 @@ export default function CurrentAccountLayout({
   accountCookie,
   accessTokenIsExists,
 }: React.PropsWithChildren<Props>) {
-  console.log('current account works')
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('current account use effect works')
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
     if (accessTokenIsExists && (!accountCookie || !!item)) {

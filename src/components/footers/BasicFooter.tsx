@@ -2,7 +2,6 @@ import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export default function BasicFooter() {
-  console.log('basic footer works')
   const t = useTranslations('footer')
   return (
     <footer>

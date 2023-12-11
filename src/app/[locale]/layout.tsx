@@ -19,9 +19,7 @@ import { LayoutProps } from '~/types/base'
 type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  console.log('metadata works')
   const t = await getTranslations({ locale, namespace: 'base' })
-  console.log('metadata returns')
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -96,13 +94,10 @@ const arimo = Arimo({
 })
 
 export default async function Root({ params: { locale }, children }: React.PropsWithChildren<Props>) {
-  console.log('layout works')
   const messages = await getMessages(locale)
-  console.log('layout fetches messages')
   if (!['en', 'tr'].includes(locale)) {
     unstable_setRequestLocale('tr')
   }
-  console.log('layout renders')
   return (
     <html lang={locale} className={arimo.className}>
       <head>

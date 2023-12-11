@@ -8,7 +8,6 @@ type Props = {
 }
 
 export default function Home({ params: { locale } }: Props) {
-  console.log('page works')
   return (
     <Layout withoutFooter fullHeight>
       <MobileAppLanding></MobileAppLanding>
