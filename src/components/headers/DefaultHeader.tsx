@@ -6,7 +6,6 @@ import Logo from '@turistikrota/ui/logo'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { getStaticRoute } from '~/static/page'
-import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
 
 type Props = {
@@ -50,9 +49,7 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
           </HeaderLogo>
         </MobileHeader.Left>
         <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
-        <MobileHeader.Right>
-          <AccountHeaderButton accessTokenIsExists={accessTokenIsExists} />
-        </MobileHeader.Right>
+        <MobileHeader.Right>{/*<AccountHeaderButton accessTokenIsExists={accessTokenIsExists} />*/}</MobileHeader.Right>
       </MobileHeader>
     </>
   )
