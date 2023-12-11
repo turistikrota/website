@@ -5,6 +5,8 @@ import TopHeader from '@turistikrota/ui/headers/top'
 import Logo from '@turistikrota/ui/logo'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { Paths } from '~/i18n.config'
+import { I18nLink } from '~/navigation'
 import { getStaticRoute } from '~/static/page'
 import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
@@ -34,12 +36,9 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
           </Link>
         </TopHeader.Left>
         <TopHeader.Right>
-          <Link
-            href={getStaticRoute(locale).aboutUs}
-            className='transition-all duration-200 ease-in-out hover:opacity-80'
-          >
+          <I18nLink href={Paths.aboutUs} className='transition-all duration-200 ease-in-out hover:opacity-80'>
             {t('links.aboutUs')}
-          </Link>
+          </I18nLink>
         </TopHeader.Right>
       </TopHeader>
       <MobileHeader withTopHeader>
