@@ -15,7 +15,6 @@ type Props = {
 
 export default function DefaultHeader({ accessTokenIsExists }: Props) {
   const t = useTranslations('header')
-  console.log(process.env)
   const locale = useLocale()
   return (
     <>
