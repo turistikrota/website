@@ -7,6 +7,7 @@ import React from 'react'
 import BasicFooter from '../footers/BasicFooter'
 
 const MobileAppLanding: React.FC = () => {
+  console.log('mobile app landing works')
   const t = useTranslations('mobile')
   return (
     <>
