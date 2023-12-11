@@ -21,6 +21,7 @@ export default function CurrentAccountLayout({
   const dispatch = useDispatch()
 
   useEffect(() => {
+    console.log('current account use effect works')
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
     if (accessTokenIsExists && (!accountCookie || !!item)) {

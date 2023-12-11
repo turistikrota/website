@@ -14,6 +14,7 @@ type Props = {
 }
 
 export default function DefaultHeader({ accessTokenIsExists }: Props) {
+  console.log('default header works')
   const t = useTranslations('header')
   const locale = useLocale()
   return (
