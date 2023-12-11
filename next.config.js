@@ -30,14 +30,6 @@ const nextConfig = {
       },
     ],
   },
-  publicRuntimeConfig: {
-    NEXT_PUBLIC_SITE_ACCOUNT_TR_URL: process.env.NEXT_PUBLIC_SITE_ACCOUNT_TR_URL,
-    aa: 'bb',
-  },
-  serverRuntimeConfig: {
-    NEXT_PUBLIC_SITE_ACCOUNT_TR_URL: process.env.NEXT_PUBLIC_SITE_ACCOUNT_TR_URL,
-    aa: 'bb',
-  },
 }
 
 module.exports = withNextIntl(withMDX(nextConfig))

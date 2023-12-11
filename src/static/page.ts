@@ -61,6 +61,7 @@ const Routes: Record<Locales, RouteType> = {
 }
 
 export const getStaticRoute = (locale: string) => {
+  console.log('Route::', Routes)
   if (!['tr', 'en'].includes(locale)) return Routes['tr']
   return Routes[locale as Locales]
 }
