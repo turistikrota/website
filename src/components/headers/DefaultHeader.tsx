@@ -4,7 +4,7 @@ import MobileHeader from '@turistikrota/ui/headers/mobile'
 import TopHeader from '@turistikrota/ui/headers/top'
 import Logo from '@turistikrota/ui/logo'
 import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next-intl/link'
+import Link from 'next/link'
 import { getStaticRoute } from '~/static/page'
 import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
@@ -22,13 +22,13 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
         <TopHeader.Left>
           <Link
             href={getStaticRoute(locale).businesses}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.businesses')}
           </Link>
           <Link
             href={getStaticRoute(locale).places}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.places')}
           </Link>
@@ -36,7 +36,7 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
         <TopHeader.Right>
           <Link
             href={getStaticRoute(locale).aboutUs}
-            className='hover:opacity-80 transition-all duration-200 ease-in-out'
+            className='transition-all duration-200 ease-in-out hover:opacity-80'
           >
             {t('links.aboutUs')}
           </Link>

@@ -4,24 +4,22 @@ import CubeEffect from '@turistikrota/ui/design/cube'
 import GlassEffect from '@turistikrota/ui/design/glass'
 import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getTranslator } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
 import Script from 'next/script'
 import 'sspin/dist/index.css'
 import '~/app/globals.css'
 import PwaHead from '~/components/pwa/PwaHead'
+import { getMessages } from '~/i18n'
 import ReduxProvider from '~/store/provider'
 import { LayoutProps } from '~/types/base'
 
-type Props = LayoutProps & {
-  children: React.ReactNode
-  token: string
-}
+type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
-  const t = await getTranslator(locale, 'base')
+  const t = await getTranslations({ locale, namespace: 'base' })
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -48,7 +46,6 @@ export async function generateMetadata({ params: { locale } }: LayoutProps): Pro
         tr: '/tr',
       },
     },
-    colorScheme: 'light dark',
     robots: {
       index: true,
       follow: true,
@@ -81,8 +78,13 @@ export async function generateMetadata({ params: { locale } }: LayoutProps): Pro
         },
       ],
     },
-    viewport: 'width=device-width, initial-scale=1.0',
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  colorScheme: 'light dark',
 }
 
 const arimo = Arimo({
@@ -91,8 +93,11 @@ const arimo = Arimo({
   preload: true,
 })
 
-export default async function Root({ children, params: { locale } }: Props) {
-  const messages = (await import(`~/messages/${locale}.json`)).default
+export default async function Root({ params: { locale }, children }: React.PropsWithChildren<Props>) {
+  const messages = await getMessages(locale)
+  if (!['en', 'tr'].includes(locale)) {
+    unstable_setRequestLocale('tr')
+  }
   return (
     <html lang={locale} className={arimo.className}>
       <head>
@@ -100,7 +105,7 @@ export default async function Root({ children, params: { locale } }: Props) {
         <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
         <PwaHead locale={locale} />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
             <GlassEffect.Fixed />

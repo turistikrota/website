@@ -1,3 +1,3 @@
-import ComingSoon from "~/app/[locale]/coming-soon/page";
+import ComingSoon from '~/app/[locale]/coming-soon/page'
 
-export default ComingSoon;
+export default ComingSoon

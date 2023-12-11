@@ -1,14 +1,10 @@
-const withNextIntl = require('next-intl/plugin')()
+const withNextIntl = require('next-intl/plugin')('./src/i18n.tsx')
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
   },
-})
-const withPwa = require('next-pwa')({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
 })
 
 /** @type {import('next').NextConfig} */
@@ -22,12 +18,18 @@ const nextConfig = {
     buildActivity: false,
   },
   experimental: {
-    appDir: true,
     mdxRs: true,
   },
   images: {
-    domains: ['s3.turistikrota.com', 'avatar.turistikrota.com', 'images.unsplash.com'],
+    remotePatterns: [
+      {
+        hostname: 's3.turistikrota.com',
+      },
+      {
+        hostname: 'avatar.turistikrota.com',
+      },
+    ],
   },
 }
 
-module.exports = withPwa(withNextIntl(withMDX(nextConfig)))
+module.exports = withNextIntl(withMDX(nextConfig))

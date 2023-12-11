@@ -61,10 +61,10 @@ export default function OurTeamSection() {
   ]
 
   return (
-    <section className='container my-24 px-6 mx-auto'>
+    <section className='container mx-auto my-24 px-6'>
       <div className='mb-32 text-center lg:text-left'>
-        <h2 className='text-3xl font-bold mb-12 text-center'>{t('meetTheTeam')}</h2>
-        <div className='grid md:grid-cols-3 gap-4'>
+        <h2 className='mb-12 text-center text-3xl font-bold'>{t('meetTheTeam')}</h2>
+        <div className='grid gap-4 md:grid-cols-3'>
           {members.map((member) => (
             <MemberCard
               {...member}
