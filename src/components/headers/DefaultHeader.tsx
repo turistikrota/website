@@ -1,11 +1,8 @@
 'use client'
 
 import MobileHeader from '@turistikrota/ui/headers/mobile'
-import TopHeader from '@turistikrota/ui/headers/top'
 import Logo from '@turistikrota/ui/logo'
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
-import { getStaticRoute } from '~/static/page'
+import { useLocale, useTranslations } from 'next-intl'
 import AccountHeaderButton from './AccountHeaderButton'
 import HeaderLogo from './HeaderLogo'
 
@@ -16,11 +13,12 @@ type Props = {
 export default function DefaultHeader({ accessTokenIsExists }: Props) {
   console.log('default header works')
   const t = useTranslations('header')
-  //const locale = useLocale()
-  const locale = 'tr'
+  const locale = useLocale()
+  console.log('locale', locale)
   return (
     <>
-      <TopHeader>
+      {/*
+        <TopHeader>
         <TopHeader.Left>
           <Link
             href={getStaticRoute(locale).businesses}
@@ -44,6 +42,7 @@ export default function DefaultHeader({ accessTokenIsExists }: Props) {
           </Link>
         </TopHeader.Right>
       </TopHeader>
+        */}
       <MobileHeader withTopHeader>
         <MobileHeader.Left>
           <HeaderLogo>
