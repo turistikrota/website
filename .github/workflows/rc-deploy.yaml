@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and publish docker
         run: |
-          docker build . --file Dockerfile --tag turistikrota/site-rc:$IMAGE_TAG
+          docker build . --file Dockerfile --tag turistikrota/site.rc:$IMAGE_TAG
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker push turistikrota/site-rc:$IMAGE_TAG
+          docker push turistikrota/site.rc:$IMAGE_TAG
           
 
   deploy:
@@ -38,5 +38,5 @@ jobs:
           script: |
             docker service ls | grep -q site-rc && docker service rm site-rc || true
             cd $RC_DIR
-            docker pull turistikrota/site-rc:$IMAGE_TAG
-            docker service create --name site-rc --env-file prod-env --publish $RC_APP_PORT:3000 --hostname 0.0.0.0 turistikrota/site-rc:$IMAGE_TAG
+            docker pull turistikrota/site.rc:$IMAGE_TAG
+            docker service create --name site-rc --env-file prod-env --publish $RC_APP_PORT:3000 --hostname 0.0.0.0 turistikrota/site.rc:$IMAGE_TAG
