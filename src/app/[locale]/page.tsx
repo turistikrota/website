@@ -5,7 +5,7 @@ import { Layout } from '../layouts/default'
 
 export default function Home() {
   return (
-    <Layout fillSize={false} useEffects={true} className='space-y-28'>
+    <Layout fillSize={false} useEffects={true} className='space-y-10 lg:space-y-28'>
       <HomeCategoryFilterSection />
       <HomePopularCentersSection />
       <HomeBusinessSection />
