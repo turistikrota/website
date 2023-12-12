@@ -16,6 +16,12 @@
       "keywords": "Terms of Use, Touristic Route, Holiday Planning, Tour Reservation"
     }
   },
+  "common": {
+    "noResult": {
+      "title": "No Result Found",
+      "description": "No results matching your search criteria were found."
+    }
+  },
   "home": {
     "category-filter": {
       "title": "Experience real tourism with Turistikrota!",
@@ -54,7 +60,8 @@
    "listing": {
     "title": "Latest Accommodations",
     "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
-    "button": "See All"
+    "button": "See All",
+    "no-result": "There are currently no available accommodation options. Please try again later."
   }
   },
   "mobile": {

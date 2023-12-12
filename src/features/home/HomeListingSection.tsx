@@ -3,6 +3,7 @@ import LandingSection from '@turistikrota/ui/section/landing'
 import { ListResponse } from '@turistikrota/ui/types'
 import { useTranslations } from 'next-intl'
 import { FC } from 'react'
+import NoResultFound from '~/components/cards/NoResultFound'
 import ListingListCard from '../listing/card/ListingListCard'
 import { ListingListItem } from '../listing/types/listing'
 
@@ -24,9 +25,9 @@ const HomeListingSection: FC<Props> = ({ res }) => {
         </div>
       </div>
       <div className='mt-8 grid grid-cols-12 gap-4'>
-        {res.list.map((li, index) => (
-          <ListingListCard key={index} {...li} customGrid='col-span-12 md:col-span-3' />
-        ))}
+        {res.list.length === 0 && <NoResultFound description={t('no-result')} className='col-span-12' />}
+        {res.list.length > 0 &&
+          res.list.map((li, index) => <ListingListCard key={index} {...li} customGrid='col-span-12 md:col-span-3' />)}
       </div>
     </LandingSection>
   )
