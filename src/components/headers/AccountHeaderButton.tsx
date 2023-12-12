@@ -24,8 +24,8 @@ const ProfileButton = ({ account }: { account: AccountListItem }) => {
   const locale = useLocale()
   return (
     <Link href={getStaticRoute(locale).account.details} aria-label={t('profile')} title={t('profile')}>
-      <div className='group relative flex flex-row items-center space-x-1 rounded-md transition-colors duration-200 ease-in-out dark:hover:bg-third md:px-3 md:hover:bg-second'>
-        <div className='flex h-12 w-12 flex-col items-end justify-center rounded-full md:items-center'>
+      <div className='group relative flex flex-row items-center justify-center gap-x-1 rounded-md bg-second transition-all duration-200 ease-in-out hover:brightness-105 md:pl-1 md:pr-3'>
+        <div className='flex h-9 w-9 flex-col items-end justify-center rounded-full md:h-12 md:w-12 md:items-center'>
           <MobileHeader.Avatar>
             <Image
               src={src}
