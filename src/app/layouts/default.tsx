@@ -12,6 +12,7 @@ type Props = {
   fullHeight?: boolean
   fillSize?: boolean
   useEffects?: boolean
+  className?: string
 }
 
 export function Layout({
@@ -20,6 +21,7 @@ export function Layout({
   fillSize = true,
   withoutFooter = false,
   useEffects = true,
+  className,
 }: React.PropsWithChildren<Props>) {
   const cookie = cookies()
   return (
@@ -37,7 +39,7 @@ export function Layout({
           <CubeEffect.All />
         </>
       )}
-      <main>{children}</main>
+      <main className={className}>{children}</main>
       {!withoutFooter && <BasicFooter></BasicFooter>}
     </CurrentAccountLayout>
   )

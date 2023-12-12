@@ -29,7 +29,12 @@
       "place": "Discover",
       "start-date": "Start Date",
       "end-date": "End Date"
-    }
+    },
+    "business": {
+      "title": "Promote your business on Turistikrota!",
+      "subtitle": "Whether you are an individual or a corporation, you can promote your business on Turistikrota. Click the button below to promote your business on Turistikrota.",
+      "button": "Promote Your Business"
+   }
   },
   "mobile": {
     "title": "Discover the Hidden Corners of Turkey",

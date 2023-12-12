@@ -29,6 +29,11 @@
       "place": "Keşfet",
       "start-date": "Başlangıç Tarihi",
       "end-date": "Bitiş Tarihi"
+    },
+    "business": {
+      "title": "Turistikrota'da işletmenizi tanıtın!",
+      "subtitle": "İster bireysel ister kurumsal olun, Turistikrota'da işletmenizi tanıtabilirsiniz. İşletmenizi Turistikrota'da tanıtmak için aşağıdaki butona tıklayın.",
+      "button": "İşletmenizi Tanıtın"
     }
   },
   "mobile": {
