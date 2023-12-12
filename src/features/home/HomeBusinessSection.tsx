@@ -1,4 +1,5 @@
 import Button from '@turistikrota/ui/button'
+import Section from '@turistikrota/ui/section/landing'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -8,7 +9,7 @@ const HomeBusinessSection: FC = () => {
   const t = useTranslations('home.business')
   const locale = useLocale()
   return (
-    <section className='container mx-auto p-4 xl:p-0'>
+    <Section>
       <div
         className='grid grid-cols-12 rounded-md bg-[#121212] bg-cover bg-center bg-no-repeat px-10 py-20'
         style={{
@@ -26,7 +27,7 @@ const HomeBusinessSection: FC = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 
