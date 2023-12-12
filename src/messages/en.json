@@ -18,6 +18,7 @@
   },
   "home": {
     "category-filter": {
+      "title": "Experience real tourism with Turistikrota!",
       "category": "Category",
       "word": "Search by Word",
       "startDate": "Start Date",
@@ -25,7 +26,9 @@
       "search": "Search",
       "explore": "Explore",
       "listing": "Accommodation",
-      "place": "Discover"
+      "place": "Discover",
+      "start-date": "Start Date",
+      "end-date": "End Date"
     }
   },
   "mobile": {

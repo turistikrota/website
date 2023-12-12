@@ -18,6 +18,7 @@
   },
   "home": {
     "category-filter": {
+      "title": "Turistikrota ile gerçek turizm deneyimini yaşayın!",
       "category": "Kategori",
       "word": "Kelime ile Ara",
       "startDate": "Başlangıç Tarihi",
@@ -25,7 +26,9 @@
       "search": "Ara",
       "explore": "Keşfet",
       "listing": "Konaklama",
-      "place": "Keşfet"
+      "place": "Keşfet",
+      "start-date": "Başlangıç Tarihi",
+      "end-date": "Bitiş Tarihi"
     }
   },
   "mobile": {

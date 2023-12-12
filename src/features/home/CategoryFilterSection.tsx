@@ -38,13 +38,13 @@ const CategoryFilterSection: FC = () => {
           <div className='col-span-12 flex w-full gap-x-4 md:col-span-9'>
             <div className='w-full'>
               <Input
-                id='startDate'
                 name='startDate'
                 type='date'
                 min={new Date().toISOString().split('T')[0]}
                 max={endDate}
-                autoComplete='start-date'
-                label='Başlangıç Tarihi'
+                autoComplete='off'
+                label={t('start-date')}
+                ariaLabel={t('start-date')}
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
               />
@@ -54,12 +54,12 @@ const CategoryFilterSection: FC = () => {
             </div>
             <div className='w-full'>
               <Input
-                id='endDate'
                 name='endDate'
                 type='date'
                 min={startDate}
-                autoComplete='end-date'
-                label='Bitiş Tarihi'
+                autoComplete='off'
+                label={t('end-date')}
+                ariaLabel={t('end-date')}
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
               />
