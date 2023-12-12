@@ -1,7 +1,5 @@
 import '@turistikrota/ui/assets/config.css'
 import '@turistikrota/ui/assets/default.css'
-import CubeEffect from '@turistikrota/ui/design/cube'
-import GlassEffect from '@turistikrota/ui/design/glass'
 import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata, Viewport } from 'next'
@@ -107,11 +105,7 @@ export default async function Root({ params: { locale }, children }: React.Props
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ReduxProvider>
-            <GlassEffect.Fixed />
-            <CubeEffect.All />
-            {children}
-          </ReduxProvider>
+          <ReduxProvider>{children}</ReduxProvider>
         </NextIntlClientProvider>
         <Script async={true} src='https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B'></Script>
         <Script id='google-analytics-config' strategy='afterInteractive'>

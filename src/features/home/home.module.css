@@ -1,0 +1,13 @@
+.banner {}
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        background-image: url(https://s3.turistikrota.com/building/maldives.jpg);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .banner {
+        background-image: url(https://s3.turistikrota.com/building/villa-landspace.jpg);
+    }
+}
