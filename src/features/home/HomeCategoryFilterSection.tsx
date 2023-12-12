@@ -10,7 +10,7 @@ const HomeCategoryFilterSection: FC = () => {
   return (
     <section className='relative flex h-screen flex-col items-center justify-center gap-8 p-4 lg:p-0'>
       <div
-        className={`absolute left-0 top-0 h-full w-full bg-cover bg-fixed bg-center bg-no-repeat brightness-90 md:bg-center ${styles.banner}`}
+        className={`absolute left-0 top-0 h-full w-full bg-sky-50 bg-cover bg-fixed bg-center bg-no-repeat brightness-90 md:bg-center ${styles.banner}`}
       ></div>
       <div className='z-10'>
         <h1 className='text-center text-4xl font-semibold text-white'>{t('title')}</h1>

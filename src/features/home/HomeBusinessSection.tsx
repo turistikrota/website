@@ -10,7 +10,7 @@ const HomeBusinessSection: FC = () => {
   return (
     <section className='container mx-auto p-4 xl:p-0'>
       <div
-        className='grid grid-cols-12 rounded-md bg-cover bg-center bg-no-repeat px-10 py-20'
+        className='grid grid-cols-12 rounded-md bg-[#121212] bg-cover bg-center bg-no-repeat px-10 py-20'
         style={{
           backgroundImage: 'url(https://s3.turistikrota.com/site/banners/business.jpg)',
         }}
