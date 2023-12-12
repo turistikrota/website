@@ -34,6 +34,22 @@
       "title": "Turistikrota'da işletmenizi tanıtın!",
       "subtitle": "İster bireysel ister kurumsal olun, Turistikrota'da işletmenizi tanıtabilirsiniz. İşletmenizi Turistikrota'da tanıtmak için aşağıdaki butona tıklayın.",
       "button": "İşletmenizi Tanıtın"
+    },
+    "centers": {
+      "title": "Türkiye'nin Gözde Yerleri",
+      "subtitle": "Türkiye'nin en popüler yerlerini keşfedin. Ege'nin incisi İzmir'den tarihin kalbi İstanbul'a, Akdeniz'in sıcak sahillerinden Kapadokya'nın büyülü manzaralarına kadar, her zevke uygun destinasyonlarımız sizleri bekliyor.",
+      "button": "Daha Fazla",
+      "detail-button": "Keşfet",
+      "descriptions": {
+        "buyukada": "İstanbul'un büyüleyici adası Büyükada, tarihi yalıları ve huzurlu doğa yürüyüşleriyle unutulmaz bir kaçış sunar.",
+        "sapanca": "Yeşilin ve mavinin buluştuğu Sapanca, göl kenarında huzurlu bir mola ve doğa aktiviteleri için ideal bir durak.",
+        "odunpazari": "Eskişehir'in tarihi kalbi Odunpazarı, renkli Osmanlı evleri ve sanat galerileriyle ziyaretçilerini zamanda bir yolculuğa çıkarır.",
+        "sile": "İstanbul'a yakın bir kaçamak noktası olan Şile, geniş plajları ve deniz feneriyle doğal güzelliklerle dolu bir sahil kasabasıdır.",
+        "kartepe": "Kış sporları ve doğa yürüyüşleri için popüler bir destinasyon olan Kartepe, muhteşem manzaraları ve dağ havasıyla büyüler.",
+        "karasu": "Sakarya'nın sahil kasabası Karasu, uzun kumsalları ve temiz deniziyle mükemmel bir yaz tatili vaat eder.",
+        "bebek": "Boğaz'ın incisi Bebek Sahili, muhteşem manzarası ve şık kafeleriyle İstanbul'un en gözde buluşma noktalarından biridir.",
+        "more": "Turistikrota'da daha fazla yer keşfedin!"
+      }
     }
   },
   "mobile": {

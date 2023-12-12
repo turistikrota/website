@@ -34,6 +34,22 @@
       "title": "Promote your business on Turistikrota!",
       "subtitle": "Whether you are an individual or a corporation, you can promote your business on Turistikrota. Click the button below to promote your business on Turistikrota.",
       "button": "Promote Your Business"
+   },
+   "centers": {
+    "title": "Turkey's Top Spots",
+    "subtitle": "Discover Turkey's most popular spots. From the pearl of the Aegean, Izmir, to the historical heart of Istanbul, the warm beaches of the Mediterranean to the enchanting landscapes of Cappadocia, our destinations cater to every taste.",
+    "button": "More Destinations",
+    "detail-button": "Explore",
+    "descriptions": {
+      "buyukada": "Istanbul's enchanting island, Büyükada, offers a memorable escape with its historic mansions and serene nature walks.",
+      "sapanca": "Where green meets blue, Sapanca is an ideal stop for a peaceful break by the lake and nature activities.",
+      "odunpazari": "The historical heart of Eskişehir, Odunpazarı, takes visitors on a journey through time with its colorful Ottoman houses and art galleries.",
+      "sile": "A getaway near Istanbul, Şile is a coastal town filled with natural beauty, boasting wide beaches and a lighthouse.",
+      "kartepe": "Popular for winter sports and nature hikes, Kartepe captivates with its stunning views and fresh mountain air.",
+      "karasu": "The coastal town of Karasu in Sakarya promises a perfect summer holiday with its long sandy beaches and clean sea.",
+      "bebek": "The pearl of the Bosphorus, Bebek Beach, is one of Istanbul's most popular meeting spots, known for its stunning views and stylish cafés.",
+      "more": "Discover more places on Turistikrota!"
+    }
    }
   },
   "mobile": {
