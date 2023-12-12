@@ -50,7 +50,12 @@
       "bebek": "The pearl of the Bosphorus, Bebek Beach, is one of Istanbul's most popular meeting spots, known for its stunning views and stylish cafés.",
       "more": "Discover more places on Turistikrota!"
     }
-   }
+   },
+   "listing": {
+    "title": "Latest Accommodations",
+    "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
+    "button": "See All"
+  }
   },
   "mobile": {
     "title": "Discover the Hidden Corners of Turkey",

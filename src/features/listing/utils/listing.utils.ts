@@ -1,6 +1,6 @@
-import { ReadonlyURLSearchParams } from 'next/navigation'
 import { PaginationFilterRequest } from '~/types/pagination'
-import { ListingFilter, ListingKeys, isDistance, isOrder, isSort } from '../types/listing.filter'
+import { ListingImage } from '../types/listing'
+import { ListingFilter, ListingKeyBindings, ListingKeys, isDistance, isOrder, isSort } from '../types/listing.filter'
 
 type Parser = (value: string) => void
 
@@ -19,7 +19,15 @@ const toBool = (value: boolean): string => {
   return value ? 'on' : 'off'
 }
 
-export const getQueryFromSearchParams = (searchParams: ReadonlyURLSearchParams) => {
+export const getQueryFromSearchParams = (searchParams: URLSearchParams): PaginationFilterRequest<ListingFilter> => {
+  const bindings: ListingKeyBindings = {}
+  searchParams.forEach((value, key) => {
+    bindings[key as ListingKeys] = value
+  })
+  return getQueryFromKeyBindings(bindings)
+}
+
+export const getQueryFromKeyBindings = (bindings: ListingKeyBindings) => {
   const query: PaginationFilterRequest<ListingFilter> = { filter: {} }
   const Bindings: Record<ListingKeys, Parser> = {
     page: (value: string) => {
@@ -35,7 +43,7 @@ export const getQueryFromSearchParams = (searchParams: ReadonlyURLSearchParams) 
       }
     },
     lat: (value: string) => {
-      const lng = searchParams.get('lng')
+      const { lng } = bindings
       if (lng) {
         const lat = parseFloat(value)
         const lng2 = parseFloat(lng)
@@ -45,7 +53,7 @@ export const getQueryFromSearchParams = (searchParams: ReadonlyURLSearchParams) 
       }
     },
     lng: (value: string) => {
-      const lat = searchParams.get('lat')
+      const { lat } = bindings
       if (lat) {
         const lng = parseFloat(value)
         const lat2 = parseFloat(lat)
@@ -166,7 +174,7 @@ export const getQueryFromSearchParams = (searchParams: ReadonlyURLSearchParams) 
       query.filter.validation = { ...query.filter.validation, guest: val }
     },
   }
-  searchParams.forEach((value, key) => {
+  Object.entries(bindings).forEach(([key, value]) => {
     const parser = Bindings[key as ListingKeys]
     if (parser) {
       parser(value)
@@ -254,4 +262,8 @@ export const toQueryString = (query: PaginationFilterRequest<ListingFilter>): st
     }
   }
   return q.toString()
+}
+
+export const mapAndSortImages = (images: ListingImage[]): string[] => {
+  return images.sort((a, b) => a.order - b.order).map((image) => image.url)
 }

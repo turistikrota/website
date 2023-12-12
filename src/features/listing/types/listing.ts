@@ -5,12 +5,12 @@ type ListingBusiness = {
   nickName: string
 }
 
-type ListingImage = {
+export type ListingImage = {
   url: string
   order: number
 }
 
-type ListingMeta = {
+export type ListingMeta = {
   title: string
   description: string
   slug: string
@@ -66,4 +66,10 @@ export type ListingListItem = {
   prices: ListingPrice[]
   location: ListingLocation
   validation: ListingValidation
+}
+
+export const EmptyListingMeta: ListingMeta = {
+  title: '',
+  description: '',
+  slug: '',
 }

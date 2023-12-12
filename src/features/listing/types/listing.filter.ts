@@ -1,11 +1,11 @@
 import { Coordinates } from '@turistikrota/ui/types'
 
-enum ListingOrder {
+export enum ListingOrder {
   ASC = 'asc',
   DESC = 'desc',
 }
 
-enum ListingSort {
+export enum ListingSort {
   MostRecent = 'most_recent',
   Nearest = 'nearest',
   Price = 'price',

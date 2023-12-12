@@ -50,6 +50,11 @@
         "bebek": "Boğaz'ın incisi Bebek Sahili, muhteşem manzarası ve şık kafeleriyle İstanbul'un en gözde buluşma noktalarından biridir.",
         "more": "Turistikrota'da daha fazla yer keşfedin!"
       }
+    },
+    "listing": {
+      "title": "Son Eklenen Konaklamalar",
+      "subtitle": "Turistikrota'da en son eklenen konaklamaları keşfedin. Konaklama seçeneklerimiz arasında oteller, pansiyonlar, evler, kamp alanları ve daha fazlası bulunuyor.",
+      "button": "Tümünü Gör"
     }
   },
   "mobile": {
