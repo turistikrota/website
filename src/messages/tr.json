@@ -16,6 +16,12 @@
       "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     }
   },
+  "common": {
+    "noResult": {
+      "title": "Sonuç Bulunamadı",
+      "description": "Aradığınız kriterlere uygun sonuç bulunamadı."
+    }
+  },
   "home": {
     "category-filter": {
       "title": "Turistikrota ile gerçek turizm deneyimini yaşayın!",
@@ -50,6 +56,12 @@
         "bebek": "Boğaz'ın incisi Bebek Sahili, muhteşem manzarası ve şık kafeleriyle İstanbul'un en gözde buluşma noktalarından biridir.",
         "more": "Turistikrota'da daha fazla yer keşfedin!"
       }
+    },
+    "listing": {
+      "title": "Son Eklenen Konaklamalar",
+      "subtitle": "Turistikrota'da en son eklenen konaklamaları keşfedin. Konaklama seçeneklerimiz arasında oteller, pansiyonlar, evler, kamp alanları ve daha fazlası bulunuyor.",
+      "button": "Tümünü Gör",
+      "no-result": "Şu anda uygun konaklama seçenekleri bulunmamaktadır. Lütfen daha sonra tekrar deneyin."
     }
   },
   "mobile": {

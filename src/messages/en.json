@@ -16,6 +16,12 @@
       "keywords": "Terms of Use, Touristic Route, Holiday Planning, Tour Reservation"
     }
   },
+  "common": {
+    "noResult": {
+      "title": "No Result Found",
+      "description": "No results matching your search criteria were found."
+    }
+  },
   "home": {
     "category-filter": {
       "title": "Experience real tourism with Turistikrota!",
@@ -50,7 +56,13 @@
       "bebek": "The pearl of the Bosphorus, Bebek Beach, is one of Istanbul's most popular meeting spots, known for its stunning views and stylish cafés.",
       "more": "Discover more places on Turistikrota!"
     }
-   }
+   },
+   "listing": {
+    "title": "Latest Accommodations",
+    "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
+    "button": "See All",
+    "no-result": "There are currently no available accommodation options. Please try again later."
+  }
   },
   "mobile": {
     "title": "Discover the Hidden Corners of Turkey",
