@@ -1,11 +1,13 @@
 'use client'
 
+import { Locales } from '@turistikrota/ui'
 import Card from '@turistikrota/ui/cards/default'
 import Carousel from '@turistikrota/ui/carousel'
 import { mapAndSortImages } from '@turistikrota/ui/utils/image'
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import { FC, MouseEventHandler } from 'react'
+import { SiteUrls } from '~/static/site'
 import { getI18nTranslations } from '~/utils/i18n'
 import { EmptyListingMeta, ListingListItem, ListingMeta } from '../types/listing'
 import ListingCardBusinessSection from './sections/ListingCardBusinessSection'
@@ -37,7 +39,12 @@ const ListingListCard: FC<Props> = ({
       noPadding
       className={`col-span-12 flex flex-col transition-colors duration-200 hover:border-primary md:col-span-3`}
     >
-      <Link href={'/'} target='_blank' onClick={checkOutsideClick} className='h-full'>
+      <Link
+        href={`${SiteUrls.listing[locale as Locales]}/${translations.slug}`}
+        target='_blank'
+        onClick={checkOutsideClick}
+        className='h-full'
+      >
         <div className='flex h-full flex-col'>
           <Carousel imageAltPrefix='' images={mapAndSortImages(images)} variant={Carousel.Variants.List} />
           <div className='flex h-full flex-col justify-between p-2'>
