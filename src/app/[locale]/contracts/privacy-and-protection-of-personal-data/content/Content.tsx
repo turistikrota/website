@@ -1,6 +1,6 @@
 'use client'
 
-import ContentLoader from '@turistikrota/ui/cjs/loader'
+import ContentLoader from '@turistikrota/ui/loader'
 import type { MDXProps } from 'mdx/types'
 import { useLocale } from 'next-intl'
 import dynamic from 'next/dynamic'

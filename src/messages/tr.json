@@ -123,6 +123,30 @@
     }
   },
   "footer": {
+    "grid": {
+      "sites": {
+        "title": "Yardımcı Bağlantılar",
+        "places": "Yerler",
+        "listing": "Konaklama",
+        "business": "İşletme Paneli",
+        "account": "Hesap Ayarları"
+      },
+      "company": {
+        "title": "Şirket",
+        "about-us": "Hakkımızda",
+        "contact-us": "İletişim",
+        "meet-the-team": "Ekibimizi Tanıyın"
+      },
+      "downloads": {
+        "title": "Uygulamalarımız"
+      },
+      "social": {
+        "title": "Sosyal Medya"
+      }
+    },
+    "terms": "Kullanım Koşulları",
+    "privacy-policy": "Gizlilik Politikası",
+    "cookies": "Çerezler",
     "copyright": "Turistikrota. Tüm hakları saklıdır."
   },
   "header": {

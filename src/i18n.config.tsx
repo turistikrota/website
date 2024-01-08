@@ -7,10 +7,6 @@ export const pathnames = {
     en: '/en',
     tr: '/tr',
   },
-  '/mobile': {
-    en: '/mobile',
-    tr: '/uygulama',
-  },
   '/contracts/privacy-notice': {
     en: '/contracts/privacy-notice',
     tr: '/sozlesmeler/gizlilik-bildirimi',
@@ -35,7 +31,6 @@ type IPathName = {
 
 type IPath = {
   root: IPathName
-  mobile: IPathName
   contracts: {
     privacyNotice: IPathName
     termsOfUse: IPathName
@@ -47,9 +42,6 @@ type IPath = {
 export const Paths: IPath = {
   root: {
     pathname: '/',
-  },
-  mobile: {
-    pathname: '/mobile',
   },
   contracts: {
     privacyNotice: {
