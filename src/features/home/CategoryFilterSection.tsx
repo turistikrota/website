@@ -25,8 +25,13 @@ const CategoryFilterSection: FC = () => {
   const onClick = () => {
     if (category === Category.Place) {
       window.open(getStaticRoute(locale).places + `${word ? `?q=${word}` : ''}`, '_blank')
+    } else {
+      window.open(
+        getStaticRoute(locale).listings +
+          `${startDate ? `?sdate=${startDate}` : ''}${endDate ? `&edate=${endDate}` : ''}`,
+        '_blank',
+      )
     }
-    // listing not yet implemented
   }
   return (
     <div className='z-10 mb-10 flex w-full flex-col gap-4 rounded-md bg-second p-4 backdrop-blur-xs md:mb-44 md:max-w-4xl md:flex-row'>
