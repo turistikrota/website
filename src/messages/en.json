@@ -61,7 +61,16 @@
     "title": "Latest Accommodations",
     "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
     "button": "See All",
-    "no-result": "There are currently no available accommodation options. Please try again later."
+    "no-result": "There are currently no available accommodation options. Please try again later.",
+    "words": {
+      "from-business":"From Business"
+    },
+    "price": {
+      "min": "Minimum",
+      "max": "Maximum",
+         "not-available": "Price information is not available.",
+         "filterForStrict": "Search in detail for net prices."
+    }
   }
   },
   "mobile": {
