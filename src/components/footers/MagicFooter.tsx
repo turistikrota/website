@@ -3,6 +3,8 @@ import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
+import { Paths } from '~/i18n.config'
+import { I18nLink } from '~/navigation'
 import { getStaticRoute } from '~/static/page'
 import { SiteUrls } from '~/static/site'
 import Footer from './Footer'
@@ -12,9 +14,24 @@ type LinkItemProps = {
   icon?: string
   href: string
   hideText?: boolean
+  withI18n?: boolean
 }
 
-const LinkItem: FC<LinkItemProps> = ({ title, icon, href, hideText }) => {
+const LinkItem: FC<LinkItemProps> = ({ title, icon, href, hideText, withI18n }) => {
+  if (withI18n)
+    return (
+      <I18nLink
+        href={href as any}
+        title={title}
+        className={`text-gray-600 duration-200 hover:brightness-125 dark:text-gray-300 ${
+          icon ? 'flex w-fit items-center gap-2' : ''
+        }`}
+        target='_blank'
+      >
+        <i className={`bx bx-sm ${icon}`}></i>
+        {!hideText && title}
+      </I18nLink>
+    )
   return (
     <Link
       href={href}
@@ -52,7 +69,7 @@ const MagicFooter: FC = () => {
         </Footer.Grid.Col>
         <Footer.Grid.Col title={t('grid.company.title')}>
           <Footer.Grid.Col.Item>
-            <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} />
+            <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} withI18n />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem href={'mailto:tech@turistikrota.com'} title={t('grid.company.contact-us')} />
@@ -146,17 +163,20 @@ const MagicFooter: FC = () => {
           © {new Date().getFullYear()} {t('copyright')}
         </Footer.Copyright.Item>
         <Footer.Copyright.Item>
-          <Link className='duration-200 hover:brightness-125' href={getStaticRoute(locale).contracts.terms}>
+          <I18nLink className='duration-200 hover:brightness-125' href={Paths.contracts.termsOfUse}>
             {t('terms')}
-          </Link>
+          </I18nLink>
           &bull;
-          <Link className='duration-200 hover:brightness-125' href={getStaticRoute(locale).contracts.privacyNotify}>
+          <I18nLink className='duration-200 hover:brightness-125' href={Paths.contracts.privacyNotice}>
             {t('privacy-policy')}
-          </Link>
+          </I18nLink>
           &bull;
-          <Link className='duration-200 hover:brightness-125' href={getStaticRoute(locale).contracts.privacy}>
+          <I18nLink
+            className='duration-200 hover:brightness-125'
+            href={Paths.contracts.privacyAndProtectionOfPersonalData}
+          >
             {t('cookies')}
-          </Link>
+          </I18nLink>
         </Footer.Copyright.Item>
       </Footer.Copyright>
     </Footer>
