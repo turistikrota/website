@@ -28,7 +28,7 @@ const CategoryFilterSection: FC = () => {
     } else {
       window.open(
         getStaticRoute(locale).listings +
-          `${startDate ? `?startDate=${startDate}` : ''}${endDate ? `&endDate=${endDate}` : ''}`,
+          `${startDate ? `?sdate=${startDate}` : ''}${endDate ? `&edate=${endDate}` : ''}`,
         '_blank',
       )
     }

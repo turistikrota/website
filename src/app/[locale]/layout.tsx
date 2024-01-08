@@ -6,7 +6,9 @@ import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
+import { headers } from 'next/headers'
 import Script from 'next/script'
+import { userAgent } from 'next/server'
 import 'sspin/dist/index.css'
 import '~/app/globals.css'
 import PwaHead from '~/components/pwa/PwaHead'
@@ -96,11 +98,28 @@ export default async function Root({ params: { locale }, children }: React.Props
   if (!['en', 'tr'].includes(locale)) {
     unstable_setRequestLocale('tr')
   }
+  const { device } = userAgent({ headers: headers() })
   return (
     <html lang={locale} className={arimo.className}>
       <head>
         <meta httpEquiv='Permissions-Policy' content='interest-cohort=()' />
         <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
+        {device.type === 'mobile' && (
+          <link
+            rel='preload'
+            as='image'
+            href='https://s3.turistikrota.com/building/maldives.jpg'
+            fetchPriority='high'
+          />
+        )}
+        {device.type !== 'mobile' && (
+          <link
+            rel='preload'
+            as='image'
+            href='https://s3.turistikrota.com/building/villa-landspace.jpg'
+            fetchPriority='high'
+          />
+        )}
         <PwaHead locale={locale} />
       </head>
       <body>
