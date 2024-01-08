@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import React from 'react'
-import BasicFooter from '~/components/footers/BasicFooter'
+import MagicFooter from '~/components/footers/MagicFooter'
 import DefaultHeader from '~/components/headers/DefaultHeader'
 import { Config } from '~/config'
 import CurrentAccountLayout from './current-account'
@@ -30,7 +30,7 @@ export function Layout({
         accessTokenIsExists={cookie.get(Config.cookies.accessToken) !== undefined}
       ></DefaultHeader>
       <main className={className}>{children}</main>
-      {!withoutFooter && <BasicFooter></BasicFooter>}
+      {!withoutFooter && <MagicFooter />}
     </CurrentAccountLayout>
   )
 }

@@ -122,9 +122,37 @@
       "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
     }
   },
-  "footer": {
-    "copyright": "Turistikrota. All Rights Reserved."
-  },
+    "footer": {
+      "grid": {
+        "sites": {
+          "title": "Useful Links",
+          "places": "Places",
+          "listing": "Accommodation",
+          "business": "Business Panel",
+          "account": "Account Settings"
+        },
+        "company": {
+          "title": "Company",
+          "about-us": "About Us",
+          "contact-us": "Contact Us",
+          "meet-the-team": "Meet the Team"
+        },
+        "downloads": {
+          "title": "Our Apps"
+        },
+        "social": {
+          "title": "Social Media",
+          "instagram": "Instagram",
+          "twitter": "Twitter",
+          "linkedin": "LinkedIn",
+          "github": "GitHub"
+        }
+      },
+      "terms": "Terms of Use",
+      "privacy-policy": "Privacy Policy",
+      "cookies": "Cookies",
+      "copyright": "Turistikrota. All rights reserved."
+    },
   "header": {
     "left": {
       "promotion": "Real tourism experience coming soon!"
