@@ -2,15 +2,17 @@
 
 import Card from '@turistikrota/ui/cards/default'
 import Carousel from '@turistikrota/ui/carousel'
+import { mapAndSortImages } from '@turistikrota/ui/utils/image'
 import { useLocale } from 'next-intl'
-import { FC } from 'react'
+import Link from 'next/link'
+import { FC, MouseEventHandler } from 'react'
 import { getI18nTranslations } from '~/utils/i18n'
 import { EmptyListingMeta, ListingListItem, ListingMeta } from '../types/listing'
-import { mapAndSortImages } from '../utils/listing.utils'
+import ListingCardBusinessSection from './sections/ListingCardBusinessSection'
+import ListingCardLocationSection from './sections/ListingCardLocationSection'
+import ListingCardPriceSection from './sections/ListingCardPriceSection'
 
-type Props = ListingListItem & {
-  customGrid?: string
-}
+type Props = ListingListItem
 
 const ListingListCard: FC<Props> = ({
   uuid,
@@ -22,36 +24,35 @@ const ListingListCard: FC<Props> = ({
   location,
   prices,
   validation,
-  customGrid = 'col-span-12 md:col-span-4',
 }) => {
   const locale = useLocale()
   const translations = getI18nTranslations<ListingMeta>(meta, locale, EmptyListingMeta)
+
+  const checkOutsideClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
+    // @ts-ignore
+    if (['i', 'button'].includes(e.target?.tagName.toLowerCase())) return e.preventDefault()
+  }
   return (
     <Card
       noPadding
-      className={`flex flex-col shadow-md transition-shadow duration-200 hover:shadow-lg dark:shadow-none dark:hover:shadow-none ${customGrid}`}
+      className={`col-span-12 flex flex-col transition-colors duration-200 hover:border-primary md:col-span-3`}
     >
-      <div className='flex h-full flex-col'>
-        <Carousel
-          imageAltPrefix=''
-          images={mapAndSortImages(images)}
-          sizeClassName='h-72'
-          imageClassName='rounded-b-none'
-          imgLoadingClassName='rounded-t-md'
-        />
-        <div className='flex h-full flex-col justify-between p-4'>
-          <div className='flex flex-col gap-2'>
-            <div className='line-clamp-2 text-xl font-bold'>{translations.title}</div>
-            <div className='text-sm'>{translations.description}</div>
+      <Link href={'/'} target='_blank' onClick={checkOutsideClick} className='h-full'>
+        <div className='flex h-full flex-col'>
+          <Carousel imageAltPrefix='' images={mapAndSortImages(images)} variant={Carousel.Variants.List} />
+          <div className='flex h-full flex-col justify-between p-2'>
+            <div className='flex flex-col gap-2'>
+              <div className='line-clamp-2 text-xl font-bold'>{translations.title}</div>
+              <div className='overflow-hidden text-ellipsis text-sm'>{translations.description}</div>
+            </div>
+          </div>
+          <div className='grid grid-cols-12 gap-2 px-2'>
+            <ListingCardBusinessSection nickName={business.nickName} />
+            <ListingCardLocationSection city={location.city} street={location.street} className='justify-end' />
+            <ListingCardPriceSection prices={prices} />
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
-          <div className='flex items-center justify-between'>
-            <div>left</div>
-            <div className='flex items-center justify-end'>right</div>
-          </div>
-        </div>
-      </div>
+      </Link>
     </Card>
   )
 }

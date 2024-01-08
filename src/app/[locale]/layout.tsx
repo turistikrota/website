@@ -1,6 +1,6 @@
+import '@turistikrota/fonts/verdana.css'
 import '@turistikrota/ui/assets/config.css'
 import '@turistikrota/ui/assets/default.css'
-import '@turistikrota/ui/fonts/verdana.css'
 import 'boxicons/css/boxicons.min.css'
 import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'

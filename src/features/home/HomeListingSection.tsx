@@ -24,10 +24,9 @@ const HomeListingSection: FC<Props> = ({ res }) => {
           </Button>
         </div>
       </div>
-      <div className='mt-8 grid grid-cols-12 gap-4'>
+      <div className='mt-8 grid grid-cols-12 gap-2'>
         {res.list.length === 0 && <NoResultFound description={t('no-result')} className='col-span-12' />}
-        {res.list.length > 0 &&
-          res.list.map((li, index) => <ListingListCard key={index} {...li} customGrid='col-span-12 md:col-span-3' />)}
+        {res.list.length > 0 && res.list.map((li, index) => <ListingListCard key={index} {...li} />)}
       </div>
     </LandingSection>
   )
