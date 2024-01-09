@@ -1,4 +1,5 @@
 import { Locales } from '@turistikrota/ui'
+import Footer from '@turistikrota/ui/footer'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,7 +8,6 @@ import { Paths } from '~/i18n.config'
 import { I18nLink } from '~/navigation'
 import { getStaticRoute } from '~/static/page'
 import { SiteUrls } from '~/static/site'
-import Footer from './Footer'
 
 type LinkItemProps = {
   title: string
