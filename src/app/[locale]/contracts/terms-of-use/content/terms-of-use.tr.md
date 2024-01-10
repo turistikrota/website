@@ -4,7 +4,7 @@ Siteye erişiminizden veya siteyi kullanımınızdan önce lütfen bu sözleşme
 
 ## 1. Ticari Markalar, Fikri Mülkiyet, Telif Hakları
 
-[turistikrota.com](https://www.turistikrota.com/) sitesinin tüm hakları Turistikrota LTD. ŞTİ.'a aittir. Bu web sayfalarında yayımlanan içerikler (örneğin yazılım, ürünler, logolar, vs. gibi ticari markalar, bilgiler, raporlar, resimler ve grafikler), ulusal ve uluslar arası kanunlar ve uluslar arası sözleşmeler ile korunmaktadır.
+[turistikrota.com](https://www.turistikrota.com/) sitesinin tüm hakları SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM'a aittir. Bu web sayfalarında yayımlanan içerikler (örneğin yazılım, ürünler, logolar, vs. gibi ticari markalar, bilgiler, raporlar, resimler ve grafikler), ulusal ve uluslar arası kanunlar ve uluslar arası sözleşmeler ile korunmaktadır.
 
 Kullanıcı Website dahilinde bulunan ürünleri, bigileri, her türlü veritabanını, resimleri, metinleri, ikonları, görsel ve işitsel vesair imgeleri, video klipleri, dosyaları, web sitesi, software-code'ların html kodu ve diğer kodlar vs. ile, tasarımları, katalogları ve listeleri kısmen ya da tamamen çoğaltamayacağı, kopyalamayacağı, dağıtmayacağı, işlemeyeceğini, online ya da diğer bir yöntem kullanılmak suretiyle göndermeyeceğini, gerek bu eylemleri ile gerekse de başka yollarla, turistikrota ile doğrudan ve/veya dolaylı olarak rekabete girmeyeceğini kabul ve taahhüt etmektedir.
 
@@ -12,7 +12,7 @@ Sitede yer alan her türlü bilgi ve materyal;
 
 Site'nin tamamı ya da bir bölümü revize edilerek, ekleme yapılarak ya da bir kısmı değiştirilerek farklı bir biçimde kullanılamaz.
 
-Site'den alınabilecek her türlü bilgi (yazılı ya da görsel) rahatlıkla görülebilecek büyüklükte "© 2023, [Turistikrota](https://www.turistikrota.com/), Tüm Hakları Saklıdır" ifadesi eklenmeden kullanılamaz.
+Site'den alınabilecek her türlü bilgi (yazılı ya da görsel) rahatlıkla görülebilecek büyüklükte "© 2024, [Turistikrota](https://www.turistikrota.com/), Tüm Hakları Saklıdır" ifadesi eklenmeden kullanılamaz.
 
 Sitede yer alan ifadeler içerisindeki 3. kişi ya da kurumlara ait tescilli marka, hizmet, logo vb. uyarılar ve ayraçlar, siteden alıntı yapıldığında kaldırılamaz.
 
@@ -31,6 +31,6 @@ Alınan yurtdışı otel rezervasyon ve hizmetleri ile ilgili olarak [açmak iç
 
 ## 5. Hak ve Sorumluluklar
 
-[turistikrota.com](https://www.turistikrota.com/) sitesine bulunan içerikler sürekli kontrol edilmekte ve güncellenmektedir. Ancak, [turistikrota.com](https://www.turistikrota.com/) ve sahibi Turistikrota LTD. ŞTİ. site içeriğindeki bilgi ve fiyat hatalarından sorumlu tutulamaz, sayfalarında her türlü değişiklik ve yeniliği istediği anda yapabilir. Bu değişikliklerden dolayı doğabilecek hiçbir rezervasyon, satış veya bilgi hatasından dolayı [turistikrota.com](https://www.turistikrota.com/) sitesi ve sahibi Turistikrota LTD. ŞTİ.'ne sorumluluk yüklenemez.
+[turistikrota.com](https://www.turistikrota.com/) sitesine bulunan içerikler sürekli kontrol edilmekte ve güncellenmektedir. Ancak, [turistikrota.com](https://www.turistikrota.com/) ve sahibi SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM site içeriğindeki bilgi ve fiyat hatalarından sorumlu tutulamaz, sayfalarında her türlü değişiklik ve yeniliği istediği anda yapabilir. Bu değişikliklerden dolayı doğabilecek hiçbir rezervasyon, satış veya bilgi hatasından dolayı [turistikrota.com](https://www.turistikrota.com/) sitesi ve sahibi SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM'a sorumluluk yüklenemez.
 
-[turistikrota.com](https://www.turistikrota.com/) sitesinin tüm kullanım ve içerik hakları saklıdır. Sitenin tüm hakları, sahibi olan firma Turistikrota LTD. ŞTİ.'ne aittir. İzinsiz kullanımı kanunlarla yasaklanmıştır.
+[turistikrota.com](https://www.turistikrota.com/) sitesinin tüm kullanım ve içerik hakları saklıdır. Sitenin tüm hakları, sahibi olan firma SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM'a aittir. İzinsiz kullanımı kanunlarla yasaklanmıştır.

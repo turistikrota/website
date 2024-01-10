@@ -14,6 +14,11 @@
       "title": "Kullanım Koşulları",
       "description": "Size daha iyi hizmet verebilmek için kullanım koşullarımızı belirledik. Sitemizi kullanmaya devam ederek kullanım koşullarımızı kabul etmiş oluyorsunuz.",
       "keywords": "Kullanım Koşulları, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "cookies": {
+      "title": "Çerezler",
+      "description": "Size daha iyi hizmet verebilmek için çerez kullanıyoruz. Sitemizi kullanmaya devam ederek çerez kullanımına izin vermiş oluyorsunuz.",
+      "keywords": "Çerezler, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
     }
   },
   "common": {
@@ -135,7 +140,8 @@
         "title": "Şirket",
         "about-us": "Hakkımızda",
         "contact-us": "İletişim",
-        "meet-the-team": "Ekibimizi Tanıyın"
+        "meet-the-team": "Ekibimizi Tanıyın",
+        "tech-team": "Teknoloji Ekibimiz"
       },
       "downloads": {
         "title": "Uygulamalarımız"

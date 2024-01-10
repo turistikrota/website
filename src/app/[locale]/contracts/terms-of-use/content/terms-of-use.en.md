@@ -4,7 +4,7 @@ Please read this agreement carefully before accessing or using the site. By acce
 
 ## 1. Trademarks, Intellectual Property, Copyrights
 
-All rights of [turistikrota.com](https://www.turistikrota.com/) belong to Turistikrota LTD. STI. The contents published on these web pages (eg trademarks, information, reports, pictures and graphics such as software, products, logos, etc.) are protected by national and international laws and international agreements.
+All rights of [turistikrota.com](https://www.turistikrota.com/) belong to SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM The contents published on these web pages (eg trademarks, information, reports, pictures and graphics such as software, products, logos, etc.) are protected by national and international laws and international agreements.
 
 The user can use the products, information, all kinds of databases, pictures, texts, icons, visual and audio images, video clips, files, website, html code of software-codes and other codes etc. on the Website. agree that it will not reproduce, copy, distribute, process or send designs, catalogs and lists partially or completely, online or by using any other method, and will not compete directly and/or indirectly with the tourist route, either by these actions or by other means, and commits.
 
@@ -12,7 +12,7 @@ All kinds of information and materials on the site;
 
 All or part of the Site cannot be used in a different way by revising, adding or changing a part of it.
 
-Any information (written or visual) that can be obtained from the Site cannot be used without adding the phrase "© 2023, [Turistikrota](https://www.turistikrota.com/), All Rights Reserved" in a size that can be easily seen.
+Any information (written or visual) that can be obtained from the Site cannot be used without adding the phrase "© 2024, [Turistikrota](https://www.turistikrota.com/), All Rights Reserved" in a size that can be easily seen.
 
 Registered trademarks, services, logos, etc. belonging to third parties or institutions in the expressions on the site. Warnings and brackets cannot be removed when quoting from the site.
 
@@ -31,6 +31,6 @@ On [turistikrota.com](https://www.turistikrota.com/); There are sections where r
 
 ## 5. Rights and Responsibilities
 
-The contents of [turistikrota.com](https://www.turistikrota.com/) are constantly checked and updated. However, [turistikrota.com](https://www.turistikrota.com/) and its owner Turistikrota LTD. STI. cannot be held responsible for information and price errors in the site content, and can make any changes and innovations on its pages at any time. [turistikrota.com](https://www.turistikrota.com/) site and its owner Turistikrota LTD. STI. cannot be held responsible.
+The contents of [turistikrota.com](https://www.turistikrota.com/) are constantly checked and updated. However, [turistikrota.com](https://www.turistikrota.com/) and its owner SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM cannot be held responsible for information and price errors in the site content, and can make any changes and innovations on its pages at any time. [turistikrota.com](https://www.turistikrota.com/) site and its owner SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM cannot be held responsible.
 
-All usage and content rights of [turistikrota.com](https://www.turistikrota.com/) site are reserved. All rights of the site belong to the owner company Turistikrota LTD. STI. Unauthorized use is prohibited by law.
+All usage and content rights of [turistikrota.com](https://www.turistikrota.com/) site are reserved. All rights of the site belong to the owner company SAMİ SALİH İBRAHİMBAŞ TURİSTİK ROTA YAZILIM Unauthorized use is prohibited by law.
