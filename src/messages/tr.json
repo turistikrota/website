@@ -1,4 +1,13 @@
 {
+  "cookies": {
+    "title": "🍪 Çerezleri Kullanıyoruz!",
+    "subtitle": "Merhaba, sitemizde çerez kullanıyoruz. Çerezler, web sitemizi nasıl kullandığınızı anlamamıza yardımcı olur ve size daha iyi bir deneyim sunar.",
+    "link": "Çerez Politikasını Oku",
+    "info": "Bu modal varsayılan ayarları kapatıldığında kaydedilecektir.",
+    "accept": "Tümünü Kabul Et",
+    "reject": "Tümünü Reddet",
+    "close": "Kapat"
+  },
   "contracts": {
     "privacy-notification": {
       "title": "Gizlilik Bildirimi",
