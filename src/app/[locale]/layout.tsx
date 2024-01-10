@@ -6,11 +6,12 @@ import { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Arimo } from 'next/font/google'
-import { headers } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import Script from 'next/script'
 import { userAgent } from 'next/server'
 import 'sspin/dist/index.css'
 import '~/app/globals.css'
+import CookieModal from '~/components/cookies/CookieModal'
 import PwaHead from '~/components/pwa/PwaHead'
 import { getMessages } from '~/i18n'
 import ReduxProvider from '~/store/provider'
@@ -20,6 +21,7 @@ type Props = LayoutProps
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'base' })
+  const cookie = cookies().get('cookie-consent')
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -99,6 +101,7 @@ export default async function Root({ params: { locale }, children }: React.Props
     unstable_setRequestLocale('tr')
   }
   const { device } = userAgent({ headers: headers() })
+  const consent = cookies().get('cookie-consent')
   return (
     <html lang={locale} className={arimo.className}>
       <head>
@@ -125,6 +128,7 @@ export default async function Root({ params: { locale }, children }: React.Props
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>{children}</ReduxProvider>
+          {consent?.value !== 'true' && <CookieModal />}
         </NextIntlClientProvider>
         <Script async={true} src='https://www.googletagmanager.com/gtag/js?id=G-LX3MT1E36B'></Script>
         <Script id='google-analytics-config' strategy='afterInteractive'>

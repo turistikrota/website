@@ -1,4 +1,13 @@
 {
+    "cookies": {
+      "title": "🍪 We Use Cookies!",
+      "subtitle": "Hi, we use cookies on our site. Cookies help us understand how you use our website and provide you with a better experience.",
+      "link": "Read Cookie Policy",
+      "info": "Closing this modal default settings will be saved.",
+      "accept": "Accept All",
+      "reject": "Reject All",
+      "close": "Close"
+    },  
   "contracts": {
     "privacy-notification": {
       "title": "Privacy Notification",
