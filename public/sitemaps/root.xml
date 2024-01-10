@@ -17,22 +17,17 @@
 	</url>
 	<url>
 		<loc>
-			https://turistikrota.com/en/coming-soon
-		</loc>
-	</url>
-	<url>
-		<loc>
 			https://turistikrota.com/tr/hakkimizda
 		</loc>
 	</url>
 	<url>
 		<loc>
-			https://turistikrota.com/tr/cok-yakinda
+			https://turistikrota.com/tr/sozlesmeler/gizlilik-bildirimi
 		</loc>
 	</url>
 	<url>
 		<loc>
-			https://turistikrota.com/tr/sozlesmeler/gizlilik-bildirimi
+			https://turistikrota.com/tr/sozlesmeler/cerezler
 		</loc>
 	</url>
 	<url>
@@ -58,6 +53,11 @@
 	<url>
 		<loc>
 			https://turistikrota.com/en/contracts/terms-of-use
+		</loc>
+	</url>
+	<url>
+		<loc>
+			https://turistikrota.com/en/contracts/cookies
 		</loc>
 	</url>
 </urlset>
