@@ -66,6 +66,9 @@ const MagicFooter: FC = () => {
           <Footer.Grid.Col.Item>
             <LinkItem href={SiteUrls.account[locale as Locales]} title={t('grid.sites.account')} />
           </Footer.Grid.Col.Item>
+          <Footer.Grid.Col.Item>
+            <LinkItem href={'https://tech.turistikrota.com'} title={t('grid.company.tech-team')} />
+          </Footer.Grid.Col.Item>
         </Footer.Grid.Col>
         <Footer.Grid.Col title={t('grid.company.title')}>
           <Footer.Grid.Col.Item>
