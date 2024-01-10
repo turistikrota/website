@@ -15,6 +15,10 @@ export const pathnames = {
     en: '/contracts/terms-of-use',
     tr: '/sozlesmeler/kullanim-kosullari',
   },
+  '/contracts/cookies': {
+    en: '/contracts/cookies',
+    tr: '/sozlesmeler/cerezler',
+  },
   '/contracts/privacy-and-protection-of-personal-data': {
     en: '/contracts/privacy-and-protection-of-personal-data',
     tr: '/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi',
@@ -35,6 +39,7 @@ type IPath = {
     privacyNotice: IPathName
     termsOfUse: IPathName
     privacyAndProtectionOfPersonalData: IPathName
+    cookies: IPathName
   }
   aboutUs: IPathName
 }
@@ -52,6 +57,9 @@ export const Paths: IPath = {
     },
     privacyAndProtectionOfPersonalData: {
       pathname: '/contracts/privacy-and-protection-of-personal-data',
+    },
+    cookies: {
+      pathname: '/contracts/cookies',
     },
   },
   aboutUs: {

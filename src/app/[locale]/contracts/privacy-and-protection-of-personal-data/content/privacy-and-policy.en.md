@@ -170,15 +170,46 @@ Turistikrota uses various cookies for different purposes in accordance with its 
 
 It is possible to personalize or completely block cookies by changing the settings of the browser you use. You can find detailed information on the steps to be followed for different browsers from the links below:
 
-| Browser           | Link                                                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------------------------------- |
-| Google Chrome     | [click to go](https://support.google.com/chrome/answer/95647?hl=en)                                           |
-| Internet Explorer | [click to go](https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies) |
-| Mozilla Firefox   | [click to go](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sites-information-removal)                |
-| Safari            | [click to go](https://support.apple.com/en-us/HT201265)                                                       |
-| Microsoft Edge    | [click to go](https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy)                      |
-| Opera             | [click to go](https://www.opera.com/help/tutorials/security/privacy/)                                         |
-| Yandex            | [click to go](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml)             |
+<br />
+<table className="bg-second w-full rounded-md border">
+    <thead className="border-b">
+        <tr>
+            <th className="text-lg p-2 border-r">Browser</th>
+            <th className="text-lg p-2">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Google Chrome</td>
+            <td className="p-2"><a href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Internet Explorer</td>
+            <td className="p-2"><a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Mozilla Firefox</td>
+            <td className="p-2"><a href="https://support.mozilla.org/tr/kb/cerezleri-silme-web-sites-information-removal" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Safari</td>
+            <td className="p-2"><a href="https://support.apple.com/en-us/HT201265" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Microsoft Edge</td>
+            <td className="p-2"><a href="https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Opera</td>
+            <td className="p-2"><a href="https://www.opera.com/help/tutorials/security/privacy/" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+        <tr className="text-center bg-default">
+            <td className="p-2 border-r">Yandex</td>
+            <td className="p-2"><a href="https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml" target="_blank" className="text-primary">click to go</a></td>
+        </tr>
+    </tbody>
+</table>     
+<br />  
 
 To manage cookie preferences in other browsers, you can review the help or support page of the relevant browser.
 

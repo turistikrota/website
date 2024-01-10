@@ -152,15 +152,46 @@ turistikrota.com, Gizilik Politikası'na uygun olarak farklı amaçlarla çeşit
 
 Çerezleri kullandığınız tarayıcının ayarlarını değiştirerek kişiselleştirmeniz ya da tamamen engellemeniz mümkündür. Farklı tarayıcılar için izlenmesi gereken adımlara ilişkin detaylı bilgiye aşağıdaki linklerden ulaşabilirsiniz:
 
-| Tarayıcı          | Link                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Google Chrome     | [açmak için buraya tıklayınız](https://support.google.com/chrome/answer/95647?hl=tr)                                           |
-| Internet Explorer | [açmak için buraya tıklayınız](https://support.microsoft.com/tr-tr/help/17442/windows-internet-explorer-delete-manage-cookies) |
-| Mozilla Firefox   | [açmak için buraya tıklayınız](https://support.mozilla.org/tr/kb/cerezleri-silme-web-sitelerinin-bilgilerini-kaldirma)         |
-| Safari            | [açmak için buraya tıklayınız](https://support.apple.com/tr-tr/HT201265)                                                       |
-| Microsoft Edge    | [açmak için buraya tıklayınız](https://privacy.microsoft.com/tr-tr/windows-10-microsoft-edge-and-privacy)                      |
-| Opera             | [açmak için buraya tıklayınız](https://www.opera.com/help/tutorials/security/privacy/)                                         |
-| Yandex            | [açmak için buraya tıklayınız](https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml)             |
+<br />
+<table className="bg-second w-full rounded-md border">
+    <thead className="border-b">
+        <tr>
+            <th className="text-lg p-2 border-r">Tarayıcı</th>
+            <th className="text-lg p-2">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Google Chrome</td>
+            <td className="p-2"><a href="https://support.google.com/chrome/answer/95647?hl=tr" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Internet Explorer</td>
+            <td className="p-2"><a href="https://support.microsoft.com/tr-tr/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Mozilla Firefox</td>
+            <td className="p-2"><a href="https://support.mozilla.org/tr/kb/cerezleri-silme-web-sitelerinin-bilgilerini-kaldirma" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Safari</td>
+            <td className="p-2"><a href="https://support.apple.com/tr-tr/HT201265" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center border-b bg-default">
+            <td className="p-2 border-r">Microsoft Edge</td>
+            <td className="p-2"><a href="https://privacy.microsoft.com/tr-tr/windows-10-microsoft-edge-and-privacy" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center border-b">
+            <td className="p-2 border-r">Opera</td>
+            <td className="p-2"><a href="https://www.opera.com/help/tutorials/security/privacy/" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+        <tr className="text-center bg-default">
+            <td className="p-2 border-r">Yandex</td>
+            <td className="p-2"><a href="https://yandex.com.tr/support/browser-classic/personal-data-protection/cookies.xml" target="_blank" className="text-primary">açmak için buraya tıklayınız</a></td>
+        </tr>
+    </tbody>
+</table>     
+<br />  
 
 Diğer tarayıcılarda çerez tercihlerini yönetmek için ilgili tarayıcının yardım veya destek sayfasını inceleyebilirsiniz.
 

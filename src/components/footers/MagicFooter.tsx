@@ -167,14 +167,14 @@ const MagicFooter: FC = () => {
             {t('terms')}
           </I18nLink>
           &bull;
-          <I18nLink className='duration-200 hover:brightness-125' href={Paths.contracts.privacyNotice}>
-            {t('privacy-policy')}
-          </I18nLink>
-          &bull;
           <I18nLink
             className='duration-200 hover:brightness-125'
             href={Paths.contracts.privacyAndProtectionOfPersonalData}
           >
+            {t('privacy-policy')}
+          </I18nLink>
+          &bull;
+          <I18nLink className='duration-200 hover:brightness-125' href={Paths.contracts.cookies}>
             {t('cookies')}
           </I18nLink>
         </Footer.Copyright.Item>

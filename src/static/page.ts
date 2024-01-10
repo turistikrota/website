@@ -17,6 +17,7 @@ export type RouteType = {
     terms: string
     privacyNotify: string
     privacy: string
+    cookies: string
   }
 }
 
@@ -40,6 +41,7 @@ const Routes: Record<Locales, RouteType> = {
       terms: '/sozlesmeler/kullanim-kosullari',
       privacyNotify: '/sozlesmeler/gizlilik-bildirimi',
       privacy: '/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi',
+      cookies: '/sozlesmeler/cerezler',
     },
   },
   en: {
@@ -58,6 +60,7 @@ const Routes: Record<Locales, RouteType> = {
       terms: '/contracts/terms-of-use',
       privacyNotify: '/contracts/privacy-notice',
       privacy: '/contracts/privacy-and-protection-of-personal-data',
+      cookies: '/contracts/cookies',
     },
     places: SiteUrls.places.en,
   },
