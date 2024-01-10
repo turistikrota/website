@@ -101,7 +101,7 @@ const MagicFooter: FC = () => {
               <Image
                 alt={'App Store'}
                 src='/images/app-store.svg'
-                className='bounce-top-icons h-12 pr-4'
+                className='bounce-top-icons h-12'
                 width={150}
                 height={30}
               />
@@ -137,7 +137,7 @@ const MagicFooter: FC = () => {
             <Image
               alt={'App Store'}
               src='/images/app-store.svg'
-              className='bounce-top-icons h-12 pr-4'
+              className='bounce-top-icons h-12'
               width={150}
               height={30}
             />
@@ -145,7 +145,7 @@ const MagicFooter: FC = () => {
           <Link
             href={`https://play.google.com/store/apps/details?id=com.turistikrota.app`}
             target='_blank'
-            className='flex w-fit'
+            className=''
           >
             <Image
               alt={'Play Store'}
