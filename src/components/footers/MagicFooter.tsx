@@ -75,7 +75,7 @@ const MagicFooter: FC = () => {
             <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} withI18n />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
-            <LinkItem href={'mailto:tech@turistikrota.com'} title={t('grid.company.contact-us')} />
+            <LinkItem href={getStaticRoute(locale).contact} title={t('grid.company.contact-us')} withI18n />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem

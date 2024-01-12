@@ -2,6 +2,7 @@ import { SiteUrls } from './site'
 
 export type RouteType = {
   aboutUs: string
+  contact: string
   places: string
   listings: string
   businesses: string
@@ -26,6 +27,7 @@ export type Locales = 'en' | 'tr'
 const Routes: Record<Locales, RouteType> = {
   tr: {
     aboutUs: '/hakkimizda',
+    contact: '/iletisim',
     listings: SiteUrls.listing.tr,
     businesses: `${SiteUrls.businesses.tr}/menu`,
     account: {
@@ -46,6 +48,7 @@ const Routes: Record<Locales, RouteType> = {
   },
   en: {
     aboutUs: '/about-us',
+    contact: '/contact',
     listings: SiteUrls.listing.en,
     businesses: `${SiteUrls.businesses.en}/menu`,
     account: {
