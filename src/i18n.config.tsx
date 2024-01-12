@@ -19,6 +19,10 @@ export const pathnames = {
     en: '/contracts/cookies',
     tr: '/sozlesmeler/cerezler',
   },
+  '/contact': {
+    en: '/contact',
+    tr: '/iletisim',
+  },
   '/contracts/privacy-and-protection-of-personal-data': {
     en: '/contracts/privacy-and-protection-of-personal-data',
     tr: '/sozlesmeler/kisisel-verilerin-korunmasi-ve-gizlilik-politikasi',
@@ -41,6 +45,7 @@ type IPath = {
     privacyAndProtectionOfPersonalData: IPathName
     cookies: IPathName
   }
+  contact: IPathName
   aboutUs: IPathName
 }
 
@@ -61,6 +66,9 @@ export const Paths: IPath = {
     cookies: {
       pathname: '/contracts/cookies',
     },
+  },
+  contact: {
+    pathname: '/contact',
   },
   aboutUs: {
     pathname: '/about-us',

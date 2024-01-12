@@ -1,5 +1,6 @@
 'use client'
 
+import debounce from '@turistikrota/ui/utils/debounce'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { AccountStorage, removeAccount, setAccount, setIsLoading } from '~/features/account/account.store'
@@ -20,6 +21,10 @@ export default function CurrentAccountLayout({
   const dispatch = useDispatch()
 
   useEffect(() => {
+    debouncedFetcher(accountCookie)
+  }, [accountCookie])
+
+  const debouncedFetcher = debounce((accountCookie) => {
     if (typeof window === 'undefined') return
     const item = localStorage.getItem(AccountStorage.CurrentAccount)
     if (accessTokenIsExists && (!accountCookie || !!item)) {
@@ -44,7 +49,7 @@ export default function CurrentAccountLayout({
       .finally(() => {
         dispatch(setIsLoading(false))
       })
-  }, [accountCookie])
+  }, 50)
 
   return <>{children}</>
 }

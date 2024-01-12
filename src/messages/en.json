@@ -8,6 +8,32 @@
       "reject": "Reject All",
       "close": "Close"
     },  
+    "contact": {
+      "address": "Address",
+     "tradeName": "Trade Name",
+     "kepAddress": "KEP Address",
+     "taxOffice": "Tax Office",
+     "supportEmail": "Support Email",
+     "techEmail": "Technical Email",
+     "info": {
+      "title": "Support System",
+      "description": "You can contact us via the support system to get support on any issue.",
+      "button": "go to support system"
+    },
+      "form": {
+        "title": "Contact Us",
+        "subtitle": "You can contact us by filling out the form below.",
+        "subject_required": "Subject is required",
+        "message_required": "Message is required",
+        "email_invalid":"Invalid email address",
+        "email_required": "Email address is required",
+        "subject": "Subject",
+        "message": "Message",
+        "email": "Email",
+        "send": "Send",
+        "success": "Your message has been sent successfully."
+      }
+    },
   "contracts": {
     "privacy-notification": {
       "title": "Privacy Notification",

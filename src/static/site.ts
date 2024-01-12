@@ -6,6 +6,7 @@ export enum Sites {
   Places = 'places',
   Listing = 'listing',
   Business = 'businesses',
+  Support = 'support',
 }
 
 type SiteUrl = {
@@ -32,5 +33,9 @@ export const SiteUrls: Record<Sites, SiteUrl> = {
   [Sites.Business]: {
     tr: process.env.NEXT_PUBLIC_SITE_BUSINESS_TR_URL!,
     en: process.env.NEXT_PUBLIC_SITE_BUSINESS_EN_URL!,
+  },
+  [Sites.Support]: {
+    tr: process.env.NEXT_PUBLIC_SITE_SUPPORT_TR_URL!,
+    en: process.env.NEXT_PUBLIC_SITE_SUPPORT_EN_URL!,
   },
 }

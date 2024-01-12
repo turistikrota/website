@@ -8,6 +8,32 @@
     "reject": "Tümünü Reddet",
     "close": "Kapat"
   },
+  "contact": {
+    "address": "Adres",
+    "tradeName": "Şirket Ünvanı",
+    "kepAddress": "KEP Adresi",
+    "taxOffice": "Vergi Dairesi",
+    "supportEmail": "Destek E-posta",
+    "techEmail": "Teknik E-posta",
+    "info": {
+      "title": "Destek Sistemi",
+      "description": "Herhangi bir konuda destek almak için destek sistemi üzerinden bize ulaşabilirsiniz.",
+      "button": "destek sistemine git"
+    },
+    "form": {
+      "title": "Bizimle İletişime Geçin",
+      "subtitle": "Aşağıdaki formu doldurarak bizimle iletişime geçebilirsiniz.",
+      "subject_required": "Konu gereklidir",
+      "message_required": "Mesaj gereklidir",
+      "email_invalid":"Geçersiz e-posta adresi",
+      "email_required": "E-posta adresi gereklidir",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "email": "E-posta",
+      "send": "Gönder",
+      "success": "Mesajınız başarıyla gönderildi."
+    }
+  },
   "contracts": {
     "privacy-notification": {
       "title": "Gizlilik Bildirimi",
