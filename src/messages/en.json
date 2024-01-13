@@ -9,6 +9,8 @@
       "close": "Close"
     },  
     "contact": {
+      "title": "Company Information",
+     "subtitle": "Official information about our company can be found here.",
       "address": "Address",
      "tradeName": "Trade Name",
      "kepAddress": "KEP Address",
@@ -163,6 +165,11 @@
     }
   },
     "footer": {
+      "apps": {
+        "playstore": "from Google Play",
+        "appstore": "from App Store",
+        "download": "Download"
+      },
       "grid": {
         "sites": {
           "title": "Useful Links",
@@ -175,6 +182,7 @@
           "title": "Company",
           "about-us": "About Us",
           "contact-us": "Contact Us",
+          "support": "Support",
           "meet-the-team": "Meet the Team",
           "tech-team": "Tech Team"
         },

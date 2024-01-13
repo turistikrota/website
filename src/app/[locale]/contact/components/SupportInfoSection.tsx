@@ -10,7 +10,7 @@ const SupportInfoSection: FC = () => {
   const t = useTranslations('contact.info')
   const locale = useLocale()
   return (
-    <section className='container mx-auto py-2'>
+    <section className='mx-auto max-w-7xl p-2 lg:px-0'>
       <Alert type='info' showIcon>
         <Alert.Title>{t('title')}</Alert.Title>
         <Alert.Description>

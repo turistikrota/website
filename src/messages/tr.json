@@ -9,6 +9,8 @@
     "close": "Kapat"
   },
   "contact": {
+    "title": "Şirket Bilgileri",
+    "subtitle": "Şirketimiz hakkında resmi bilgilere buradan ulaşabilirsiniz.",
     "address": "Adres",
     "tradeName": "Şirket Ünvanı",
     "kepAddress": "KEP Adresi",
@@ -163,6 +165,11 @@
     }
   },
   "footer": {
+    "apps": {
+      "playstore": "Google Play'den",
+      "appstore": "App Store'dan",
+      "download": "İndirebilirsiniz"
+    },
     "grid": {
       "sites": {
         "title": "Yardımcı Bağlantılar",
@@ -175,6 +182,7 @@
         "title": "Şirket",
         "about-us": "Hakkımızda",
         "contact-us": "İletişim",
+        "support": "Destek",
         "meet-the-team": "Ekibimizi Tanıyın",
         "tech-team": "Teknoloji Ekibimiz"
       },

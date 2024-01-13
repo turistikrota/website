@@ -3,6 +3,7 @@
 import Button from '@turistikrota/ui/button'
 import Input from '@turistikrota/ui/form/input'
 import Textarea from '@turistikrota/ui/form/textarea'
+import LandingSection from '@turistikrota/ui/section/landing'
 import ErrorText from '@turistikrota/ui/text/error'
 import { ToastListProvider, ToastProvider, useToast } from '@turistikrota/ui/toast'
 import { parseApiError } from '@turistikrota/ui/utils/response'
@@ -59,22 +60,15 @@ const ContactForm = () => {
     },
   })
   return (
-    <section className='container mx-auto my-10 space-y-10'>
-      <div className='text-center text-gray-800 dark:text-gray-400'>
-        <div className='flex justify-center'>
-          <div>
-            <h2 className='mb-2 text-4xl font-bold tracking-tight'>{t('title')}</h2>
-            <p className='text-lg text-gray-500 dark:text-gray-400'>{t('subtitle')}</p>
-          </div>
-        </div>
-      </div>
+    <LandingSection>
+      <LandingSection.Head title={t('title')} subtitle={t('subtitle')} />
       <Spin loading={loading}>
         <form
           onSubmit={(e) => {
             e.preventDefault()
             form.handleSubmit()
           }}
-          className='mx-auto grid max-w-3xl grid-cols-1 gap-2'
+          className='mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-2'
         >
           <Input
             label={t('subject')}
@@ -107,7 +101,7 @@ const ContactForm = () => {
           </Button>
         </form>
       </Spin>
-    </section>
+    </LandingSection>
   )
 }
 
