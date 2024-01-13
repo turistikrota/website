@@ -4,6 +4,7 @@ import { getStaticRoute } from '~/static/page'
 import { LayoutProps } from '~/types/base'
 import { generateDefaultMetadata } from '~/utils/meta'
 import CountSection from './components/CountSection'
+import OurModulesSection from './components/OurModulesSection'
 import OurTeamSection from './components/OurTeamSection'
 import OurVisionSection from './components/OurVisionSection'
 import TitleSection from './components/TitleSection'
@@ -30,6 +31,7 @@ export default function AboutUs() {
       <OurVisionSection />
       <WhyPerfectSection />
       <OurTeamSection />
+      <OurModulesSection />
     </>
   )
 }

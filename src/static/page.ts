@@ -5,6 +5,9 @@ export type RouteType = {
   contact: string
   places: string
   listings: string
+  support: string
+  bookings: string
+  tech: string
   businesses: string
   account: {
     details: string
@@ -29,6 +32,9 @@ const Routes: Record<Locales, RouteType> = {
     aboutUs: '/hakkimizda',
     contact: '/iletisim',
     listings: SiteUrls.listing.tr,
+    support: SiteUrls.support.tr,
+    bookings: SiteUrls.booking.tr,
+    tech: SiteUrls.tech.tr,
     businesses: `${SiteUrls.businesses.tr}/menu`,
     account: {
       details: `${SiteUrls.account.tr}/menu`,
@@ -50,6 +56,9 @@ const Routes: Record<Locales, RouteType> = {
     aboutUs: '/about-us',
     contact: '/contact',
     listings: SiteUrls.listing.en,
+    support: SiteUrls.support.en,
+    bookings: SiteUrls.booking.en,
+    tech: SiteUrls.tech.en,
     businesses: `${SiteUrls.businesses.en}/menu`,
     account: {
       details: `${SiteUrls.account.en}/menu`,

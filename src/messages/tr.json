@@ -270,36 +270,58 @@
         "text": "Turistikrota olarak değerlerimiz, müşteri memnuniyeti, yenilikçilik, güvenilirlik ve kalitedir."
       }
     },
-    "timeline": {
-      "title": "Hikayemiz",
-      "founding": {
-        "title": "Kurulma",
-        "text": "Turistik Rota, 2023 yılının Şubat ayında seyahat etmeyi seven ve turistik bir bölgede yaşayan bir genç tarafından kuruldu. Fikir, insanların tatillerini planlamalarına, diğer insanların deneyimlerinden faydalanmalarına ve tur rezervasyonu yapmalarına yardımcı olacak bir web sitesi oluşturmaktı."
+    "ourModules": {
+      "title": "Modüllerimiz",
+      "subtitle": "Turistikrota'yı modüller halinde inceleyin. Her modül, Turistikrota'nın farklı bir özelliğini temsil eder.",
+      "notReady": "Geliştirme aşamasında",
+      "visit": "Ziyaret Et",
+      "places": {
+        "title": "Yerler Modülü",
+        "text": "Turistik yerleri tüm detaylarıyla birlikte sunar. Turistik yerler arasında tarihi yerler, doğal güzellikler, şehirler, kasabalar ve daha fazlası bulunuyor."
       },
-      "development": {
-        "title": "Geliştirme",
-        "text": "Turistik Rota şu anda geliştirilme aşamasındadır. En kısa sürede kullanıma sunmak için yoğun bir şekilde çalışıyoruz. En kısa zamanda web sitesini yayına alacağız."
+      "listing": {
+        "title": "Konaklama Modülü",
+        "text": "Konuma, tarih aralığına ve fiyata göre konaklama seçenekleri sunar. Konaklama seçenekleri arasında oteller, pansiyonlar, evler, kamp alanları ve daha fazlası bulunuyor."
       },
-      "launch": {
-        "title": "Başlat",
-        "text": "Turistik Rota yakında hizmete girecek. Tatil planlama, seyahat tavsiyeleri, keşfedilmemiş rotalar ve seyahat rehberliği sunacağız. Ayrıca tur rezervasyonları ve konaklama seçenekleri de sunacağız. Daha fazla bilgi için sitemizi takip edin!"
-      }
-    },
-    "features": {
-      "title": "Neden harika olacak?",
-      "items": {
-        "network": {
-          "title": "Ağ",
-          "text": "Oteller, ev sahipleri, rehberler, turistler, tur şirketleri ve daha fazlası ile ortak bir sosyal platformda buluşun."
-        },
-        "safe": {
-          "title": "Güvenli",
-          "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
-        },
-        "worldwide": {
-          "title": "Dünya Çapında",
-          "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
-        }
+      "support": {
+        "title": "Destek Modülü",
+        "text": "Turistikrota üzerinden yapılan rezervasyonda veya Turistikrota'da yaşanılan herhangi bir sorunda destek almayı sağlar. Bu modül ile Turistikrota destek ekibine ulaşabilirsiniz."
+      },
+      "booking": {
+        "title": "Rezervasyon Modülü",
+        "text": "Yapılan rezervasyonları takip etmeyi ve yönetmeyi sağlar. Rezervasyonunuzun detaylarını görebilir, durumunu takip edebilir, rezervasyonunuzu iptal edebilir veya rezervasyonunuzu düzenleyebilirsiniz."
+      },
+      "business": {
+        "title": "İşletme Modülü",
+        "text": "İşletme sahiplerinin işletmelerini tanıtmalarını ve işletmelerini yönetmelerini sağlar. İşletme sahipleri, Turistikrota'da işletmelerini tanıtabilir, işletmelerine rezervasyon alabilir ve işletmelerini yönetebilirler."
+      },
+      "account": {
+        "title": "Hesap Modülü",
+        "text": "Kullanıcıların Turistikrota hesaplarını yönetmelerini sağlar. Kullanıcılar, Turistikrota hesaplarını düzenleyebilir, Turistikrota hesaplarını silme talebinde bulunabilir ve Turistikrota hesaplarını silebilirler."
+      },
+      "tech": {
+        "title": "Teknoloji Modülü",
+        "text": "Turistikrota teknoloji ekibinin tanıtımını yapar. Teknoloji ekibimiz, Turistikrota'nın geliştirilmesi ve sürdürülebilirliği için çalışmaktadır."
+      },
+      "payment": {
+        "title": "Ödeme Modülü",
+        "text": "Turistikrota üzerinden yapacağınız tüm ödemelerin gerçekleşmesini sağlar. Geçmiş ve mevcut ödemelerinizi görüntüleyebilir, ödeme yöntemlerinizi yönetebilir ve ödeme yöntemlerinizi güncelleyebilirsiniz."
+      },
+      "social": {
+        "title": "Sosyal Modülü",
+        "text": "Turistikrota'da diğer kişilerle etkilşime geçmenizi sağlar. Bir şeyler paylaşın veya sevdiklerinizin kimlerle seyahat ettiğini görün."
+      },
+      "ad": {
+        "title": "Reklam Modülü",
+        "text": "İşletmelerin Turistikrota'da reklam yayınlamalarını ve bu reklamların yönetimini sağlar. İşletme sahipleri, Turistikrota'da reklam yayınlayabilir ve reklamlarını yönetebilirler."
+      },
+      "tour": {
+        "title": "Tur Modülü",
+        "text": "Diğer kişilerle birlikte seyahat etmenizi sağlar. Turistikrota'da bir tur oluşturabilir veya bir tur rezervasyonu yapabilirsiniz."
+      },
+      "ticket": {
+        "title": "Bilet Modülü",
+        "text": "Turizm'in dışına çıkıyoruz ve kültür-sanat etkinliklerini de sizlere sunuyoruz. Turistikrota'da bir etkinlik oluşturabilir veya bir etkinlik biletini satın alabilirsiniz."
       }
     },
     "meta": {
