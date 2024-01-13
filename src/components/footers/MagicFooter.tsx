@@ -1,7 +1,6 @@
 import { Locales } from '@turistikrota/ui'
 import Footer from '@turistikrota/ui/footer'
 import { useLocale, useTranslations } from 'next-intl'
-import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 import { Paths } from '~/i18n.config'
@@ -15,9 +14,31 @@ type LinkItemProps = {
   href: string
   hideText?: boolean
   withI18n?: boolean
+  noNewTab?: boolean
 }
 
-const LinkItem: FC<LinkItemProps> = ({ title, icon, href, hideText, withI18n }) => {
+type StoreCardProps = {
+  link: string
+  icon: string
+  title: string
+  text: string
+}
+
+const StoreCard: FC<StoreCardProps> = ({ link, icon, title, text }) => {
+  return (
+    <Link href={link} target='_blank' className='flex w-48 items-center gap-2 rounded-md border p-2'>
+      <div className='flex w-10 min-w-max items-center justify-center'>
+        <i className={`bx bx-sm ${icon}`}></i>
+      </div>
+      <div className='flex w-full flex-col'>
+        <span className='text-md font-semibold'>{title}</span>
+        <span className='text-sm'>{text}</span>
+      </div>
+    </Link>
+  )
+}
+
+const LinkItem: FC<LinkItemProps> = ({ title, icon, href, hideText, withI18n, noNewTab }) => {
   if (withI18n)
     return (
       <I18nLink
@@ -26,7 +47,7 @@ const LinkItem: FC<LinkItemProps> = ({ title, icon, href, hideText, withI18n }) 
         className={`text-gray-600 duration-200 hover:brightness-125 dark:text-gray-300 ${
           icon ? 'flex w-fit items-center gap-2' : ''
         }`}
-        target='_blank'
+        target={noNewTab ? undefined : '_blank'}
       >
         <i className={`bx bx-sm ${icon}`}></i>
         {!hideText && title}
@@ -72,10 +93,13 @@ const MagicFooter: FC = () => {
         </Footer.Grid.Col>
         <Footer.Grid.Col title={t('grid.company.title')}>
           <Footer.Grid.Col.Item>
-            <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} withI18n />
+            <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} withI18n noNewTab />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
-            <LinkItem href={getStaticRoute(locale).contact} title={t('grid.company.contact-us')} withI18n />
+            <LinkItem href={getStaticRoute(locale).support} title={t('grid.company.support')} withI18n />
+          </Footer.Grid.Col.Item>
+          <Footer.Grid.Col.Item>
+            <LinkItem href={getStaticRoute(locale).contact} title={t('grid.company.contact-us')} withI18n noNewTab />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem
@@ -100,30 +124,20 @@ const MagicFooter: FC = () => {
         </Footer.Grid.Col>
         <Footer.Grid.Col title={t('grid.downloads.title')}>
           <Footer.Grid.Col.Item>
-            <Link href={`https://testflight.apple.com/join/2DbHY7wQ`} target='_blank' className='flex w-fit'>
-              <Image
-                alt={'App Store'}
-                src='/images/app-store.svg'
-                className='bounce-top-icons h-12'
-                width={150}
-                height={30}
-              />
-            </Link>
+            <StoreCard
+              link='https://testflight.apple.com/join/2DbHY7wQ'
+              title={t('apps.appstore')}
+              text={t('apps.download')}
+              icon='bxl-apple'
+            />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
-            <Link
-              href={`https://play.google.com/store/apps/details?id=com.turistikrota.app`}
-              target='_blank'
-              className='flex w-fit'
-            >
-              <Image
-                alt={'Play Store'}
-                src='/images/play-store.svg'
-                className='bounce-top-icons h-12'
-                width={150}
-                height={30}
-              />
-            </Link>
+            <StoreCard
+              link='https://play.google.com/store/apps/details?id=com.turistikrota.app'
+              title={t('apps.playstore')}
+              text={t('apps.download')}
+              icon='bxl-play-store'
+            />
           </Footer.Grid.Col.Item>
         </Footer.Grid.Col>
       </Footer.Grid>
@@ -136,28 +150,18 @@ const MagicFooter: FC = () => {
           <LinkItem href='https://github.com/turistikrota' title='GitHub' icon='bxl-github' hideText />
         </div>
         <div className='flex gap-2'>
-          <Link href={`https://testflight.apple.com/join/2DbHY7wQ`} target='_blank' className='flex w-fit'>
-            <Image
-              alt={'App Store'}
-              src='/images/app-store.svg'
-              className='bounce-top-icons h-12'
-              width={150}
-              height={30}
-            />
-          </Link>
-          <Link
-            href={`https://play.google.com/store/apps/details?id=com.turistikrota.app`}
-            target='_blank'
-            className=''
-          >
-            <Image
-              alt={'Play Store'}
-              src='/images/play-store.svg'
-              className='bounce-top-icons h-12'
-              width={150}
-              height={30}
-            />
-          </Link>
+          <StoreCard
+            link='https://testflight.apple.com/join/2DbHY7wQ'
+            title={t('apps.appstore')}
+            text={t('apps.download')}
+            icon='bxl-apple'
+          />
+          <StoreCard
+            link='https://play.google.com/store/apps/details?id=com.turistikrota.app'
+            title={t('apps.playstore')}
+            text={t('apps.download')}
+            icon='bxl-play-store'
+          />
         </div>
       </Footer.Mobile>
 
