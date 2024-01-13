@@ -209,7 +209,41 @@
     }
   },
   "aboutUs": {
+    "head": {
+      "title": "Gerçek Turizm Deneyimi Turistikrota'da",
+      "subtitle": "Turistikrota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur."
+    },
+    "count": {
+      "title": "Herkes için En İyisi",
+      "subtitle": "Turistikrota müşterilerine gerçek turizm deneyimi yaşatırken iş ortaklarına da büyük kolaylıklar sağlar.",
+      "data": {
+        "business": "İşletme",
+        "customer": "Müşteri",
+        "solution": "Yenilikçi Çözüm",
+        "support": "Destek"
+      }
+    },
+    "whyPerfect": {
+      "title": "Neden Harika?",
+      "subtitle": "Turistikrota, seyahat etmeyi seven insanlara çeşitli imkanlar sunarken aynı zamanda kullanıcıların deneyimlerini paylaşmalarına da olanak tanıyor.",
+      "social": {
+        "title": "Sosyal",
+        "text": "Turistikrota'da ziyaretçiler birbirleri ile etkileşime geçebilir, seyahat deneyimlerini paylaşabilir ve seyahat ile ilgili konularda bilgi alışverişinde bulunabilirler."
+      },
+      "safe": {
+        "title": "Güvenli",
+        "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
+      },
+      "worldwide": {
+        "title": "Dünya Çapında",
+        "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
+      }
+    },
     "team": {
+      "card": {
+        "title": "Ekibimiz",
+        "subtitle": "Turistikrota ekibi, bütün bu sitenin varoluşunu ve sürdürülebilirliğini sağlayan insanlardan oluşur."
+      },
       "meetTheTeam": "Ekibimizi Tanıyın",
       "avatar": "{name}'ın fotoğrafı",
       "title": {
@@ -219,6 +253,22 @@
         "contentManager": "İçerik Yöneticisi"
       },
       "link": "{name}'ın {socialMedia} profili"
+    },
+    "ourVision": {
+      "title": "Vizyonumuz",
+      "subtitle": "Turistikrota'nın misyonunu ve vizyonunu öğrenin.",
+      "vision": {
+        "title": "Vizyon",
+        "text": "Turistikrota olarak vizyonumuz, turizm sektöründe yenilikçi çözümler sunmak ve insanların mutlu anılar biriktirmelerini sağlamaktır."
+      },
+      "mission": {
+        "title": "Misyon",
+        "text": "Turistikrota olarak misyonumuz, insanların gerçek turizm deneyimini yaşamalarını sağlamak ve bu deneyimi diğer insanlarla paylaşmalarını sağlamaktır."
+      },
+      "values": {
+        "title": "Değerler",
+        "text": "Turistikrota olarak değerlerimiz, müşteri memnuniyeti, yenilikçilik, güvenilirlik ve kalitedir."
+      }
     },
     "timeline": {
       "title": "Hikayemiz",
@@ -234,30 +284,6 @@
         "title": "Başlat",
         "text": "Turistik Rota yakında hizmete girecek. Tatil planlama, seyahat tavsiyeleri, keşfedilmemiş rotalar ve seyahat rehberliği sunacağız. Ayrıca tur rezervasyonları ve konaklama seçenekleri de sunacağız. Daha fazla bilgi için sitemizi takip edin!"
       }
-    },
-    "ourVision": {
-      "title": "Vizyonumuz",
-      "p1": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
-      "p2": "Sitemiz, seyahat etmeyi seven insanlara çeşitli imkanlar sunarken aynı zamanda kullanıcıların deneyimlerini paylaşmalarına da olanak tanıyor. Konaklama seçenekleri, yerel turlar, doğa yürüyüşleri, gastronomi turları gibi aktivitelerimiz ziyaretçilerimizin tatil deneyimlerini daha keyifli hale getirirken aynı zamanda yerel halkla daha yakın etkileşim kurmalarını sağlıyor.",
-      "cards": {
-        "quality": {
-          "title": "Kalite",
-          "text": "Turizmde kalite, misafir memnuniyeti ile doğrudan ilişkilidir. Bizim vizyonumuz ise ziyaretçilerimize en yüksek kalitede hizmet sunmak ve unutulmaz bir tatil deneyimi yaşatmaktır. Bu nedenle, sürekli olarak işimizi geliştirmek, personelimizi eğitmek ve sektördeki en son trendleri takip etmek için çaba gösteriyoruz."
-        },
-        "experience": {
-          "title": "Deneyim",
-          "text": "Turizm deneyimi, ziyaretçilerin seyahat ettikleri yerlerdeki aktiviteler, kültür, tarih ve doğal güzelliklerle etkileşimleri sonucu edindikleri bir deneyimdir. Bu deneyim, ziyaretçilerin unutulmaz anılar biriktirmelerine ve farklı kültürleri tanımalarına yardımcı olur. Bizim amacımız ise ziyaretçilerimize bu deneyimi en üst düzeyde yaşatmak ve onların tatillerini unutulmaz bir anıya dönüştürmektir."
-        },
-        "social": {
-          "title": "Sosyal",
-          "text": "Turistikrota'da ziyaretçiler birbirleri ile etkileşime geçebilir, seyahat deneyimlerini paylaşabilir ve seyahat ile ilgili konularda bilgi alışverişinde bulunabilirler. Ayrıca, ziyaretçilerimiz seyahat etmeyi seven insanlar için bir topluluk oluşturabilirler."
-        }
-      }
-    },
-    "head": {
-      "title": "En yakın zamanda",
-      "subtitle": "Hizmete Girecek!",
-      "text": "Turistikrota en iyi ve gerçek turizm deneyimini yaşamanıza, diğer insanların turizm deneyimlerini görmenize, onlarla iletişime geçmenize, popüler turistik alanları tanımanıza ve bütün bunları yaparken güvende olmanızı sağlamayı amaçlayan bir platformdur."
     },
     "features": {
       "title": "Neden harika olacak?",

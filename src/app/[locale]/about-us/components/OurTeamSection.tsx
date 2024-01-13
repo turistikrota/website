@@ -1,3 +1,4 @@
+import Section from '@turistikrota/ui/section/landing'
 import { useTranslations } from 'next-intl'
 import MemberCard, { Member } from './MemberCard'
 
@@ -61,20 +62,18 @@ export default function OurTeamSection() {
   ]
 
   return (
-    <section className='container mx-auto my-24 px-6'>
-      <div className='mb-32 text-center lg:text-left'>
-        <h2 className='mb-12 text-center text-3xl font-bold'>{t('meetTheTeam')}</h2>
-        <div className='grid gap-4 md:grid-cols-3'>
-          {members.map((member) => (
-            <MemberCard
-              {...member}
-              key={member.fullName}
-              avatarAlt={t('avatar', { name: member.fullName })}
-              avatarTitle={t(`title.${member.title}`)}
-            />
-          ))}
-        </div>
+    <Section>
+      <Section.Head title={t('card.title')} subtitle={t('card.subtitle')} />
+      <div className='mt-14 grid gap-2 md:grid-cols-3'>
+        {members.map((member) => (
+          <MemberCard
+            {...member}
+            key={member.fullName}
+            avatarAlt={t('avatar', { name: member.fullName })}
+            avatarTitle={t(`title.${member.title}`)}
+          />
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

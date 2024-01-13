@@ -1,67 +1,42 @@
 import Card from '@turistikrota/ui/cards/default'
+import Section from '@turistikrota/ui/section/landing'
 import { useTranslations } from 'next-intl'
 
-type VisionProps = {
-  title: string
-  text: string
-  icon: string
+type Item = {
+  key: 'vision' | 'mission' | 'values'
+  icon: React.ReactNode
 }
 
-const VisionItem = ({ title, text, icon }: VisionProps) => (
-  <Card className='relative flex shadow-sm transition-shadow duration-200 hover:shadow-md  dark:shadow-none dark:hover:shadow-none'>
-    <div className='absolute left-1/2 top-2 -translate-x-1/2 -translate-y-1/2 transform'>
-      <div className='z-20 flex h-12 w-12 items-center justify-center rounded-full bg-secondary'>
-        <i className={`bx bx-md text-white ${icon}`}></i>
-      </div>
-    </div>
-    <div className='mt-8 text-center'>
-      <h3 className='mb-4 text-xl font-semibold leading-5 text-primary-800 dark:text-primary lg:text-2xl lg:leading-6'>
-        {title}
-      </h3>
-      <p className='mt-2 text-base font-normal leading-6 text-gray-600 dark:text-gray-400'>{text}</p>
-    </div>
-  </Card>
-)
+const Items: Item[] = [
+  {
+    key: 'vision',
+    icon: <i className='bx bx-show text-3xl text-primary'></i>,
+  },
+  {
+    key: 'mission',
+    icon: <i className='bx bx-target-lock text-3xl text-teal-500'></i>,
+  },
+  {
+    key: 'values',
+    icon: <i className='bx bx-award text-3xl text-fuchsia-500'></i>,
+  },
+]
 
 export default function OurVisionSection() {
   const t = useTranslations('aboutUs.ourVision')
 
-  const items: VisionProps[] = [
-    {
-      icon: 'bx-star',
-      title: t('cards.quality.title'),
-      text: t('cards.quality.text'),
-    },
-    {
-      icon: 'bx-trophy',
-      title: t('cards.experience.title'),
-      text: t('cards.experience.text'),
-    },
-    {
-      icon: 'bx-group',
-      title: t('cards.social.title'),
-      text: t('cards.social.text'),
-    },
-  ]
-
   return (
-    <section className='container mx-auto my-24 flex flex-col justify-evenly gap-16 px-6 md:gap-10 lg:flex-row'>
-      <div className='w-full text-center lg:w-6/12'>
-        <h2 className='text-3xl font-bold leading-7 lg:text-4xl lg:leading-9'>{t('title')}</h2>
-        <p className='mx-auto mt-6 w-full text-base font-normal leading-6 text-gray-600 dark:text-gray-400 lg:w-10/12 xl:w-9/12'>
-          {t('p1')}
-        </p>
-        <p className='mx-auto mt-10 w-full text-base font-normal leading-6 text-gray-600 dark:text-gray-400 lg:w-10/12 xl:w-9/12'>
-          {t('p2')}
-        </p>
+    <Section>
+      <Section.Head title={t('title')} subtitle={t('subtitle')} />
+      <div className='mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
+        {Items.map((item, idx) => (
+          <Card key={idx}>
+            <div className='flex h-12 w-12 items-center justify-center rounded-md bg-primary/10'>{item.icon}</div>
+            <h4 className='mb-2 mt-5 text-lg font-medium'>{t(`${item.key}.title`)}</h4>
+            <p className='text-slate-500 dark:text-slate-400'>{t(`${item.key}.text`)}</p>
+          </Card>
+        ))}
       </div>
-      <div className='w-full lg:w-6/12'>
-        <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12'>
-          {items.map((item, index) => (
-            <VisionItem key={index} {...item} />
-          ))}
-        </div>
-      </div>
-    </section>
+    </Section>
   )
 }
