@@ -3,11 +3,12 @@ import { getTranslations } from 'next-intl/server'
 import { getStaticRoute } from '~/static/page'
 import { LayoutProps } from '~/types/base'
 import { generateDefaultMetadata } from '~/utils/meta'
-import HeadSection from './components/HeadSection'
-import OurFeatureSection from './components/OurFeatureSection'
+import CountSection from './components/CountSection'
+import OurModulesSection from './components/OurModulesSection'
 import OurTeamSection from './components/OurTeamSection'
 import OurVisionSection from './components/OurVisionSection'
-import TimelineSection from './components/TimelineSection'
+import TitleSection from './components/TitleSection'
+import WhyPerfectSection from './components/WhyPerfectSection'
 
 export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'aboutUs.meta' })
@@ -25,11 +26,12 @@ export async function generateMetadata({ params: { locale } }: LayoutProps): Pro
 export default function AboutUs() {
   return (
     <>
-      <HeadSection></HeadSection>
-      <OurFeatureSection></OurFeatureSection>
-      <OurTeamSection></OurTeamSection>
-      <TimelineSection></TimelineSection>
-      <OurVisionSection></OurVisionSection>
+      <TitleSection />
+      <CountSection />
+      <OurVisionSection />
+      <WhyPerfectSection />
+      <OurTeamSection />
+      <OurModulesSection />
     </>
   )
 }

@@ -13,7 +13,7 @@ const ContactInfoSection: FC = () => {
       />
       <KeyValue label={t('kepAddress')} value='samisalih.ibrahimbas@hs01.kep.tr' />
       <KeyValue label={t('taxOffice')} value='Sapanca' />
-      <KeyValue label={t('supportEmail')} value='destek@turistikrota.com' />
+      <KeyValue label={t('supportEmail')} value='support@turistikrota.com' />
       <KeyValue label={t('techEmail')} value='tech@turistikrota.com' />
     </section>
   )

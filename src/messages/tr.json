@@ -209,7 +209,41 @@
     }
   },
   "aboutUs": {
+    "head": {
+      "title": "Gerçek Turizm Deneyimi Turistikrota'da",
+      "subtitle": "Turistikrota, Dünya çapında en iyi turizm deneyimini yaşamanızı ve bu deneyimi diğer insanlarla paylaşmanızı sağlayan bir platformdur."
+    },
+    "count": {
+      "title": "Herkes için En İyisi",
+      "subtitle": "Turistikrota müşterilerine gerçek turizm deneyimi yaşatırken iş ortaklarına da büyük kolaylıklar sağlar.",
+      "data": {
+        "business": "İşletme",
+        "customer": "Müşteri",
+        "solution": "Yenilikçi Çözüm",
+        "support": "Destek"
+      }
+    },
+    "whyPerfect": {
+      "title": "Neden Harika?",
+      "subtitle": "Turistikrota, seyahat etmeyi seven insanlara çeşitli imkanlar sunarken aynı zamanda kullanıcıların deneyimlerini paylaşmalarına da olanak tanıyor.",
+      "social": {
+        "title": "Sosyal",
+        "text": "Turistikrota'da ziyaretçiler birbirleri ile etkileşime geçebilir, seyahat deneyimlerini paylaşabilir ve seyahat ile ilgili konularda bilgi alışverişinde bulunabilirler."
+      },
+      "safe": {
+        "title": "Güvenli",
+        "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
+      },
+      "worldwide": {
+        "title": "Dünya Çapında",
+        "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
+      }
+    },
     "team": {
+      "card": {
+        "title": "Ekibimiz",
+        "subtitle": "Turistikrota ekibi, bütün bu sitenin varoluşunu ve sürdürülebilirliğini sağlayan insanlardan oluşur."
+      },
       "meetTheTeam": "Ekibimizi Tanıyın",
       "avatar": "{name}'ın fotoğrafı",
       "title": {
@@ -220,60 +254,74 @@
       },
       "link": "{name}'ın {socialMedia} profili"
     },
-    "timeline": {
-      "title": "Hikayemiz",
-      "founding": {
-        "title": "Kurulma",
-        "text": "Turistik Rota, 2023 yılının Şubat ayında seyahat etmeyi seven ve turistik bir bölgede yaşayan bir genç tarafından kuruldu. Fikir, insanların tatillerini planlamalarına, diğer insanların deneyimlerinden faydalanmalarına ve tur rezervasyonu yapmalarına yardımcı olacak bir web sitesi oluşturmaktı."
-      },
-      "development": {
-        "title": "Geliştirme",
-        "text": "Turistik Rota şu anda geliştirilme aşamasındadır. En kısa sürede kullanıma sunmak için yoğun bir şekilde çalışıyoruz. En kısa zamanda web sitesini yayına alacağız."
-      },
-      "launch": {
-        "title": "Başlat",
-        "text": "Turistik Rota yakında hizmete girecek. Tatil planlama, seyahat tavsiyeleri, keşfedilmemiş rotalar ve seyahat rehberliği sunacağız. Ayrıca tur rezervasyonları ve konaklama seçenekleri de sunacağız. Daha fazla bilgi için sitemizi takip edin!"
-      }
-    },
     "ourVision": {
       "title": "Vizyonumuz",
-      "p1": "Turistik Rota, tatil planlama, gezi önerileri, keşfedilmemiş rotalar ve seyahat rehberliği konularında uzmanlaşmış bir web sitesidir. Yurt içi ve yurt dışı seyahatlerinizde kültür, doğa, şehir ve macera turizmi gibi farklı kategorilerde, keşfedilmemiş rotalar sunuyoruz. Konaklama seçenekleri, tur rezervasyonları ve seyahatle ilgili konularda rehberlik için sitemizi takip edin!",
-      "p2": "Sitemiz, seyahat etmeyi seven insanlara çeşitli imkanlar sunarken aynı zamanda kullanıcıların deneyimlerini paylaşmalarına da olanak tanıyor. Konaklama seçenekleri, yerel turlar, doğa yürüyüşleri, gastronomi turları gibi aktivitelerimiz ziyaretçilerimizin tatil deneyimlerini daha keyifli hale getirirken aynı zamanda yerel halkla daha yakın etkileşim kurmalarını sağlıyor.",
-      "cards": {
-        "quality": {
-          "title": "Kalite",
-          "text": "Turizmde kalite, misafir memnuniyeti ile doğrudan ilişkilidir. Bizim vizyonumuz ise ziyaretçilerimize en yüksek kalitede hizmet sunmak ve unutulmaz bir tatil deneyimi yaşatmaktır. Bu nedenle, sürekli olarak işimizi geliştirmek, personelimizi eğitmek ve sektördeki en son trendleri takip etmek için çaba gösteriyoruz."
-        },
-        "experience": {
-          "title": "Deneyim",
-          "text": "Turizm deneyimi, ziyaretçilerin seyahat ettikleri yerlerdeki aktiviteler, kültür, tarih ve doğal güzelliklerle etkileşimleri sonucu edindikleri bir deneyimdir. Bu deneyim, ziyaretçilerin unutulmaz anılar biriktirmelerine ve farklı kültürleri tanımalarına yardımcı olur. Bizim amacımız ise ziyaretçilerimize bu deneyimi en üst düzeyde yaşatmak ve onların tatillerini unutulmaz bir anıya dönüştürmektir."
-        },
-        "social": {
-          "title": "Sosyal",
-          "text": "Turistikrota'da ziyaretçiler birbirleri ile etkileşime geçebilir, seyahat deneyimlerini paylaşabilir ve seyahat ile ilgili konularda bilgi alışverişinde bulunabilirler. Ayrıca, ziyaretçilerimiz seyahat etmeyi seven insanlar için bir topluluk oluşturabilirler."
-        }
+      "subtitle": "Turistikrota'nın misyonunu ve vizyonunu öğrenin.",
+      "vision": {
+        "title": "Vizyon",
+        "text": "Turistikrota olarak vizyonumuz, turizm sektöründe yenilikçi çözümler sunmak ve insanların mutlu anılar biriktirmelerini sağlamaktır."
+      },
+      "mission": {
+        "title": "Misyon",
+        "text": "Turistikrota olarak misyonumuz, insanların gerçek turizm deneyimini yaşamalarını sağlamak ve bu deneyimi diğer insanlarla paylaşmalarını sağlamaktır."
+      },
+      "values": {
+        "title": "Değerler",
+        "text": "Turistikrota olarak değerlerimiz, müşteri memnuniyeti, yenilikçilik, güvenilirlik ve kalitedir."
       }
     },
-    "head": {
-      "title": "En yakın zamanda",
-      "subtitle": "Hizmete Girecek!",
-      "text": "Turistikrota en iyi ve gerçek turizm deneyimini yaşamanıza, diğer insanların turizm deneyimlerini görmenize, onlarla iletişime geçmenize, popüler turistik alanları tanımanıza ve bütün bunları yaparken güvende olmanızı sağlamayı amaçlayan bir platformdur."
-    },
-    "features": {
-      "title": "Neden harika olacak?",
-      "items": {
-        "network": {
-          "title": "Ağ",
-          "text": "Oteller, ev sahipleri, rehberler, turistler, tur şirketleri ve daha fazlası ile ortak bir sosyal platformda buluşun."
-        },
-        "safe": {
-          "title": "Güvenli",
-          "text": "Turistikrota, seyahat edenlerin ve ev sahiplerinin güvenliğini sağlamak için gelişmiş güvenlik önlemleri sunar."
-        },
-        "worldwide": {
-          "title": "Dünya Çapında",
-          "text": "Turistikrota, dünyanın her yerinden insanların birbirleriyle etkileşime geçmesini sağlar. Dünyanın her yerindeki insanlarla tanışın ve seyahat edin."
-        }
+    "ourModules": {
+      "title": "Modüllerimiz",
+      "subtitle": "Turistikrota'yı modüller halinde inceleyin. Her modül, Turistikrota'nın farklı bir özelliğini temsil eder.",
+      "notReady": "Geliştirme aşamasında",
+      "visit": "Ziyaret Et",
+      "places": {
+        "title": "Yerler Modülü",
+        "text": "Turistik yerleri tüm detaylarıyla birlikte sunar. Turistik yerler arasında tarihi yerler, doğal güzellikler, şehirler, kasabalar ve daha fazlası bulunuyor."
+      },
+      "listing": {
+        "title": "Konaklama Modülü",
+        "text": "Konuma, tarih aralığına ve fiyata göre konaklama seçenekleri sunar. Konaklama seçenekleri arasında oteller, pansiyonlar, evler, kamp alanları ve daha fazlası bulunuyor."
+      },
+      "support": {
+        "title": "Destek Modülü",
+        "text": "Turistikrota üzerinden yapılan rezervasyonda veya Turistikrota'da yaşanılan herhangi bir sorunda destek almayı sağlar. Bu modül ile Turistikrota destek ekibine ulaşabilirsiniz."
+      },
+      "booking": {
+        "title": "Rezervasyon Modülü",
+        "text": "Yapılan rezervasyonları takip etmeyi ve yönetmeyi sağlar. Rezervasyonunuzun detaylarını görebilir, durumunu takip edebilir, rezervasyonunuzu iptal edebilir veya rezervasyonunuzu düzenleyebilirsiniz."
+      },
+      "business": {
+        "title": "İşletme Modülü",
+        "text": "İşletme sahiplerinin işletmelerini tanıtmalarını ve işletmelerini yönetmelerini sağlar. İşletme sahipleri, Turistikrota'da işletmelerini tanıtabilir, işletmelerine rezervasyon alabilir ve işletmelerini yönetebilirler."
+      },
+      "account": {
+        "title": "Hesap Modülü",
+        "text": "Kullanıcıların Turistikrota hesaplarını yönetmelerini sağlar. Kullanıcılar, Turistikrota hesaplarını düzenleyebilir, Turistikrota hesaplarını silme talebinde bulunabilir ve Turistikrota hesaplarını silebilirler."
+      },
+      "tech": {
+        "title": "Teknoloji Modülü",
+        "text": "Turistikrota teknoloji ekibinin tanıtımını yapar. Teknoloji ekibimiz, Turistikrota'nın geliştirilmesi ve sürdürülebilirliği için çalışmaktadır."
+      },
+      "payment": {
+        "title": "Ödeme Modülü",
+        "text": "Turistikrota üzerinden yapacağınız tüm ödemelerin gerçekleşmesini sağlar. Geçmiş ve mevcut ödemelerinizi görüntüleyebilir, ödeme yöntemlerinizi yönetebilir ve ödeme yöntemlerinizi güncelleyebilirsiniz."
+      },
+      "social": {
+        "title": "Sosyal Modülü",
+        "text": "Turistikrota'da diğer kişilerle etkilşime geçmenizi sağlar. Bir şeyler paylaşın veya sevdiklerinizin kimlerle seyahat ettiğini görün."
+      },
+      "ad": {
+        "title": "Reklam Modülü",
+        "text": "İşletmelerin Turistikrota'da reklam yayınlamalarını ve bu reklamların yönetimini sağlar. İşletme sahipleri, Turistikrota'da reklam yayınlayabilir ve reklamlarını yönetebilirler."
+      },
+      "tour": {
+        "title": "Tur Modülü",
+        "text": "Diğer kişilerle birlikte seyahat etmenizi sağlar. Turistikrota'da bir tur oluşturabilir veya bir tur rezervasyonu yapabilirsiniz."
+      },
+      "ticket": {
+        "title": "Bilet Modülü",
+        "text": "Turizm'in dışına çıkıyoruz ve kültür-sanat etkinliklerini de sizlere sunuyoruz. Turistikrota'da bir etkinlik oluşturabilir veya bir etkinlik biletini satın alabilirsiniz."
       }
     },
     "meta": {

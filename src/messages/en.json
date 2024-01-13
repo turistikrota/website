@@ -213,8 +213,41 @@
     }
   },
   "aboutUs": {
+    "head": {
+      "title": "Real Tourism Experience is at Turistikrota",
+       "subtitle": "Turistikrota is a platform that allows you to have the best tourism experience around the world and share this experience with other people."
+    },
+    "count": {
+      "title": "Best for everyone",
+      "subtitle": "While Turistikrota provides its customers with a real tourism experience, it also provides great convenience to its business partners.",
+      "data": {
+        "business": "Business",
+        "customer": "Customer",
+        "solution": "Innovative Solution",
+        "support": "Support"
+      }
+    },
+    "whyPerfect": {
+      "title": "Why Perfect?",
+      "subtitle": "While offering various opportunities to travel enthusiasts, Turistikrota also allows users to share their experiences.",
+      "social": {
+        "title": "Social",
+        "text": "Visitors on Turistikrota can interact with each other, share their travel experiences, and exchange information about travel-related topics."
+      },
+      "safe": {
+        "title": "Safe",
+        "text": "Turistikrota offers advanced security measures to ensure the safety of travelers and hosts."
+      },
+      "worldwide": {
+        "title": "Worldwide",
+        "text": "Turistikrota enables people from all over the world to interact with each other. Meet and travel with people from everywhere in the world."
+      }
+    },
     "team": {
-      "meetTheTeam": "Meet the Team",
+      "card": {
+        "title": "Our Team",
+         "subtitle": "Turistikrota team consists of people who ensure the existence and sustainability of this entire site."
+      },
       "avatar": "{name}'s avatar",
       "title": {
         "founder": "Founder",
@@ -224,62 +257,76 @@
       },
       "link": "{name}'s {socialMedia} profile"
     },
-    "timeline": {
-      "title": "Our Story",
-      "founding": {
-        "title": "Founding",
-        "text": "Turistik Rota was founded in February 2023 by a young person who likes to travel and lives in a touristic area. The idea was to create a website that would help people plan their vacations, benefit from other people's experiences, and book tours."
-      },
-      "development": {
-        "title": "Development",
-        "text": "Turistik Rota is currently under development. We are working hard to make it available as soon as possible. We will be launching the website soon."
-      },
-      "launch": {
-        "title": "Launch",
-        "text": "Turistik Rota will be launched soon. We will be offering vacation planning, travel advice, unexplored routes and travel guidance. We will also be offering tour bookings and accommodation options. Follow our site for more information!"
-      }
-    },
-    "ourVision": {
-      "title": "Our Vision",
-      "p1": "Turistik Rota is a website specializing in vacation planning, travel suggestions, undiscovered routes and travel guidance. We offer unexplored routes in different categories such as culture, nature, city and adventure tourism for your domestic and international travels. Accommodation options, Follow our site for tour bookings and guidance on travel matters!",
-      "p2": "While our site offers various opportunities to people who love to travel, it also allows users to share their experiences. Our activities such as accommodation options, local tours, nature walks, gastronomic tours make the holiday experience of our visitors more enjoyable, while also enabling them to interact more closely with the local people.",
-      "cards": {
-        "quality": {
-          "title": "Quality",
-          "text": "Quality in tourism is directly related to guest satisfaction. Our vision is to provide our visitors with the highest quality service and an unforgettable holiday experience. Therefore, we strive to constantly improve our business, train our staff and follow the latest trends in the industry. "
+      "ourVision": {
+        "title": "Our Vision",
+        "subtitle": "Learn about the mission and vision of Turistikrota.",
+        "vision": {
+          "title": "Vision",
+          "text": "Our vision as Turistikrota is to provide innovative solutions in the tourism sector and ensure that people accumulate happy memories."
         },
-        "experience": {
-          "title": "Experience",
-          "text": "Tourism experience is an experience that visitors get as a result of their interaction with the activities, culture, history and natural beauties in the places they travel. This experience helps visitors to collect unforgettable memories and get to know different cultures. Our aim is to give our visitors the highest level of experience. and to turn their vacation into an unforgettable memory."
+        "mission": {
+          "title": "Mission",
+          "text": "Our mission as Turistikrota is to ensure that people experience real tourism and share this experience with others."
         },
-        "social": {
-          "title": "Social",
-          "text": "In Turistikrota, visitors can interact with each other, share their travel experiences and exchange information on travel-related topics. Also, our visitors can create a community for people who love to travel."
+        "values": {
+          "title": "Values",
+          "text": "Our values as Turistikrota are customer satisfaction, innovation, reliability, and quality."
         }
-      }
-    },
-    "head": {
-      "title": "It will be put into",
-      "subtitle": "Service Soon!",
-      "text": "Turistikrota is a platform that aims to provide you with the best and real tourism experience, see other people's tourism experiences, communicate with them, get to know popular touristic areas and be safe while doing all these."
-    },
-    "features": {
-      "title": "Why will it be great?",
-      "items": {
-        "network": {
-          "title": "Network",
-          "text": "Meet on a shared social platform with hotels, hosts, guides, tourists, tour companies and more."
-        },
-        "safe": {
-          "title": "Secure",
-          "text": "Turistikrota offers advanced security measures to ensure the safety of travelers and hosts."
-        },
-        "worldwide": {
-          "title": "Worldwide",
-          "text": "Turistikrota allows people from all over the world to interact with each other. Meet and travel with people all over the world."
-        }
-      }
-    },
+      },
+        "ourModules": {
+          "title": "Our Modules",
+          "subtitle": "Explore Turistikrota by modules. Each module represents a different feature of Turistikrota.",
+          "notReady": "Under development",
+          "visit": "Visit",
+          "places": {
+            "title": "Places Module",
+            "text": "Provides tourist places with all their details. Tourist places include historical places, natural beauties, cities, towns, and more."
+          },
+          "listing": {
+            "title": "Accommodation Module",
+            "text": "Provides accommodation options by location, date range, and price. Accommodation options include hotels, hostels, homes, campsites, and more."
+          },
+          "support": {
+            "title": "Support Module",
+            "text": "Allows you to get support for reservations made through Turistikrota or any problems encountered on Turistikrota. With this module, you can reach the Turistikrota support team."
+          },
+          "booking": {
+            "title": "Booking Module",
+            "text": "Allows you to track and manage your bookings. You can view the details of your booking, track its status, cancel your booking, or edit your booking."
+          },
+          "business": {
+            "title": "Business Module",
+            "text": "Allows business owners to promote their businesses and manage their businesses. Business owners can promote their businesses on Turistikrota, get bookings for their businesses, and manage their businesses."
+          },
+          "account": {
+            "title": "Account Module",
+            "text": "Allows users to manage their Turistikrota accounts. Users can edit their Turistikrota accounts, request to delete their Turistikrota accounts, and delete their Turistikrota accounts."
+          },
+          "tech": {
+            "title": "Technology Module",
+            "text": "Introduces the Turistikrota technology team. Our technology team is working on the development and sustainability of Turistikrota."
+          },
+          "payment": {
+            "title": "Payment Module",
+            "text": "Allows you to make all payments you make through Turistikrota. You can view your past and current payments, manage your payment methods, and update your payment methods."
+          },
+          "social": {
+            "title": "Social Module",
+            "text": "Allows you to interact with other people on Turistikrota. Share something or see who your loved ones are traveling with."
+          },
+          "ad": {
+            "title": "Advertising Module",
+            "text": "Allows businesses to advertise on Turistikrota and manage these ads. Business owners can advertise on Turistikrota and manage their ads."
+          },
+          "tour": {
+            "title": "Tour Module",
+            "text": "Allows you to travel with other people. You can create a tour on Turistikrota or book a tour."
+          },
+          "ticket": {
+            "title": "Ticket Module",
+            "text": "We are going beyond tourism and also offering you cultural and artistic events. You can create an event on Turistikrota or buy a ticket for an event."
+          }
+        },      
     "meta": {
       "title": "About Us",
       "description": "Turistik Rota is a platform that allows you to experience the best tourism experience worldwide and share this experience with other people.",
