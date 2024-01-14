@@ -13,8 +13,8 @@
      "subtitle": "Official information about our company can be found here.",
       "address": "Address",
      "tradeName": "Trade Name",
+     "companyName": "Company Name",
      "kepAddress": "KEP Address",
-     "taxOffice": "Tax Office",
      "supportEmail": "Support Email",
      "techEmail": "Technical Email",
      "info": {

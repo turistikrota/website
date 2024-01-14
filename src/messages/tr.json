@@ -12,9 +12,9 @@
     "title": "Şirket Bilgileri",
     "subtitle": "Şirketimiz hakkında resmi bilgilere buradan ulaşabilirsiniz.",
     "address": "Adres",
-    "tradeName": "Şirket Ünvanı",
+    "tradeName": "Ticaret Ünvanı",
+    "companyName": "Şirket Ünvanı",
     "kepAddress": "KEP Adresi",
-    "taxOffice": "Vergi Dairesi",
     "supportEmail": "Destek E-posta",
     "techEmail": "Teknik E-posta",
     "info": {
