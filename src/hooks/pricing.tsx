@@ -1,10 +1,11 @@
 import { useLocale } from 'next-intl'
+import { Currency } from '~/features/listing/types/listing'
 
-export const useLocalizedFormatter = (): Intl.NumberFormat => {
+export const useLocalizedFormatter = (currency: Currency = Currency.USD): Intl.NumberFormat => {
   const locale = useLocale()
-  return new Intl.NumberFormat('tr-TR', {
+  return new Intl.NumberFormat(locale, {
     style: 'currency',
-    currency: 'TRY',
+    currency: currency ? currency : Currency.USD,
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   })

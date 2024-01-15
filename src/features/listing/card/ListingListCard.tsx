@@ -23,6 +23,7 @@ const ListingListCard: FC<Props> = ({
   categoryUUIDs,
   features,
   images,
+  currency,
   location,
   prices,
   validation,
@@ -56,7 +57,7 @@ const ListingListCard: FC<Props> = ({
           <div className='grid grid-cols-12 gap-2 px-2'>
             <ListingCardBusinessSection nickName={business.nickName} />
             <ListingCardLocationSection city={location.city} street={location.street} className='justify-end' />
-            <ListingCardPriceSection prices={prices} />
+            <ListingCardPriceSection prices={prices} currency={currency} />
           </div>
         </div>
       </Link>

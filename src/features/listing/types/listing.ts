@@ -10,6 +10,12 @@ export type ListingImage = {
   order: number
 }
 
+export enum Currency {
+  EUR = 'EUR',
+  USD = 'USD',
+  TRY = 'TRY',
+}
+
 export type ListingMeta = {
   title: string
   description: string
@@ -66,6 +72,7 @@ export type ListingListItem = {
   prices: ListingPrice[]
   location: ListingLocation
   validation: ListingValidation
+  currency: Currency
 }
 
 export const EmptyListingMeta: ListingMeta = {
