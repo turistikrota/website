@@ -34,24 +34,24 @@ const CookieModal: FC = () => {
       id='cookie-modal'
       className='fixed bottom-4 left-1/2 z-501 mx-auto w-11/12 max-w-md -translate-x-1/2 transform rounded-md bg-primary bg-opacity-80 p-2 backdrop-blur-lg md:left-4 md:translate-x-0'
     >
-      <h2 className='text-lg font-semibold text-gray-800 dark:text-white'>{t('title')}</h2>
+      <h2 className='text-lg font-semibold text-white'>{t('title')}</h2>
 
-      <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>
+      <p className='mt-2 text-sm text-gray-300'>
         {t('subtitle')}
         <I18nLink
           href={Paths.contracts.cookies}
-          className='font-medium text-gray-700 underline transition-colors duration-300 hover:text-blue-500 dark:text-white dark:hover:text-blue-400'
+          className='font-medium text-white underline transition-colors duration-300 hover:text-blue-400'
         >
           {t('link')}
         </I18nLink>
       </p>
 
-      <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>{t('info')}</p>
+      <p className='mt-2 text-sm text-gray-300'>{t('info')}</p>
 
       <div className='mt-2 grid shrink-0 grid-cols-2 gap-2'>
         <button
           onClick={onAccept}
-          className='rounded-md bg-default px-4 py-2.5 text-xs font-medium text-white transition-colors duration-300 focus:outline-none'
+          className='rounded-md bg-black px-4 py-2.5 text-xs font-medium text-white transition-colors duration-300 focus:outline-none'
         >
           {t('accept')}
         </button>
