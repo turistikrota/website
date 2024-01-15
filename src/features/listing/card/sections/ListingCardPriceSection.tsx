@@ -2,7 +2,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { FC, PropsWithChildren } from 'react'
 import { useDayJS } from '~/hooks/dayjs'
 import { useLocalizedFormatter } from '~/hooks/pricing'
-import { ListingPrice } from '../../types/listing'
+import { Currency, ListingPrice } from '../../types/listing'
 
 type DayJS = ReturnType<typeof useDayJS>
 
@@ -15,6 +15,7 @@ type Props = {
   withComission?: boolean
   startDate?: string
   endDate?: string
+  currency: Currency
 }
 
 type PriceRange = {
@@ -34,6 +35,7 @@ type RangeRendererProps = {
   min?: number
   max?: number
   notAvailable?: boolean
+  currency: Currency
 }
 
 type PriceRowProps = {
@@ -53,9 +55,9 @@ const DataRow: FC<PriceRowProps> = ({ label, text, bold }) => {
   )
 }
 
-const RangeRenderer: FC<RangeRendererProps> = ({ min, max, notAvailable }) => {
+const RangeRenderer: FC<RangeRendererProps> = ({ min, max, notAvailable, currency }) => {
   const t = useTranslations('home.listing')
-  const localizedFormatter = useLocalizedFormatter()
+  const localizedFormatter = useLocalizedFormatter(currency)
   if (notAvailable || !min)
     return (
       <div className='w-full text-center text-sm font-bold text-red-600 dark:text-red-400'>
@@ -71,17 +73,17 @@ const RangeRenderer: FC<RangeRendererProps> = ({ min, max, notAvailable }) => {
   )
 }
 
-const ListingCardPriceRange: FC<Props> = ({ prices }) => {
+const ListingCardPriceRange: FC<Props> = ({ prices, currency }) => {
   const { min, max, notAvailable } = calcMinMaxPrice(prices)
-  return <RangeRenderer min={min!} max={max!} notAvailable={notAvailable!} />
+  return <RangeRenderer min={min!} max={max!} notAvailable={notAvailable!} currency={currency} />
 }
 
-const ListingCardPriceSection: Section = ({ prices, withComission, startDate, endDate, children }) => {
+const ListingCardPriceSection: Section = ({ prices, withComission, currency, startDate, endDate, children }) => {
   const locale = useLocale()
   const dayjs = useDayJS(locale)
   return (
     <div className='col-span-12 flex items-center justify-start gap-2'>
-      <ListingCardPriceRange prices={prices} />
+      <ListingCardPriceRange prices={prices} currency={currency} />
     </div>
   )
 }
