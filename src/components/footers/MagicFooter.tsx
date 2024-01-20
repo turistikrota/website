@@ -26,7 +26,11 @@ type StoreCardProps = {
 
 const StoreCard: FC<StoreCardProps> = ({ link, icon, title, text }) => {
   return (
-    <Link href={link} target='_blank' className='flex w-48 items-center gap-2 rounded-md border p-2'>
+    <Link
+      href={link}
+      target='_blank'
+      className='flex w-full min-w-max items-center gap-2 rounded-md border p-2 sm:w-48'
+    >
       <div className='flex w-10 min-w-max items-center justify-center'>
         <i className={`bx bx-sm ${icon}`}></i>
       </div>
