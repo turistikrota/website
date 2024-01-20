@@ -99,6 +99,9 @@ const MagicFooter: FC = () => {
             <LinkItem href={getStaticRoute(locale).support} title={t('grid.company.support')} withI18n />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
+            <LinkItem href={getStaticRoute(locale).help} title={t('grid.company.help')} />
+          </Footer.Grid.Col.Item>
+          <Footer.Grid.Col.Item>
             <LinkItem href={getStaticRoute(locale).contact} title={t('grid.company.contact-us')} withI18n noNewTab />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>

@@ -9,6 +9,7 @@ export type RouteType = {
   bookings: string
   tech: string
   businesses: string
+  help: string
   account: {
     details: string
     select: string
@@ -43,6 +44,7 @@ const Routes: Record<Locales, RouteType> = {
     auth: {
       default: SiteUrls.auth.tr,
     },
+    help: SiteUrls.help.tr,
     places: SiteUrls.places.tr,
     comingSoon: '/cok-yakinda',
     contracts: {
@@ -59,6 +61,7 @@ const Routes: Record<Locales, RouteType> = {
     support: SiteUrls.support.en,
     bookings: SiteUrls.booking.en,
     tech: SiteUrls.tech.en,
+    help: SiteUrls.help.en,
     businesses: `${SiteUrls.businesses.en}/menu`,
     account: {
       details: `${SiteUrls.account.en}/menu`,
