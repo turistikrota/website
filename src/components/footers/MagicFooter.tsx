@@ -26,7 +26,11 @@ type StoreCardProps = {
 
 const StoreCard: FC<StoreCardProps> = ({ link, icon, title, text }) => {
   return (
-    <Link href={link} target='_blank' className='flex w-48 items-center gap-2 rounded-md border p-2'>
+    <Link
+      href={link}
+      target='_blank'
+      className='flex w-full min-w-max items-center gap-2 rounded-md border p-2 sm:w-48'
+    >
       <div className='flex w-10 min-w-max items-center justify-center'>
         <i className={`bx bx-sm ${icon}`}></i>
       </div>
@@ -97,6 +101,9 @@ const MagicFooter: FC = () => {
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem href={getStaticRoute(locale).support} title={t('grid.company.support')} withI18n />
+          </Footer.Grid.Col.Item>
+          <Footer.Grid.Col.Item>
+            <LinkItem href={getStaticRoute(locale).help} title={t('grid.company.help')} />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem href={getStaticRoute(locale).contact} title={t('grid.company.contact-us')} withI18n noNewTab />
