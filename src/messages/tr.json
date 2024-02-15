@@ -62,6 +62,19 @@
     "noResult": {
       "title": "Sonuç Bulunamadı",
       "description": "Aradığınız kriterlere uygun sonuç bulunamadı."
+    },
+    "sites": {
+      "main": {
+        "link": "/tr"
+      },
+      "places": {
+        "link": "https://yerler.turistikrota.com",
+        "title": "yerler"
+      },
+      "listing": {
+        "link": "https://ilan.turistikrota.com",
+        "title": "ilan"
+      }
     }
   },
   "home": {
