@@ -62,6 +62,19 @@
     "noResult": {
       "title": "No Result Found",
       "description": "No results matching your search criteria were found."
+    },
+    "sites": {
+      "main": {
+        "link": "/en"
+      },
+      "places": {
+        "link": "https://places.turistikrota.com",
+        "title": "places"
+      },
+      "listing": {
+        "link": "https://listing.turistikrota.com",
+        "title": "listing"
+      }
     }
   },
   "home": {
