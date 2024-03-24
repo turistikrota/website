@@ -89,18 +89,12 @@ const MagicFooter: FC = () => {
             <LinkItem href={SiteUrls.businesses[locale as Locales]} title={t('grid.sites.business')} />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
-            <LinkItem href={SiteUrls.account[locale as Locales]} title={t('grid.sites.account')} />
-          </Footer.Grid.Col.Item>
-          <Footer.Grid.Col.Item>
             <LinkItem href={'https://tech.turistikrota.com'} title={t('grid.company.tech-team')} />
           </Footer.Grid.Col.Item>
         </Footer.Grid.Col>
         <Footer.Grid.Col title={t('grid.company.title')}>
           <Footer.Grid.Col.Item>
             <LinkItem href={getStaticRoute(locale).aboutUs} title={t('grid.company.about-us')} withI18n noNewTab />
-          </Footer.Grid.Col.Item>
-          <Footer.Grid.Col.Item>
-            <LinkItem href={getStaticRoute(locale).support} title={t('grid.company.support')} withI18n />
           </Footer.Grid.Col.Item>
           <Footer.Grid.Col.Item>
             <LinkItem href={getStaticRoute(locale).help} title={t('grid.company.help')} />
