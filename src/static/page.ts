@@ -38,7 +38,7 @@ const Routes: Record<Locales, RouteType> = {
     tech: SiteUrls.tech.tr,
     businesses: `${SiteUrls.businesses.tr}/menu`,
     account: {
-      details: `${SiteUrls.account.tr}/menu`,
+      details: `${SiteUrls.account.tr}`,
       select: `${SiteUrls.account.tr}/sec`,
     },
     auth: {
@@ -64,7 +64,7 @@ const Routes: Record<Locales, RouteType> = {
     help: SiteUrls.help.en,
     businesses: `${SiteUrls.businesses.en}/menu`,
     account: {
-      details: `${SiteUrls.account.en}/menu`,
+      details: `${SiteUrls.account.en}`,
       select: `${SiteUrls.account.en}/select`,
     },
     auth: {
