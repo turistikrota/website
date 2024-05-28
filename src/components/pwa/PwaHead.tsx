@@ -8,7 +8,7 @@ export default function PwaHead({ locale }: Props) {
       <link rel='manifest' href={`/manifests/manifest.${locale}.json`} />
       <meta name='application-name' content='Turistikrota' />
       <meta name='apple-mobile-web-app-capable' content='yes' />
-      <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='#33a6e6' />
       <meta name='apple-mobile-web-app-title' content='Turistikrota' />
       <meta name='format-detection' content='telephone=no' />
       <meta name='mobile-web-app-capable' content='yes' />
