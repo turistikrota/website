@@ -15,7 +15,7 @@ export default function PwaHead({ locale }: Props) {
       <meta name='msapplication-config' content='/icons/browserconfig.xml' />
       <meta name='msapplication-TileColor' content='#87ceeb' />
       <meta name='msapplication-tap-highlight' content='no' />
-      <meta name='theme-color' content='#121212' />
+      <meta name='theme-color' content='#33a6e6' />
 
       <link rel='apple-touch-icon' sizes='152x152' href='/manifests/ios/152.png' />
       <link rel='apple-touch-icon' sizes='180x180' href='/manifests/ios/180.png' />
