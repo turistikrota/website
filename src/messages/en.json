@@ -1,41 +1,41 @@
 {
-    "cookies": {
-      "title": "🍪 We Use Cookies!",
-      "subtitle": "Hi, we use cookies on our site. Cookies help us understand how you use our website and provide you with a better experience.",
-      "link": "Read Cookie Policy",
-      "info": "Closing this modal default settings will be saved.",
-      "accept": "Accept All",
-      "reject": "Reject All",
-      "close": "Close"
-    },  
-    "contact": {
-      "title": "Company Information",
-     "subtitle": "Official information about our company can be found here.",
-      "address": "Address",
-     "tradeName": "Trade Name",
-     "companyName": "Company Name",
-     "kepAddress": "KEP Address",
-     "supportEmail": "Support Email",
-     "techEmail": "Technical Email",
-     "info": {
+  "cookies": {
+    "title": "🍪 We Use Cookies!",
+    "subtitle": "Hi, we use cookies on our site. Cookies help us understand how you use our website and provide you with a better experience.",
+    "link": "Read Cookie Policy",
+    "info": "Closing this modal default settings will be saved.",
+    "accept": "Accept All",
+    "reject": "Reject All",
+    "close": "Close"
+  },
+  "contact": {
+    "title": "Company Information",
+    "subtitle": "Official information about our company can be found here.",
+    "address": "Address",
+    "tradeName": "Trade Name",
+    "companyName": "Company Name",
+    "kepAddress": "KEP Address",
+    "supportEmail": "Support Email",
+    "techEmail": "Technical Email",
+    "info": {
       "title": "Support System",
       "description": "You can contact us via the support system to get support on any issue.",
       "button": "go to support system"
     },
-      "form": {
-        "title": "Contact Us",
-        "subtitle": "You can contact us by filling out the form below.",
-        "subject_required": "Subject is required",
-        "message_required": "Message is required",
-        "email_invalid":"Invalid email address",
-        "email_required": "Email address is required",
-        "subject": "Subject",
-        "message": "Message",
-        "email": "Email",
-        "send": "Send",
-        "success": "Your message has been sent successfully."
-      }
-    },
+    "form": {
+      "title": "Contact Us",
+      "subtitle": "You can contact us by filling out the form below.",
+      "subject_required": "Subject is required",
+      "message_required": "Message is required",
+      "email_invalid": "Invalid email address",
+      "email_required": "Email address is required",
+      "subject": "Subject",
+      "message": "Message",
+      "email": "Email",
+      "send": "Send",
+      "success": "Your message has been sent successfully."
+    }
+  },
   "contracts": {
     "privacy-notification": {
       "title": "Privacy Notification",
@@ -77,7 +77,80 @@
       }
     }
   },
+  "rez": {
+    "meta": {
+      "title": "Reservation Module",
+      "description": "Reservation Module is a module that allows you to manage your reservations. You can view the details of your booking, track its status, cancel your booking, or edit your booking.",
+      "keywords": "Reservation Module, Turistik Rota, Vacation Planning, Tour Reservation"
+    },
+    "head": {
+      "title": "Turistikrota Reservation",
+      "subtitle": "Turistikrota Booking allows businesses to manage their reservations. Business owners can promote their businesses, receive reservations for their businesses, and manage their businesses with Turistikrota Booking."
+    },
+    "integration": {
+      "whatsapp": {
+        "title": "Reservation with WhatsApp",
+        "description": "Make reservations with WhatsApp via Turistikrota. Contact businesses directly and make your reservation quickly."
+      },
+      "calendar": {
+        "title": "Calendar Integration",
+        "description": "Integrate your reservations with your calendar via Turistikrota. Track your reservations and organize your plans."
+      },
+      "custom-pos": {
+        "title": "Custom POS Integration",
+        "description": "Make special POS integration via Turistikrota. Receive your payments quickly with POS integration special for your business."
+      },
+      "social": {
+        "title": "Social Stream",
+        "description": "Share your reservations made via Turistikrota in our social module. Share something or see who your loved ones are traveling with."
+      }
+    },
+    "stats": {
+      "accuracy": {
+        "title": "Accuracy",
+        "description": "All bookings included"
+      },
+      "happy-customers": {
+        "title": "Happy Customers",
+        "description": "This year only"
+      },
+      "registered-businesses": {
+        "title": "Registered Businesses",
+        "description": "Turistikrota's business partners"
+      }
+    },
+    "pricing": {
+      "title": "Starter or Enterprise Plans",
+      "starter": {
+        "title": "Starter Plan",
+        "description": "Ideal for small businesses and individuals. Get started promoting your business and getting bookings."
+      },
+      "business": {
+        "title": "Enterprise Plan",
+        "description": "Ideal for enterprise and large businesses. Get started promoting your business and getting bookings."
+      },
+      "services": {
+        "custom-pos": "Custom POS Integration",
+        "whatsapp": "WhatsApp Integration",
+        "calendar": "Calendar Integration",
+        "airbnb": "Airbnb Integration",
+        "custom-reports": "Custom Reports",
+        "api-access": "API Access",
+        "limitless-users": "Unlimited Users",
+        "limitless-booking": "Unlimited Bookings"
+      },
+      "per-action": "Per Booking",
+      "start-free": "Get Started for Free",
+      "most-popular": "Most Popular",
+      "pay-as-you-go": "Pay Based on Your Usage",
+      "info": "Contact us for more pricing information."
+    }
+  },
   "home": {
+    "rez-announcement": {
+      "text": "Rezervation Module is soon to be launched!",
+      "button": "Learn More"
+    },
     "category-filter": {
       "title": "Experience real tourism with Turistikrota!",
       "category": "Category",
@@ -95,38 +168,38 @@
       "title": "Promote your business on Turistikrota!",
       "subtitle": "Whether you are an individual or a corporation, you can promote your business on Turistikrota. Click the button below to promote your business on Turistikrota.",
       "button": "Promote Your Business"
-   },
-   "centers": {
-    "title": "Turkey's Top Spots",
-    "subtitle": "Discover Turkey's most popular spots. From the pearl of the Aegean, Izmir, to the historical heart of Istanbul, the warm beaches of the Mediterranean to the enchanting landscapes of Cappadocia, our destinations cater to every taste.",
-    "button": "More Destinations",
-    "detail-button": "Explore",
-    "descriptions": {
-      "buyukada": "Istanbul's enchanting island, Büyükada, offers a memorable escape with its historic mansions and serene nature walks.",
-      "sapanca": "Where green meets blue, Sapanca is an ideal stop for a peaceful break by the lake and nature activities.",
-      "odunpazari": "The historical heart of Eskişehir, Odunpazarı, takes visitors on a journey through time with its colorful Ottoman houses and art galleries.",
-      "sile": "A getaway near Istanbul, Şile is a coastal town filled with natural beauty, boasting wide beaches and a lighthouse.",
-      "kartepe": "Popular for winter sports and nature hikes, Kartepe captivates with its stunning views and fresh mountain air.",
-      "karasu": "The coastal town of Karasu in Sakarya promises a perfect summer holiday with its long sandy beaches and clean sea.",
-      "bebek": "The pearl of the Bosphorus, Bebek Beach, is one of Istanbul's most popular meeting spots, known for its stunning views and stylish cafés.",
-      "more": "Discover more places on Turistikrota!"
-    }
-   },
-   "listing": {
-    "title": "Latest Accommodations",
-    "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
-    "button": "See All",
-    "no-result": "There are currently no available accommodation options. Please try again later.",
-    "words": {
-      "from-business":"From Business"
     },
-    "price": {
-      "min": "Minimum",
-      "max": "Maximum",
-         "not-available": "Price information is not available.",
-         "filterForStrict": "Search in detail for net prices."
+    "centers": {
+      "title": "Turkey's Top Spots",
+      "subtitle": "Discover Turkey's most popular spots. From the pearl of the Aegean, Izmir, to the historical heart of Istanbul, the warm beaches of the Mediterranean to the enchanting landscapes of Cappadocia, our destinations cater to every taste.",
+      "button": "More Destinations",
+      "detail-button": "Explore",
+      "descriptions": {
+        "buyukada": "Istanbul's enchanting island, Büyükada, offers a memorable escape with its historic mansions and serene nature walks.",
+        "sapanca": "Where green meets blue, Sapanca is an ideal stop for a peaceful break by the lake and nature activities.",
+        "odunpazari": "The historical heart of Eskişehir, Odunpazarı, takes visitors on a journey through time with its colorful Ottoman houses and art galleries.",
+        "sile": "A getaway near Istanbul, Şile is a coastal town filled with natural beauty, boasting wide beaches and a lighthouse.",
+        "kartepe": "Popular for winter sports and nature hikes, Kartepe captivates with its stunning views and fresh mountain air.",
+        "karasu": "The coastal town of Karasu in Sakarya promises a perfect summer holiday with its long sandy beaches and clean sea.",
+        "bebek": "The pearl of the Bosphorus, Bebek Beach, is one of Istanbul's most popular meeting spots, known for its stunning views and stylish cafés.",
+        "more": "Discover more places on Turistikrota!"
+      }
+    },
+    "listing": {
+      "title": "Latest Accommodations",
+      "subtitle": "Discover the latest accommodations on Turistikrota. Our accommodation options include hotels, guesthouses, houses, camping areas, and more.",
+      "button": "See All",
+      "no-result": "There are currently no available accommodation options. Please try again later.",
+      "words": {
+        "from-business": "From Business"
+      },
+      "price": {
+        "min": "Minimum",
+        "max": "Maximum",
+        "not-available": "Price information is not available.",
+        "filterForStrict": "Search in detail for net prices."
+      }
     }
-  }
   },
   "mobile": {
     "title": "Discover the Hidden Corners of Turkey",
@@ -177,45 +250,45 @@
       "keywords": "Vacation planning, travel suggestions, travel guide, tourist routes, undiscovered places, Domestic vacation, International vacation, Cultural tourism, Nature tourism, City tourism, Adventure tourism, Family vacation, Romantic vacation, Sea vacation"
     }
   },
-    "footer": {
-      "apps": {
-        "playstore": "from Google Play",
-        "appstore": "from App Store",
-        "download": "Download"
-      },
-      "grid": {
-        "sites": {
-          "title": "Useful Links",
-          "places": "Places",
-          "listing": "Accommodation",
-          "business": "Business Panel",
-          "account": "Account Settings"
-        },
-        "company": {
-          "title": "Company",
-          "about-us": "About Us",
-          "contact-us": "Contact Us",
-          "support": "Support",
-          "help": "Help Center",
-          "meet-the-team": "Meet the Team",
-          "tech-team": "Tech Team"
-        },
-        "downloads": {
-          "title": "Our Apps"
-        },
-        "social": {
-          "title": "Social Media",
-          "instagram": "Instagram",
-          "twitter": "Twitter",
-          "linkedin": "LinkedIn",
-          "github": "GitHub"
-        }
-      },
-      "terms": "Terms of Use",
-      "privacy-policy": "Privacy Policy",
-      "cookies": "Cookies",
-      "copyright": "Turistikrota. All rights reserved."
+  "footer": {
+    "apps": {
+      "playstore": "from Google Play",
+      "appstore": "from App Store",
+      "download": "Download"
     },
+    "grid": {
+      "sites": {
+        "title": "Useful Links",
+        "places": "Places",
+        "listing": "Accommodation",
+        "business": "Business Panel",
+        "account": "Account Settings"
+      },
+      "company": {
+        "title": "Company",
+        "about-us": "About Us",
+        "contact-us": "Contact Us",
+        "support": "Support",
+        "help": "Help Center",
+        "meet-the-team": "Meet the Team",
+        "tech-team": "Tech Team"
+      },
+      "downloads": {
+        "title": "Our Apps"
+      },
+      "social": {
+        "title": "Social Media",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+      }
+    },
+    "terms": "Terms of Use",
+    "privacy-policy": "Privacy Policy",
+    "cookies": "Cookies",
+    "copyright": "Turistikrota. All rights reserved."
+  },
   "header": {
     "left": {
       "promotion": "Real tourism experience coming soon!"
@@ -237,7 +310,7 @@
   "aboutUs": {
     "head": {
       "title": "Real Tourism Experience is at Turistikrota",
-       "subtitle": "Turistikrota is a platform that allows you to have the best tourism experience around the world and share this experience with other people."
+      "subtitle": "Turistikrota is a platform that allows you to have the best tourism experience around the world and share this experience with other people."
     },
     "count": {
       "title": "Best for everyone",
@@ -268,7 +341,7 @@
     "team": {
       "card": {
         "title": "Our Team",
-         "subtitle": "Turistikrota team consists of people who ensure the existence and sustainability of this entire site."
+        "subtitle": "Turistikrota team consists of people who ensure the existence and sustainability of this entire site."
       },
       "avatar": "{name}'s avatar",
       "title": {
@@ -279,76 +352,76 @@
       },
       "link": "{name}'s {socialMedia} profile"
     },
-      "ourVision": {
-        "title": "Our Vision",
-        "subtitle": "Learn about the mission and vision of Turistikrota.",
-        "vision": {
-          "title": "Vision",
-          "text": "Our vision as Turistikrota is to provide innovative solutions in the tourism sector and ensure that people accumulate happy memories."
-        },
-        "mission": {
-          "title": "Mission",
-          "text": "Our mission as Turistikrota is to ensure that people experience real tourism and share this experience with others."
-        },
-        "values": {
-          "title": "Values",
-          "text": "Our values as Turistikrota are customer satisfaction, innovation, reliability, and quality."
-        }
+    "ourVision": {
+      "title": "Our Vision",
+      "subtitle": "Learn about the mission and vision of Turistikrota.",
+      "vision": {
+        "title": "Vision",
+        "text": "Our vision as Turistikrota is to provide innovative solutions in the tourism sector and ensure that people accumulate happy memories."
       },
-        "ourModules": {
-          "title": "Our Modules",
-          "subtitle": "Explore Turistikrota by modules. Each module represents a different feature of Turistikrota.",
-          "notReady": "Under development",
-          "visit": "Visit",
-          "places": {
-            "title": "Places Module",
-            "text": "Provides tourist places with all their details. Tourist places include historical places, natural beauties, cities, towns, and more."
-          },
-          "listing": {
-            "title": "Accommodation Module",
-            "text": "Provides accommodation options by location, date range, and price. Accommodation options include hotels, hostels, homes, campsites, and more."
-          },
-          "support": {
-            "title": "Support Module",
-            "text": "Allows you to get support for reservations made through Turistikrota or any problems encountered on Turistikrota. With this module, you can reach the Turistikrota support team."
-          },
-          "booking": {
-            "title": "Booking Module",
-            "text": "Allows you to track and manage your bookings. You can view the details of your booking, track its status, cancel your booking, or edit your booking."
-          },
-          "business": {
-            "title": "Business Module",
-            "text": "Allows business owners to promote their businesses and manage their businesses. Business owners can promote their businesses on Turistikrota, get bookings for their businesses, and manage their businesses."
-          },
-          "account": {
-            "title": "Account Module",
-            "text": "Allows users to manage their Turistikrota accounts. Users can edit their Turistikrota accounts, request to delete their Turistikrota accounts, and delete their Turistikrota accounts."
-          },
-          "tech": {
-            "title": "Technology Module",
-            "text": "Introduces the Turistikrota technology team. Our technology team is working on the development and sustainability of Turistikrota."
-          },
-          "payment": {
-            "title": "Payment Module",
-            "text": "Allows you to make all payments you make through Turistikrota. You can view your past and current payments, manage your payment methods, and update your payment methods."
-          },
-          "social": {
-            "title": "Social Module",
-            "text": "Allows you to interact with other people on Turistikrota. Share something or see who your loved ones are traveling with."
-          },
-          "ad": {
-            "title": "Advertising Module",
-            "text": "Allows businesses to advertise on Turistikrota and manage these ads. Business owners can advertise on Turistikrota and manage their ads."
-          },
-          "tour": {
-            "title": "Tour Module",
-            "text": "Allows you to travel with other people. You can create a tour on Turistikrota or book a tour."
-          },
-          "ticket": {
-            "title": "Ticket Module",
-            "text": "We are going beyond tourism and also offering you cultural and artistic events. You can create an event on Turistikrota or buy a ticket for an event."
-          }
-        },      
+      "mission": {
+        "title": "Mission",
+        "text": "Our mission as Turistikrota is to ensure that people experience real tourism and share this experience with others."
+      },
+      "values": {
+        "title": "Values",
+        "text": "Our values as Turistikrota are customer satisfaction, innovation, reliability, and quality."
+      }
+    },
+    "ourModules": {
+      "title": "Our Modules",
+      "subtitle": "Explore Turistikrota by modules. Each module represents a different feature of Turistikrota.",
+      "notReady": "Under development",
+      "visit": "Visit",
+      "places": {
+        "title": "Places Module",
+        "text": "Provides tourist places with all their details. Tourist places include historical places, natural beauties, cities, towns, and more."
+      },
+      "listing": {
+        "title": "Accommodation Module",
+        "text": "Provides accommodation options by location, date range, and price. Accommodation options include hotels, hostels, homes, campsites, and more."
+      },
+      "support": {
+        "title": "Support Module",
+        "text": "Allows you to get support for reservations made through Turistikrota or any problems encountered on Turistikrota. With this module, you can reach the Turistikrota support team."
+      },
+      "booking": {
+        "title": "Booking Module",
+        "text": "Allows you to track and manage your bookings. You can view the details of your booking, track its status, cancel your booking, or edit your booking."
+      },
+      "business": {
+        "title": "Business Module",
+        "text": "Allows business owners to promote their businesses and manage their businesses. Business owners can promote their businesses on Turistikrota, get bookings for their businesses, and manage their businesses."
+      },
+      "account": {
+        "title": "Account Module",
+        "text": "Allows users to manage their Turistikrota accounts. Users can edit their Turistikrota accounts, request to delete their Turistikrota accounts, and delete their Turistikrota accounts."
+      },
+      "tech": {
+        "title": "Technology Module",
+        "text": "Introduces the Turistikrota technology team. Our technology team is working on the development and sustainability of Turistikrota."
+      },
+      "payment": {
+        "title": "Payment Module",
+        "text": "Allows you to make all payments you make through Turistikrota. You can view your past and current payments, manage your payment methods, and update your payment methods."
+      },
+      "social": {
+        "title": "Social Module",
+        "text": "Allows you to interact with other people on Turistikrota. Share something or see who your loved ones are traveling with."
+      },
+      "ad": {
+        "title": "Advertising Module",
+        "text": "Allows businesses to advertise on Turistikrota and manage these ads. Business owners can advertise on Turistikrota and manage their ads."
+      },
+      "tour": {
+        "title": "Tour Module",
+        "text": "Allows you to travel with other people. You can create a tour on Turistikrota or book a tour."
+      },
+      "ticket": {
+        "title": "Ticket Module",
+        "text": "We are going beyond tourism and also offering you cultural and artistic events. You can create an event on Turistikrota or buy a ticket for an event."
+      }
+    },
     "meta": {
       "title": "About Us",
       "description": "Turistik Rota is a platform that allows you to experience the best tourism experience worldwide and share this experience with other people.",

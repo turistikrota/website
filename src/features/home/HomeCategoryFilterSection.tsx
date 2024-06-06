@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { FC } from 'react'
+import RezAnnouncementBanner from '~/app/[locale]/rez/components/RezAnnouncementBanner'
 import CategoryFilterSection from './CategoryFilterSection'
 import styles from './home.module.css'
 
@@ -9,6 +10,7 @@ const HomeCategoryFilterSection: FC = () => {
   const t = useTranslations('home.category-filter')
   return (
     <section className='relative flex h-screen flex-col items-center justify-center gap-8 p-4 lg:p-0'>
+      <RezAnnouncementBanner />
       <div
         className={`absolute left-0 top-0 h-full w-full bg-sky-50 bg-cover bg-fixed bg-center bg-no-repeat brightness-90 md:bg-center ${styles.banner}`}
       ></div>
