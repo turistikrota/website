@@ -77,7 +77,80 @@
       }
     }
   },
+  "rez": {
+    "meta": {
+      "title": "Rezervasyon Modülü",
+      "description": "Turistikrota Rezervasyon Modülü, işletmelerin rezervasyonlarını yönetmelerini sağlar. İşletme sahipleri, Turistikrota Rezervasyon ile işletmelerini tanıtabilir, işletmelerine rezervasyon alabilir ve işletmelerini yönetebilirler.",
+      "keywords": "Rezervasyon Modülü, Turistik Rota, Tatil Planlama, Tur Rezervasyonu"
+    },
+    "head": {
+      "title": "Turistikrota Rezervasyon",
+      "subtitle": "Turistikrota Rezervasyon, işletmelerin rezervasyonlarını yönetmelerini sağlar. İşletme sahipleri, Turistikrota Rezervasyon ile işletmelerini tanıtabilir, işletmelerine rezervasyon alabilir ve işletmelerini yönetebilirler."
+    },
+    "integration": {
+      "whatsapp": {
+        "title": "WhatsApp ile Rezervasyon",
+        "description": "Turistikrota üzerinden WhatsApp ile rezervasyon yapın. İşletmelerle doğrudan iletişime geçin ve rezervasyonunuzu hızlıca yapın."
+      },
+      "calendar": {
+        "title": "Takvim Entegrasyonu",
+        "description": "Turistikrota üzerinden rezervasyonlarınızı takviminize entegre edin. Rezervasyonlarınızı takip edin ve planlarınızı organize edin."
+      },
+      "custom-pos": {
+        "title": "Özel POS Entegrasyonu",
+        "description": "Turistikrota üzerinden özel POS entegrasyonu yapın. İşletmenize özel POS entegrasyonu ile ödemelerinizi hızlıca alın."
+      },
+      "social": {
+        "title": "Sosyal Akış",
+        "description": "Turistikrota üzerinden yaptığınız rezervasyonlarınızı sosyal modülümüzde paylaşın. Bir şeyler paylaşın veya sevdiklerinizin kimlerle seyahat ettiğini görün."
+      }
+    },
+    "stats": {
+      "accuracy": {
+        "title": "Doğruluk",
+        "description": "Tüm rezervasyonlar dahil edilmiştir"
+      },
+      "happy-customers": {
+        "title": "Mutlu Müşteriler",
+        "description": "Yalnızca bu yıl için"
+      },
+      "registered-businesses": {
+        "title": "Kayıtlı İşletmeler",
+        "description": "Turistikrota'nın iş ortakları"
+      }
+    },
+    "pricing": {
+      "title": "Başlangıç veya Kurumsal Planlar",
+      "starter": {
+        "title": "Başlangıç Planı",
+        "description": "Küçük işletmeler ve bireyler için idealdir. İşletmenizi tanıtmak ve rezervasyon almak için başlayın."
+      },
+      "business": {
+        "title": "Kurumsal Plan",
+        "description": "Kurumsal işletmeler ve büyük işletmeler için idealdir. İşletmenizi tanıtmak ve rezervasyon almak için başlayın."
+      },
+      "services": {
+        "custom-pos": "Özel POS Entegrasyonu",
+        "whatsapp": "WhatsApp Entegrasyonu",
+        "calendar": "Takvim Entegrasyonu",
+        "airbnb": "Airbnb Entegrasyonu",
+        "custom-reports": "Özel Raporlar",
+        "api-access": "API Erişimi",
+        "limitless-users": "Sınırsız Kullanıcı",
+        "limitless-booking": "Sınırsız Rezervasyon"
+      },
+      "per-action": "Her Rezervasyon İçin",
+      "start-free": "Ücretsiz Başlayın",
+      "most-popular": "En Popüler",
+      "pay-as-you-go": "Kullanımınıza Göre Ödeyin",
+      "info": "Fiyatlandırmaya ilişkin daha fazla bilgi almak için bizimle iletişime geçin."
+    }
+  },
   "home": {
+    "rez-announcement": {
+      "text": "Rezervasyon Modülü Çok Yakında!",
+      "button": "Daha Fazla Bilgi"
+    },
     "category-filter": {
       "title": "Turistikrota ile gerçek turizm deneyimini yaşayın!",
       "category": "Kategori",
