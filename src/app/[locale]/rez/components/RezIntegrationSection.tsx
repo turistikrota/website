@@ -7,7 +7,7 @@ export default function RezIntegrationSection() {
       <div className='grid items-center gap-12 sm:grid-cols-2 lg:grid-cols-4'>
         <div>
           <div className='relative flex h-12 w-12 items-center justify-center rounded-xl bg-white before:absolute before:-inset-px before:-z-[1] before:rounded-xl before:bg-gradient-to-br before:from-primary-600 before:via-transparent before:to-secondary-600 dark:bg-neutral-900'>
-            <i className='bx bx-sm bx-calendar h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-500'></i>
+            <i className='bx bx-sm bxl-whatsapp h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-500'></i>
           </div>
           <div className='mt-5'>
             <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>{t('whatsapp.title')}</h3>
@@ -16,7 +16,7 @@ export default function RezIntegrationSection() {
         </div>
         <div>
           <div className='relative flex h-12 w-12 items-center justify-center rounded-xl bg-white before:absolute before:-inset-px before:-z-[1] before:rounded-xl before:bg-gradient-to-br before:from-primary-600 before:via-transparent before:to-secondary-600 dark:bg-neutral-900'>
-            <i className='bx bx-sm bxl-whatsapp h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-500'></i>
+            <i className='bx bx-sm bx-calendar h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-500'></i>
           </div>
           <div className='mt-5'>
             <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>{t('calendar.title')}</h3>
